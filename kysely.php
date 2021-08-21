@@ -172,7 +172,9 @@ function myFunction(y) {
                 }
 
                 echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '.</b>';
-                echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaA"  title="Muokkaa">';
+                 echo'<input type="hidden" name="kelloA" value='.$avautumiskello.'>';
+                        echo'<input type="hidden" name="paivaA" value='.$avautumispaiva.'>';
+                echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaA"  title="Muokkaa avautumisaikaa">';
             } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
                 echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #c7ef00;">Aseta avautumissajankohta kyselylomakkeelle: </p>';
                 echo'<b style="margin-right: 5px; color:  ">Pvm:</b>
@@ -203,6 +205,8 @@ function myFunction(y) {
 
 
                 echo'&nbsp&nbsp&nbsp' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '.</b>';
+                 echo'<input type="hidden" name="kelloS" value='.$sulkeutumiskello.'>';
+                        echo'<input type="hidden" name="paivaS" value='.$sulkeutumispaiva.'>';
                 echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaS"  title="Muokkaa sulkeutumisaikaa">';
             } else {
                 echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; color: #c7ef00;">Aseta sulkeutumisajankohta kyselylomakkeelle: </p>';

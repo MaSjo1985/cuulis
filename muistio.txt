@@ -1,8 +1,12 @@
+PALAUTUSTEN AUKEAMINEN -> OPEN TOIMINTO KOMMENTOITU POIS
+
+-> PITÄÄ LAITTAA VAIKUTUS OPISKELIJAN PALAUTUKSEEN
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 * nappuloiden hifistely saa jatkua
 
 * tiedosto sivu on epäselvä
-
-* kun avaa ja sulkee niin sama tallennusjuttu
 
 * kun tuo tehtäviä/kansioita: NÄKYMÄ OUTO +  eikä valitse mitään niin id katoaa
 
@@ -25,8 +29,6 @@ ADMIN-PANEELIN ULKOASU
 '****************************************************************'
 
 PALAUTUKSET 
-
-* avautuminen (katso mallia ia.php)
 
 * pisteitä palautuksista?
 

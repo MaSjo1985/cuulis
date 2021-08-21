@@ -232,7 +232,7 @@ function myFunction(y) {
                     }
 
                     $onko = $haetehtavat->num_rows;
-                    echo '<form action="asetaiaauki.php" id="' . $sid . '" style="font-size: 0.9em" method="post" autocomplete="off">';
+                    echo '<form action="asetaiatakaraja.php" id="' . $sid . '" style="font-size: 0.9em" method="post" autocomplete="off">';
 
                     if ($avautuu != NULL) {
 
@@ -247,31 +247,31 @@ function myFunction(y) {
 
 
                         echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '.</b>';
-                        echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaa"  title="Muokkaa avatumisaikaa">';
+                       echo'<input type="hidden" name="kelloA" value='.$avautumiskello.'>';
+                        echo'<input type="hidden" name="paivaA" value='.$avautumispaiva.'>';
+                        echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaaA"  title="Muokkaa avatumisaikaa">';
                     } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
                         echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #c7ef00;">Aseta avautumissajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paiva">';
+            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaA">';
 
 
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kello" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
+               <input type="text"  name="kelloA" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
-	<input type="submit" style="margin-left:10px; padding: 2px; font-size: 0.6em" value="Tallenna (' . $sid . ')" class="myButton8" name="tallenna"  title="Tallenna takaraja">';
+	<input type="submit" style="margin-left:10px; padding: 2px; font-size: 0.6em" value="Tallenna (' . $sid . ')" class="myButton8" name="tallennaA"  title="Tallenna avautumisaika">';
                     }
-                    echo'</form>';
-                    echo '<form action="asetaiakiinni.php" id="' . $sid . '" style="padding-bottom: 10px; font-size: 0.9em" method="post" autocomplete="off">';
-
+               
                     if ($sulkeutuu != NULL) {
 
                         if ($nyt > $sulkeutuu) {
-                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red">Tämä osio on sulkeutunut ';
+                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red"><br>Tämä osio on sulkeutunut ';
                         } else {
-                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red">Tämä osio sulkeutuu ';
+                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red"><br>Tämä osio sulkeutuu ';
                         }
 
 
@@ -279,21 +279,23 @@ function myFunction(y) {
 
 
                         echo'&nbsp&nbsp&nbsp' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '.</b>';
-                        echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaa"  title="Muokkaa sulkeutumisaikaa">';
+                         echo'<input type="hidden" name="kelloK" value='.$sulkeutumiskello.'>';
+                        echo'<input type="hidden" name="paivaK" value='.$sulkeutumispaiva.'>';
+                        echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaaK"  title="Muokkaa sulkeutumisaikaa">';
                     } else {
                         echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #c7ef00;">Aseta sulkeutumisajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paiva">';
+            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaK">';
 
 
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kello" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
+               <input type="text"  name="kelloK" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
-	<input type="submit" style=" margin-left:10px; padding: 2px; font-size: 0.6em" value="Tallenna (' . $sid . ')" class="myButton8" name="tallenna"  title="Tallenna takaraja"><br><br>';
+	<input type="submit" style=" margin-left:10px; padding: 2px; font-size: 0.6em" value="Tallenna (' . $sid . ')" class="myButton8" name="tallennaK"  title="Tallenna sulkeutumisaika"><br><br>';
                     }
                     echo'</form>';
 

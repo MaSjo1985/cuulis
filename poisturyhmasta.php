@@ -1,0 +1,38 @@
+<?php
+
+ob_start();
+
+
+
+include("yhteys.php");
+// server should keep session data for AT LEAST 1 hour
+// each client should remember their session id for EXACTLY 1 hour
+
+
+session_start(); // ready to go!
+
+if (isset($_SESSION["Kayttajatunnus"])) {
+
+    if (!$onkoprojekti = $db->query("select * from projektit where id='" . $_GET[pid] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+    if ($onkoprojekti->num_rows != 0) {
+
+
+        if (!$onkosuljettu = $db->query("select distinct lopullinen from ryhmat where id='" . $_GET[id] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        while ($row = $onkosuljettu->fetch_assoc()) {
+            if ($row[lopullinen] == 0) {
+                $db->query("update opiskelijankurssit set ryhma_id=0 where opiskelija_id = '" . $_SESSION["Id"] . "' AND projekti_id='" . $_GET[pid] . "'");
+            }
+        }
+    }
+    header("location: ryhmatyot.php?r=" . $_GET[pid] . '#lisaa');
+} else {
+    $url = $_SERVER[REQUEST_URI];
+    $url = substr($url, 1);
+    $url = strtok($url, '?');
+    header("location: kirjautuminen.php?url=" . $url);
+}
+?>	  

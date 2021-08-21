@@ -1,0 +1,53 @@
+.myButton17 {
+
+    background-color: blue;
+    color: yellow;
+}
+
+
+.divi {
+
+    display: none;
+    background-color: yellow;
+    color: #080708;
+    font-weight: bold;
+    border: 2px solid #080708;
+    position: fixed;
+    width: 40%;
+    top: 40%;
+    left: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.divi button {
+    background-color: #b1006a;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: Questrial;
+    color: #f7f9f7;  
+    font-size: 0.9em;
+
+}
+
+.divi button:hover{
+    background-color: white;
+    color: #48E5DA;
+    font-weight: bold;
+}
+.divi .message {
+    text-align: center;
+    font-family: Questrial;
+    font-size: 1em;
+    color: red; 
+}
+

@@ -1,0 +1,107 @@
+.richText {position: relative;background-color: #FAFAFA;border: #EFEFEF solid 1px;color: #333333;width: 100%;
+
+           border-radius: 5px;
+           -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+           border: 3px solid #b1006a;
+
+           box-shadow: inset 0px 0px 5px #b1006a;
+           -moz-box-shadow: inset 0px 0px 5px #b1006a;
+           -webkit-box-shadow: inset 0px 0px 5px #b1006a;
+           border: 2px solid #b9b8bf;
+
+}
+
+.richText .richText-form {font-family: Calibri,Verdana,Helvetica,sans-serif;}
+
+.richText .richText-form label {display: block;padding: 10px 15px;}
+
+.richText .richText-form input[type="text"], .richText .richText-form input[type="file"], .richText .richText-form input[type="number"], .richText .richText-form select {padding: 10px 15px;border: #999999 solid 1px;min-width: 200px;width: 100%;}
+
+.richText .richText-form select {cursor: pointer;}
+.richText .richText-form button {margin: 10px 0;padding: 10px 15px;background: #b1006a ;border: none;color: #48E5DA;cursor: pointer;-webkit-appearance: none;-moz-appearance: none;appearance: none;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+
+.richText .richText-toolbar {min-height: 20px;border-bottom: #EFEFEF solid 1px;}
+
+.richText .richText-toolbar .richText-length {font-family: Verdana, Helvetica, sans-serif;font-size: 13px;vertical-align: middle;line-height: 34px;}
+
+.richText .richText-toolbar .richText-length .black {color: black;} 
+
+.richText .richText-toolbar .richText-length .orange {color: orange;}
+
+.richText .richText-toolbar .richText-length .red {color: red;}
+/*ikonit ylhäällä*/
+.richText .richText-toolbar ul {padding-left: 0;padding-right: 0;margin-top: 0;margin-bottom: 0; font-size: 0.8em; }
+
+
+.richText .richText-toolbar ul li {float: left;display: block;list-style: none;}
+
+.richText .richText-toolbar ul li a {display: block;padding: 10px 13px;border-right: #EFEFEF solid 1px;cursor: pointer;-webkit-transition: background-color 0.4s;-moz-transition: background-color 0.4s;transition: background-color 0.4s;}
+
+.richText .richText-toolbar ul li a .fa, .richText .richText-toolbar ul li a .fas, .richText .richText-toolbar ul li a .far, .richText .richText-toolbar ul li a svg {pointer-events: none;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer {display: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0, 0, 0, 0.3);cursor: default;}
+.richText .richText-toolbar ul li a .richText-dropdown-outer .richText-dropdown {cursor: default; position: relative;display: block;margin: -30px 0px 10px 60px; font-weight: bold; background-color: #E8E8E8; font-size: 1em; border: 1px solid black;max-width: 300px;max-width: 90%; }
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer .richText-dropdown .richText-dropdown-close {position: absolute;top: 0;right: -23px;background: #b1006a; color: #48E5DA;cursor: pointer;font-size: 20px;text-align: center;width: 20px;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown {list-style: none;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li {display: block;float: none;font-family: Calibri,Verdana,Helvetica,sans-serif;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li a {display: block;padding: 10px 15px;border-bottom: #EFEFEF solid 1px;}
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li a:hover {font-size: 1.2em; font-weight: normal; cursor: default; }
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline {margin: 10px 6px;float: left;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline a {display: block;padding: 0;margin: 0;border: none;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;-webkit-box-shadow: 0 0 10px 0 #999;-moz-box-shadow: 0 0 10px 0 #999;box-shadow: 0 0 10px 0 #999;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline a span {display: block;height: 30px;width: 30px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
+
+.richText .richText-toolbar ul li a .richText-dropdown-outer div.richText-dropdown {padding: 10px 15px;}
+.richText .richText-toolbar ul li a:hover {font-weight: normal; }
+.richText .richText-toolbar ul li[data-disable="true"] {opacity: 0.1;}
+
+.richText .richText-toolbar ul li[data-disable="true"] a {cursor: default;}
+
+.richText .richText-toolbar ul li:not([data-disable="true"]).is-selected .richText-dropdown-outer {display: block;}
+
+.richText .richText-toolbar ul:after {display: block;content: "";clear: both;}
+
+.richText .richText-toolbar:last-child {font-size: 12px;}
+
+.richText .richText-toolbar:after {display: block;clear: both;content: "";}
+
+/*TEKSTIKENTTÄ */
+
+.richText .richText-editor {padding: 20px; color: auto;font-family: Calibri,Verdana,Helvetica,sans-serif;height: 200px;outline: none;overflow-y: scroll;overflow-x: auto;
+
+
+
+}
+.richText .richText-editor a{
+    color: inherit;
+}
+.richText .richText-editor ul, .richText .richText-editor ol {margin: 10px 25px;}
+
+.richText .richText-editor table {margin: 10px 10px;}
+
+.richText .richText-editor table td, .richText .richText-editor table th {height: 40px; min-width: 40px; white-space: nowrap; padding: 20px;border:black solid 1px;}
+
+.richText .richText-editor:focus {border-left: #3498db solid 2px;}
+
+.richText .richText-initial {margin-bottom: -4px;padding: 10px;background-color: #282828;border: none;color: #33FF33;font-family: Monospace,Calibri,Verdana,Helvetica,sans-serif;max-width: 100%;min-width: 100%;width: 100%;min-height: 400px;height: 400px;}
+
+.richText .richText-help {float: right;display: block;padding: 10px 15px;cursor: pointer;}
+
+.richText .richText-undo, .richText .richText-redo {float: left;display: block;padding: 10px 15px;border-right: #EFEFEF solid 1px;cursor: pointer;}
+
+.richText .richText-undo.is-disabled, .richText .richText-redo.is-disabled {opacity: 0.4;}
+
+.richText .richText-help-popup a {color: #3498db;text-decoration: underline;}
+
+.richText .richText-help-popup hr {margin: 10px auto 5px auto;border: none;border-top: #EFEFEF solid 1px;}
+
+.richText .richText-list.list-rightclick {position: absolute;background-color: #FAFAFA;border-right: #EFEFEF solid 1px;border-bottom: #EFEFEF solid 1px;}
+
+.richText .richText-list.list-rightclick li {padding: 5px 7px;cursor: pointer;list-style: none;}

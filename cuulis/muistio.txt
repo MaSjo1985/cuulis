@@ -1,0 +1,437 @@
+- taulukoiden muokkaus
+
+- kurssin/opintojakson muokkaus, kokeen aikakenttä
+
+- kirjautuminen
+
+- favicon
+
+Äänestykset (kaikki vaiheet)
+
+Osallistujat
+
+Admin-paneelit
+
+
+*************************************
+GIT: 
+* Revert modification palauttaa edelliseen committiin!
+* Checkoutilla pääsee vanhempiin mutta tätä pitää testata git-projektilla!
+
+*********************************************
+
+
+*****************
+class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+
+href="aktivoiaanestys.php?a=' . $aanid . '
+
+tarkasteleopiskelija.php: ONKO AJAN TASALLA?
+
+*************************************************************************************************
+
+
+TAULUKOIDEN MUOKKAUS, otsikot #0D3E3F
+
+ALERTBOX
+
+DIVIEN RAJAT
+
+FORMIT
+
+OPISKELIJANÄKYMÄ?!?!
+
+
+*****************************
+
+Dark mode valinnaksi : kaikki colorit pitää laittaa ulkoasu.css-tiedostoon!
+
+
+*********
+UUDET VÄRIT: 
+
+KORVAA KAIKKIALTA:
+
+#f9f8fb ->  #080708  (tausta)
+
+#15565f -> #48E5DA  (sininen)
+
+#53a5af -> #48E5DA
+
+
+formit niinku on form-style-3
+
+formien buttonit ja a:t poista class
+
+muiden buttonien tekstit: color: #080708;
+
+taulukoiden otsikot: #0D3E3F
+_____________
+
+
+
+- GIT -> Revert modification, TOIMIIKO?!?!
+
+
+- uusi ulkoasu, kato nykyinen alertbox!
+background-color: #080708;
+
+button:
+    background-color: #48E5DA;
+    border: 1px solid #aaa;
+
+
+- alert-boxin ulkoasu
+
+
+
+- tsekkaa onko sessio voimassa ettei 2 kurssisivua!
+
+
+*********************************************************
+
+- TEHTÄVÄT EI MERKKAANU AUTOMAATTISESTI?!!?
+
+- keskustele: lähetys osio loppuun
+
+HARJOITTELE:  keskustelut8.php + load8.php
+1vh = 1% of viewport height.
+
+
+- form-style-k  VS  form-style-8 ?!
+
+- muuta formien otsikot legendiksi
+
+- palaa takaisin -> ei alaviivaa
+
+
+- diagrammien visuaalisuus
+
+
+- keskustelu ei toimi kunnolla Firefoxilla
+
+- opelle arviointityökalu?
+
+- ulkoasu parannuksia
+
+- osallistujien kohdalle onko kirjautunut, esim vihreä ja punainen ympyrä
+
+**************************************************
+JOS ON HIDAS TIETOKANTAHAKU:
+
+CREATE INDEX jobTitle ON employees(jobTitle);  
+
+https://www.mysqltutorial.org/mysql-index/mysql-create-index/  
+
+
+
+**********************
+- PINKKI VÄRI: #f5e1da;
+
+_______________________________________________________
+- saa lisätä omia tehtäviä? 
+
+-  dark mode?
+
+- Tykkäisin, jos Cuuliksen ulkoasu olisi hieman pelkistetympi. 
+Esimerkiksi, jos ne naaput, jotko jo eivät ole jossakin rivissä tai sarakkeessa, ryhmittelisi sulje kurssisivu -naapun alle samaan linjaan. 
+Ja voisiko otsikkopalkki olla saman värinen, kuin tylyn logon tausta? Ehkä valkoinen? Idea kuvana liitteessä.
+KUVA SUVI HELAJALTA edu.hel.fi-sähköpostissa
+
+---------------------------------------------------------
+- UUSI VÄRIMAAILMA
+
+Jos kokeilisi tällaista?
+- Logo tumma vihreä #15565f
+- Tausta harmaa f9f8fb
+- Toinen harmaa, jos tarvitsee #E3EEE6
+- Listojen taustat vaaleanpunaiset: Vp haalea #f5e1da
+Vp tummempi #15565f
+(jos on liian deitti, niin voin katsoa harmaan sävyjä lisää :D)
+
+- Listojen fonttiväri: #e3eee6;
+
+- Naapujen (omat tiedet jn.) väri #53a5af
+- Tarvitsiko johonkin vielä tumman taustavärin? #52A0A4
+-Korostusväreiksi voisi sopia kirkas sininen #45CDDD
+- Toinen erottuva korostusväri punainen #eb5c6a
+- Laskulistan tehtyjen vihreäksi #7FD858
+
+--------------------------------------------------------------------------------------
+
+- Kyselylomakkeen muokkaus+TALLENNUS?
+
+- ilmoitustaulut kusee kun kattoo mobiilisti!!
+* KUVAT JA FONTIT!!
+
+
+- Oman tehtävä%-tavoitteen olemassaolo/sijainti?! 
+
+-------------------------------------
+
+- opiskelijoille mahis lisätä tehtäviä
+
+- mahdollisuus asettaa kurssisivu avautumaan automaattisesti
+
+- Sannin ehdotus kurssiaikataulusta:
+[13.49, 12.8.2019] Sanni (tyly): Jos aikataulun luomiseen saisi sen ”ponnahdusikkunan” tms josta voisi valita päivän.
+[13.51, 12.8.2019] Sanni (tyly): Tai sitten laittaisi vaan päivämäärät, jolloin kurssi alkaa ja milloin loppuu ja kertoisi kurssin/opintojakson viikonpäivät, niin ohjelma kirjoittaisi itse päivämäärät joka riville☺ en tiedä oisko mahdollista edes🤔
+
+- itsetyot.php vaatii viilausta!!
+
+******************************************************
+- opiskelijoiden sivustolle paluukohdasta tuli palautetta
+
+
+- RESPONSIIVISUUS PITÄÄ TUTKIA!!!
+
+- voiko tekstieditorin kuvan kokoon vaikuttaa?
+- tekstieditorin taustaväri ku copy paste?
+- tekstieditorin copy paste ei toimi kunnolla
+???
+COPY-PASTE -> &nbsp;<span style="background-color: transparent; box-sizing: border-box; color: rgb(51, 51, 51); font-family: Calibri,Verdana,Helvetica,sans-serif; font-size: 19.2px; font-style: normal; font-variant: normal; font-weight: 700; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">YHDESSÄ TIEDOSTOSSA </span><span style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); font-family: Calibri,Verdana,Helvetica,sans-serif; font-size: 19.2px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">kohtaan "Kurssityöt"</span></div></div></div></div></div></div></div>
+PITÄS OLLA:  <span style="box-sizing: border-box; font-weight: 700;"> YHDESSÄ TIEDOSTOSSA </span>kohtaan "Kurssityöt"</div></div></div></div></div></div>
+TAI TÄÄ: <br style="box-sizing: border-box;"></div><div align="left" style="background-color: transparent; box-sizing: border-box; color: rgb(51, 51, 51); font-family: Calibri,Verdana,Helvetica,sans-serif; font-size: 19.2px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;"><div style="background-color: transparent; box-sizing: border-box;"><br style="box-sizing: border-box;"></div><div style="background-color: transparent; box-sizing: border-box;">- Kurssin lopuksi kurssitehtävät palautetaan<span style="box-sizing: border-box; font-weight: 700;"> YHDESSÄ TIEDOSTOSSA </span>kohtaan "Kurssityöt"</div></div><br></div></div></div></div></div>
+
+
+
+
+
+- muokkaustiloista paluu, kun painaa esim valitse kaikki -> eli paluu otsikon kohdalle
+* esimerkki löytyy tuotehtavat3.php
+
+
+- tietokantahaun nopeuttaminen
+* KOKEILE: Kirjautumisen yhteydessä johonkin talteen?!
+HAETEHTAVAT - funktioon monta parametria?!?! 
+-> kurssisivustonheader -> body onload, auttaako?
+* TSEKKAA NÄÄ:
+https://code.jquery.com/
+https://css-tricks.com/adding-a-cdn-to-your-website/
+
+
+- tarvitaanko alert-boxia?!
+https://www.cssscript.com/demo/material-design-dialog-dudialog/
+https://www.ericmmartin.com/projects/simplemodal-demos/
+
+
+
+
+------------------------------------------
+KAIKKI KURSSITYÖT LÖYTYY TAULUSTA opiskelijan_kurssityot
+
+ROSKIS-symboli:
+
+<button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button>
+
+container-väri
+f9f8fb
+
+- valinta jos klikkaa pelkkää nimeä
+
+  echo '<tr><td style="padding-left: 10px"><input type="checkbox" id="cid" name="lista[]"  value="' . $row[kaid] . '" ></td><td><label for="cid">' . $row[sukunimi] . '</label></td><td><label for="cid">' . $row[etunimi] . '</label></td>';
+
+
+
+
+_____________________________________
+
+TIEDOSTON TALLENGTHTAMINEN SUORAAN KONEELLE:
+<?php
+// We'll be outputting a PDF
+header('Content-type: application/pdf');
+
+// Nyt nimeksi tulee downloaded.pdf
+header('Content-Disposition: attachment; filename="downloaded.pdf"');
+
+// PDF tiedosto mikä luetaan
+readfile('Tietoa Cuulis-oppimisympäristöstä.pdf');
+?> 
+
+
+LOMAKKEIDEN TALLENGTHUKSEEN MENO SUORAAN URL:stä.
+Kohteen näkee lähdekoodista. Voisiko jotenki tsekaa ettei tehdä tietokantaan turhaa päivitystä?!?!
+
+MACIN ÄÄKKÖSONGELMA:
+- TARVIIKO URL-osoitteen syöttö myös muuttaa??!?
+- TESTAA VIELÄ, MITEN å menee (nyt oletus q?, EI PIDÄ PAIKKAANSA!!)
+
+
+
+
+RYHMIEN POISTO/POISTUMINEN TSEKKAA
+
+- UUSI LOMAKE -> ohjaa suoraan missä muokataan
+
+- Opiskelijan nimi -> linkki käyttäjäprofiiliin
+
+
+
+____________
+
+
+- aika tehtäväluettelon lataamiseen, voisiko optimoida?
+
+- arvostelua pääsee manipuloimaan
+
+- salasanojen syöttö-hässäkän tarkistus
+
+- ulkoasun parantelua
+
+- kyselylomakkeessa vain 1 lomakemahdollisuus
+
+
+----------------------------------------------------------
+TULEVAISUUDESSA?!?!:
+
+- URL-osoitteen suoran syötön tarkistus (+ formin submitissa näkyy myös Edgellä)
+Tehty: 
+* kurssi.php
+
+
+- TITLEJEN PÄIVITYS
+
+- ADMIN-PANEELIN ERI TOIMINTOJEN PARANNUS (ei kiire)
+
+- URL-OSOITTEEN POISTO NÄKYVISTÄ TÄRKEISSÄ LINKEISSÄ: MALLI LÖYTYY: testaus2.php
+
+
+
+- Käsitelty aihe eriväriseksi
+
+- Opelle näkyviin omat tiedostot
+
+- ARVOSANALASKURI
+
+
+
+- joissain oppilaan tiedostoissa ääkköset korvaantuu ?-merkillä..
+
+
+-----------------------------------------
+HUOMIOITAVAA:
+
+- JOS TEHTÄVÄLUETTELOSSA TUPLARIVI:  opiskelijankurssit-taulussa liikaa rivejä, katso missä lisätään vaikka jo on!!!
+
+- jos haluu erillisen tyylin pieneen näyttöön, käytä @media screen- jutskaa
+
+- MONTA JAVASCRIPT-FUNKTIOTA EI TOIMI: Vain yksi versio linkkimuotoisesta javascriptistä ja lataa kirjastot funktioiden suoritusjärjestyksessä (noConflict()?)
+
+- Jotkut taulukot tulee ulos perusnäkymistä, syy: overflow-x:auto
+
+- Poistettu Kysy/kommentoi-alueen poistettu malli löytyy kurssi.php:stä
+
+- Jos uudelleenohjaus ei toimi: ) 
+ob_start() headerin alkuun;
+
+- sininen väri: #15565f
+
+- formin kaksoitallennus: syy: javascript-funktiossa f.submit()
+
+- formit ei skaalaudu koska laitettu leveytttää esim type="text"
+
+- KÄYTTÄJÄN POISTO/POISTUMINEN: Vain suoraan käyttäjään liittyvät tiedot
+
+- KOULUN POISTO: EI OLE KÄYTY MITÄÄN LÄPI!!
+
+- Tietokannan linkit-taulun sisältöä ei ole poistettu
+
+- Jos lauseet yms. tulee yli:   word-wrap: break-word;        
+    overflow-wrap: break-word; 
+
+------------------------------------------
+HARKITTAVAA:
+LUKUVUOSI tuorakenne.php
+
+
+- kahden keskinen chat?!
+- INFO-nappula -> alert?!
+
+------------------------------------------
+
+MYSQL-treeni, kun KIRJAUTUMISPÄIVÄT d.m.yyyy muutetaan MUOTOON YYYY-MM-DD
+
+UPDATE kayttajat set paiva=CONCAT(paiva,'-')
+
+UPDATE kayttajat set paiva=CONCAT(RIGHT(paiva,5), paiva)
+
+UPDATE kayttajat set paiva=LEFT(paiva, LENGTH(paiva)-5)
+
+UPDATE kayttajat set paiva=REPLACE(paiva,'.','-')
+
+UPDATE kayttajat set paiva=CONCAT(LEFT(paiva,5), RIGHT(paiva,LENGTH(paiva)-5))
+
+UPDATE kayttajat set paiva=CONCAT(LEFT(paiva,5), RIGHT(paiva,POSITION('-' IN RIGHT(paiva, LENGTH(paiva) -5))), LEFT(REPLACE(paiva,LEFT(paiva,5),''), POSITION('-' IN REPLACE(paiva,LEFT(paiva,5),''))-1))
+
+UPDATE kayttajat set paiva=REPLACE(paiva,'--','-')
+
+
+------------------------------------------
+POISTOISSA HUOMIOITU:
+
+1) osioiden poisto 
+* äänestykset 
+* itsearvioinnit
+* aikataulu
+* keskusteluviestit + tykkäykset
+* tiedostot
+* kansiot
+* itseprojektit
+* itseprojektit_tasot
+* itsetehtavat
+* itsetehtavatkp
+* sektorit
+* projektit
+* ryhmat
+* ryhmat2 (+ tiedostot)
+ 
+
+2) kurssin/opintojakson poisto
+* äänestykset 
+* itsearvioinnit
+* palautteet
+* opiskelijankirja
+* keskusteluviestit + tykkäykset
+* tiedostot
+* kansiot
+* itseprojektit
+* itseprojektit_tasot
+* itsetehtavat
+* itsetehtavatkp
+* sektorit
+* projektit
+* ryhmat
+* ryhmat2 (+ tiedostot)
+
+
+3) kurssilta/opintojaksolta poistuminen 
+* äänestykset 
+* itsearvioinnit
+* opiskelijankirja
+* keskusteluviestit + tykkäykset
+* itsetehtavatkp
+* sektorit
+
+
+
+4) kurssilta/opintojaksolta poistaminen
+* äänestykset 
+* itsearvioinnit
+* opiskelijankirja
+* keskusteluviestit + tykkäykset
+* itsetehtavatkp
+* sektorit
+
+
+5) käyttäjän poisto
+kayttajankoulut
+kayttajat
+koulunadminit
+profiilikuva
+
+
+6) oma poistuminen
+kayttajankoulut
+kayttajat
+koulunadminit
+profiilikuva

@@ -1,0 +1,211 @@
+<?php
+ob_start();
+
+echo'<!DOCTYPE html><html> 
+<head>
+<title> Muokkaa</title>';
+
+include("yhteys.php");
+
+// server should keep session data for AT LEAST 1 hour
+// each client should remember their session id for EXACTLY 1 hour
+
+
+session_start(); // ready to go!
+
+
+if (isset($_SESSION["Kayttajatunnus"])) {
+    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
+        $_SESSION["KurssiNimi"] = $_POST[nimi];
+        $_SESSION["Koodi"] = $_POST[koodi];
+        $_SESSION["Koepvm"] = $_POST[koepvm];
+        $_SESSION["Koeaika"] = $_POST[koeaika];
+
+        $lukuvuosialku = $_POST[lukuvuosialku];
+        $lukuvuosiloppu = $_POST[lukuvuosiloppu];
+        $lukuvuosi = $lukuvuosialku . '-' . $lukuvuosiloppu;
+
+        $_SESSION["Lukuvuosi"] = $lukuvuosi;
+
+        if (isset($_POST['sallicd'])) {
+            $_SESSION["Sallicd"] = 1;
+        } else {
+            $_SESSION["Sallicd"] = 0;
+        }
+
+
+
+        include("kurssisivustonheader.php");
+
+
+
+        echo '<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; padding-bottom: 30px">';
+
+        echo'<nav class="topnav" id="myTopnav">
+	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '" class="currentLink">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
+	  
+	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+		
+';
+        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($rowa = $haeakt->fetch_assoc()) {
+
+            $kysakt = $rowa[kysakt];
+        }
+        if ($kysakt == 1) {
+            
+        } else {
+            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+        }
+
+
+        echo'
+	  <a href="keskustelut.php" >Keskustele</a> 
+	  <a href="osallistujat.php"   >Osallistujat</a>  	  
+	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></a>
+	</nav>';
+
+
+
+
+        echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+
+
+
+
+
+
+
+
+        echo'<div class="cm8-margin-top"></div>';
+
+
+        echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> <h2 style="padding-top: 0px"><br></h2>
+
+      
+
+
+
+ </div> ';
+        echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
+
+        $lukuvuosialku = $_POST[lukuvuosialku];
+        $lukuvuosiloppu = $_POST[lukuvuosiloppu];
+        $lukuvuosi = $lukuvuosialku . '-' . $lukuvuosiloppu;
+
+        if (!empty($_POST[alkupvm])) {
+            $originalDate = $_POST[alkupvm];
+            $newDate = date("Y-m-d", strtotime($originalDate));
+        } else {
+            $newDate = date("Y-m-d");
+        }
+        if (!empty($_POST[loppupvm])) {
+            $originalDate2 = $_POST[loppupvm];
+            $newDate2 = date("Y-m-d", strtotime($originalDate2));
+        } else {
+
+            $newDate2 = date('Y-m-d', strtotime($newDate . ' + 365 day'));
+        }
+
+        // prepare and bind
+        $stmt = $db->prepare("UPDATE kurssit SET nimi=?, koodi=?, avain=?, koulu_id=?, lukuvuosi=?, alkupvm=?, loppupvm=?, koepvm=?, koeaika=?, sallicd=? WHERE id=?");
+        $stmt->bind_param("sssisssssii", $nimi, $koodi, $avain, $koulu, $lukuvuosi, $alkupvm, $loppupvm, $koepvm, $koeaika, $sallicd, $id);
+        $nimi = $_POST[nimi];
+        $koodi = $_POST[koodi];
+        $avain = $_POST[avain];
+        $koulu = $_POST[kouluid];
+        $lukuvuosi = $lukuvuosi;
+        $alkupvm = $newDate;
+        $loppupvm = $newDate2;
+        $koepvm = $_POST[koepvm];
+        $koeaika = $_POST[koeaika];
+        $id = $_POST[id];
+
+        if (empty($koeaika)) {
+            $koeaika = '';
+        }
+        if (empty($koepvm)) {
+            $koepvm = '';
+        }
+
+
+
+
+
+        if (isset($_POST['sallicd'])) {
+            $sallicd = 1;
+            $_SESSION["Sallicd"] == 1;
+        } else {
+            $sallicd = 0;
+            $_SESSION["Sallicd"] == 0;
+        }
+
+
+        $stmt->execute();
+        $stmt->close();
+
+
+        //poisteteaan eka kaikki muut opet
+
+
+        if (!$result2 = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id <> '" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND kayttajat.rooli='opettaja' AND opiskelijankurssit.opiskelija_id = kayttajat.id")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+
+        while ($rivi2 = $result2->fetch_assoc()) {
+            $db->query("delete from opiskelijankurssit where opiskelija_id = '" . $rivi2[kaid] . "' AND kurssi_id='" . $_SESSION[KurssiId] . "'");
+        }
+
+
+        if (!empty($_POST["lista"])) {
+            $lista = $_POST["lista"];
+            foreach ($lista as $tuote) {
+
+
+
+
+                if (!$result = $db->query("select distinct * from opiskelijankurssit where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND opiskelija_id = '" . $tuote . "' ")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+
+                if ($result->num_rows == 0) {
+                    $db->query("insert into opiskelijankurssit (opiskelija_id, kurssi_id, ope) values ('" . $tuote . "','" . $_POST[id] . "', 1)");
+                } else {
+                    $db->query("update opiskelijankurssit set ope=1 where opiskelija_id = '" . $tuote . "' AND kurssi_id = '" . $_SESSION["KurssiId"] . "'");
+                }
+            }
+        }
+
+        echo'<b>Kurssitiedot muutettu!</b><br><br><a href="kurssi.php?id=' . $_POST[id] . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br>';
+    }
+} else {
+    $url = $_SERVER[REQUEST_URI];
+    $url = substr($url, 1);
+    $url = strtok($url, '?');
+    header("location: kirjautuminen.php?url=" . $url);
+}
+
+echo "</div>";
+echo "</div>";
+include("footer.php");
+?>
+</body>
+</html>			

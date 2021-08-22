@@ -18,7 +18,12 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     $kidmihin = $_POST[kidmihin];
     $kidmista = $_POST[kidmista];
-
+    if (!$haeinfo = $db->query("select distinct infoitsearviointi from kurssit where id='" . $kidmista . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+     while ($rowinfo = $haeinfo->fetch_assoc()) {
+            $info = $rowinfo[infoitsearviointi];
+        }
     $db->query("delete from ia_sarakkeet where kurssi_id = '" . $kidmihin . "'");
     if (!$haesarakkeet = $db->query("select distinct * from ia_sarakkeet where kurssi_id='" . $kidmista . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -54,7 +59,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $db->query("update ia set oncheckbox='" . $rowia[oncheckbox] . "' where id = '" . $iaiduusi . "'");
             $db->query("update ia set onteksti='" . $rowia[onteksti] . "' where id = '" . $iaiduusi . "'");
             $db->query("update ia set ia_sarakkeet_jarjestys='" . $rowia[ia_sarakkeet_jarjestys] . "' where id = '" . $iaiduusi . "'");
-
+ $db->query("update kurssit set infoitsearviointi='" . $info . "' where id = '" . $_SESSION[KurssiId] . "'");
             if ($rowia[onradio] == 1 || $rowia[oncheckbox]) {
 
                 if (!$haevaihtoehto = $db->query("select distinct * from iavaihtoehdot where ia_id='" . $iaidvanha . "'")) {

@@ -137,7 +137,14 @@ function myFunction(y) {
 
 
             echo'<div class="cm8-responsive">';
-            echo'<input type="submit" value="&#10003 Valitse" class="myButton9"  role="button"  style="padding:2px 4px; margin: 4px; font-size: 0.9em"><br><br>';
+      
+
+
+            echo'<input type="submit" value="&#10003 Tuo tämä kyselylomake" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 1em"><br><br>';
+
+        
+            
+            
             echo '<table  class="cm8-uusitableia" style="table-layout:fixed; max-width: 100%;"> ';
 
 
@@ -162,7 +169,7 @@ function myFunction(y) {
             echo'<input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '>';
             echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
             echo'<input type="hidden" name="kurssi" value=' . $_GET[id] . '>';
-            echo'<input type="submit" value="&#10003 Valitse" class="myButton9"  role="button"  style="padding:2px 4px; font-size: 0.9em">';
+           
             echo'</form>';
         }
 

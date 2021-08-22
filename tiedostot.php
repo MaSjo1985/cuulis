@@ -239,7 +239,7 @@ function myFunction(y) {
 
                 echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 20px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi kansio" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
 
-                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansio" class="myButton8"  role="button"  style="padding:4px 6px"></form><br><br>';
+                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="padding:4px 6px"></form><br><br>';
                 echo'<form action="poistakaikkikansiot_varmistus.php" method="post" style="margin-top: 20px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><button class="pieniroskis" title="Poista kaikki kansiot" style="font-size: 0.8em"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista kaikki kansiot</button></form><br><br>';
             }
 
@@ -278,7 +278,7 @@ function myFunction(y) {
                 echo'<br><em id="ohje">Sivustolle on mahdollista sisällyttää kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</em>';
                 echo'<div class="cm8-margin-top"></div>';
                 echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
-                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
+                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
             } else if ($onkokansio->num_rows == 1) {
                 while ($rowK = $onkokansio->fetch_assoc()) {
 
@@ -302,7 +302,7 @@ function myFunction(y) {
                 echo'<br><em id="ohje"> Sivustolle on mahdollista sisällyttää kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</em>';
                 echo'<div class="cm8-margin-top"></div>';
                 echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
-                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
+                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
             } else if ($onkokansio->num_rows > 0) {
                 echo'<br><br><b>Valitse haluamasi kansio.</b>';
             }
@@ -318,13 +318,16 @@ function myFunction(y) {
                 echo'<div> ';
                 echo'<h6tiedosto style="margin-right: 40px; padding: 6px 10px 6px 20px; "><p style="display: inline-block; padding:0px; margin: 0px">&#128194 &nbsp ' . $nimi . '</p>';
 
-                echo'<form action="muokkaakansio.php" method="post" style="margin-left: 60px;display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"  role="button" ></form>';
-                echo'<form action="varmistuskansio.php" method="post" style="display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><button class="roskis" title="Poista kansio"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista</b></i></button></form>';
+                echo'<form action="muokkaakansio.php" method="post" style="margin-left: 60px;display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><input type="submit" name="painike" value="&#9998" title="Muokkaa kansion nimeä" class="muokkausN"  role="button" style="font-size: 0.9em;" ></form>';
+                echo'<form action="varmistuskansio.php" method="post" style="display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><button class="roskis" title="Poista kansio" style="font-size: 1em"><i class="fa fa-trash-o" ></i></button></form>';
 
                 echo'</h6tiedosto>';
 
             
                 echo'</div>';
+        echo'<br><form action="lisaaopetiedosto.php" method="post" style="margin-top: 10px; display: inline-block; margin-right: 20px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Lisää uusi tiedosto" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
+
+                echo'<form action="tuoopetiedosto.php" method="get" style="display: inline-block; margin-top: 10px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Tuo tiedosto toisesta kurssista/opintojaksosta" class="myButton8"  role="button"  style="padding:4px 6px"></form><br>';
 
 
                 echo'<div class="cm8-margin-top"></div>';
@@ -386,15 +389,15 @@ function myFunction(y) {
 
 
                             if ($rowt[linkki] == 1) {
-                                echo'<form action="muokkaatiedosto.php" method="post" style="display: inline-block; margin-left: 20px; margin-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa tiedostoa" class="muokkausN"  role="button" ></form>';
+                                echo'<form action="muokkaatiedosto.php" method="post" style="display: inline-block; margin-left: 20px; margin-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="submit" name="painike" value="&#9998" title="Muokkaa tiedostoa" class="muokkausN"  role="button" ></form>';
                             }
                              if ($rowt[linkki] == 1) {
-                                 echo'<form action="poistaopetiedostovarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ><b class="poisto">&nbsp&nbsp Poista</b></i></button></form><br>';
+                                 echo'<form action="poistaopetiedostovarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form><br>';
                             
                                 
                              }
                             else{
-                                   echo'<form action="poistaopetiedostovarmistus.php" method="post" style="margin-left: 20px;display: inline-block"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ><b class="poisto">&nbsp&nbsp Poista</b></i></button></form><br>';
+                                   echo'<form action="poistaopetiedostovarmistus.php" method="post" style="margin-left: 20px;display: inline-block"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form><br>';
                             
                             }
 
@@ -476,8 +479,8 @@ function myFunction(y) {
                                 echo'<iframe src="' . $rowt[kuvaus] . '" frameborder="1" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
                             }
 
-                            echo'<form action="muokkaatiedosto.php" method="post" style="display: inline-block; margin-left: 20px; margin-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"  role="button"  ></form>';
-                            echo'<form action="poistaopetiedostovarmistus.php" method="post" style="display: inline-block; padding-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ><b class="poisto">&nbsp&nbsp Poista</b></i></button></form><br>';
+                            echo'<form action="muokkaatiedosto.php" method="post" style="display: inline-block; margin-left: 20px; margin-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="submit" name="painike" value="&#9998" title="Muokkaa" class="muokkausN"  role="button"  ></form>';
+                            echo'<form action="poistaopetiedostovarmistus.php" method="post" style="display: inline-block; padding-bottom: 0px"><input type="hidden" name="id" value=' . $rowt[id] . '><input type="hidden" name="kaid" value=' . $kid . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form><br>';
                         }
 
                         //TÄHÄN LOPPUU KOKO WHILE
@@ -487,10 +490,7 @@ function myFunction(y) {
                 }
                 echo'</div>';
             }
-              echo'<form action="lisaaopetiedosto.php" method="post" style="margin-top: 10px; display: inline-block; margin-right: 20px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Lisää uusi tiedosto" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
-
-                echo'<form action="tuoopetiedosto.php" method="get" style="display: inline-block; margin-top: 10px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Tuo tiedosto toisesta kurssista/opintojaksosta" class="myButton8"  role="button"  style="padding:4px 6px"></form><br>';
-
+      
         }
     } else {
 

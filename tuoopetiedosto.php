@@ -120,7 +120,7 @@ function myFunction(y) {
                 $id = $rowK[id];
 
                 if ($id == $_GET[kid]) {
-                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp ' . $nimi . '</a>';
+                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp ' . $nimi . '</a>';
                 } else {
 
                     echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128193 &nbsp ' . $nimi . '</a>';
@@ -145,7 +145,7 @@ function myFunction(y) {
 
  
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
-        echo'<h8>Tuo tiedostoja</h8><br><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        echo'<h8>Tuo tiedostoja toisesta kurssista/opintojaksosta</h8><br><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
         $field = 'koodi';
 
@@ -252,10 +252,11 @@ function myFunction(y) {
         }
 
         if ($result->num_rows == 0)
-            echo"<br><em>Ei kursseja/opintojaksoja.</em><br>";
+            echo'<p id="ohje"><b style="font-size: 1.1em">Ei kursseja/opintojaksoja</b></p>';
+
         else {
 
-            echo'<p id="ohje"><em>Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda tiedostoja.</em></p>';
+            echo'<p id="ohje"><b style="font-size: 1.1em">Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda tiedostoja.</b></p>';
 
             echo "<br>";
             echo'<div class="cm8-responsive">';

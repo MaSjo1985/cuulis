@@ -2,7 +2,7 @@
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Tuo kansio </title>';
+<title> Tuo kansioita </title>';
 
 include("yhteys.php");
 
@@ -143,7 +143,8 @@ function myFunction(y) {
  </div>
 
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
-        echo'<h8>Tuo kansioita</h8><br><br><a href="tuokansio.php?kid=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        
+        echo'<h8>Tuo kansioita toisesta kurssista/opintojaksosta</h8><br><br><a href="tuokansio.php?kid=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
         if (!$haetiedostot = $db->query("select * from kansiot where kurssi_id='" . $_GET[id] . "' order by nimi asc")) {
@@ -153,7 +154,7 @@ function myFunction(y) {
 
         if ($haetiedostot->num_rows == 0) {
 
-            echo'<br><em>Kurssille ei ole lisätty kansioita.</em><br>';
+          echo'<p id="ohje"><b style="font-size: 1.1em">Kurssille ei ole lisätty kansioita.</b></p>';
         } else {
             $numeric1 = 0;
             $numeric3 = 0;
@@ -192,7 +193,7 @@ function myFunction(y) {
 
 
 
-            echo'<p id="ohje">Valitse, mitkä kansiot haluat tuoda.</p>';
+            echo'<p id="ohje"><b style="font-size: 1.1em">Valitse, mitkä kansiot haluat tuoda.</b></p>';
 
             $jaljella = $haetiedostot->num_rows;
             echo'<div class="cm8-margin-top"></div>';
@@ -249,7 +250,7 @@ function myFunction(y) {
             echo'<input type="hidden" name="kid" value=' . $_GET[kid] . '>';
             echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
             ;
-            echo'<input type="submit" value="&#10003 Lisää" class="myButton9"  role="button"  style="padding:2px 4px">';
+            echo'<input type="submit" value="&#10003 Tuo nämä kansiot" class="myButton9"  role="button"  style="padding:4px 6px">';
             echo'</form>';
         }
         echo'</div>';

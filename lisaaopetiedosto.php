@@ -117,7 +117,7 @@ function myFunction(y) {
                 $id = $rowK[id];
 
                 if ($id == $_POST[kid]) {
-                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp <b>' . $nimi . '</b></a>';
+                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp <b>' . $nimi . '</b></a>';
                 } else {
 
                     echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128193 &nbsp ' . $nimi . '</a>';
@@ -141,9 +141,9 @@ function myFunction(y) {
  </div>
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
         if (isset($_POST[kid])) {
-            echo'   <h6 style="font-size: 1.2em; color: #f7f9f7">Valitse, millaisen materiaalin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo'   <h6 style="font-size: 1.2em;  color: #c7ef00;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         } else {
-            echo' <h6 style="font-size: 1.2em; color: #f7f9f7">Valitse, millaisen materiaalin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo' <h6 style="font-size: 1.2em; color: #c7ef00;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         }
 
 

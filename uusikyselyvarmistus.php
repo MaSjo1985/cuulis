@@ -96,7 +96,7 @@ function myFunction(y) {
         while ($rowt = $haeid->fetch_assoc()) {
             $id = $rowt[id];
 
-            if (!$haeonko = $db->query("select distinct id from kyselytkp where kyselyt_id='" . $id . "' AND teksti <> ''")) {
+            if (!$haeonko = $db->query("select distinct kyselytkp.id as id from kayttajat, kyselytkp where kayttajat.rooli='opiskelija' AND kayttajat.id=kyselytkp.kayttaja_id AND kyselyt_id='" . $id . "' AND teksti <> ''")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($haeonko->num_rows != 0) {
@@ -108,19 +108,18 @@ function myFunction(y) {
         if ($loyty == 1) {
             echo '<p style="font-weight: bold; color: #c7ef00" >Lomakkeeseen on tullut jo vastauksia.</p>';
             echo '<p style="font-weight: bold; color: #c7ef00" >Annettuja vastauksia ei poisteta, kun muokkaat lomaketta, mikä voi vääristää vastausten tarkastelua.</p>';
+  
+            echo '<p style="font-weight: bold; display: inline-block; margin-right: 40px" >Voit tarkastella ja poistaa annetut vastaukset tästä: </p>';
+            echo'<form action="tarkastelekyselyt.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" style="font-size: 0.8em; padding: 4px 6px" title="Katso vastaukset" value="🕵 Katso vastaukset" class="myButton8"  role="button" ></form>';
 
-            echo'<div class="cm8-responsive" style="display: inline-block; margin-right: 100px; margin-top: 0px; padding:0px">';
-            echo '<p style="margin-top: 0px; padding-top: 0px;font-weight: bold;" >Haluatko silti muokata lomaketta?</p>';
+            echo'<div class="cm8-responsive">';
+            echo '<br><p style="font-weight: bold;" >Haluatko joka tapauksessa muokata lomaketta?</p>';
 
             echo '<a href="uusikysely.php" class="myButton9"  role="button"  style="margin-right: 30px">Kyllä</a>';
             echo '<a href="kysely.php" class="myButton9"  role="button"  style="margin-right: 30px">En</a><br>';
 
             echo'</div>';
-            echo'<div class="cm8-responsive" style="display: inline-block; margin: 0px; padding: 0px">';
-            echo '<p style="font-weight: bold;" >Tai voit ensin tarkastella annettuja vastauksia: </p>';
-            echo'<form action="tarkastelekyselyt.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" style="font-size: 0.8em; padding: 4px 6px" title="Katso vastaukset" value="🕵 Katso vastaukset" class="myButton8"  role="button" ></form>';
-
-            echo'</div>';
+         
         } else {
             header("location: uusikysely");
         }

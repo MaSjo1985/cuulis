@@ -119,7 +119,7 @@ function myFunction(y) {
                 $id = $rowK[id];
 
                 if ($id == $_GET[kid]) {
-                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp ' . $nimi . '</a>';
+                    echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128194 &nbsp ' . $nimi . '</a>';
                 } else {
 
                     echo'<a href="tiedostot.php?k=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">&#128193 &nbsp ' . $nimi . '</a>';
@@ -143,16 +143,18 @@ function myFunction(y) {
  </div>
 
      <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
-        echo'<h8>Tuo tiedostoja</h8><br><br><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        
+        echo'<h8>Tuo tiedostoja toisesta kurssista/opintojaksosta</h8><br><br><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
         if (!$haetiedostot = $db->query("select tiedostot.omatallennusnimi as omatallennusnimi,tiedostot.linkki as linkki, tiedostot.kuvaus as kuvaus, tiedostot.id as id from kansiot, tiedostot where kansiot.kurssi_id='" . $_GET[id] . "' AND tiedostot.kansio_id=kansiot.id order by omatallennusnimi")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         if ($haetiedostot->num_rows == 0) {
 
-            echo'<br><em>Kurssille ei ole lisätty tiedostoja.</em><br>';
+            echo'<p id="ohje"><b style="font-size: 1.1em">Kurssille ei ole lisätty tiedostoja</b></p>';
+
         } else {
-            echo'<p id="ohje">Valitse, mitkä tiedostot haluat tuoda.</p>';
+            echo'<p id="ohje"><b style="font-size: 1.1em">Valitse, mitkä tiedostot haluat tuoda.</b></p>';
 
             $jaljella = $haetiedostot->num_rows;
             echo'<div class="cm8-margin-top"></div>';
@@ -228,7 +230,7 @@ function myFunction(y) {
             echo'<input type="hidden" name="kid" value=' . $_GET[kid] . '>';
             echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
             ;
-            echo'<input type="submit" value="&#10003 Lisää" class="myButton9"  role="button"  style="padding:2px 4px">';
+            echo'<input type="submit" value="&#10003 Tuo nämä tiedostot" class="myButton9"  role="button"  style="padding:4px 6px">';
             echo'</form>';
         }
 

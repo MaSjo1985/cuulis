@@ -2,7 +2,7 @@
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Tuo kansio</title>';
+<title> Tuo kansioita</title>';
 
 include("yhteys.php");
 
@@ -146,7 +146,7 @@ function myFunction(y) {
 
  
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
-        echo'<h8>Tuo kansio toisesta kurssista/opintojaksosta</h8><br><br><a href="tiedostot.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        echo'<h8>Tuo kansioita toisesta kurssista/opintojaksosta</h8><br><br><a href="tiedostot.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
         $field = 'koodi';
 
@@ -253,10 +253,10 @@ function myFunction(y) {
         }
 
         if ($result->num_rows == 0)
-            echo"<br><em>Ei kansioita.</em><br>";
+           echo'<p id="ohje"><b style="font-size: 1.1em">Ei kursseja</b></p>';
         else {
 
-            echo'<p id="ohje"><em>Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda kansion.</em></p>';
+            echo'<p id="ohje"><b style="font-size: 1.1em">Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda kansion.</b></p>';
 
             echo "<br>";
             echo'<div class="cm8-responsive">';

@@ -109,8 +109,11 @@ function myFunction(y) {
 
         echo'<div style="text-align: center">';
 
-        echo'<form action="tuokyselylomake.php" method="get" style="display: inline-block; font-size: 1.1em"><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9850;&nbsp&nbsp Tuo lomake toisesta kurssista/opintojaksosta" class="myButtonTuo"  role="button"></form>';
+        if($onko == 0){
+                echo'<form action="tuokyselylomake.php" method="get" style="display: inline-block; font-size: 1.1em"><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9850;&nbsp&nbsp Tuo lomake toisesta kurssista/opintojaksosta" class="myButtonTuo"  role="button"></form>';
 
+        }
+    
         echo'</div>';
         echo'<div class="cm8-responsive">';
         echo'<br><br><form action="lahetakyselylomake.php" method="post">';

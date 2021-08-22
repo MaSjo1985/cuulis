@@ -155,7 +155,7 @@ function myFunction(y) {
 
 
             $jaljella = $haeuusiprojekti->num_rows;
-            echo'<div style="text-align: center; margin: 0px; padding:0px">';
+            echo'<div style="margin: 0px; padding:0px">';
 
 
 
@@ -176,9 +176,15 @@ function myFunction(y) {
                 if (!$haetehtavat = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipiduusi . "' ORDER BY jarjestys")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
+                
+               echo'<div style="text-align: center">';
 
                 echo '<h2 style="margin-top: 20px; margin-bottom: 10px; color: #48E5DA">' . $rowP2[kuvaus] . '</h2>';
-                echo'<br><input type="submit" value="&#10003 Lisää"  id="tanne' . $maara . '" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em"><br>';
+                
+                echo'</div>';
+                
+                 echo'<p style="color: #c7ef00; font-weight: bold">Valitse ensin ne tehtävät, jotka haluat tuoda.</p>';
+                echo'<input type="submit" value="&#10003 Lisää nämä tehtävät"  id="tanne' . $maara . '" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em"><br>';
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable" class="cm8-uusitableitse" style="font-size: 0.9em; width: 99%"><thead>';
                 if ($_GET['kaikki'] == $rowP2[id]) {
@@ -234,7 +240,7 @@ function myFunction(y) {
                 echo'<input type="hidden" name="id" value=' . $ipid . '>';
                 echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
 
-                echo'<input type="submit" value="&#10003 Lisää" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em">';
+                echo'<input type="submit" value="&#10003 Lisää nämä tehtävät" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em">';
                 echo'</form>';
 
                 $jaljella--;

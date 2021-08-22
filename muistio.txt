@@ -1,22 +1,24 @@
+* kun kurssiaikataulussa "Valitse kaikki" / "Tyhjennää valinnat" , niin muokkaus ei tallennu!
+
+SAMA JUTTU VARMAA TEHTÄVÄLUETTELOSSA...
+
+->  PITÄÄKÖ LAITTAA valitse kaikki/tyhjennä valinnat-linkki eka tallennussivun kautta?!
+
+*****************************************************************************************************'
+
+SEARCH-juttu lagaa
+
+*******************************************************************************
+
 PALAUTUSTEN AUKEAMINEN -> OPEN TOIMINTO KOMMENTOITU POIS
 
 -> PITÄÄ LAITTAA VAIKUTUS OPISKELIJAN PALAUTUKSEEN
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-* nappuloiden hifistely saa jatkua
 
-* tiedosto sivu on epäselvä
-
-* kun tuo tehtäviä/kansioita: NÄKYMÄ OUTO +  eikä valitse mitään niin id katoaa
-
-* kun kurssiaikataulussa "Valitse kaikki" / "Tyhjennää valinnat" , niin muokkaus ei tallennu!
-
-* poista titleistä sana Cuulis - 
 
 * opiskelijalle mahis ottaa tuloste itsearviointilomakkeesta, excel varmaa ok?
-
-
 
 **************************
 

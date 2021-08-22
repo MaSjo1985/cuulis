@@ -13,6 +13,13 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     $kurssi = $_POST[kurssi];
+    
+      if (!$haeinfo = $db->query("select distinct kyselyinfo from kurssit where id='" . $kurssi . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+     while ($rowinfo = $haeinfo->fetch_assoc()) {
+            $info = $rowinfo[kyselyinfo];
+        }
     if (!$haetehtavat = $db->query("select distinct * from kyselyt where kurssi_id='" . $kurssi . "' ORDER BY jarjestys")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
@@ -33,7 +40,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $db->query("update kyselyt set otsikko='" . $rowT[otsikko] . "' where id = '" . $tehtavaid . "'");
         $db->query("update kyselyt set pakollinen='" . $rowT[pakollinen] . "' where id = '" . $tehtavaid . "'");
         $db->query("update kyselyt set jarjestys='" . $rowT[jarjestys] . "' where id = '" . $tehtavaid . "'");
-
+ $db->query("update kurssit set kyselyinfo='" . $info . "' where id = '" . $_SESSION[KurssiId] . "'");
 
         //OPISKELIJOIDEN TIETOIHIN
 

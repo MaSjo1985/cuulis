@@ -1,6 +1,21 @@
+OPISKELIJAN ITSEARVIOINTI:
+
+* Tallennus ei onnistu!!
+
+* KOKO ULKOASU!!
+
+* Jos ei voi muokata ja tyhjä niin ei näytetä "Ei valintaa"
+
+
+***********************************************************
+
+* opiskelija katoaa kurssilta!!
+
+* opettajan itsearviointikommentti isommaksi opiskelijalle
+
 * kun kurssiaikataulussa "Valitse kaikki" / "Tyhjennää valinnat" , niin muokkaus ei tallennu!
 
-SAMA JUTTU VARMAA TEHTÄVÄLUETTELOSSA...
+SAMA JUTTU VARMAA TEHTÄVÄLUETTELOSSA...?!
 
 ->  PITÄÄKÖ LAITTAA valitse kaikki/tyhjennä valinnat-linkki eka tallennussivun kautta?!
 

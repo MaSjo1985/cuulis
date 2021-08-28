@@ -502,28 +502,35 @@ function myFunction(y) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
 
-                    if ($haekommenttieka->num_rows != 0) {
                         if (!$haekommentti = $db->query("select distinct * from iakommentit where ia_sarakkeet_jarjestys = '" . $sid . "' AND kurssi_id='" . $_SESSION["KurssiId"] . "' AND kayttaja_id='" . $_SESSION[Id] . "' && tallennettu = 1")) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
+                        
+                        
                         $kommentti = '';
                         while ($rowkom = $haekommentti->fetch_assoc()) {
                             $kommentti = $rowkom[kommentti];
                         }
-
+                   
                         if ($kommentti != NULL || $kommentti != '') {
+                                
+                            echo'<div style="padding: 0px; margin: 0px; text-align: center">';
+                            echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
 
-                            echo'<p style="margin-bottom: 5px;font-size: 0.7em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
+                            echo'<div style="text-align: left;width: 80%;padding: 10px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.8em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: #f7f9f7">' . $kommentti . '</div><br><br>';
+                            echo'</div>';
+                            } else {
+                            
+                            echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #080708;">Opettajan kommentit tästä sarakkeesta: </p>';
 
-                            echo'<div style="width: 80%;padding: 6px; height: 60px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: #f7f9f7">' . $kommentti . '</div>';
-                        } else {
-                            echo'<p style="margin-bottom: 5px;font-size: 0.7em; font-weight: bold; color:  #080708;">Opettajan kommentit tästä sarakkeesta: </p>';
+                          
+                            echo'<div style="width: 100%;padding: 6px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #080708; border-radius: 10px; color: #080708; background-color: #080708">' . $kommentti . '</div><br><br>';
+                     
+                            
+                            }
+                    
 
-                            echo'<div style="width: 80%; height: 60px; overflow: auto;margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em; padding: 6px; border: 2px solid  #080708; border-radius: 10px; color: #080708; ">' . $kommentti . '</div>';
-                        }
-                    }
-
-
+                             
                     if (!$haetehtavat = $db->query("select distinct * from ia where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys='" . $sid . "' ORDER BY jarjestys")) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
@@ -533,28 +540,29 @@ function myFunction(y) {
                     if ($avautuu != NULL) {
 
                         if ($avautuu > $nyt) {
-                            echo'<p style="font-size: 0.7em; color:#c7ef00; font-weight: bold">Tämä osio avautuu ';
+                            echo'<p style="margin: 0px; font-size: 0.7em; color:#c7ef00; font-weight: bold">Tämä osio avautuu ';
                         } else {
-                            echo'<p style="font-size: 0.7em; color: #c7ef00; font-weight: bold">Tämä osio avautui ';
+                            echo'<p style="margin: 0px; font-size: 0.7em; color: #c7ef00; font-weight: bold">Tämä osio avautui ';
                         }
 
                         echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '</p>';
                     } else {
-                        echo'<p style="font-size: 0.7em; font-weight: bold">&nbsp&nbsp&nbsp</p>';
+                        echo'<p style="margin: 0px; font-size: 0.7em; font-weight: bold">&nbsp&nbsp&nbsp</p>';
                     }
 
                     if ($sulkeutuu != NULL) {
 
                         if ($sulkeutuu > $nyt) {
-                            echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio sulkeutuu ';
+                            echo'<p style="margin: 5px 0px 8px 0px; font-size: 0.7em; color:red; font-weight: bold">Tämä osio sulkeutuu ';
                         } else {
-                            echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio on sulkeutunut ';
+                            echo'<p style="margin: 5px 0px 8px 0px; ; font-size: 0.7em; color:red; font-weight: bold">Tämä osio on sulkeutunut ';
                         }
 
                         echo'&nbsp&nbsp&nbsp' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                     } else {
-                        echo'<p style="font-size: 0.7em; font-weight: bold">&nbsp&nbsp&nbsp</p>';
+                        echo'<p style="margin: 5px 0px 8px 0px; font-size: 0.7em; font-weight: bold">&nbsp&nbsp&nbsp</p>';
                     }
+                   
 
                     echo '<table id="mytable2" class="cm8-uusitableiauusi" style="margin-bottom: 10px; width: 100%;" ><thead>';
 

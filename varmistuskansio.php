@@ -166,7 +166,7 @@ function myFunction(y) {
             $tuotu = $row3[tuotu];
             $linkki = $row3[linkki];
             if ($tuotu == 0 && $linkki == 0) {
-                if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $tnimi . "'")) {
+                if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $tnimi . "' AND linkki=0")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
                 if ($result2->num_rows > 1) {

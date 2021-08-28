@@ -230,9 +230,13 @@ function myFunction(y) {
                             echo'<br>id: ' . $id;
                         }
 
-//nimi, kohde = vanha, nimi
+//nimi, kohde = vanha, 
+//
+                        
+                        
                         $db->query("update tiedostot set nimi='" . $kohde . "' where id = '" . $id . "'");
                         $db->query("update tiedostot set omatallennusnimi='" . $nimi[$j] . "' where id = '" . $id . "'");
+                       
                     }
 
 

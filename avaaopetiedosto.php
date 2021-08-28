@@ -148,7 +148,6 @@ function myFunction(y) {
         $vanhanimi = $row[omatallennusnimi];
     }
 
-
     if (file_exists($nimi)) {
         if (preg_match("/Edge\/1(2|3|4)\./", getenv('HTTP_USER_AGENT'))) {
             $pituus = strlen($nimi);

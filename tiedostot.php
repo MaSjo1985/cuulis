@@ -325,9 +325,9 @@ function myFunction(y) {
 
             
                 echo'</div>';
-        echo'<br><form action="lisaaopetiedosto.php" method="post" style="margin-top: 10px; display: inline-block; margin-right: 20px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Lisää uusi tiedosto" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
+        echo'<br><form action="lisaaopetiedosto.php" method="post" style="margin-top: 10px; display: inline-block; margin-right: 20px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Lisää uusi tiedosto/linkki" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
 
-                echo'<form action="tuoopetiedosto.php" method="get" style="display: inline-block; margin-top: 10px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Tuo tiedosto toisesta kurssista/opintojaksosta" class="myButton8"  role="button"  style="padding:4px 6px"></form><br>';
+                echo'<form action="tuoopetiedosto.php" method="get" style="display: inline-block; margin-top: 10px" ><input type="hidden" name="kid" value=' . $kid . '> <input type="submit" value="+ Tuo tiedosto/linkki toisesta kurssista/opintojaksosta" class="myButton8"  role="button"  style="padding:4px 6px"></form><br>';
 
 
                 echo'<div class="cm8-margin-top"></div>';

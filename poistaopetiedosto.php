@@ -24,14 +24,16 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     while ($row = $result->fetch_assoc()) {
         $nimi = $row[nimi];
+         $omatallennusnimi = $row[omatallennusnimi];
         $tuotu = $row[tuotu];
         $kuvaus = $row[kuvaus];
         $linkki = $row[linkki];
     }
 
+    $tiedostonimi = 'tiedostot/'.$omatallennusnimi;
     if ($tuotu == 0 && $linkki == 0) {
-        if (file_exists($nimi)) {
-            unlink($nimi);
+        if (file_exists($tiedostonimi)) {
+            unlink($tiedostonimi);
         }
     }
     if (!$result8 = $db->query("select distinct * from tiedostot where id = '" . $_GET[id] . "' AND tuotu=0")) {
@@ -42,7 +44,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     if ($result8->num_rows > 0) {
         if ($linkki == 0) {
-            if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $nimi . "' AND tuotu=1")) {
+            if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $nimi . "' AND tuotu=1 AND linkki=0")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result2->num_rows > 0) {

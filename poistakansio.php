@@ -18,21 +18,25 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     if (!$result6 = $db->query("select distinct * from tiedostot where kansio_id = '" . $_GET[id] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
-
+ 
 
     while ($rowk = $result6->fetch_assoc()) {
 
-        if (!$result3 = $db->query("select distinct * from tiedostot where kansio_id = '" . $rowk[id] . "'")) {
+        if (!$result3 = $db->query("select distinct * from tiedostot where kansio_id = '" . $_GET[id] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
+    
         while ($row3 = $result3->fetch_assoc()) {
+           
             $nimi3 = $row3[nimi];
             $tuotu = $row3[tuotu];
+            $omatallennusnimi = $row3[omatallennusnimi];
             $kuvaus = $row3[kuvaus];
             $linkki = $row3[linkki];
+           $tiedostonimi = 'tiedostot/'.$omatallennusnimi;
             if ($tuotu == 0 && $linkki == 0) {
-                if (file_exists($nimi3)) {
-                    unlink($nimi3);
+                if (file_exists($tiedostonimi)) {
+                    unlink($tiedostonimi);
                 }
             }
             if (!$result8 = $db->query("select distinct * from tiedostot where id = '" . $row3[id] . "' AND tuotu=0")) {
@@ -42,7 +46,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
             if ($result8->num_rows > 0) {
                 if ($linkki == 0) {
-                    if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $nimi3 . "' AND tuotu=1")) {
+                    if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $nimi3 . "' AND tuotu=1 AND linkki=0")) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
 
@@ -60,8 +64,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
     }
 //sitten poistetaan kansio
-
-    $db->query("delete from kansiot where id = '" . $_GET[id] . "'");
+ $db->query("delete from kansiot where id = '" . $_GET[id] . "'");
 
 
     header('location: tiedostot.php');

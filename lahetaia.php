@@ -109,6 +109,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     if (isset($_POST["painikep"])) {
 
+
         $lista2 = $_POST["id"];
         $lista3 = $_POST["otsikko"];
         $lista4 = $_POST["kysymys"];
@@ -233,7 +234,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
         $stmt->close();
-        header("location: uusi_ia.php?id=" . $_POST[ipid] . "&monesko=" . $_POST[monesko] . "#tanne");
+$sid=$_POST["painikep"];
+        header("location: uusi_ia.php?#poistopaluu".$sid);
     }
 
 
@@ -432,14 +434,20 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
         $stmt2->close();
+       if (!$monta = $db->query("select distinct * from ia  where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys='".$sid."'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
 
-        if (isset($_POST["jarjestys"])) {
-
-            $paluu = $_POST[jarjestys] - 1;
-
-            header('location: uusi_ia.php?&monesko=' . $paluu . '#' . $paluu);
-        } else {
-            header('location: uusi_ia.php?&vikao=1&monesko=' . $mihin . '#tanne');
+        if($monta -> num_rows ==1){
+                   
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php'); 
+        }
+        else{
+                 
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);   
         }
     }
     if (isset($_POST["painikelr"])) {
@@ -607,14 +615,20 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
         $stmt2->close();
+       if (!$monta = $db->query("select distinct * from ia  where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys='".$sid."'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
 
-        if (isset($_POST["jarjestys"])) {
-
-            $paluu = $_POST[jarjestys] - 1;
-
-            header('location: uusi_ia.php?&monesko=' . $paluu . '#' . $paluu);
-        } else {
-            header('location: uusi_ia.php?&vikao=1&monesko=' . $mihin . '#tanne');
+        if($monta -> num_rows ==1){
+                   
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php'); 
+        }
+        else{
+                 
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);   
         }
     }
     if (isset($_POST["painikelc"])) {
@@ -786,19 +800,25 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
         $stmt2->close();
+               if (!$monta = $db->query("select distinct * from ia  where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys='".$sid."'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
 
-        if (isset($_POST["jarjestys"])) {
-
-            $paluu = $_POST[jarjestys] - 1;
-
-            header('location: uusi_ia.php?&monesko=' . $paluu . '#' . $paluu);
-        } else {
-            header('location: uusi_ia.php?&vikao=1&monesko=' . $mihin . '#tanne');
+        if($monta -> num_rows ==1){
+                   
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php'); 
+        }
+        else{
+                 
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);   
         }
     }
     if (isset($_POST["painikelo"]) || isset($_POST["painikeloy"])) {
 
-
+  
         if (isset($_POST["painikelo"])) {
             $sid = $_POST["painikelo"];
             $sid = substr($sid, 27);
@@ -822,7 +842,16 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         $lista2 = $_POST["id"];
 
+        if (!$haemax = $db->query("select distinct MAX(jarjestys) as jarjestys from ia  where ia_sarakkeet_jarjestys='".$sid."' AND kurssi_id = '" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
 
+
+        while ($rowmax = $haemax->fetch_assoc()) {
+
+            $vanhamax = $rowmax[jarjestys];
+            
+        }
 
         for ($i = 0; $i < $maara; $i++) {
             if (!$haeaihe = $db->query("select distinct * from ia  where id='" . $lista2[$i] . "'")) {
@@ -952,34 +981,39 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $jarjestys = $uusijarjestys;
 
         $stmt2->execute();
-
-
-
-
-
-
-        if (!$haevika = $db->query("select distinct * from ia  where kurssi_id = '" . $_SESSION["KurssiId"] . "'")) {
+        $stmt2->close();
+        
+        if (!$haemax2 = $db->query("select distinct MAX(jarjestys) as jarjestys from ia  where ia_sarakkeet_jarjestys='".$sid."' AND kurssi_id = '" . $_SESSION["KurssiId"] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
 
-        while ($rowP = $haevika->fetch_assoc()) {
+        while ($rowmax2 = $haemax2->fetch_assoc()) {
 
-            $id = $rowP[id];
-            $mihin = $rowP[jarjestys];
+            $uusinmax = $rowmax2[jarjestys];
+        }
+   
+       
+        
+        if (!$monta = $db->query("select distinct * from ia  where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys='".$sid."'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
+
+        if($monta -> num_rows ==1){
+                   
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php'); 
+        }
+        else if($uusinmax-1 != $vanhamax){
+             header('location: uusi_ia.php?#pj' . $vanhamax); 
+        }
+        else{
+                 
+ $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);   
         }
 
-
-        $stmt2->close();
-
-        if (isset($_POST["jarjestys"])) {
-
-            $paluu = $_POST[jarjestys] - 1;
-
-            header('location: uusi_ia.php?&monesko=' . $paluu . '#' . $paluu);
-        } else {
-            header('location: uusi_ia.php?&vikao=1&monesko=' . $mihin . '#tanne');
-        }
     }
 
     if (isset($_POST["painikeus"])) {
@@ -995,7 +1029,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $db->query("insert into ia_sarakkeet (kurssi_id, jarjestys) values('" . $_SESSION["KurssiId"] . "', '" . $jarjestys . "')");
 
 
-        header('location: uusi_ia.php?id=' . $_POST[ipid] . '&vikat=1&monesko=' . $mihin . '#tanne');
+        header('location: uusi_ia.php');
     }
     if (isset($_POST["painikeps"])) {
         $lista2 = $_POST["id"];
@@ -1125,7 +1159,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             echo'<br>jarjestys lopussa ' . $jarj;
             $monta--;
         }
-        header('location: uusi_ia.php?id=' . $_POST[ipid] . '&vikat=1&monesko=' . $mihin . '#tanne');
+        header('location: uusi_ia.php');
     }
 
     if (isset($_POST["painikeprv"])) {
@@ -1221,7 +1255,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
             while ($rowP = $haeia->fetch_assoc()) {
-
+                $iaid=$rowP[ia_id];
                 if (!$haejarj = $db->query("select distinct * from ia  where id='" . $rowP[ia_id] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
@@ -1238,8 +1272,18 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         $stmt->close();
-        $sid = $sid - 1;
-        header('location: uusi_ia.php?&monesko=' . $sid . '#' . $sid);
+        
+           if (!$haejarj = $db->query("select distinct * from ia  where id='" . $iaid . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+             while ($rowJ = $haejarj->fetch_assoc()) {
+                 $jarjestys=$rowJ[jarjestys];
+             }
+            
+       $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);
+     
+       
     }
     if (isset($_POST["painikepcv"])) {
 
@@ -1333,7 +1377,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
             while ($rowP = $haeia->fetch_assoc()) {
-
+                $iaid=$rowP[ia_id];
                 if (!$haejarj = $db->query("select distinct * from ia  where id='" . $rowP[ia_id] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
@@ -1345,12 +1389,16 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             }
             $db->query("delete from iavaihtoehdot where id = '" . $id . "'");
         }
-
-
-
-        $stmt->close();
-        $sid = $sid - 1;
-        header('location: uusi_ia.php?&monesko=' . $sid . '#' . $sid);
+ $stmt->close();
+           if (!$haejarj = $db->query("select distinct * from ia  where id='" . $iaid . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+             while ($rowJ = $haejarj->fetch_assoc()) {
+                 $jarjestys=$rowJ[jarjestys];
+             }
+            
+        $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?#pj' . $jarjestys);
     }
 
 
@@ -1475,11 +1523,13 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         while ($rowj = $haejarj->fetch_assoc()) {
-            $sid = $rowj[jarjestys];
+            $jarjestys = $rowj[jarjestys];
         }
-        $sid = $sid - 1;
 
-        header('location: uusi_ia.php?&monesko=' . $sid . '#' . $sid);
+
+            
+       $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?focus='.$teid.'#pj' . $jarjestys);
     }
     if (isset($_POST["painikelcv"])) {
 
@@ -1595,13 +1645,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
 
-
         $stmt->close();
-
-
-
-
-
 
 
         if (!$haejarj = $db->query("select distinct * from ia  where id='" . $sid . "'")) {
@@ -1612,7 +1656,17 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
         $sid = $sid - 1;
 
-        header('location: uusi_ia.php?&monesko=' . $sid . '#' . $sid);
+         if (!$haejarj = $db->query("select distinct * from ia  where id='" . $sid . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        while ($rowj = $haejarj->fetch_assoc()) {
+            $jarjestys = $rowj[jarjestys];
+        }
+
+
+            
+       $jarjestys=$jarjestys - 1;
+        header('location: uusi_ia.php?focus='.$teid.'#pj' . $jarjestys);
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

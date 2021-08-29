@@ -1,17 +1,12 @@
-OPISKELIJAN ITSEARVIOINTI:
+ITSEARVIOINTILOMAKE:
 
-* Tallennus ei onnistu!!
-
-* KOKO ULKOASU!!
-
-* Jos ei voi muokata ja tyhjä niin ei näytetä "Ei valintaa"
-
+* TESTAA KAIKKI KUN OPE TARKASTELEE IA:T
 
 ***********************************************************
 
 * opiskelija katoaa kurssilta!!
 
-* opettajan itsearviointikommentti isommaksi opiskelijalle
+*******************************************************************
 
 * kun kurssiaikataulussa "Valitse kaikki" / "Tyhjennää valinnat" , niin muokkaus ei tallennu!
 

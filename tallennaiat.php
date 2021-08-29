@@ -143,12 +143,12 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $db->query("update iakp set tallennettu=0 where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'");
             $db->query("update iakp set muokattu=NULL where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'");
 
-            if ($rowt2[onradio] == 1) {
-                $db->query("update iakp set iavaihtoehdot_id=0 where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'");
-            }
-            if ($rowt2[oncheckbox] == 1) {
-                $db->query("delete from iakp_moni where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION[Id] . "'");
-            }
+//            if ($rowt2[onradio] == 1) {
+//                $db->query("update iakp set iavaihtoehdot_id=0 where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'");
+//            }
+//            if ($rowt2[oncheckbox] == 1) {
+//                $db->query("delete from iakp_moni where ia_id = '" . $rowt2[id] . "' AND kayttaja_id='" . $_SESSION[Id] . "'");
+//            }
         }
     }
     header("location: ia.php#palaa");

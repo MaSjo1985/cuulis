@@ -156,7 +156,7 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
         while ($rows = $haesarakkeet->fetch_assoc()) {
             $smaara--;
 
-            echo'<div class="cm8-responsive" style="vertical-align: top; margin: 0px; padding:0px; width:' . $divleveys . '%; display: inline-block">';
+            echo'<div class="cm8-responsive" style="overflow: hidden; vertical-align: top; margin: 0px; padding:0px; width:' . $divleveys . '%; display: inline-block">';
             $sid = $rows[jarjestys];
 
 
@@ -186,9 +186,9 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                 }
             } else {
                 if ($sarakkeita > 1) {
-                    echo '<tr style="border: 1px solid grey; background-color: #48E5DA"><th style="border-right: 1px solid grey;text-align: center "><button class="roskis" title="Poista" style="font-size: 0.8em; margin-left: 0px" name="painikep"><i class="fa fa-trash-o" style="display: inline-block;"></i>&nbspPoista</button></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painikeps" value="Poista sarake ' . $sid . '" class="myButton8"  role="button" style="padding: 4px 6px; font-size: 0.9em"></th><th style="text-align: center; font-size:0.5em">Lisää<br>yläpuolelle</th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #48E5DA" id="poistopaluu'.$sid.'"><th style="border-right: 1px solid grey;text-align: center "><button class="roskis" title="Poista" value="'.$sid.'" style="font-size: 0.8em; margin-left: 0px" name="painikep"><i class="fa fa-trash-o" style="display: inline-block;"></i>&nbspPoista</button></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painikeps" value="Poista sarake ' . $sid . '" class="myButton8"  role="button" style="padding: 4px 6px; font-size: 0.9em"></th><th style="text-align: center; font-size:0.8em">Lisää<br>yläpuolelle</th></tr></thead><tbody>';
                 } else {
-                    echo '<tr style="border: 1px solid grey; background-color: #48E5DA"><th style="border-right: 1px solid grey;text-align: center "><button class="roskis" title="Poista" style="font-size: 0.8em; margin-left: 0px" name="painikep"><i class="fa fa-trash-o" style="display: inline-block;"></i>&nbspPoista</button></th><th style="border-right: 1px solid grey; text-align: center; ">Sarake ' . $sid . '</th><th style="text-align: center">Lisää<br>yläpuolelle</th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #48E5DA" id="poistopaluu'.$sid.'"><th style="border-right: 1px solid grey;text-align: center "><button class="roskis" title="Poista" value="'.$sid.'" style="font-size: 0.8em; margin-left: 0px" name="painikep"><i class="fa fa-trash-o" style="display: inline-block;"></i>&nbspPoista</button></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painikeps" value="Poista sarake '.$sid.'" class="myButton8" role="button" style="padding: 6px 8px; font-size: 1em"></th><th style="text-align: center">Lisää<br>yläpuolelle</th></tr></thead><tbody>';
                 }
             }
 
@@ -198,22 +198,11 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
 
 
                 if ($rowt[onotsikko] == 1) {
-                    $paluu = $rowt[jarjestys];
+                   
                     $rowt[otsikko] = str_replace('<br />', "", $rowt[otsikko]);
 
-                    if ($_GET[vikao] == 1) {
-                        if (($_GET[monesko] == ($paluu)) && ($rowt[otsikko] == "")) {
-                            echo '<tr id="' . $paluu . '" class="iaihe"><td><input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td><textarea name="otsikko[]" rows="3"  autofocus>' . $rowt[otsikko] . '</textarea>';
-                        } else {
-                            echo '<tr id="' . $paluu . '" class="iaihe"><td><input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td><textarea name="otsikko[]" rows="3" >' . $rowt[otsikko] . '</textarea>';
-                        }
-                    } else {
-                        if (($_GET[monesko] == ($paluu - 1)) && ($rowt[otsikko] == "")) {
-                            echo '<tr id="' . $paluu . '" class="iaihe"><td><input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td><textarea name="otsikko[]" rows="3"  autofocus>' . $rowt[otsikko] . '</textarea>';
-                        } else {
-                            echo '<tr id="' . $paluu . '" class="iaihe"><td><input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td><textarea name="otsikko[]" rows="5" >' . $rowt[otsikko] . '</textarea>';
-                        }
-                    }
+                    echo '<tr id="pj' . $rowt[jarjestys] . '" class="iaihe"><td><input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td><textarea name="otsikko[]"  >' . $rowt[otsikko] . '</textarea>';
+                  
 
 
                     echo '</td><td style="text-align: center;"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
@@ -223,13 +212,11 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                     echo'<input type="hidden" name="vastaus[]" value=' . $rowt[vastaus] . '>';
                 } else if ($rowt[onvastaus] == 1) {
 
-                    $paluu = $rowt[jarjestys];
-
-
+                
                     if ($rowt[onradio] == 1) {
 
 
-                        echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td>';
+                        echo '<tr id="pj' . $rowt[jarjestys] . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td>';
 
                         echo'<td style="margin: 0px; padding: 0px" class="sisaltoselitys">';
                         echo '<div class="form-style-spinner"  method="post" style="margin: 0px; padding: 0px"><fieldset>';
@@ -242,8 +229,17 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                             while ($rowr = $haer->fetch_assoc()) {
 
                                 $rowr[vaihtoehto] = str_replace('<br />', "", $rowr[vaihtoehto]);
-                                echo'<input type="radio"  name="listar[]" value=' . $rowr[id] . ' style="margin-right:40px">&nbsp&nbsp&nbsp<textarea style="display: inline-block; overflow-x: hidden; max-width: 80%" name="vaihtoehto[]" rows="1">' . $rowr[vaihtoehto] . '</textarea>';
+                                
+                                if($_GET[focus]==$rowr[id]){
+                                     echo'<input type="radio"  name="listar[]" value=' . $rowr[id] . ' style="margin-right:20px">&nbsp&nbsp&nbsp<textarea  id="rv'.$rowr[id].'" style="display: inline-block; overflow-x: hidden; max-width: 80% " name="vaihtoehto[]" rows="1" autofocus>' . $rowr[vaihtoehto] . '</textarea>';
 
+                                }
+                                else{
+                                     echo'<input type="radio"  name="listar[]" value=' . $rowr[id] . ' style="margin-right:20px">&nbsp&nbsp&nbsp<textarea  id="rv'.$rowr[id].'" style="display: inline-block; overflow-x: hidden; max-width: 80% " name="vaihtoehto[]" rows="1">' . $rowr[vaihtoehto] . '</textarea>';
+
+                                }
+                 
+                               
                                 echo'<input type="hidden" name="id2[]" value=' . $rowr[id] . '>';
 
 
@@ -262,7 +258,7 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                         echo'</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
                     } else if ($rowt[oncheckbox] == 1) {
 
-                        echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td>';
+                        echo '<tr id="pj' . $rowt[jarjestys] . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td>';
 
                         echo'<td style="margin: 0px; padding: 0px" class="sisaltoselitys">';
                         echo '<div class="form-style-spinner"  method="post" style="margin: 0px; padding: 0px"><fieldset>';
@@ -275,8 +271,16 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                             while ($rowc = $haec->fetch_assoc()) {
 
                                 $rowc[vaihtoehto] = str_replace('<br />', "", $rowc[vaihtoehto]);
-                                echo'<input type="checkbox"  name="listac[]" value=' . $rowc[id] . ' style="margin-right:20px">&nbsp&nbsp&nbsp<textarea style="display: inline-block; overflow-x: hidden; max-width: 80% " name="vaihtoehtoc[]" rows="1" >' . $rowc[vaihtoehto] . '</textarea>';
+                                
+                                if($_GET[focus] == $rowc[id] ){
+                                      echo'<input type="checkbox"  name="listac[]" value=' . $rowc[id] . ' style="margin-right:20px">&nbsp&nbsp&nbsp<textarea id="cv'.$rowc[id].'" style="display: inline-block; overflow-x: hidden; max-width: 80% " name="vaihtoehtoc[]" rows="1" autofocus>' . $rowc[vaihtoehto] . '</textarea>';
 
+                                }
+                                else{
+                                    echo'<input type="checkbox"  name="listac[]" value=' . $rowc[id] . ' style="margin-right:20px">&nbsp&nbsp&nbsp<textarea id="cv'.$rowc[id].'" style="display: inline-block; overflow-x: hidden; max-width: 80% " name="vaihtoehtoc[]" rows="1" >' . $rowc[vaihtoehto] . '</textarea>';
+  
+                                }
+                              
                                 echo'<input type="hidden" name="idc[]" value=' . $rowc[id] . '>';
 
 
@@ -295,19 +299,9 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
                         echo'</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
                     } else if ($rowt[onteksti] == 1) {
                         $rowt[vastaus] = str_replace('<br />', "", $rowt[vastaus]);
-                        if ($_GET[vikat] == 1) {
-                            if (($_GET[monesko] == ($paluu)) && ($rowt[vastaus] == "")) {
-                                echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td class="sisaltoselitys">' . $rowt[vastaus] . '</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
-                            } else {
-                                echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td class="sisaltoselitys">' . $rowt[vastaus] . '</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
-                            }
-                        } else {
-                            if (($_GET[monesko] == ($paluu - 1)) && ($rowt[vastaus] == "")) {
-                                echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td class="sisaltoselitys">' . $rowt[vastaus] . '</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
-                            } else {
-                                echo '<tr id="' . $paluu . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td class="sisaltoselitys">' . $rowt[vastaus] . '</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
-                            }
-                        }
+                   
+                         echo '<tr id="pj' . $rowt[jarjestys] . '" class="isisalto"><td> <input type="checkbox" name="lista[]" value=' . $rowt[id] . '></td><td class="sisaltoselitys">' . $rowt[vastaus] . '</td><td style="text-align: center"><input type="radio" name="jarjestys" value="' . $rowt[jarjestys] . '"></td></tr>';
+                     
                     }
 
 
@@ -331,16 +325,17 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
             </script>        
             <?php
             if ($onko != 0) {
-                echo '<tr style="border: none; text:align: left"><td><button class="pieniroskis" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td><td style="text-align: center; padding-top: 10px"><input type="hidden" name="ipid" value=' . $ipid . '>';
-
-                echo'<input type="submit" name="painikelo" value="+ Lisää otsikko/kysymys (' . $sid . ')" class="myButton8"  role="button"><br><input type="submit" name="painikelt" value="+ Lisää tekstivastaus (' . $sid . ')" class="myButton8"  role="button"  ><br><input type="submit" name="painikelr" value="+ Lisää vaihtoehtoja (' . $sid . ')" class="myButton8"  role="button" ><br><input type="submit" name="painikelc" value="+ Lisää monivalintoja (' . $sid . ')" class="myButton8"  role="button"  ></td>';
+                   echo'<input type="hidden" name="sid" value=' . $sid . '>';
+                echo '<tr style="border: none; text:align: left" id="poistopaluu'.$sid.'"><td><button class="pieniroskis" value="'.$sid.'" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td><td style="text-align: center; padding-top: 10px"><input type="hidden" name="ipid" value=' . $ipid . '><input type="hidden" name="sid" value="'.$sid.'">';
+                
+                echo'<input type="submit" id="paluu'.$sid.'" name="painikelo" value="+ Lisää otsikko/kysymys (' . $sid . ')" class="myButton8"  role="button"><br><input type="submit" name="painikelt" value="+ Lisää tekstivastaus (' . $sid . ')" class="myButton8"  role="button"  ><br><input type="submit" name="painikelr" value="+ Lisää vaihtoehtoja (' . $sid . ')" class="myButton8"  role="button" ><br><input type="submit" name="painikelc" value="+ Lisää monivalintoja (' . $sid . ')" class="myButton8"  role="button"  ></td>';
 
                 echo'<td></td></tr>';
             } else {
 
                 echo '<tr style="border: none; background-color: transparent; text-align: center"><td style="border: none; padding-top:10px"><input type="hidden" name="ipid" value=' . $ipid . '> ';
 
-                echo'<input type="submit" name="painikelo" value="+ Lisää otsikko/kysymys (' . $sid . ')" class="myButton8"  role="button"><br><input type="submit" name="painikelt" value="+ Lisää tekstivastaus (' . $sid . ')" class="myButton8"  role="button"  ><br><input type="submit" name="painikelr" value="+ Lisää vaihtoehtoja (' . $sid . ')" class="myButton8"  role="button" ><br><input type="submit" name="painikelc" value="+ Lisää monivalintoja (' . $sid . ')" class="myButton8"  role="button"  ></td>';
+                echo'<input type="submit" id="paluu'.$sid.'" name="painikelo" value="+ Lisää otsikko/kysymys (' . $sid . ')" class="myButton8"  role="button"><br><input type="submit" name="painikelt" value="+ Lisää tekstivastaus (' . $sid . ')" class="myButton8"  role="button"  ><br><input type="submit" name="painikelr" value="+ Lisää vaihtoehtoja (' . $sid . ')" class="myButton8"  role="button" ><br><input type="submit" name="painikelc" value="+ Lisää monivalintoja (' . $sid . ')" class="myButton8"  role="button"  ></td>';
 
                 echo'</tr>';
             }
@@ -351,17 +346,19 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
 
             echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
             echo'<input type="hidden" name="ipid" value=' . $ipid . '>';
-
+     echo'<div style="text-align: center;margin-top: 40px">';
+        echo'<input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna itsearviointilomake" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px; margin-bottom: 20px">';
+        
+        echo'</div>';
             echo'</div>';
+        
         }
 
 
       
 
 
-        echo'<div style="text-align: center;margin-top: 40px">';
-        echo'<input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna itsearviointilomake" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px; margin-bottom: 20px">';
-        echo'</div>';
+       
 
 
         echo'</form>';

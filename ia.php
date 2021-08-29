@@ -356,13 +356,13 @@ function myFunction(y) {
                 }
             } else {
                 echo'<em id="ohje">Itsearviointilomakkeessa ei ole sisältöä.</em>';
-                echo'<br><br><form action="uusi_ia.php" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Lisää sisältöä"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 0.9em; padding:2px 4px; "></form>';
+                echo'<br><br><form action="uusi_ia.php" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Lisää sisältöä"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 1em; padding:4px 6px; "></form>';
             }
             if ($haesarakkeet->num_rows == 1 && ($haeonko->num_rows != 0 || $haeonko2 -> num_rows !=0)) {
-                echo'<form action="uusi_ia.php" style="margin-top: 40px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa itsearviointilomaketta"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 0.9em; padding:2px 4px;  margin-top: 20px"></form>';
+                echo'<form action="uusi_ia.php" style="margin-top: 20px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa itsearviointilomaketta"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 1em; padding:4px 6px;  margin-top: 20px"></form>';
             } if ($haesarakkeet->num_rows != 1 && ($haeonko->num_rows != 0 || $haeonko2 -> num_rows !=0)) {
                 echo'<div style="text-align: center">';
-                echo'<form action="uusi_ia.php" style="margin-top: 40px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa itsearviointilomaketta"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 0.9em; padding:2px 4px;  margin-top: 20px"></form>';
+                echo'<form action="uusi_ia.php" style="margin-top: 20px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa itsearviointilomaketta"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 1em; padding:4px 6px;  margin-top: 20px"></form>';
 
                 echo'<br></div>';
             }
@@ -502,6 +502,11 @@ function myFunction(y) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
 
+                    
+                     if (!$haekaikkikom = $db->query("select distinct * from iakommentit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND kayttaja_id='" . $_SESSION[Id] . "' && tallennettu = 1")) {
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        }
+                        
                         if (!$haekommentti = $db->query("select distinct * from iakommentit where ia_sarakkeet_jarjestys = '" . $sid . "' AND kurssi_id='" . $_SESSION["KurssiId"] . "' AND kayttaja_id='" . $_SESSION[Id] . "' && tallennettu = 1")) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
@@ -512,7 +517,8 @@ function myFunction(y) {
                             $kommentti = $rowkom[kommentti];
                         }
                    
-                        if ($kommentti != NULL || $kommentti != '') {
+                        if($haekaikkikom -> num_rows != 0){
+                                        if ($kommentti != NULL || $kommentti != '') {
                                 
                             echo'<div style="padding: 0px; margin: 0px; text-align: center">';
                             echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
@@ -528,6 +534,8 @@ function myFunction(y) {
                      
                             
                             }
+                        }
+            
                     
 
                              
@@ -588,11 +596,10 @@ function myFunction(y) {
 
                             echo '<tr class="iaihe2"><td>' . $rowt[otsikko] . '</td></tr>';
                         } else if ($rowt[onvastaus] == 1) {
-
+                            $tallennettu=0;
                             while ($rowkp = $haekp->fetch_assoc()) {
-
-                                if ($tallennettu == 1 || ($sulkeutuu != NULL && $sulkeutuu <= $nyt) || ($avautuu != NULL && $avautuu > $nyt)) {
-
+                                if ($rowkp[tallennettu] == 1  || ($sulkeutuu != NULL && $sulkeutuu <= $nyt) || ($avautuu != NULL && $avautuu > $nyt)) {
+                                    $tallennettu=1;
                                     if ($rowt[onteksti] == 1) {
                                         echo '<tr id="' . $rowt[id] . '" " class="ivaliaihe2"><td>' . $rowkp[teksti] . '</td></tr>';
                                         $rowkp[teksti] = str_replace('<br />', "", $rowkp[teksti]);
@@ -620,7 +627,7 @@ function myFunction(y) {
                                                 echo'<p style="font-size: 0.8em; font-weight: normal">' . $rowr[vaihtoehto] . '</p>';
                                             }
                                         }
-                                        if ($valittu == 0) {
+                                        if ($valittu == 0 && $avautuu < $nyt) {
                                             echo'<p style="font-weight: bold" class="myButtonValittu">Ei valintaa.</p>';
                                         }
                                         echo'</td></tr>';
@@ -654,7 +661,7 @@ function myFunction(y) {
                                                 echo'<p style="font-size: 0.8em; font-weight: normal">' . $rowr[vaihtoehto] . '</p>';
                                             }
                                         }
-                                        if ($valittu2 == 0) {
+                                        if ($valittu2 == 0 && $avautuu < $nyt) {
                                             echo'<p style="font-weight: bold" class="myButtonValittu">Ei valintaa.</p>';
                                         }
 

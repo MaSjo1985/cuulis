@@ -71,7 +71,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
         $osatutnimi = 'Tehty ja osattu';
         $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'TEHDYT TEHTÄVÄT YHTEENSÄ (PISTEMÄÄRIÄ EI PAINOTETA)';
+        $osuusnimi = 'Tehtyjä tehtäviä yhteensä ';
         $tehdythuijaus = 0;
         if (($yht - $tehdyt) >= 0) {
             $tekemattomat = $yht - $tehdyt;
@@ -245,7 +245,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
         $osatutnimi = 'Tehty ja osattu';
         $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'TEHDYT TEHTÄVÄT YHTEENSÄ, KUN PISTEMÄÄRIÄ PAINOTETAAN';
+        $osuusnimi = 'Tehtyjen tehtävien pisteiden osuus';
         $tehdythuijaus = 0;
 
         if (($yht - $tehdyt) >= 0) {
@@ -470,7 +470,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
     if ($pisteet && $pisteetvaikuttaa) {
 
-        echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . ' %</li></ul>';
+        echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Pisteitä kerätty: </b>' . $tehdyt . ' p</li><li style="margin-left: 30px"><b>Tehtyjen tehtävien pisteiden osuus on: </b>' . $osuus . ' %</li></ul>';
     } else if ($pisteet && !$pisteetvaikuttaa) {
 
         echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
@@ -527,24 +527,33 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
     if ($onkorivi2->num_rows != 0) {
 
-        echo'<div style="margin: 0px; padding: 0px; ">';
-        echo'<div style="display: inline-block; vertical-align: center; margin: 0px; padding: 0px; ">';
-        echo'<div style="padding: 0px; vertical-align: top;margin-right: 100px; display: inline-block;">';
+        echo'<div style="margin: 0px; padding: 0px;">';
+        echo'<div style="display: inline-block; vertical-align: center; margin: 0px; padding: 0px; width: 100%">';
+        echo'<div style="padding: 0px; vertical-align: top;margin-right: 20px; display: inline-block; width: 50%; ">';
         echo'<button type="button" class="btn btn-info btn-lg btn-radius" style="margin-left: 0px; margin-bottom: 20px; padding: 10px 20px; text-transform: none; font-size: 0.9em" >Olet saavuttanut ' . $lpisteet . ' lisäpistettä </button>';
         echo'</div>';
 
 
-        echo'<div style="vertical-align: top;display: inline-block;">';
-        echo'<table  class="tehtavatauluope" style="display: inline-block; font-size: 0.9em;" >';
+        echo'<div style="padding: 0px; margin: 0px; vertical-align: top;display: inline-block; ;width: 45%">';
+        echo'<table  class="tehtavatauluope" style="display: inline-block; font-size: 0.9em; " >';
 
         echo'<th style="border: none;font-size: 0.9em; text-align: center; padding:15px" colspan="2">Lisäpisteiden muodostuminen: </th>';
 
-
-        while ($row = $onkorivi2->fetch_assoc()) {
+        if(!$pisteetvaikuttaa){
+             while ($row = $onkorivi2->fetch_assoc()) {
 
             echo'<tr style="font-size: 0.9em;"><td style="padding-left: 20px; padding-right: 20px"><b>Tehtyjä tehtäviä: </b>' . $row[osuus] . ' %</td>';
             echo'<td  style=""><b>Lisäpisteitä: </b>' . $row[pisteet] . ' pistettä</td></tr>';
         }
+        }
+        else{
+             while ($row = $onkorivi2->fetch_assoc()) {
+
+            echo'<tr style="font-size: 0.9em;"><td style="padding-left: 10px; padding-right: 20px; width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus </b>' . $row[osuus] . ' %</td>';
+            echo'<td  style="padding: 0px; margin: 0px; width: 30%"><b>Lisäpisteitä: </b>' . $row[pisteet] . ' p</td></tr>';
+        }
+        }
+       
         echo'<tr><td></td><td></td></tr>';
         echo'</table>';
 
@@ -552,12 +561,12 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
         echo'</div>';
         echo'</div>';
-        echo'<br>';
-        if ($pisteet && !$pisteetvaikuttaa) {
-            echo'<p class="info" style="font-size: 1.1em; margin-top: 20px;display: inline-block;color: #c7ef00">Tehtävien pisteet ei vaikuta yllä oleviin prosenttimääriin.</p>';
-        } else if ($pisteet && $pisteetvaikuttaa) {
-            echo'<p class="info" style="font-size: 1.1em; display: inline-block; margin-top: 20px;color: #c7ef00">Yllä olevissa prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
-        }
+//        echo'<br>';
+//        if ($pisteet && !$pisteetvaikuttaa) {
+//            echo'<p class="info" style="font-size: 1.1em; margin-top: 20px;display: inline-block;color: #c7ef00">Tehtävien pisteet ei vaikuta yllä oleviin prosenttimääriin.</p>';
+//        } else if ($pisteet && $pisteetvaikuttaa) {
+//            echo'<p class="info" style="font-size: 1.1em; display: inline-block; margin-top: 20px;color: #c7ef00">Yllä olevissa prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
+//        }
     }
 
 

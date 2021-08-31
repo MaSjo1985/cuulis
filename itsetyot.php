@@ -719,19 +719,20 @@ function myFunction(y) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
-                if ($onkorivi2->num_rows == 0) {
+                if(!$pisteetvaikuttaa){
+                             if ($onkorivi2->num_rows == 0) {
                     echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block">';
                     echo'<tr><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen:</th></tr>';
 
 
 
-                    echo'<tr><td><b>Tehtäviä tehty: </b> - % </td>';
-                    echo'<td><b>Lisäpisteitä: </b> - pistettä</td></tr>';
+                    echo'<tr><td style="width: 70%"><b>Tehtäviä tehty: </b> - % </td>';
+                    echo'<td style="width: 30%"><b>Lisäpisteitä: </b> - pistettä</td></tr>';
 
 
                     echo'</table>';
                 } else {
-                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block ">';
+                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; ">';
                     echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
 
                     while ($row = $onkorivi2->fetch_assoc()) {
@@ -742,6 +743,33 @@ function myFunction(y) {
 
                     echo'</table>';
                 }
+                }
+                 else{
+                             if ($onkorivi2->num_rows == 0) {
+                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80%">';
+                    echo'<tr><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen:</th></tr>';
+
+
+
+                    echo'<tr><td style="width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus: </b> - % </td>';
+                    echo'<td style="width: 30%"><b>Lisäpisteitä: </b> - pistettä</td></tr>';
+
+
+                    echo'</table>';
+                } else {
+                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80% ">';
+                    echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
+
+                    while ($row = $onkorivi2->fetch_assoc()) {
+
+                        echo'<tr><td style="padding-right: 60px; width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus: </b>' . $row[osuus] . ' %</td>';
+                        echo'<td style="width: 30%"><b>Lisäpisteitä: </b>' . $row[pisteet] . ' p</td></tr>';
+                    }
+
+                    echo'</table>';
+                }
+                }
+       
                 echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
                 echo'</div>';
 

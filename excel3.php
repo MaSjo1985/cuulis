@@ -1,19 +1,17 @@
-<?php
-
+<?php 
 ob_start();
 
 
 
 session_start();
 include("yhteys.php");
-
 if (!$haenimi = $db->query("select distinct nimi, koodi from kurssit where id='" . $_SESSION[KurssiId] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 $nyt = date("d.m.Y H.i");
 while ($rowN = $haenimi->fetch_assoc()) {
 
-    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . '-kurssin/opintojakson kyselylomakkeen vastaukset (' . $nyt . ')';
+    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . ': Kyselylomakkeen vastaukset (' . $nyt . ')';
 }
 
 
@@ -35,7 +33,6 @@ while ($rowo = $onkoprojekti->fetch_assoc()) {
     $rowo[otsikko] = preg_replace("/\r|\n/", "", $rowo[otsikko]);
     $list[0][$sarake] = $rowo[otsikko];
 }
-
 
 //TEHDÄÄN SARAKE 0:
 
@@ -97,23 +94,22 @@ while ($rowo = $onkoprojekti->fetch_assoc()) {
     }
 }
 
-
-
 $fp = fopen('tiedostot/excel/' . $nimi . '.csv', "w");
 
 
+
 foreach ($list as $field) {
+   
     fprintf($fp, chr(0xEF) . chr(0xBB) . chr(0xBF));
     vujo_fputcsv($fp, $field, ';');
+    
 }
-
-
-
 
 $file = 'tiedostot/excel/' . $nimi . '.csv';
 
 
 if (file_exists($file)) {
+   
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream; charset=utf-8');
     header('Content-Disposition: attachment; filename="' . basename($file) . '"');
@@ -122,28 +118,31 @@ if (file_exists($file)) {
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
     readfile($file);
+
+    
 }
+
 
 if (file_exists($file)) {
 
     unlink($file);
 }
 
-//header('location: tiedostot/excel/' . $nimi . '.csv');
-
 function vujo_fputcsv($handle, $fields, $delimiter = ',') {
+   
     if (!is_resource($handle)) {
         user_error('fputcsv() první parametr musí být data, ale tys mě dal' . gettype($handle) . '!', E_USER_WARNING);
+        
         return false;
     }
+    
     $str = '';
     foreach ($fields as $cell) {
-
-
 
 
         $str .= $cell . $delimiter;
     }
     fputs($handle, substr($str, 0, -1) . "\n");
+    
     return strlen($str);
 }

@@ -13,7 +13,7 @@ if (!$haenimi = $db->query("select distinct nimi, koodi from kurssit where id='"
 $nyt = date("d.m.Y H.i");
 while ($rowN = $haenimi->fetch_assoc()) {
 
-    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . '-kurssin/opintojakson itsearvioinnit (' . $nyt . ')';
+    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . ': Itsearviointilomakkeen vastaukset (' . $nyt . ')';
 }
 
 if (!$onkoprojekti = $db->query("select distinct * from itsearvioinnit where kurssi_id='" . $_SESSION[KurssiId] . "'")) {

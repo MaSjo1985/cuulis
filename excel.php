@@ -29,7 +29,7 @@ while ($rowP = $onkoprojekti->fetch_assoc()) {
 }
 while ($rowN = $haenimi->fetch_assoc()) {
 
-    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . ':' . $kuvaus . ' (' . $nyt . ')';
+    $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . ': ' . $kuvaus . ' (' . $nyt . ')';
 }
 
 if (!$haetehtavat = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipid . "' ORDER BY jarjestys")) {
@@ -276,13 +276,11 @@ while ($row = $result->fetch_assoc()) {
     $list[] = $rivi;
 }
 
-
 $fp = fopen('tiedostot/excel/' . $nimi . '.csv', "w");
 
-
 foreach ($list as $field) {
-    fprintf($fp, chr(0xEF) . chr(0xBB) . chr(0xBF));
-    vujo_fputcsv($fp, $field, ';');
+ fprintf($fp, chr(0xEF) . chr(0xBB) . chr(0xBF));
+vujo_fputcsv($fp, $field, ';');
 }
 
 $file = 'tiedostot/excel/' . $nimi . '.csv';
@@ -296,7 +294,7 @@ if (file_exists($file)) {
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
-    readfile($file);
+  readfile($file);
 }
 
 if (file_exists($file)) {
@@ -311,9 +309,6 @@ function vujo_fputcsv($handle, $fields, $delimiter = ',') {
     }
     $str = '';
     foreach ($fields as $cell) {
-
-
-
 
         $str .= $cell . $delimiter;
     }

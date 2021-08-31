@@ -71,7 +71,7 @@ function tuoMalli($ipid) {
         $osatutnimi = 'Tehty ja osattu';
         $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'TEHDYT TEHTÄVÄT YHTEENSÄ (PISTEMÄÄRIÄ EI PAINOTETA)';
+        $osuusnimi = 'Tehtyjä tehtäviä yhteensä';
         $tehdythuijaus = 0;
         if (($yht - $tehdyt) >= 0) {
             $tekemattomat = $yht - $tehdyt;
@@ -245,7 +245,7 @@ function tuoMalli($ipid) {
         $osatutnimi = 'Tehty ja osattu';
         $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'TEHDYT TEHTÄVÄT YHTEENSÄ, KUN PISTEMÄÄRIÄ PAINOTETAAN';
+        $osuusnimi = 'Tehtyjen tehtävien pistemäärän osuus';
         $tehdythuijaus = 0;
 
         if (($yht - $tehdyt) >= 0) {

@@ -1,9 +1,8 @@
-********************************************************************************'
 
-ITSEARVIOINTILOMAKE:
+PALAUTUSTEN AUKEAMINEN -> OPEN TOIMINTO KOMMENTOITU POIS
 
+-> PITÄÄ LAITTAA VAIKUTUS OPISKELIJAN PALAUTUKSEEN
 
-* TESTAA KAIKKI KUN OPE TARKASTELEE IA:T
 
 ***********************************************************
 
@@ -23,9 +22,6 @@ SEARCH-juttu lagaa
 
 *******************************************************************************
 
-PALAUTUSTEN AUKEAMINEN -> OPEN TOIMINTO KOMMENTOITU POIS
-
--> PITÄÄ LAITTAA VAIKUTUS OPISKELIJAN PALAUTUKSEEN
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 

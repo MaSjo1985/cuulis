@@ -6158,12 +6158,12 @@ background: #0078a3 url("images/ui-bg_glass_40_0078a3_1x400.png") 50% 50% repeat
 a.cm8-navigointilinkki{
     font-weight: bold; 
     color: #48E5DA; 
-    font-size: 0.8em;    
+    font-size: 0.9em;    
 }
 
 
 a.cm8-navigointilinkki:hover{
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 

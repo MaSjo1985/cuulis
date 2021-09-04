@@ -234,11 +234,11 @@ function myFunction(y) {
 
 
         if ($pisteet && !$pisteetvaikuttaa) {
-            echo'<p class="info" style="margin-top: 20px;display: inline-block;color: #c7ef00">Tehtävien pisteet ei nyt vaikuta prosenttimääriin.</p>';
+            echo'<p class="info" style="color: #c7ef00; font-size: 1em">Tehtävien pisteet ei nyt vaikuta prosenttimääriin.</p>';
         } else if ($pisteet && $pisteetvaikuttaa) {
-            echo'<p class="info" style="display: inline-block; margin-top: 20px;color: #c7ef00">Prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
+            echo'<p class="info" style="color: #c7ef00; font-size: 1em">Prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
         }
-        echo'<p style="font-size: 0.8em">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p>';
+        echo'<br><p id="ohje" style="font-weight: bold">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p>';
         echo'<div id="scrollbar"><div id="spacer"></div></div>';
         echo'<div class="cm8-responsive" id="container2" >';
         echo '<table id="mytable" class="cm8-uusitable10uusi" style="background-color: #f7f9f7; max-width: 100%">   <thead>';

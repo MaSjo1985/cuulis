@@ -99,8 +99,8 @@ function myFunction(y) {
 
             echo'<form action="poistakyselyvastaukset_varmistus.php" style="margin-top: 40px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><button name="poista" class="myButton8" type="submit" style="font-size: 0.9em" title="Poista annetut vastaukset"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista annetut vastaukset</button><br><br></form>';
 
-
-
+            
+     echo'<p>Vastauksia yhteensä: '.$result->num_rows.'</p>';
             echo'<div class="cm8-responsive">';
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
             echo'<div class="cm8-responsive" id="container2">';

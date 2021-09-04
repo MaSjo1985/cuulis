@@ -205,7 +205,136 @@ function myFunction(y) {
         } else {
             echo'<a href="tarkastele.php?id=' . $ipid . '&monesko=' . $_GET[monesko] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
         }
-        echo'<br><br>';
+    echo'<div class="cm8-margin-top"></div>';
+                //ONKO EKA 
+
+        $onkoeka = 0;
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $kaytylapi = 0;
+        while ($row = $result->fetch_assoc()) {
+            $kaytylapi++;
+            if ($row[kaid] == $_GET[kaid] && $kaytylapi == 1) {
+                $onkoeka = 1;
+            }
+        }
+
+        //ONKO VIKA
+        $onkovika = 0;
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $yhteensa = $result->num_rows;
+        $kaytylapi = 0;
+        while ($row = $result->fetch_assoc()) {
+            $kaytylapi++;
+            if ($row[kaid] == $_GET[kaid] && $kaytylapi == $yhteensa) {
+                $onkovika = 1;
+            }
+        }
+
+
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        $seuraavaloyty = 0;
+
+        while ($row = $result->fetch_assoc()) {
+
+
+
+            if ($seuraavaloyty == 1) {
+                echo'<a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"  class="cm8-navigointilinkki">Katso seuraava -> </a>';
+
+                break;
+            } else {
+                $haettuid = $row[kaid];
+
+                if ($haettuid == $_GET[kaid]) {
+
+                    $seuraavaloyty = 1;
+                }
+            }
+        }
+
+
+        if ($onkovika == 1) {
+
+
+            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            $kaytylapi = 0;
+            while ($row = $result->fetch_assoc()) {
+                $kaytylapi++;
+                if ($kaytylapi == 1) {
+                    echo'<a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"   class="cm8-navigointilinkki">Katso seuraava -> </a>';
+                }
+            }
+        }
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $maara = 0;
+
+        while ($row = $result->fetch_assoc()) {
+
+            $maara++;
+
+            $haettuid = $row[kaid];
+
+            if ($haettuid == $_GET[kaid]) {
+
+                break;
+            }
+        }
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+
+        $oikeamaara = $maara - 1;
+
+        $maara = 0;
+
+        while ($row = $result->fetch_assoc()) {
+            $maara++;
+
+            if ($maara == $oikeamaara) {
+                echo'<br><br><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"  class="cm8-navigointilinkki"><- Katso edellinen</a>';
+
+                break;
+            }
+        }
+
+        if ($onkoeka == 1) {
+
+            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            $yhteensa = $result->num_rows;
+            $kaytylapi = 0;
+            while ($row = $result->fetch_assoc()) {
+                $kaytylapi++;
+
+                if ($kaytylapi == $yhteensa) {
+                    echo'<br><br><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"  class="cm8-navigointilinkki"><- Katso edellinen</a>';
+                }
+            }
+        }
+        
+        
+        echo'<div class="cm8-margin-top"></div>';
 
         if (!$haetehtavat = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipid . "' ORDER BY jarjestys")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -609,6 +738,133 @@ function myFunction(y) {
         echo "</tbody></table>";
 
         echo"</div>";
+            echo'<div class="cm8-margin-top"></div>';
+                //ONKO EKA 
+
+        $onkoeka = 0;
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $kaytylapi = 0;
+        while ($row = $result->fetch_assoc()) {
+            $kaytylapi++;
+            if ($row[kaid] == $_GET[kaid] && $kaytylapi == 1) {
+                $onkoeka = 1;
+            }
+        }
+
+        //ONKO VIKA
+        $onkovika = 0;
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $yhteensa = $result->num_rows;
+        $kaytylapi = 0;
+        while ($row = $result->fetch_assoc()) {
+            $kaytylapi++;
+            if ($row[kaid] == $_GET[kaid] && $kaytylapi == $yhteensa) {
+                $onkovika = 1;
+            }
+        }
+
+
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        $seuraavaloyty = 0;
+
+        while ($row = $result->fetch_assoc()) {
+
+
+
+            if ($seuraavaloyty == 1) {
+                echo'<a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"  class="cm8-navigointilinkki">Katso seuraava -> </a>';
+
+                break;
+            } else {
+                $haettuid = $row[kaid];
+
+                if ($haettuid == $_GET[kaid]) {
+
+                    $seuraavaloyty = 1;
+                }
+            }
+        }
+
+
+        if ($onkovika == 1) {
+
+
+            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            $kaytylapi = 0;
+            while ($row = $result->fetch_assoc()) {
+                $kaytylapi++;
+                if ($kaytylapi == 1) {
+                    echo'<a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"   class="cm8-navigointilinkki">Katso seuraava -> </a>';
+                }
+            }
+        }
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        $maara = 0;
+
+        while ($row = $result->fetch_assoc()) {
+
+            $maara++;
+
+            $haettuid = $row[kaid];
+
+            if ($haettuid == $_GET[kaid]) {
+
+                break;
+            }
+        }
+
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+
+        $oikeamaara = $maara - 1;
+
+        $maara = 0;
+
+        while ($row = $result->fetch_assoc()) {
+            $maara++;
+
+            if ($maara == $oikeamaara) {
+                echo'<br><br><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"   class="cm8-navigointilinkki"><- Katso edellinen</a>';
+
+                break;
+            }
+        }
+
+        if ($onkoeka == 1) {
+
+            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            $yhteensa = $result->num_rows;
+            $kaytylapi = 0;
+            while ($row = $result->fetch_assoc()) {
+                $kaytylapi++;
+
+                if ($kaytylapi == $yhteensa) {
+                    echo'<br><br><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id='.$_GET[id].'"  class="cm8-navigointilinkki"><- Katso edellinen</a>';
+                }
+            }
+        }
 
         echo"</div>";
 

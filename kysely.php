@@ -554,12 +554,65 @@ function myFunction(y) {
                 }
 
                 echo'</form>';
-            } else if ($tallennettu == 1) {
+            }else if ($tallennettu == 1 && $_GET[tarkastele]==1) {
+                        echo'<div class="cm8-responsive" style="overflow-y: hidden">';
+
+
+   echo'<a  href="kysely.php?tarkastele=0"  class="myButton8"  role="button"  style="padding:6px 8px; ">Piilota vastaukset</a></td></tr>';
+                
+                echo'<div class="cm8-responsive">';
+                echo '<table id="mytable2" class="cm8-tableoppilas" style="table-layout:fixed; max-width: 100%;"> ';
+
+
+                echo '<tbody>';
+
+                while ($rowt = $haearvioinnit->fetch_assoc()) {
+
+                    if (!$haekp = $db->query("select distinct * from kyselytkp where kyselyt_id='" . $rowt[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'"
+                            . " AND id IN (select MIN(id) from kyselytkp where kyselyt_id='" . $rowt[id] . "' AND kayttaja_id='" . $_SESSION["Id"] . "')")) {
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    }
+
+                    if ($rowt[aihe] == 1)
+                        echo '<tr class="iaihe2"><td style="border-left: 1px solid grey; padding: 6px 8px;"><b>' . $rowt[otsikko] . '</b></td><td></td></tr>';
+                    else if ($rowt[valiaihe] == 1)
+                        echo '<tr class="ivaliaihe2"><td style="border-left: 1px solid grey; padding: 6px 8px;"><b>' . $rowt[otsikko] . '</b></td><td></td></tr>';
+
+                    else {
+
+                        while ($rowkp = $haekp->fetch_assoc()) {
+
+
+                                $rowkp[teksti] = str_replace('<br />', "", $rowkp[teksti]);
+
+                                if ($rowt[pakollinen] == 1) {
+                                    echo '<tr id="' . $rowt[id] . '" class="isisalto2"><td style="font-style: normal;border: 1px solid grey">' . $rowkp[teksti] . '</td><td><b style="font-size:0.9em; font-style: normal; color: red">* Pakollinen</b></td></tr>';
+                                } else {
+                                    echo '<tr id="' . $rowt[id] . '" class="isisalto2"><td style="font-style: normal;border: 1px solid grey">' . $rowkp[teksti] . '</td><td><b style="font-size:0.9em; font-style: normal; color: green">Vapaaehtoinen</b></td></tr>';
+                                }
+
+                     
+                        }
+                    }
+                }
+
+                echo "</tbody></table>";
+                   echo'<a  href="kysely.php?tarkastele=0"  class="myButton8"  role="button"  style="padding:6px 8px; margin-top: 10px">Piilota vastaukset</a></td></tr>';
+                
+            } 
+            else if ($tallennettu == 1 && $_GET[tarkastele]!=1) {
 
                 echo'<br><p style="font-size: 1.1em; display: inline-block">Olet lähettäny vastaukset.</p>';
                 if ($aukiok == 1 && $sulkuok == 1) {
 
-                    echo'<a  href="korjaa_kysely.php?"  class="myButton8"  role="button"  style="padding:2px 4px; margin-left: 30px">&#9998 &nbspMuokkaa vastauksia</a></td></tr>';
+                    echo'<a  href="korjaa_kysely.php"  class="myButton8"  role="button"  style="padding:2px 4px; margin-left: 30px">&#9998 &nbspMuokkaa vastauksia</a></td></tr>';
+                
+                    
+                }
+                else{
+                    
+                    echo'<a  href="kysely.php?tarkastele=1"  class="myButton8"  role="button"  style="padding:6px 8px; margin-left: 30px">Katso omat vastaukset</a></td></tr>';
+                
                 }
             } else if ($aukiok == 0) {
                 echo'<b id="ohje">Kyselylomakkeen vastausmahdollisuus ei ole vielä auennut.</b>';

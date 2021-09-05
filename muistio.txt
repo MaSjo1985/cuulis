@@ -1,14 +1,21 @@
+PALAUTUKSET:
 
-PALAUTUSTEN AUKEAMINEN -> OPEN TOIMINTO KOMMENTOITU POIS
-
--> PITÄÄ LAITTAA VAIKUTUS OPISKELIJAN PALAUTUKSEEN
+tsekkaa muokkaa ja poista nappulat
 
 
-***********************************************************
+*********************************************************
+
 
 * opiskelija katoaa kurssilta!!
 
 *******************************************************************
+
+PALAUTUKSET:
+
+* pisteitä palautuksista?
+
+***********************************************************
+
 
 * kun kurssiaikataulussa "Valitse kaikki" / "Tyhjennää valinnat" , niin muokkaus ei tallennu!
 
@@ -23,10 +30,6 @@ SEARCH-juttu lagaa
 *******************************************************************************
 
 
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-
-
 * opiskelijalle mahis ottaa tuloste itsearviointilomakkeesta, excel varmaa ok?
 
 **************************
@@ -39,12 +42,6 @@ ADMIN-PANEELIN ULKOASU
 
 '****************************************************************'
 
-PALAUTUKSET 
-
-* pisteitä palautuksista?
-
-
-*******************************
 
 TIEDOSTOT:
 

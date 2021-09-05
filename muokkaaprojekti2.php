@@ -195,7 +195,7 @@ function myFunction(y) {
 
         echo'</select><br></p><br>
  
-<p>Sallitaanko opiskelijoille tiedostojen palautus projektisivulle:<br> <br>';
+<p>Sallitaanko opiskelijoille taaiedostojen palautus projektisivulle:<br> <br>';
 
         if ($palautus = 1) {
             echo'<input type="radio" name="palautus" value="1" checked> Kyllä <br>

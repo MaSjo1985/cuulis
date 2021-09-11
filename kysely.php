@@ -91,7 +91,7 @@ function myFunction(y) {
 
         echo'</div>';
 
-        echo'<div class="cm8-twothird" style="padding-top: 0px">';
+        echo'<div class="cm8-twothird" style="padding-top: 0px;">';
 
 
 
@@ -103,12 +103,9 @@ function myFunction(y) {
 
 
         if ($onkoprojekti->num_rows == 0) {
-
-            echo'<br><em id="ohje">Sivustolle on mahdollista luoda kyselylomake, johon opiskelijat voivat vastata nimettömästi.</em><br><br>';
-
-
-            echo'<br><form action="uusikyselyeka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kyselylomake" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
-        } else {
+                   echo'<form action="uusikyselyeka.php" method="post" style="margin-top: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kyselylomake" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
+        
+            } else {
 
 
 
@@ -279,6 +276,21 @@ function myFunction(y) {
                 echo'<br><form action="tarkastelekyselyt.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike"  title="Tarkastele vastauksia" value="🕵 Tarkastele vastauksia" class="myButtonTarkastele"  role="button" ></form>';
 
                 echo' <div class="cm8-margin-top"></div>';
+//                                echo'<b style="font-size: 0.8em">Avataanko 1. kansio automaattisesti?</b><br><br>';
+//                if (!$result = $db->query("select distinct ekakansio from kurssit where id = '" . $_SESSION[KurssiId] . "' AND ekakansio = 1")) {
+//                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+//                }
+//                echo'<form id="form2" name="form2" style="font-size: 0.9em" method="post" action="ekakansioauki.php">';
+//                if ($result->num_rows != 0) {
+//
+//
+//                    echo'<input type="radio" onchange="this.form.submit();" name="auki" value="1" checked>&nbsp Kyllä<br>';
+//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0">&nbsp Ei<br>';
+//                } else {
+//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="1">&nbsp Kyllä<br>';
+//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0" checked>&nbsp Ei<br>';
+//                }
+//                echo'</form>';
                 echo'<b id="ohje"> Kyselylomakkeen vastaukset tulee oletuksena nimettömänä.</b>';
             }
 
@@ -360,7 +372,7 @@ function myFunction(y) {
 
 
 
-            echo'<br><br><em id="ohje">Toimintoa ei ole aktivoitu.</em><br><br>';
+            echo'<br><br><p id="ohje">Ei kyselylomaketta</p><br><br>';
         } else {
 
             if (!$haearvioinnit = $db->query("select distinct * from kyselyt where kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY jarjestys")) {

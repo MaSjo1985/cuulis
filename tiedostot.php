@@ -275,11 +275,12 @@ function myFunction(y) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($onkokansio->num_rows == 0) {
-                echo'<br><em id="ohje">Sivustolle on mahdollista sisällyttää kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</em>';
+                echo'<br><p id="ohje">Tähän osioon on mahdollista luoda kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</p>';
                 echo'<div class="cm8-margin-top"></div>';
-                echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
-                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
-            } else if ($onkokansio->num_rows == 1) {
+                echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
+                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form><br><br>';
+           
+                } else if ($onkokansio->num_rows == 1) {
                 while ($rowK = $onkokansio->fetch_assoc()) {
 
                     $kid = $rowK[id];
@@ -298,12 +299,12 @@ function myFunction(y) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($onkokansio->num_rows == 0) {
-
-                echo'<br><em id="ohje"> Sivustolle on mahdollista sisällyttää kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</em>';
+      echo'<br><p id="ohje">Tähän osioon on mahdollista luoda kansioita, joihin voi koota erilaista kurssiin liittyvää materiaalia.</p>';
                 echo'<div class="cm8-margin-top"></div>';
-                echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
-                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
-            } else if ($onkokansio->num_rows > 0) {
+                echo'<form action="uusikansio.php" method="post" style="display: inline-block; margin-right: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kansio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
+                echo'<form action="tuokansio.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Tuo kansioita" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form><br><br>';
+           
+                } else if ($onkokansio->num_rows > 0) {
                 echo'<br><br><b>Valitse haluamasi kansio.</b>';
             }
         } else {
@@ -499,7 +500,7 @@ function myFunction(y) {
         }
 
         if ($onkokansio->num_rows == 0) {
-            echo'<br><em id="ohje">Ei materiaaleja.</em>';
+            echo'<br><p id="ohje">Ei materiaaleja.</p>';
         } else {
 
             if (!isset($_GET[k]) && $ekakansio) {
@@ -509,7 +510,7 @@ function myFunction(y) {
 
 
 
-                    echo'<br><em id="ohje">Ei materiaaleja.</em>';
+                    echo'<br><p id="ohje">Ei materiaaleja.</p>';
                 } else if ($onkokansio->num_rows == 1) {
                     while ($rowK = $onkokansio->fetch_assoc()) {
 

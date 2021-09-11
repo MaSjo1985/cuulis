@@ -506,8 +506,8 @@ function myFunction(y) {
 //        echo' <button id="klik2"  class="myButtonOhjeA" title="Avaa digikirja">+ Avaa digikirja</button></p>';
 //    }
 
-
-    if (!$haetaulu = $db->query("select distinct taulu from itseprojektit where id='" . $_GET[i] . "'")) {
+        if ($onkoprojekti->num_rows != 0) {
+             if (!$haetaulu = $db->query("select distinct taulu from itseprojektit where id='" . $_GET[i] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
     while ($rowt = $haetaulu->fetch_assoc()) {
@@ -547,6 +547,9 @@ function myFunction(y) {
 
         echo'</div>';
     }
+        }
+
+   
 
 
 
@@ -564,10 +567,9 @@ function myFunction(y) {
 
         if ($onkoprojekti->num_rows == 0) {
 
-            echo'<br><br><em id="ohje">Tähän on mahdollista luoda tehtäväluettelo, johon opiskelijat voivat kirjata suorituksiaan.</em>';
-
+                 echo'<br><p id="ohje">Tähän on mahdollista luoda osio, jossa opiskelijat voivat kirjata suorituksiaan.</p>';
             echo'<div class="cm8-margin-top"></div>';
-            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Tehtävälista-osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Tehtävälista-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
         } else if ($onkoprojekti->num_rows > 0 && !isset($_GET[i])) {
             echo'<br>Valitse oheisesta valikosta haluamasi Tehtävälista-osio.<br><br>';
         } else {
@@ -1218,9 +1220,9 @@ function myFunction(y) {
 
             if ($onkoprojekti->num_rows == 0) {
 
-                echo'<br><em id="ohje">Ei aktiivisia Tehtävälista-projekteja</em><br>';
+                echo'<br><p id="ohje">Ei aktiivisia Tehtävälista-osioita</p><br>';
             } else {
-                echo'<br><em id="ohje">Valitse oheisesta valikosta haluamasi Tehtävälista-osio.</em><br><br>';
+                echo'<br><p id="ohje">Valitse oheisesta valikosta haluamasi Tehtävälista-osio.</p><br><br>';
             }
         } else {
 

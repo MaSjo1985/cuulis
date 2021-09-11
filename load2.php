@@ -132,7 +132,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
         echo' </div>';
     } else {
-        echo'<br><em>Ei viestejä</em><br><br>';
+        echo'<br><p>Ei viestejä</p><br><br>';
     }
 } else {
 
@@ -270,7 +270,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
         echo' </div>';
     } else {
-        echo'<br><em>Ei viestejä</em><br><br>';
+        echo'<br><p>Ei viestejä</p><br><br>';
     }
 }
 ?>

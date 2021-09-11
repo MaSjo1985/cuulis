@@ -232,7 +232,7 @@ function myFunction(y) {
 
 
 
-    echo'<div class="cm8-half" style="margin-top: 0px; padding-top: 0px">';
+    echo'<div class="cm8-half" style="margin-top: 0px; padding-top: 20px">';
 
     if ($_SESSION["Rooli"] == 'opiskelija') {
 
@@ -245,7 +245,7 @@ function myFunction(y) {
             $akt = $rowa[keskakt];
         }
         if ($akt == 0) {
-            echo'<br><em id="ohje">Ei keskusteluja.</em></div>';
+            echo'<br><p id="ohje">Ei keskusteluja.</p></div>';
         } else if ($akt == 1 && !isset($_GET[r]) && !$onyksi) {
             echo'Valitse haluamasi keskustelu';
         } else if ($akt == 1 && !isset($_GET[r]) && $onyksi) {
@@ -327,9 +327,9 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
 
 
 
-                echo'<b>Nimimerkki:</b><br><br><em style="font-style: normal; font-size: 0.9em">Voit laittaa viestin myös nimettömänä, kun otat tämän nimen pois</em> <br><br>
+                echo'<b>Nimi:</b><br><br><em style="font-style: normal; font-size: 0.9em">Voit laittaa viestin nimettömänä, jos jätät tämän tyhjäksi</em> <br><br>
                                                                 
-                                                               <textarea name="nimi" rows="1" style="font-size:0.9em">' . $nimi . '</textarea><br>';
+                                                               <textarea name="nimi" rows="1" style="font-size:0.9em"></textarea><br>';
 
                 echo'<br><br><b>Viesti:</b> <br> <br><textarea id="sendie" name="uusi" rows="8"  style="font-size:0.9em"></textarea>
 								<input type="hidden" name="paiva" value=' . $paiva . '>
@@ -353,7 +353,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
             $akt = $rowa[keskakt];
         }
         if ($akt == 0) {
-            echo'<br><em id="ohje">Ei keskusteluja.</em><form action="aktivoikeskustelu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 0.8em; padding:4px 6px"></form></div>';
+            echo'<br><p id="ohje">Ei keskusteluja.</p><form action="aktivoikeskustelu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 1em; padding:4px 6px"></form></div>';
         } else if ($akt == 1 && !isset($_GET[r]) && !$onyksi) {
             echo'Valitse haluamasi keskustelu';
         } else if ($akt == 1 && !isset($_GET[r]) && $onyksi) {
@@ -468,7 +468,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
 
 
 
-                echo'<b>Nimimerkki:</b> <br><br><textarea name="nimi" rows="1" style="font-size:0.9em">' . $nimi . '</textarea><br><br><b>Viesti:</b> <br> <br><textarea id="sendie"  class="content" name="uusi" rows="2" style="font-size:0.9em" ></textarea>
+                echo'<b>Nimi:</b> <br><br><textarea name="nimi" rows="1" style="font-size:0.9em">' . $nimi . '</textarea><br><br><b>Viesti:</b> <br> <br><textarea id="sendie"  class="content" name="uusi" rows="2" style="font-size:0.9em" ></textarea>
 								<input type="hidden" name="paiva" value=' . $paiva . '>
 								<input type="hidden" name="kello" value=' . $kello . '>
                                                               <input type="hidden" name="id" value=' . $_GET[r] . '>

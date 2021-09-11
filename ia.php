@@ -171,14 +171,16 @@ function myFunction(y) {
             if (!$haearvioinnit = $db->query("select distinct * from ia where kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY jarjestys")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
-
+   echo'<div style="text-align: center; margin-bottom: 0px;margin-top: 0px">';
             if ($haearvioinnit->num_rows != 0) {
-                echo'<div style="text-align: center; margin-bottom: 60px">';
-                echo'<br><br><form action="tarkasteleiat.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike"  title="Tarkastele opiskelijoiden lomakkeita" value="🕵 Tarkastele opiskelijoiden lomakkeita" class="myButtonTarkastele"  role="button" ></form>';
-                echo'</div>';
+             
+                echo'<form action="tarkasteleiat.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike"  title="Tarkastele opiskelijoiden lomakkeita" value="🕵 Tarkastele opiskelijoiden lomakkeita" class="myButtonTarkastele"  role="button" ></form>';
+                echo'<form action="uusi_ia.php" style="margin-top: 40px; margin-bottom: 20px" method="post" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa itsearviointilomaketta"  title ="Muokkaa itsearviointilomaketta" class="myButton9"  role="button"  style="font-size: 0.9em; padding:2px 4px;"></form>';
+
+              
             }
 
-
+  echo'</div>';
 
 
             if (!$haesarakkeet = $db->query("select distinct * from ia_sarakkeet where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
@@ -193,7 +195,7 @@ function myFunction(y) {
               if (!$haeonko2 = $db->query("select distinct * from ia_sarakkeet where kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY jarjestys")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
-            echo'<div style="margin-top: 40px">';
+         
             $nyt = date("Y-m-d H:i");
             if ($haeonko->num_rows != 0 || $haeonko2 -> num_rows !=0) {
 

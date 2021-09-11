@@ -38,7 +38,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     include("kurssisivustonheader.php");
 
 
-    echo '<div class="cm8-container7" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; font-size: 0.9em">';
+    echo '<div class="cm8-container7" id="paluu" style="margin-top: 0px; padding-top:0px; padding-bottom: 30px; margin-bottom: 0px; ">';
+
     if (!$haeprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
@@ -54,12 +55,25 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         header('location: ryhmatyot.php?r=' . $eka_id);
     }
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-        echo'<nav class="topnav" id="myTopnav">
+        echo'<nav class="topnav" id="myTopnav" >
 	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
 	  
 	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 		
 	 ';
+        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($rowa = $haeakt->fetch_assoc()) {
+
+            $kysakt = $rowa[kysakt];
+        }
+        if ($kysakt == 1) {
+            
+        } else {
+            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+        }
 
 
         echo'
@@ -91,20 +105,50 @@ function myFunction(y) {
     if ($_SESSION["Rooli"] == "opiskelija") {
         echo'<nav class="topnav" id="myTopnav">
 		 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
-		 
-		  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
-			
+		  
+		  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink">Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+	
 		 ';
+        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
 
+        while ($rowa = $haeakt->fetch_assoc()) {
+
+            $kysakt = $rowa[kysakt];
+        }
+        if ($kysakt == 1) {
+            
+        } else {
+            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+        }
 
 
         echo'
 	  <a href="keskustelut.php" >Keskustele</a> 
 	  <a href="osallistujat.php"   >Osallistujat</a>  	  
-	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div></a>
 	</nav>';
+
+
+
+
+        echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+
 
 
 
@@ -182,7 +226,7 @@ function myFunction(y) {
 
             echo'<br><p id="ohje">Tähän on mahdollista luoda osio, jossa opiskelijat voivat liittyä ryhmiin ja palauttaa tiedostoja.</p>';
             echo'<div class="cm8-margin-top"></div>';
-            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää palautus" class="myButton8"  role="button"  style="padding:4px 6px"></form>';
+            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Palautus-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
 
 
             echo'<div class="cm8-margin-top"></div>';
@@ -1513,9 +1557,9 @@ function myFunction(y) {
             if ($onkoprojekti->num_rows == 0) {
 
 
-                echo'<br><em id="ohje">Ei aktiivisia palautuksia.</em><br></div>';
+                echo'<br><p id="ohje">Ei aktiivisia Palautus-osioita.</p><br></div>';
             } else {
-                echo'<br><em id="ohje">Valitse oheisesta valikosta haluamasi Palautus-osio.</em><br><br>';
+                echo'<br><p id="ohje">Valitse oheisesta valikosta haluamasi Palautus-osio.</p><br><br>';
             }
         } else {
             if (!$onkoprojekti = $db->query("select * from projektit where id='" . $_GET[r] . "'")) {

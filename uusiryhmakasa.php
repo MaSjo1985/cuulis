@@ -47,7 +47,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         echo '<div class="cm8-margin-top"></div>';
-        echo' <h2>Lisää palautus</h2>';
+        echo' <h2>Lisää Palautus-osio</h2>';
         echo '<br><a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
         echo '<div class="cm8-margin-top"></div>';

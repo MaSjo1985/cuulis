@@ -149,7 +149,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
         echo' </div>';
     } else {
-        echo'<br><br><em>Ei viestejä</em><br><br>';
+        echo'<br><br><p>Ei viestejä</p><br><br>';
     }
 } else {
 
@@ -287,7 +287,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
         echo' </div>';
     } else {
-        echo'<br><br><em>Ei viestejä</em><br><br>';
+        echo'<br><br><p>Ei viestejä</p><br><br>';
     }
 }
 //header("location: keskustelut.php?r=".$id);

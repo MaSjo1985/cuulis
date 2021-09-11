@@ -99,7 +99,7 @@ function myFunction(y) {
             }
 
 
-            if (!$haeprojekti = $db->query("select * from kurssin_keskustelut where id='" . $_GET[r] . "'")) {
+            if (!$haeprojekti = $db->query("select * from kurssin_keskustelut where id='" . $_POST[id] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
 
@@ -109,9 +109,12 @@ function myFunction(y) {
                     $otsikko = $rowP[otsikko];
                     $id = $rowP[id];
                     $idtoinen = $rowP[id] . "/";
-                    if ($_GET[r] == $id || $_GET[r] == $idtoinen) {
+                    if ($_POST[id] == $id || $_POST[id] == $idtoinen) {
 
                         echo'<a href="keskustelut.php?r=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 6px 10px"><b style="font-size: 1em; ">&#9997 &nbsp&nbsp&nbsp' . $otsikko . ' </b></a>';
+                    }
+                    else{
+                        echo'<sdas';
                     }
                 }
             }
@@ -147,9 +150,11 @@ function myFunction(y) {
                     $id = $rowP[id];
                     $idtoinen = $rowP[id] . "/";
 
-                    if ($_GET[r] != $id && $_GET[r] != $idtoinen)
+                    if ($_POST[id] != $id && $_POST[id] != $idtoinen){
                         echo'<a href="keskustelut.php?r=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px; padding: 3px 6px 6px 10px"><b style="font-size: 1em; ">' . $otsikko . '</b></a>';
-                }
+                    }  
+                        
+                    }
                 echo'<div class="cm8-margin-top"></div>';
             }
             if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
@@ -162,9 +167,7 @@ function myFunction(y) {
                     $akt = $rowa[keskakt];
                 }
                 if ($akt != 0) {
-                    echo '<div class="cm8-margin-top"></div>';
-                    echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 0.8em; padding:2px 4px"></form>';
-                    echo '<div class="cm8-margin-top"></div>';
+                
                 }
             }
             echo' </div></nav>';

@@ -1,14 +1,8 @@
-* kyselylomakkeeseen opelle valinta onko nimetön vai ei
-
--> Tietokannassa kohta nimella. Eli jos on 1, niin tulee nimet
-
--> Tarkastele-osio + Excel
-
 ********************************************************************'
 
 PALAUTUKSET:
 
-tsekkaa muokkaa ja poista nappulat
+tsekkaa muokkaa ja poista nappulat ulkoasu
 
 
 *********************************************************

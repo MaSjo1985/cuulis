@@ -74,7 +74,14 @@ function myFunction(y) {
 </script>';
         echo'<div class="cm8-container3" style="padding-top: 30px">';
 
-
+if (!$resultn = $db->query("select distinct nimella from kyselyt where kurssi_id='".$_SESSION[KurssiId]."'")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                } 
+                
+                 while ($rown = $resultn->fetch_assoc()) {
+                     $nimella = $rown[nimella];
+                 }
+                 
         echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.2em; color: #f7f9f7; ">Tarkastele opiskelijoiden kyselylomakkeita</h6>';
         echo'<a href="kysely.php" ><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
@@ -106,7 +113,11 @@ function myFunction(y) {
             echo'<div class="cm8-responsive" id="container2">';
             echo '<table id="mytable" class="cm8-uusitable10 cm8-striped" style="overflow-x: auto"><thead>';
             echo '<tr style="background-color: #48E5DA"><th>Vastaus lähetetty</th>';
-
+           
+            if($nimella == 1){
+                 echo '<th>Sukunimi</th>';   
+                  echo '<th>Etunimi</th>';  
+            }
 
             while ($row2 = $result2->fetch_assoc()) {
                 $paaotsikko = $row2[aihe];
@@ -180,6 +191,17 @@ function myFunction(y) {
                 while ($row5 = $result5->fetch_assoc()) {
                     $muokattu = $row5[muokattu];
                     echo '<td>' . $muokattu . '</td>';
+                }
+                if($nimella==1){
+                     if (!$resultnimi = $db->query("select distinct etunimi, sukunimi from kayttajat where id='" . $row[kaid] . "'")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+                    while ($rownimi = $resultnimi->fetch_assoc()) {
+                    $etunimi = $rownimi[etunimi];
+                     $sukunimi = $rownimi[sukunimi];
+                    echo '<td>' . $sukunimi.'</td>';
+                    echo '<td>' . $etunimi.'</td>';
+                }
                 }
 
                 $eityhjia = 0;

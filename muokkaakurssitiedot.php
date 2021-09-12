@@ -20,7 +20,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $_SESSION["Koodi"] = $_POST[koodi];
         $_SESSION["Koepvm"] = $_POST[koepvm];
         $_SESSION["Koeaika"] = $_POST[koeaika];
-
+$_SESSION["Alkupvm"] = $_POST[alkupvm];
+                $_SESSION["Loppupvm"] = $_POST[loppupvm];
         $lukuvuosialku = $_POST[lukuvuosialku];
         $lukuvuosiloppu = $_POST[lukuvuosiloppu];
         $lukuvuosi = $lukuvuosialku . '-' . $lukuvuosiloppu;

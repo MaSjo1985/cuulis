@@ -13,7 +13,13 @@ while ($rowN = $haenimi->fetch_assoc()) {
 
     $nimi = $rowN[koodi] . ' ' . $rowN[nimi] . ': Kyselylomakkeen vastaukset (' . $nyt . ')';
 }
-
+if (!$resultn = $db->query("select distinct nimella from kyselyt where kurssi_id='".$_SESSION[KurssiId]."'")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                } 
+                
+                 while ($rown = $resultn->fetch_assoc()) {
+                     $nimella = $rown[nimella];
+                 }
 
 if (!$onkoprojekti = $db->query("select distinct * from kyselyt where kurssi_id='" . $_SESSION[KurssiId] . "' AND aihe=1 ORDER BY jarjestys")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -22,8 +28,17 @@ $list = array();
 
 
 $list[0][0] = 'Vastaus lähetetty';
+if($nimella==1){
+    $list[0][1] = 'Sukunimi';
+    $list[0][2] = 'Etunimi';
+}
+if($nimella==1){
+    $sarake = 2;
+}
+else{
+    $sarake = 0;
+}
 
-$sarake = 0;
 //TEHDÄÄN RIVI 0:
 
 while ($rowo = $onkoprojekti->fetch_assoc()) {
@@ -67,8 +82,13 @@ if (!$onkoprojekti = $db->query("select distinct * from kyselyt where kurssi_id=
 }
 
 
+if($nimella==1){
+    $sarake = 2;
+}
+else{
+    $sarake = 0;
+}
 
-$sarake = 0;
 
 //TEHDÄÄN VASTAUS SARAKKEET!!
 
@@ -87,7 +107,21 @@ while ($rowo = $onkoprojekti->fetch_assoc()) {
     while ($rowv = $haevastaukset->fetch_assoc()) {
 
         $rivinro++;
+    
         $list[$rivinro][0] = $rowv[muokattu];
+        
+        if($nimella==1){
+             if (!$haeop = $db->query("select distinct * from kayttajat where id='" . $rowv[kayttaja_id] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+     while ($rowop = $haeop->fetch_assoc()) {
+         $etunimi = $rowop[etunimi];
+         $sukunimi = $rowop[sukunimi];
+          $list[$rivinro][1] = $sukunimi;
+           $list[$rivinro][2] = $etunimi;
+     }
+     
+        }
         $rowv[teksti] = str_replace('<br />', " ", $rowv[teksti]);
         $rowv[teksti] = preg_replace("/\r|\n/", "", $rowv[teksti]);
         $list[$rivinro][$sarake] = $rowv[teksti];

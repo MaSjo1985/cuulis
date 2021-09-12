@@ -222,6 +222,27 @@ function myFunction(y) {
             }
 
             echo'</form>';
+                                echo'<b style="font-size: 0.9em;  color: #c7ef00;">Tuleeko vastaukset nimettömänä?</b>';
+                if (!$result = $db->query("select distinct nimella from kyselyt where kurssi_id = '" . $_SESSION[KurssiId] . "' AND nimella = 0")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+                echo'<form id="form2" name="form2" style="font-size: 0.9em" method="post" action="kyselynimella.php">';
+                if ($result->num_rows != 0) {
+
+
+                      echo'<p style="display: inline-block; margin-right: 20px"><input type="radio" name="nimella" onchange="this.form.submit();" value="0" checked>&nbsp Kyllä</p>';
+                   
+                    echo'<p style="display: inline-block"><input type="radio" name="nimella" onchange="this.form.submit();" value="1">&nbsp Ei</p>';
+                
+                    
+                } else {
+                    echo'<p style="display: inline-block; margin-right: 20px"><input type="radio" name="nimella" onchange="this.form.submit();" value="0">&nbsp Kyllä</p>';
+                   
+                    echo'<p style="display: inline-block"><input type="radio" name="nimella" onchange="this.form.submit();" value="1" checked>&nbsp Ei</p>';
+                
+                    
+                }
+                echo'</form><br>';
             ?>
 
 
@@ -275,23 +296,8 @@ function myFunction(y) {
             if ($haearvioinnit->num_rows != 0) {
                 echo'<br><form action="tarkastelekyselyt.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike"  title="Tarkastele vastauksia" value="🕵 Tarkastele vastauksia" class="myButtonTarkastele"  role="button" ></form>';
 
-                echo' <div class="cm8-margin-top"></div>';
-//                                echo'<b style="font-size: 0.8em">Avataanko 1. kansio automaattisesti?</b><br><br>';
-//                if (!$result = $db->query("select distinct ekakansio from kurssit where id = '" . $_SESSION[KurssiId] . "' AND ekakansio = 1")) {
-//                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-//                }
-//                echo'<form id="form2" name="form2" style="font-size: 0.9em" method="post" action="ekakansioauki.php">';
-//                if ($result->num_rows != 0) {
-//
-//
-//                    echo'<input type="radio" onchange="this.form.submit();" name="auki" value="1" checked>&nbsp Kyllä<br>';
-//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0">&nbsp Ei<br>';
-//                } else {
-//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="1">&nbsp Kyllä<br>';
-//                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0" checked>&nbsp Ei<br>';
-//                }
-//                echo'</form>';
-                echo'<b id="ohje"> Kyselylomakkeen vastaukset tulee oletuksena nimettömänä.</b>';
+           
+//                echo'<b id="ohje"> Kyselylomakkeen vastaukset tulee oletuksena nimettömänä.</b>';
             }
 
 
@@ -465,10 +471,15 @@ function myFunction(y) {
             if ($tallennettu == 0 && $aukiok == 1) {
 
                 if ($sulkuok == 1) {
-                    echo'<b id="ohje"> Kyselylomakkeen vastaukset tulee oletuksena nimettömänä.</b>';
+                     if (!$result = $db->query("select distinct nimella from kyselyt where kurssi_id = '" . $_SESSION[KurssiId] . "' AND nimella = 0")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
-
-
+                if ($result->num_rows != 0) {
+                       echo'<b id="ohje" style="font-size: 1em"> Kyselylomakkeen vastaukset tulee nimettömänä.</b>';
+                }
+               
+                 
+                }
 
                 echo'<div class="cm8-responsive" style="overflow-y: hidden">';
 
@@ -477,7 +488,7 @@ function myFunction(y) {
                 echo'<br><br>';
 
                 echo'<div class="cm8-responsive">';
-                echo '<table id="mytable2" class="cm8-tableoppilas" style="table-layout:fixed; max-width: 100%;"> ';
+                echo '<table id="mytable2" class="cm8-tableoppilas" style="table-layout:fixed; max-width: 100%; font-size: 1em"> ';
 
 
                 echo '<tbody>';
@@ -558,10 +569,10 @@ function myFunction(y) {
                         }
                     }
                     if ($onkot == 1) {
-                        echo'<br><input type="submit" name="painiket" value="&#10147 Lähetä vastaukset" class="myButton8"  role="button"  style="display: inline-block; margin-left: 5px; padding:4px 6px; margin-right: 60px">';
-                        echo'<button name="poista" class="myButton8" type="submit" style="background-color: red"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista vastaukset</button><br><br>';
+                        echo'<br><input type="submit" name="painiket" value="&#10147 Lähetä vastaukset" class="myButton8"  role="button"  style="display: inline-block; margin-left: 5px; padding:4px 6px; margin-right: 60px; font-size: 1em">';
+                        echo'<button name="poista" class="myButton8" type="submit" style="background-color: red; font-size: 1em"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista vastaukset</button><br><br>';
                     } else {
-                        echo'<br><input type="submit" name="painiket" value="&#10147 Lähetä vastaukset" class="myButton8"  role="button"   style="margin-left: 5px; padding:4px 6px;"><br><br>';
+                        echo'<br><input type="submit" name="painiket" value="&#10147 Lähetä vastaukset" class="myButton8"  role="button"   style="margin-left: 5px; padding:4px 6px; font-size: 1em"><br><br>';
                     }
                 }
 

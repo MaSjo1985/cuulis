@@ -709,7 +709,7 @@ function myFunction(y) {
                 }
 
                 if ($minimi == '') {
-                    echo'<form action="muokkaaminimia.php" method="get"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta tehtäville minimi%-raja" title="Aseta tehtäville minimi%-raja" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
+                    echo'<br><form action="muokkaaminimia.php" method="get"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta tehtäville minimi%-raja" title="Aseta tehtäville minimi%-raja" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
                 } else {
 
                     echo'<br><p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtävien minimi%-raja on: ' . $minimi . ' %</p>';
@@ -931,6 +931,7 @@ function myFunction(y) {
                     echo '<tr style="border: 2px solid #080708; background-color: #c50076;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody>';
                 }
+                
                 $otmaara = 0;
                 $maara = 0;
                 $maaratehtavat = 0;
@@ -1391,7 +1392,7 @@ function myFunction(y) {
                     echo'<br><form action="tallennatehtavat.php" id="formi" method="post">';
                     echo'<div id="scrollbar"><div id="spacer"></div></div>';
                     echo'<div class="cm8-responsive" id="container2" style="padding-top: 10px">';
-                    echo '<table id="mytable2" class="cm8-uusitable2" style="table-layout:fixed;  max-width: 99%">  ';
+                    echo '<table id="mytable" class="cm8-uusitable2" style="table-layout:fixed;  max-width: 99%">  ';
                     echo'<thead>';
                     echo '<tr style="border: 2px solid #080708; background-color: #c50076;  font-size: 1em">';
 
@@ -2400,8 +2401,7 @@ include("footer.php");
 
     var $table = $('#mytable');
     $table.floatThead({zIndex: 1});
-    var $table2 = $('#mytable2');
-    $table2.floatThead({zIndex: 1});
+ 
 
 </script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>

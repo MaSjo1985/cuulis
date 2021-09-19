@@ -98,7 +98,7 @@ while ($rowo = $onkoprojekti->fetch_assoc()) {
     $kyselyid = $rowo[id];
     //yks sarake kerrallaan
 
-    if (!$haevastaukset = $db->query("select distinct * from kyselytkp where kyselyt_id='" . $kyselyid . "' AND teksti <> ''")) {
+    if (!$haevastaukset = $db->query("select distinct * from kyselytkp where kyselyt_id='" . $kyselyid . "' AND teksti <> '' order by muokattu")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
 

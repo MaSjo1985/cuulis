@@ -1,9 +1,17 @@
-********************************************************************'
+* palautuksissa ryhmän opiskelijoide nimet sukunimi, etunimi?
 
-PALAUTUKSET:
+*************************************************************************
 
-tsekkaa muokkaa ja poista nappulat ulkoasu
+* tehtävälistan muokkauksen header + vaakascrolli
 
+*******************************************************************'
+
+* FIXED HEADER:
+https://imgur.com/a/8rptLeW
+
+position: fixed;
+top: 0px;        <--- ei saa muuttua
+left pois kokonaan
 
 *********************************************************
 

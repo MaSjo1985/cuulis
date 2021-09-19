@@ -534,7 +534,8 @@ function myFunction(y) {
 
             echo'</div>';
             echo'<p style="color: #c7ef00"><b>Tehtäviä yhteensä: ' . $yht . ' kpl.</b></p>';
-            echo'<div class="cm8-responsive" style="padding-top:0px; margin-top: 0px">';
+  echo'<div id="scrollbar"><div id="spacer"></div></div>';
+                echo'<div class="cm8-responsive" id="container2" >';
 
 
             echo '<br><table id="mytable" class="cm8-uusitableteht" style="table-layout:fixed; width: 100%;">  <thead>';
@@ -713,14 +714,6 @@ function myFunction(y) {
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead-slim.min.js"></script>
-        <script>
-                var $table = $('#mytable');
-                $table.floatThead({zIndex: 1});
-
-        </script>
-
 
 
         <?php
@@ -840,5 +833,42 @@ include("footer.php");
 
     });
 </script>
+<script>
+
+    $("#scrollbar").on("scroll", function () {
+
+        var container = $("#container2");
+        var scrollbar = $("#scrollbar");
+
+        ScrollUpdate(container, scrollbar);
+    });
+
+    function ScrollUpdate(content, scrollbar) {
+        $("#spacer").css({"width": "500px"}); // set the spacer width
+        scrollbar.width = content.width() + "px";
+        content.scrollLeft(scrollbar.scrollLeft());
+    }
+
+    ScrollUpdate($("#container2"), $("#scrollbar"));
+
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead-slim.min.js"></script>
+        <script>
+                var $table = $('#mytable');
+                $table.floatThead({zIndex: 50});
+
+        </script>
+<script src="js/jquery-2.1.3.js"></script>
+<script src="js/tableHeadFixer.js"></script>
+<script>
+
+
+    //ilman tätä mikään muu ei toimi kuin scrolli
+
+    $("#mytable").tableHeadFixer({"head": false, "left": 1});
+</script> 
+
+      
 </body>
 </html>							

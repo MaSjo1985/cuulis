@@ -451,7 +451,7 @@ function myFunction(y) {
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
             echo '<br><h2 style="padding-top: 20px; display: inline-block">AIKATAULU</h2>';
-            echo'<br><br><em style="font-size: 0.8em">Halutessasi voit lisätä tähän aikataulun.</em>';
+            echo'<br><br><p id="ohje">Halutessasi voit lisätä tähän aikataulun.</p>';
             echo' <form action="aktivoiaikataulu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää aikataulu" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
         }
     } else {
@@ -463,8 +463,9 @@ function myFunction(y) {
             echo' <form action="aikatauluvarmistus.php" method="post" style="display: inline-block; margin-right: 10px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><button class="roskis" title="Poista aikataulu"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista</b></i></button></form>';
         }
 
-        echo'<div class="cm8-responsive" style="padding-top: 10px; padding-right: 10px">';
-        echo '<table id="mytable" class="cm8-uusitablekurssi" style="table-layout:fixed; max-width: 100%;">  <thead>';
+        echo'<div class="cm8-responsive" style="padding-top: 10px; padding-right: 10px;">';
+       
+        echo '<table id="mytable" class="cm8-uusitablekurssi" style="max-width: 100%;">  <thead>';
 
         echo '<tr style="border: 1px solid grey;id="palaa"><th style="border: 1px solid grey; width: 10%">Ajankohta</th><th style="border: 1px solid grey ">Aihe</th><th style="border: 1px solid grey">Lisätietoja</th></tr></thead><tbody>';
 
@@ -484,7 +485,9 @@ function myFunction(y) {
         }
 
         echo "</tbody></table>";
-    }
+ 
+        
+        }
 
     echo'</div>';
     echo'</div>';

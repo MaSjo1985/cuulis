@@ -717,13 +717,26 @@ table.tehtavatauluope th{
 }
 
 
-table.cm8-uusitablekurssi { border: 2px solid grey; vertical-align: top; background-color: #f7f9f7 }
+table.cm8-uusitablekurssi { border: 2px solid grey; vertical-align: top; background-color: #f7f9f7; table-layout: fixed }
 
 table.cm8-uusitablekurssi th{background-color: #c50076; text-align: left; vertical-align: top; color: #00ffff }
-table.cm8-uusitablekurssi td{ text-align: left;  vertical-align: top; padding: 20px; color: #080708; background-color: #f7f9f7; }
+table.cm8-uusitablekurssi td{ text-align: left;  vertical-align: top; padding: 20px; color: #080708; background-color: #f7f9f7;word-wrap: break-word;         
+    overflow-wrap: break-word;     
+ }
 table.cm8-uusitablekurssi a {color: inherit}
 table.cm8-uusitablekurssi a:hover{ cursor: pointer ; border-bottom: 1px solid transparent;}
 
+
+table.cm8-uusitablekurssi tr td:nth-child(1){
+width: 10%;
+}
+
+table.cm8-uusitablekurssi tr td:nth-child(2){
+width: 45%;
+}
+table.cm8-uusitablekurssi tr td:nth-child(3){
+width: 45%;
+}
 table.cm8-uusitable{
     background-color: #f7f9f7;
     color: #080708;
@@ -971,9 +984,9 @@ table.cm8-uusitableteht td:nth-last-child(2){
 
 }
 table.cm8-uusitableteht tr:last-child td:first-child{
-
+background-color: #080708;
     vertical-align: text-top;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 table.cm8-uusitableteht tr:last-child td:last-child{
 

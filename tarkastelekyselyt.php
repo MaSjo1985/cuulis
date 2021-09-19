@@ -88,7 +88,7 @@ if (!$resultn = $db->query("select distinct nimella from kyselyt where kurssi_id
 
 
         $ipid = $_POST[id];
-        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kyselytkp, kyselyt, kayttajat, opiskelijankurssit where kyselytkp.kayttaja_id = kayttajat.id AND kyselytkp.teksti <> '' AND kyselytkp.kyselyt_id = kyselyt.id AND kyselyt.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.kurssi_id='" . $_SESSION["KurssiId"] . "' AND kyselytkp.tallennettu=1 order by kyselytkp.muokattu DESC")) {
+        if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kyselytkp, kyselyt, kayttajat, opiskelijankurssit where kyselytkp.kayttaja_id = kayttajat.id AND kyselytkp.teksti <> '' AND kyselytkp.kyselyt_id = kyselyt.id AND kyselyt.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.kurssi_id='" . $_SESSION["KurssiId"] . "' AND kyselytkp.tallennettu=1 order by kyselytkp.muokattu")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 

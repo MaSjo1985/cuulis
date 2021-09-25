@@ -459,6 +459,7 @@ function myFunction(y) {
                 echo "</tbody></table>";
                 //            if (($nyt <= $takaraja && $takarajaon == 1) || $takarajaon == 0) {
 //            }
+                
                 $tallennettu = 0;
                 $kommentti = '';
                 if (!$haekommentti = $db->query("select distinct * from iakommentit where ia_sarakkeet_jarjestys = '" . $rows[jarjestys] . "' AND kurssi_id='" . $_SESSION["KurssiId"] . "' AND kayttaja_id='" . $_GET[kaid] . "'")) {
@@ -476,7 +477,7 @@ function myFunction(y) {
                 if ($tallennettu == 0) {
                     $kommentti = str_replace('<br />', "", $kommentti);
                     echo'<p style="font-weight: bold; color:  #48E5DA; font-size: 0.8em; margin-bottom: 5px">Kommentoi tätä saraketta: </p>';
-                    echo'<textarea style="width: 80%;padding: 6px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708;" rows="5"  name="kommentti">' . $kommentti . '</textarea><br>';
+                    echo'<textarea style="width: 80%;padding: 6px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708;" rows="10"  name="kommentti">' . $kommentti . '</textarea><br>';
                     echo'<input type="submit" name="painiket" class="myButton8" value="&#10003 Tallenna" title="Tallenna" id="tuutanne" style="font-size: 0.7em; padding: 2px 4px">';
                 } else {
                     echo'<p style="font-weight: bold; color:  #48E5DA; font-size: 0.8em; margin-bottom: 5px">Kommenttisi tästä sarakkeesta: </p>';

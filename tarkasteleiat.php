@@ -97,7 +97,7 @@ function myFunction(y) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         $smaara = $haesarakkeet->num_rows;
-
+echo'<input type="hidden" name="smaara" id="smaara" value="'.$smaara.'">';
         if ($smaara == 1) {
             $divleveys = 80;
         } else {
@@ -105,10 +105,11 @@ function myFunction(y) {
         }
 
         while ($rows = $haesarakkeet->fetch_assoc()) {
-            $smaara--;
+           
             echo'<div class="cm8-responsive" style="vertical-align: top;margin-top: 20px; padding:0px;">';
-
-            echo '<table id="mytable" class="cm8-uusitable10uusi cm8-striped" style="width: 100%; overflow-x: auto"><thead>';
+           
+            echo '<table id="mytable'.$smaara.'" class="cm8-uusitable10uusi cm8-striped" style="width: 100%; overflow-x: auto"><thead>';
+             $smaara--;
             echo'<p style="margin: 0px; font-weight: bold; background-color: #c50076; padding: 8px;font-size: 0.8em; border: none">Sarake ' . $rows[jarjestys] . '</p>';
             echo '<tr style="background-color: #48E5DA"><th>Opiskelija</th>';
             if (!$haesisalto = $db->query("select distinct * from ia WHERE kurssi_id='" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys ='" . $rows[jarjestys] . "' ORDER BY jarjestys")) {
@@ -267,16 +268,6 @@ echo'</div>';
 
 include("footer.php");
 ?>
-<script src="js/jquery-2.1.3.js"></script>
-<script src="js/tableHeadFixer.js"></script>
-<script>
-
-
-    //ilman tätä mikään muu ei toimi kuin scrolli
-
-    $("#mytable").tableHeadFixer({"head": false, "left": 1});
-
-</script>
 <script>
 
 
@@ -289,7 +280,7 @@ include("footer.php");
     });
 
     function ScrollUpdate(content, scrollbar) {
-        $("#spacer").css({"width": "1500px"}); // set the spacer width
+        $("#spacer").css({"width": "500px"}); // set the spacer width
         scrollbar.width = content.width() + "px";
         content.scrollLeft(scrollbar.scrollLeft());
     }
@@ -305,21 +296,27 @@ include("footer.php");
 <script src="js/tableHeadFixer.js"></script>
 <script>
 
-
+var smaara = document.getElementById("smaara").value;
     //ilman tätä mikään muu ei toimi kuin scrolli
+for (let i = smaara; i > 0; i--) {
+ $("#mytable"+i).tableHeadFixer({"head": false, "left": 1});
+}
+   
 
-    $("#mytable").tableHeadFixer({"head": false, "left": 1});
-
-</script>
+</script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead-slim.min.js"></script>
 <script>
 
-
-    var $table = $('#mytable2  ');
+var smaara = document.getElementById("smaara").value;
+    //ilman tätä mikään muu ei toimi kuin scrolli
+for (let i = smaara; i > 0; i--) {
+  var $table = $('#mytable'+i);
     $table.floatThead({zIndex: 1});
+}
+  
 
 
-</script>
+</script> 
 </body>
-</html>
+</html>								

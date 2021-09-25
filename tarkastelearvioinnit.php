@@ -277,16 +277,6 @@ echo'</div>';
 
 include("footer.php");
 ?>
-<script src="js/jquery-2.1.3.js"></script>
-<script src="js/tableHeadFixer.js"></script>
-<script>
-
-
-    //ilman tätä mikään muu ei toimi kuin scrolli
-
-    $("#mytable").tableHeadFixer({"head": false, "left": 1});
-
-</script>
 <script>
 
 
@@ -299,7 +289,7 @@ include("footer.php");
     });
 
     function ScrollUpdate(content, scrollbar) {
-        $("#spacer").css({"width": "1500px"}); // set the spacer width
+        $("#spacer").css({"width": "500px"}); // set the spacer width
         scrollbar.width = content.width() + "px";
         content.scrollLeft(scrollbar.scrollLeft());
     }
@@ -320,16 +310,16 @@ include("footer.php");
 
     $("#mytable").tableHeadFixer({"head": false, "left": 1});
 
-</script>
+</script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead-slim.min.js"></script>
 <script>
 
 
-    var $table = $('#mytable2  ');
+    var $table = $('#mytable');
     $table.floatThead({zIndex: 1});
 
 
-</script>
+</script> 
 </body>
-</html>
+</html>								

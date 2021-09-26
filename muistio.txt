@@ -1,11 +1,3 @@
-************************
-
-* palautuksissa ryhmän opiskelijoide nimet sukunimi, etunimi?
-
-*************************************************************************
-
-* tehtävälistan muokkauksen header + vaakascrolli
-
 *******************************************************************'
 
 * FIXED HEADER:

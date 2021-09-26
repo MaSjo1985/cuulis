@@ -130,7 +130,6 @@ function myFunction(y) {
         }
 
 
-
         echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
         echo '<form name="Form" id="myForm" onSubmit="return validateFormKurssityo();" action="muokkaaprojekti3.php" style="padding-top: 0px; margin-top: 10px" class="form-style-k" style="width:50%" method="post"><fieldset>';
 
@@ -179,7 +178,7 @@ function myFunction(y) {
 
         echo'<p>Opiskelijoita vähintään/ryhmä:<br><br>	<select id="min" name="minimi">';
         echo'<option value="' . $opminimi . '">' . $opminimi;
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i =  $opminimi+1; $i <= 100; $i++) {
             echo'
 	<option value=' . $i . '>' . $i;
         }
@@ -187,8 +186,8 @@ function myFunction(y) {
         echo'</select><br></p><br>';
 
         echo'<p>Opiskelijoita enintään/ryhmä:	<br><br><select  id="max" name="maksimi">';
-        echo'<option value="' . $opmaksimi . '">' . $opmaksimi;
-        for ($i = 1; $i <= 100; $i++) {
+        echo'<option id="piilotamaksimi" value="' . $opmaksimi . '">' . $opmaksimi;
+        for ($i =  1; $i <= 100; $i++) {
             echo'
 	<option id=' . $i . ' value=' . $i . '>' . $i;
         }
@@ -223,16 +222,24 @@ function myFunction(y) {
 
             $(function () {
                 $("#min").change(function () {
+                     for ($i = 0; $i <= 100; $i++) {
+                        var id = $i;
+
+                        $('#' + id).show();
+                   
+                    }
                     var value = $('option:selected', this).val();
                     $("#max").val(value);
 
-                    for ($i = (value - 1); $i >= 1; $i--) {
+                    for ($i = (value - 1); $i >= 0; $i--) {
                         var id = $i;
 
                         $('#' + id).hide();
+                   
                     }
-
-
+                  
+                 
+                 $('#piilotamaksimi').hide();
                 });
 
 

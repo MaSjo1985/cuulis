@@ -541,9 +541,9 @@ function myFunction(y) {
 
 
 
-                                        echo'<div class="cm8-responsive" style="width: 90%; background-color: #272227; color: #f7f9f7" >';
-                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' style="background-color:red"><th>' . $row[nimi] . "</th>";
+                                        echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                                        echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -578,7 +578,7 @@ function myFunction(y) {
                                         //jos liittyneitä opiskelijoita
                                         if ($result2->num_rows != 0) {
                                             while ($row2 = $result2->fetch_assoc()) {
-                                                echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[etunimi] . " " . $row2[sukunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
+                                                echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[sukunimi] . " " . $row2[etunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
                                             }
                                         }
 
@@ -724,9 +724,9 @@ function myFunction(y) {
                                         echo'<div class="cm8-margin-top"><br></div>';
                                     } else {
 
-                                        echo'<div class="cm8-responsive" style="width: 90%; background-color: #272227; color: #f7f9f7" >';
-                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' style="background-color:red"><th colspan="2">' . $row[nimi] . "</th></tr>";
+                                        echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                                        echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -741,7 +741,7 @@ function myFunction(y) {
                                         //jos liittyneitä opiskelijoita
                                         if ($result2->num_rows != 0) {
                                             while ($row2 = $result2->fetch_assoc()) {
-                                                echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[etunimi] . " " . $row2[sukunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
+                                                echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[sukunimi] . " " . $row2[etunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
                                             }
                                         }
 
@@ -1069,9 +1069,9 @@ function myFunction(y) {
                             if ($row[lopullinen] == 0) {
 
 
-                                echo'<div class="cm8-responsive" style="width: 90%; background-color: #272227; color: #f7f9f7" >';
-                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . '><th>' . $row[nimi] . "</th>";
+                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                               echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1105,7 +1105,7 @@ function myFunction(y) {
                                 //jos liittyneitä opiskelijoita
                                 if ($result2->num_rows != 0) {
                                     while ($row2 = $result2->fetch_assoc()) {
-                                        echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[etunimi] . " " . $row2[sukunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
+                                        echo '<tr style="border: 2px solid grey"><td ><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[sukunimi] . " " . $row2[etunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
                                     }
                                 }
 
@@ -1244,9 +1244,10 @@ function myFunction(y) {
                                 echo'<div class="cm8-margin-top"><br></div>';
                             } else {
 
-                                echo'<div class="cm8-responsive" style="width: 90%; background-color: #272227; color: #f7f9f7" >';
-                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . ' style="background-color:red"><th colspan="2">' . $row[nimi] . "</th></tr>";
+                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                                         echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
+
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1261,7 +1262,7 @@ function myFunction(y) {
                                 //jos liittyneitä opiskelijoita
                                 if ($result2->num_rows != 0) {
                                     while ($row2 = $result2->fetch_assoc()) {
-                                        echo '<tr style="border: 2px solid grey"><td><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[etunimi] . " " . $row2[sukunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
+                                        echo '<tr style="border: 2px solid grey"><td><a href="kayttaja.php?url=' . $urlmihin . '&ka=' . $row2[kaid] . '&r=' . $pid . '" style="padding: 2px 6px; margin-left: 60 px" title="Näytä käyttäjäprofiili">' . $row2[sukunimi] . " " . $row2[etunimi] . '</a><a href="poista.php?pid=' . $pid . '&oid=' . $row2[kaid] . '&ryid=' . $ryhmaid . '" class="myButton8"  role="button"  style="margin-bottom: 0px; padding: 2px 6px; margin-left: 30px" title="Poista opiskelija ryhmästä">&#10007</a></td><td></td></tr>';
                                     }
                                 }
 
@@ -1759,9 +1760,10 @@ function myFunction(y) {
                                 while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; ; margin-bottom: 30px; padding-bottom: 0px; background-color: #272227; color: #f7f9f7" >';
-                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . "</th>";
+                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
+                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+               
 
                                     if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1788,7 +1790,7 @@ function myFunction(y) {
 
                                     while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
 
-                                        echo '<tr style="border: 2px solid grey"><td>' . $rowRO[etunimi] . ' ' . $rowRO[sukunimi] . '</td><td></td><td></td></tr>';
+                                        echo '<tr style="border: 2px solid grey"><td>' . $rowRO[sukunimi] . ' ' . $rowRO[etunimi] . '</td><td></td><td></td></tr>';
                                     }
 
 
@@ -1984,10 +1986,11 @@ function myFunction(y) {
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                            echo'<div class="cm8-responsive" style="width: 90%; ; margin-bottom: 30px; padding-bottom: 0px; background-color: #272227; color: #f7f9f7" >';
-                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                            echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . "</th>";
-
+                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
+                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                            
+     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+               
                             if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
@@ -2014,7 +2017,7 @@ function myFunction(y) {
                             while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
 
 
-                                echo '<tr style="border: 2px solid grey"><td>' . $rowRO[etunimi] . ' ' . $rowRO[sukunimi] . '</td><td></td><td></td></tr>';
+                                echo '<tr style="border: 2px solid grey"><td>' . $rowRO[sukunimi] . ' ' . $rowRO[etunimi] . '</td><td></td><td></td></tr>';
                             }
 
 
@@ -2267,16 +2270,17 @@ function myFunction(y) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; ; margin-bottom: 30px; padding-bottom: 0px; background-color: #272227; color: #f7f9f7" >';
-                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . "</th><th></th><th></th></tr>";
-
+                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
+                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                                
+     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th><th></th><th></th></tr>';
+               
 
 
 
                                     while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
 
-                                        echo '<tr style="border: 2px solid grey"><td><td>' . $rowRO[etunimi] . ' ' . $rowRO[sukunimi] . '</td><td></td><td></td></tr>';
+                                        echo '<tr style="border: 2px solid grey"><td><td>' . $rowRO[sukunimi] . ' ' . $rowRO[etunimi] . '</td><td></td><td></td></tr>';
                                     }
 
 
@@ -2459,10 +2463,11 @@ function myFunction(y) {
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                            echo'<div class="cm8-responsive" style="width: 90%; ; margin-bottom: 30px; padding-bottom: 0px; background-color: #272227; color: #f7f9f7" >';
-                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                            echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . "</th>";
-
+                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
+                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.999%; overflow-y: hidden; overflow-x:auto;">';
+                     
+     echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+               
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2470,7 +2475,7 @@ function myFunction(y) {
 
                             while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
 
-                                echo '<tr style="border: 2px solid grey"><td>' . $rowRO[etunimi] . ' ' . $rowRO[sukunimi] . '</td><td></td></tr>';
+                                echo '<tr style="border: 2px solid grey"><td>' . $rowRO[sukunimi] . ' ' . $rowRO[etunimi] . '</td><td></td></tr>';
                             }
 
 

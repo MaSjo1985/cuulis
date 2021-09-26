@@ -176,6 +176,11 @@ function myFunction(y) {
 
             $(function () {
                 $("#min").change(function () {
+                      for ($i = 0; $i <= 100; $i++) {
+                        var id = $i;
+
+                        $('#' + id).show();
+                    }
                     var value = $('option:selected', this).val();
                     $("#max").val(value);
 

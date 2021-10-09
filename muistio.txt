@@ -1,3 +1,16 @@
+* TSEKKAA TEHTÄVÄLISTAN TARKASTELUT HUOLELLA!!
+
+***********************************************************************
+
+* kaikki lisää lopppuun-painikkeet -> tsekkaa että kaikki tallentuu
+
+*******************************************************************************************
+
+KÄYTTÄJÄN POISTAMINEN KESTÄÄ IKUISUUDEN!
+
+TSEKKKAA Abdulaziz Akram
+
+
 *******************************************************************'
 
 * FIXED HEADER:
@@ -65,9 +78,6 @@ ARVIOINTI:
 
 ***********************************************************************************************
 
-KÄYTTÄJÄN POISTAMINEN KESTÄÄ IKUISUUDEN!
-
-*******************************************************************************************
 
 Formien ilmoitusten värit yms.
 

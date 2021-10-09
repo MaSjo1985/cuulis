@@ -221,6 +221,14 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
             $tehdyt = $tehdyt + $rowpis2[paino];
         }
 
+        //tehdyt kpl
+        
+               if (!$haetehdytkpl = $db->query("select distinct itsetehtavat.id from itsetehtavat, itsetehtavatkp where itsetehtavat.itseprojektit_id='" . $ipid . "' AND itsetehtavatkp.itsetehtavat_id=itsetehtavat.id AND itsetehtavatkp.kayttaja_id='" . $kayttaja_id . "' AND itsetehtavatkp.tehty=1")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
+        $tehdytkpl = $haetehdytkpl->num_rows;
+        
         //TEHDYT JA OSATUT 
         if (!$haeomatpisteet = $db->query("select distinct itsetehtavat.id, itsetehtavat.paino as paino from itsetehtavat, itsetehtavatkp where itsetehtavat.itseprojektit_id='" . $ipid . "' AND itsetehtavatkp.itsetehtavat_id=itsetehtavat.id AND itsetehtavatkp.kayttaja_id='" . $kayttaja_id . "' AND itsetehtavatkp.tehty=1 AND itsetehtavatkp.osattu=1")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -470,7 +478,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
     if ($pisteet && $pisteetvaikuttaa) {
 
-        echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Pisteitä kerätty: </b>' . $tehdyt . ' p</li><li style="margin-left: 30px"><b>Tehtyjen tehtävien pisteiden osuus on: </b>' . $osuus . ' %</li></ul>';
+        echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdytkpl. ' kpl</li><br><br><li><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Pisteitä kerätty: </b>' . $tehdyt . ' p</li><li style="margin-left: 30px"><b>Tehtyjen tehtävien pisteiden osuus on: </b>' . $osuus . ' %</li></ul>';
     } else if ($pisteet && !$pisteetvaikuttaa) {
 
         echo'<ul style="max-width: 99%; color:  #c7ef00"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';

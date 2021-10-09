@@ -405,7 +405,7 @@ function myFunction(y) {
             $kuvaus = $rowP[kuvaus];
 
 
-            echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; display: inline-block">Muokkaa tehtävätaulukkoa</h6>';
+            echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; display: inline-block">Muokkaa tehtävälistaa</h6>';
             echo'<br><a href="itsetyot.php?i=' . $ipid . '#palaatanne"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
             if (!$haetehtavat = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipid . "' ORDER BY jarjestys")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -556,10 +556,10 @@ function myFunction(y) {
                     $rowt[sisalto] = str_replace('<br />', "", $rowt[sisalto]);
                     $rowt[otsikko] = str_replace('<br />', "", $rowt[otsikko]);
                     if ($rowt[sisalto] == '') {
-                        $rowt[sisalto] = '(Tehtävä)';
+                        $rowt[sisalto] = '';
                     }
                     if ($rowt[otsikko] == '' || empty($rowt[otsikko]) || $rowt[otsikko] == null) {
-                        $rowt[otsikko] = '(Otsikko)';
+                        $rowt[otsikko] = '';
                     }
                     if ($rowt[aihe] == 1) {
                         $paluu = $rowt[jarjestys];
@@ -630,10 +630,10 @@ function myFunction(y) {
                     $rowt[otsikko] = str_replace('<br />', "", $rowt[otsikko]);
 
                     if ($rowt[sisalto] == '') {
-                        $rowt[sisalto] = '(Tehtävä)';
+                        $rowt[sisalto] = '';
                     }
                     if ($rowt[otsikko] == '' || empty($rowt[otsikko]) || $rowt[otsikko] == null) {
-                        $rowt[otsikko] = '(Otsikko)';
+                        $rowt[otsikko] = '';
                     }
 
                     if ($rowt[aihe] == 1) {
@@ -697,7 +697,7 @@ function myFunction(y) {
             echo'<input type="hidden" name="ipid" value=' . $ipid . '>';
             echo'<div style="text-align: center">';
             echo'<br><b style="margin-right: 40px; color: #c7ef00">Voit myös valita, kuinka monta tehtävää haluat lisätä loppuun: </b> <input type="number" name="tehtmaara" style="color: #080708; width: 60px" min="0">';
-            echo'<input type="submit" value="+ Lisää" class="myButton9" name="lisaa" role="button" style="margin-left: 10px; font-size: 0.8em; padding: 2px 4px">';
+            echo'<input type="submit" value="+ Lisää" class="myButton9" name="lisaa" role="button" title="Lisää" style="margin-left: 10px; font-size: 0.8em; padding: 4px 6px">';
             echo'<input type="hidden" name="ipid" value=' . $ipid . '>';
             echo'<br><br><br><input type="submit" id="tannetakas" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 0.9em; padding:4px 6px; margin-left: 5px"><br>';
             echo'</div>';

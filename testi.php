@@ -696,6 +696,114 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         if (!empty($_POST[tehtmaara])) {
 
+            $lista1 = $_POST["sisalto"];
+        $lista2 = $_POST["id"];
+        $lista3 = $_POST["otsikko"];
+        $lista4 = $_POST["paino"];
+
+
+        if ($_POST[painotus] == 1) {
+            $db->query("update itseprojektit set painotus = 1 where id = '" . $_POST[ipid] . "'");
+
+            if ($_POST[omapisteytys] == 1) {
+                $db->query("update itseprojektit set itsepisteytys = 1 where id = '" . $_POST[ipid] . "'");
+            } else if ($_POST[omapisteytys] == 0) {
+                $db->query("update itseprojektit set itsepisteytys = 0 where id = '" . $_POST[ipid] . "'");
+            }
+        } else if ($_POST[painotus] == 0) {
+            $db->query("update itseprojektit set painotus = 0 where id = '" . $_POST[ipid] . "'");
+            $db->query("update itseprojektit set itsepisteytys = 0 where id = '" . $_POST[ipid] . "'");
+        }
+
+        $maara = 0;
+        foreach ($lista2 as $id) {
+            $maara++;
+        }
+
+        $lista2 = $_POST["id"];
+
+        $stmt = $db->prepare("UPDATE itsetehtavat SET sisalto=? WHERE id=?");
+        $stmt->bind_param("si", $sisalto, $id);
+
+        $stmt2 = $db->prepare("UPDATE itsetehtavat SET otsikko=? WHERE id=?");
+        $stmt2->bind_param("si", $sisalto, $id);
+
+        for ($i = 0; $i < $maara; $i++) {
+
+            if (!$haeaihe = $db->query("select distinct * from itsetehtavat where id='" . $lista2[$i] . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+
+            while ($rowP = $haeaihe->fetch_assoc()) {
+
+                $aihe = $rowP[aihe];
+            }
+            if ($aihe == 0) {
+                $sisalto = $lista1[$i];
+                $sisalto = nl2br($sisalto);
+                $id = $lista2[$i];
+                $stmt->execute();
+            } else {
+                $sisalto = $lista3[$i];
+                $sisalto = nl2br($sisalto);
+                $id = $lista2[$i];
+                $stmt2->execute();
+            }
+            $paino = $lista4[$i];
+            if ($paino != -1) {
+
+                $db->query("update itsetehtavat set paino='" . $paino . "' where id = '" . $lista2[$i] . "'");
+            }
+        }
+
+
+        //menee yläpuolelle
+        if (isset($_POST["jarjestys"])) {
+            $jarjestys = $_POST["jarjestys"];
+            $uusijarjestys = $jarjestys;
+
+            if (!$paivitajarjestys = $db->query("select distinct * from itsetehtavat where itseprojektit_id = '" . $_POST[ipid] . "' AND jarjestys >= '" . $uusijarjestys . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+
+            while ($rowPJ = $paivitajarjestys->fetch_assoc()) {
+
+                $jarj = $rowPJ[jarjestys];
+
+                $jarj = $jarj + 1;
+                $db->query("update itsetehtavat set jarjestys='" . $jarj . "' where id = '" . $rowPJ[id] . "'");
+            }
+        }
+        //menee alapuolelle
+        else {
+
+            if (!$resultmax = $db->query("select MAX(jarjestys) as suurin from itsetehtavat where itseprojektit_id='" . $_POST[ipid] . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+            while ($maxrow = $resultmax->fetch_assoc()) {
+                $jarjestys = $maxrow[suurin];
+            }
+            $uusijarjestys = $jarjestys + 1;
+
+            if (!$paivitajarjestys = $db->query("select distinct * from itsetehtavat where itseprojektit_id = '" . $_POST[ipid] . "' AND jarjestys >= '" . $uusijarjestys . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+
+            while ($rowPJ = $paivitajarjestys->fetch_assoc()) {
+
+                $jarj = $rowPJ[jarjestys];
+
+                $jarj = $jarj + 1;
+                $db->query("update itsetehtavat set jarjestys='" . $jarj . "' where id = '" . $rowPJ[id] . "'");
+            }
+        }
+
+
+            
+            
             $maara = $_POST[tehtmaara];
 
 

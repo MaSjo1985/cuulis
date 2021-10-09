@@ -975,7 +975,7 @@ $sid=$_POST["painikep"];
         $sid = $sid;
 
         $kurssi = $_SESSION["KurssiId"];
-        $otsikko2 = "(Otsikko/Kysymys)";
+        $otsikko2 = "";
         $otsikko2 = nl2br($otsikko2);
         $aihe = 1;
         $jarjestys = $uusijarjestys;

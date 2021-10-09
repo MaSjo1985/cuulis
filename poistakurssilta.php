@@ -36,6 +36,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         $lista = $_POST["mita"];
 
+      
         foreach ($lista as $tuote) {
 
             if (!$tulos4 = $db->query("select distinct * from kayttajat where id='" . $tuote . "'")) {
@@ -209,6 +210,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             }
 
             //lopullinen viimeistely
+           
+                    
             $db->query("delete from opiskelijankurssit where opiskelija_id='" . $tuote . "' AND  kurssi_id = '" . $_SESSION["KurssiId"] . "'");
         }
 

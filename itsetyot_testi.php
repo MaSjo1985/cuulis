@@ -503,7 +503,7 @@ function myFunction(y) {
 
                 echo'<div class="cm8-margin-top"></div>';
                 if ($haetehtavat->num_rows != 0) {
-                    echo'<form action="testaamuokkaus.php" method="get" id="palaatanne"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävätaulukkoa" class="myButton8"  role="button"  title="Muokkaa tehtävätaulukkoa"  style="padding:2px 4px; font-size: 1em"></form>';
+                    echo'<form action="testaamuokkaus.php" method="get" id="palaatanne"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävälistaa" class="myButton8"  role="button"  title="Muokkaa tehtävälistaa"  style="padding:2px 4px; font-size: 1em"></form>';
                 }
 
 

@@ -91,18 +91,17 @@ if ($pisteet) {
         $list[0]['tehdytkpl'] = "Tehdyt tehtävät  (/' . $yht . ' kpl)";
         $list[0]['osatut'] = "Osatut (%)";
         $list[0]['eiosatut'] = "Tehdyt, muttei osatut ilman apua (%)";
-        $list[0]['pisteet'] = 'Pisteet (' . $pisteetyht . 'p)';
-
+      
         if ($onkorivi3->num_rows != 0) {
             $list[0]['lpisteet'] = "Lisäpisteet (/" . $lpmax2 . "p)";
         }
     } else {
         $list[0]['nimi'] = 'Opiskelija';
-        $list[0]['tehdytpros'] = "Tehdyt tehtävät (%)";
-        $list[0]['tehdytkpl'] = "Tehdyt tehtävät  (/" . $pisteetyht . "p)";
-        $list[0]['osatut'] = "Osatut (%)";
-        $list[0]['eiosatut'] = "Tehdyt, muttei osatut ilman apua (%)";
-        $list[0]['pisteet'] = 'Pisteet (/' . $pisteetyht . 'p)';
+         $list[0]['tehdytkpleka'] = "Tehtyjä tehtäviä  (/" . $yht . " kpl)";
+        $list[0]['tehdytpros'] = "Tehtyjen tehtävien pisteiden osuus (%)";
+        $list[0]['tehdytkpl'] = "Pisteitä kerätty (/" . $pisteetyht . "p)";
+        $list[0]['osatut'] = "Osattujen tehtävien pisteiden osuus (%)";
+        $list[0]['eiosatut'] = "Tehtyjen tehtävien, joita ei osattui ilman apua, pisteiden osuus(%)";
 
         if ($onkorivi3->num_rows != 0) {
             $list[0]['lpisteet'] = "Lisäpisteet (/" . $lpmax2 . "p)";
@@ -111,9 +110,9 @@ if ($pisteet) {
 } else {
     $list[0]['nimi'] = 'Opiskelija';
     $list[0]['tehdytpros'] = "Tehdyt tehtävät (%)";
-    $list[0]['tehdytkpl'] = "Tehdyt tehtävät  (/" . $yht . " kpl)";
-    $list[0]['osatut'] = "Osatut (%)";
-    $list[0]['eiosatut'] = "Tehdyt, muttei osatut ilman apua (%)";
+    $list[0]['tehdytkpl'] = "Tehtyjä tehtäviä  (/" . $yht . " kpl)";
+    $list[0]['osatut'] = "Osattujen tehtävien osuus (%)";
+    $list[0]['eiosatut'] = "Tehtyjen tehtävien, joita ei osattu ilman apua, osuus (%)";
     if ($onkorivi3->num_rows != 0) {
         $list[0]['lpisteet'] = "Lisäpisteet";
     }
@@ -135,6 +134,13 @@ while ($row = $result->fetch_assoc()) {
         $osatut = $haeosatut->num_rows;
         $eiosatut = $haeeiosatut->num_rows;
     } else {
+        
+        if (!$haetehdytkpl = $db->query("select distinct itsetehtavat.id as kid from itsetehtavat, itsetehtavatkp where itsetehtavat.itseprojektit_id='" . $ipid . "' AND itsetehtavatkp.itsetehtavat_id=itsetehtavat.id AND itsetehtavatkp.kayttaja_id='" . $row[kaid] . "' AND itsetehtavatkp.tehty=1")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
+        $tehdytkpl = $haetehdytkpl->num_rows;
+        
         if (!$haepisteet = $db->query("select  paino from itsetehtavat where itseprojektit_id='" . $ipid . "' AND aihe=0")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -260,15 +266,18 @@ while ($row = $result->fetch_assoc()) {
     $rivi = array();
 
 
+    
     $rivi['nimi'] = $row[sukunimi] . " " . $row[etunimi];
+    if($pisteetvaikuttaa){
+         $rivi['tehdytkpleka'] = $tehdytkpl;
+    }
+   
     $rivi['tehdytpros'] = $osuus;
     $rivi['tehdytkpl'] = $tehdyt;
     $rivi['osatut'] = $osatutosuus;
     $rivi['eiosatut'] = $eiosatutosuus;
 
-    if ($pisteet) {
-        $rivi['pisteet'] = $omatpisteetyht;
-    }
+  
     if ($onkorivi3->num_rows != 0) {
         $rivi['lpisteet'] = $lpisteet;
     }

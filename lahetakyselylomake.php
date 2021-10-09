@@ -258,7 +258,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $stmt2->bind_param("isii", $kurssi, $otsikko2, $aihe, $jarjestys);
 
         $kurssi = $_SESSION["KurssiId"];
-        $otsikko2 = "(Kysymys)";
+        $otsikko2 = "";
         $otsikko2 = nl2br($otsikko2);
 
         $aihe = 1;

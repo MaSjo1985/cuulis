@@ -505,7 +505,9 @@ function myFunction(y) {
 //        echo' <p style="z-index: 1001;position: fixed; top:60%; right:1%">';
 //        echo' <button id="klik2"  class="myButtonOhjeA" title="Avaa digikirja">+ Avaa digikirja</button></p>';
 //    }
-
+    if (!$onkoprojekti = $db->query("select distinct * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
         if ($onkoprojekti->num_rows != 0) {
              if (!$haetaulu = $db->query("select distinct taulu from itseprojektit where id='" . $_GET[i] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -916,7 +918,7 @@ function myFunction(y) {
                 echo'<br>Klikkaamalla tehtävää pääset tarkastelemaan siihen liittyviä tietoja.</p><br>';
 
                 if ($haetehtavat->num_rows != 0) {
-                    echo'<form action="testaamuokkaus.php" method="get" id="palaatanne"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävätaulukkoa" class="myButton8"  role="button"  title="Muokkaa tehtävätaulukkoa"  style="padding:2px 4px;"></form>';
+                    echo'<form action="testaamuokkaus.php" method="get" id="palaatanne"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävälistaa" class="myButton8"  role="button"  title="Muokkaa tehtävälistaa"  style="padding:2px 4px;"></form>';
                 }
 
 
@@ -1198,7 +1200,7 @@ function myFunction(y) {
                 echo"</div>";
 
                 if ($haetehtavat->num_rows != 0) {
-                    echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+                    echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävälistaa" title="Muokkaa tehtävälistaa" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                 } else {
                     echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Lisää tehtäviä" class="myButton8"  role="button" title="Lisää tehtäviä" style=" padding:2px 4px"></form>';
                 }

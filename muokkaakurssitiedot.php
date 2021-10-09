@@ -163,25 +163,11 @@ function myFunction(y) {
         $stmt->close();
 
 
-        //poisteteaan eka kaikki muut opet
-
-
-        if (!$result2 = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id <> '" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND kayttajat.rooli='opettaja' AND opiskelijankurssit.opiskelija_id = kayttajat.id")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-
-        while ($rivi2 = $result2->fetch_assoc()) {
-            $db->query("delete from opiskelijankurssit where opiskelija_id = '" . $rivi2[kaid] . "' AND kurssi_id='" . $_SESSION[KurssiId] . "'");
-        }
 
 
         if (!empty($_POST["lista"])) {
             $lista = $_POST["lista"];
             foreach ($lista as $tuote) {
-
-
-
 
                 if (!$result = $db->query("select distinct * from opiskelijankurssit where kurssi_id = '" . $_SESSION["KurssiId"] . "' AND opiskelija_id = '" . $tuote . "' ")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');

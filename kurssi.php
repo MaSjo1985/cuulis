@@ -465,7 +465,7 @@ function myFunction(y) {
 
         echo'<div class="cm8-responsive" style="padding-top: 10px; padding-right: 10px;">';
        
-        echo '<table id="mytable" class="cm8-uusitablekurssi" style="max-width: 100%;">  <thead>';
+        echo '<table id="mytable" class="cm8-uusitablekurssi" style="max-width: 100%; margin-top: 0px !important;">  <thead>';
 
         echo '<tr style="border: 1px solid grey;id="palaa"><th style="border: 1px solid grey; width: 10%">Ajankohta</th><th style="border: 1px solid grey ">Aihe</th><th style="border: 1px solid grey">Lisätietoja</th></tr></thead><tbody>';
 
@@ -501,8 +501,7 @@ function myFunction(y) {
     <script>
         var $table = $('#mytable');
 
-        $table.floatThead({zIndex: 1});
-
+        $table.floatThead();
     </script>        
     <?php
     ob_start();

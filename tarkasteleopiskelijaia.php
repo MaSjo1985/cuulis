@@ -593,7 +593,7 @@ function myFunction(y) {
         }
 
         if ($onkoeka == 1) {
-
+            
             if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
@@ -608,6 +608,10 @@ function myFunction(y) {
                 }
             }
         }
+        
+        
+        echo'<br><br><br><br><a href="tarkasteleiat.php" style="font-size: 1em"><p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+
         echo'</div>';
         echo'</div>';
 

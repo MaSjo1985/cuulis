@@ -101,7 +101,7 @@ if ($pisteet) {
         $list[0]['tehdytpros'] = "Tehtyjen tehtävien pisteiden osuus (%)";
         $list[0]['tehdytkpl'] = "Pisteitä kerätty (/" . $pisteetyht . "p)";
         $list[0]['osatut'] = "Osattujen tehtävien pisteiden osuus (%)";
-        $list[0]['eiosatut'] = "Tehtyjen tehtävien, joita ei osattui ilman apua, pisteiden osuus(%)";
+        $list[0]['eiosatut'] = "Tehtyjen, mutta joita ei ole osattu ilman apua, pisteiden osuus(%)";
 
         if ($onkorivi3->num_rows != 0) {
             $list[0]['lpisteet'] = "Lisäpisteet (/" . $lpmax2 . "p)";
@@ -109,10 +109,10 @@ if ($pisteet) {
     }
 } else {
     $list[0]['nimi'] = 'Opiskelija';
+      $list[0]['tehdytkpl'] = "Tehtyjä tehtäviä  (/" . $yht . " kpl)";
     $list[0]['tehdytpros'] = "Tehdyt tehtävät (%)";
-    $list[0]['tehdytkpl'] = "Tehtyjä tehtäviä  (/" . $yht . " kpl)";
     $list[0]['osatut'] = "Osattujen tehtävien osuus (%)";
-    $list[0]['eiosatut'] = "Tehtyjen tehtävien, joita ei osattu ilman apua, osuus (%)";
+    $list[0]['eiosatut'] = "Tehtyjen, mutta joita ei ole osattu ilman apua, osuus (%)";
     if ($onkorivi3->num_rows != 0) {
         $list[0]['lpisteet'] = "Lisäpisteet";
     }
@@ -120,7 +120,7 @@ if ($pisteet) {
 
 while ($row = $result->fetch_assoc()) {
 
-    if (!$pisteetvaikuttaa) {
+    if ((!$pisteetvaikuttaa && $pisteet) || !$pisteet ) {
         if (!$haetehdyt = $db->query("select distinct itsetehtavat.id as kid from itsetehtavat, itsetehtavatkp where itsetehtavat.itseprojektit_id='" . $ipid . "' AND itsetehtavatkp.itsetehtavat_id=itsetehtavat.id AND itsetehtavatkp.kayttaja_id='" . $row[kaid] . "' AND itsetehtavatkp.tehty=1")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -181,15 +181,15 @@ while ($row = $result->fetch_assoc()) {
     }
 
 
-    if ($tehdyt != 0) {
-        $osatutosuus = ($osatut / $tehdyt) * 100;
+    if ($yht != 0) {
+        $osatutosuus = ($osatut / $yht) * 100;
         $osatutosuus = round($osatutosuus, 0);
     } else {
         $osatutosuus = 0;
     }
 
-    if ($tehdyt != 0) {
-        $eiosatutosuus = ($eiosatut / $tehdyt) * 100;
+    if ($yht != 0) {
+        $eiosatutosuus = ($eiosatut / $yht) * 100;
         $eiosatutosuus = round($eiosatutosuus, 0);
     } else {
         $eiosatutosuus = 0;
@@ -270,10 +270,16 @@ while ($row = $result->fetch_assoc()) {
     $rivi['nimi'] = $row[sukunimi] . " " . $row[etunimi];
     if($pisteetvaikuttaa){
          $rivi['tehdytkpleka'] = $tehdytkpl;
+          $rivi['tehdytpros'] = $osuus;
+    $rivi['tehdytkpl'] = $tehdyt;
+    }
+    else{
+        
+    $rivi['tehdytkpl'] = $tehdyt;
+     $rivi['tehdytpros'] = $osuus;
     }
    
-    $rivi['tehdytpros'] = $osuus;
-    $rivi['tehdytkpl'] = $tehdyt;
+   
     $rivi['osatut'] = $osatutosuus;
     $rivi['eiosatut'] = $eiosatutosuus;
 

@@ -23,6 +23,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     } else if (isset($_POST[painikep])) {
         $db->query("update itseprojektit set painotus=0 where id='" . $_POST[id] . "'");
         $db->query("update itseprojektit set itsepisteytys=0 where id='" . $_POST[id] . "'");
+           $db->query("update itseprojektit set pisteetvaikuttaa=0 where id='" . $_POST[id] . "'");
     }
 
 

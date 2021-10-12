@@ -118,7 +118,7 @@ function tuoDiagrammi3($kayttaja_id, $ipid) {
 
                 echo'</ul> ';
                 echo'<p style="color: #7FD858; font-weight: bold; font-size: 0.9em; padding-bottom: 0px; margin-bottom: 0px">Osattuja ' . $opkorkeus . ' kpl</p>';
-                echo'<p style="color: #0066ff; font-weight: bold; font-size: 0.9em">Tehtyjä, muttei osattuja ' . $opkorkeus2 . ' kpl </p>';
+                echo'<p style="color: #0066ff; font-weight: bold; font-size: 0.9em">Tehtyjä, mutta ei osattu ilman apua ' . $opkorkeus2 . ' kpl </p>';
                 echo'</div>';
             }
         }

@@ -36,7 +36,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
     //PISTEET EI VAIKUTA
 
-    if (!$pisteetvaikuttaa) {
+    if ((!$pisteetvaikuttaa && $pisteet) || !$pisteet ) {
 
 
 
@@ -547,7 +547,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
         echo'<th style="border: none;font-size: 0.9em; text-align: center; padding:15px" colspan="2">Lisäpisteiden muodostuminen: </th>';
 
-        if(!$pisteetvaikuttaa){
+        if((!$pisteetvaikuttaa && $pisteet) || !$pisteet){
              while ($row = $onkorivi2->fetch_assoc()) {
 
             echo'<tr style="font-size: 0.9em;"><td style="padding-left: 20px; padding-right: 20px"><b>Tehtyjä tehtäviä: </b>' . $row[osuus] . ' %</td>';

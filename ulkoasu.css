@@ -1352,7 +1352,7 @@ table.cm8-uusitable10uusi{
     font-weight: normal;
     font-size: 0.7em;
 }
-table.cm8-uusitable10uusi th{border: 1px solid grey; background-color: #c50076; color: #00ffff ; text-align: left;padding: 6px}
+table.cm8-uusitable10uusi th{font-size: 1em; border: 1px solid grey; background-color: #c50076; color: #00ffff ; text-align: left;padding: 8px}
 table.cm8-uusitable10uusi tr{ border: 1px solid grey}
 table.cm8-uusitable10uusi td{border: 1px solid grey; color: #080708; text-align: left; padding: 6px; font-size: 0.9em }
 

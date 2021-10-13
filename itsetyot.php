@@ -695,10 +695,13 @@ function myFunction(y) {
                     echo'<p style="font-size:0.9em;font-weight: bold; display: inline-block;color: #c7ef00; margin-top: 0px; padding-top: 0px">Opiskelijat näkevät tässä ympyrädiagrammin edistymisestään.</p>';
 
                     tuoMalli($ipid);
-                    echo'<form action="naytad.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="piilota"  value="Piilota ympyrädiagrammi opiskelijoiden näkyvistä" title="Piilota ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
+                    echo'<form action="naytad.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="piilota"  value="- Piilota ympyrädiagrammi opiskelijoiden näkyvistä" title="Piilota ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
                 } else {
-                    echo'<p style="font-size: 0.9em; font-weight: bold; padding-top: 0px; margin-top: 0px;display: inline-block;color: #c7ef00">Opiskelijat eivät nyt näe tässä ympyrädiagrammia edistymisestään.</p>';
-                    echo'<form action="naytad.php" method="post" style="" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="nayta"  value="Näytä ympyrädiagrammi opiskelijoille" title="Näytä ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
+                  
+                    echo'<b style="font-size: 1em">Näytetäänkö opiskelijoille sektoridiagrammi, joka havainnollistaa tehtävien teossa edistymistä?</b>';
+                   echo'<br><br><form action="naytad.php" method="post" style="" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="nayta"  value="+ Näytä ympyrädiagrammi opiskelijoille" title="Näytä ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                 
+                    
                 }
                 echo'</div>';
 

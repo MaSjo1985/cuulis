@@ -1,20 +1,4 @@
 
-* Lisäpisteet vaikuttaa tai ei, selkeämpi ohje!
-* Pistemäärien ohjeistus selvemmäksi?!
-
-***********************************************************************
-
-* kaikki lisää lopppuun-painikkeet -> tsekkaa että kaikki tallentuu
-
-*******************************************************************************************
-
-KÄYTTÄJÄN POISTAMINEN KESTÄÄ IKUISUUDEN!
-
-TSEKKKAA Abdulaziz Akram
-
-
-*******************************************************************'
-
 * FIXED HEADER:
 https://imgur.com/a/8rptLeW
 
@@ -24,8 +8,7 @@ left pois kokonaan
 
 *********************************************************
 
-
-* opiskelija katoaa kurssilta!!
+* opiskelija katoaa kurssilta?!
 
 *******************************************************************
 

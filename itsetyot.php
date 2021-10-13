@@ -702,7 +702,7 @@ function myFunction(y) {
                 }
                 echo'</div>';
 
-                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 0px 20px">';
+                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 10px 20px">';
                 if (!$onkorivi8 = $db->query("select distinct * from itseprojektit_minimi where itseprojektit_id='" . $ipid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
@@ -711,7 +711,12 @@ function myFunction(y) {
                 }
 
                 if ($minimi == '') {
-                    echo'<br><form action="muokkaaminimia.php" method="get"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta tehtäville minimi%-raja" title="Aseta tehtäville minimi%-raja" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
+                                     echo'<br><b style="font-size: 1em">Asetetaanko tehtäville minimiraja?</b>';
+             
+                
+                    echo'<form action="muokkaaminimia.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta tehtäville minimi%-raja" title="Aseta tehtäville minimi%-raja" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                
+                    
                 } else {
 
                     echo'<br><p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtävien minimi%-raja on: ' . $minimi . ' %</p>';
@@ -723,18 +728,12 @@ function myFunction(y) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
-                if(!$pisteetvaikuttaa){
+                if((!$pisteetvaikuttaa && $pisteet) || !$pisteet){
                              if ($onkorivi2->num_rows == 0) {
-                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block">';
-                    echo'<tr><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen:</th></tr>';
-
-
-
-                    echo'<tr><td style="width: 70%"><b>Tehtäviä tehty: </b> - % </td>';
-                    echo'<td style="width: 30%"><b>Lisäpisteitä: </b> - pistettä</td></tr>';
-
-
-                    echo'</table>';
+                                 
+                                 echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
+                   echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                
                 } else {
                     echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; ">';
                     echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
@@ -746,20 +745,15 @@ function myFunction(y) {
                     }
 
                     echo'</table>';
+                      echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
+                
                 }
                 }
                  else{
                              if ($onkorivi2->num_rows == 0) {
-                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80%">';
-                    echo'<tr><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen:</th></tr>';
-
-
-
-                    echo'<tr><td style="width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus: </b> - % </td>';
-                    echo'<td style="width: 30%"><b>Lisäpisteitä: </b> - pistettä</td></tr>';
-
-
-                    echo'</table>';
+                                      echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
+                   echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                
                 } else {
                     echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80% ">';
                     echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
@@ -771,34 +765,27 @@ function myFunction(y) {
                     }
 
                     echo'</table>';
+                      echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
+                
                 }
                 }
        
-                echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
+              
                 echo'</div>';
 
 
 
-                if ($pisteet && !$pisteetvaikuttaa) {
-                    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 0px 20px">';
-                    echo'<p class="info" style="display: inline-block;color: #c7ef00">Tehtävien pisteet ei nyt vaikuta yllä oleviin prosenttimääriin.</p>';
-                    echo'<form action="aktivoipisteytys2.php" method="post" style="margin-left: 20px; display: inline-block" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="Painota tehtävien pistemääriä" title="Painota tehtävien pistemääriä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
-                    echo'</div>';
-                } else if ($pisteet && $pisteetvaikuttaa) {
-                    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 0px 20px">';
-                    echo'<p class="info" style="display: inline-block; color: #c7ef00">Yllä olevissa prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
-                    echo'<form action="aktivoipisteytys2.php" method="post" style="display: inline-block; margin-left: 20px" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep"  value="Poista tehtävien pistemäärän painotus" title="Poista tehtävien pistemäärän painotus" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
-                    echo'</div>';
-                }
 
 
                 //pisteytyshässäkkä
-                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 0px">';
+                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
                 if (!$pisteet) {
-                    echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtäviä ei ole pisteytetty.</p>';
-
-
-                    echo'<form action="aktivoipisteytys.php" method="post" style="display:inline-block; margin-left: 40px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="+ Ota tehtävien pisteytys käyttöön" title="+ Ota tehtävien pisteytys käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
+                  
+                   
+                    echo'<b style="font-size: 1em">Pisteytetäänkö tehtävät?</b>';
+                echo'<form action="aktivoipisteytys.php" method="post" style="display:inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="+ Ota tehtävien pisteytys käyttöön" title="+ Ota tehtävien pisteytys käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                       
+                    
                 } else {
 
                     echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtävien pisteytys on käytössä.</p>';
@@ -807,19 +794,12 @@ function myFunction(y) {
                     echo'<p style="font-size: 0.9em; font-weight: bold; color: #c7ef00; margin-top: 20px; padding-top: 0px; margin-bottom:0px; padding-bottom: 0px">Opiskelijat näkevät tässä nyt oheisen diagrammin edistymisestään eritasoisissa tehtävissä.</p>';
 
                     tuoMalli2($ipid);
-                    echo'<form action="aktivoipisteytys.php" method="post" style="margin-top: 10px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep"  value="x &nbsp Poista pisteytys käytöstä" title="- Poista käytöstä" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.8em"></form><br>';
+                    echo'<form action="aktivoipisteytys.php" method="post" style="margin-top: 10px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep"  value="x &nbsp Poista pisteytys käytöstä" title="- Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form><br>';
 
 
-                    // TÄHÄN SAAKO PISTEYTTÄÄ
-                    echo'<br>';
-                    if ($itsepisteytys) {
-                        echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat saavat pisteyttää tekemänsä tehtävät.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep" value="X Poista käytöstä" title="X Poista käytöstä" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
-                    } else if ($pisteet && !$itsepisteytys) {
-                        echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat eivät saa pisteyttää itse tehtäviä.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikel" value="+ Ota käyttöön" title="+ Ota käyttöön" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
-                    }
+                 
 
 
-                    echo'<div class="margin-top"><br></div>';
 
 
 
@@ -838,11 +818,37 @@ function myFunction(y) {
                 echo'</div>';
 
 
+                if ($pisteet && !$pisteetvaikuttaa) {
+                   echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
+                    echo'<b style="font-size: 1em">Painotetaanko yllä olevissa prosenttimäärissä tehtävien pisteitä?</b>';
+                 echo'<form action="aktivoipisteytys2.php" method="post" style="margin-left: 20px; display: inline-block" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="Painota tehtävien pistemääriä" title="Painota tehtävien pistemääriä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                     
+                    echo'</div>';
+                
+                    
+                } else if ($pisteet && $pisteetvaikuttaa) {
+                    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 0px 20px">';
+                    echo'<p class="info" style="display: inline-block; color: #c7ef00">Yllä olevissa prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
+                    echo'<form action="aktivoipisteytys2.php" method="post" style="display: inline-block; margin-left: 20px" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep"  value="x &nbsp Poista tehtävien pistemäärän painotus" title="Poista tehtävien pistemäärän painotus" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
+                    echo'</div>';
+                }
 
 
+   // TÄHÄN SAAKO PISTEYTTÄÄ
+                     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
+                    if ($itsepisteytys) {
+                        echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat saavat pisteyttää tekemänsä tehtävät.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep" value="x &nbsp Poista käytöstä" title="X Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
+                    
+                        
+                    } else if ($pisteet && !$itsepisteytys) {
+                      
+                        echo'<b style="font-size: 1em">Annetaanko opiskelijoille mahdollisuus pisteyttää itse tehtävät?</b>';
+                  echo'<form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikel" value="+ Ota käyttöön" title="+ Ota käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                      
+                        
+                    }
 
-
-
+echo'</div>';
 
 
                 echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 0px; padding-top: 0px">';
@@ -899,7 +905,7 @@ function myFunction(y) {
 
 
 
-                        echo'<input type="submit" style=" margin-left:10px; padding: 2px;" value="Tallenna" class="myButton8" name="tallenna"  title="Tallenna">';
+                        echo'<input type="submit" style=" margin-left:10px; padding: 4px 6px;" value="Tallenna" class="myButton8" name="tallenna"  title="Tallenna">';
                     }
                     echo'</form>';
                 }
@@ -914,7 +920,7 @@ function myFunction(y) {
                 echo'<form action="tarkastele.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike"  value="🕵 Tarkastele opiskelijakohtaisia tilastoja" class="myButtonTarkastele"  role="button"></form>';
                 echo'</div>';
 
-                echo'<br><p style="font-size: 0.8em; ">Klikkaamalla otsikkoa pääset tarkastelemaan sen alla olevien tehtävien tietoja.<br>';
+                echo'<br><br><p style="font-size: 0.8em; " id="ohje">Klikkaamalla otsikkoa pääset tarkastelemaan sen alla olevien tehtävien tietoja.<br>';
                 echo'<br>Klikkaamalla tehtävää pääset tarkastelemaan siihen liittyviä tietoja.</p><br>';
 
                 if ($haetehtavat->num_rows != 0) {

@@ -215,7 +215,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
         while ($rowu = $haeuusin->fetch_assoc()) {
-            $teid = $rowu[id];
+            $jarjestys = $rowu[jarjestys];
         }
 
 
@@ -229,17 +229,88 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $id = $rowP[id];
         }
         $stmt->close();
-        if (isset($_POST["jarjestys"])) {
 
-            $paluu = $_POST[jarjestys] - 1;
+            $jarjestys = $jarjestys - 1;
 
-            header('location: muokkaa_aikataulu.php?#' . $paluu);
-        } else {
-            header('location: muokkaa_aikataulu.php?monesko=' . $_POST[monesko]);
-        }
+            header('location: muokkaa_aikataulu.php?#' . $jarjestys);
+        
     }
     if (isset($_POST["lisaa"])) {
 
+        $lista1 = $_POST["aika"];
+        $lista2 = $_POST["id"];
+        $lista3 = $_POST["aihe"];
+        $lista4 = $_POST["lisa"];
+
+        $maara = 0;
+        foreach ($lista2 as $id) {
+            $maara++;
+        }
+
+        $lista2 = $_POST["id"];
+
+        $stmt = $db->prepare("UPDATE kurssiaikataulut SET aika=?, aihe=?, lisa=? WHERE id=?");
+        $stmt->bind_param("sssi", $aika, $aihe, $lisa, $id);
+
+        for ($i = 0; $i < $maara; $i++) {
+
+
+            $aika = $lista1[$i];
+            $aika = nl2br($aika);
+
+            $aihe = $lista3[$i];
+
+            $lisa = $lista4[$i];
+
+
+            $id = $lista2[$i];
+            $stmt->execute();
+        }
+
+
+        //menee yläpuolelle
+        if (isset($_POST["jarjestys"])) {
+
+            $jarjestys = $_POST["jarjestys"];
+            $uusijarjestys = $jarjestys;
+
+            if (!$paivitajarjestys = $db->query("select distinct * from kurssiaikataulut where kurssi_id = '" . $_SESSION[KurssiId] . "' AND jarjestys >= '" . $_POST["jarjestys"] . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+
+            while ($rowPJ = $paivitajarjestys->fetch_assoc()) {
+
+                $jarj = $rowPJ[jarjestys];
+
+                $jarj = $jarj + 1;
+                $db->query("update kurssiaikataulut set jarjestys='" . $jarj . "' where id = '" . $rowPJ[id] . "'");
+            }
+        }
+        //menee alapuolelle
+        else {
+
+            if (!$resultmax = $db->query("select MAX(jarjestys) as suurin from kurssiaikataulut where kurssi_id='" . $_SESSION[KurssiId] . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+            while ($maxrow = $resultmax->fetch_assoc()) {
+                $jarjestys = $maxrow[suurin];
+            }
+            $uusijarjestys = $jarjestys + 1;
+
+            if (!$paivitajarjestys = $db->query("select distinct * from kurssiaikataulut where kurssi_id = '" . $_SESSION[KurssiId] . "' AND jarjestys >= '" . $uusijarjestys . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+
+            while ($rowPJ = $paivitajarjestys->fetch_assoc()) {
+
+                $jarj = $rowPJ[jarjestys];
+
+                $jarj = $jarj + 1;
+                $db->query("update kurssiaikataulut set jarjestys='" . $jarj . "' where id = '" . $rowPJ[id] . "'");
+            }
+        }
         if (!empty($_POST[tehtmaara])) {
 
             $maara = $_POST[tehtmaara];

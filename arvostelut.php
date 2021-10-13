@@ -184,11 +184,19 @@ function myFunction(y) {
             echo "<br>";
             echo'<div class="cm8-responsive" >';
             echo '<table class="cm8-table cm8-bordered cm8-striped" id="mytable"  style="table-layout:fixed; max-width: 100%; ">';
-            echo '<thead><tr style="text-align: center"><th><a href="arvostelut.php?sorting1=' . $sort . '&field=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="arvostelut.php?sorting2=' . $sort . '&field=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="arvostelut.php?sorting3=' . $sort . '&field=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="arvostelut.php?sorting4=' . $sort . '&field=rooli">Rooli &nbsp&nbsp&nbsp' . $nuoli4 . '</a></th><th><a href="arvostelut.php?sorting5=' . $sort . '&field=arvo">Arvosana &nbsp&nbsp&nbsp' . $nuoli5 . '</a></th><th><a href="arvostelut.php?sorting0=' . $sort . '&field=kayttajan_arvostelu.id">Lisätty &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th></tr>';
+           if($_GET[sorting0]=="ASC"){
+                echo '<thead><tr style="text-align: center"><th><a href="arvostelut.php?sorting1=' . $sort . '&field=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="arvostelut.php?sorting2=' . $sort . '&field=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="arvostelut.php?sorting3=' . $sort . '&field=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="arvostelut.php?sorting4=' . $sort . '&field=rooli">Rooli &nbsp&nbsp&nbsp' . $nuoli4 . '</a></th><th><a href="arvostelut.php?sorting5=' . $sort . '&field=arvo">Arvosana &nbsp&nbsp&nbsp' . $nuoli5 . '</a></th><th><a href="arvostelut.php?sorting0=' . $sort . '&field=kayttajan_arvostelu.id">Uusimmasta vanhimpaan &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th></tr>';
+            
+           }
+           else{
+                echo '<thead><tr style="text-align: center"><th><a href="arvostelut.php?sorting1=' . $sort . '&field=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="arvostelut.php?sorting2=' . $sort . '&field=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="arvostelut.php?sorting3=' . $sort . '&field=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="arvostelut.php?sorting4=' . $sort . '&field=rooli">Rooli &nbsp&nbsp&nbsp' . $nuoli4 . '</a></th><th><a href="arvostelut.php?sorting5=' . $sort . '&field=arvo">Arvosana &nbsp&nbsp&nbsp' . $nuoli5 . '</a></th><th><a href="arvostelut.php?sorting0=' . $sort . '&field=kayttajan_arvostelu.id">Vanhimmasta uusimpaan &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th></tr>';
+            
+           }
+           
             echo'</thead><tbody>';
 
             while ($row2 = $result2->fetch_assoc()) {
-                echo '<tr style="text-align: center"><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row2[id] . '">' . $row2[sukunimi] . '</td><td>' . $row2[etunimi] . '</a></td><td>' . $row2[Nimi] . '</td><td>' . $row2[rooli] . '</td><td style="text-align: center">' . $row2[arvo] . '</td></tr>';
+                echo '<tr style="text-align: center"><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row2[id] . '">' . $row2[sukunimi] . '</td><td>' . $row2[etunimi] . '</a></td><td>' . $row2[Nimi] . '</td><td>' . $row2[rooli] . '</td><td style="text-align: center">' . $row2[arvo] . '</td><td></td></tr>';
             }
             echo "</tbody></table>";
             echo "</div>";

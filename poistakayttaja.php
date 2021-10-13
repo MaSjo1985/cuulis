@@ -42,15 +42,15 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     //kysymyksiin liittyvät tiedot
-
-
-    $db->query("delete from kysymykset where kayttaja_id = '" . $_GET[id] . "'");
-
-    //äänestykset
-
-
-    $db->query("delete from aanestysvastaukset where kayttaja_id = '" . $_GET[id] . "'");
-
+//
+//
+//    $db->query("delete from kysymykset where kayttaja_id = '" . $_GET[id] . "'");
+//
+//    //äänestykset
+//
+//
+//    $db->query("delete from aanestysvastaukset where kayttaja_id = '" . $_GET[id] . "'");
+//
 
 
     // itsearvioinnit, VANHA
@@ -68,13 +68,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     $db->query("delete from opiskelijankirja where kayttaja_id = '" . $_GET[id] . "'");
-    if (!$haetehtavat = $db->query("select * from itsetehtavat where itseprojektit_id='" . $rowi[id] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
+ 
+    
 
-    while ($rowi2 = $haetehtavat->fetch_assoc()) {
         $db->query("delete from itsetehtavatkp where kayttaja_id = '" . $_GET[id] . "'");
-    }
+    
 
 
 

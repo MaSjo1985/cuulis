@@ -123,8 +123,8 @@ function myFunction(y) {
             echo"<br><em>Ei kursseja/opintojaksoja.</em><br>";
         else {
 
-            echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka aikataulun haluat tuoda.</b><br><br>';
-            echo '<form action="tuoaikataulu.php" method="get">
+          
+            echo '<br><form action="tuoaikataulu.php" method="get">
 
 			<br>&#128270 <input type="search"  onkeyup="showResultAika(this.value)" name="search"  id="search_box" class="haku" style="width: 50%"> 
 		
@@ -134,8 +134,11 @@ function myFunction(y) {
 <ul id="results" class="update">
 </ul></div>';
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
-            echo "<br>";
+            
+             
             echo'<div class="cm8-responsive" id="piilota">';
+             echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka aikataulun haluat tuoda.</b><br><br>';
+            
             echo '<table id="mytable" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
 
             echo '<tr><th><a href="tuoaikataulu.php?sorting=' . $sort . '&field=koodi">Koodi &nbsp&nbsp&nbsp' . $nuoli . '</a></th><th><a href="tuoaikataulu.php?sorting=' . $sort . '&field=kurssit.nimi">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuoaikataulu.php?sorting=' . $sort . '&field=lukuvuosi">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli . '</a></th><th><a href="tuoaikataulu.php?sorting=' . $sort . '&field=alkupvm">Alkaa' . $nuoli . '</a></th><th><a href="tuoaikataulu.php?sorting=' . $sort . '&field=loppupvm">Päättyy' . $nuoli . ' </a></th></tr>';

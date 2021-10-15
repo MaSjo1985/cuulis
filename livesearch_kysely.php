@@ -33,7 +33,8 @@ if (isset($_POST['search'])) {
     else {
 
 
-
+ echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka kyselylomakkeen haluat tuoda.</b><br><br>';
+            
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
 
         echo '<table id="mytable88" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';

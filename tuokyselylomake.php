@@ -211,8 +211,8 @@ function myFunction(y) {
             echo"<br><em>Ei kursseja/opintojaksoja, joissa valmiita kyselylomakkeita</em><br>";
         else {
 
-            echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka kyselylomakkeen haluat tuoda.</b><br><br>';
-            echo '<form action="tuokyselylomake.php" method="get">
+           
+            echo '<br><form action="tuokyselylomake.php" method="get">
 
 			<br>&#128270 <input type="search"  onkeyup="showResultKysely(this.value)" name="search"  id="search_box" class="haku" style="width: 50%"> 
 		
@@ -222,8 +222,10 @@ function myFunction(y) {
 <ul id="results" class="update">
 </ul></div>';
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
-            echo "<br>";
+           
             echo'<div class="cm8-responsive" id="piilota">';
+             echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka kyselylomakkeen haluat tuoda.</b><br><br>';
+            
             echo '<table id="mytable" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
 
             echo '<tr><th><a href="tuokyselylomake.php?sorting0=' . $sort . '&field=koodi">Koodi &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="tuokyselylomake.php?sorting1=' . $sort . '&field=kurssit.nimi">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuokyselylomake.php?sorting2=' . $sort . '&field=lukuvuosi">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="tuokyselylomake.php?sorting3=' . $sort . '&field=alkupvm">Alkaa' . $nuoli3 . '</a></th><th><a href="tuokyselylomake.php?sorting4=' . $sort . '&field=loppupvm">Päättyy' . $nuoli4 . ' </a></th></tr>';

@@ -251,8 +251,8 @@ function myFunction(y) {
             echo"<br><em>Ei tiedostoja.</em><br>";
         else {
 
-            echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka tehtäviä haluat tuoda.</b><br><br>';
-            echo '<form action="tuotehtavat.php" method="get">
+        
+            echo '<br><form action="tuotehtavat.php" method="get">
 
 			<br>&#128270 <input type="search"  onkeyup="showResultTehtavat(this.value, ' . $ipid . ')" name="search"  id="search_box" class="haku" style="width: 50%"> 
 		 <input type="hidden" name="ipid" id="ipid" value="3">
@@ -264,8 +264,9 @@ function myFunction(y) {
 
 
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
-            echo "<br>";
+        
             echo'<div class="cm8-responsive" id="piilota">';
+                echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka tehtäviä haluat tuoda.</b><br><br>';
             echo '<table id="mytable" class="cm8-bordered cm8-table cm8-stripedeivikaa"  style="overflow: hidden; width: 99%;"><thead>';
 
             echo '<tr><th><a href="tuotehtavat.php?sorting0=' . $sort . '&field=koodi">Koodi &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="tuotehtavat.php?sorting1=' . $sort . '&field=kurssit.nimi">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuotehtavat.php?sorting2=' . $sort . '&field=lukuvuosi">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="tuotehtavat.php?sorting3=' . $sort . '&field=alkupvm">Alkaa' . $nuoli3 . '</a></th><th><a href="tuotehtavat.php?sorting4=' . $sort . '&field=loppupvm">Päättyy' . $nuoli4 . ' </a></th></tr>';

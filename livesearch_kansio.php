@@ -3,6 +3,7 @@ ob_start();
 
 session_start();
 //if we got something through $_POST
+
 if (isset($_POST['search'])) {
     // here you would normally include some database connection
     include('yhteys.php');
@@ -12,15 +13,9 @@ if (isset($_POST['search'])) {
 
     $hakusanaop = mysqli_real_escape_string($db, $_POST['search']);
     $hakusanaop = trim($hakusanaop);
-    $url = "tuoaikataulu.php";
+    $url = "tuoopetiedosto.php";
 
-    if ($_POST['mihin'] == 0) {
-        $mihin = "uusi";
-    } else if ($_POST['mihin'] == 1) {
-        $mihin = "ia";
-    } else {
-        $mihin = "ia";
-    }
+
 
 
     $stmt = $db->prepare("SELECT DISTINCT lukuvuosi, alkupvm, loppupvm, kurssit.id as kid, kayttajat.id as kaid, koulut.id as koid, kurssit.nimi as nimi, luomispvm, koulut.Nimi as Nimi, koodi, etunimi, sukunimi from kurssit, koulut, kayttajat, kayttajankoulut, opiskelijankurssit WHERE ((opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id) OR (kurssit.opettaja_id='" . $_SESSION["Id"] . "')) AND (kayttajat.id='" . $_SESSION["Id"] . "' AND kayttajankoulut.odottaa=1 AND kayttajankoulut.koulu_id=koulut.id AND kayttajankoulut.kayttaja_id=kayttajat.id AND kurssit.koulu_id=koulut.id AND kurssit.id <> '" . $_SESSION[KurssiId] . "')  AND (kurssit.nimi like ? OR koodi like ?) ORDER BY koodi ASC ");
@@ -42,18 +37,17 @@ if (isset($_POST['search'])) {
 
     else {
 
+ echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda kansioita.</b><br><br>';
+            
 
- echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
-           
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
 
-        echo '<table id="mytable88" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
+    echo '<table id="mytable" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
 
-        echo '<tr><th>Koodi</th><th>Kurssi/Opintojakso</th><th>Oppilaitos</th><th>Lukuvuosi</th><th>Alkaa</th><th>Päättyy</th></tr>';
+          echo '<tr><th>Koodi</th><th>Kurssi/Opintojakso</th><th>Vastuuopettaja</th><th>Oppilaitos</th><th>Lukuvuosi</th><th>Alkaa</th><th>Päättyy</th></tr>';
         echo '</thead>';
 
-
-        while ($stmt->fetch()) {
+             while ($stmt->fetch()) {
             $row[lukuvuosi] = $c1;
             $row[alkupvm] = $c2;
             $row[loppupvm] = $c3;
@@ -68,12 +62,14 @@ if (isset($_POST['search'])) {
             $row[sukunimi] = $c12;
             $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
             $row[loppupvm] = date("d.m.Y", strtotime($row[loppupvm]));
-            echo '<tr><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $mihin . '">' . $row[koodi] . '</a></td><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $mihin . '">' . $row[nimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
-        }
-        echo "</table>";
-        echo "</div>";
-        echo "<br>";
-        echo "<br>";
+               echo '<tr><td><a href="tuokansio2.php?id=' . $row[kid] . '&kid=' . $_GET[kid] . '&monesko=' . $_GET[monesko] . '">' . $row[koodi] . '</a></td><td><a href="tuokansio2.php?id=' . $row[kid] . '&kid=' . $_GET[kid] . '&monesko=' . $_GET[monesko] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
+           
+                
+             }
+            echo "</table>";
+            echo "</div>";
+            echo "<br>";
+            echo "<br>";
     }
 
 

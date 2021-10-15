@@ -1639,12 +1639,117 @@ function showResultAika(str) {
                 $(".word").html(searchString);
             },
             success: function (html) {
+                 
                 $("#searchresults").show();// this happens after we get results
                 $("#results").show();
                 $("#results").html('');
                 $("#results").append(html);
             }
         });
+    }
+    $(document).ready(function () {
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+    return false;
+
+}
+function showResultKansio(str) {
+
+    $('#searchresults').hide();
+    // getting the value that user typed
+    var searchString = str;
+    // forming the queryString
+    var data = 'search=' + searchString;
+    if (searchString == '') {
+        $('#searchresults').hide();
+
+        $('#piilota').show();
+
+
+    }
+    // if searchString is not empty
+    else {
+
+        $('#piilota').hide();
+
+        // ajax call
+        $.ajax({
+            type: "POST",
+            url: "livesearch_kansio.php",
+            data: data,
+            beforeSend: function (html) { // this happens before actual call
+                $("#results").html('');
+
+                $(".word").html(searchString);
+            },
+            success: function (html) {
+                
+                $("#searchresults").show();// this happens after we get results
+                $("#results").show();
+                $("#results").html('');
+                $("#results").append(html);
+            }
+        });
+    }
+    $(document).ready(function () {
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+    return false;
+
+}
+function showResultOpetiedosto(str, kid) {
+
+    $('#searchresults').hide();
+    var kid = 'kid='+kid;
+    // getting the value that user typed
+    var searchString = str;
+    // forming the queryString
+    var data = 'search=' + searchString;
+    if (searchString == '') {
+        $('#searchresults').hide();
+
+        $('#piilota').show();
+
+
+    }
+    // if searchString is not empty
+    else {
+
+        $('#piilota').hide();
+
+        // ajax call
+        $.ajax({
+            type: "POST",
+            url: "livesearch_opetiedosto.php",
+            data: {data, kid},
+            beforeSend: function (html) { 
+               // this happens before actual call
+                $("#results").html('');
+
+                $(".word").html(searchString);
+               
+            },
+            success: function (html) {
+             
+                $("#searchresults").show();// this happens after we get results
+                $("#results").show();
+                $("#results").html('');
+                $("#results").append(html);
+              
+            }
+            
+        });
+       
     }
     $(document).ready(function () {
         $(window).keydown(function (event) {

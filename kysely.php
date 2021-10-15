@@ -305,7 +305,7 @@ function myFunction(y) {
             if ($haearvioinnit->num_rows != 0) {
                 echo'<form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa"  title ="Muokkaa kyselylomaketta" class="myButton9"  role="button"  style="padding:2px 4px; margin-bottom: 20px; margin-top: 20px"></form>';
             } else {
-                echo'<br><form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Lisää kyselylomake"  title ="Lisää kyselylomake" class="myButton9"  role="button"  style="padding:2px 4px"></form>';
+                echo'<form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Lisää kysymyksiä"  title ="Lisää kysymyksiä" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 1em"></form>';
             }
             echo'<div class="cm8-responsive" style="padding-right: 10px">';
             echo '<table id="mytable" class="cm8-uusitableia" style="table-layout:fixed; max-width: 100%;"> ';

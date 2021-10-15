@@ -145,7 +145,7 @@ function myFunction(y) {
 
  
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
-        echo'<h8>Tuo tiedostoja toisesta kurssista/opintojaksosta</h8><br><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        echo'<h8>Tuo tiedostoja/linkkejä toisesta kurssista/opintojaksosta</h8><br><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
         $field = 'koodi';
 
@@ -256,10 +256,19 @@ function myFunction(y) {
 
         else {
 
-            echo'<p id="ohje"><b style="font-size: 1.1em">Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda tiedostoja.</b></p>';
+           echo'<br><br>&#128270 <input type="search"  onkeyup="showResultOpetiedosto(this.value,'.$_GET[kid].')" name="search"  id="search_box" class="haku" style="width: 50%"> 
+		
+		
 
-            echo "<br>";
-            echo'<div class="cm8-responsive">';
+            <div style="margin-top: 0px; margin-bottom: 0px" id="searchresults">
+<ul id="results" class="update">
+</ul></div>';
+            echo'<div id="scrollbar"><div id="spacer"></div></div>';
+            
+             
+            echo'<div class="cm8-responsive" id="piilota">';
+             echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda tiedostoja/linkkejä.</b><br><br>';
+            
             echo '<table id="mytable" class="cm8-bordered cm8-table cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
 
             echo '<tr><th><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '&sorting0=' . $sort . '&field=koodi">Koodi &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '&sorting1=' . $sort . '&field=kurssit.nimi">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '&sorting2=' . $sort . '&field=lukuvuosi">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '&sorting3=' . $sort . '&field=alkupvm">Alkaa' . $nuoli3 . '</a></th><th><a href="tuoopetiedosto.php?kid=' . $_GET[kid] . '&sorting4=' . $sort . '&field=loppupvm">Päättyy' . $nuoli4 . ' </a></th></tr>';
@@ -276,7 +285,9 @@ function myFunction(y) {
                 $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
                 $row[loppupvm] = date("d.m.Y", strtotime($row[loppupvm]));
                 echo '<tr><td><a href="tuoopetiedosto2.php?id=' . $row[kid] . '&kid=' . $_GET[kid] . '&monesko=' . $_GET[monesko] . '">' . $row[koodi] . '</a></td><td><a href="tuoopetiedosto2.php?id=' . $row[kid] . '&kid=' . $_GET[kid] . '&monesko=' . $_GET[monesko] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
-            }
+            
+                
+                }
             echo "</table>";
             echo "</div>";
             echo "<br>";

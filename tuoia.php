@@ -251,7 +251,7 @@ function myFunction(y) {
                 }
                 $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
                 $row[loppupvm] = date("d.m.Y", strtotime($row[loppupvm]));
-                echo '<tr><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $_GET[mihin] . '">' . $row[koodi] . '</a></td><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $_GET[mihin] . '">' . $row[nimi] . '</a><td>' . $etunimi . ' ' . $sukunimi . '</td></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
+                echo '<tr><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $_GET[mihin] . '">' . $row[koodi] . '</a></td><td><a href="tuoia3.php?id=' . $row[kid] . '&ipid=' . $ipid . '&mihin=' . $_GET[mihin] . '">' . $row[nimi] . '</a><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
             }
             echo "</table>";
             echo "</div>";

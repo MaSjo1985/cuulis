@@ -1710,11 +1710,15 @@ function showResultKansio(str) {
 function showResultOpetiedosto(str, kid) {
 
     $('#searchresults').hide();
-    var kid = 'kid='+kid;
+
+ 
     // getting the value that user typed
     var searchString = str;
-    // forming the queryString
-    var data = 'search=' + searchString;
+  
+    var mihin = mihin;
+   
+    var data = {search: searchString, kid: kid};
+    
     if (searchString == '') {
         $('#searchresults').hide();
 
@@ -1731,7 +1735,7 @@ function showResultOpetiedosto(str, kid) {
         $.ajax({
             type: "POST",
             url: "livesearch_opetiedosto.php",
-            data: {data, kid},
+            data: data,
             beforeSend: function (html) { 
                // this happens before actual call
                 $("#results").html('');
@@ -1740,11 +1744,16 @@ function showResultOpetiedosto(str, kid) {
                
             },
             success: function (html) {
-             
+         
                 $("#searchresults").show();// this happens after we get results
+           
                 $("#results").show();
+               
                 $("#results").html('');
+               
                 $("#results").append(html);
+                
+              
               
             }
             
@@ -1795,7 +1804,9 @@ function showResultKysely(str) {
                 $("#searchresults").show();// this happens after we get results
                 $("#results").show();
                 $("#results").html('');
+                
                 $("#results").append(html);
+              
             }
         });
     }

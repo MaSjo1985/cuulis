@@ -320,7 +320,7 @@ function myFunction(y) {
         echo'<form action="aikataulumuokkaus.php" method="post">';
 
         echo'<div class="cm8-responsive" id="content">';
-        echo '<br><br><table id="mytable" class="cm8-uusitableaika" style="table-layout:fixed; width: 99%;"> <thead> ';
+        echo '<br><br><table id="mytable" class="cm8-uusitableaika" style="table-layout:fixed; width: 95%;"> <thead> ';
 
 
         if ($_GET[kaikki] == 'joo') {

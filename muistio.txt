@@ -1,8 +1,3 @@
-* TUO TIEDOSTOON EI MEE KANSIO ID, KUN HAKUTOIMINTO
-
-* VASTUUOPE KUSEE TUONNEISSA, KORJAA KAIKKI!
-
-***********************************************
 
 
 * FIXED HEADER:
@@ -32,11 +27,6 @@ SAMA JUTTU VARMAA TEHTÄVÄLUETTELOSSA...?!
 ->  PITÄÄKÖ LAITTAA valitse kaikki/tyhjennä valinnat-linkki eka tallennussivun kautta?!
 
 *****************************************************************************************************'
-
-SEARCH-juttu lagaa
-
-*******************************************************************************
-
 
 * opiskelijalle mahis ottaa tuloste itsearviointilomakkeesta, excel varmaa ok?
 

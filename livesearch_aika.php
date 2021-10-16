@@ -62,7 +62,17 @@ if (isset($_POST['search'])) {
             $row[sukunimi] = $c12;
             $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
             $row[loppupvm] = date("d.m.Y", strtotime($row[loppupvm]));
-            echo '<tr><td><a href="tuoaikataulu2.php?id=' . $row[kid] . '&ipid=' . $ipid . '&monesko=' . $_GET[monesko] . '">' . $row[koodi] . '</a></td><td><a href="tuoaikataulu2.php?id=' . $row[kid] . '&ipid=' . $ipid . '&monesko=' . $_GET[monesko] . '">' . $row[nimi] . '</a></td><td>' . $row[etunimi] . ' ' . $row[sukunimi] . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
+            
+               if (!$resulthaeope = $db->query("select distinct etunimi, sukunimi from kayttajat, kurssit where kurssit.id='" . $row[kid] . "' AND kayttajat.id=kurssit.opettaja_id")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+                while ($rowope = $resulthaeope->fetch_assoc()) {
+                    $etunimi = $rowope[etunimi];
+                    $sukunimi = $rowope[sukunimi];
+                }
+            
+            
+            echo '<tr><td><a href="tuoaikataulu2.php?id=' . $row[kid] . '&ipid=' . $ipid . '&monesko=' . $_GET[monesko] . '">' . $row[koodi] . '</a></td><td><a href="tuoaikataulu2.php?id=' . $row[kid] . '&ipid=' . $ipid . '&monesko=' . $_GET[monesko] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
         }
         echo "</table>";
         echo "</div>";

@@ -227,7 +227,7 @@ function myFunction(y) {
  
   <a href="kayttajatopettajat.php">Opettajat</a>
   <a href="kayttajatopiskelijat.php"  class="currentLink3">Opiskelijat</a> 
-  <a href="kayttajatmuut.php">Muut käyttäjät</a>
+  
  <a href="kayttajatviesti.php"><b style="font-size: 0.7em">📧</b> &nbsp Lähetä viesti kaikille käyttäjille</a><a href="lisaakayttaja.php">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div></a>';
@@ -252,6 +252,10 @@ function myFunction2(y) {
 
 
         echo'<div class="cm8-container3" style="padding-top: 0px;">';
+        
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
+$results_per_page = 100;
+$start_from = ($page-1) * $results_per_page;
         if ($_SESSION["Rooli"] == 'admin') {
             echo '<h3>Opiskelijat:</h3>';
             echo'<p id="ohje">Klikkaamalla käyttäjän suku- tai etunimeä pääset tarkastelemaan käyttäjän profiilia ja muokkaamaan tietoja.</p>';
@@ -374,11 +378,11 @@ function myFunction2(y) {
             if ($_GET['field10'] == 'kirjautunut') {
 
 
-                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello")) {
+                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello LIMIT $start_from, $results_per_page")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
             } else {
-                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY $field10 $sort")) {
+                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY $field10 $sort LIMIT $start_from, $results_per_page")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
             }
@@ -436,7 +440,25 @@ function myFunction2(y) {
                 }
                 echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
                 echo "</tbody></table>";
-                echo'</form></div></div>';
+                echo'</form></div>';
+                        echo'<div class="cm8-responsive" id="piilota2"  style="margin: 0px; padding: 0px; overflow: hidden">';
+                    echo'<p style="font-weight: bold">Siirry muille sivuille: </p>';
+    if (!$result = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+$yht = $result->num_rows;
+$total_pages = ceil($yht / $results_per_page); // calculate total pages with results
+  
+for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+              if($i==$page) {
+        echo '<a style="margin-right: 10px" href="kayttajatopiskelijat.php?page='.$i.'"><u>'.$i.'</u> </a>';
+    }
+    else{
+        echo '<a  style="margin-right: 10px" href="kayttajatopiskelijat.php?page='.$i.'">'.$i.' </a>';
+    } 
+}; 
+  echo'</div>';
+                echo'</div>';
             }
         } else if ($_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') {
 
@@ -567,11 +589,11 @@ function myFunction2(y) {
             if ($_GET['field10'] == 'kirjautunut') {
 
 
-                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello")) {
+                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello LIMIT $start_from, $results_per_page")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
             } else {
-                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY $field10 $sort")) {
+                if (!$result10 = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY $field10 $sort LIMIT $start_from, $results_per_page")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
             }
@@ -626,7 +648,25 @@ function myFunction2(y) {
                 }
                 echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
                 echo "</tbody></table>";
-                echo'</form></div></div>';
+                echo'</form></div>';
+                    echo'<div class="cm8-responsive" id="piilota2"  style="margin: 0px; padding: 0px; overflow: hidden">';
+                    echo'<p style="font-weight: bold">Siirry muille sivuille: </p>';
+  if (!$result = $db->query("select distinct paiva, kello, sukunimi, etunimi, sposti, Nimi, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajankoulut.odottaa=1 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  rooli='opiskelija' ORDER BY paiva $sort, kello")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+$yht = $result->num_rows;
+$total_pages = ceil($yht / $results_per_page); // calculate total pages with results
+  
+for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+              if($i==$page) {
+        echo '<a style="margin-right: 10px" href="kayttajatopiskelijat.php?page='.$i.'"><u>'.$i.'</u> </a>';
+    }
+    else{
+        echo '<a  style="margin-right: 10px" href="kayttajatopiskelijat.php?page='.$i.'">'.$i.' </a>';
+    } 
+}; 
+  echo'</div>';
+                echo'</div>';
             }
         }
 

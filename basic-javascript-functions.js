@@ -1176,7 +1176,7 @@ function showResult(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+  $('#piilota2').show();
         $('#piilota').show();
         $('#piilota3').show();
         $('#piilota8').show();
@@ -1185,6 +1185,7 @@ function showResult(str) {
     else {
 
         $('#piilota').hide();
+         $('#piilota2').hide();
         $('#piilota3').hide();
         $('#piilota8').hide();
         // ajax call
@@ -1232,14 +1233,14 @@ function showResult2(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
         $('#piilota3').show();
         $('#piilota8').show();
     }
     // if searchString is not empty
     else {
-
+   $('#piilota2').hide();
         $('#piilota').hide();
         $('#piilota3').hide();
         $('#piilota8').hide();
@@ -1281,7 +1282,7 @@ function showResult3(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
         $('#piilota3').show();
         $('#piilota8').show();
@@ -1291,6 +1292,7 @@ function showResult3(str) {
     else {
 
         $('#piilota').hide();
+           $('#piilota2').hide();
         $('#piilota3').hide();
         $('#piilota8').hide();
         // ajax call
@@ -1331,14 +1333,14 @@ function showResult4(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
 
 
     }
     // if searchString is not empty
     else {
-
+   $('#piilota2').hide();
         $('#piilota').hide();
 
         // ajax call
@@ -1379,7 +1381,7 @@ function showResult5(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
 
 
@@ -1388,7 +1390,7 @@ function showResult5(str) {
     else {
 
         $('#piilota').hide();
-
+   $('#piilota2').hide();
         // ajax call
         $.ajax({
             type: "POST",
@@ -1427,14 +1429,15 @@ function showResult6(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
+ 
         $('#piilota').show();
 
 
     }
     // if searchString is not empty
     else {
-
+   $('#piilota2').hide();
         $('#piilota').hide();
 
         // ajax call
@@ -1475,7 +1478,7 @@ function showResult7(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
 
 
@@ -1484,7 +1487,7 @@ function showResult7(str) {
     else {
 
         $('#piilota').hide();
-
+   $('#piilota2').hide();
         // ajax call
         $.ajax({
             type: "POST",
@@ -1522,7 +1525,7 @@ function showResult8(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
 
 
@@ -1531,7 +1534,7 @@ function showResult8(str) {
     else {
 
         $('#piilota').hide();
-
+   $('#piilota2').hide();
         // ajax call
         $.ajax({
             type: "POST",
@@ -1570,7 +1573,7 @@ function showResult9(str) {
     var data = 'search=' + searchString;
     if (searchString == '') {
         $('#searchresults').hide();
-
+ $('#piilota2').show();
         $('#piilota').show();
 
 
@@ -1579,7 +1582,7 @@ function showResult9(str) {
     else {
 
         $('#piilota').hide();
-
+   $('#piilota2').hide();
         // ajax call
         $.ajax({
             type: "POST",

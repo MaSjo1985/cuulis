@@ -103,7 +103,7 @@ function myFunction(y) {
 
   <a href="kayttajatopettajat.php" >Opettajat</a>
   <a href="kayttajatopiskelijat.php">Opiskelijat</a> 
-  <a href="kayttajatmuut.php">Muut käyttäjät</a>
+  
  <a href="kayttajatviesti.php"><b style="font-size: 0.7em">📧</b> &nbsp Lähetä viesti kaikille käyttäjille</a><a href="lisaakayttaja.php" class="currentLink3">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div></a>';

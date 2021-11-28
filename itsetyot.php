@@ -937,10 +937,10 @@ echo'</div>';
                 echo '<table id="mytable" class="cm8-uusitable2ope" style=" table-layout:fixed; max-width: 90%; overflow:hidden">   <thead>';
                 if ($pisteet) {
                     echo '<tr style="border: 2px solid #080708; background-color: #c50076;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
-                    . '</th></tr>  </thead><tbody>';
+                    . '</th></tr>  </thead><tbody id="palaa2">';
                 } else {
                     echo '<tr style="border: 2px solid #080708; background-color: #c50076;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
-                    . '</th></tr>  </thead><tbody>';
+                    . '</th></tr>  </thead><tbody id="palaa2">';
                 }
                 
                 $otmaara = 0;
@@ -1003,9 +1003,10 @@ echo'</div>';
                             while ($rows = $haeseuraava->fetch_assoc()) {
                                 $onkoaihe = $rows[aihe];
                             }
-
+                         
                             if ($onkoaihe != 1) {
-                                echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><a href="ykskohdat2.php?id=' . $ipid . '&tid=' . $rowt[id] . '"><b>' . $rowt[otsikko] . '</b><br></a>';
+                                
+                                echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><a href="ykskohdat2.php?id=' . $ipid . '&tid=' . $rowt[id] . '"><b>'. $rowt[otsikko] . '</b><br></a>';
                             } else {
                                 echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br>';
                             }

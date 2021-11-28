@@ -162,7 +162,7 @@ function upload_tallenna_suoraan($input, $hakemisto = ".") {
  * @param $turvapaate  tiedostolle laitettava pääte, jos vanha pääte ei ole sallittu
  * @return array       palauttaa taulukossa tiedoston vanhan ja uuden nimen
  */
-function upload_tallenna_turvallinen($input, $hakemisto = ".", $paatteet = array(".txt", ".pdf", ".rar", ".zip", ".csv", ".odt", ".ods", ".odg", "odp", ".tnsp", ".tns", ".doc", ".docx", ".rtf", ".dat", ".pptx", ".ppt", ".xls", ".xlsx", ".TXT", ".PDF", ".DOC", ".DOCX", ".RTF", ".DAT", ".PPTX", ".PPT", ".XLS", ".XLSX")
+function upload_tallenna_turvallinen($input, $hakemisto = ".", $paatteet = array(".txt", ".png", ".jpg", ".pdf", ".rar", ".zip", ".csv", ".odt", ".ods", ".odg", "odp", ".tnsp", ".tns", ".doc", ".docx", ".rtf", ".dat", ".pptx", ".ppt", ".xls", ".xlsx", ".TXT", ".PNG", ".JPG", ".PDF", ".DOC", ".DOCX", ".RTF", ".DAT", ".PPTX", ".PPT", ".XLS", ".XLSX")
 , $turvapaate = false) {
     $nimi = upload_tarkista($input);
     $fileCount = count($nimi);
@@ -182,7 +182,7 @@ function upload_tallenna_turvallinen($input, $hakemisto = ".", $paatteet = array
         // Jos $turvapaate puuttuu (eikä muuta löytynyt taulukosta), hylätään tiedosto.
 
         if ($turvapaate === false) {
-            throw new UploadException("Tiedostomuoto ei kelpaa! <br><br>Sallittuja tiedostopäätteitä ovat .txt, .pdf, .rar, .zip, .tnsp, .tns, .csv, .odt, .ods, .odp., .odg, .doc, .docx, .rtf, .dat, .pptx, .ppt, .xls, .xlsx");
+            throw new UploadException("Tiedostomuoto ei kelpaa! <br><br>Sallittuja tiedostopäätteitä ovat .png, .jpq, .txt, .pdf, .rar, .zip, .tnsp, .tns, .csv, .odt, .ods, .odp., .odg, .doc, .docx, .rtf, .dat, .pptx, .ppt, .xls, .xlsx");
         }
 
         // Luodaan tiedostolle turvallinen nimi ja tallennetaan tiedosto.

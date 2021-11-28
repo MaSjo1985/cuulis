@@ -411,8 +411,10 @@ function myFunction(y) {
 
                     echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
                 } else {
-
+                    if($_SESSION["Rooli"]!='opiskelija')
                     echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Lähetä viesti</th></tr></thead></tbody>';
+                    else
+                        echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
                 }
 
 
@@ -423,10 +425,10 @@ function myFunction(y) {
                         
                     } else {
 
-                        if ($_SESSION["Id"] != $row[kaid]) {
+                        if ($_SESSION["Id"] != $row[kaid] && $_SESSION["Rooli"]!='opiskelija') {
 
                             echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
-                        } else {
+                        } else  if ($_SESSION["Id"] == $row[kaid] && $_SESSION["Rooli"]!='opiskelija') {
                             echo'<td></td>';
                         }
                     }

@@ -73,7 +73,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         $minne = $jarjestys - 3;
         if ($minne <= -1) {
-            $minne = "palaa";
+            $minne = 'palaa2';
         }
 
 

@@ -1,3 +1,20 @@
+* Mahdollisuus luoda useamoi kyselylomake
+
+* Muokkaa kyselylomake niin että oikeesti ei tallennut nimeä jos nimetön!
+
+------------------------------------------------------------------------------
+
+
+CUULIS  MUUTOKSET:
+
+* sähköpostiosoite -> käyttäjätunnus
+
+* kysy Jussi Matikaiselta mitä henkilötietoja voi olla
+
+* itsearviointi excelinä ulos?
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
 
 * FIXED HEADER:
 https://imgur.com/a/8rptLeW

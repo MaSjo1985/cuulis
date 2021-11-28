@@ -152,7 +152,7 @@ function myFunction(y) {
        
 	
 
-<p style="color: red; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx	</b></p>
+<p style="color: red; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx, .png, .jpg, 	</b></p>
 <br><input type="hidden" name="kid" value=' . $_POST[kid] . '> 
 			<br><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" >
  	

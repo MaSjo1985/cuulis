@@ -170,7 +170,7 @@ function myFunction(y) {
 
                 for ($j = 0; $j < $fileCount; $j++) {
 
-                    $paatteet = array(".txt", ".pdf", ".rar", ".zip", ".csv", ".odt", ".ods", ".odg", "odp", ".tnsp", ".tns", ".doc", ".docx", ".rtf", ".dat", ".pptx", ".ppt", ".xls", ".xlsx", ".TXT", ".PDF", ".DOC", ".DOCX", ".RTF", ".DAT", ".PPTX", ".PPT", ".XLS", ".XLSX");
+                    $paatteet = array(".txt", ".pdf", ".jpg", ".png.", ".rar", ".zip", ".csv", ".odt", ".ods", ".odg", "odp", ".tnsp", ".tns", ".doc", ".docx", ".rtf", ".dat", ".pptx", ".ppt", ".xls", ".xlsx", ".PNG", ".JPG", ".TXT", ".PDF", ".DOC", ".DOCX", ".RTF", ".DAT", ".PPTX", ".PPT", ".XLS", ".XLSX");
 
                     // Katsotaan, onko annetussa taulukossa tiedoston pääte.
                     // Jos ei ole, käytetään annettua päätettä ($turvapaate).
@@ -185,7 +185,7 @@ function myFunction(y) {
 
                     // Jos $turvapaate puuttuu (eikä muuta löytynyt taulukosta), hylätään tiedosto.
                     if (!$paateloyty) {
-                        throw new UploadException("Tiedostomuoto ei kelpaa! <br><br>Sallittuja tiedostopäätteitä ovat .txt, .pdf, .rar, .zip, .tnsp, .tns, .csv, .odt, .ods, .odp., .odg, .doc, .docx, .rtf, .dat, .pptx, .ppt, .xls, .xlsx");
+                        throw new UploadException("Tiedostomuoto ei kelpaa! <br><br>Sallittuja tiedostopäätteitä ovat .png, .jpg, .txt, .pdf, .rar, .zip, .tnsp, .tns, .csv, .odt, .ods, .odp., .odg, .doc, .docx, .rtf, .dat, .pptx, .ppt, .xls, .xlsx");
                     }
 
                     // Luodaan tiedostolle turvallinen nimi ja tallennetaan tiedosto.

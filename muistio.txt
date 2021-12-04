@@ -1,6 +1,28 @@
+PALAUTUKSET:
+
+* ryhmälle mahis laitta omat pisteet, LISÄÄ KOHTA TAULUKKOON
+
+* jos opettaja lukitse -> esille tulee opettajan määrittelemä tiedosto/linkki (tietokannassa opettajan_palautustiedosto
+
+*  OTSIKOT PALAUTUSTEN ALLA:
+#f7f9f7 + alleviivaus pois
+
+************************************************************
+
+
+POISTA KAIKKI VIESTIEN LÄHETYKSET!!
+
+
+
+*****************************************************************************
+
+KYSELYLOMAKE:
+
+
 * Mahdollisuus luoda useamoi kyselylomake
 
 * Muokkaa kyselylomake niin että oikeesti ei tallennut nimeä jos nimetön!
+
 
 ------------------------------------------------------------------------------
 
@@ -223,7 +245,7 @@ Sukunimipalkin tumma vihreä: OD3E3F
 Alenin taustaharmaa: 98ABAE
 vihreä2 (vaalea): coded9
 
-valkoinen (acarin tausta): f7f9f7
+valkoinen (acarin tausta): #f7f9f7
 
 vaalea harmaa: c4bdc1
 

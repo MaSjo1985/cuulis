@@ -228,7 +228,7 @@ function myFunction(y) {
   <a href="kayttajatopettajat.php">Opettajat</a>
   <a href="kayttajatopiskelijat.php"  class="currentLink3">Opiskelijat</a> 
   
- <a href="kayttajatviesti.php"><b style="font-size: 0.7em">📧</b> &nbsp Lähetä viesti kaikille käyttäjille</a><a href="lisaakayttaja.php">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
+ <a href="lisaakayttaja.php">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div></a>';
         echo'
@@ -404,7 +404,7 @@ $start_from = ($page-1) * $results_per_page;
                 if ($_GET[kaikki2] == 'joo') {
 
                     echo '<table id="mytable" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&kaikki2=joo&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&kaikki2=joo&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&kaikki2=joo&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&kaikki2=joo&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&kaikki2=joo&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Lähetä viesti</th></tr>';
+                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&kaikki2=joo&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&kaikki2=joo&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&kaikki2=joo&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&kaikki2=joo&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&kaikki2=joo&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th></tr>';
                     echo'</thead><tbody>';
 
                     while ($row10 = $result10->fetch_assoc()) {
@@ -416,14 +416,14 @@ $start_from = ($page-1) * $results_per_page;
                             $kirjautunut = '';
                         }
 
-                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' checked></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' checked></td></tr>';
                     }
                 } else {
 
 
 
                     echo '<table id="mytable" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Lähetä viesti</th></tr>';
+                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th></tr>';
                     echo'</thead><tbody>';
 
                     while ($row10 = $result10->fetch_assoc()) {
@@ -435,7 +435,7 @@ $start_from = ($page-1) * $results_per_page;
                             $kirjautunut = '';
                         }
 
-                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td></tr>';
                     }
                 }
                 echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
@@ -614,7 +614,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
                 if ($_GET[kaikki2] == 'joo') {
 
                     echo '<table id="mytable" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&kaikki2=joo&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&kaikki2=joo&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&kaikki2=joo&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&kaikki2=joo&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&kaikki2=joo&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Lähetä viesti</th></tr>';
+                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&kaikki2=joo&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&kaikki2=joo&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&kaikki2=joo&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&kaikki2=joo&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&kaikki2=joo&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th><th><a href="kayttajatopiskelijat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th></tr>';
                     echo'</thead><tbody>';
 
                     while ($row10 = $result10->fetch_assoc()) {
@@ -626,12 +626,12 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
                             $kirjautunut = '';
                         }
 
-                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' checked></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' checked></td></tr>';
                     }
                 } else {
 
                     echo '<table id="mytable" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th></th><th><a href="kayttajatopiskelijat.php?kaikki2=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Lähetä viesti</th></tr>';
+                    echo '<tr><th><a href="kayttajatopiskelijat.php?sorting0=' . $sort . '&field2=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting1=' . $sort . '&field2=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting2=' . $sort . '&field2=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="kayttajatopiskelijat.php?sorting3=' . $sort . '&field2=Nimi">Oppilaitos &nbsp&nbsp&nbsp' . $nuoli3 . ' </a><th><a href="kayttajatopiskelijat.php?sorting5=' . $sort . '&field10=kirjautunut">Kirjautunut viimeksi &nbsp&nbsp&nbsp' . $nuoli5 . ' </a></th></th><th><a href="kayttajatopiskelijat.php?kaikki2=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th></tr>';
                     echo'</thead><tbody>';
 
                     while ($row10 = $result10->fetch_assoc()) {
@@ -643,7 +643,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
                             $kirjautunut = '';
                         }
 
-                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td></tr>';
                     }
                 }
                 echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';

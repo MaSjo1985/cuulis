@@ -192,8 +192,8 @@ function myFunction(y) {
                         $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                         $body .= "</body></html>";
 
-
-                        $varmistus = mail($sposti, $otsikko, $body, $headers);
+//
+//                        $varmistus = mail($sposti, $otsikko, $body, $headers);
                         if (!$tulos2 = $db->query("select distinct sposti from kayttajat where rooli='admin'")) {
                             die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
                         }

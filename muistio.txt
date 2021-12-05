@@ -1,23 +1,21 @@
 PALAUTUKSET:
 
-* ryhmälle mahis laitta omat pisteet, LISÄÄ KOHTA TAULUKKOON
-
 * jos opettaja lukitse -> esille tulee opettajan määrittelemä tiedosto/linkki (tietokannassa opettajan_palautustiedosto
+= SAMA TIEDOSTO KAIKILLE
 
-*  OTSIKOT PALAUTUSTEN ALLA:
-#f7f9f7 + alleviivaus pois
+*********************************************'
 
-************************************************************
+* sähköpostiosoite -> käyttäjätunnus   (HUOMAA VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin!!
 
+= tietokannassa nimeltä uusitunnus
 
-POISTA KAIKKI VIESTIEN LÄHETYKSET!!
-
+->  KORVAA ADMIN-näkymässä sähköpostiosoite tunnukseksi
+-> JOS SALASANA UNOHTUNUT, LAITA TIETO ETTÄ MITEN VOI OTTAA YHTEYTTÄ ADMIN
 
 
 *****************************************************************************
 
 KYSELYLOMAKE:
-
 
 * Mahdollisuus luoda useamoi kyselylomake
 
@@ -25,11 +23,6 @@ KYSELYLOMAKE:
 
 
 ------------------------------------------------------------------------------
-
-
-CUULIS  MUUTOKSET:
-
-* sähköpostiosoite -> käyttäjätunnus
 
 * kysy Jussi Matikaiselta mitä henkilötietoja voi olla
 

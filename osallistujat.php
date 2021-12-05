@@ -147,7 +147,7 @@ function myFunction(y) {
     while ($riviakt = $tulosakt->fetch_assoc()) {
         $akt = $riviakt[tav_akt];
     }
-
+    $akt=0;
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
         echo'<h5 style="margin-right: 120px; display: inline-block">Opettajat</h5>';
@@ -226,7 +226,7 @@ function myFunction(y) {
         echo'<h5 style="display: inline-block; margin-right: 40px">Opiskelijat</h5>';
 
         echo'<a href="lisaaopiskelijaeka.php" class="myButton98" style="margin-right: 20px">+ Lisää opiskelijoita kurssille/opintojaksolle</a>';
-        echo'<a href="viestiopiskelijoille.php" class="myButton98">📧 &nbsp Lähetä viesti kaikille osallistujille</a>';
+      
         if (!$resultyht = $db->query("select distinct  kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND opiskelijankurssit.projekti_id=0 AND opiskelijankurssit.itseprojekti_id=0 AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY sukunimi asc, etunimi")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -276,17 +276,16 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';
-                echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
+                echo '<table id="mytable" class="cm8-striped cm8-uusitable18" style="table-layout:fixed; max-width: 100%; ">  <thead>';
 
 
                 if ($akt == 0) {
 
-                    echo '<tr><th><a href="osallistujat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Lähetä viesti</th></tr></thead><tbody>';
+                    echo '<tr><th><a href="osallistujat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
 
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
-                        if ($_SESSION["Id"] != $row[kaid])
-                            echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
+                        
                         echo'</tr>';
                     }
                 }
@@ -295,14 +294,13 @@ function myFunction(y) {
                 else {
 
 
-                    echo '<tr><th><a href="osallistujat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Tavoite</th><th>Lähetä viesti</th></tr></thead><tbody>';
+                    echo '<tr><th><a href="osallistujat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Tavoite</th></tr></thead><tbody>';
 
                     while ($row = $result->fetch_assoc()) {
                         $tavoite = $row[tavoite];
                         echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
                         echo'<td>' . $tavoite . '</td>';
-                        if ($_SESSION["Id"] != $row[kaid])
-                            echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
+                  
                         echo'</tr>';
                     }
                 }
@@ -318,17 +316,16 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';
-                echo '<table id="mytable" class="cm8-bordered cm8-uusitable10 cm8-striped"  style="table-layout:fixed; max-width: 100%; ">  <thead>';
+                echo '<table id="mytable" class="cm8-uusitable18 cm8-striped"  style="table-layout:fixed; max-width: 100%; ">  <thead>';
 
 
                 if ($akt == 0) {
 
-                    echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Lähetä viesti</th></tr></thead></tbody>';
+                    echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
 
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
-                        if ($_SESSION["Id"] != $row[kaid])
-                            echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
+                     
                         echo'</tr>';
                     }
                 }
@@ -337,14 +334,13 @@ function myFunction(y) {
                 else {
 
 
-                    echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Tavoite</th><th>Lähetä viesti</th></tr></thead></tbody>';
+                    echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th><th>Tavoite</th></tr></thead></tbody>';
                     while ($row = $result->fetch_assoc()) {
                         $tavoite = $row[tavoite];
                         //TESTAA TÄHÄN!!
                         echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '" >' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
                         echo'<td>' . $tavoite . '</td>';
-                        if ($_SESSION["Id"] != $row[kaid])
-                            echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
+                    
                         echo'</tr>';
                     }
                 }
@@ -390,12 +386,11 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';
                 echo '<table id="mytable" class="cm8-striped cm8-uusitable18" >  <thead>';
-                echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Lähetä viesti</th></tr></thead></tbody>';
+                echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
 
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
-                    if ($_SESSION["Id"] != $row[kaid])
-                        echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
+                
                     echo'</tr>';
                 }
                 echo "</tbody></table>";
@@ -412,7 +407,7 @@ function myFunction(y) {
                     echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
                 } else {
                     if($_SESSION["Rooli"]!='opiskelija')
-                    echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Lähetä viesti</th></tr></thead></tbody>';
+                    echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
                     else
                         echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
                 }
@@ -421,18 +416,7 @@ function myFunction(y) {
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
 
-                    if ($result->num_rows == 1) {
-                        
-                    } else {
-
-                        if ($_SESSION["Id"] != $row[kaid] && $_SESSION["Rooli"]!='opiskelija') {
-
-                            echo'<td><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td>';
-                        } else  if ($_SESSION["Id"] == $row[kaid] && $_SESSION["Rooli"]!='opiskelija') {
-                            echo'<td></td>';
-                        }
-                    }
-
+              
 
 
                     echo'</tr>';

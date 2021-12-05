@@ -475,12 +475,6 @@ function myFunction(y) {
         
         while ($rowt = $haeaikataulu->fetch_assoc()) {
 
-
-
-
-
-
-
             echo '<tr style="font-size: 0.9em;"><td style="border: 1px solid grey;    ">' . $rowt[aika] . '</td><td style="border: 1px solid grey;  ">' . $rowt[aihe] . '</td><td style="word-wrap: break-word;   border: 1px solid grey;  ">' . $rowt[lisa] . '</td></tr>';
         }
 

@@ -74,7 +74,7 @@ if (isset($_POST['search'])) {
             echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 0px; width: 100%">';
             echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br>';
             echo '<table id="mytable88" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Lähetä viesti</th></tr></thead><tbody>';
+            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
 
             while ($stmt->fetch()) {
                 $row10[etunimi] = $c1;
@@ -92,7 +92,7 @@ if (isset($_POST['search'])) {
                 } else {
                     $kirjautunut = '';
                 }
-                echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td></tr>';
             }
             echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
@@ -104,7 +104,7 @@ if (isset($_POST['search'])) {
             echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 0px; width: 100%">';
             echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br>';
             echo '<table id="mytable88" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Lähetä viesti</th></tr></thead><tbody>';
+            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
 
             while ($stmt->fetch()) {
                 $row10[etunimi] = $c1;
@@ -122,7 +122,7 @@ if (isset($_POST['search'])) {
                 } else {
                     $kirjautunut = '';
                 }
-                echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row10[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                echo '<tr><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[sukunimi] . '</a></td><td><a href=kayttaja.php?url=' . $url . '&ka=' . $row10[kaid] . '>' . $row10[etunimi] . "</a></td><td>" . $row10[sposti] . '</td><td>' . $row10[Nimi] . '</td><td>' . $kirjautunut . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row10[kaid] . ' ></td></tr>';
             }
             echo'<tr style="border-bottom: 3px solid transparent; "><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";

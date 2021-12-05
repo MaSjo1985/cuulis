@@ -1470,7 +1470,8 @@ table.cm8-uusitable18 th{ border: 2px solid #080708; background-color: #c50076; 
 table.cm8-uusitable18 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitable18 td{  padding: 6px; border: 1px solid grey; color: #080708 }
 table.cm8-uusitable18 th{ border: 2px solid #080708 }
-table.cm8-uusitable18 a{ color: #080708}
+table.cm8-uusitable18 th a{ color: #00ffff}
+table.cm8-uusitable18 td a{ color: #080708}
 table.cm8-uusitable18 a:hover{ border-bottom: 1px solid transparent;}
 
 table.cm8-uusitable18 td:last-child{
@@ -2300,12 +2301,12 @@ a.currentLink
 .topnav2 a {
     float: left;
     color: #080708;
-    padding: 8px;
+    padding: 20px 8px 8px 8px;
     font-size: 0.9em;
     border: 1px solid #f7f9f7;
     background: #7eece5; 
     font-weight: bold;
-    width: 16.6%;
+    width: 20%;
     height: 50px;
     display: inline-block;
 }

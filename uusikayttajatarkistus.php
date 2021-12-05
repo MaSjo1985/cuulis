@@ -89,9 +89,11 @@ if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "opiskelija" || $_POST[Rooli
     $viesti = str_replace("\n.", "\n..", $viesti);
 
 
+  if($_POST[Rooli] != 'opiskelija'){
+                $varmistus = mail($siivottusposti, $otsikko, $viesti, $headers);
+            }
 
-
-    $varmistus = mail($siivottusposti, $otsikko, $viesti, $headers);
+    
 
     $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
 
@@ -116,8 +118,10 @@ if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "opiskelija" || $_POST[Rooli
 
 
 
-
-            $varmistus2 = mail($sposti2, $otsikko2, $viesti2, $headers);
+            if($_POST[Rooli] != 'opiskelija'){
+                $varmistus2 = mail($sposti2, $otsikko2, $viesti2, $headers);
+            }
+            
         }
 
         if (!$tulos3 = $db->query("select distinct sposti from kayttajat where rooli='admin'")) {
@@ -132,9 +136,11 @@ if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "opiskelija" || $_POST[Rooli
         $otsikko3 = "=?UTF-8?B?" . base64_encode($otsikko3) . "?=";
 
         $kysely3 = 'Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br><em>Tähän viestiin ei voi vastata.</em>';
+   if($_POST[Rooli] != 'opiskelija'){
+                    $viesti3 = mail($sposti3, $otsikko3, $kysely3, $headers);
+            }
 
-
-        $viesti3 = mail($sposti3, $otsikko3, $kysely3, $headers);
+    
         $stmt2->close();
         header("location: uusikayttajavahvistus.php");
     } else {
@@ -158,9 +164,11 @@ if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "opiskelija" || $_POST[Rooli
 
             $viesti = str_replace("\n.", "\n..", $viesti);
 
+  if($_POST[Rooli] != 'opiskelija'){
+                      $varmistus = mail($sposti3, $otsikko, $viesti, $headers); 
+            }
 
-
-            $varmistus = mail($sposti3, $otsikko, $viesti, $headers);
+     
         }
         $stmt2->close();
         header("location: uusikayttajavahvistus.php");

@@ -1,7 +1,6 @@
 <?php
 ob_start();
-
-
+ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
 <title> Palautukset </title>';
@@ -17,14 +16,12 @@ session_start(); // ready to go!
 if (isset($_SESSION["Kayttajatunnus"])) {
     include("kurssisivustonheader.php");
 
-
-
     echo '<div class="cm8-container7" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 60px">';
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
         echo'<nav class="topnav" id="myTopnav">
 	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
 	  
-	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+	  <a href="itsetyot.php" onclick="loadProgress()" >Kurssitehtävät</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 		
 	 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
@@ -72,7 +69,7 @@ function myFunction(y) {
         echo'<nav class="topnav" id="myTopnav">
 		 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
 		  
-		  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+		  <a href="itsetyot.php" onclick="loadProgress()" >Kurssitehtävät</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 			
 		 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
@@ -115,7 +112,12 @@ function myFunction(y) {
 }
 </script>';
     }
-
+    if (isset($_GET[pid])) {
+        $_POST[pid] = $_GET[pid];
+    }
+    if (isset($_GET[ryid])) {
+        $_POST[ryid] = $_GET[ryid];
+    }
     echo'<div class="cm8-margin-top"></div>';
 
     if (!$hae_eka = $db->query("select MIN(id) as id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
@@ -159,36 +161,80 @@ function myFunction(y) {
         }
     }
     echo'</nav>
- <div class="cm8-margin-top"></div></div>';
+ <div class="cm8-margin-top"></div></div>
+
+ 
+
+
+<div class="cm8-half" style="padding-top: 20px">';
+
+
+    if (!$projekti = $db->query("select * from projektit where id='" . $_POST[pid] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    if ($projekti->num_rows != 0) {
+
+
+        if (!$onkosuljettu = $db->query("select distinct lopullinen from ryhmat where id='" . $_POST[ryid] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($row = $onkosuljettu->fetch_assoc()) {
+
+            $lopullinen = $row[lopullinen];
+        }
 
 
 
-    echo'<div class="cm8-threequarter" style="padding-top: 30px">';
+        while ($rowP = $projekti->fetch_assoc()) {
+            $kuvaus = $rowP[kuvaus];
+            $pid = $rowP[id];
+        }
+
+            echo' <h8 style="font-size: 1.3em">Lisää tiedosto ryhmille </h8>';
+     
 
 
-    // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
-    // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
-
-    $ryhma = $_POST[ryid];
-    $projekti = $_POST[pid];
-    $tyonimi = $_POST[tyonimi];
-    $id = $_POST[id];
-
-
-//tulee array!!
-    $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=? WHERE id=?");
-
-    $stmt->bind_param("si", $tyonimi, $id);
-    $stmt->execute();
+        echo '<br><br><a href="ryhmatyot.php?r=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
+        echo'<div class="cm8-margin-top" ></div>';
+        
+        echo'<p style="color: #c7ef00; font-size: 1.2em">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+        
+        echo'<form action="lahetysope2.php" method="POST" enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
+        echo'<legend>1) Lisää tiedosto omalta laitteelta</legend>';
+        echo '<p class="eimitaan" style="color: red"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
 
 
-    $stmt->close();
+        echo'<p><b>Nimi: </b><br><input type="text" name="tyonimi" ><br></p>
+	<br><p><b>Lisää tiedosto: </b><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" ></p>
+		<input type="hidden" name="pid" value=' . $pid . ' >
+		<input type="hidden" name="ryid" value=' . $ryid . ' >
+                    <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >
+		<br><br><input type="submit" class="myButton9" value="&#10003 Lähetä">
+	</fieldset></form>';
+
+        echo'<form name="Form" id="myForm" onSubmit="return validateFormO()" action="lahetyslinkkiope2.php" method="POST" class="form-style-k"><fieldset style="width: 80%">';
+
+        echo'<legend>2) Lisää tiedosto linkkinä (esim. Google Docs)</legend>';
 
 
 
 
+        echo'<p><b>Nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+  <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+    <p style="color: red; padding:0px; margin:0px" class="eimitaan"></p>
+</div> 
 
-    header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+<p><b>URL-osoite</b>:<br> <input type="text" name="osoite" /></p>
+	<input type="hidden" name="pid" value=' . $pid . ' >
+		
+                           <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >
+		<br><br><input type="button" onclick="validateFormO()" value="&#10003 Lähetä" class="myButton9">
+
+</fieldset></form>';
+    } else
+        header("location: ryhmatyot.php");
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
@@ -203,4 +249,4 @@ include("footer.php");
 ?>
 
 </body>
-</html>
+</html>	

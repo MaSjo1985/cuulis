@@ -19,6 +19,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
+
     echo '<div class="cm8-container7" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 60px">';
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
         echo'<nav class="topnav" id="myTopnav">
@@ -71,7 +72,7 @@ function myFunction(y) {
     if ($_SESSION["Rooli"] == "opiskelija") {
         echo'<nav class="topnav" id="myTopnav">
 		 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
-		  
+		
 		  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" class="currentLink" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 			
 		 ';
@@ -115,80 +116,60 @@ function myFunction(y) {
 }
 </script>';
     }
-
     echo'<div class="cm8-margin-top"></div>';
 
-    if (!$hae_eka = $db->query("select MIN(id) as id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
 
-    if ($hae_eka->num_rows != 0) {
-        while ($rivieka = $hae_eka->fetch_assoc()) {
-            $eka_id = $rivieka[id];
-        }
-    }
+    echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> ';
 
-
-    echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> <h2 style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px">Palautukset</h2>';
     echo '<nav class="cm8-sidenav " style="padding-top: 0px; margin-top:0px; height: 100%; padding-left: 0px">
 
 
-';
-    if (!$haeprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
-
-
-    if ($haeprojekti->num_rows != 0) {
-        echo'<div class="cm8-sidenav" style="padding-top: 20px; margin-top:0px; height: 100%; padding-left: 0px">';
-        while ($rowP = $haeprojekti->fetch_assoc()) {
-            $kuvaus = $rowP[kuvaus];
-            $id = $rowP[id];
-            if ($_POST[pid] == $id) {
-
-                echo'<a href="ryhmatyot.php?r=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
-            } else {
-
-                echo'<a href="ryhmatyot.php?r=' . $id . '" class="btn-info3" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">' . $kuvaus . '</a>';
-            }
-        }
-        echo'<div class="cm8-margin-top"></div>';
-
-        if ($_SESSION["Rooli"] <> 'opiskelija') {
-            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
-        }
-    }
-    echo'</nav>
+	
+</nav>
  <div class="cm8-margin-top"></div></div>';
 
 
 
-    echo'<div class="cm8-threequarter" style="padding-top: 30px">';
+
+    echo'<div class="cm8-half" style="padding-top: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
+
+    if (!$projekti = $db->query("select * from projektit where id='" . $_GET[pid] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
 
 
-    // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
-    // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
-
-    $ryhma = $_POST[ryid];
-    $projekti = $_POST[pid];
-    $tyonimi = $_POST[tyonimi];
-    $id = $_POST[id];
+    while ($rowP = $projekti->fetch_assoc()) {
+        $kuvaus = $rowP[kuvaus];
+        $pid = $rowP[id];
+    }
 
 
-//tulee array!!
-    $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=? WHERE id=?");
+    echo' <h6>' . $kuvaus . '</h6>';
 
-    $stmt->bind_param("si", $tyonimi, $id);
-    $stmt->execute();
+    if (!$result = $db->query("select distinct * from open_palautustiedosto where id = '" . $_GET[id] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($row = $result->fetch_assoc()) {
+        $nimi = $row[tallennettunimi];
+        $vanhanimi = $row[omatallennusnimi];
+    }
 
 
-    $stmt->close();
+//     $vanhanimi="tiedostot/".$vanhanimi;
+//    
+//    if (file_exists($nimi)) {
+//            
+//        rename($nimi, $vanhanimi);
+//    } 
 
 
 
+    if (file_exists($nimi)) {
 
-
-    header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+        header('location: /' . $nimi);
+    } else
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tiedostoa ei löytynyt!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

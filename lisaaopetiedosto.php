@@ -176,14 +176,14 @@ function myFunction(y) {
 
 
         echo'
-	<p><b>Kuvaus:</b> <b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>';
+	<p><b>Nimi:</b> <b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>';
 
 
         echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p class="eimitaan"></p>
 </div>';
 
-        echo'<p><b>Tiedoston URL-osoite</b>:<br> <input type="text"  name="osoite" id="osoite" /></p>
+        echo'<p><b>URL-osoite</b>:<br> <input type="text"  name="osoite" id="osoite" /></p>
 	<input type="hidden" id="kid" name="kid" value=' . $_POST[kid] . '> 
            <input type="hidden" id="upotus" name="upotus" value="0"> 
           <input type="hidden" id="youtube" name="youtube" value="0">
@@ -196,7 +196,7 @@ function myFunction(y) {
         echo'<legend>3)&nbsp&nbsp Lisää upotuslinkki &nbsp&nbsp </legend>';
 
         echo'
-	<p><b>Kuvaus:</b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama2"/></p>';
+	<p><b>Nimi:</b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama2"/></p>';
         echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
   <p class="eimitaan"></p>
 </div>';
@@ -213,7 +213,7 @@ function myFunction(y) {
         echo'<legend>4)&nbsp&nbsp Lisää Youtube-upotuslinkki &nbsp&nbsp </legend>';
 
         echo'
-	<p><b>Kuvaus: </b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama3"/></p>';
+	<p><b>Nimi: </b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama3"/></p>';
         echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID3" id="divID3">
 <p class="eimitaan"></p>
 </div>';

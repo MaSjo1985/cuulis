@@ -169,16 +169,15 @@ function myFunction(y) {
     // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
     // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
 
-    $ryhma = $_POST[ryid];
     $projekti = $_POST[pid];
-    $tyonimi = $_POST[tyonimi];
+    $nimi = $_POST[tyonimi];
     $id = $_POST[id];
 
 
 //tulee array!!
-    $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=? WHERE id=?");
+    $stmt = $db->prepare("UPDATE open_palautustiedosto SET kuvaus=? WHERE id=?");
 
-    $stmt->bind_param("si", $tyonimi, $id);
+    $stmt->bind_param("si", $nimi, $id);
     $stmt->execute();
 
 
@@ -188,7 +187,7 @@ function myFunction(y) {
 
 
 
-    header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+    header("location: ryhmatyot.php?r=" . $_POST[pid]);
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

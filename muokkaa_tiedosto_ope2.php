@@ -1,7 +1,6 @@
 <?php
 ob_start();
 
-
 echo'<!DOCTYPE html><html> 
 <head>
 <title> Palautukset </title>';
@@ -144,7 +143,7 @@ function myFunction(y) {
         while ($rowP = $haeprojekti->fetch_assoc()) {
             $kuvaus = $rowP[kuvaus];
             $id = $rowP[id];
-            if ($_POST[pid] == $id) {
+            if ($_GET[pid] == $id) {
 
                 echo'<a href="ryhmatyot.php?r=' . $id . '" class="btn-info3-valittu" style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
             } else {
@@ -159,36 +158,90 @@ function myFunction(y) {
         }
     }
     echo'</nav>
- <div class="cm8-margin-top"></div></div>';
+ <div class="cm8-margin-top"></div></div>
+
+ 
+
+
+<div class="cm8-half" style="padding-top: 20px">';
+
+
+    if (!$projekti = $db->query("select * from projektit where id='" . $_GET[pid] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    if ($projekti->num_rows != 0) {
+
+
+        if (!$onkosuljettu = $db->query("select distinct lopullinen from ryhmat where id='" . $_GET[ryid] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($row = $onkosuljettu->fetch_assoc()) {
+
+            $lopullinen = $row[lopullinen];
+        }
 
 
 
-    echo'<div class="cm8-threequarter" style="padding-top: 30px">';
+        while ($rowP = $projekti->fetch_assoc()) {
+            $kuvaus = $rowP[kuvaus];
+            $pid = $rowP[id];
+        }
 
 
-    // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
-    // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
+            echo' <h8 style="font-size: 1.3em">Muokkaa ryhmiin lisättyä tiedostoa </h8>';
+      
 
-    $ryhma = $_POST[ryid];
-    $projekti = $_POST[pid];
-    $tyonimi = $_POST[tyonimi];
-    $id = $_POST[id];
+    
+        echo '<br><br><a href="ryhmatyot.php?r=' . $_GET[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br>';
+
+        if (!$haetiedosto = $db->query("select * from open_palautustiedosto where id='" . $_GET["id"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        while ($row = $haetiedosto->fetch_assoc()) {
+
+            $id = $row[id];
+            $tyonimi = $row[kuvaus];
+            $tallennettunimi = $row[tallennettunimi];
+            $pid = $row[projekti_id];
+            $omatallennusnimi = $row[omatallennusnimi];
+            $linkki = $row[linkki];
+        }
+
+        echo'<div class="cm8-margin-top" ></div>';
+        if ($linkki == 0) {
+            echo'<form action="muokkaatiedostoope2.php" method="POST" onSubmit="return validateFormOT()"  enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
+
+            echo'<p><b>Nimi: </b><b style="color: red">*</b><br><br><textarea class="textarea" rows="1" name="tyonimi" id="tyonimi">' . $tyonimi . '</textarea><br></p>
+                 <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
+    <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
+</div>
+		<input type="hidden" name="pid" value=' . $pid . ' >
+                    <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >
+                         <input type="hidden" name="id" value=' . $id . ' >
+		<br><input type="submit" class="myButton9" id="button1" value="&#10003 Tallenna">
+	</fieldset></form>';
+        } else {
+
+            echo'<form name="Form" id="myForm" onSubmit="return validateFormO()" action="muokkaalinkkiope2.php" method="POST" class="form-style-k"><fieldset style="width: 80%">';
 
 
-//tulee array!!
-    $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=? WHERE id=?");
+            echo'<p><b>Nimi: </b><b style="color: red">*</b><br><br> <textarea class="textarea" type="text" name="kuvaus" rows="1" id="tama1">' . $tyonimi . '</textarea></p>
+  <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+    <p style="color: red; padding:0px; margin:0px" id="demo4" class="eimitaan"></p>
+</div> 
 
-    $stmt->bind_param("si", $tyonimi, $id);
-    $stmt->execute();
+<p><b>URL-osoite</b>:<br> <input type="text" name="osoite" id="osoite" value=' . $tallennettunimi . ' /></p>
+	<input type="hidden" name="pid" value=' . $pid . ' >
+                           <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >
+                                           <input type="hidden" name="id" value=' . $id . ' >
+		<br><br><input type="button" onclick="validateFormO()" value="&#10003 Tallenna" id="button2" class="myButton9">
 
-
-    $stmt->close();
-
-
-
-
-
-    header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+</fieldset></form>';
+        }
+    } else
+        header("location: ryhmatyot.php");
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
@@ -201,6 +254,43 @@ echo "</div>";
 
 include("footer.php");
 ?>
+<script>
+    var input = document.getElementById("tyonimi");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button1").click();
+        }
+    });
+</script>
 
+<script>
+    var input = document.getElementById("tama1");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button2").click();
+        }
+    });
+</script>
+<script>
+    var input = document.getElementById("osoite");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button2").click();
+        }
+    });
+</script>
+<script>
+    $(".textarea").keydown(function (e) {
+// Enter was pressed without shift key
+        if (e.keyCode == 13 && !e.shiftKey)
+        {
+            // prevent default behavior
+            e.preventDefault();
+        }
+    });
+</script>
 </body>
-</html>
+</html>	

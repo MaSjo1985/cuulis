@@ -275,6 +275,12 @@ if ($_POST['arvo'] == 'vaihda') {
             }
         }
     }
+    
+    //poista opiskelijankurssit + tiedosto
+    
+    
+    
+    
 }
 
 if ($_POST["mihin"] == 'etu') {

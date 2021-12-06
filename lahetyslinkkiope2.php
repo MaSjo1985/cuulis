@@ -20,23 +20,24 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     if ($_POST[kuvaus] != "") {
 
-
-
-
-        $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=?, omatallennusnimi=? WHERE id=?");
-        $stmt->bind_param("ssi", $tyonimi, $omatallennusnimi, $id);
-
-        $omatallennusnimi = $_POST[osoite];
-        $projekti = $_POST[pid];
-        $tyonimi = $_POST[kuvaus];
-        $ryhma = $_POST[ryid];
-        $id = $_POST[id];
+        
+        $stmt = $db->prepare("INSERT INTO open_palautustiedosto (linkki, kuvaus, tallennettunimi, projekti_id) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("issi", $linkki, $kuvaus, $tallennettunimi, $pid);
+     
+        $linkki = 1;
+        $kuvaus = $_POST[kuvaus];
+        $tallennettunimi = $_POST[osoite];
+        $pid = $_POST[pid];
+     
 
         $stmt->execute();
         $stmt->close();
 
 
-        header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+
+
+
+        header("location: ryhmatyot.php?r=" . $_POST[pid]);
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

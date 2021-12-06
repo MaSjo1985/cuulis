@@ -3,7 +3,7 @@ ob_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Cuulis - Palautus </title>';
+<title> Palautukset </title>';
 
 include("yhteys.php");
 
@@ -211,9 +211,9 @@ function myFunction(y) {
         $maara = $haeopiskelijat->num_rows;
 
         if ($maara == 1) {
-            echo' <h8 style="font-size: 1.3em">Palauta tiedosto opiskelijalle "';
+            echo' <h8 style="font-size: 1.3em">Palauta tiedosto opiskelijalle  &nbsp&nbsp';
         } else {
-            echo' <h8 style="font-size: 1.3em">Palauta tiedosto opiskelijoille "';
+            echo' <h8 style="font-size: 1.3em">Palauta tiedosto opiskelijoille &nbsp&nbsp';
         }
 
 
@@ -230,7 +230,7 @@ function myFunction(y) {
                 if ($maara > 0) {
                     echo', ';
                 } else {
-                    echo'"';
+                    echo'';
                 }
             }
         }
@@ -245,7 +245,7 @@ function myFunction(y) {
         echo '<p class="eimitaan" style="color: red"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
 
 
-        echo'<p><b>Työn nimi: </b><br><input type="text" name="tyonimi" ><br></p>
+        echo'<p><b>Nimi: </b><br><input type="text" name="tyonimi" ><br></p>
 	<br><p><b>Lisää tiedosto: </b><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" ></p>
 		<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
@@ -260,12 +260,12 @@ function myFunction(y) {
 
 
 
-        echo'<p><b>Työn nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+        echo'<p><b>Nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
   <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p style="color: red; padding:0px; margin:0px" class="eimitaan"></p>
 </div> 
 
-<p><b>Työn url-osoite</b>:<br> <input type="text" name="osoite" /></p>
+<p><b>URL-osoite</b>:<br> <input type="text" name="osoite" /></p>
 	<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
                            <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >

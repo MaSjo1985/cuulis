@@ -209,7 +209,7 @@ function myFunction(y) {
 </div>';
 
     echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 30px">';
-
+  
 
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
         echo'<div class="divi">
@@ -380,6 +380,7 @@ function myFunction(y) {
                     } else {
 
                         echo'<p style="margin-bottom: 10px; font-weight: bold; color: #c7ef00;">Aseta palautuksille sulkeutumisajankohta: </p>';
+     
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" class="kdate" style="margin-right: 10px; width: 20%; font-size: 0.8em; color: #080708"  name="paivaS">';
@@ -392,9 +393,7 @@ function myFunction(y) {
 
                         echo'<input type="submit" style=" margin-left:10px; padding: 2px;" value="Tallenna" class="myButton8" name="tallennaS"  title="Tallenna sulkeutumisaika">';
                     }
-
-
-
+             
                     echo'</form>';
                     ?>
 
@@ -447,7 +446,53 @@ function myFunction(y) {
                     //TÄNNE KAIKKI
                 }
                 echo'</div>';
+    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px">';
 
+   echo'<p style="margin-bottom: 10px; font-weight: bold; color: #c7ef00;">Ryhmiin lisätyt tiedostot: </p>';
+          echo'<p style="color: #c7ef00; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+                if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                          }
+
+ 
+
+                                        if ($haetyotaut -> num_rows !=0) {
+                                       
+                                         
+                                            echo '<table class="cm8-table3">';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th><th>Muokkaa / Poista</th></tr>';
+                                            while ($rowtaut = $haetyotaut->fetch_assoc()) {
+                                                 $nimiaut = $rowtaut[kuvaus];
+                                                 $linkkiaut = $rowtaut[linkki];
+                                                 
+                                                   $palautuspaivaaut = substr($rowtaut[lisatty], 0, 10);
+                                                $palautuspaivaaut = date("d.m.Y", strtotime($palautuspaivaaut));
+                                                $palautuskelloaut = substr($rowtaut[lisatty], 11, 5);
+                                                $lisattyaut = $palautuspaivaaut . ' klo ' . $palautuskelloaut;
+                                                $idaut = $rowtaut[id];
+                                                $tallennettunimiaut = $rowtaut[tallennettunimi];
+                                                $omatallennusnimiaut = $rowtaut[omatallennusnimi];
+                                               if ($linkkiaut == 1) {
+                                                    echo'<tr><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $nimiaut . '</a></p></td><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki">' . $tallennettunimiaut . '</a></td><td>' . $lisattyaut;
+
+
+                                                  echo'</td><td><form action="muokkaa_tiedosto_ope2.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope2.php" method="post" style="display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+    
+                                                } else {
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+
+                                                   echo'</td><td><form action="muokkaa_tiedosto_ope2.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope2.php" method="post" style="display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+    
+                                                }
+
+                                                   
+
+                                             }
+                                             echo'</table>';
+                                        }
+        echo'<br><form action="tiedosto_ope_automaattinen.php" method="post" style="margin-bottom: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Lisää ryhmiin tiedosto" style="font-size: 1em; margin-right: 0px; padding: 4px 6px"></form>';
+                             echo'</div>';
+                          
 
                 //ryhmässä maks. 1
 
@@ -487,8 +532,7 @@ function myFunction(y) {
                         }
                     }
 
-                    if (!empty($ryhmatkaikki)) {
-                        if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
+                           if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
 
@@ -504,11 +548,17 @@ function myFunction(y) {
 
                             echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
                         }
-                        if ($palautus == 1) {
+                        if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
 
                             echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 1.2em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
+                        
+                            
                         }
+                    
+                    
+                    if (!empty($ryhmatkaikki)) {
+                 
 
                         if ($opmaksimi == 1 && $haeryhmat->num_rows != 0) {
                             echo'<p style="color: #c7ef00; padding-top: 10px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
@@ -610,18 +660,18 @@ function myFunction(y) {
 
                                                 if ($haetyotope2->num_rows != 0) {
                                                     echo '<table class="cm8-table3" >';
-                                                    echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                                     while ($rowt22 = $haetyotope2->fetch_assoc()) {
-                                                         $omatkommentit=$rowt22[omatkommentit];
-                                                           $omatkommentit_tallennettu=$rowt22[omatkommentit_tallennettu];
-                                                            if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
-                                                           
+                                                        $omatkommentit = $rowt22[omatkommentit];
+                                                        $omatkommentit_tallennettu = $rowt22[omatkommentit_tallennettu];
+                                                        if ($omatkommentit_tallennettu == 0) {
+                                                            $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                        }
+
                                                         $lukittu = $rowt22[lukittu];
-                                                      
-                                                        
+
+
                                                         $tallnimi2 = $rowt22[omatallennusnimi];
                                                         $tyoid2 = $rowt22[tyoid];
 
@@ -632,10 +682,10 @@ function myFunction(y) {
                                                         $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                         $palautuskello = substr($rowt22[lisayspvm], 11, 5);
                                                         $rowt22[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                        if($tall ==0){
-                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]); 
+                                                        if ($tall == 0) {
+                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]);
                                                         }
-                                                       
+
                                                         if ($tall == 1) {
                                                             if ($linkki == 1) {
                                                                 echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
@@ -643,13 +693,13 @@ function myFunction(y) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
-                                                                 echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
-                                                                 echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
                                                         } else {
                                                             if ($linkki == 1) {
@@ -659,7 +709,7 @@ function myFunction(y) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.9em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -668,7 +718,7 @@ function myFunction(y) {
                                                                 }
 
                                                                 //loppu alle
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             }
                                                         }
                                                         echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -698,7 +748,7 @@ function myFunction(y) {
 
 
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
                                                     $tallnimi = $rowt[omatallennusnimi];
@@ -715,10 +765,14 @@ function myFunction(y) {
 
 
                                                         echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form> <form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                    
+                                                        
                                                     } else {
                                                         echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
 
                                                         echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                    
+                                                        
                                                     }
                                                 }
                                                 echo "</table>";
@@ -781,29 +835,24 @@ function myFunction(y) {
                                                 $nyt = date("Y-m-d H:i");
                                                 if ($haetyotope2->num_rows != 0) {
                                                     echo '<table class="cm8-table3" >';
-                                                     echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                                     while ($rowt22 = $haetyotope2->fetch_assoc()) {
-                                                    $omatkommentit=$rowt22[omatkommentit];
-                                                     $omatkommentit_tallennettu=$rowt22[omatkommentit_tallennettu];
-                                                    
-                                                     
-                                                     if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
-                                                     
+                                                        $omatkommentit = $rowt22[omatkommentit];
+                                                        $omatkommentit_tallennettu = $rowt22[omatkommentit_tallennettu];
+
+
+                                                        if ($omatkommentit_tallennettu == 0) {
+                                                            $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                        }
+
                                                         $lukittu = $rowt22[lukittu];
-                                                        if($lukittu ==1){
-                                                          $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                  
-                                                         
-                                                            
+                                                        if ($lukittu == 1) {
+                                                            $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                        } else {
+                                                            $lukitus = '🔓<b>&nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                         }
-                                                        else{
-                                                                $lukitus = '🔓<b>&nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                                                      
-                                                        }
-                                                       
+
                                                         $tallnimi2 = $rowt22[omatallennusnimi];
                                                         $tyoid2 = $rowt22[tyoid];
 
@@ -814,8 +863,8 @@ function myFunction(y) {
                                                         $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                         $palautuskello = substr($rowt22[lisayspvm], 11, 5);
                                                         $rowt22[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                         if($tall ==0){
-                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]); 
+                                                        if ($tall == 0) {
+                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]);
                                                         }
 
                                                         if ($tall == 1) {
@@ -825,13 +874,13 @@ function myFunction(y) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
                                                         } else {
                                                             if ($linkki == 1) {
@@ -841,7 +890,7 @@ function myFunction(y) {
                                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -850,7 +899,7 @@ function myFunction(y) {
                                                                 }
 
                                                                 //loppu alle
-                                                                echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             }
                                                         }
                                                         echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -879,7 +928,7 @@ function myFunction(y) {
 
 
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
                                                     $tallnimi = $rowt[omatallennusnimi];
@@ -922,13 +971,16 @@ function myFunction(y) {
                             }
                         }
                         $aika2 = microtime(true) - $aika;
+                       
                     }
-
-
+      
                     if (!$lopulliset = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
-                    if ($lopulliset->num_rows > 0) {
+                    if($lopulliset->num_rows==0){
+                        echo'<br><br><br>';
+                    }
+                    if ($lopulliset->num_rows >= 0) {
 
                         if (!$maara = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1062,13 +1114,7 @@ function myFunction(y) {
                     if (!$result = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
-
-
-                    $ryhmienlkm = $result->num_rows;
-
-                    if ($ryhmienlkm > 0) {
-
-                        if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
+                   if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
 
@@ -1084,10 +1130,19 @@ function myFunction(y) {
 
                             echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
                         }
-                        if ($palautus == 1) {
+                        if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
-                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa"  style="font-size: 1.2em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
+
+                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 1.2em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
+                        
+                            
                         }
+
+                    $ryhmienlkm = $result->num_rows;
+
+                    if ($ryhmienlkm > 0) {
+
+   
                         if ($opmaksimi == 1) {
                             echo'<p style="color: #c7ef00">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                         }
@@ -1104,7 +1159,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                               echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                                echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1165,25 +1220,22 @@ function myFunction(y) {
                                         $nyt = date("Y-m-d H:i");
                                         if ($haetyotope2->num_rows != 0) {
                                             echo '<table class="cm8-table3" >';
-     echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                             while ($rowt22 = $haetyotope2->fetch_assoc()) {
-                                                 $omatkommentit=$rowt22[omatkommentit];
-                                                  $omatkommentit_tallennettu=$rowt22[omatkommentit_tallennettu];
-                                                   if($omatkommentit_tallennettu==0){
-                                                       
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
+                                                $omatkommentit = $rowt22[omatkommentit];
+                                                $omatkommentit_tallennettu = $rowt22[omatkommentit_tallennettu];
+                                                if ($omatkommentit_tallennettu == 0) {
+
+                                                    $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                }
                                                 $lukittu = $rowt22[lukittu];
-                                                if($lukittu ==1){
-                                                         $lukitus = '🔒<b>&nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                                                        
-                                                            }
-                                                        else{
-                                                                    $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                                                      
-                                                        }
-                                                       
+                                                if ($lukittu == 1) {
+                                                    $lukitus = '🔒<b>&nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                } else {
+                                                    $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                }
+
                                                 $tallnimi2 = $rowt22[omatallennusnimi];
                                                 $tyoid2 = $rowt22[tyoid];
 
@@ -1194,9 +1246,9 @@ function myFunction(y) {
                                                 $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                 $palautuskello = substr($rowt22[lisayspvm], 11, 5);
                                                 $rowt22[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                 if($tall ==0){
-                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]); 
-                                                        }
+                                                if ($tall == 0) {
+                                                    $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]);
+                                                }
 
                                                 if ($tall == 1) {
                                                     if ($linkki == 1) {
@@ -1205,13 +1257,13 @@ function myFunction(y) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
-                                                         echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                        echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
                                                 } else {
                                                     if ($linkki == 1) {
@@ -1221,7 +1273,7 @@ function myFunction(y) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
-                                                         echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -1230,7 +1282,7 @@ function myFunction(y) {
                                                         }
 
                                                         //loppu alle
-                                                        echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     }
                                                 }
                                                 echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -1258,7 +1310,7 @@ function myFunction(y) {
 
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $tallnimi = $rowt[omatallennusnimi];
@@ -1297,7 +1349,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                         echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
+                                echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
 
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
@@ -1339,25 +1391,22 @@ function myFunction(y) {
                                         $nyt = date("Y-m-d H:i");
                                         if ($haetyotope2->num_rows != 0) {
                                             echo '<table class="cm8-table3" >';
-                                          echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                             while ($rowt22 = $haetyotope2->fetch_assoc()) {
-                                                 $omatkommentit=$rowt22[omatkommentit];
-                                                   $omatkommentit_tallennettu=$rowt22[omatkommentit_tallennettu];
-                                                        if($omatkommentit_tallennettu==0){
-                                                            
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
+                                                $omatkommentit = $rowt22[omatkommentit];
+                                                $omatkommentit_tallennettu = $rowt22[omatkommentit_tallennettu];
+                                                if ($omatkommentit_tallennettu == 0) {
+
+                                                    $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                }
                                                 $lukittu = $rowt22[lukittu];
-                                                if($lukittu ==1){
-                                             $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                                                                        
-                                       }
-                                                        else{
-                                                                  $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$rowt22[tyoid].'"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
-                                                      
-                                                        }
-                                                      
+                                                if ($lukittu == 1) {
+                                                    $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                } else {
+                                                    $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                }
+
                                                 $tallnimi2 = $rowt22[omatallennusnimi];
                                                 $tyoid2 = $rowt22[tyoid];
 
@@ -1368,9 +1417,9 @@ function myFunction(y) {
                                                 $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                 $palautuskello = substr($rowt22[lisayspvm], 11, 5);
                                                 $rowt22[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                 if($tall ==0){
-                                                            $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]); 
-                                                        }
+                                                if ($tall == 0) {
+                                                    $rowt22[palaute] = str_replace('<br />', "", $rowt22[palaute]);
+                                                }
 
                                                 if ($tall == 1) {
                                                     if ($linkki == 1) {
@@ -1379,13 +1428,13 @@ function myFunction(y) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
-                                                         echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                         echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
                                                 } else {
                                                     if ($linkki == 1) {
@@ -1395,7 +1444,7 @@ function myFunction(y) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
-                                                        echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -1404,7 +1453,7 @@ function myFunction(y) {
                                                         }
 
                                                         //loppu alle
-                                                         echo '</td><td>'.$omatkommentit.'</td><td>'.$lukitus.'</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     }
                                                 }
                                                 echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -1435,7 +1484,7 @@ function myFunction(y) {
 
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $tallnimi = $rowt[omatallennusnimi];
@@ -1554,11 +1603,11 @@ function myFunction(y) {
                                     echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
 
 
-                                 
-      if (!$resulthae = $db->query("select distinct opiskelija_id as oid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND projekti_id='" . $pid . "' order by sukunimi, etunimi")) {
 
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                                }
+                                    if (!$resulthae = $db->query("select distinct opiskelija_id as oid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND projekti_id='" . $pid . "' order by sukunimi, etunimi")) {
+
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    }
                                     while ($rowhae = $resulthae->fetch_assoc()) {
 
                                         $oid = $rowhae[oid];
@@ -1599,6 +1648,24 @@ function myFunction(y) {
 
                         //neljäsosa kiinni
                         echo "</div>";
+                    }
+                     if (!$lopulliset = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    }
+                    if($lopulliset->num_rows==0){
+                        echo'<br><br><br>';
+                    }
+                    if ($lopulliset->num_rows >= 0) {
+
+                        if (!$maara = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        }
+                        if($lopulliset->num_rows ==0){
+                            if ($maara->num_rows < $ryhmienmaksimi && $rlopullinen == 0)
+                            echo '<form action="lisaaryhmakasa2.php" method="post"><input type="hidden" name="id" value=' . $pid . '> <input type="submit" value="+ Lisää uusi ryhmä" id="lisaa" class="myButton8"  role="button"  style="padding: 4px 6px; font-size: 0.9em"></form><br><br>';
+
+                        }
+                        
                     }
                 }
 
@@ -1831,8 +1898,8 @@ function myFunction(y) {
 
                                     echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
-               
+                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+
 
                                     if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1879,14 +1946,14 @@ function myFunction(y) {
                                         if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
-                                    if($haemuut -> num_rows != 0)
-                                        echo'<br>';
-                                        
+                                        if ($haemuut->num_rows != 0)
+                                            echo'<br>';
+
                                         if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                             if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
                                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
-
+  $onkopalautettu = $haetyot -> num_rows;
 
                                             if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
                                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1903,14 +1970,14 @@ function myFunction(y) {
 
                                             if ($haetyot->num_rows != 0) {
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
-                                                     $omatkommentit=$rowt[omatkommentit];
-                                                     $omatkommentit_tallennettu=$rowt[omatkommentit_tallennettu];
-                                                      if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
+                                                    $omatkommentit = $rowt[omatkommentit];
+                                                    $omatkommentit_tallennettu = $rowt[omatkommentit_tallennettu];
+                                                    if ($omatkommentit_tallennettu == 0) {
+                                                        $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                    }
                                                     $lukittu = $rowt[lukittu];
                                                     $tallnimi = $rowt[omatallennusnimi];
                                                     $tyoid = $rowt[tyoid];
@@ -1920,7 +1987,7 @@ function myFunction(y) {
                                                     $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                     $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                                     $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                   
+
                                                     if ($linkki == 1) {
                                                         //TÄSSÄ
                                                         echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
@@ -1928,64 +1995,55 @@ function myFunction(y) {
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                        if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                        if ($omatkommentit_tallennettu == 1) {
+                                                            echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                        } else {
+                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
                                                         }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
+
+
+                                                        if ($lukittu == 0) {
+                                                            echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                        } else {
+                                                            echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
                                                         }
-                                                        
-                                                        
-                                                           if($lukittu == 0){
-                                                             echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                                    
-                                                  }
-                                                  else{
-                                                     echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                                 
-                                                        
-                                                  } else {
+                                                    } else {
                                                         echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                          if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                        if ($omatkommentit_tallennettu == 1) {
+                                                            echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                        } else {
+                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
                                                         }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
+                                                        if ($lukittu == 0) {
+                                                            echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                        } else {
+                                                            echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
                                                         }
-                                                           if($lukittu == 0){
-                                                         echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                                   
-                                                  }
-                                                  else{
-                                                       echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                                     
-                                                        }
+                                                    }
                                                 }
                                                 echo "</table>";
                                             }
 
                                             if ($palautus == 1) {
-                                                     if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                                        }
-                                        $nyt = date("Y-m-d H:i");
-                                        while ($RTs = $RTsuljettu->fetch_assoc()) {
-                                            $sulkeutuu = $RTs[palautus_sulkeutuu];
-                                            $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
-                                            $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
-                                            $sulkeutumiskello = substr($sulkeutuu, 11, 5);
+                                                if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
+                                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                }
+                                                $nyt = date("Y-m-d H:i");
+                                                while ($RTs = $RTsuljettu->fetch_assoc()) {
+                                                    $sulkeutuu = $RTs[palautus_sulkeutuu];
+                                                    $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
+                                                    $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
+                                                    $sulkeutumiskello = substr($sulkeutuu, 11, 5);
 
-                                            $avautuu = $RTs[palautus_avautuu];
+                                                    $avautuu = $RTs[palautus_avautuu];
 
-                                            $avautumispaiva = substr($avautuu, 0, 10);
-                                            $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
-                                            $avautumiskello = substr($avautuu, 11, 5);
-                                        }
+                                                    $avautumispaiva = substr($avautuu, 0, 10);
+                                                    $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
+                                                    $avautumiskello = substr($avautuu, 11, 5);
+                                                }
                                                 $ryhma = false;
                                                 if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
                                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1997,26 +2055,25 @@ function myFunction(y) {
                                                     }
                                                 }
 
-                                                
+
                                                 if ($ryhma) {
 
-                                                                echo'<br>';
-                                            if ($nyt > $avautuu) {
-                                                
-                                                   echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 4px"></form>';
-                                                  if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+                                                    echo'<br>';
+                                                    if ($nyt > $avautuu) {
 
-                                            if ($nyt <= $sulkeutuu) {
-                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
-                                            } else {
-                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
-                                            }
-                                        }
-                                            } else {
-                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu '.$avautumispaiva. ' klo '.$avautumiskello.' </b><br><br>';
-                                            }
-                                                    
+                                                        echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 4px"></form>';
+                                                        if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+
+                                                            if ($nyt <= $sulkeutuu) {
+                                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                            } else {
+                                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                            }
+                                                        }
+                                                    } else {
+                                                        echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                    }
                                                 } else {
 
                                                     echo'Voit tehdä palautuksen vasta, kun olet liittynyt johonkin ryhmään.<br><br>';
@@ -2029,16 +2086,43 @@ function myFunction(y) {
                                         if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $opryhmaid . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
+                                        if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                          }
 
+ 
 
-
-
-                                        if ($haetyot->num_rows != 0) {
+                                        if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                             echo'<div class="cm8-margin-left"><br>';
                                             echo '<h2 style="color: #f7f9f7;font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
-                                            echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                            while ($rowtaut = $haetyotaut->fetch_assoc()) {
+                                                 $nimiaut = $rowtaut[kuvaus];
+                                                 $linkkiaut = $rowtaut[linkki];
+                                                 
+                                                   $palautuspaivaaut = substr($rowtaut[lisatty], 0, 10);
+                                                $palautuspaivaaut = date("d.m.Y", strtotime($palautuspaivaaut));
+                                                $palautuskelloaut = substr($rowtaut[lisatty], 11, 5);
+                                                $lisattyaut = $palautuspaivaaut . ' klo ' . $palautuskelloaut;
+                                                $idaut = $rowtaut[id];
+                                                $tallennettunimiaut = $rowtaut[tallennettunimi];
+                                                $omatallennusnimiaut = $rowtaut[omatallennusnimi];
+                                               if ($linkkiaut == 1) {
+                                                    echo'<tr><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $nimiaut . '</a></p></td><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki">' . $tallennettunimiaut . '</a></td><td>' . $lisattyaut;
+
+
+                                                    echo'</td></tr>';
+                                                } else {
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+
+                                                    echo'</td></tr>';
+                                                }
+
+
+
+                                             }
 
                                             while ($rowt = $haetyot->fetch_assoc()) {
                                                 $tallnimi = $rowt[omatallennusnimi];
@@ -2049,7 +2133,7 @@ function myFunction(y) {
                                                 $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                 $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                                 $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                              
+
                                                 if ($linkki == 1) {
                                                     echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
@@ -2089,9 +2173,9 @@ function myFunction(y) {
 
                             echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                            
-     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
-               
+
+                            echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+
                             if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
@@ -2138,13 +2222,13 @@ function myFunction(y) {
                                 if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
-                             if($haemuut -> num_rows != 0)
-                                            echo'<br>';
+                                if ($haemuut->num_rows != 0)
+                                    echo'<br>';
                                 if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                     if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
-
+  $onkopalautettu = $haetyot -> num_rows;
                                     if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
@@ -2158,18 +2242,18 @@ function myFunction(y) {
                                     echo'<div class="cm8-margin-left" ><br>';
                                     echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                     if ($haetyot->num_rows != 0) {
-                                        
+
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
-                                            $omatkommentit=$rowt[omatkommentit];
-                                                     $omatkommentit_tallennettu=$rowt[omatkommentit_tallennettu];
-                                                       if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
+                                            $omatkommentit = $rowt[omatkommentit];
+                                            $omatkommentit_tallennettu = $rowt[omatkommentit_tallennettu];
+                                            if ($omatkommentit_tallennettu == 0) {
+                                                $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                            }
                                             $lukittu = $rowt[lukittu];
-                                           
+
                                             $tallnimi = $rowt[omatallennusnimi];
                                             $tyoid = $rowt[tyoid];
                                             $linkki = $rowt[linkki];
@@ -2178,48 +2262,39 @@ function myFunction(y) {
                                             $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                             $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                             $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                           
+
                                             if ($linkki == 1) {
                                                 echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                 }
-                                                   if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                  if($lukittu == 0){
-                                                        echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                            
-                                                  }
-                                                  else{
-                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                             
+                                                if ($omatkommentit_tallennettu == 1) {
+                                                    echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
                                                 } else {
+                                                    echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
+                                                }
+                                                if ($lukittu == 0) {
+                                                    echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                } else {
+                                                    echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                }
+                                            } else {
                                                 echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                     echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                 }
-                                                if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                if($lukittu == 0){
-                                                     echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                            
+                                                if ($omatkommentit_tallennettu == 1) {
+                                                    echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                } else {
+                                                    echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
                                                 }
-                                                else{
+                                                if ($lukittu == 0) {
+                                                    echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                } else {
                                                     echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
                                                 }
-                                               
-                                                
-                                                }
+                                            }
                                         }
                                         echo "</table>";
                                     }
@@ -2253,28 +2328,26 @@ function myFunction(y) {
                                         }
 
 
-                                  
+
                                         if ($ryhma) {
 
                                             echo'<br>';
                                             if ($nyt > $avautuu) {
-                                                
-                                                   echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
-                                                  if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
-                                            if ($nyt <= $sulkeutuu) {
-                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
+                                                if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+
+                                                    if ($nyt <= $sulkeutuu) {
+                                                        echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                    } else {
+                                                        echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                        echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                    }
+                                                }
                                             } else {
-                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                             }
-                                        }
-                                            } else {
-                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu '.$avautumispaiva. ' klo '.$avautumiskello.' </b><br><br>';
-                                            }
-                                         
-                                        
-                                            } else {
+                                        } else {
 
                                             echo'Voit tehdä palautuksen vasta, kun olet liittynyt johonkin ryhmään.<br><br>';
                                         }
@@ -2291,15 +2364,43 @@ function myFunction(y) {
                                     }
 
 
+     if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                          }
 
+ 
 
-                                    if ($haetyot->num_rows != 0) {
+                                          if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                         echo'<div class="cm8-margin-left"><br>';
                                         echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+      while ($rowtaut = $haetyotaut->fetch_assoc()) {
+                                                 $nimiaut = $rowtaut[kuvaus];
+                                                 $linkkiaut = $rowtaut[linkki];
+                                                 
+                                                   $palautuspaivaaut = substr($rowtaut[lisatty], 0, 10);
+                                                $palautuspaivaaut = date("d.m.Y", strtotime($palautuspaivaaut));
+                                                $palautuskelloaut = substr($rowtaut[lisatty], 11, 5);
+                                                $lisattyaut = $palautuspaivaaut . ' klo ' . $palautuskelloaut;
+                                                $idaut = $rowtaut[id];
+                                                $tallennettunimiaut = $rowtaut[tallennettunimi];
+                                                $omatallennusnimiaut = $rowtaut[omatallennusnimi];
+                                               if ($linkkiaut == 1) {
+                                                    echo'<tr><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $nimiaut . '</a></p></td><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki">' . $tallennettunimiaut . '</a></td><td>' . $lisattyaut;
 
+
+                                                    echo'</td></tr>';
+                                                } else {
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+
+                                                    echo'</td></tr>';
+                                                }
+
+
+
+                                             }
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $tallnimi = $rowt[omatallennusnimi];
                                             $tyoid = $rowt[id];
@@ -2309,7 +2410,7 @@ function myFunction(y) {
                                             $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                             $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                             $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                          
+
                                             if ($linkki == 1) {
                                                 echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
@@ -2405,9 +2506,9 @@ function myFunction(y) {
 
                                     echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                
-     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th><th></th><th></th></tr>';
-               
+
+                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th><th></th><th></th></tr>';
+
 
 
 
@@ -2435,15 +2536,15 @@ function myFunction(y) {
                                         if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
-                                     if($haemuut -> num_rows != 0)
+                                        if ($haemuut->num_rows != 0)
                                             echo'<br>';
-                                     
-                                        }
+                                    }
 
                                     if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                         if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
+                                          $onkopalautettu = $haetyot -> num_rows;
                                         if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
@@ -2457,14 +2558,14 @@ function myFunction(y) {
                                         echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                         if ($haetyot->num_rows != 0) {
                                             echo '<table class="cm8-table3" style="font-size: 0.9em">';
-                                            echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                             while ($rowt = $haetyot->fetch_assoc()) {
-                                                $omatkommentit=$rowt[omatkommentit];
-                                                     $omatkommentit_tallennettu=$rowt[omatkommentit_tallennettu];
-                                                       if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     }
+                                                $omatkommentit = $rowt[omatkommentit];
+                                                $omatkommentit_tallennettu = $rowt[omatkommentit_tallennettu];
+                                                if ($omatkommentit_tallennettu == 0) {
+                                                    $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                                }
                                                 $lukittu = $rowt[lukittu];
                                                 $tallnimi = $rowt[omatallennusnimi];
                                                 $tyoid = $rowt[tyoid];
@@ -2474,68 +2575,60 @@ function myFunction(y) {
                                                 $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                 $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                                 $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                               
+
                                                 if ($linkki == 1) {
                                                     echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                                     if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                         echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                     }
-                                                       if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                       if($lukittu == 0){
-                                                            echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                               
-                                                  }
-                                                  else{
-                                                       echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                              
+                                                    if ($omatkommentit_tallennettu == 1) {
+                                                        echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
                                                     } else {
+                                                        echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
+                                                    }
+                                                    if ($lukittu == 0) {
+                                                        echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                    } else {
+                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                    }
+                                                } else {
                                                     echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                     if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                         echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                                     }
-                                                     if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                       if($lukittu == 0){
-                                                       echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                               
-                                                  }
-                                                  else{
-                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                                   
+                                                    if ($omatkommentit_tallennettu == 1) {
+                                                        echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                                    } else {
+                                                        echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
                                                     }
+                                                    if ($lukittu == 0) {
+                                                        echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                                    } else {
+                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                    }
+                                                }
                                             }
                                             echo "</table>";
                                         }
 
                                         if ($palautus == 1) {
-                                                                if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                                        }
-                                        $nyt = date("Y-m-d H:i");
-                                        while ($RTs = $RTsuljettu->fetch_assoc()) {
-                                            $sulkeutuu = $RTs[palautus_sulkeutuu];
-                                            $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
-                                            $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
-                                            $sulkeutumiskello = substr($sulkeutuu, 11, 5);
+                                            if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            }
+                                            $nyt = date("Y-m-d H:i");
+                                            while ($RTs = $RTsuljettu->fetch_assoc()) {
+                                                $sulkeutuu = $RTs[palautus_sulkeutuu];
+                                                $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
+                                                $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
+                                                $sulkeutumiskello = substr($sulkeutuu, 11, 5);
 
-                                            $avautuu = $RTs[palautus_avautuu];
+                                                $avautuu = $RTs[palautus_avautuu];
 
-                                            $avautumispaiva = substr($avautuu, 0, 10);
-                                            $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
-                                            $avautumiskello = substr($avautuu, 11, 5);
-                                        }
+                                                $avautumispaiva = substr($avautuu, 0, 10);
+                                                $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
+                                                $avautumiskello = substr($avautuu, 11, 5);
+                                            }
                                             $ryhma = false;
                                             if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
                                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2549,23 +2642,23 @@ function myFunction(y) {
 
                                             if ($ryhma) {
 
-                                                                         echo'<br>';
-                                            if ($nyt > $avautuu) {
-                                                
-                                                   echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
-                                                  if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+                                                echo'<br>';
+                                                if ($nyt > $avautuu) {
 
-                                            if ($nyt <= $sulkeutuu) {
-                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
-                                            } else {
-                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
-                                            }
-                                        }
-                                            } else {
-                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu '.$avautumispaiva. ' klo '.$avautumiskello.' </b><br><br>';
-                                            }
+                                                    echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
+                                                    if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+
+                                                        if ($nyt <= $sulkeutuu) {
+                                                            echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                        } else {
+                                                            echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                            echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                        }
+                                                    }
                                                 } else {
+                                                    echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                }
+                                            } else {
 
                                                 echo'Voit tehdä palautuksen vasta, kun olet liittynyt johonkin ryhmään.<br><br>';
                                             }
@@ -2579,15 +2672,43 @@ function myFunction(y) {
                                         }
 
 
+     if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                          }
 
+ 
 
-                                        if ($haetyot->num_rows != 0) {
+     if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                             echo'<div class="cm8-margin-left"><br>';
                                             echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
-                                            echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+      while ($rowtaut = $haetyotaut->fetch_assoc()) {
+                                                 $nimiaut = $rowtaut[kuvaus];
+                                                 $linkkiaut = $rowtaut[linkki];
+                                                 
+                                                   $palautuspaivaaut = substr($rowtaut[lisatty], 0, 10);
+                                                $palautuspaivaaut = date("d.m.Y", strtotime($palautuspaivaaut));
+                                                $palautuskelloaut = substr($rowtaut[lisatty], 11, 5);
+                                                $lisattyaut = $palautuspaivaaut . ' klo ' . $palautuskelloaut;
+                                                $idaut = $rowtaut[id];
+                                                $tallennettunimiaut = $rowtaut[tallennettunimi];
+                                                $omatallennusnimiaut = $rowtaut[omatallennusnimi];
+                                               if ($linkkiaut == 1) {
+                                                    echo'<tr><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $nimiaut . '</a></p></td><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki">' . $tallennettunimiaut . '</a></td><td>' . $lisattyaut;
 
+
+                                                    echo'</td></tr>';
+                                                } else {
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+
+                                                    echo'</td></tr>';
+                                                }
+
+
+
+                                             }
                                             while ($rowt = $haetyot->fetch_assoc()) {
                                                 $tallnimi = $rowt[omatallennusnimi];
                                                 $tyoid = $rowt[id];
@@ -2597,7 +2718,7 @@ function myFunction(y) {
                                                 $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                                 $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                                 $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                                
+
                                                 if ($linkki == 1) {
                                                     echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
@@ -2629,9 +2750,9 @@ function myFunction(y) {
 
                             echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                     
-     echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] .  '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
-               
+
+                            echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2661,15 +2782,16 @@ function myFunction(y) {
                                 if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
-                              if($haemuut -> num_rows != 0)
-                                            echo'<br>';
-                              
-                                }
+                                if ($haemuut->num_rows != 0)
+                                    echo'<br>';
+                            }
 
                             if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                 if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
+                                
+                                $onkopalautettu = $haetyot -> num_rows;
                                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
@@ -2683,14 +2805,14 @@ function myFunction(y) {
                                 echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                 if ($haetyot->num_rows != 0) {
                                     echo '<table class="cm8-table3" style="font-size: 0.9em">';
-                                    echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                     while ($rowt = $haetyot->fetch_assoc()) {
-                                        $omatkommentit=$rowt[omatkommentit];
-                                                     $omatkommentit_tallennettu=$rowt[omatkommentit_tallennettu];
-                                                      if($omatkommentit_tallennettu==0){
-                                                         $omatkommentit = str_replace('<br />', "", $omatkommentit);
-                                                     } 
+                                        $omatkommentit = $rowt[omatkommentit];
+                                        $omatkommentit_tallennettu = $rowt[omatkommentit_tallennettu];
+                                        if ($omatkommentit_tallennettu == 0) {
+                                            $omatkommentit = str_replace('<br />', "", $omatkommentit);
+                                        }
                                         $lukittu = $rowt[lukittu];
                                         $tallnimi = $rowt[omatallennusnimi];
                                         $tyoid = $rowt[tyoid];
@@ -2700,70 +2822,61 @@ function myFunction(y) {
                                         $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                         $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                         $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                       
+
                                         if ($linkki == 1) {
                                             echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                             if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                 echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                             }
-                                           if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                               if($lukittu == 0){
-                                                                                            
-                                         echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                            
-  
-                                                  }
-                                                  else{
-                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                           
-                                                  } else {
+                                            if ($omatkommentit_tallennettu == 1) {
+                                                echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                            } else {
+                                                echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
+                                            }
+                                            if ($lukittu == 0) {
+
+                                                echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                            } else {
+                                                echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                            }
+                                        } else {
                                             echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                             if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                 echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
                                             }
-                                            if($omatkommentit_tallennettu == 1){
-                                                            echo'</td><td>'.$omatkommentit.'<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                                        else{
-                                                            echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="'.$pid.'"><input type="hidden" name="id" value="'.$tyoid.'"><textarea name="kommentit" style="font-size: 0.8em" rows="2">'.$omatkommentit.'</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
-                                                        }
-                                               if($lukittu == 0){
-                                                        echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
-                                      
-                                                  }
-                                                  else{
-                                                       echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
-                                                  }
-                                         
+                                            if ($omatkommentit_tallennettu == 1) {
+                                                echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
+                                            } else {
+                                                echo'</td><td><form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><textarea name="kommentit" style="font-size: 0.8em" rows="2">' . $omatkommentit . '</textarea><input type="submit" value="Tallenna" role="button" name="tallenna" class="myButton8" style="padding:2px 4px; margin-top: 5px"></form></td><td>' . $rowt[palaute] . '</td>';
                                             }
+                                            if ($lukittu == 0) {
+                                                echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
+                                            } else {
+                                                echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                            }
+                                        }
                                     }
                                     echo "</table>";
                                 }
 
                                 if ($palautus == 1) {
-                                                         if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                                        }
-                                        $nyt = date("Y-m-d H:i");
-                                        while ($RTs = $RTsuljettu->fetch_assoc()) {
-                                            $sulkeutuu = $RTs[palautus_sulkeutuu];
-                                            $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
-                                            $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
-                                            $sulkeutumiskello = substr($sulkeutuu, 11, 5);
+                                    if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    }
+                                    $nyt = date("Y-m-d H:i");
+                                    while ($RTs = $RTsuljettu->fetch_assoc()) {
+                                        $sulkeutuu = $RTs[palautus_sulkeutuu];
+                                        $sulkeutumispaiva = substr($sulkeutuu, 0, 10);
+                                        $sulkeutumispaiva = date("d.m.Y", strtotime($sulkeutumispaiva));
+                                        $sulkeutumiskello = substr($sulkeutuu, 11, 5);
 
-                                            $avautuu = $RTs[palautus_avautuu];
+                                        $avautuu = $RTs[palautus_avautuu];
 
-                                            $avautumispaiva = substr($avautuu, 0, 10);
-                                            $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
-                                            $avautumiskello = substr($avautuu, 11, 5);
-                                        }
+                                        $avautumispaiva = substr($avautuu, 0, 10);
+                                        $avautumispaiva = date("d.m.Y", strtotime($avautumispaiva));
+                                        $avautumiskello = substr($avautuu, 11, 5);
+                                    }
                                     $ryhma = false;
                                     if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2774,26 +2887,25 @@ function myFunction(y) {
                                             $opryhmaid = $rowryhma[ryhma_id];
                                         }
                                     }
-                                 
+
                                     if ($ryhma) {
 
-                                                                echo'<br>';
-                                            if ($nyt > $avautuu) {
-                                                
-                                                   echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
-                                                  if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+                                        echo'<br>';
+                                        if ($nyt > $avautuu) {
 
-                                            if ($nyt <= $sulkeutuu) {
-                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
-                                            } else {
-                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                            echo'<form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="font-size: 0.9em; padding: 6px"></form>';
+                                            if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
+
+                                                if ($nyt <= $sulkeutuu) {
+                                                    echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                } else {
+                                                    echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                    echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                }
                                             }
+                                        } else {
+                                            echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                         }
-                                            } else {
-                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu '.$avautumispaiva. ' klo '.$avautumiskello.' </b><br><br>';
-                                            }
-                                        
                                     } else {
 
                                         echo'Voit tehdä palautuksen vasta, kun olet liittynyt johonkin ryhmään.<br><br>';
@@ -2808,15 +2920,43 @@ function myFunction(y) {
                                 }
 
 
+                                 if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                          }
 
+ 
 
-                                if ($haetyot->num_rows != 0) {
+                                      if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                     echo'<div class="cm8-margin-left"><br>';
                                     echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                     echo '<table class="cm8-table3">';
-                                    echo '<tr style="background-color: #ec008d"><th>Työn nimi</th><th>Tiedosto</th><th>Lisätty></th></tr>';
+                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty></th></tr>';
+      while ($rowtaut = $haetyotaut->fetch_assoc()) {
+                                                 $nimiaut = $rowtaut[kuvaus];
+                                                 $linkkiaut = $rowtaut[linkki];
+                                                 
+                                                   $palautuspaivaaut = substr($rowtaut[lisatty], 0, 10);
+                                                $palautuspaivaaut = date("d.m.Y", strtotime($palautuspaivaaut));
+                                                $palautuskelloaut = substr($rowtaut[lisatty], 11, 5);
+                                                $lisattyaut = $palautuspaivaaut . ' klo ' . $palautuskelloaut;
+                                                $idaut = $rowtaut[id];
+                                                $tallennettunimiaut = $rowtaut[tallennettunimi];
+                                                $omatallennusnimiaut = $rowtaut[omatallennusnimi];
+                                               if ($linkkiaut == 1) {
+                                                    echo'<tr><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $nimiaut . '</a></p></td><td><a href="' . $tallennettunimiaut . '" target="_blank" class="cm8-linkki">' . $tallennettunimiaut . '</a></td><td>' . $lisattyaut;
 
+
+                                                    echo'</td></tr>';
+                                                } else {
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+
+                                                    echo'</td></tr>';
+                                                }
+
+
+
+                                             }
                                     while ($rowt = $haetyot->fetch_assoc()) {
                                         $tallnimi = $rowt[omatallennusnimi];
                                         $tyoid = $rowt[id];
@@ -2826,7 +2966,7 @@ function myFunction(y) {
                                         $palautuspaiva = date("d.m.Y", strtotime($palautuspaiva));
                                         $palautuskello = substr($rowt[lisayspvm], 11, 5);
                                         $rowt[lisayspvm] = $palautuspaiva . ' klo ' . $palautuskello;
-                                        
+
                                         if ($linkki == 1) {
                                             echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 

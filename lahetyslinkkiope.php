@@ -4,7 +4,7 @@ ob_start();
 
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Materiaalit </title>';
+<title> Palautukset </title>';
 
 include("yhteys.php");
 

@@ -1,7 +1,8 @@
 PALAUTUKSET:
 
-* jos opettaja lukitse -> esille tulee opettajan määrittelemä tiedosto/linkki (tietokannassa opettajan_palautustiedosto
-= SAMA TIEDOSTO KAIKILLE
+* KUN PROJEKTIN/kurssin POISTAA AUTOMAATTISET TIEDOSTOT PITÄÄ POISTAA
+
+* JOS OPETTAJA POISTUU OPISKELIJANÄKYMÄSTÄ -> POISTA TIEDOT RYHMÄSTÄ TIETOKANNASTA + POISTA TALLENNETUT TIEDOSTOT
 
 *********************************************'
 
@@ -11,6 +12,12 @@ PALAUTUKSET:
 
 ->  KORVAA ADMIN-näkymässä sähköpostiosoite tunnukseksi
 -> JOS SALASANA UNOHTUNUT, LAITA TIETO ETTÄ MITEN VOI OTTAA YHTEYTTÄ ADMIN
+
+-> admin tekee uuden salasanan -
+> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
+-> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
+
+-> MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI
 
 
 *****************************************************************************

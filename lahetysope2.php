@@ -164,31 +164,137 @@ function myFunction(y) {
 
 
     echo'<div class="cm8-threequarter" style="padding-top: 30px">';
-
+    require_once("upload_uusi.php");
 
     // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
     // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
 
-    $ryhma = $_POST[ryid];
+    
     $projekti = $_POST[pid];
     $tyonimi = $_POST[tyonimi];
-    $id = $_POST[id];
 
+    if (isset($_FILES['my_file'])) {
+        $myFile = $_FILES['my_file'];
 
 //tulee array!!
-    $stmt = $db->prepare("UPDATE ryhmatope SET tyonimi=? WHERE id=?");
-
-    $stmt->bind_param("si", $tyonimi, $id);
-    $stmt->execute();
 
 
-    $stmt->close();
+        try {
+echo'try';
+            $nimi = upload_tarkista('my_file', 10.0 * 1024 * 1024);
+
+            $fileCount = count($nimi);
+
+          $stmt = $db->prepare("INSERT INTO open_palautustiedosto (linkki, kuvaus, tallennettunimi, projekti_id, omatallennusnimi) VALUES (?, ?, ?, ?,?)");
+         $stmt->bind_param("issis", $linkki, $kuvaus, $tallennettunimi, $pid, $omatallennusnimi);
+     
+            echo'pö';
+            
+            $paateloyty = false;
+            for ($j = 0; $j < $fileCount; $j++) {
+
+                $paatteet = array(".txt", ".pdf", ".rar", ".zip", ".csv", ".odt", ".ods", ".odg", "odp", ".tnsp", ".tns", ".doc", ".docx", ".rtf", ".dat", ".pptx", ".ppt", ".xls", ".xlsx", ".TXT", ".PDF", ".DOC", ".DOCX", ".RTF", ".DAT", ".PPTX", ".PPT", ".XLS", ".XLSX");
+
+// Katsotaan, onko annetussa taulukossa tiedoston pääte.
+                // Jos ei ole, käytetään annettua päätettä ($turvapaate).
+                if (is_array($paatteet))
+                    foreach ($paatteet as $paate) {
+
+                        if (substr($nimi[$j], -strlen($paate)) == $paate) {
+                            $turvapaate = $paate;
+                            $paateloyty = true;
+                            break;
+                        }
+                    }
+
+                // Jos $turvapaate puuttuu (eikä muuta löytynyt taulukosta), hylätään tiedosto.
+                if (!$paateloyty) {
+                    throw new UploadException("Tiedostomuoto ei kelpaa! <br><br>Sallittuja tiedostopäätteitä ovat .txt, .pdf, .rar, .zip, .tnsp, .tns, .csv, .odt, .ods, .odp., .odg, .doc, .docx, .rtf, .dat, .pptx, .ppt, .xls, .xlsx");
+                }
+
+                // Luodaan tiedostolle turvallinen nimi ja tallennetaan tiedosto.
+//    $nimi2 = preg_replace("/[^A-Z0-9._-]/i", "_",  $nimi[$j]);
+                $nimi2 = $nimi[$j];
+                if (strlen($turvapaate) && substr($nimi2, -strlen($turvapaate)) !== $paate) {
+                    $nimi2 .= $paate;
+                }
+                // don't overwrite an existing file
+                $i = 0;
+                $parts = pathinfo($nimi2);
+                $kohde = "tiedostot/" . $nimi2;
+                while (file_exists($kohde)) {
+
+                    $i++;
+                    $nimi2 = $parts["filename"] . "(" . $i . ")." . $parts["extension"];
+                    $kohde = "tiedostot/" . $nimi2;
+                }
+
+                $kohde = "tiedostot/" . $nimi2;
+                if (!file_exists($kohde)) {
+                    // Tarkistetaan kirjoitusoikeus.
+                    if (!is_writeable(dirname($kohde)) || (file_exists($kohde) && !is_writeable($kohde))) {
+                        throw new UploadException("Virhe tiedoston kopioinnissa, ei kirjoitusoikeutta!" . $kohde);
+                    }
+
+                    // Yritetään kopioida tiedosto paikalleen.
+                    if (!@move_uploaded_file($myFile["tmp_name"][$j], $kohde)) {
+                        $virhe = error_get_last();
+                        throw new UploadException("Virhe tiedoston kopioinnissa: {$virhe["message"]}!");
+                    }
+
+
+                    // prepare and bind
+                 $linkki = 0;
+                $kuvaus = $_POST[tyonimi];
+         
+             $pid = $_POST[pid];
+                
+                    $tyonimi = $_POST[tyonimi];
+                    $tallennettunimi = $kohde;
+                    $omatallennusnimi = $nimi[$j];
+echo'<br>ennen ece';
+                    $stmt->execute();
+                    echo'<br>exejälkeen';
+                }
+
+
+                //kaikki tiedostot kiinni
+            }
+
+            $stmt->close();
+
+            // TÄHÄN LISÄYS Palautukset tauluun!
+//              
+//                   if (!$haeviimeisin = $db->query("select MAX(id) as ryhmatope from ryhmatope where ryhma_id='" . $_POST[ryid] . "'")) {
+//            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+//        }
+//
+//    
+//       while ($rowa = $haeviimeisin->fetch_assoc()) {
+//           $ryhmat2id = $rowa[ryhmat2];
+//       }
+//       
+//      $stmt2 = $db->prepare("INSERT INTO opiskelijan_kurssityotopelta (kayttaja_id, ryhmatope_id, projekti_id) VALUES (?, ?, ?)");
+//            $stmt2->bind_param("iii", $kayttaja, $ryhmat2, $projektiid);
+//            
+//            $kayttaja = $_POST[kaid];
+//            $ryhmat2 = $ryhmat2id;       
+//            $projektiid = $_POST[pid];
+//                    
+//                  
+//
+//                    $stmt2->execute();    
+//               $stmt2->close();
+        } catch (UploadException $e) {
+
+            die('<b style="font-size: 1em; color: #FF0000">' . $e->getMessage() . '</b><br><br><a href="tiedosto_ope.php?ryid=' . $_POST[ryid] . '&pid=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+    }
 
 
 
 
-
-    header("location: ryhmatyot.php?r=" . $_POST[pid] . "#" . $ryhma);
+    header("location: ryhmatyot.php?r=" . $_POST[pid]);
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

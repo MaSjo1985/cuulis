@@ -225,7 +225,7 @@ function myFunction(y) {
 
 
 
-        echo'<br><p><b>Nimi: </b> <b style="color: red">*</b><br><input type="text" name="tyonimi" id="tyonimi" ></p>
+        echo'<br><p><b>Tiedoston nimi: </b> <b style="color: red">*</b><br><input type="text" name="tyonimi" id="tyonimi" ></p>
                <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
     <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
 </div>
@@ -242,13 +242,13 @@ function myFunction(y) {
 
 
 
-        echo'<p><b>Nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+        echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
 
 
    <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
 </div>
-<p><b>URL-osoite</b>:<br> <input type="text" name="osoite" id="osoite"/></p>
+<p><b>Tiedoston URL-osoite</b>:<br> <input type="text" name="osoite" id="osoite"/></p>
 	<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
                            <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >

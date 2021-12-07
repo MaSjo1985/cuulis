@@ -229,7 +229,7 @@ function myFunction(y) {
         if ($linkki == 0) {
             echo'<form action="muokkaatiedostoopiskelija.php" method="POST" onSubmit="return validateFormOT()"  enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
 
-            echo'<p><b>Nimi: </b><b style="color: red">*</b><br><br><textarea class="textarea" id="tyonimi" rows="1" name="tyonimi">' . $tyonimi . '</textarea><br></p>
+            echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br><br><textarea class="textarea" id="tyonimi" rows="1" name="tyonimi">' . $tyonimi . '</textarea><br></p>
             <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
     <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
 </div>
@@ -244,12 +244,12 @@ function myFunction(y) {
             echo'<form name="Form" id="myForm" onSubmit="return validateFormO()" action="muokkaalinkkiopiskelija.php" method="POST" class="form-style-k"><fieldset style="width: 80%">';
 
 
-            echo'<p><b>Nimi: </b><b style="color: red">*</b><br> <textarea rows="1" class="textarea" name="kuvaus" id="tama1" >' . $tyonimi . ' </textarea></p>
+            echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <textarea rows="1" class="textarea" name="kuvaus" id="tama1" >' . $tyonimi . ' </textarea></p>
   <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p style="color: red; padding:0px; margin:0px" id="demo4" class="eimitaan"></p>
 </div> 
 
-<p><b>URL-osoite</b>:<br> <textarea rows="1" class="textarea" id="osoite" name="osoite">' . $omatallennusnimi . '</textarea></p>
+<p><b>URL-osoite:</b>:<br> <textarea rows="1" class="textarea" id="osoite" name="osoite">' . $omatallennusnimi . '</textarea></p>
 	<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
                            <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >

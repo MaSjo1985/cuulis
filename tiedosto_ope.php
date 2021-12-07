@@ -245,7 +245,7 @@ function myFunction(y) {
         echo '<p class="eimitaan" style="color: red"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
 
 
-        echo'<p><b>Nimi: </b><br><input type="text" name="tyonimi" ><br></p>
+        echo'<p><b>Tiedoston nimi: </b><br><input type="text" name="tyonimi" ><br></p>
 	<br><p><b>Lisää tiedosto: </b><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" ></p>
 		<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
@@ -260,12 +260,12 @@ function myFunction(y) {
 
 
 
-        echo'<p><b>Nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+        echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
   <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p style="color: red; padding:0px; margin:0px" class="eimitaan"></p>
 </div> 
 
-<p><b>URL-osoite</b>:<br> <input type="text" name="osoite" /></p>
+<p><b>Tiedoston URL-osoite</b>:<br> <input type="text" name="osoite" /></p>
 	<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
                            <input type="hidden" name="kaid" value=' . $_SESSION[Id] . ' >

@@ -276,9 +276,119 @@ if ($_POST['arvo'] == 'vaihda') {
         }
     }
     
-    //poista opiskelijankurssit + tiedosto
+
+    
+    //haetaan projekti
+    
+     //poista opiskelijankurssit + tiedostot
+     if (!$haeprojekti = $db->query("select distinct * from opiskelijankurssit where ryhma_id != 0  AND opiskelija_id='" . $_SESSION["Id"] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+    while ($rowp = $haeprojekti->fetch_assoc()) {
+        
+    $pid = $rowp[projekti_id];
+        //poista opiskelijankurssit + tiedostot
+     if (!$haetyot = $db->query("select ryhmat2.tallennettunimi as tallennettunimi, ryhmat2.linkki as linkki, ryhmat2.id as ryid, opiskelijan_kurssityot.id as okid from opiskelijan_kurssityot, ryhmat2, projektit where opiskelijan_kurssityot.kayttaja_id = '" . $_SESSION["Id"] . "' AND ryhmat2.projekti_id=projektit.id AND projektit.id='".$pid."' AND opiskelijan_kurssityot.ryhmat2_id=ryhmat2.id")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($rowr = $haetyot->fetch_assoc()) {
+
+        $nimi = $rowr[tallennettunimi];
+        $linkki = $rowr[linkki];
+        $ryid = $rowr[ryid];
+        $okid = $rowr[okid];
+
+        if ($linkki == 1) {
+            $db->query("delete from ryhmat2 where id = '" . $ryid . "'");
+            $db->query("delete from opiskelijan_kurssityot where ryhmat2_id = '" . $ryid . "'");
+        } else {
+            if (file_exists($nimi)) {
+                unlink($nimi);
+            }
+
+
+            $db->query("delete from ryhmat2 where id = '" . $ryid . "'");
+            $db->query("delete from opiskelijan_kurssityot where ryhmat2_id = '" . $ryid . "'");
+        }
+    }
+          if (!$onkomuita = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid. "' AND opiskelija_id='".$_SESSION[Id]."' AND ryhma_id<>0")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        if($onkomuita -> num_rows == 1){
+                 while ($rowm = $onkomuita->fetch_assoc()) {
+        
+            $db->query("delete from ryhmat where id = '" . $rowm[ryhma_id] . "'");
+
+        }
+        
+        }
+     
+      $db->query("update opiskelijankurssit set ryhma_id=0 where opiskelija_id = '" . $_SESSION["Id"] . "' AND projekti_id='".$pid."'");
+      
+  
+         if (!$haetarkka = $db->query("select distinct tarkkamaara from projektit where id='" .$pid. "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    //sallittu määrä
+    while ($rowtarkka = $haetarkka->fetch_assoc()) {
+        $tarkkamaara = $rowtarkka[tarkkamaara];
+    }
+
+    if ($tarkkamaara != 0) {
+        $db->query("insert into ryhmat (projekti_id) values('" .$pid. "')");
+    }
+
+
+    //nimetään vanhat uudelleen
+
+    if (!$resultmina = $db->query("select MIN(id) as pienin from ryhmat where projekti_id='" .$pid. "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    if (!$resultmaxa = $db->query("select MAX(id) as suurin from ryhmat where projekti_id='" .$pid. "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($minrowa = $resultmina->fetch_assoc()) {
+        $mina = $minrowa[pienin];
+    }
+
+    while ($maxrowa = $resultmaxa->fetch_assoc()) {
+        $maxa = $maxrowa[suurin];
+    }
+
+    $a = 1;
+
+    for ($j = $mina; $j <= $maxa; $j++) {
+
+        if (!$onko = $db->query("select * from ryhmat where projekti_id='" .$pid. "' AND id='" . $j . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        if ($onko->num_rows > 0) {
+            $ryhmanimi = $a;
+
+            $nimi = "Ryhmä " . $ryhmanimi . " ";
+
+            $db->query("update ryhmat set nimi='" . $nimi . "' where projekti_id='" .$pid. "' AND id='" . $j . "'");
+
+
+            $a++;
+        }
+    }
+        
+   
+     
+        }
     
     
+    
+    
+    
+    
+           
     
     
 }

@@ -1,10 +1,12 @@
+* OPEN AUTOMAATTISESTI LISÄÄMÄT TIEDOSTOT -> POISTA NE, kun poistaa
+* projektin
+* kurssin
 
-PALAUTUKSET:
+* OPE POISTUU OPISKELIJANÄKYMÄSTÄ:
+* poista tehtävälistamerkinnät ja sektorit yms.
+* poista itsearvioinnit
+* poista kyselyt
 
-
-* KUN PROJEKTIN/kurssin POISTAA AUTOMAATTISET TIEDOSTOT PITÄÄ POISTAA
-
-* JOS OPETTAJA POISTUU OPISKELIJANÄKYMÄSTÄ -> POISTA TIEDOT RYHMÄSTÄ TIETOKANNASTA + POISTA TALLENNETUT TIEDOSTOT
 
 *********************************************'
 

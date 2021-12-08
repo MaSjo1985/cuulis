@@ -741,7 +741,7 @@ function myFunction(y) {
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
 
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle lisätyt tiedostot:</h2>';
+                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
                                             if ($haetyot->num_rows != 0) {
 
@@ -921,7 +921,7 @@ function myFunction(y) {
                                         }
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle lisätyt tiedostot:</h2>';
+                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
 
                                             if ($haetyot->num_rows != 0) {
@@ -1303,7 +1303,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-margin-left"><br>';
                                 if ($haetyot->num_rows != 0) {
-                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle lisätyt tiedostot:</h2>';
+                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
 
                                     if ($haetyot->num_rows != 0) {
@@ -1477,7 +1477,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-margin-left"><br>';
                                 if ($haetyot->num_rows != 0) {
-                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle lisätyt tiedostot:</h2>';
+                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
                                     if ($haetyot->num_rows != 0) {
 

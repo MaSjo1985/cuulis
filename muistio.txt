@@ -1,7 +1,3 @@
-* OPEN AUTOMAATTISESTI LISÄÄMÄT TIEDOSTOT -> POISTA NE, kun poistaa
-* projektin
-* kurssin
-
 * OPE POISTUU OPISKELIJANÄKYMÄSTÄ:
 * poista tehtävälistamerkinnät ja sektorit yms.
 * poista itsearvioinnit

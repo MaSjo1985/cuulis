@@ -149,11 +149,8 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
         echo'<button style="font-size: 0.7em" class="pieniroskis" title="Poista kaikki viestit"><i class="fa fa-trash-o" style="margin-right: 10px" ></i>Poista kaikki viestit</button>';
         echo'<input type="hidden" name="id" value=' . $id . '>';
         echo'</form>';
-        echo'<form action="valitsekeskustelu.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
-        echo'<button style="font-size: 0.7em" class="pieniroskis" title="Valitse poistettavat viestit"><i class="fa fa-trash-o" style="margin-right: 10px" ></i>Valitse poistettavat viestit</button>';
-        echo'<input type="hidden" name="id" value=' . $id . '>';
-        echo'</form>';
-        echo'<br><br><table class="cm8-table5" style="background-color: #f7f9f7">';
+    
+        echo'<br><br><table class="cm8-table5ope" style="background-color: #f7f9f7">';
 
 
 
@@ -187,7 +184,13 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                     echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
                     foreach ($array as $nimet) {
 
-                        echo'<em title="' . $nimet . ' tykkää tästä." id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td></tr>';
+                        echo'<em title="' . $nimet . ' tykkää tästä." id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td>';
+                    
+                         echo'<td><form action="poistakeskusteluviestiyksilollinen.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
+        echo'<button style="font-size: 0.9em" class="roskis" title="Poista viesti"><i class="fa fa-trash-o"></i></button>';
+        echo'<input type="hidden" name="kesid" value=' . $rowv[id] . '>';
+            echo'<input type="hidden" name="id" value=' . $id . '>';
+        echo'</form></td><tr>';
                     }
                 }
                 //monta tykkäystä
@@ -209,7 +212,12 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                         echo'"';
                     }
-                    echo'" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäystä)</em></td></tr>';
+                    echo'" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäystä)</em></td>';
+                        echo'<td><form action="poistakeskusteluviestiyksilollinen.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
+        echo'<button style="font-size: 0.9em" class="roskis" title="Poista viesti"><i class="fa fa-trash-o"></i></button>';
+        echo'<input type="hidden" name="kesid" value=' . $rowv[id] . '>';
+            echo'<input type="hidden" name="id" value=' . $id . '>';
+        echo'</form></td><tr>';
                 }
             }
 
@@ -220,7 +228,13 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                 if ($yht == 1) {
                     echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="background-color: #f7f9f7; padding-right: 10px"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
 
-                    echo'<em title="Sinä tykkäät tästä" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td></tr>';
+                    echo'<em title="Sinä tykkäät tästä" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td>';
+                
+                     echo'<td><form action="poistakeskusteluviestiyksilollinen.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
+        echo'<button style="font-size: 0.9em" class="roskis" title="Poista viesti"><i class="fa fa-trash-o"></i></button>';
+        echo'<input type="hidden" name="kesid" value=' . $rowv[id] . '>';
+            echo'<input type="hidden" name="id" value=' . $id . '>';
+        echo'</form></td><tr>';
                 }
                 //monta tykkäystä
                 else {
@@ -251,7 +265,12 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                         echo'"';
                     }
-                    echo'" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäystä)</em></td></tr>';
+                    echo'" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäystä)</em></td>';
+                     echo'<td><form action="poistakeskusteluviestiyksilollinen.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
+        echo'<button style="font-size: 0.9em" class="roskis" title="Poista viesti"><i class="fa fa-trash-o"></i></button>';
+        echo'<input type="hidden" name="kesid" value=' . $rowv[id] . '>';
+            echo'<input type="hidden" name="id" value=' . $id . '>';
+        echo'</form></td><tr>';
                 }
             }
         }
@@ -262,11 +281,9 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
         echo'<form action="poistakeskustelutvarmistus.php" method="post"  style="margin-bottom: 0px;margin-right: 60px; display: inline-block">';
         echo'<button style="font-size: 0.7em" class="pieniroskis" title="Poista kaikki viestit"><i class="fa fa-trash-o" style="margin-right: 10px" ></i>Poista kaikki viestit</button>';
         echo'<input type="hidden" name="id" value=' . $id . '>';
+        
         echo'</form>';
-        echo'<form action="valitsekeskustelu.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
-        echo'<button style="font-size: 0.7em" class="pieniroskis" title="Valitse poistettavat viestit"><i class="fa fa-trash-o" style="margin-right: 10px" ></i>Valitse poistettavat viestit</button>';
-        echo'<input type="hidden" name="id" value=' . $id . '>';
-        echo'</form>';
+     
 
         echo' </div>';
     } else {

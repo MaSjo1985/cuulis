@@ -1483,6 +1483,42 @@ table.cm8-uusitable18 th:last-child{
     text-align: center;
 }
 
+table.cm8-table5ope {
+    overflow: hidden;
+    color: #080708;
+    
+}
+
+table.cm8-table5ope tr td:last-child{
+    background-color: #080708;
+    border-top: 5px solid #080708;
+    
+   
+}
+table.cm8-table5ope tr td:first-child{
+     border-left: 2px solid #b9b8bf;
+       border-bottom: 2px solid #b9b8bf;
+   border-top: 2px solid #b9b8bf;
+} 
+table.cm8-table5ope  td:nth-last-child(2){
+   
+       border-bottom: 2px solid #b9b8bf;
+   border-top: 2px solid #b9b8bf;
+}
+
+table.cm8-table5ope td {
+    background: #b9b8bf;
+    padding:5px 15px;
+
+}
+table.cm8-table5ope tr {
+    background: #b9b8bf;
+    padding:5px 15px;
+   
+}
+table.cm8-table5ope a:hover{ border-bottom: 1px solid transparent}
+
+table.cm8-table5ope a{color: #080708}
 table.cm8-table5 {
 
     color: #080708;

@@ -382,15 +382,40 @@ if ($_POST['arvo'] == 'vaihda') {
    
      
         }
-    
-    
-    
-    
-    
-    
-           
-    
-    
+
+ $db->query("delete from kyselytkp where kayttaja_id = '" . $_SESSION["Id"] . "'");
+    $db->query("delete from itsearvioinnitkp where kayttaja_id = '" . $_SESSION["Id"] . "'");
+    //itsearvioinnit, UUSI
+    $db->query("delete from iakp where kayttaja_id = '" . $_SESSION["Id"] . "'");
+    $db->query("delete from iakp_moni where kayttaja_id = '" . $_SESSION["Id"] . "'");
+    $db->query("delete from iakommentit where kayttaja_id = '" . $_SESSION["Id"] . "'");
+
+
+
+    //itsenäisten töiden kirjanpito
+
+
+        $db->query("delete from itsetehtavatkp where kayttaja_id = '" . $_SESSION["Id"] . "'");
+   
+
+    //sektoridiagrammit
+    $pienimi = 'images/sektori' . $_SESSION["Id"] . '.png';
+    if (file_exists($pienimi)) {
+        unlink($pienimi);
+    }
+    $pienimi = 'images/sektori2' . $_SESSION["Id"] . '.png';
+    if (file_exists($pienimi)) {
+        unlink($pienimi);
+    }
+    $pienimi = 'images/sektori3' . $_SESSION["Id"] . '.png';
+    if (file_exists($pienimi)) {
+        unlink($pienimi);
+    }
+    $pienimi = 'images/sektori4' . $_SESSION["Id"] . '.png';
+    if (file_exists($pienimi)) {
+        unlink($pienimi);
+    }
+        
 }
 
 if ($_POST["mihin"] == 'etu') {

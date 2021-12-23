@@ -39,7 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     //kysymyksiin liittyvät tiedot
 
-
+ $db->query("delete from kyselytkp where kayttaja_id = '" . $_SESSION["Id"] . "'");
     $db->query("delete from kysymykset where kayttaja_id = '" . $_SESSION["Id"] . "'");
 
     //äänestykset

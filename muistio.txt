@@ -1,9 +1,3 @@
-* OPE POISTUU OPISKELIJANÄKYMÄSTÄ:
-* poista tehtävälistamerkinnät ja sektorit yms.
-* poista itsearvioinnit
-* poista kyselyt
-
-
 *********************************************'
 
 * sähköpostiosoite -> käyttäjätunnus   (HUOMAA VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin!!

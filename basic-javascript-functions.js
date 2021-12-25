@@ -2848,7 +2848,103 @@ function validateForm5()
 
 
 }
+function validateForm5uusi()
+{
+    var ok = 0;
+    var a = document.forms["Form"]["Sposti"].value;
+    var b = document.forms["Form"]["Salasana"].value;
 
+    var div1 = document.getElementById("divID");
+    var div2 = document.getElementById("divID2");
+
+    div1.innerHTML = "";
+    div2.innerHTML = "";
+
+    div1.style.padding = "10px 0px 0px 0px";
+
+    div2.style.padding = "10px 0px 0px 0px";
+    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("salasana").style.backgroundColor = "white";
+
+
+    if ((a == null || a == "") && (b == null || b == ""))
+    {
+
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+        document.getElementById("salasana").style.backgroundColor = "yellow";
+        div1.innerHTML = "Anna sähköpostiosoite!";
+
+        div2.innerHTML = "Anna salasana!";
+
+        ok = 1;
+    } else if ((a == null || a == "") && (b != null || b != ""))
+    {
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+        div1.innerHTML = "Anna käyttäjätunnus!";
+
+        ok = 1;
+    } else if ((a != null || a != "") && (b == null || b == ""))
+    {
+        document.getElementById("salasana").style.backgroundColor = "yellow";
+
+        div2.innerHTML = "Anna salasana!";
+
+        ok = 1;
+    }
+    if (ok == 1) {
+        return false;
+    } else {
+
+        var username = $('#sposti').val();
+        var password = $('#salasana').val();
+        var returnVal = 0;
+
+
+        var okke = 0;
+        $.ajax({
+            type: 'post',
+            url: 'tarkistakirjautuminenuusi.php',
+            data: {username: username, password: password},
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == "success") {
+                    document.getElementById("myForm").submit();
+
+                } else {
+
+                    if (data.status == "error8") {
+                        document.getElementById("sposti").style.backgroundColor = "yellow";
+
+                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön! Jos et muista antamaasi käyttäjätunnusta, lähetä sähköpostia ylläpitäjälle osoitteeseen <u><a href="mailto: marianne.sjoberg@cm8solutions.fi" class="osoite">marianne.sjoberg@cm8solutions.fi.</a></u>';
+                    } else if (data.status == "error9") {
+                        document.getElementById("salasana").style.backgroundColor = "yellow";
+
+
+                        div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br>Voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkysely" class="osoite">painamalla tästä.</a></u>';
+                    } else if (data.status == "error1") {
+                        document.getElementById("sposti").style.backgroundColor = "yellow";
+
+                        div1.innerHTML = 'Antamasi sähköpostiosoite on virheellinen!';
+                    } else {
+                        document.getElementById("salasana").style.backgroundColor = "yellow";
+
+
+                        div2.innerHTML = 'Antamasi salasana on virheellinen! <b>Mikäli olet unohtanut salasanasi, voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkysely" class="osoite">painamalla tästä.</a></u>';
+                    }
+
+
+                }
+            }
+        });
+
+
+        return false;
+
+
+    }
+
+
+}
 function validateForm6()
 {
     var ok = 0;
@@ -3120,7 +3216,70 @@ function validateForm8()
 
 
 }
+function validateForm8uusi()
+{
+ var ok = 0;
 
+    var div4 = document.getElementById("divID4");
+    var d = document.forms["Form"]["koulu"].value;
+    div4.innerHTML = "";
+   
+
+    if (d == "valitsekoulu")
+    {
+
+        document.getElementById("koulu").style.backgroundColor = "yellow";
+        div4.style.padding = "10px 60px 10px 0px";
+
+        div4.innerHTML = "Valitse oppilaitos!";
+
+        ok = 1;
+    }
+ 
+    if (ok == 1) {
+        return false;
+    } else {
+        
+
+        return;
+
+
+    }
+
+
+}
+function validateFormRek()
+{
+ var ok = 0;
+
+    var div4 = document.getElementById("divID4");
+ 
+    var d = document.forms["Form"]["rooli"].value;
+ 
+    div4.innerHTML = "";
+ 
+    if (d == "valitserooli")
+    {
+
+        document.getElementById("rooli").style.backgroundColor = "yellow";
+        div4.style.padding = "10px 60px 10px 0px";
+
+        div4.innerHTML = "Valitse rooli!";
+
+        ok = 1;
+    }
+ 
+    if (ok == 1) {
+        return false;
+    } else {
+        
+      
+  return;
+
+    }
+
+
+}
 //function validateForm9()
 //{
 //    var ok = 0;

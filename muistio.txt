@@ -1,17 +1,26 @@
-*********************************************'
+* rekisteroityminenopettaja.php:   OPELLE KÄYTTÖEHDOT + YLEINEN ULKOASU -> laita open sähköposti -> uusitunnus
 
-* sähköpostiosoite -> käyttäjätunnus   (HUOMAA VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin!!
+* rekisteroityminenopiskelija.php :  EI SÄHKÖPOSTIA, tietokannassa nimeltä uusitunnus + KÄYTTÖEHDOT
 
-= tietokannassa nimeltä uusitunnus
+HUOM!! VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin!
 
-->  KORVAA ADMIN-näkymässä sähköpostiosoite tunnukseksi
--> JOS SALASANA UNOHTUNUT, LAITA TIETO ETTÄ MITEN VOI OTTAA YHTEYTTÄ ADMIN
+*  kirjautuminenuusi.php:  Tsekataan kohta uusitunnus
 
--> admin tekee uuden salasanan -
-> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
+* VANHAT OPISKELIJAT:  
+
+-> laita tietokantaan eka että onko vanha
+-> Jos on vanha, niin pitää antaa käyttäjätunnus -> sen jälkeen sähköposti poistetaan tietokannasta
+
+' Kaikki näkymät: sähköpostiosoite -> käyttäjätunnus
+
+* Kun admin vaihtaa salasanan:
+
+-> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
 -> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
 
--> MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI
+
+
++++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI
 
 
 *****************************************************************************

@@ -4759,10 +4759,7 @@ input[type=button]:focus{
 }
 
 .form-style-p .osoite:hover{
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 1.1em;
-    background-color: transparent;
+  
 }   
 
 
@@ -5367,13 +5364,11 @@ p.form-style-8 {
     -webkit-border-radius:0px;
     border-radius:0px;
     font-size: inherit;
-
+ color: #b1006a;
     background-color: transparent;
+  
 }
-.form-style-k .osoite:hover{
-    font-size: 1.1em;
-    font-weight: bold;
-}   
+
 
 
 .form-style-spinner .erilainen {

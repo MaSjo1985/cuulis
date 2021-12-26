@@ -168,9 +168,9 @@ if (isset($_GET[url])) {
 echo'<br><br><input id="button" type="button" onclick="validateForm5uusi()" value="&#10003 &nbsp Kirjaudu" ><br>
 
 
-<br><a href="tunnustenkyselyuusi.php">Salasana unohtunut?</a>
+<br><a href="tunnustenkyselyuusi.php" style="font-weight: bold" >Onko käyttäjätunnus tai salasana unohtunut?</a>
 
-<br><a href="rekisteroityminenuusi.php">Uusi käyttäjä? &nbsp&nbsp Rekisteröidy tästä &#8618;</a>
+<br><a href="rekisteroityminenuusi.php" style="font-weight: bold" >Uusi käyttäjä? &nbsp&nbsp Rekisteröidy tästä &nbsp &#8618;</a>
 </fieldset>
 </form>';
 

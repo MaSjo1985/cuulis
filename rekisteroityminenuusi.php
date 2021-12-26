@@ -139,11 +139,11 @@ echo'<form name="Form" id="myForm" onSubmit="return validateFormRek();" class="f
 echo'<legend>Rekisteröityminen</legend>
    <a href="kirjautuminenuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
 
-   <br><p>Valitse, missä roolissa haluat rekisteröityä Cuulis-oppimisympäristöön</p><br>';
+   <br><p>Valitse, missä roolissa haluat rekisteröityä Cuulis-oppimisympäristöön:</p><br>';
    
 
 echo'<select id="rooli" name="rooli"  onchange="changeFunc();">';
-echo' <option value="valitserooli" id="kelt" selected> Valitse';
+echo' <option value="valitserooli" id="kelt" selected>Valitse rooli';
 
   echo '<option value="opiskelija"> Opiskelija';
   echo '<option value="opettaja"> Opettaja';

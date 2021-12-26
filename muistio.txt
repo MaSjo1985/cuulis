@@ -1,12 +1,26 @@
-* rekisteroityminenopettaja.php:   OPELLE KÄYTTÖEHDOT + YLEINEN ULKOASU -> laita open sähköposti -> uusitunnus
+* rekisterointitarkistusope.php + varmennus
 
-* rekisteroityminenopiskelija.php :  EI SÄHKÖPOSTIA, tietokannassa nimeltä uusitunnus + KÄYTTÖEHDOT
+* rekisterointitarkistusopiskelija.php + varmennus
+-> TIETOKANTAAN AINA UUSITUNNUS (=0/1) 
 
-HUOM!! VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin!
 
-*  kirjautuminenuusi.php:  Tsekataan kohta uusitunnus
+UUDEN KÄYTTÄJÄN REKISTERÖINTI ADMININ TOIMESTA!
 
-* VANHAT OPISKELIJAT:  
+
+KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
+-> kayttoehdot_opettaja.php + kayttoehdot_opiskelija.php  : KATO MALLIA tietoa.php
+
+
+
+* VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
++++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI ++++++++++++++++++
+
+* KÄYTTÄJÄPROFIILI!
+
+
+* VANHAT OPISKELIJAT:
+
+*  kirjautuminenuusi.php:  hae kirjautumisen jälkeen aina onko uusitunnus (0/1) , jos ei ohjaa vaihtamaan käyttäjätunnus + KÄYTTÖEHDOT!!
 
 -> laita tietokantaan eka että onko vanha
 -> Jos on vanha, niin pitää antaa käyttäjätunnus -> sen jälkeen sähköposti poistetaan tietokannasta
@@ -18,9 +32,6 @@ HUOM!! VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee s
 -> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
 -> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
 
-
-
-+++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI
 
 
 *****************************************************************************

@@ -146,7 +146,7 @@ if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC
 }
 
 echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
-echo' <option value="valitsekoulu" id="kelt" selected> Valitse';
+echo' <option value="valitsekoulu" id="kelt" selected>Valitse oppilaitos';
 
 while ($rowko = $resultkoulut->fetch_assoc()) {
     if ($rowko[id] != 19) {

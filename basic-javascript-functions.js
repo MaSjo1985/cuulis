@@ -2634,7 +2634,245 @@ function validateForm4()
 
 
 }
+function validateForm4ope()
+{
 
+    var ok = 0;
+    var a = document.forms["Form"]["Sposti"].value;
+    var b = document.forms["Form"]["Etunimi"].value;
+    var c = document.forms["Form"]["Sukunimi"].value;
+    var d = document.forms["Form"]["koulu"].value;
+  
+    var div1 = document.getElementById("divID");
+    var div2 = document.getElementById("divID2");
+    var div3 = document.getElementById("divID3");
+    var div4 = document.getElementById("divID4");
+   var div5 = document.getElementById("divID5");
+    div1.innerHTML = "";
+    div2.innerHTML = "";
+    div3.innerHTML = "";
+    div4.innerHTML = "";
+  div5.innerHTML = "";
+
+    document.getElementById("etu").style.backgroundColor = "white";
+    document.getElementById("suku").style.backgroundColor = "white";
+    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("koulu").style.backgroundColor = "white";
+ document.getElementById("kayttoehdot").style.backgroundColor = "white";
+    if (b == null || b == "")
+    {
+
+        document.getElementById("etu").style.backgroundColor = "yellow";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "Etunimi on annettava!";
+
+        ok = 1;
+    }
+
+
+    if (c == null || c == "")
+    {
+
+        document.getElementById("suku").style.backgroundColor = "yellow";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "Sukunimi on annettava!";
+
+        ok = 1;
+    }
+
+    if (a == null || a == "")
+    {
+
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "Käyttäjätunnus eli sähköpostiosoite on annettava!";
+
+        ok = 1;
+    }
+
+    if (d == "valitsekoulu")
+    {
+
+        document.getElementById("koulu").style.backgroundColor = "yellow";
+        div4.style.padding = "10px 60px 10px 0px";
+
+        div4.innerHTML = "Valitse ensisijainen oppilaitos!";
+
+        ok = 1;
+    }
+    if(!document.getElementById('kayttoehdot').checked){
+        
+        document.getElementById("kayttoehdotl").style.backgroundColor = "yellow";
+        div5.style.padding = "10px 60px 10px 0px";
+
+        div5.innerHTML = "Käyttöehdot on hyväksyttävä!";
+        ok=1;
+    }
+ 
+    if (ok == 1) {
+        return false;
+    } else {
+
+
+
+
+        var username = $('#sposti').val();
+        var returnVal = 0;
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+
+
+        div3.style.padding = "10px 60px 10px 0px";
+        var okke = 0;
+        $.ajax({
+            type: 'post',
+            url: 'tarkistatunnusope.php',
+            data: {username: username},
+            dataType: 'json',
+            success: function (data) {
+              
+                if (data.status == "success") {
+                    document.getElementById("myForm").submit();
+
+
+                } else {
+
+                    if (data.msg == 'virhe')
+                        div3.innerHTML = 'Antamasi sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                    else
+                        div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity. <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+
+                }
+            }
+        });
+
+
+        return false;
+
+
+    }
+
+
+}
+function validateForm4opiskelija()
+{
+
+    var ok = 0;
+    var a = document.forms["Form"]["Sposti"].value;
+    var b = document.forms["Form"]["Etunimi"].value;
+    var c = document.forms["Form"]["Sukunimi"].value;
+    var d = document.forms["Form"]["koulu"].value;
+    var div1 = document.getElementById("divID");
+    var div2 = document.getElementById("divID2");
+    var div3 = document.getElementById("divID3");
+    var div4 = document.getElementById("divID4");
+     var div5 = document.getElementById("divID5");
+    div1.innerHTML = "";
+    div2.innerHTML = "";
+    div3.innerHTML = "";
+    div4.innerHTML = "";
+    div5.innerHTML = "";
+
+    document.getElementById("etu").style.backgroundColor = "white";
+    document.getElementById("suku").style.backgroundColor = "white";
+    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("koulu").style.backgroundColor = "white";
+ document.getElementById("kayttoehdot").style.backgroundColor = "white";
+    if (b == null || b == "")
+    {
+
+        document.getElementById("etu").style.backgroundColor = "yellow";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "Etunimi on annettava!";
+
+        ok = 1;
+    }
+
+
+    if (c == null || c == "")
+    {
+
+        document.getElementById("suku").style.backgroundColor = "yellow";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "Sukunimi on annettava!";
+
+        ok = 1;
+    }
+
+    if (a == null || a == "")
+    {
+
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "Käyttäjätunnus on annettava!";
+
+        ok = 1;
+    }
+
+    if (d == "valitsekoulu")
+    {
+
+        document.getElementById("koulu").style.backgroundColor = "yellow";
+        div4.style.padding = "10px 60px 10px 0px";
+
+        div4.innerHTML = "Valitse ensisijainen oppilaitos!";
+
+        ok = 1;
+    }
+     if(!document.getElementById('kayttoehdot').checked){
+        
+        document.getElementById("kayttoehdotl").style.backgroundColor = "yellow";
+        div5.style.padding = "10px 60px 10px 0px";
+
+        div5.innerHTML = "Käyttöehdot on hyväksyttävä!";
+        ok=1;
+    }
+    if (ok == 1) {
+        return false;
+    } else {
+
+
+
+
+        var username = $('#sposti').val();
+        var returnVal = 0;
+        document.getElementById("sposti").style.backgroundColor = "yellow";
+
+
+        div3.style.padding = "10px 60px 10px 0px";
+        var okke = 0;
+        $.ajax({
+            type: 'post',
+            url: 'tarkistatunnusopiskelija.php',
+            data: {username: username},
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == "success") {
+                    document.getElementById("myForm").submit();
+
+
+                } else {
+
+                    
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
+
+                }
+            }
+        });
+
+
+        return false;
+
+
+    }
+
+
+}
 function validateFormUusiKayttaja()
 {
 

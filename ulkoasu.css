@@ -4647,8 +4647,7 @@ label:hover{
 
 }
 .form-style-p  a:hover{
-    border: none;
-    font-weight: bold;
+    border-bottom: 1px solid; 
 
 }   
 
@@ -4759,7 +4758,6 @@ input[type=button]:focus{
 }
 
 .form-style-p .osoite:hover{
-  
 }   
 
 

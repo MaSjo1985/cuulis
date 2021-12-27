@@ -2648,6 +2648,8 @@ function validateForm4ope()
     var div3 = document.getElementById("divID3");
     var div4 = document.getElementById("divID4");
    var div5 = document.getElementById("divID5");
+    var divextra = document.getElementById("sposti");
+    
     div1.innerHTML = "";
     div2.innerHTML = "";
     div3.innerHTML = "";
@@ -2721,10 +2723,7 @@ function validateForm4ope()
 
         var username = $('#sposti').val();
         var returnVal = 0;
-        document.getElementById("sposti").style.backgroundColor = "yellow";
-
-
-        div3.style.padding = "10px 60px 10px 0px";
+      
         var okke = 0;
         $.ajax({
             type: 'post',
@@ -2738,12 +2737,19 @@ function validateForm4ope()
 
 
                 } else {
+                   
+  divextra.style.backgroundColor = "yellow";
 
+
+        div3.style.padding = "10px 60px 10px 0px";
                     if (data.msg == 'virhe')
                         div3.innerHTML = 'Antamasi sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
-                    else
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity. <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+                    else{
+                        
+                         div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity! <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
 
+                    }
+                       
                 }
             }
         });
@@ -2777,7 +2783,7 @@ function validateForm4opiskelija()
 
     document.getElementById("etu").style.backgroundColor = "white";
     document.getElementById("suku").style.backgroundColor = "white";
-    document.getElementById("sposti").style.backgroundColor = "white";
+ 
     document.getElementById("koulu").style.backgroundColor = "white";
  document.getElementById("kayttoehdot").style.backgroundColor = "white";
     if (b == null || b == "")
@@ -2837,14 +2843,9 @@ function validateForm4opiskelija()
     } else {
 
 
-
-
         var username = $('#sposti').val();
         var returnVal = 0;
-        document.getElementById("sposti").style.backgroundColor = "yellow";
-
-
-        div3.style.padding = "10px 60px 10px 0px";
+       
         var okke = 0;
         $.ajax({
             type: 'post',
@@ -2852,14 +2853,18 @@ function validateForm4opiskelija()
             data: {username: username},
             dataType: 'json',
             success: function (data) {
+             
                 if (data.status == "success") {
                     document.getElementById("myForm").submit();
 
 
                 } else {
 
-                    
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
+ document.getElementById("sposti").style.backgroundColor = "yellow";
+                     
+
+        div3.style.padding = "10px 60px 10px 0px";
+                        div3.innerHTML = '<b style="color:red">Antamaasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
 
                 }
             }
@@ -3432,7 +3437,7 @@ function validateForm8()
 
                         document.getElementById("sposti").style.backgroundColor = "yellow";
                         div1.style.padding = "10px 60px 20px 0px";
-                        div1.innerHTML = 'Antamaasi sähköpostiosoitetta ei ole rekisteröity oppimisympäristöön! Ongelmatilanteissa voit ottaa yhteyttä Cuulis-oppimisympäristön ylläpitäjään alla olevan linkin kautta.';
+                        div1.innerHTML = 'Antamaasi sähköpostiosoitetta ei ole rekisteröity oppimisympäristöön!';
 
                     } else {
 

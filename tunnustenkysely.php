@@ -140,16 +140,16 @@ echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>
 
 
 
-   <br><p>Anna Cuulis-oppimisympäristöön sähköpostiosoite:
+   <br><p>Anna Cuulis-oppimisympäristöön rekisteröimäsi käyttäjätunnus eli sähköpostiosoite:
    <br><br><b style="color: red; font-size: 0.8em">Tunnuksen uudelleenaktivointilinkki tähän sähköpostiosoitteeseen. </b><br><br>
  
-<input type="email" id="sposti" name="sposti"  placeholder="Sähköpostiosoite" style="width: 50%"></p>
+<input type="email" id="sposti" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 50%"></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
     <p style="padding: 0px" class="eimitaan" style="display: inline-block"></p>
 </div>
 
 <br><input id="button" type="button" onclick="validateForm8()" value="&#10003 Lähetä">
-<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, laita ylläpitäjälle sähköpostia osoitteeseen <a class="osoite" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
+<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite" style="color:  #080708" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
 <br>
  </fieldset> </form>';
 

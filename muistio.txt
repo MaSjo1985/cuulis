@@ -1,40 +1,53 @@
-* rekisterointitarkistusope.php + varmennus
+* VIRHEELLINEN KIRJAUTUMINEN + REKISTERÖITYMINEM -> KOHTA sposti + CSS  -> MIKSI TUNNUSTENKYSELYSSÄ TOIMII!?!
 
-* rekisterointitarkistusopiskelija.php + varmennus
--> TIETOKANTAAN AINA UUSITUNNUS (=0/1) 
+* MITEN VOI TULLA 2 SAMAA TARKISTUSKOODIA?! PAKKO TSEKATA SAMAT TIETOKANNASSA!
 
 
-UUDEN KÄYTTÄJÄN REKISTERÖINTI ADMININ TOIMESTA!
+UUDEN KÄYTTÄJÄN REKISTERÖINTI ADMININ TOIMESTA! 
+* kaikki tarvittavat uudet jutut
+* kun käyttäjä rekisteröityy ekan kerran käyttöehdot pitää hyväksyä
+
+
+VAIHDA KIRJAUTUMINEN.PHP -> KIRJAUTUMINENUUSI.PHP
 
 
 KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
 -> kayttoehdot_opettaja.php + kayttoehdot_opiskelija.php  : KATO MALLIA tietoa.php
-
+-> tietokannassa kayttoehdot_hyvaksytty (0/1)
 
 
 * VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 +++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI ++++++++++++++++++
 
+
 * KÄYTTÄJÄPROFIILI!
 
+* VANHAT OPETTAJAT -> KÄYTTÖEHDOT HYVÄKSYTTÄVÄ SEURAAVAN KIRJAUTUMISEN YHTEYDESSÄ
 
 * VANHAT OPISKELIJAT:
+kirjautuminenuusi.php:  
+-> hae kirjautumisen jälkeen aina onko uusitunnus (0/1)
+-> jos ei ohjaa vaihtamaan käyttäjätunnus
+-> käyttöehdot pitää hyväksyä
 
-*  kirjautuminenuusi.php:  hae kirjautumisen jälkeen aina onko uusitunnus (0/1) , jos ei ohjaa vaihtamaan käyttäjätunnus + KÄYTTÖEHDOT!!
 
--> laita tietokantaan eka että onko vanha
--> Jos on vanha, niin pitää antaa käyttäjätunnus -> sen jälkeen sähköposti poistetaan tietokannasta
+* KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:
+sähköpostiosoite -> käyttäjätunnus
 
-' Kaikki näkymät: sähköpostiosoite -> käyttäjätunnus
 
-* Kun admin vaihtaa salasanan:
-
+* KUN ADMIN VAIHTAA SALASANAN:
 -> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
 -> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
 
 
+* EVÄSTEET?!!?!
+
 
 *****************************************************************************
+
+KÄYTTÄJÄT:  Ei siirry muille sivuille-juttua jos vaan 1 sivu, tsekkaa kayttajatopettajat.php
+
+******************
 
 KYSELYLOMAKE:
 

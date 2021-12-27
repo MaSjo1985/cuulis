@@ -141,10 +141,13 @@ $stmt->execute();
 
 $stmt->store_result();
 
+
 $stmt->bind_result($column1);
 
 while ($stmt->fetch()) {
+    
     $id = $column1;
+  
 }
 if ($stmt->num_rows == 1) {
 
@@ -200,7 +203,8 @@ if ($stmt->num_rows == 1) {
     }
 } else {
     echo'<div class="cm8-half" style="margin-top: 40px">';
-    echo '<br><b>Vahvistuslinkki on vanhentunut!</b><br><br> <a href="tunnustenkysely.php">Voit pyytää uuden aktivointilinkin tästä &nbsp&nbsp&nbsp <p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
+    echo '<br><b style="color: red">Rekisteröitymisen vahvistuslinkki on vanhentunut!</b><br><br>Voit vaihtaa salasanasi etusivun linkin kautta.<br><br>';
+    echo '<br><a href="kirjautuminen.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
 }
 
 echo '</div>';

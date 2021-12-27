@@ -4,7 +4,7 @@ echo'<!DOCTYPE html>
 <html>
 <head>
 
-<title>Rekisteröityminen</title>
+<title>Unohtunut käyttäjätunnus/salasana</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -134,12 +134,12 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
-echo'<form name="Form" id="myForm" onSubmit="return validateFormRek();" class="form-style-k" action="rekvali.php" method="post"><fieldset>';
+echo'<form name="Form" id="myForm" onSubmit="return validateFormRek();" class="form-style-k" action="tunnustenkyselyvali.php" method="post"><fieldset>';
 
-echo'<legend>Rekisteröityminen</legend>
+echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>
    <a href="kirjautuminenuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
 
-   <br><p>Valitse, missä roolissa haluat rekisteröityä Cuulis-oppimisympäristöön:</p><br>';
+   <br><p>Missä roolissa olet rekisteröitynyt Cuulis-oppimisympäristöön?</p><br>';
    
 
 echo'<select id="rooli" name="rooli"  onchange="changeFunc();">';

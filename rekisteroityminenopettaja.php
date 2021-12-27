@@ -146,7 +146,6 @@ echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return valida
 echo' <legend>Rekisteröityminen</legend>';
 
 echo '<a href="kirjautuminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
-
 echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
 
 

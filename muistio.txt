@@ -1,34 +1,10 @@
-* VIRHEELLINEN KIRJAUTUMINEN + REKISTERÖITYMINEM -> KOHTA sposti + CSS  -> MIKSI TUNNUSTENKYSELYSSÄ TOIMII!?!
-
-* MITEN VOI TULLA 2 SAMAA TARKISTUSKOODIA?! PAKKO TSEKATA SAMAT TIETOKANNASSA!
-
-
 UUDEN KÄYTTÄJÄN REKISTERÖINTI ADMININ TOIMESTA! 
 * kaikki tarvittavat uudet jutut
 * kun käyttäjä rekisteröityy ekan kerran käyttöehdot pitää hyväksyä
 
 
-VAIHDA KIRJAUTUMINEN.PHP -> KIRJAUTUMINENUUSI.PHP
-
-
-KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
--> kayttoehdot_opettaja.php + kayttoehdot_opiskelija.php  : KATO MALLIA tietoa.php
--> tietokannassa kayttoehdot_hyvaksytty (0/1)
-
-
 * VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 +++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI ++++++++++++++++++
-
-
-* KÄYTTÄJÄPROFIILI!
-
-* VANHAT OPETTAJAT -> KÄYTTÖEHDOT HYVÄKSYTTÄVÄ SEURAAVAN KIRJAUTUMISEN YHTEYDESSÄ
-
-* VANHAT OPISKELIJAT:
-kirjautuminenuusi.php:  
--> hae kirjautumisen jälkeen aina onko uusitunnus (0/1)
--> jos ei ohjaa vaihtamaan käyttäjätunnus
--> käyttöehdot pitää hyväksyä
 
 
 * KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:
@@ -40,7 +16,44 @@ sähköpostiosoite -> käyttäjätunnus
 -> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
 
 
+VAIHDA KIRJAUTUMINEN.PHP -> KIRJAUTUMINENUUSI.PHP
+
+
+KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
+-> kayttoehdot_opettaja.php + kayttoehdot_opiskelija.php  : KATO MALLIA tietoa.php
+-> tietokannassa kayttoehdot_hyvaksytty (0/1)
+
+
+
+* VANHAT OPETTAJAT -> KÄYTTÖEHDOT HYVÄKSYTTÄVÄ SEURAAVAN KIRJAUTUMISEN YHTEYDESSÄ 
+-> uus tarkistuskoodi   
+$uniqid = uniqid('', true);
+    $krypattu2 = md5($uniqid);
+
+* VANHAT OPISKELIJAT:
+kirjautuminenuusi.php:  
+-> hae kirjautumisen jälkeen aina onko uusitunnus (0/1)
+-> jos ei ohjaa vaihtamaan käyttäjätunnus
+-> käyttöehdot pitää hyväksyä
+-> uus tarkistuskoodi   
+$uniqid = uniqid('', true);
+$krypattu2 = md5($uniqid);
+
+
 * EVÄSTEET?!!?!
+
+*******************************************************''''
+
+TURVALLISEMPI SALASANA TIETOKANTAAN:
+
+$pass = 'this is my password';
+$salt = uniqid('', true);
+$hash = sha1($pass . $salt);
+
+// INSERT INTO users ('hash', 'salt') VALUES ('$hash', '$salt') WHERE ...
+
+-> ELI EI SITÄ ->  $salt = "8CMr85";
+
 
 
 *****************************************************************************

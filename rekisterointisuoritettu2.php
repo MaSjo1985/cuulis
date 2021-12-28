@@ -4,7 +4,7 @@ echo'<!DOCTYPE html>
 <html>
 <head>
 
-<title>Rekisteröinti suoritettu</title>
+<title>Rekisteröityminen onnistui</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -132,7 +132,7 @@ if ((strpos($browser, 'Android'))) {
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
 
-echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröinti onnistui!</p><br><p style="font-weight: bold">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p><p style="color: #c7ef00">Huom! Tarkista <u>roskapostilaatikko</u>, jos viestiä ei näy.</p>';
+echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröityminen onnistui!</p><br><p style="font-weight: bold">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p><p style="color: #c7ef00">Huom! Tarkista <u>roskapostilaatikko</u>, jos viestiä ei näy.</p>';
 
 echo '<br><br><a href="etusivu.php"><b>Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></b></a>';
 echo "</div>";

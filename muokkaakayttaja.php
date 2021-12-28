@@ -61,12 +61,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         echo"<h7>Muokkaa käyttäjän " . $etunimi . " " . $sukunimi . " tietoja</h7>";
 
         echo'<br><a href="kayttaja.php?url=' . $url . '&ka=' . $id . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin käyttäjäprofiiliin<br></a>';
-
-        echo'<div class="cm8-half" style="margin-top: 0px; padding-top: 0px; padding-left: 0px">';
-        echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm11();"  action="muokkaakayttaja2.php" method="post"><fieldset>';
-
-        echo'<legend>Profiilikuva</legend>';
-        if (!$result = $db->query("select * from kayttajat where id = '" . $id . "'")) {
+    if (!$result = $db->query("select * from kayttajat where id = '" . $id . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -78,6 +73,20 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $id = $row2[id];
             $omakuva = $row2[omakuva];
         }
+        
+        echo'<div class="cm8-half" style="margin-top: 0px; padding-top: 0px; padding-left: 0px">';
+        
+        if($rooli=='opiskelija'){
+              echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm112();"  action="muokkaakayttaja2.php" method="post"><fieldset>';
+
+        }
+        else{
+            echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm11();"  action="muokkaakayttaja2.php" method="post"><fieldset>';
+  
+        }
+      
+        echo'<legend>Profiilikuva</legend>';
+    
 
         if ($omakuva != '') {
             echo'<img src="/' . $omakuva . '" style="width: 90px"><br>';
@@ -101,30 +110,46 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         echo'<legend>Perustiedot</legend>';
 
         echo'<p>Etunimi:<br>
-            
+            <br>
   
-<input type="text" id="etu"  style="width: 50%" name="uusietu" value=' . $etunimi . ' ></p>
+<input type="text" id="etu" placeholder="Etunimi" style="width: 50%" name="uusietu" value=' . $etunimi . ' ></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div> <br>
     
 
-					<p>Sukunimi:<br> 
+					<br><p>Sukunimi:<br> <br>
    
 
-<input type="text" id="suku"  style="width: 50%" name="uusisuku" value=' . $sukunimi . ' ></p>
+<input type="text" id="suku" placeholder="Sukunimi"  style="width: 50%" name="uusisuku" value=' . $sukunimi . ' ></p>
                                          
                                         <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
-</div> <br> 
-					<p>Sähköpostiosoite:<br> 
- <input type="email" id="sposti" style="width: 50%" name="uusisposti" value=' . $sposti . ' ></p>
-      <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
+</div> <br> <br>';
+        
+        if($rooli=='opiskelija'){
+            	echo'<p>Käyttäjätunnus:<br> <br>
+ <input type="text" id="spostir" style="width: 50%" placeholder="Käyttäjätunnus" name="uusisposti" value=' . $sposti . ' ></p>';
+        }
+        else{
+            	echo'<p>Käyttäjätunnus eli sähköpostiosoite:<br> <br>
+ <input type="email" id="spostir" style="width: 50%" placeholder="Käyttäjätunnus eli sähköpostiosoite" name="uusisposti" value=' . $sposti . ' ></p>';
+        }
+	
+                
+     echo' <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div> <br>
-				<input type="hidden" id="id" name="id" value=' . $id . ' >
-				<br><input type="button" id="button" onclick="validateForm11()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br>			
-						</fieldset></form>';
+				<input type="hidden" id="id" name="id" value=' . $id . ' >';
+     echo'<input type="hidden" id="rooli" name="rooli" value=' . $rooli . ' >';
+     if($rooli=='opiskelija'){
+         				echo'<br><input type="button" id="button" onclick="validateForm112()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br>';
+     }
+     else{
+       				echo'<br><input type="button" id="button" onclick="validateForm11()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br>';  
+     }
+		
+						echo'</fieldset></form>';
 
 
         if ($_SESSION[Rooli] == 'admin') {
@@ -184,6 +209,34 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     header("location: kirjautuminen.php?url=" . $url);
 }
 ?>
+<script type="text/javascript">
+$('#etu').on('keyup', function() {
+      var div1 = document.getElementById("divID");
+    document.getElementById("etu").style.backgroundColor = "white";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#suku').on('keyup', function() {
+      var div2 = document.getElementById("divID2");
+    document.getElementById("suku").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#spostir').on('keyup', function() {
+  
+      var div3 = document.getElementById("divID3");
+    document.getElementById("spostir").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     var input = document.getElementById("etu");
     input.addEventListener("keyup", function (event) {
@@ -203,7 +256,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     });
 </script>
 <script>
-    var input = document.getElementById("sposti");
+    var input = document.getElementById("spostir");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();

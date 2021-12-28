@@ -12,6 +12,12 @@ and open the template in the editor.
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 
 
+#spostir:-webkit-autofill,
+#spostir:-webkit-autofill:hover, 
+#spostir:-webkit-autofill:focus, 
+#spostir:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px yellow inset !important;
+}
 
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}

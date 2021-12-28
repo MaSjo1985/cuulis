@@ -39,11 +39,9 @@ while ($row100 = $result100->fetch_assoc()) {
     $paivays = "" . date("h:i:s") . "";
     $krypattu = md5($salt . $paivays);
 
+   $uniqid = uniqid('', true);
+$krypattu2 = md5($uniqid);
 
-    $salt2 = "CR74ever";
-    $paivays = "" . date("h:i:s") . "";
-
-    $krypattu2 = md5($salt2 . $paivays);
     $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1)");
     $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
     $etunimi = $siivottuetunimi;
@@ -80,7 +78,7 @@ while ($row100 = $result100->fetch_assoc()) {
     $headers .= "X-Priority: 3\r\n";
     $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
 
-    $otsikko = "Rekisteröinti on suoritettu Cuulis-oppimisympäristössä";
+    $otsikko = "Rekisteröityminen Cuulis-oppimisympäristöön";
     $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 
@@ -117,7 +115,7 @@ while ($row100 = $result100->fetch_assoc()) {
 
 
 
-            $otsikko2 = "Uuden käyttäjän rekisteröinti vaatii vahvistustasi";
+            $otsikko2 = "Uuden käyttäjän rekisteröityminen vaatii vahvistustasi";
             $otsikko2 = "=?UTF-8?B?" . base64_encode($otsikko2) . "?=";
 
 
@@ -144,7 +142,7 @@ while ($row100 = $result100->fetch_assoc()) {
             $sposti3 = $row3["sposti"];
         }
 
-        $otsikko3 = "Uuden käyttäjän rekisteröinti odottaa oppilaitoksen ylläpitäjän vahvistusta";
+        $otsikko3 = "Uuden käyttäjän rekisteröityminen odottaa oppilaitoksen ylläpitäjän vahvistusta";
         $otsikko3 = "=?UTF-8?B?" . base64_encode($otsikko3) . "?=";
         $kysely3 = 'Cuulis-oppimisympäristöön on rekisteröitynyt uusi käyttäjä roolissa ' . $_POST[Rooli] . ' oppilaitokseen ' . $koulunimi . '<br><br>Käyttäjän nimi: ' . $kokonimi . '<br><br>Käyttäjän sähköpostiosoite: ' . $siivottusposti . '. <br><br><b>Liittyminen odottaa oppilaitoksen ylläpitäjän vahvistusta.</b><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
@@ -175,7 +173,7 @@ while ($row100 = $result100->fetch_assoc()) {
             $headers .= "X-Priority: 3\r\n";
             $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
 
-            $otsikko = "Uuden käyttäjän rekisteröinti vaatii vahvistustasi";
+            $otsikko = "Uuden käyttäjän rekisteröityminen vaatii vahvistustasi";
             $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 

@@ -253,7 +253,7 @@ function myFunction(y) {
             echo '<b>Rooli: </b>Yleinen ylläpitäjä<br><br>';
 
 
-            echo "<b>Sähköpostiosoite:</b> " . $row[sposti] . '<br><br>';
+            echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br><br>';
 
             echo "</td>" . "</tr>" . "</table>" . "</div><br><br>";
         } else {
@@ -284,7 +284,7 @@ function myFunction(y) {
                 echo "<b>Rooli: </b>Opiskelija<br><br>";
             }
             if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin')
-                echo "<b>Sähköpostiosoite:</b> " . $row[sposti] . '<br><br>';
+                echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br><br>';
 
             if ($row[rooli] <> 'admin') {
                 echo "<br><b>Oppilaitokset:</b>";

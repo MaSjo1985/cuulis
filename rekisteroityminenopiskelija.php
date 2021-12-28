@@ -168,7 +168,7 @@ echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
 </div>
 <br><br><p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
 
-<input type="text"  placeholder="Käyttäjätunnus"   id="sposti" name="Sposti" style="width: 50%"></p>';
+<input type="text"  placeholder="Käyttäjätunnus"   id="spostir" name="Sposti" style="width: 50%"></p>';
 
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>
@@ -237,9 +237,10 @@ $('#suku').on('keyup', function() {
 });
  </script>
  <script type="text/javascript">
-$('#sposti').on('keyup', function() {
+$('#spostir').on('keyup', function() {
+  
       var div3 = document.getElementById("divID3");
-    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("spostir").style.backgroundColor = "white";
         div3.style.padding = "10px 60px 10px 0px";
 
         div3.innerHTML = "";
@@ -275,7 +276,7 @@ $('#sposti').on('keyup', function() {
     });
 </script>
 <script>
-    var input = document.getElementById("sposti");
+    var input = document.getElementById("spostir");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();

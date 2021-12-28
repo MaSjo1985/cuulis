@@ -8,7 +8,7 @@ session_start();
 
 $tarkistettusposti = htmlspecialchars($_POST[sposti]);
 
-if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL) && $_POST[rooli]!='opiskelija') {
     echo json_encode(array('status' => 'error', 'msg' => 'virhe'));
 } else {
 

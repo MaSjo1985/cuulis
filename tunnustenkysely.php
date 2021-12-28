@@ -144,7 +144,8 @@ echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>
    <br><br><b style="color: red; font-size: 0.8em">Tunnuksen uudelleenaktivointilinkki tähän sähköpostiosoitteeseen. </b><br><br>
  
 <input type="email" id="sposti" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 50%"></p>
-    <div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
+    
+<div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
     <p style="padding: 0px" class="eimitaan" style="display: inline-block"></p>
 </div>
 

@@ -59,7 +59,7 @@ if ($_POST[Rooli] == "opiskelija") {
     $salasana = $krypattu;
     $rooli = $_POST[Rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 0;
+    $vahvistettu = 1;
     $tarkistettu = 1;
     $koodi = $krypattu2;
     $stmt->execute();
@@ -140,11 +140,9 @@ if ($_POST[Rooli] == "opiskelija") {
     $paivays = "" . date("h:i:s") . "";
     $krypattu = md5($salt . $paivays);
 
-
-    $salt2 = "CR74ever";
-    $paivays = "" . date("h:i:s") . "";
-
-    $krypattu2 = md5($salt2 . $paivays);
+   $uniqid = uniqid('', true);
+   $krypattu2 = md5($uniqid);
+   
     $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
     $etunimi = $siivottuetunimi;

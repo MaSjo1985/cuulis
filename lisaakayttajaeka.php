@@ -1,9 +1,10 @@
 <?php
 ob_start();
-ob_start();
+
+
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Vahvistusta odottavat käyttäjät </title>
+<title> Lisää käyttäjä </title>
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>
@@ -24,19 +25,17 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         echo'<div class="cm8-container7">';
         if ($_SESSION["Rooli"] == "admin") {
-            echo'<nav class="topnavoppilas" id="myTopnav">';
+            echo'<nav class="topnav" id="myTopnav">';
             echo'<a href="etusivu.php" >Etusivu</a>          
 <script>
 function myFunction(y) {
   y.classList.toggle("change");
     var x = document.getElementById("myTopnav");
-   if (x.className === "topnavoppilas") {
-
+    if (x.className === "topnav") {
         x.className += " responsive";
     } else {
-        x.className = "topnavoppilas";
+        x.className = "topnav";
     }
-
 }
 </script>     
 <a href="oppilaitokset.php" >Oppilaitokset</a>
@@ -53,7 +52,7 @@ function myFunction(y) {
 function myFunction(y) {
   y.classList.toggle("change");
     var x = document.getElementById("myTopnav");
-      if (x.className === "topnavoppilas") {
+   if (x.className === "topnavoppilas") {
 
         x.className += " responsive";
     } else {
@@ -127,27 +126,65 @@ function myFunction2(y) {
 //    }
 
         echo'</nav>';
-        echo'<div class="cm8-container3">';
-        echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
-        echo'<div class="cm8-margin-top"></div>';
+        echo'<div class="cm8-container7" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 60px; border: none ">';
 
-        echo '<p style="font-size:1.2em">Uuden käyttäjän lisäys onnistui!</p>';
 
-        echo '<br><br>';
-        echo '<a href="lisaakayttajaeka.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+echo'<div class="cm8-half" style="padding-right: 20px; padding-top: 0px">';
 
-        echo "</div>";
-        echo "</div>";
+echo'<form name="Form" id="myForm" onSubmit="return validateFormRek();" class="form-style-k" action="rekvali.php" method="post"><fieldset>';
 
-        include("footer.php");
+echo'<legend>Lisää uusi käyttäjä</legend>
+   <br><p>Valitse, missä roolissa haluat rekisteröidä käyttäjän Cuulis-oppimisympäristöön:</p><br>';
+   
+
+echo'<select id="rooli" name="rooli"  onchange="changeFunc();">';
+echo' <option value="valitserooli" id="kelt" selected>Valitse rooli';
+
+  echo '<option value="opiskelija"> Opiskelija';
+  echo '<option value="opettaja"> Opettaja';
+ 
+echo'</select>';
+echo'</p>';
+echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+     <p class="eimitaan"></p>
+</div>';
+echo'<br><input id="button" type="submit" onclick="validateFormRek()" value="&#10003 Valitse">';
+echo'<input type="hidden" name="admin" value="1">';
+echo'<br> </fieldset> </form>';
+
+
+
+
+echo "</div></div><div></div></div>";
+include("footer.php");
     }
-} else {
+   } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminen.php?url=" . $url);
 }
+	
 ?>
+<script type="text/javascript">
 
+   function changeFunc() {
+        var div4 = document.getElementById("divID4");
+    document.getElementById("rooli").style.backgroundColor = "white";
+        div4.style.padding = "10px 60px 10px 0px";
+
+        div4.innerHTML = "";
+   }
+
+  </script>
+<script>
+    var input = document.getElementById("sposti");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button").click();
+        }
+    });
+</script>
 </body>
-</html>	
+</html>

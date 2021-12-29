@@ -143,9 +143,9 @@ echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-
 
 echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm4ope();" action="rekisterointitarkistusope.php" method="post"><fieldset>';
 
-echo' <legend>Rekisteröityminen</legend>';
+echo' <legend>Rekisteröidy opettajana Cuulis-oppimisympäristöön</legend>';
 
-echo '<a href="kirjautuminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
+echo '<a href="rekisteroityminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
 echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
 
 

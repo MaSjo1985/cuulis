@@ -233,7 +233,7 @@ function myFunction(y) {
   <a href="kayttajatopettajat.php" >Opettajat</a>
   <a href="kayttajatopiskelijat.php">Opiskelijat</a> 
   <a href="kayttajatmuut.php" class="currentLink3">Muut käyttäjät</a>
- <a href="lisaakayttaja.php">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
+ <a href="lisaakayttajaeka.php">+ Lisää uusi käyttäjä</a><a href="javascript:void(0);" class="icon" onclick="myFunction2(this)"><div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div></a>';
         echo'

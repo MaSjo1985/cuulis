@@ -358,16 +358,17 @@ function myFunction(y) {
 <legend style="margin-left: 0px">Luo käyttäjälle uusi salasana:</legend>
 
 
-	<p>Uusi salasana:<br>
+	<br><p>Uusi salasana:<br>
     
-<input type="password" style="width: 80%" id="uusi" name="Salasana">
+<input type="password" style="width: 80%" id="uusi" name="Salasana" placeholder="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
-</div>    <br>
-	<p>Toista uusi salasana:<br>
+</div>    
+	
+       <br><p>Toista uusi salasana:<br>
 
-<input type="password" style="width: 80%" id="uusi2" name="UusiSalasana">
+<input type="password" style="width: 80%" id="uusi2" name="UusiSalasana" placeholder="Toista uusi salasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
@@ -396,6 +397,25 @@ function myFunction(y) {
     header("location: kirjautuminen.php?url=" . $url);
 }
 ?>
+<script type="text/javascript">
+$('#uusi').on('keyup', function() {
+      var div2 = document.getElementById("divID2");
+    document.getElementById("uusi").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#uusi2').on('keyup', function() {
+      var div3 = document.getElementById("divID3");
+    document.getElementById("uusi2").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
+ 
 <script>
     $(function () {
 

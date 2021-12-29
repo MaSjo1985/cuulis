@@ -2702,6 +2702,7 @@ function validateForm4ope()
 
         ok = 1;
     }
+
     if(!document.getElementById('kayttoehdot').checked){
         
         document.getElementById("kayttoehdotl").style.backgroundColor = "yellow";
@@ -2710,39 +2711,46 @@ function validateForm4ope()
         div5.innerHTML = "Käyttöehdot on hyväksyttävä!";
         ok=1;
     }
- 
+  
     if (ok == 1) {
+      
         return false;
     } else {
 
-
-
-
         var username = $('#spostir').val();
         var returnVal = 0;
+        var admin = $('#admin').val();
       
         var okke = 0;
+       
         $.ajax({
             type: 'post',
             url: 'tarkistatunnusope.php',
-            data: {username: username},
+            data: {username: username, admin: admin},
             dataType: 'json',
             success: function (data) {
-              
+             
                 if (data.status == "success") {
                     document.getElementById("myForm").submit();
 
 
                 } else {
-     
+      document.getElementById("spostir").style.backgroundColor = "yellow";
 
         div3.style.padding = "10px 60px 10px 0px";
                     if (data.msg == 'virhe')
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                        div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
                     else{
                         
-                         div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity! <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+                        if(admin == 'admin'){
+                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity!';
 
+                        }
+                        else{
+                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity! <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+
+                        }
+                        
                     }
                        
                 }
@@ -2759,28 +2767,71 @@ function validateForm4ope()
 }
 function validateForm4opiskelija()
 {
-
+   var admin = $('#admin').val();
+    
     var ok = 0;
     var a = document.forms["Form"]["Sposti"].value;
     var b = document.forms["Form"]["Etunimi"].value;
-    var c = document.forms["Form"]["Sukunimi"].value;
+    var c = document.forms["Form"]["Sukunimi"].value; 
     var d = document.forms["Form"]["koulu"].value;
+
     var div1 = document.getElementById("divID");
     var div2 = document.getElementById("divID2");
     var div3 = document.getElementById("divID3");
+ 
     var div4 = document.getElementById("divID4");
      var div5 = document.getElementById("divID5");
+     
     div1.innerHTML = "";
     div2.innerHTML = "";
     div3.innerHTML = "";
+ 
     div4.innerHTML = "";
     div5.innerHTML = "";
 
     document.getElementById("etu").style.backgroundColor = "white";
     document.getElementById("suku").style.backgroundColor = "white";
-  
+ 
     document.getElementById("koulu").style.backgroundColor = "white";
+     
  document.getElementById("kayttoehdot").style.backgroundColor = "white";
+  
+    if(admin=='admin'){
+       
+          var e = document.forms["Form"]["Salasana"].value;
+    var f = document.forms["Form"]["UusiSalasana"].value;
+        var div6 = document.getElementById("divID6");
+    var div7 = document.getElementById("divID7");
+
+
+    div6.innerHTML = "";
+    div7.innerHTML = "";
+
+
+    document.getElementById("uusi").style.backgroundColor = "white";
+    document.getElementById("uusi2").style.backgroundColor = "white";
+      if (e == null || e == "")
+    {
+        document.getElementById("uusi").style.backgroundColor = "yellow";
+        div6.style.padding = "10px 0px 20px 0px";
+        div6.innerHTML = '<b style="font-size: 0.8em">Anna salasana!</b>';
+
+        ok = 1;
+    }
+    if (f == null || f == "")
+    {
+
+        document.getElementById("uusi2").style.backgroundColor = "yellow";
+        div7.style.padding = "10px 0px 10px 0px";
+        div7.innerHTML = '<b style="font-size: 0.8em">Toista salasana!s</b>';
+
+        ok = 1;
+    }
+     
+    }
+  
+
+    
     if (b == null || b == "")
     {
 
@@ -2824,6 +2875,7 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
 
         ok = 1;
     }
+   
      if(!document.getElementById('kayttoehdot').checked){
         
         document.getElementById("kayttoehdotl").style.backgroundColor = "yellow";
@@ -2838,12 +2890,15 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
 
         var username = $('#spostir').val();
         var returnVal = 0;
-       
+         var admin = $('#admin').val();
+         
+        var uusi = $('#uusi').val();
+        var uusi2 = $('#uusi2').val();
         var okke = 0;
         $.ajax({
             type: 'post',
             url: 'tarkistatunnusopiskelija.php',
-            data: {username: username},
+            data: {username: username, admin: admin, uusi: uusi, uusi2: uusi2},
             dataType: 'json',
             success: function (data) {
               
@@ -2854,9 +2909,63 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
 
                 } else {
 
-            
+                    if(data.msg =='salasana ja rek'){
+                         document.getElementById("uusi").style.backgroundColor = "yellow";
+
+
+                    div6.style.padding = "10px 60px 10px 0px";
+                    div6.innerHTML =  '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                         document.getElementById("uusi2").style.backgroundColor = "yellow";
+
+
+                    div7.style.padding = "10px 60px 10px 0px";
+                    div7.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                    
+                     document.getElementById("spostir").style.backgroundColor = "yellow";
+                    if(admin=='admin'){
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+
+                    }
+                    else{
                         div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
 
+                    }
+                    }
+                    else   if(data.msg =='pelkka salasana'){
+                        
+                               document.getElementById("uusi").style.backgroundColor = "yellow";
+
+
+                    div6.style.padding = "10px 60px 10px 0px";
+                    div6.innerHTML =  '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                         document.getElementById("uusi2").style.backgroundColor = "yellow";
+
+
+                    div7.style.padding = "10px 60px 10px 0px";
+                    div7.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                    
+                        
+                        
+                    }
+                     else   if(data.msg =='pelkka rek'){
+                         document.getElementById("spostir").style.backgroundColor = "yellow";
+                    if(admin=='admin'){
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+
+                    }
+                    else{
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
+
+                    }
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                   
+                        
                 }
             }
         });
@@ -3659,7 +3768,11 @@ function validateForm10()
 
                 } else {
 
+ document.getElementById("uusi").style.backgroundColor = "yellow";
 
+
+                    div2.style.padding = "10px 60px 10px 0px";
+                    div2.innerHTML = 'Salasanat eivät vastaa toisiaan!';
                     document.getElementById("uusi2").style.backgroundColor = "yellow";
 
 

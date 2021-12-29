@@ -1,46 +1,45 @@
-UUDEN KÄYTTÄJÄN REKISTERÖINTI ADMININ TOIMESTA! 
-* kaikki tarvittavat uudet jutut
-* kun käyttäjä rekisteröityy ekan kerran käyttöehdot pitää hyväksyä
+1) UUSI KIRJAUTUMINEN
+
+-> tarkistetaan onko käyttöehdot hyväksytty + onko salasana nollattu, jos on -> salasanan vaihto
 
 
-* VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
-+++++ MIETI KAIKKI MISSÄ LUKEE SÄHKÖPOSTI ++++++++++++++++++
-
-
-* KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:
-sähköpostiosoite -> käyttäjätunnus
-
-
-* KUN ADMIN VAIHTAA SALASANAN:
--> tietokantaan tieto vaihdosta, nollausyritykset = 1 -> ei voi käyttää adminin salasanaa uudestaan
--> heti uus salasana -> tietokantaan vaihto ja yritykset nollaksi
-
-
-VAIHDA KIRJAUTUMINEN.PHP -> KIRJAUTUMINENUUSI.PHP
-
-
-KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
--> kayttoehdot_opettaja.php + kayttoehdot_opiskelija.php  : KATO MALLIA tietoa.php
--> tietokannassa kayttoehdot_hyvaksytty (0/1)
+2) ADMIN VAIHTAA SALASANAN: tietokantaan nollattu = 1
 
 
 
-* VANHAT OPETTAJAT -> KÄYTTÖEHDOT HYVÄKSYTTÄVÄ SEURAAVAN KIRJAUTUMISEN YHTEYDESSÄ 
--> uus tarkistuskoodi   
-$uniqid = uniqid('', true);
-    $krypattu2 = md5($uniqid);
-
-* VANHAT OPISKELIJAT:
-kirjautuminenuusi.php:  
--> hae kirjautumisen jälkeen aina onko uusitunnus (0/1)
--> jos ei ohjaa vaihtamaan käyttäjätunnus
--> käyttöehdot pitää hyväksyä
--> uus tarkistuskoodi   
-$uniqid = uniqid('', true);
-$krypattu2 = md5($uniqid);
+3) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
 
 
-* EVÄSTEET?!!?!
+4) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
+
+-> OPEN SÄHKÖPOSTISSA -> linkki salasanan vaihtoon + käyttöehdot pitää hyväksyä
+
+-> OPISKELIJA KIRJAUTUU EKAN KERRAN ADMININ SALASANALLA -> salasanan vaihto + käyttöehdot pitää hyväksyä + tietokannassa nollattu = 1
+
+
+
+
+5) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+
+
+
+6) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+
+
+
+7) KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
+
+
+8) VANHAT OPISKELIJAT
+
+
+9) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+
+
+10) EVÄSTEET?!!?!
+
+
+
 
 *******************************************************''''
 

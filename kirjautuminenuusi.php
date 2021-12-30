@@ -145,7 +145,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:40px; 
 
 
 echo
-'<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5uusi()" action="tarkistus.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
+'<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5()" action="tarkistusuusi.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
 <legend>Kirjaudu sisään:</legend>   
 
 <br><input type="email"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
@@ -165,7 +165,7 @@ echo
 if (isset($_GET[url])) {
     echo'<input type="hidden" value=' . $_GET[url] . ' name="url">';
 }
-echo'<br><br><input id="button" type="button" onclick="validateForm5uusi()" value="&#10003 &nbsp Kirjaudu" ><br>
+echo'<br><br><input id="button" type="button" onclick="validateForm5()" value="&#10003 &nbsp Kirjaudu" ><br>
 
 
 <br><a href="tunnustenkyselyuusieka.php" style="font-weight: bold" >Onko käyttäjätunnus tai salasana unohtunut?</a>
@@ -182,6 +182,24 @@ echo '
 
 include("footer.php");
 ?>
+<script type="text/javascript">
+$('#sposti').on('keyup', function() {
+      var div1 = document.getElementById("divID");
+    document.getElementById("sposti").style.backgroundColor = "white";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#salasana').on('keyup', function() {
+      var div1 = document.getElementById("divID2");
+    document.getElementById("salasana").style.backgroundColor = "white";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "";
+});
+ </script>
 <script>
     var input = document.getElementById("salasana");
     var text = document.getElementById("text");

@@ -1,13 +1,12 @@
 <?php
 ob_start();
 
-echo'
-<!DOCTYPE html>
+session_start(); // ready to go!
+echo'<!DOCTYPE html>
 <html>
- 
 <head>
 
-<title> Rekisteröityminen</title>
+<title>Vaihda salasana</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -24,12 +23,12 @@ echo'
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css"> <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Neucha" /><link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="csscm/jquery-ui.css" rel="stylesheet" />
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
   <link rel="stylesheet" href="/resources/demos/style.css">
+  <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="jscm/jquery.timepicker.css" /><link rel="stylesheet" type="text/css" href="jscm/jquery.datepicker.css" />
 <link rel="shortcut icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="css/TimeCircles.css" />
- 
+  
 
 <link href="ulkoasu.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -43,6 +42,7 @@ echo'
 
   <body onload="lataa2()">';
 $browser = $_SERVER['HTTP_USER_AGENT'];
+
 
 
 
@@ -121,143 +121,114 @@ echo'</div>';
 
     });
 
-
-
 </script>
 
-
 <?php
-ob_start();
 if ((strpos($browser, 'Android'))) {
-    echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';
+    echo'<div class="cm8-container" style="padding-top: 20px; padding-bottom: 10px;padding-left: 20px">';
 
     echo'<a href="lataasovellus.php" class="cm8-linkk4">Lataa uusi Cuulis-sovellus Androidille &nbsp&nbsp&nbsp <i class="fa fa-download" style="font-size:0.9em"></i> </a>';
 
     echo'</div>';
 }
 
-echo'<div class="cm8-container7" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 60px; ">';
-
-
-echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-top: 0px; margin-top: 0px">';
-
-echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm4ope();" action="rekisterointitarkistusope.php" method="post"><fieldset>';
-
-echo' <legend>Rekisteröidy opettajana Cuulis-oppimisympäristöön</legend>';
-
-echo '<a href="rekisteroityminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
-echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
+echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
 
 
 
+        echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
-echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
- 
-<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 30%"></p>
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
+        echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9(this);" action="vaihdasalasana2.php" method="post"><fieldset>';
+        echo"<legend>Vaihda salasana</legend>";
+        echo'<br><br><b style="color:red">Ylläpitäjä on antanut sinulle salasanan. Sinun tulee nyt vaihtaa tämä salasana</b><br> <br>';
+
+        echo'<br><p><b>Uusi salasana: </b> <b style="color: red">*</b><br><br>
+             
+<input type="password" id="salasana" style="width: 50%" placeholder="Uusi salasana" name="Salasana">
+  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
-<br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
 
-<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 30%"></p>
+<br><p><b>Toista uusi salasana: 	</b>  <b style="color: red">*</b><br><br>
+             
+<input type="password" id="salasana2" placeholder="Toista uusi salasana" style="width: 50%" name="UusiSalasana">
+  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+    <p class="eimitaan"></p>
+</div>  
 
-
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
- <p class="eimitaan"></p>
-</div>
-<br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: red">*</b><br><br>
-
-<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 50%"></p>';
-
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
-   <p class="eimitaan"></p>
-</div>';
-
-if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
-    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-}
-
-echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b>
-<br>';
-echo'<p style="margin-top: 5px; font-size: 0.7em; font-weight:normal">(Voit myöhemmin liittyä myös muihin oppilaitoksiin.)</p><br>';
-echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
-echo' <option value="valitsekoulu" selected>Valitse oppilaitos';
-
-while ($rowko = $resultkoulut->fetch_assoc()) {
-    if ($rowko[id] != 19) {
-        echo '<option value=' . $rowko[id] . '>' . $rowko[Nimi];
-    }
-}
-echo'</select></p>';
-
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
-     <p class="eimitaan"></p>
-</div>';
-echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn <a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;" target="_blank"> käyttöehdot </a><b style="color: red">*</b></label></p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
-     <p class="eimitaan"></p>
-</div>';
-
-echo'<div id="username_availability_result"></div>  
-<input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4ope()" value="&#10003 Rekisteröidy" >
-	</fieldset></form>';
-echo'</div>';
+		<input type="hidden" name="id" value=' . $_SESSION[Id] . '> <br>
+                    <input type="hidden" name="url" value=' . $_GET[url] . '> <br>
+		<input type="button" id="button" onclick="validateForm9(this)" value="&#10003 Tallenna" class="myButton9">
+		</fieldset></form>';
 
 
 echo '</div>';
 echo '</div>';
+
 include("footer.php");
 ?>
 <script type="text/javascript">
-function isChecked() {
-     var div5 = document.getElementById("divID5");
-    document.getElementById("kayttoehdotl").style.backgroundColor = "white";
-        div5.style.padding = "10px 60px 10px 0px";
-
-        div5.innerHTML = "";
-}
- </script>
-<script type="text/javascript">
-$('#etu').on('keyup', function() {
-      var div1 = document.getElementById("divID");
-    document.getElementById("etu").style.backgroundColor = "white";
-        div1.style.padding = "10px 60px 10px 0px";
-
-        div1.innerHTML = "";
-});
- </script>
- <script type="text/javascript">
-$('#suku').on('keyup', function() {
-      var div2 = document.getElementById("divID2");
-    document.getElementById("suku").style.backgroundColor = "white";
+$('#salasana').on('keyup', function() {
+      var div2 = document.getElementById("divID");
+    document.getElementById("salasana").style.backgroundColor = "white";
         div2.style.padding = "10px 60px 10px 0px";
 
         div2.innerHTML = "";
 });
  </script>
  <script type="text/javascript">
-$('#spostir').on('keyup', function() {
-      var div3 = document.getElementById("divID3");
-    document.getElementById("spostir").style.backgroundColor = "white";
+$('#salasana2').on('keyup', function() {
+      var div3 = document.getElementById("divID2");
+    document.getElementById("salasana2").style.backgroundColor = "white";
         div3.style.padding = "10px 60px 10px 0px";
 
         div3.innerHTML = "";
 });
  </script>
-<script type="text/javascript">
-
-   function changeFunc() {
-        var div4 = document.getElementById("divID4");
-    document.getElementById("koulu").style.backgroundColor = "white";
-        div4.style.padding = "10px 60px 10px 0px";
-
-        div4.innerHTML = "";
-   }
-
-  </script>
 <script>
-    var input = document.getElementById("etu");
+    $(function () {
+
+        $("#show1").on("click", function () {
+            var x = $("#salasana");
+            if (x.attr('type') === "password") {
+                x.attr('type', 'text');
+                $(this).removeClass('fa fa-eye-slash');
+                document.getElementById('show1').setAttribute('title', 'Piilota salasana');
+                $(this).addClass('fa fa-eye');
+            } else {
+                x.attr('type', 'password');
+                $(this).removeClass('fa fa-eye');
+                $(this).addClass('fa fa-eye-slash');
+                document.getElementById('show1').setAttribute('title', 'Näytä salasana');
+            } // End of if
+        })// End of click event
+
+    });
+</script>
+<script>
+    $(function () {
+
+        $("#show2").on("click", function () {
+            var x = $("#salasana2");
+            if (x.attr('type') === "password") {
+                x.attr('type', 'text');
+                $(this).removeClass('fa fa-eye-slash');
+                document.getElementById('show2').setAttribute('title', 'Piilota salasana');
+                $(this).addClass('fa fa-eye');
+            } else {
+                x.attr('type', 'password');
+                $(this).removeClass('fa fa-eye');
+                $(this).addClass('fa fa-eye-slash');
+                document.getElementById('show2').setAttribute('title', 'Näytä salasana');
+            } // End of if
+        })// End of click event
+
+    });
+</script>
+<script>
+    var input = document.getElementById("salasana");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
@@ -266,16 +237,7 @@ $('#spostir').on('keyup', function() {
     });
 </script>
 <script>
-    var input = document.getElementById("suku");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
-<script>
-    var input = document.getElementById("spostir");
+    var input = document.getElementById("salasana2");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
@@ -284,4 +246,4 @@ $('#spostir').on('keyup', function() {
     });
 </script>
 </body>
-</html>	
+</html>			

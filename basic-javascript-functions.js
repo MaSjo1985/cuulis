@@ -2823,7 +2823,7 @@ function validateForm4opiskelija()
 
         document.getElementById("uusi2").style.backgroundColor = "yellow";
         div7.style.padding = "10px 0px 10px 0px";
-        div7.innerHTML = '<b style="font-size: 0.8em">Toista salasana!s</b>';
+        div7.innerHTML = '<b style="font-size: 0.8em">Toista salasana!</b>';
 
         ok = 1;
     }
@@ -2974,6 +2974,31 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
         return false;
 
 
+    }
+
+
+}
+function validateFormKe()
+{
+
+    var div5 = document.getElementById("divID5");
+    document.getElementById("kayttoehdot").style.backgroundColor = "white";
+var ok=0;
+
+
+     if(!document.getElementById('kayttoehdot').checked){
+        
+        document.getElementById("kayttoehdotl").style.backgroundColor = "yellow";
+        div5.style.padding = "10px 60px 10px 0px";
+
+        div5.innerHTML = "Käyttöehdot on hyväksyttävä!";
+        ok=1;
+    }
+    if (ok == 1) {
+        return false;
+    } else {
+ document.getElementById("myForm").submit();
+       
     }
 
 
@@ -4048,6 +4073,7 @@ function validateForm9(f)
 
 
         var okke = 0;
+        
         $.ajax({
             type: 'post',
             url: 'tarkistavaihto3.php',
@@ -4055,6 +4081,7 @@ function validateForm9(f)
             dataType: 'json',
             success: function (data) {
                 if (data.status == "success") {
+                    
                     document.getElementById("myForm").submit();
 
                 } else {
@@ -4069,14 +4096,14 @@ function validateForm9(f)
                     div2.style.padding = "10px 60px 20px 0px";
                     div2.innerHTML = 'Salasanat eivät vastaa toisiaan!';
 
-
+return false;
 
                 }
             }
         });
 
 
-        return false;
+        return true;
 
 
     }

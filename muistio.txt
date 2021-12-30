@@ -2,35 +2,33 @@
 
 -> tarkistetaan onko käyttöehdot hyväksytty + onko salasana nollattu, jos on -> salasanan vaihto
 
+HUOM!! JOS EI HYVÄKSY EIKÄ VAIHDA NIIN SESSION PITÄÄ TUHOTA!!!
 
-2) ADMIN VAIHTAA SALASANAN: tietokantaan nollattu = 1
-
-
-
-3) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
+TESTAA edu.hel.fi ja u97506
 
 
-4) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
-
--> OPEN SÄHKÖPOSTISSA -> linkki salasanan vaihtoon + käyttöehdot pitää hyväksyä
-
--> OPISKELIJA KIRJAUTUU EKAN KERRAN ADMININ SALASANALLA -> salasanan vaihto + käyttöehdot pitää hyväksyä + tietokannassa nollattu = 1
+2) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
 
 
+3) SALASANAN SALT TURVALLISEMMAKSI
 
 
-5) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+4) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
 
 
+5) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
 
-6) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+
+6) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 
 
 
-7) KÄYTTÖEHDOT PITÄÄ TEHDÄ!!
+7) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
-8) VANHAT OPISKELIJAT
+
+8) KÄYTTÖEHDOT PITÄÄ TEHDÄ!!   kayttoehdot.php -> Kato mallia tietoa.php
+
 
 
 9) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php

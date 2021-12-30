@@ -193,7 +193,7 @@ echo'</select></p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
-echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn <a href="kayttoehdot_opettaja.php" style="border-bottom:1px solid blue; color: blue;"> käyttöehdot </a><b style="color: red">*</b></label></p>';
+echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn <a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;" target="_blank"> käyttöehdot </a><b style="color: red">*</b></label></p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
      <p class="eimitaan"></p>
 </div>';

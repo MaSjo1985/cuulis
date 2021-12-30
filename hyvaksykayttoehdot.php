@@ -1,13 +1,13 @@
 <?php
 ob_start();
-
+session_start();
 echo'
 <!DOCTYPE html>
 <html>
  
 <head>
 
-<title> Rekisteröityminen</title>
+<title>Käyttöehtojen hyväksyminen</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -141,66 +141,20 @@ echo'<div class="cm8-container7" style="padding-top: 0px; margin-top: 0px; margi
 
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-top: 0px; margin-top: 0px">';
 
-echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm4ope();" action="rekisterointitarkistusope.php" method="post"><fieldset>';
+echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateFormKe();" action="hyvaksykayttoehdot2.php" method="post"><fieldset>';
 
-echo' <legend>Rekisteröidy opettajana Cuulis-oppimisympäristöön</legend>';
+echo' <legend>Hyväksy käyttöehdot</legend>';
 
-echo '<a href="rekisteroityminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
-echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
+echo'<br><b style="color: red; font-size: 1em">Ennen seuraavaa kirjautumista sinun on vielä hyväksyttävä<br><a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;"> Cuulis-oppimisympäristön käyttöehdot. </a></b><br>';
 
-
-
-
-echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
- 
-<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 30%"></p>
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
-    <p class="eimitaan"></p>
-</div>
-<br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
-
-<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 30%"></p>
-
-
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
- <p class="eimitaan"></p>
-</div>
-<br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: red">*</b><br><br>
-
-<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 50%"></p>';
-
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
-   <p class="eimitaan"></p>
-</div>';
-
-if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
-    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-}
-
-echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b>
-<br>';
-echo'<p style="margin-top: 5px; font-size: 0.7em; font-weight:normal">(Voit myöhemmin liittyä myös muihin oppilaitoksiin.)</p><br>';
-echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
-echo' <option value="valitsekoulu" selected>Valitse oppilaitos';
-
-while ($rowko = $resultkoulut->fetch_assoc()) {
-    if ($rowko[id] != 19) {
-        echo '<option value=' . $rowko[id] . '>' . $rowko[Nimi];
-    }
-}
-echo'</select></p>';
-
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
-     <p class="eimitaan"></p>
-</div>';
-echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn <a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;" target="_blank"> käyttöehdot </a><b style="color: red">*</b></label></p>';
+echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn käyttöehdot <b style="color: red">*</b></label></p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
      <p class="eimitaan"></p>
 </div>';
-
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4ope()" value="&#10003 Rekisteröidy" >
+<input type="hidden" id="url" value="'.$_GET[URL].'">
+<br><input id="button" type="button" onclick="validateFormKe()" value="&#10003 Hyväksy" ><br>
 	</fieldset></form>';
 echo'</div>';
 
@@ -218,70 +172,7 @@ function isChecked() {
         div5.innerHTML = "";
 }
  </script>
-<script type="text/javascript">
-$('#etu').on('keyup', function() {
-      var div1 = document.getElementById("divID");
-    document.getElementById("etu").style.backgroundColor = "white";
-        div1.style.padding = "10px 60px 10px 0px";
 
-        div1.innerHTML = "";
-});
- </script>
- <script type="text/javascript">
-$('#suku').on('keyup', function() {
-      var div2 = document.getElementById("divID2");
-    document.getElementById("suku").style.backgroundColor = "white";
-        div2.style.padding = "10px 60px 10px 0px";
 
-        div2.innerHTML = "";
-});
- </script>
- <script type="text/javascript">
-$('#spostir').on('keyup', function() {
-      var div3 = document.getElementById("divID3");
-    document.getElementById("spostir").style.backgroundColor = "white";
-        div3.style.padding = "10px 60px 10px 0px";
-
-        div3.innerHTML = "";
-});
- </script>
-<script type="text/javascript">
-
-   function changeFunc() {
-        var div4 = document.getElementById("divID4");
-    document.getElementById("koulu").style.backgroundColor = "white";
-        div4.style.padding = "10px 60px 10px 0px";
-
-        div4.innerHTML = "";
-   }
-
-  </script>
-<script>
-    var input = document.getElementById("etu");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
-<script>
-    var input = document.getElementById("suku");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
-<script>
-    var input = document.getElementById("spostir");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
 </body>
 </html>	

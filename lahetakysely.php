@@ -4,10 +4,17 @@ ob_start();
 
 echo'<!DOCTYPE html>
 <html>
-<head>
+<head>';
+
+if($_POST[akt] == 1){
+  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+}
+else{
+ echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
+}
 
 
-<title> Unohtunut salasana </title>';
+
 
 
 include("yhteys.php");
@@ -31,9 +38,13 @@ $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
 //$headers        .= 'X-Priority: Normal' . PHP_EOL;
 //$headers        .= ($html) ? 'MIME-Version: 1.0' . PHP_EOL : '';
 //$headers        .= ($html) ? 'Content-type: text/html; charset=iso-8859-1' . PHP_EOL : '';
+if($_POST[akt] == 1){
+    $otsikko = "Cuulis-oppimisympäristön käyttäjätunnuksen uudelleenaktivointilinkki";
+}
+else{
+    $otsikko = "Cuulis-oppimisympäristön salasanan vaihtolinkki";
+}
 
-
-$otsikko = "Cuulis-oppimisympäristön käyttäjätunnuksen uudelleenaktivointi";
 $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 
@@ -55,9 +66,10 @@ if (!$tulos2 = $db->query("select distinct sposti from kayttajat where rooli='ad
 }
 
 if ($stmt->num_rows == 1) {
-    $salt2 = "CR74eve";
-    $paivays = "" . date("h:i:s") . "";
-    $tarkistuskoodi = md5($salt2 . $paivays);
+    
+    $uniqid = uniqid('', true);
+  
+    $tarkistuskoodi = md5($uniqid);
 
     while ($stmt->fetch()) {
         $sposti = $column1;
@@ -75,9 +87,15 @@ if ($stmt->num_rows == 1) {
 
     $stmt2->execute();
 
+if($_POST[akt] == 1){
+   $kysely = 'Cuulis-oppimisympäristön käyttäjätunnuksesi on nyt aktivoitu uudelleen.<br><br>Käy antamassa uusi salasana <a href="https://cuulis.cm8solutions.fi/uudelleenaktivointi.php?tk=' . $tarkistuskoodi . '">tästä linkistä</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
-    $kysely = 'Cuulis-oppimisympäristön käyttäjätunnuksesi on nyt aktivoitu uudelleen.<br><br>Voit käydä vaihtamassa salasanasi <a href="https://cuulis.cm8solutions.fi/uudelleenaktivointi.php?tk=' . $tarkistuskoodi . '">tästä</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+}
+else{
+  $kysely = 'Voit käydä vaihtamassa Cuulis-oppimisympäristön salasanasi <a href="https://cuulis.cm8solutions.fi/uudelleenaktivointi.php?tk=' . $tarkistuskoodi . '">tästä linkistä</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
+}
+  
     $kysely = str_replace("\n.", "\n..", $kysely);
 
     $body = '<html><body>';
@@ -92,15 +110,15 @@ if ($stmt->num_rows == 1) {
     }
 
 
-    $kysely2 = 'Cuulis-oppimisympäristöstä on lähetetty salasanan uudelleenaktivointilinkki osoitteeseen: ' . $siivottusposti . '.';
+    $kysely2 = 'Cuulis-oppimisympäristöstä on lähetetty käyttäjätunnuksen uudelleenaktivointilinkki osoitteeseen: ' . $siivottusposti . '.';
 //    $viesti2 = mail($sposti2, $otsikko, $kysely2, $headers);
 
 
     if ($viesti) {
-        header("location: lahetakysely2.php");
+        header("location: lahetakysely2.php?akt=".$_POST[akt]);
     } else {
         echo "<br>Viestin lähettäminen ei onnistunut. Yritä uudelleen!";
-        echo '<br><br><a href="tunnustenkysely.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+        echo '<br><br><a href="tunnustenkysely.php?akt='.$_POST[akt].'"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
     }
 } else {
     echo '<br>Sähköpostiosoitetta ei ole rekisteröity. <a href="tunnustenkysely.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Yritä uudelleen </a>';

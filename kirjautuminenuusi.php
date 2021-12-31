@@ -145,10 +145,10 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:40px; 
 
 
 echo
-'<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5()" action="tarkistusuusi.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
+'<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5uusi()" action="tarkistusuusi.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
 <legend>Kirjaudu sisään:</legend>   
 
-<br><input type="email"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
+<br><input type="text"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
 <div style="color: red; font-weight: bold; padding: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
@@ -165,7 +165,7 @@ echo
 if (isset($_GET[url])) {
     echo'<input type="hidden" value=' . $_GET[url] . ' name="url">';
 }
-echo'<br><br><input id="button" type="button" onclick="validateForm5()" value="&#10003 &nbsp Kirjaudu" ><br>
+echo'<br><br><input id="button" type="button" onclick="validateForm5uusi()" value="&#10003 &nbsp Kirjaudu" ><br>
 
 
 <br><a href="tunnustenkyselyuusieka.php" style="font-weight: bold" >Onko käyttäjätunnus tai salasana unohtunut?</a>

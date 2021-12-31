@@ -2,10 +2,15 @@
 ob_start();
 echo'<!DOCTYPE html>
 <html>
-<head>
+<head>';
 
-<title>Tunnuksen uudelleen aktivointi</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if($_GET[akt] == 1){
+  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+}
+else{
+ echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
+}
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -132,9 +137,16 @@ if ((strpos($browser, 'Android'))) {
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
+if($_GET[akt] == 1){
+    echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit aktivoida käyttäjätunnuksesi uudelleen<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei ole saapunut jonkin ajan kuluttua.</p></b> ';
 
-echo '<br><b>Tunnuksen aktivointilinkki on lähetetty antamaasi sähköpostiosoitteeseen.<br><p style="color: #c7ef00">Huom! Tarkista <u>roskapostilaatikko</u>, jos viestiä ei näy.</p></b> ';
-echo '<br><a href="etusivu.php">Palaa etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a></p>';
+}
+else{
+     echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit vaihtaa salasanasi<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy jonkin ajan kuluttua.</p></b> ';
+
+}
+
+echo '<br><a href="etusivu.php">Jatka etusivulle &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a></p>';
 
 
 echo "</div>";

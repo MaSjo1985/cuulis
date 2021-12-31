@@ -4,7 +4,7 @@ echo'<!DOCTYPE html>
 <html>
 <head>
 
-<title>Tunnuksen uudelleen aktivointi</title>
+<title>Salasanan vaihto</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -151,15 +151,15 @@ if ($tulos->num_rows == 1 && ($rooli == 'opiskelija' || ($rooli <> 'opiskelija' 
 
     echo'<p><b>Uusi salasana:</b><br>
                   
-<input type="password" style="width: 50%" id="salasana" name="Salasana">
+<input type="password" style="width: 50%" id="salasana" placeholder="Uusi salasana" name="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 <div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div> 
 
-<p><b>Uusi salasana uudelleen:</b><br>
+<p><b>Toista uusi salasana:</b><br>
               
-<input type="password" style="width: 50%" id="salasana2" name="UusiSalasana">
+<input type="password" style="width: 50%" id="salasana2" placeholder="Toista uusi salasana" name="UusiSalasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 
 <div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
@@ -185,6 +185,24 @@ echo "</div>";
 
 include("footer.php");
 ?>
+<script type="text/javascript">
+$('#salasana').on('keyup', function() {
+      var div2 = document.getElementById("divID");
+    document.getElementById("salasana").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#salasana2').on('keyup', function() {
+      var div3 = document.getElementById("divID2");
+    document.getElementById("salasana2").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     $(function () {
 

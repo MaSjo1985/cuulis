@@ -153,13 +153,13 @@ echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakoll
 
 echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
  
-<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 30%"></p>
+<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 60%"></p>
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
     <p class="eimitaan"></p>
 </div>
 <br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
 
-<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 30%"></p>
+<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 60%"></p>
 
 
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
@@ -167,7 +167,7 @@ echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
 </div>
 <br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: red">*</b><br><br>
 
-<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 50%"></p>';
+<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 60%"></p>';
 
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>

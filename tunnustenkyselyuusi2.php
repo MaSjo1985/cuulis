@@ -2,10 +2,15 @@
 ob_start();
 echo'<!DOCTYPE html>
 <html>
-<head>
+<head>';
 
-<title>Unohtunut käyttäjätunnus/salasana</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if($_POST[akt] == 1){
+  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+}
+else{
+ echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
+}
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -136,8 +141,13 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
 echo'<form name="Form" id="myForm" class="form-style-k"><fieldset>';
-echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>
-   <a href="tunnustenkyselyuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+if($_POST[akt]==1){
+    echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>';
+}
+else{
+    echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>';
+}
+   echo'<a href="tunnustenkyselyuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
 
    
 if (!$resultadmin = $db->query("select distinct * from koulut,koulunadminit, kayttajat where koulut.id='".$_POST[koulu]."' AND koulunadminit.kayttaja_id=kayttajat.id AND koulunadminit.koulu_id='".$_POST[koulu]."'")) {
@@ -150,9 +160,16 @@ while ($rowa = $resultadmin->fetch_assoc()) {
  $koulu = $rowa[Nimi];
 }
 
+if($_POST[akt]==1){
+    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän vaihtaa sinulle uuden salasanan</p>';
 
-echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia koulun '.$koulu.' ylläpitäjälle '.$nimi.' osoitteeseen &nbsp&nbsp <u> <a class="osoite" href="mailto: '.$sposti.'" style=" color: #080708;">'.$sposti.' </a></u> &nbsp&nbsp ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>
-<br><br>
+}
+else{
+    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>';
+
+}
+
+echo'<br><br>
  </fieldset></form>';
 
 

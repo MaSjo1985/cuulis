@@ -4758,13 +4758,17 @@ input[type=button]:focus{
     -webkit-border-radius:0px;
     border-radius:0px;
     font-size: inherit;
-    border: none;
-    color: #080708;  
+    border-bottom: 1px solid;
+    color: blue;  
     background-color: transparent;
 }
 
 .form-style-p .osoite:hover{
-}   
+     color: blue; 
+}  
+.form-style-k .osoite:hover{
+     color: blue; 
+}  
 
 
 
@@ -5368,7 +5372,7 @@ p.form-style-8 {
     -webkit-border-radius:0px;
     border-radius:0px;
     font-size: inherit;
- color: #b1006a;
+ color: blue;
     background-color: transparent;
   
 }

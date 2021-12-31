@@ -2747,7 +2747,7 @@ function validateForm4ope()
 
                         }
                         else{
-                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity! <br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity!';
 
                         }
                         
@@ -2927,7 +2927,7 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
 
                     }
                     else{
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
 
                     }
                     }
@@ -2954,7 +2954,7 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
 
                     }
                     else{
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!<br><br>Jos olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.</b>';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
 
                     }
                         
@@ -3271,7 +3271,7 @@ function validateForm5uusi()
         var okke = 0;
         $.ajax({
             type: 'post',
-            url: 'tarkistakirjautuminenuusi.php',
+            url: 'tarkistakirjautuminen.php',
             data: {username: username, password: password},
             dataType: 'json',
             success: function (data) {
@@ -3283,12 +3283,12 @@ function validateForm5uusi()
                     if (data.status == "error8") {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
 
-                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön! Jos et muista antamaasi käyttäjätunnusta, lähetä sähköpostia ylläpitäjälle osoitteeseen <u><a href="mailto: marianne.sjoberg@cm8solutions.fi" class="osoite">marianne.sjoberg@cm8solutions.fi.</a></u>';
+                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!';
                     } else if (data.status == "error9") {
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
 
-                        div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br>Voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkysely" class="osoite">painamalla tästä.</a></u>';
+                        div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br>Voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkyselyuusieka.php?akt=1" class="osoite">painamalla tästä.</a></u>';
                     } else if (data.status == "error1") {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
 
@@ -3297,7 +3297,7 @@ function validateForm5uusi()
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
 
-                        div2.innerHTML = 'Antamasi salasana on virheellinen! <b>Mikäli olet unohtanut salasanasi, voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkysely" class="osoite">painamalla tästä.</a></u>';
+                        div2.innerHTML = 'Antamasi salasana on väärä!';
                     }
 
 
@@ -3523,7 +3523,7 @@ function validateForm8()
     if (a == null || a == "")
     {
 
-        document.getElementById("sposti").style.backgroundColor = "yellow";
+        document.getElementById("spostir").style.backgroundColor = "yellow";
         div1.style.padding = "10px 60px 20px 0px";
         div1.innerHTML = "Anna sähköpostiosoite!";
 
@@ -3535,7 +3535,7 @@ function validateForm8()
         return false;
     } else {
 
-        var username = $('#sposti').val();
+        var username = $('#spostir').val();
 
         var returnVal = 0;
 
@@ -3554,13 +3554,13 @@ function validateForm8()
 
                     if (data.msg == "error") {
 
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
                         div1.style.padding = "10px 60px 20px 0px";
                         div1.innerHTML = 'Antamaasi sähköpostiosoitetta ei ole rekisteröity oppimisympäristöön!';
 
                     } else {
 
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
                         div1.style.padding = "10px 60px 20px 0px";
                         div1.innerHTML = 'Antamasi sähköpostiosoite on virheellinen!';
 

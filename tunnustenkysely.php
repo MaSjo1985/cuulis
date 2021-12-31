@@ -2,10 +2,15 @@
 ob_start();
 echo'<!DOCTYPE html>
 <html>
-<head>
+<head>';
 
-<title>Unohtunut tunnus/salasana</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if($_GET[akt] == 1){
+  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+}
+else{
+ echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
+}
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -135,22 +140,26 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
 echo'<form name="Form" id="myForm" onSubmit="return validateForm8();" class="form-style-k" action="lahetakysely.php" method="post"><fieldset>';
-echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>
-   <a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
+if($_GET[akt]==1){
+    echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>';
+}
+else{
+    echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>';
+}
+   echo'<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
 
 
 
-   <br><p>Anna Cuulis-oppimisympäristöön rekisteröimäsi käyttäjätunnus eli sähköpostiosoite:
-   <br><br><b style="color: red; font-size: 0.8em">Tunnuksen uudelleenaktivointilinkki tähän sähköpostiosoitteeseen. </b><br><br>
+   <br><p>Anna Cuulis-oppimisympäristöön rekisteröimäsi käyttäjätunnus eli sähköpostiosoite:<br><br>
  
-<input type="email" id="sposti" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 50%"></p>
+<input type="email" id="spostir" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 80%"></p>
     
 <div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
     <p style="padding: 0px" class="eimitaan" style="display: inline-block"></p>
 </div>
-
+<input type="hidden" name="akt" value="'.$_GET[akt].'">
 <br><input id="button" type="button" onclick="validateForm8()" value="&#10003 Lähetä">
-<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite" style="color:  #080708" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
+<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite"  href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
 <br>
  </fieldset> </form>';
 
@@ -160,6 +169,15 @@ echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>
 echo "</div></div>";
 include("footer.php");
 ?>
+ <script type="text/javascript">
+$('#spostir').on('keyup', function() {
+      var div3 = document.getElementById("divID");
+    document.getElementById("spostir").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     var input = document.getElementById("sposti");
     input.addEventListener("keyup", function (event) {

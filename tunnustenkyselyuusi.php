@@ -2,10 +2,15 @@
 ob_start();
 echo'<!DOCTYPE html>
 <html>
-<head>
+<head>';
 
-<title>Unohtunut käyttäjätunnus/salasana</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if($_GET[akt] == 1){
+  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+}
+else{
+ echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
+}
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -136,8 +141,13 @@ echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-r
 
 echo'<form name="Form" id="myForm" onSubmit="return validateForm8uusi();" class="form-style-k" action="tunnustenkyselyuusi2.php" method="post"><fieldset>';
 
-echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>
-   <a href="kirjautuminenuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
+if($_GET[akt]==1){
+    echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>';
+}
+else{
+    echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>';
+}
+   echo'<a href="kirjautuminenuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
 
    <br><p>Mihin oppilaitokseen olet ensisijaisesti rekisteröitynyt?</p><br>';
    
@@ -158,9 +168,10 @@ echo'</p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
+echo'<input type="hidden" name="akt" value="'.$_GET[akt].'">';
 echo'<br><input id="button" type="submit" onclick="validateForm8uusi()" value="&#10003 Valitse">';
 
-echo'<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista, mihin oppilaitoksen olet rekisteröitynyt, niin lähetä Cuulis-oppimisympäristön ylläpitäjälle sähköpostia osoitteeseen &nbsp&nbsp <u> <a class="osoite" style="color: #080708;  " href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></u> &nbsp&nbsp ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>
+echo'<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista, mihin oppilaitoksen olet rekisteröitynyt, niin lähetä Cuulis-oppimisympäristön ylläpitäjälle sähköpostia osoitteeseen  <u> <a class="osoite" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></u></p>
 <br>
  </fieldset> </form>';
 

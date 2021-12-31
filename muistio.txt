@@ -1,40 +1,44 @@
-1) UUSI KIRJAUTUMINEN
-
--> tarkistetaan onko käyttöehdot hyväksytty + onko salasana nollattu, jos on -> salasanan vaihto
-
-HUOM!! JOS EI HYVÄKSY EIKÄ VAIHDA NIIN SESSION PITÄÄ TUHOTA!!!
-
-TESTAA edu.hel.fi ja u97506
+1) TSEKKAA VIELÄ 
+* liian monta salasanaa
+* salasanan vaihto 
 
 
-2) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
+2) kirjautuminenuusi.php:   VIRHEELLINEN KÄYTTÄJÄTUNNUS!! -> EI OO VÄLTTÄMÄTTÄ EMAIL
 
 
-3) SALASANAN SALT TURVALLISEMMAKSI
+3) UUSI KIRJAUTUMINEN
+
+-> tarkistetaan myös ONKO UUSI TUNNUS -> jos ei, pitää antaa uusi
+-> testaa nollaus, käyttöehdot ja uusi tunnus 
+-> SESSEION PITÄÄ TUHOTA JOS EI TEHTY!!
 
 
-4) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
+
+4) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
 
 
-5) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
+5) SALASANAN SALT TURVALLISEMMAKSI
 
 
 6) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 
 
-
 7) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
-
-8) KÄYTTÖEHDOT PITÄÄ TEHDÄ!!   kayttoehdot.php -> Kato mallia tietoa.php
-
+8) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
 
 
-9) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+9) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
 
 
-10) EVÄSTEET?!!?!
+10) TESTAA VANHA OPISKELIJA
+
+
+11) EVÄSTEET?!!?!
+
+
+12) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
 

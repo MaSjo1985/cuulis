@@ -155,7 +155,7 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 </div>';
 echo'<br><input id="button" type="submit" onclick="validateFormRek()" value="&#10003 Valitse">';
 
-echo'<br> </fieldset> </form>';
+echo'<br></fieldset> </form>';
 
 
 

@@ -6,18 +6,12 @@ include("yhteys.php");
 
 $tarkistettusposti = htmlspecialchars($_POST['username']);
 
-if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL))
-    echo json_encode(array('status' => 'error1', 'msg' => 'Antamasi käyttäjätunnus on virheellinen!'));
-
-else {
-    //TÄHÄN TUTKITAAN, ONKO YRITYKSIÄ MAKSIMI
-
 
     $siivottusposti = mysqli_real_escape_string($db, $_POST['username']);
     $siivottusalasana = mysqli_real_escape_string($db, $_POST['password']);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
-    $stmt = $db->prepare("SELECT DISTINCT * FROM kayttajat WHERE BINARY sposti=?");
+    $stmt = $db->prepare("SELECT DISTINCT vahvistettu, koulu_id, rooli FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
     $stmt->bind_param("s", $sposti);
     // prepare and bind
     $sposti = $siivottusposti;
@@ -26,12 +20,40 @@ else {
 
     $stmt->store_result();
 
+  $stmt->bind_result($column1, $column2, $column3);
+  
+  while ($stmt->fetch()) {
+            $vahvistettu = $column1;
+            $koulu = $column2;
+            $rooli=$column3;
+        }
 
+if ($rooli=='opettaja' AND !filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL))
+    echo json_encode(array('status' => 'error1', 'msg' => 'Antamasi käyttäjätunnus on virheellinen!'));
+
+else {
+    //TÄHÄN TUTKITAAN, ONKO YRITYKSIÄ MAKSIMI
 
     if ($stmt->num_rows == 0) {
         echo json_encode(array('status' => 'error8', 'msg' => 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!'));
     } else {
-        $stmt3 = $db->prepare("SELECT DISTINCT yritykset FROM kayttajat WHERE BINARY sposti=?");
+        
+
+        if($vahvistettu==0){
+                if (!$haesposti =  $db->query("SELECT DISTINCT sposti FROM kayttajat, koulunadminit WHERE koulunadminit.kayttaja_id=kayttajat.id AND koulunadminit.koulu_id='".$koulu."'")){
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+     
+        while ($rows = $haesposti->fetch_assoc()) {
+
+            $spostia = $rows[sposti];
+        }
+            
+             echo json_encode(array('status' => 'errorv', 'msg' => $spostia));
+        }
+        else{
+               $stmt3 = $db->prepare("SELECT DISTINCT yritykset FROM kayttajat WHERE BINARY sposti=?");
         $stmt3->bind_param("s", $sposti2);
         // prepare and bind
         $sposti2 = $siivottusposti;
@@ -82,6 +104,8 @@ else {
             $stmt2->close();
             $stmt3->close();
         }
+        }
+     
     }
 
 

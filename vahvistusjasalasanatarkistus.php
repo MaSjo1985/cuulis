@@ -164,7 +164,7 @@ $stmt->execute();
 
 $stmt->close();
 
-echo '<b>Rekisteröintisi Cuulis-oppimisympäristöön on nyt vahvistettu!</b><br><br><a href="etusivu.php">Kirjaudu sisään  tästä &nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+echo '<b style="color: #c7ef00;">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön!</b><br><br><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
 
 
 

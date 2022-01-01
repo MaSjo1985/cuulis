@@ -7,7 +7,7 @@ echo'<!DOCTYPE html>
 <head>';
 
 if($_POST[akt] == 1){
-  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+  echo'<title>Kayttäjätunnuksen uudelleenaktivointi </title>';
 }
 else{
  echo'<title>Unohtunut käyttäjätunnus/salasana</title>';

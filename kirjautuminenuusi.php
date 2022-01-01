@@ -148,7 +148,7 @@ echo
 '<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5uusi()" action="tarkistusuusi.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
 <legend>Kirjaudu sisään:</legend>   
 
-<br><input type="text"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
+<br><input type="text"  id="spostir" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
 <div style="color: red; font-weight: bold; padding: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
@@ -183,9 +183,9 @@ echo '
 include("footer.php");
 ?>
 <script type="text/javascript">
-$('#sposti').on('keyup', function() {
+$('#spostir').on('keyup', function() {
       var div1 = document.getElementById("divID");
-    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("spostir").style.backgroundColor = "white";
         div1.style.padding = "10px 60px 10px 0px";
 
         div1.innerHTML = "";
@@ -233,7 +233,7 @@ $('#salasana').on('keyup', function() {
     });
 </script>
 <script>
-    var input = document.getElementById("sposti");
+    var input = document.getElementById("spostir");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();

@@ -2616,7 +2616,7 @@ function validateForm4()
                 } else {
 
                     if (data.msg == 'virhe')
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                        div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else
                         div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity. Mikäli olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
 
@@ -2739,7 +2739,7 @@ function validateForm4ope()
 
         div3.style.padding = "10px 60px 10px 0px";
                     if (data.msg == 'virhe')
-                        div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                           div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else{
                         
                         if(admin == 'admin'){
@@ -3101,7 +3101,7 @@ function validateFormUusiKayttaja()
                 } else {
 
                     if (data.msg == 'virhe')
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                            div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else
                         div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity.';
 
@@ -3195,7 +3195,7 @@ function validateForm5()
                     } else if (data.status == "error1") {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
 
-                        div1.innerHTML = 'Antamasi sähköpostiosoite on virheellinen!';
+                           div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
@@ -3231,14 +3231,14 @@ function validateForm5uusi()
     div1.style.padding = "10px 0px 0px 0px";
 
     div2.style.padding = "10px 0px 0px 0px";
-    document.getElementById("sposti").style.backgroundColor = "white";
+    document.getElementById("spostir").style.backgroundColor = "white";
     document.getElementById("salasana").style.backgroundColor = "white";
 
 
     if ((a == null || a == "") && (b == null || b == ""))
     {
 
-        document.getElementById("sposti").style.backgroundColor = "yellow";
+        document.getElementById("spostir").style.backgroundColor = "yellow";
         document.getElementById("salasana").style.backgroundColor = "yellow";
         div1.innerHTML = "Anna sähköpostiosoite!";
 
@@ -3247,7 +3247,7 @@ function validateForm5uusi()
         ok = 1;
     } else if ((a == null || a == "") && (b != null || b != ""))
     {
-        document.getElementById("sposti").style.backgroundColor = "yellow";
+        document.getElementById("spostir").style.backgroundColor = "yellow";
         div1.innerHTML = "Anna käyttäjätunnus!";
 
         ok = 1;
@@ -3263,7 +3263,7 @@ function validateForm5uusi()
         return false;
     } else {
 
-        var username = $('#sposti').val();
+        var username = $('#spostir').val();
         var password = $('#salasana').val();
         var returnVal = 0;
 
@@ -3281,23 +3281,33 @@ function validateForm5uusi()
                 } else {
 
                     if (data.status == "error8") {
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
 
-                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!';
-                    } else if (data.status == "error9") {
+                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!<br><br>Jos et muista käyttäjätunnustasi, niin klikkaa alla olevaa linkkiä.';
+                    }
+                    else if (data.status == "errorv") {
+                      
+                        var sposti = data.msg;
+
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
+
+                        div1.innerHTML = '<b>Ylläpitäjä ei ole vielä vahvistanut rekisteröitymistäsi<br><br>Lähetä asiasta sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '+sposti+'">'+sposti+'</a></b>';
+                    
+                    }
+                    else if (data.status == "error9") {
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
 
-                        div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br>Voit aktivoida tunnuksesi uudelleen <u><a href="tunnustenkyselyuusieka.php?akt=1" class="osoite">painamalla tästä.</a></u>';
+                        div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br><br>Voit aktivoida käyttäjätunnuksesi uudelleen <u><a href="tunnustenkyselyuusieka.php?akt=1" class="osoite">painamalla tästä.</a></u>';
                     } else if (data.status == "error1") {
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
 
-                        div1.innerHTML = 'Antamasi sähköpostiosoite on virheellinen!';
+                        div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
 
-                        div2.innerHTML = 'Antamasi salasana on väärä!';
+                        div2.innerHTML = 'Antamasi salasana on väärä!<br><br>Jos et muista salasanaasi, niin klikkaa alla olevaa linkkiä.';
                     }
 
 
@@ -3484,7 +3494,7 @@ function validateForm7()
                     if (data.msg == "Virheellinen") {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
                         div3.style.padding = "10px 60px 10px 0px";
-                        div3.innerHTML = 'Sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                          div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
 
@@ -3562,7 +3572,7 @@ function validateForm8()
 
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                         div1.style.padding = "10px 60px 20px 0px";
-                        div1.innerHTML = 'Antamasi sähköpostiosoite on virheellinen!';
+                        div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
 
                     }
 
@@ -3896,7 +3906,7 @@ var rooli = $('#rooli').val();
                     if (data.msg == "virhe") {
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                         div3.style.padding = "10px 60px 10px 0px";
-                        div3.innerHTML = 'Käyttäjätunnus eli sähköpostiosoite on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                          div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
                         document.getElementById("spostir").style.backgroundColor = "yellow";
 
@@ -3996,7 +4006,7 @@ var rooli = $('#rooli').val();
                     if (data.msg == "virhe") {
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                         div3.style.padding = "10px 60px 10px 0px";
-                        div3.innerHTML = 'Käyttäjätunnus on virheellinen! Anna kelvollinen sähköpostiosoite.';
+                           div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
                         document.getElementById("spostir").style.backgroundColor = "yellow";
 

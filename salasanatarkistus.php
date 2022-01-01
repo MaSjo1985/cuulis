@@ -157,7 +157,7 @@ $stmt->execute();
 $stmt->close();
 
 echo '<div class="cm8-container3"  style="padding-left: 20px; padding-top:10px" >';
-echo('<br><br><b style="color: #c7ef00;">Salasanasi on vaihdettu.</b> <br><br><a href="etusivu.php"><b>Pääset etusivulle tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </b></a>');
+echo('<br><br><b style="color: #c7ef00;">Salasanasi on vaihdettu.</b> <br><br><a href="etusivu.php"><b>Pääset kirjautumaan tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </b></a>');
 
 
 

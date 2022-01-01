@@ -5,7 +5,7 @@ echo'<!DOCTYPE html>
 <head>';
 
 if($_GET[akt] == 1){
-  echo'<title>KÄyttäjätunnuksen uudelleenaktivointi </title>';
+  echo'<title>Kayttäjätunnuksen uudelleenaktivointi </title>';
 }
 else{
  echo'<title>Unohtunut käyttäjätunnus/salasana</title>';
@@ -146,7 +146,7 @@ else{
 
 }
 
-echo '<br><a href="etusivu.php">Jatka etusivulle &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a></p>';
+echo '<br><a href="etusivu.php">Jatka etusivulle tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a></p>';
 
 
 echo "</div>";

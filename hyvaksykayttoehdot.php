@@ -1,6 +1,5 @@
 <?php
 ob_start();
-session_start();
 echo'
 <!DOCTYPE html>
 <html>
@@ -145,7 +144,7 @@ echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return valida
 
 echo' <legend>Hyväksy käyttöehdot</legend>';
 
-echo'<br><b style="color: red; font-size: 1em">Ennen seuraavaa kirjautumista sinun on vielä hyväksyttävä<br><a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;"> Cuulis-oppimisympäristön käyttöehdot. </a></b><br>';
+echo'<br><b style="color: red; font-size: 1em">Ennen seuraavaa kirjautumista sinun on vielä hyväksyttävä<br><a href="kayttoehdot.php" style="border-bottom:1px solid blue; color: blue;"><br>Cuulis-oppimisympäristön käyttöehdot. </a></b><br>';
 
 echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn käyttöehdot <b style="color: red">*</b></label></p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
@@ -153,7 +152,8 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 </div>';
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<input type="hidden" id="url" value="'.$_GET[URL].'">
+<input type="hidden" name="url" value="'.$_GET[URL].'">
+<input type="hidden" name="id" value="'.$_GET[id].'">
 <br><input id="button" type="button" onclick="validateFormKe()" value="&#10003 Hyväksy" ><br>
 	</fieldset></form>';
 echo'</div>';

@@ -342,6 +342,7 @@ function myFunction(y) {
             echo'<p style="padding-top: 10px" id="ohje">Klikkaamalla kurssin/opintojakson nimeä tai koodia pääset kyseisen kurssin/opintojakson sivulle.</p>';
         else {
             echo"<br><br>Ei kursseja/opintojaksoja.<br>";
+              echo'<div class="cm8-margin-top"><br></div>';
         }
 
         if (!($result->num_rows == 0 && $result2->num_rows == 0 && $result3->num_rows == 0)) {
@@ -624,9 +625,20 @@ function myFunction(y) {
         echo'<div class="cm8-half" style="padding: 0px; margin: 0px">';
         echo'<h4>Omat kurssit/opintojaksot/opintojaksot:</h4>';
         echo'</div>';
-
-        echo'<div class="cm8-half" style="text-align: center; ">';
+        
+         if (!$result = $db->query("select distinct kurssit.id as kuid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id)")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+  echo'<div class="cm8-half" style="text-align: center; "><br>';
+    if ($result->num_rows != 0){
+       
         echo'<h4><a href="omatiat.php" class="ia">Omat itsearviointilomakkeet</a></h4>';
+       
+    }
+    else{
+        echo'<h4></h4>';
+    }
+        
         echo'</div>';
         echo'<div class="cm8-margin-top"><br></div>';
         $field = 'alkupvm';
@@ -766,6 +778,7 @@ function myFunction(y) {
             echo'<p style="padding-top: 10px" id="ohje">Klikkaamalla kurssin/opintojakson nimeä tai koodia pääset kyseisen kurssin/opintojakson sivulle.</p>';
         else {
             echo"<br><br>Ei kursseja/opintojaksoja.<br>";
+             echo'<div class="cm8-margin-top"><br></div>';
         }
 
         if (!($result->num_rows == 0 && $result2->num_rows == 0 && $result3->num_rows == 0)) {

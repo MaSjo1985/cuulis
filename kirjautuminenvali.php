@@ -19,15 +19,16 @@ if (isset($_SESSION[Id])) {
     echo'<div class="cm8-margin-top"></div>';
 
 
-    $stmt = $db->prepare("SELECT DISTINCT kayttoehdot_hyvaksytty, nollattu FROM kayttajat WHERE BINARY id=?");
+    $stmt = $db->prepare("SELECT DISTINCT kayttoehdot_hyvaksytty, nollattu, uusitunnus FROM kayttajat WHERE BINARY id=?");
     $stmt->bind_param("i", $id);
 // prepare and bind
     $id=$_SESSION[Id];
+    $rooli=$_SESSION[Rooli];
 
 
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($col1, $col2);
+    $stmt->bind_result($col1, $col2, $col3);
 
 
     if ($stmt->num_rows == 1) {
@@ -35,10 +36,11 @@ if (isset($_SESSION[Id])) {
         while ($stmt->fetch()) {
             $kayttoehdot = $col1;
             $nollattu = $col2;
+            $uusitunnus = $col3;
           
         }
 
-        if ($kayttoehdot ==0) {
+        if ($kayttoehdot == 0) {
              if (!empty($_GET[url]))
                 header("location: hyvaksykayttoehdot.php?url=" . $_GET[url]);
             else
@@ -55,11 +57,25 @@ if (isset($_SESSION[Id])) {
                 header("location: vaihdasalasana.php");
             }
             else{
-                 if (!empty($_GET[url]))
+                
+                //onko uusitunnus
+                if($uusitunnus == 0 && $rooli=='opiskelija'){
+                      if (!empty($_GET[url]))
+                header("location: vaihdatunnus.php?url=" . $_GET[url]);
+                else
+                header("location: vaihdatunnus.php");
+            
+                
+                
+                }
+                else{
+                          if (!empty($_GET[url]))
                 header("location: kirjautuminen2.php?url=" . $_GET[url]);
             else
                 header("location: kirjautuminen2.php"); 
             }
+                }
+           
             
             
             

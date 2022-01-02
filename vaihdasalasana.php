@@ -1,7 +1,6 @@
 <?php
 ob_start();
 
-session_start(); // ready to go!
 echo'<!DOCTYPE html>
 <html>
 <head>
@@ -140,7 +139,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9(this);" action="vaihdasalasana2.php" method="post"><fieldset>';
         echo"<legend>Vaihda salasana</legend>";
-        echo'<br><br><b style="color:red">Ylläpitäjä on antanut sinulle salasanan. Sinun tulee nyt vaihtaa tämä salasana</b><br> <br>';
+        echo'<br><br><b style="color:red">Ylläpitäjä on antanut sinulle salasanan.<br><br>Sinun tulee nyt vaihtaa tämä salasana.</b><br> <br>';
 
         echo'<br><p><b>Uusi salasana: </b> <b style="color: red">*</b><br><br>
              
@@ -158,7 +157,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
     <p class="eimitaan"></p>
 </div>  
 
-		<input type="hidden" name="id" value=' . $_SESSION[Id] . '> <br>
+		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>
                     <input type="hidden" name="url" value=' . $_GET[url] . '> <br>
 		<input type="button" id="button" onclick="validateForm9(this)" value="&#10003 Tallenna" class="myButton9">
 		</fieldset></form>';

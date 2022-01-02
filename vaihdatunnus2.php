@@ -8,7 +8,6 @@ echo'
 <head>
 
 <title> Kirjautuminen</title>';
-
 if (isset($_POST[id])) {
     include("yhteys.php");
 
@@ -18,9 +17,21 @@ if (isset($_POST[id])) {
     echo'<div class="cm8-margin-top"></div>';
 
 
-   $db->query("update kayttajat set kayttoehdot_hyvaksytty=1 where id='" . $_POST[id] . "'");
+    $siivottutunnus = mysqli_real_escape_string($db, $_POST[tunnus]);
+    $tunnus = $siivottutunnus;
+    
 
-  
+    $id = $_POST["id"];
+
+    $stmt = $db->prepare("UPDATE kayttajat SET sposti=?, uusitunnus = 1 WHERE id=?");
+    $stmt->bind_param("si", $tunnus, $id);
+// prepare and bind
+
+    
+    $stmt->execute();
+
+    $stmt->close();
+
             
              if (!empty($_POST[url]))
                 header("location: tarkistusuusi.php?url=' . $_POST[url].'&id=". $_POST[id] );

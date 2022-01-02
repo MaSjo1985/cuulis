@@ -2618,7 +2618,7 @@ function validateForm4()
                     if (data.msg == 'virhe')
                         div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity. Mikäli olet unohtanut salasanasi, voit vaihtaa sen etusivun linkin kautta.';
+                         div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                 }
             }
@@ -2743,11 +2743,11 @@ function validateForm4ope()
                     else{
                         
                         if(admin == 'admin'){
-                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity!';
+                             div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                         }
                         else{
-                             div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity!';
+                            div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                         }
                         
@@ -2923,11 +2923,11 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
                     
                      document.getElementById("spostir").style.backgroundColor = "yellow";
                     if(admin=='admin'){
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                     }
                     else{
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                     }
                     }
@@ -2950,11 +2950,12 @@ document.getElementById("spostir").style.backgroundColor = "yellow";
                      else   if(data.msg =='pelkka rek'){
                          document.getElementById("spostir").style.backgroundColor = "yellow";
                     if(admin=='admin'){
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+
 
                     }
                     else{
-                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on jo rekisteröity!</b>';
+                         div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
                     }
                         
@@ -3103,7 +3104,8 @@ function validateFormUusiKayttaja()
                     if (data.msg == 'virhe')
                             div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else
-                        div3.innerHTML = 'Antamasi sähköpostiosoite on jo rekisteröity.';
+                     div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+
 
                 }
             }
@@ -3186,7 +3188,7 @@ function validateForm5()
                     if (data.status == "error8") {
                         document.getElementById("sposti").style.backgroundColor = "yellow";
 
-                        div1.innerHTML = 'Antamaasi sähköpostiosoitetta ei ole rekisteröity oppimisympäristöön! Jos et muista antamaasi sähköpostiosoitetta, lähetä sähköpostia ylläpitäjälle osoitteeseen <u><a href="mailto: marianne.sjoberg@cm8solutions.fi" class="osoite">marianne.sjoberg@cm8solutions.fi.</a></u>';
+                        div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön! Jos et muista antamaasi käyttäjätunnusta, niin lähetä sähköpostia ylläpitäjälle osoitteeseen <u><a href="mailto: marianne.sjoberg@cm8solutions.fi" class="osoite">marianne.sjoberg@cm8solutions.fi.</a></u>';
                     } else if (data.status == "error9") {
                         document.getElementById("salasana").style.backgroundColor = "yellow";
 
@@ -3231,14 +3233,14 @@ function validateForm5uusi()
     div1.style.padding = "10px 0px 0px 0px";
 
     div2.style.padding = "10px 0px 0px 0px";
-    document.getElementById("spostir").style.backgroundColor = "white";
+    document.getElementById("sposti").style.backgroundColor = "white";
     document.getElementById("salasana").style.backgroundColor = "white";
 
 
     if ((a == null || a == "") && (b == null || b == ""))
     {
 
-        document.getElementById("spostir").style.backgroundColor = "yellow";
+        document.getElementById("sposti").style.backgroundColor = "yellow";
         document.getElementById("salasana").style.backgroundColor = "yellow";
         div1.innerHTML = "Anna sähköpostiosoite!";
 
@@ -3247,7 +3249,7 @@ function validateForm5uusi()
         ok = 1;
     } else if ((a == null || a == "") && (b != null || b != ""))
     {
-        document.getElementById("spostir").style.backgroundColor = "yellow";
+        document.getElementById("sposti").style.backgroundColor = "yellow";
         div1.innerHTML = "Anna käyttäjätunnus!";
 
         ok = 1;
@@ -3263,7 +3265,7 @@ function validateForm5uusi()
         return false;
     } else {
 
-        var username = $('#spostir').val();
+        var username = $('#sposti').val();
         var password = $('#salasana').val();
         var returnVal = 0;
 
@@ -3281,7 +3283,7 @@ function validateForm5uusi()
                 } else {
 
                     if (data.status == "error8") {
-                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                        document.getElementById("sposti").style.backgroundColor = "yellow";
 
                         div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!<br><br>Jos et muista käyttäjätunnustasi, niin klikkaa alla olevaa linkkiä.';
                     }
@@ -3289,7 +3291,7 @@ function validateForm5uusi()
                       
                         var sposti = data.msg;
 
-                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                        document.getElementById("sposti").style.backgroundColor = "yellow";
 
                         div1.innerHTML = '<b>Ylläpitäjä ei ole vielä vahvistanut rekisteröitymistäsi<br><br>Lähetä asiasta sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '+sposti+'">'+sposti+'</a></b>';
                     
@@ -3300,7 +3302,7 @@ function validateForm5uusi()
 
                         div2.innerHTML = 'Salasanaa on yritetty syöttää liian monta kertaa!<br><br>Voit aktivoida käyttäjätunnuksesi uudelleen <u><a href="tunnustenkyselyuusieka.php?akt=1" class="osoite">painamalla tästä.</a></u>';
                     } else if (data.status == "error1") {
-                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                        document.getElementById("sposti").style.backgroundColor = "yellow";
 
                         div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     } else {
@@ -3912,7 +3914,8 @@ var rooli = $('#rooli').val();
 
 
                         div3.style.padding = "10px 60px 10px 0px";
-                        div3.innerHTML = 'Antamasi käyttäjätunnus eli sähköpostiosoite on jo rekisteröity! Ole hyvä ja valitse toinen';
+                        div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+
                     }
 
 
@@ -4012,7 +4015,8 @@ var rooli = $('#rooli').val();
 
 
                         div3.style.padding = "10px 60px 10px 0px";
-                        div3.innerHTML = 'Antamasi käyttäjätunnus on jo rekisteröity! Ole hyvä ja valitse toinen';
+                       div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+
                     }
 
 
@@ -4027,8 +4031,7 @@ var rooli = $('#rooli').val();
     }
 
 
-}
-function validateForm9(f)
+}function validateForm9(f)
 {
     var ok = 0;
 
@@ -4107,6 +4110,78 @@ function validateForm9(f)
                     div2.innerHTML = 'Salasanat eivät vastaa toisiaan!';
 
 return false;
+
+                }
+            }
+        });
+
+
+        return true;
+
+
+    }
+
+}
+function validateFormTunnus(f)
+{
+    var ok = 0;
+
+    var a = document.forms["Form"]["tunnus"].value;
+
+    var div1 = document.getElementById("divID");
+
+    div1.innerHTML = "";
+
+
+    document.getElementById("tunnusr").style.backgroundColor = "white";
+
+
+    if (a == null || a == "")
+    {
+
+        document.getElementById("tunnusr").style.backgroundColor = "yellow";
+
+
+
+        div1.style.padding = "10px 60px 20px 0px";
+        div1.innerHTML = "Anna käyttäjätunnus!";
+
+        ok = 1;
+    }
+
+
+
+
+    if (ok == 1) {
+        return false;
+    } else {
+
+
+        var tunnus = $('#tunnusr').val();
+        var returnVal = 0;
+
+
+        var okke = 0;
+        
+        $.ajax({
+            type: 'post',
+            url: 'tarkistavaihtotunnus.php',
+            data: {tunnus: tunnus},
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == "success") {
+                    
+                    document.getElementById("myForm").submit();
+
+                } else {
+
+
+                    document.getElementById("tunnusr").style.backgroundColor = "yellow";
+                    div1.style.padding = "10px 60px 20px 0px";
+                    div1.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+
+
+                    return false;
 
                 }
             }

@@ -1,37 +1,28 @@
-1) UUSI KIRJAUTUMINEN
-
--> tarkistetaan myös ONKO UUSI TUNNUS -> jos ei, pitää antaa uusi
--> testaa nollaus, käyttöehdot ja uusi tunnus 
--> SESSEION PITÄÄ TUHOTA JOS EI TEHTY!!
+1) SALASANAN SALT TURVALLISEMMAKSI
 
 
-2) SALASANAN SALT TURVALLISEMMAKSI
+2) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 
 
-3) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+3) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
-4) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+4) KÄYTTÖOHJEET PITÄÄ TEHDÄ
 
 
-5) TESTAA OPETTAJAN JA OPISKELIJAN REKISTERÖINTI VIELÄ KERRAN
+5) EVÄSTEET?!!?!
 
 
-6) TESTAA OPETTAJAN JA OPISKELIJAN LISÄYS ADMININ TOIMESTA
+6) TESTAUS!!
 
 
-7) TESTAA VANHA OPISKELIJA
+7) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
-8) EVÄSTEET?!!?!
+8) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
 
 
-9) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
-
-
-10) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
-
-11) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
+9) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
 *******************************************************''''

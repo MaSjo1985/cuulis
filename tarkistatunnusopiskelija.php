@@ -7,7 +7,7 @@ include("yhteys.php");
 
 
 
-$tarkistettusposti = htmlspecialchars($_POST['username']);
+$tarkistettusposti = htmlspecialchars($_POST['tunnus']);
 
 
 
@@ -27,36 +27,15 @@ $stmt->store_result();
 // ei rekisteröity
 if ($stmt->num_rows == 0) {
 
-    if ($_POST[admin] == 'admin') {
-        if ($_POST[uusi] != $_POST[uusi2]) {
-
-             echo json_encode(array('status' => 'error', 'msg' => 'pelkka salasana'));
-        }
-        else{
-              echo json_encode(array('status' => 'success', 'msg' => 'no error'));
-        }
-    }
-    else{
           echo json_encode(array('status' => 'success', 'msg' => 'no error'));
-    }
+    
 
 
   
 } else {
     
     
-    if ($_POST[admin] == 'admin') {
-        if ($_POST[uusi] != $_POST[uusi2]) {
-
-            echo json_encode(array('status' => 'error', 'msg' => 'salasana ja rek'));
-        }
-        else{
-              echo json_encode(array('status' => 'error', 'msg' => 'pelkka rek'));
-        }
-    }
-    else{
-           echo json_encode(array('status' => 'error', 'msg' => 'pelkka rek'));
-    }
+ echo json_encode(array('status' => 'error', 'msg' => 'error'));
 
     
     

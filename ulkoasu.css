@@ -18,7 +18,12 @@ and open the template in the editor.
 #spostir:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px yellow inset !important;
 }
-
+#tunnusr:-webkit-autofill,
+#tunnusr:-webkit-autofill:hover, 
+#tunnusr:-webkit-autofill:focus, 
+#tunnusr:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px yellow inset !important;
+}
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block;vertical-align:baseline}

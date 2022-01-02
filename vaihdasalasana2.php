@@ -6,34 +6,20 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Käyttäjän salasana vaihdettu </title>';
+<title>Salasana vaihdettu </title>';
 
 
 include("yhteys.php");
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
+if (isset($_POST[id])) {
+    include("yhteys.php");
 
-session_start(); // ready to go!
-
-
-if (isset($_SESSION["Kayttajatunnus"])) {
     include("header.php");
-    include("header2.php");
     echo'<div class="cm8-container7">';
-    if ($_SESSION["Rooli"] == 'admin')
-        include("adminnavi.php");
-    else if ($_SESSION["Rooli"] == 'admink')
-        include("adminknavi.php");
-    else if ($_SESSION["Rooli"] == 'opeadmin')
-        include("opeadminnavi.php");
-    else
-        include ("opnavi.php");
-    echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
+    echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
     echo'<div class="cm8-margin-top"></div>';
-
-
-
 
 
     $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
@@ -48,26 +34,27 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $salasana = $krypattu;
     
     $yritykset = 0;
-    $id = $_SESSION["Id"];
+    $id = $_POST["id"];
 
     $stmt->execute();
 
     $stmt->close();
-
-  if (!empty($_POST[url]))
-                header("location: kirjautuminenvali.php?url=" . $_POST[url]);
+            
+             if (!empty($_POST[url]))
+                header("location: tarkistusuusi.php?url=' . $_POST[url].'&id=". $_POST[id] );
             else
-                header("location: kirjautuminenvali.php");
-    echo'</div>';
+               
+            header("location: tarkistusuusi.php?id=". $_POST[id] );
+       
 
-    echo'</div>';
+    echo "</div>";
+    echo "</div>";
     include("footer.php");
 } else {
-    $url = $_SERVER[REQUEST_URI];
-    $url = substr($url, 1);
-    $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+
+    header("location: kirjautuminenuusi.php");
 }
 ?>
+
 </body>
 </html>		

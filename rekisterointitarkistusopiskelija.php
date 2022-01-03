@@ -39,7 +39,9 @@ while ($row100 = $result100->fetch_assoc()) {
     $krypattu = md5($salt . $paivays);
 
     //generoidaan tarkistuskoodi
-   $uniqid = uniqid('', true);
+   
+   $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
 
 
@@ -51,7 +53,7 @@ while ($row100 = $result100->fetch_assoc()) {
     $salasana = $krypattu;
     $rooli = $_POST[Rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 1;
+    $vahvistettu = 0;
     $tarkistettu = 1;
     $koodi = $krypattu2;
     $stmt->execute();

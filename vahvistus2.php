@@ -1,10 +1,13 @@
 <?php
 ob_start();
-echo'<!DOCTYPE html>
+
+echo'
+<!DOCTYPE html>
 <html>
+ 
 <head>
 
-<title>Rekisteröinnin vahvistaminen</title>
+<title> Rekisteröinti vahvistettu</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -21,12 +24,12 @@ echo'<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css"> <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Neucha" /><link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="csscm/jquery-ui.css" rel="stylesheet" />
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" type="text/css" href="jscm/jquery.timepicker.css" /><link rel="stylesheet" type="text/css" href="jscm/jquery.datepicker.css" />
 <link rel="shortcut icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="css/TimeCircles.css" />
-  
+ 
 
 <link href="ulkoasu.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -40,7 +43,6 @@ echo'<!DOCTYPE html>
 
   <body onload="lataa2()">';
 $browser = $_SERVER['HTTP_USER_AGENT'];
-
 
 
 
@@ -119,158 +121,119 @@ echo'</div>';
 
     });
 
+
+
 </script>
 
+
 <?php
+ob_start();
 if ((strpos($browser, 'Android'))) {
-    echo'<div class="cm8-container" style="padding-top: 20px; padding-bottom: 10px;padding-left: 20px">';
+    echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';
 
     echo'<a href="lataasovellus.php" class="cm8-linkk4">Lataa uusi Cuulis-sovellus Androidille &nbsp&nbsp&nbsp <i class="fa fa-download" style="font-size:0.9em"></i> </a>';
 
     echo'</div>';
 }
 
-echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
+echo'<div class="cm8-container7" style="padding-top: 30px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 60px; ">';
 
-$stmt = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY tarkistuskoodi=?");
-$stmt->bind_param("s", $koodi);
+
+echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-top: 20px; margin-top: 0px">';
+
+      session_start(); // ready to go!
+      
+          if(isset($_POST[Sposti])){
+            $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
+    $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+    $salt = "8CMr85";
+    $krypattu = md5($salt . $siivottusalasana);
+
+    $stmt = $db->prepare("SELECT DISTINCT rooli, sposti, etunimi, sukunimi, id, paiva, kello, vahvistettu, tarkistettu, yritykset, nollattu, kayttoehdot_hyvaksytty, uusitunnus FROM kayttajat WHERE BINARY sposti=? AND BINARY salasana=?");
+    $stmt->bind_param("ss", $sposti2, $salasana);
 // prepare and bind
-$koodi = $_GET["tk"];
-
-$stmt->execute();
-
-$stmt->store_result();
-
-
-$stmt->bind_result($column1);
-
-while ($stmt->fetch()) {
-    
-    $id = $column1;
-  
-}
-if ($stmt->num_rows == 1) {
-
-    if (isset($_GET[admin])) {
-        echo'<div class="cm8-half">';
-
-        echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
-        echo"<legend>Anna itsellesi salasana Cuulis-oppimisympäristöön</legend>";
-
-        echo'<p><b>Salasana: </b>  <b style="color: red">*</b><br><br>
-   <div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
-    <p></p>
-</div>              
-<input type="password" id="salasana"  style="width: 70%" name="Salasana"></p>
-		<br><p><b>Anna salasana uudelleen:	</b>  <b style="color: red">*</b><br><br>
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
-    <p></p>
-</div>                 
-<input type="password" id="salasana2" style="width: 70%" name="UusiSalasana">
-		<input type="hidden" name="tk" value=' . $_GET[tk] . '> </p><br>
-		<input type="hidden" name="id" value=' . $id . '> <br>
-                    <input type="hidden" name="admin" value="1">
-		<br><input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9">
-		</fieldset></form>';
-        $stmt->close();
-    } else {
-        echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
-
-        echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
-        echo"<legend>Rekisteröitymisen vahvistaminen</legend>"
-        . "<br><b>Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön antamalla henkilökohtainen salasanasi.</b><br> <br>";
-
-        echo'<p><b>Salasana: </b> <b style="color: red">*</b><br><br>
-             
-<input type="password" id="salasana" style="width: 50%" name="Salasana">
-  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
-    <p class="eimitaan"></p>
-</div>
-
-<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: red">*</b><br><br>
-             
-<input type="password" id="salasana2" style="width: 50%" name="UusiSalasana">
-  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
-    <p class="eimitaan"></p>
-</div>  
-
-		<input type="hidden" name="tk" value=' . $_GET[tk] . '> <br>
-		<input type="hidden" name="id" value=' . $id . '> <br>
-                    <input type="hidden" name="admin" value="0"> 
-		<input type="button" id="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9">
-		</fieldset></form>';
-        $stmt->close();
+    $sposti2 = $siivottusposti;
+    $salasana = $krypattu;
     }
-} else {
-    echo'<div class="cm8-half" style="margin-top: 40px">';
-    echo '<br><b style="color: red">Rekisteröitymisen vahvistuslinkki on vanhentunut!</b><br><br>Voit vaihtaa salasanasi etusivun linkin kautta.<br><br>';
-    echo '<br><a href="kirjautuminen.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
-}
+    else if(isset($_GET[id])){
+   
+
+    $stmt = $db->prepare("SELECT DISTINCT rooli, sposti, etunimi, sukunimi, id, paiva, kello, vahvistettu, tarkistettu, yritykset, nollattu, kayttoehdot_hyvaksytty, uusitunnus FROM kayttajat WHERE BINARY id=?");
+    $stmt->bind_param("i", $id);
+// prepare and bind
+    $id=$_GET[id];
+    }
+
+
+
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($col1, $col2, $col4, $col5, $col6, $col7, $col8, $col9, $col10, $col11, $col12, $col13, $col14);
+
+
+
+        while ($stmt->fetch()) {
+            $rooli = $col1;
+            $sposti = $col2;
+
+            $etunimi = $col4;
+            $sukunimi = $col5;
+            $id = $col6;
+            $paiva = $col7;
+            $kello = $col8;
+            $vahvistettu = $col9;
+            $tarkistettu = $col10;
+            $yritykset = $col11;
+             $nollattu = $col12; 
+             $kayttoehdot = $col13;
+              $uusitunnus = $col14;
+             
+             
+        }
+         $stmt->close();
+            if ($paiva != "0000-00-00" || $paiva != null) {
+                $paiva = date("d.m.Y", strtotime($paiva));
+                $_SESSION["Viimepaiva"] = $paiva;
+            } else {
+                $_SESSION["Viimepaiva"] = "";
+            }
+
+            $_SESSION["Viimekello"] = $kello;
+
+            $db->query("update kayttajat set paiva='" . date("Y-m-d") . "' where id='" . $id . "'");
+            $db->query("update kayttajat set yritykset=0 where id='" . $id . "'");
+            $db->query("update kayttajat set kello='" . date("H:i:s") . "' where id='" . $id . "'");
+
+            $_SESSION["Sposti"] = $sposti;
+
+            $_SESSION["Rooli"] = $rooli;
+            $_SESSION["Ekakerta"] = $ekakerta;
+            $_SESSION["Etunimi"] = $etunimi;
+            $_SESSION["Sukunimi"] = $sukunimi;
+            $_SESSION["Id"] = $id;
+            $_SESSION["Kayttajatunnus"] = $sposti;
+            $_SESSION["Salasana"] = $krypattu;
+
+
+            if($_GET[admin]==1){
+                echo '<b style="color: #c7ef00;">Salasanan vaihto onnistui!</b><br><br><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+
+            }
+            else{
+               echo '<b style="color: #c7ef00;">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön!</b><br><br><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+ 
+            }
+
+
 
 echo '</div>';
+echo '</div>';
+
+
 echo '</div>';
 
 include("footer.php");
-?>
-<script>
-    $(function () {
+?>	
 
-        $("#show1").on("click", function () {
-            var x = $("#salasana");
-            if (x.attr('type') === "password") {
-                x.attr('type', 'text');
-                $(this).removeClass('fa fa-eye-slash');
-                document.getElementById('show1').setAttribute('title', 'Piilota salasana');
-                $(this).addClass('fa fa-eye');
-            } else {
-                x.attr('type', 'password');
-                $(this).removeClass('fa fa-eye');
-                $(this).addClass('fa fa-eye-slash');
-                document.getElementById('show1').setAttribute('title', 'Näytä salasana');
-            } // End of if
-        })// End of click event
-
-    });
-</script>
-<script>
-    $(function () {
-
-        $("#show2").on("click", function () {
-            var x = $("#salasana2");
-            if (x.attr('type') === "password") {
-                x.attr('type', 'text');
-                $(this).removeClass('fa fa-eye-slash');
-                document.getElementById('show2').setAttribute('title', 'Piilota salasana');
-                $(this).addClass('fa fa-eye');
-            } else {
-                x.attr('type', 'password');
-                $(this).removeClass('fa fa-eye');
-                $(this).addClass('fa fa-eye-slash');
-                document.getElementById('show2').setAttribute('title', 'Näytä salasana');
-            } // End of if
-        })// End of click event
-
-    });
-</script>
-<script>
-    var input = document.getElementById("salasana");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
-<script>
-    var input = document.getElementById("salasana2");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
-        }
-    });
-</script>
 </body>
-</html>			
+</html>	

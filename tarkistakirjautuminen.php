@@ -11,7 +11,7 @@ $tarkistettusposti = htmlspecialchars($_POST['username']);
     $siivottusalasana = mysqli_real_escape_string($db, $_POST['password']);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
-    $stmt = $db->prepare("SELECT DISTINCT vahvistettu, koulu_id, rooli FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
+    $stmt = $db->prepare("SELECT DISTINCT vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
     $stmt->bind_param("s", $sposti);
     // prepare and bind
     $sposti = $siivottusposti;
@@ -20,12 +20,14 @@ $tarkistettusposti = htmlspecialchars($_POST['username']);
 
     $stmt->store_result();
 
-  $stmt->bind_result($column1, $column2, $column3);
+  $stmt->bind_result($column1, $column2, $column3, $column4, $column5);
   
   while ($stmt->fetch()) {
             $vahvistettu = $column1;
             $koulu = $column2;
             $rooli=$column3;
+            $tk = $column4;
+            $tarkistettu = $column5;
         }
 
 if ($rooli=='opettaja' AND !filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL))
@@ -39,8 +41,10 @@ else {
     } else {
         
 
-        if($vahvistettu==0){
-                if (!$haesposti =  $db->query("SELECT DISTINCT sposti FROM kayttajat, koulunadminit WHERE koulunadminit.kayttaja_id=kayttajat.id AND koulunadminit.koulu_id='".$koulu."'")){
+        if($tarkistettu==0){
+            
+            
+                     if (!$haesposti =  $db->query("SELECT DISTINCT sposti FROM kayttajat, koulunadminit WHERE koulunadminit.kayttaja_id=kayttajat.id AND koulunadminit.koulu_id='".$koulu."'")){
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -50,7 +54,20 @@ else {
             $spostia = $rows[sposti];
         }
             
-             echo json_encode(array('status' => 'errorv', 'msg' => $spostia));
+             echo json_encode(array('status' => 'errort', 'msg' => $spostia));
+            
+     
+           
+                 
+        }
+        else if($vahvistettu==0){
+            
+          
+                 echo json_encode(array('status' => 'errorv', 'msg' => $tk));
+            
+           
+             
+             
         }
         else{
                $stmt3 = $db->prepare("SELECT DISTINCT yritykset FROM kayttajat WHERE BINARY sposti=?");

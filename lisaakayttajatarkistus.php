@@ -25,7 +25,7 @@ $sposti100 = $siivottusposti;
 
 
 
-$rooli100 = $_POST[Rooli];
+$rooli100 = $_POST[rooli];
 
 
 
@@ -39,25 +39,27 @@ while ($row100 = $result100->fetch_assoc()) {
 }
 
 
-if($_POST[Rooli]=='opettaja'){
+if($_POST[rooli]=='opettaja'){
   
     //generoidaan salasana
     $salt = "CR85ms";
     $paivays = "" . date("h:i:s") . "";
     $krypattu = md5($salt . $paivays);
 
-   $uniqid = uniqid('', true);
+   $paivays = "" . date("h:i:s") . "";
+   $uniqid = $paivays.uniqid('', true);
+
    $krypattu2 = md5($uniqid);
    
-    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0)");
+    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0)");
     $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
     $etunimi = $siivottuetunimi;
     $sukunimi = $siivottusukunimi;
     $kokonimi = $siivottuetunimi . ' ' . $siivottusukunimi;
     $salasana = $krypattu;
-    $rooli = $_POST[Rooli];
+    $rooli = $_POST[rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 1;
+    $vahvistettu = 0;
     $tarkistettu = 1;
     $koodi = $krypattu2;
     $stmt->execute();
@@ -122,7 +124,7 @@ if($_POST[Rooli]=='opettaja'){
 
 
 
-            if($_POST[Rooli] != 'opiskelija'){
+            if($_POST[rooli] != 'opiskelija'){
                 $varmistus2 = mail($sposti2, $otsikko2, $viesti2, $headers);
             }
             
@@ -140,7 +142,7 @@ if($_POST[Rooli]=='opettaja'){
         $otsikko3 = "=?UTF-8?B?" . base64_encode($otsikko3) . "?=";
 
         $kysely3 = 'Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br><em>Tähän viestiin ei voi vastata.</em>';
-   if($_POST[Rooli] != 'opiskelija'){
+   if($_POST[rooli] != 'opiskelija'){
                     $viesti3 = mail($sposti3, $otsikko3, $kysely3, $headers);
             }
 
@@ -168,7 +170,7 @@ if($_POST[Rooli]=='opettaja'){
 
             $viesti = str_replace("\n.", "\n..", $viesti);
 
-  if($_POST[Rooli] != 'opiskelija'){
+  if($_POST[rooli] != 'opiskelija'){
                       $varmistus = mail($sposti3, $otsikko, $viesti, $headers); 
             }
 
@@ -179,30 +181,36 @@ if($_POST[Rooli]=='opettaja'){
 }
 else{
    
-$siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
-    $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
-    $salt = "8CMr85";
-    $krypattu = md5($salt . $siivottusalasana);
-    
-   $uniqid = uniqid('', true);
-   $krypattu2 = md5($uniqid);
    
-    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0, 1)");
+    //generoidaan salasana
+    $salt = "CR85ms";
+    $paivays = "" . date("h:i:s") . "";
+    $krypattu = md5($salt . $paivays);
+
+    //generoidaan tarkistuskoodi
+   
+   $paivays = "" . date("h:i:s") . "";
+    $uniqid = $paivays.uniqid('', true);
+   $krypattu2 = md5($uniqid);
+    
+    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0, 0)");
     $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
+       
     $etunimi = $siivottuetunimi;
     $sukunimi = $siivottusukunimi;
     $kokonimi = $siivottuetunimi . ' ' . $siivottusukunimi;
     $salasana = $krypattu;
-    $rooli = $_POST[Rooli];
+    $rooli = $_POST[rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 1;
+    $vahvistettu = 0;
     $tarkistettu = 1;
     $koodi = $krypattu2;
+  
     $stmt->execute();
     $stmt->close();
     
-    
-    
+  
+   
     $stmt2 = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY sposti=?");
     $stmt2->bind_param("s", $sposti);
     // prepare and bind

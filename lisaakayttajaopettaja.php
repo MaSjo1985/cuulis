@@ -134,7 +134,7 @@ echo'<div class="cm8-half" style="padding-top: 0px; margin-top: 0px">';
 
 echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm4ope();" action="lisaakayttajatarkistus.php" method="post"><fieldset>';
 
-echo' <legend>Lisää opiskelija Cuulis-oppimisympäristöön</legend>';
+echo' <legend>Lisää opettaja Cuulis-oppimisympäristöön</legend>';
 
 echo '<a href="lisaakayttajaeka.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
 echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
@@ -144,21 +144,23 @@ echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakoll
 
 echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
  
-<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 30%"></p>
+<input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 60%"></p>
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
     <p class="eimitaan"></p>
 </div>
 <br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
 
-<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 30%"></p>
+<input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 60%"></p>
 
 
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
  <p class="eimitaan"></p>
 </div>
 <br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: red">*</b><br><br>
+<b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br>
 
-<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 50%"></p>';
+
+<input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 60%"></p>';
 
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>

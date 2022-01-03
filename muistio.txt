@@ -1,28 +1,33 @@
-1) SALASANAN SALT TURVALLISEMMAKSI
+1) TESTAA:
+* rek
+* lisäys
+* vanhat
+
+2) PELKKÄ SALASANAN VAIHTO -> TODENNUS PUUTTUU!
 
 
-2) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+3) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+
++ VIESTIEN fORMIT
 
 
-3) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+4) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
-4) KÄYTTÖOHJEET PITÄÄ TEHDÄ
+5) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
 
 
-5) EVÄSTEET?!!?!
+
+6) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
-6) TESTAUS!!
+7) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
 
 
-7) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+8) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
-8) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
-
-
-9) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
+10) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
 
 *******************************************************''''
@@ -173,6 +178,7 @@ PIENET TAULUKOT:  #0099ff ->
 VAALEENSININEN VÄRI:   #48E5DA  -> #00ffff
 
 keltanen väri   color: #c7ef00;
+
 ************************************************
 
 ERI NÄKYMÄT KUN ZOOMAA

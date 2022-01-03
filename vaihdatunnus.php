@@ -143,6 +143,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
         echo'<br><br><b>Cuulis-oppimisympäristön kirjautuminen on muuttunut.<br><br>Valitse itsellesi uusi käyttäjätunnus.</b><br>';
 
         echo'<br><br><b style="color: red">Tietoturvasyistä on suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b>';
+     
         echo'<br><br><br><p><b>Uusi käyttäjätunnus: </b> <b style="color: red">*</b><br><br>
              
 <input type="text" id="tunnusr" style="width: 60%" placeholder="Uusi käyttäjätunnus" name="tunnus"></p>

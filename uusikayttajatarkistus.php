@@ -39,7 +39,8 @@ if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "opiskelija" || $_POST[Rooli
     $paivays = "" . date("h:i:s") . "";
     $krypattu = md5($salt . $paivays);
 
-   $uniqid = uniqid('', true);
+   $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
    
     $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");

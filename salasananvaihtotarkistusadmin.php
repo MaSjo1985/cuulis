@@ -38,7 +38,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
-       $uniqid = uniqid('', true);
+     
+   $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
 
     $stmt = $db->prepare("UPDATE kayttajat SET salasana=?, tarkistuskoodi=?, yritykset=?, nollattu=1 WHERE id=?");
@@ -54,10 +56,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     $stmt->close();
 
-
-    echo'<br>Käyttäjän salasana on vaihdettu. <br><br>';
-    echo'<b style="color: red; font-size: 0.9em">Muistathan ilmoittaa valitsemasi salasanan käyttäjälle.</b>';
-   echo'<br><br><br><a href="kayttaja.php?url=' . $url . '&ka=' . $_POST["Id"] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+    header("location: salasanavaihtoadmin2.php?url=".$_POST[url]."&ka=".$_POST[Id]);
 
     echo'</div>';
 

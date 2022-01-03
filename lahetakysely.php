@@ -67,8 +67,9 @@ if (!$tulos2 = $db->query("select distinct sposti from kayttajat where rooli='ad
 
 if ($stmt->num_rows == 1) {
     
-    $uniqid = uniqid('', true);
-  
+  $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
+
     $tarkistuskoodi = md5($uniqid);
 
     while ($stmt->fetch()) {

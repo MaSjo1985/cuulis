@@ -130,7 +130,7 @@ if ((strpos($browser, 'Android'))) {
     echo'</div>';
 }
 
-echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
+echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
 echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröityminen onnistui!</p><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy jonkin ajan kuluttua.</p>';
 

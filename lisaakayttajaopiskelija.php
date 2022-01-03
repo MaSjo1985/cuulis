@@ -142,21 +142,24 @@ echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakoll
 
 echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
  
-<input type="text"   id="etu" name="Etunimi"  placeholder="Etunimi" style="width: 30%"></p>
+<input type="text"   id="etu" name="Etunimi"  placeholder="Etunimi" style="width: 60%"></p>
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
     <p class="eimitaan"></p>
 </div>
 <br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
 
-<input type="text" id="suku"  placeholder="Sukunimi"   name="Sukunimi" style="width: 30%"></p>
+<input type="text" id="suku"  placeholder="Sukunimi"   name="Sukunimi" style="width: 60%"></p>
 
 
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
  <p class="eimitaan"></p>
 </div>
 <br><br><p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
+<b style="color: red; font-size: 0.8em">Tietoturvasyistä on suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
+     
+<b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br>
 
-<input type="text"  placeholder="Käyttäjätunnus"   id="spostir" name="Sposti" style="width: 50%"></p>';
+<input type="text"  placeholder="Käyttäjätunnus"   id="spostir" name="Sposti" style="width: 60%"></p>';
 
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>
@@ -176,27 +179,27 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 echo'<input type="hidden" id="koulu" name="koulu" value="koulu">';
 
        
-        echo'</b></p><br><br>';
+        echo'</b></p>';
 
-echo'<p style="font-size: 1.2em">Luo opiskelija salasana:</p>
-<br><b style="color: red; font-size: 0.9em" >Muista antaa valitsemasi salasana opiskelijalle</b>
-
-
-	<br><br>
-
-<b style="font-size: 0.9em">Salasana:</b>
-<br><input type="password" style="width: 50%" id="uusi" name="Salasana" placeholder="Salasana">
-  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID6">
-    <p class="eimitaan"></p>
-</div>    <br>
-	
-<b style="font-size: 0.9em">Toista uusi salasana:</b>
-<br><input type="password" style="width: 50%" id="uusi2" name="UusiSalasana" placeholder="Toista salasana">
-  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID7">
-    <p class="eimitaan"></p>
-</div>        <br>';
+//echo'<p style="font-size: 1.2em">Luo opiskelija salasana:</p>
+//<br><b style="color: red; font-size: 0.9em" >Muista antaa valitsemasi salasana opiskelijalle</b>
+//
+//
+//	<br><br>
+//
+//<b style="font-size: 0.9em">Salasana:</b>
+//<br><input type="password" style="width: 50%" id="uusi" name="Salasana" autocomplete="new-password" placeholder="Salasana">
+//  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+//<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID6">
+//    <p class="eimitaan"></p>
+//</div>    <br>
+//	
+//<b style="font-size: 0.9em">Toista uusi salasana:</b>
+//<br><input type="password" style="width: 50%" id="uusi2" name="UusiSalasana" placeholder="Toista salasana">
+//  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+//<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID7">
+//    <p class="eimitaan"></p>
+//</div>        <br>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: none" id="divID4">
      <p class="eimitaan"></p>
 </div>';

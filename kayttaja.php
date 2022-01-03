@@ -373,7 +373,7 @@ function myFunction(y) {
 <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>        <br>
-
+<input type="hidden" name="url" value=' . $_GET[url] . '>
 <input type="hidden" id="id" name="Id" value=' . $_GET[ka] . '> ';
         if ($_SESSION[Rooli] == 'admin') {
             echo'<input type="hidden" id="id" name="rooli" value="admin">';

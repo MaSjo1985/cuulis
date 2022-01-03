@@ -166,6 +166,8 @@ echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
  <p class="eimitaan"></p>
 </div>
 <br><br><p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
+<b style="color: red; font-size: 0.8em">Tietoturvasyistä on suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
+     
 
 <input type="text"  placeholder="Käyttäjätunnus"   id="spostir" name="Sposti" style="width: 60%"></p>';
 
@@ -199,7 +201,7 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 </div>';
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4opiskelija()" value="&#10003 Rekisteröidy" >
+<br><input id="button" type="button" onclick="validateForm4opiskelija()" value="&#10003 Rekisteröidy" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

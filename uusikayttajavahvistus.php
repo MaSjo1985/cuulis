@@ -129,16 +129,19 @@ function myFunction2(y) {
         echo'</nav>';
         echo'<div class="cm8-container3">';
         echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
-        echo'<div class="cm8-margin-top"></div>';
+        echo'<div class="cm8-margin-top"><br></div>';
 
-        echo '<p style="font-size:1.2em">Uuden käyttäjän lisäys onnistui!</p>';
+        echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uuden käyttäjän lisäys onnistui!</p>';
 
-        echo '<br><br>';
-        echo '<a href="lisaakayttajaeka.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+        echo '<br>';
+        echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br><br><br>';
 
+        echo '<b><a href="lisaakayttajaeka.php">Lisää toinen käyttäjä tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></b></a>';
+
+        echo "</b></div>";
         echo "</div>";
-        echo "</div>";
-
+ echo "</div>";
+  echo "</div>";
         include("footer.php");
     }
 } else {

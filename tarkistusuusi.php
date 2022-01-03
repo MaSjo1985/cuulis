@@ -131,9 +131,9 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
             $_SESSION["Salasana"] = $krypattu;
             
             if (!empty($_POST[url]))
-                header("location: kirjautuminenvali.php?url=" . $_POST[url]);
+                header("location: kirjautuminen2.php?url=" . $_POST[url]);
             else
-                header("location: kirjautuminenvali.php");
+                header("location: kirjautuminen2.php");
                 }
            
             

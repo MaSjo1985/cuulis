@@ -40,7 +40,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
-    $uniqid = uniqid('', true);
+      $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
+    $krypattu = md5($uniqid . $siivottusalasana);
+   $paivays = "" . date("h:i:s") . "";
+$uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
     
     $stmt = $db->prepare("UPDATE kayttajat SET salasana=?, tarkistuskoodi=? WHERE id=?");

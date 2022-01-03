@@ -19,13 +19,17 @@ if (isset($_POST[id])) {
 
     $siivottutunnus = mysqli_real_escape_string($db, $_POST[tunnus]);
     $tunnus = $siivottutunnus;
-    
+  
+   $paivays = "" . date("h:i:s") . "";
+    $uniqid = $paivays.uniqid('', true);
+   $krypattu2 = md5($uniqid);
 
     $id = $_POST["id"];
 
-    $stmt = $db->prepare("UPDATE kayttajat SET sposti=?, uusitunnus = 1 WHERE id=?");
-    $stmt->bind_param("si", $tunnus, $id);
+    $stmt = $db->prepare("UPDATE kayttajat SET sposti=?, uusitunnus = 1, tarkistuskoodi=? WHERE id=?");
+    $stmt->bind_param("ssi", $tunnus, $tarkistuskoodi,$id);
 // prepare and bind
+    $tarkistuskoodi = $krypattu2;
 
     
     $stmt->execute();

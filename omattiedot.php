@@ -246,7 +246,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm6();" action="salasananvaihtotarkistus.php" method="post"><fieldset>
  <legend>Vaihda salasana:</legend>
-
+<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br><br>
 <p>Vanha salasana: <br>
 
 <input type="password" style="width: 80%" id="vanha" name="VanhaSalasana" > 
@@ -270,7 +271,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>     
-	<br><input type="button" id="button" onclick="validateForm6()" value="&#10003 Vaihda salasana" class="myButton9">
+	<br><input type="button" id="button" onclick="validateForm6()" value="&#10003 Vaihda salasana" class="myButton9"><br><br>
 	</fieldset></form>';
     echo'</div>';
     echo'</div>';
@@ -285,6 +286,33 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     header("location: kirjautuminen.php?url=" . $url);
 }
 ?>
+        <script type="text/javascript">
+$('#vanha').on('keyup', function() {
+      var div2 = document.getElementById("divID");
+    document.getElementById("vanha").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+    <script type="text/javascript">
+$('#uusi').on('keyup', function() {
+      var div2 = document.getElementById("divID2");
+    document.getElementById("uusi").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#uusi2').on('keyup', function() {
+      var div3 = document.getElementById("divID3");
+    document.getElementById("uusi2").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     $(function () {
 

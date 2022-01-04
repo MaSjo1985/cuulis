@@ -1,10 +1,6 @@
-1) TESTAA:
-* rek
-* lisäys
-* vanhat
+1) TESTAA ADMIN REKISTERÖINTI, ope/opiskelija
 
-2) PELKKÄ SALASANAN VAIHTO -> TODENNUS PUUTTUU!
-
+2) TESTAA JOS EI VAIHDA SALASANAA, ope/opiskelija
 
 3) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
 

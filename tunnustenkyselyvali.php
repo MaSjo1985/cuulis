@@ -9,7 +9,7 @@ if($_POST[rooli]=='opiskelija'){
     header("location: tunnustenkyselyuusi.php?akt=".$_POST[akt]);
 }
 else{
-     header("location: tunnustenkysely.php?akt=".$_POST[akt]);
+     header("location: tunnustenkyselyope.php?akt=".$_POST[akt]);
 }
 
 ?>

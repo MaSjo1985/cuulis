@@ -81,19 +81,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
              else{
             //onko nollattu?!
             
-            if($nollattu==1){
-                
-                        if (!empty($_POST[url]))
-                      header("location: vaihdasalasana.php?id='.$id.'&url=" . $_POST[url]);
-                  else
-                      header("location: vaihdasalasana.php?id=".$id);
-            
-                  
-            }
-            else{
-                
-                //onko uusitunnus
-                if($uusitunnus == 0 && $rooli=='opiskelija'){
+             if($uusitunnus == 0 && $rooli=='opiskelija'){
                     
                             if (!empty($_POSTI[url]))
                       header("location: vaihdatunnus.php?id='.$id.'&url=" . $_POST[url]);
@@ -103,6 +91,18 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
                 
                 
                 }
+            else{
+                
+                //onko uusitunnus
+               if($nollattu==1){
+                
+                        if (!empty($_POST[url]))
+                      header("location: vaihdasalasana.php?id='.$id.'&url=" . $_POST[url]);
+                  else
+                      header("location: vaihdasalasana.php?id=".$id);
+            
+                  
+            }
                 else{
            
                     

@@ -181,25 +181,26 @@ echo'<input type="hidden" id="koulu" name="koulu" value="koulu">';
        
         echo'</b></p>';
 
-//echo'<p style="font-size: 1.2em">Luo opiskelija salasana:</p>
-//<br><b style="color: red; font-size: 0.9em" >Muista antaa valitsemasi salasana opiskelijalle</b>
-//
-//
-//	<br><br>
-//
-//<b style="font-size: 0.9em">Salasana:</b>
-//<br><input type="password" style="width: 50%" id="uusi" name="Salasana" autocomplete="new-password" placeholder="Salasana">
-//  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-//<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID6">
-//    <p class="eimitaan"></p>
-//</div>    <br>
-//	
-//<b style="font-size: 0.9em">Toista uusi salasana:</b>
-//<br><input type="password" style="width: 50%" id="uusi2" name="UusiSalasana" placeholder="Toista salasana">
-//  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-//<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID7">
-//    <p class="eimitaan"></p>
-//</div>        <br>';
+echo'<br><br><br><p style="font-size: 1.2em">Luo opiskelija salasana:</p>
+<br><b style="color: blue; font-size: 0.8em" >Muista antaa valitsemasi salasana opiskelijalle</b><br>
+
+<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br>
+	
+
+<b style="font-size: 0.9em">Salasana:</b>
+<br><input type="password" style="width: 50%" id="uusi" name="Salasana" autocomplete="new-password" placeholder="Salasana">
+  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID6">
+    <p class="eimitaan"></p>
+</div>    <br>
+	
+<b style="font-size: 0.9em">Toista uusi salasana:</b>
+<br><input type="password" style="width: 50%" id="uusi2" name="UusiSalasana" placeholder="Toista salasana">
+  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID7">
+    <p class="eimitaan"></p>
+</div>        ';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: none" id="divID4">
      <p class="eimitaan"></p>
 </div>';
@@ -212,7 +213,7 @@ echo'<input type="hidden" id="rooli" name="rooli" value="opiskelija">';
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
 
-<br><br><input id="button" type="button" onclick="validateForm4opiskelija()" value="&#10003 Rekisteröi opiskelija" ><br><br>
+<br><input id="button" type="button" onclick="validateForm4opiskelija()" value="&#10003 Rekisteröi opiskelija" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

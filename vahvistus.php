@@ -170,16 +170,18 @@ if ($stmt->num_rows == 1) {
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> </p><br>
 		<input type="hidden" name="id" value=' . $id . '> <br>
                     <input type="hidden" name="admin" value="1">
-		<br><input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9">
+		<br><input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
         $stmt->close();
     } else {
         echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
-        echo"<legend>Rekisteröitymisen vahvistaminen</legend>"
-        . "<br><b>Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön antamalla henkilökohtainen salasanasi.</b><br> <br>";
+        echo"<legend>Rekisteröitymisen vahvistaminen</legend>";
+        echo'<br><b style="color: blue">Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön antamalla henkilökohtainen salasanasi.</b><br> <br>';
 
+echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br><br>';
         echo'<p><b>Salasana: </b> <b style="color: red">*</b><br><br>
              
 <input type="password" id="salasana" style="width: 50%" name="Salasana">
@@ -199,7 +201,7 @@ if ($stmt->num_rows == 1) {
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> <br>
 		<input type="hidden" name="id" value=' . $id . '> <br>
                     <input type="hidden" name="admin" value="0"> 
-		<input type="button" id="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9">
+		<input type="button" id="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
         $stmt->close();
     }
@@ -214,6 +216,24 @@ echo '</div>';
 
 include("footer.php");
 ?>
+<script type="text/javascript">
+$('#salasana').on('keyup', function() {
+      var div2 = document.getElementById("divID");
+    document.getElementById("salasana").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#salasana2').on('keyup', function() {
+      var div3 = document.getElementById("divID2");
+    document.getElementById("salasana2").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     $(function () {
 

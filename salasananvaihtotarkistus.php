@@ -40,9 +40,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
-      $paivays = "" . date("h:i:s") . "";
-$uniqid = $paivays.uniqid('', true);
-    $krypattu = md5($uniqid . $siivottusalasana);
+     
    $paivays = "" . date("h:i:s") . "";
 $uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
@@ -59,9 +57,8 @@ $uniqid = $paivays.uniqid('', true);
     $stmt->execute();
 
     $stmt->close();
-
-    echo('<br>Salasanasi on vaihdettu. <br><br><a href="omattiedot.php?id=' . $_SESSION["Id"] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>');
-
+    
+    header("location: salasanavaihdettu.php");
 
     echo'</div>';
 

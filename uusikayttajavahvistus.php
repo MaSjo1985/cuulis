@@ -134,8 +134,15 @@ function myFunction2(y) {
         echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uuden käyttäjän lisäys onnistui!</p>';
 
         echo '<br>';
-        echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br><br><br>';
+        if($_GET[rooli]=='opettaja'){
+            echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br><br><br>';
 
+        }
+        else{
+            echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus ja salasana.</b><br><br><br><br>';
+
+        }
+        
         echo '<b><a href="lisaakayttajaeka.php">Lisää toinen käyttäjä tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></b></a>';
 
         echo "</b></div>";

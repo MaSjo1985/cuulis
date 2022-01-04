@@ -132,9 +132,10 @@ if ((strpos($browser, 'Android'))) {
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
-echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröityminen onnistui!</p><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy jonkin ajan kuluttua.</p>';
+echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröityminen onnistui!</p><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
+echo '<b><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
-echo '<br><br><a href="etusivu.php"><b>Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></b></a>';
+echo '<br><br><a href="etusivu.php">Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
 echo "</div>";
 echo "</div>";
 

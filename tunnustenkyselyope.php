@@ -4,7 +4,7 @@ echo'<!DOCTYPE html>
 <html>
 <head>';
 
-if($_POST[akt] == 1){
+if($_GET[akt] == 1){
   echo'<title>Kayttäjätunnuksen uudelleenaktivointi </title>';
 }
 else{
@@ -137,47 +137,31 @@ if ((strpos($browser, 'Android'))) {
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
 
-
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
-echo'<form name="Form" id="myForm" class="form-style-k"><fieldset>';
-if($_POST[akt]==1){
+echo'<form name="Form" id="myForm" onSubmit="return validateForm8ope();" class="form-style-k" action="lahetakysely.php" method="post"><fieldset>';
+if($_GET[akt]==1){
     echo'<legend>Käyttäjätunnuksen uudelleenaktivointi</legend>';
 }
 else{
     echo'<legend>Unohtunut käyttäjätunnus/salasana</legend>';
 }
-   echo'<a href="tunnustenkyselyuusi.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-
-   
-if (!$resultadmin = $db->query("select distinct * from koulut,koulunadminit, kayttajat where koulut.id='".$_POST[koulu]."' AND koulunadminit.kayttaja_id=kayttajat.id AND koulunadminit.koulu_id='".$_POST[koulu]."'")) {
-    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-}
+   echo'<a href="tunnustenkyselyuusieka.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>
 
 
 
-if($resultadmin->num_rows == 0){
-    $sposti = 'marianne.sjoberg@cm8solutions.fi';
-}
-else{
-    while ($rowa = $resultadmin->fetch_assoc()) {
- $nimi=$rowa[etunimi].' '.$rowa[sukunimi];
- $sposti = $rowa[sposti];
- $koulu = $rowa[Nimi];
-}
-}
-
-if($_POST[akt]==1){
-    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän vaihtaa sinulle uuden salasanan</p>';
-
-}
-else{
-    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>';
-
-}
-
-echo'<br><br>
- </fieldset></form>';
+   <br><p>Anna Cuulis-oppimisympäristöön rekisteröimäsi käyttäjätunnus eli sähköpostiosoite:<br><br>
+ 
+<input type="email" id="spostir" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 80%"></p>
+    
+<div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
+    <p style="padding: 0px" class="eimitaan" style="display: inline-block"></p>
+</div>
+<input type="hidden" name="akt" value="'.$_GET[akt].'">
+<br><input id="button" type="button" onclick="validateForm8ope()" value="&#10003 Lähetä">
+<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite"  href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
+<br>
+ </fieldset> </form>';
 
 
 
@@ -185,8 +169,17 @@ echo'<br><br>
 echo "</div></div>";
 include("footer.php");
 ?>
+ <script type="text/javascript">
+$('#spostir').on('keyup', function() {
+      var div3 = document.getElementById("divID");
+    document.getElementById("spostir").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
-    var input = document.getElementById("sposti");
+    var input = document.getElementById("spostir");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();

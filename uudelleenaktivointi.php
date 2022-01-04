@@ -144,11 +144,9 @@ while ($row = $tulos->fetch_assoc()) {
 if ($tulos->num_rows == 1 && ($rooli == 'opiskelija' || ($rooli <> 'opiskelija' && $vahvistettu == 1))) {
     echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
     echo '<form name="Form" id="myForm" onSubmit="return validateForm9();" action="salasanatarkistus.php" method="post" class="form-style-k" ><fieldset>';
-    echo"<legend> Vaihda salasanasi:  </legend> ";
-    echo '<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br><br>';
-
-
-
+    echo"<legend> Anna itsellesi uusi salasana  </legend> ";
+echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br><br>';
     echo'<p><b>Uusi salasana:</b><br>
                   
 <input type="password" style="width: 50%" id="salasana" placeholder="Uusi salasana" name="Salasana">
@@ -168,12 +166,12 @@ if ($tulos->num_rows == 1 && ($rooli == 'opiskelija' || ($rooli <> 'opiskelija' 
 
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> <br>
 		<input type="hidden" name="id" value=' . $id . '> <br>
-		<input type="button" id="button" onclick="validateForm9()"value="&#10003 Tallenna" class="myButton9">
+		<input type="button" id="button" onclick="validateForm9()"value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
 } else if ($tulos->num_rows != 0 && ($rooli <> 'opiskelija' && $vahvistettu == 0)) {
-    echo '<br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
+    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
 } else if ($tulos->num_rows == 0) {
-    echo '<br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Aktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkysely.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
+    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkysely.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
 }
 
 

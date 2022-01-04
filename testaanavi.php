@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$siivottusalasana='cuulis';
+$siivottusalasana='ma';
     
     $maara=100;
     

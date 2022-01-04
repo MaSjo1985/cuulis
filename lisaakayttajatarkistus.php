@@ -183,18 +183,19 @@ else{
    
    
     //generoidaan salasana
-    $salt = "CR85ms";
-    $paivays = "" . date("h:i:s") . "";
-    $krypattu = md5($salt . $paivays);
-
+  $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+    $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
+    $salt = "8CMr85";
+    $krypattu = md5($salt . $siivottusalasana);
+     
     //generoidaan tarkistuskoodi
    
    $paivays = "" . date("h:i:s") . "";
     $uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
     
-    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0, 0)");
-    $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
+    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssiisi", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi, $nollattu, $uusitunnus);
        
     $etunimi = $siivottuetunimi;
     $sukunimi = $siivottusukunimi;
@@ -202,8 +203,10 @@ else{
     $salasana = $krypattu;
     $rooli = $_POST[rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 0;
+    $vahvistettu = 1;
     $tarkistettu = 1;
+    $nollattu=1;
+      $uusitunnus=1;
     $koodi = $krypattu2;
   
     $stmt->execute();
@@ -232,7 +235,7 @@ else{
     $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
 
 }
-   header("location: uusikayttajavahvistus.php");
+   header("location: uusikayttajavahvistus.php?rooli=".$_POST[rooli]);
 
 
 

@@ -209,7 +209,7 @@ echo'<br><br><p>Valitse rooli, jossa aiot toimia oppimisympäristössä: <b styl
 </div>
 <div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4()" value="&#10003 Rekisteröidy" >
+<br><input id="button" type="button" onclick="validateForm4()" value="&#10003 Rekisteröidy" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

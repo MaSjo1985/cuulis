@@ -200,7 +200,7 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4ope()" value="&#10003 Rekisteröidy" >
+<br><input id="button" type="button" onclick="validateForm4ope()" value="&#10003 Rekisteröidy" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

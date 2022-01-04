@@ -154,7 +154,7 @@ echo'<div id="username_availability_result"></div>
 <input type="hidden" id="vali" value="99">
 <input type="hidden" name="url" value="'.$_GET[URL].'">
 <input type="hidden" name="id" value="'.$_GET[id].'">
-<br><input id="button" type="button" onclick="validateFormKe()" value="&#10003 Hyväksy" ><br>
+<br><input id="button" type="button" onclick="validateFormKe()" value="&#10003 Hyväksy" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

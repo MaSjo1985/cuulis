@@ -356,6 +356,12 @@ function myFunction(y) {
         echo '<form name="Form" id="myForm" onSubmit="return validateForm10();" action="salasananvaihtotarkistusadmin.php" method="post"><fieldset>
  
 <legend style="margin-left: 0px">Luo käyttäjälle uusi salasana:</legend>
+<br><b style="color: blue;">Muista ilmoittaa käyttäjälle valitsemasi salasana.</b>
+<br><br>
+
+<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br>
+
 
 
 	<br><p>Uusi salasana:<br>

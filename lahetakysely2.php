@@ -138,11 +138,11 @@ if ((strpos($browser, 'Android'))) {
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
 if($_GET[akt] == 1){
-    echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit aktivoida käyttäjätunnuksesi uudelleen<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei ole saapunut jonkin ajan kuluttua.</p></b> ';
+    echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit aktivoida käyttäjätunnuksesi uudelleen<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
 }
 else{
-     echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit vaihtaa salasanasi<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy jonkin ajan kuluttua.</p></b> ';
+     echo '<br><b style="color: #c7ef00;">Antamaasi sähköpostiosoitteeseen on lähetetty linkki, jolla voit vaihtaa salasanasi<br><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
 }
 

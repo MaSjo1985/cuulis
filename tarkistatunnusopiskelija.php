@@ -22,29 +22,32 @@ $stmt->execute();
 
 $stmt->store_result();
 
+if ($_POST[admin] == 'admin') {
+    if ($_POST[uusi] != $_POST[uusi2]) {
+        echo json_encode(array('status' => 'errors', 'msg' => 'error'));
+    } else {
+        // ei rekisteröity
+        if ($stmt->num_rows == 0) {
+
+            echo json_encode(array('status' => 'success', 'msg' => 'no error'));
+        } else {
 
 
-// ei rekisteröity
-if ($stmt->num_rows == 0) {
-
-          echo json_encode(array('status' => 'success', 'msg' => 'no error'));
-    
-
-
-  
+            echo json_encode(array('status' => 'error', 'msg' => 'error'));
+        }
+    }
 } else {
-    
-    
- echo json_encode(array('status' => 'error', 'msg' => 'error'));
+    // ei rekisteröity
+    if ($stmt->num_rows == 0) {
 
-    
-    
-    
-    
-   
+        echo json_encode(array('status' => 'success', 'msg' => 'no error'));
+    } else {
 
-    
-    
+
+        echo json_encode(array('status' => 'error', 'msg' => 'error'));
+    }
 }
+
+
 $stmt->close();
 ?>

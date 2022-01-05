@@ -16,31 +16,34 @@ echo'<div class="cm8-margin-top"></div>';
 $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
 $siivottuetunimi = mysqli_real_escape_string($db, $_POST[Etunimi]);
 $siivottusukunimi = mysqli_real_escape_string($db, $_POST[Sukunimi]);
+$siivottusposti = trim($siivottusposti);
 // $siivottusalasana=mysqli_real_escape_string($db, $_POST[Salasana]);
 // $siivottuuusisalasana=mysqli_real_escape_string($db, $_POST[UusiSalasana]);
 
 $etunimi100 = $siivottuetunimi;
 $sukunimi100 = $siivottusukunimi;
 $sposti100 = $siivottusposti;
-
-
-
 $rooli100 = $_POST[rooli];
 
 
-
-
-
-if (!$result100 = $db->query("select distinct * from koulut where id='" . $_SESSION[kouluId] . "'")) {
+if($_SESSION[Rooli]!='admin'){
+    if (!$result100 = $db->query("select distinct * from koulut where id='" . $_SESSION[kouluId] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
+}
+else{
+    if (!$result100 = $db->query("select distinct * from koulut where id='" . $_POST[koulu] . "'")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+}
+
+
 while ($row100 = $result100->fetch_assoc()) {
     $koulu100 = $row100[Nimi];
 }
 
-
 if($_POST[rooli]=='opettaja'){
-  
+ 
     //generoidaan salasana
     $salt = "CR85ms";
     $paivays = "" . date("h:i:s") . "";
@@ -62,6 +65,7 @@ if($_POST[rooli]=='opettaja'){
     $vahvistettu = 0;
     $tarkistettu = 1;
     $koodi = $krypattu2;
+
     $stmt->execute();
     $stmt->close();
     $stmt2 = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY sposti=?");
@@ -91,7 +95,7 @@ if($_POST[rooli]=='opettaja'){
     $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 
-    $viesti = 'Sinut on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br>Sinun tulee vielä asettaa itsellesi salasana, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?admin=1&tk=' . $koodi . '"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+    $viesti = 'Sinut on lisätty opettajaksi Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Käyttäjätunnus: '.$sposti100.'<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br><br>Sinun tulee vielä asettaa itsellesi salasana, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?admin=1&tk=' . $koodi . '"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
     $viesti = str_replace("\n.", "\n..", $viesti);
 
@@ -100,90 +104,23 @@ if($_POST[rooli]=='opettaja'){
             
 
     
-
-    $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
-
-
-    if (!$result = $db->query("select kayttajat.sposti as sposti from koulunadminit, kayttajat where koulunadminit.koulu_id='" . $_SESSION[kouluId] . "' AND koulunadminit.kayttaja_id=kayttajat.id")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
-
-    if ($result->num_rows != 0) {
-
-        while ($row = $result->fetch_assoc()) {
-            $sposti2 = $row[sposti];
+   if($_SESSION[Rooli]!='admin'){
+           $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
 
 
+   }
+   else{
+           $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_POST[koulu] . "', 1)");
 
-            $otsikko2 = "Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön";
-            $otsikko2 = "=?UTF-8?B?" . base64_encode($otsikko2) . "?=";
+   }
 
-            $viesti2 = 'Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br><em>Tähän viestiin ei voi vastata.</em>';
-
-            $viesti2 = str_replace("\n.", "\n..", $viesti2);
-
-
-
-            if($_POST[rooli] != 'opiskelija'){
-                $varmistus2 = mail($sposti2, $otsikko2, $viesti2, $headers);
-            }
-            
-        }
-
-        if (!$tulos3 = $db->query("select distinct sposti from kayttajat where rooli='admin'")) {
-            die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
-        }
-
-        while ($row3 = $tulos3->fetch_assoc()) {
-            $sposti3 = $row3["sposti"];
-        }
-
-        $otsikko3 = "Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön";
-        $otsikko3 = "=?UTF-8?B?" . base64_encode($otsikko3) . "?=";
-
-        $kysely3 = 'Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br><em>Tähän viestiin ei voi vastata.</em>';
-   if($_POST[rooli] != 'opiskelija'){
-                    $viesti3 = mail($sposti3, $otsikko3, $kysely3, $headers);
-            }
-
-    
-        $stmt2->close();
-        header("location: uusikayttajavahvistus.php");
-    } else {
-
-        if (!$result100 = $db->query("select sposti from kayttajat where rooli='admin'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-        while ($row = $result100->fetch_assoc()) {
-            $sposti3 = $row[sposti];
-
-            $headers .= "Organization: Cuulis-oppimisympäristö\r\n";
-            $headers .= "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
-            $headers .= "X-Priority: 3\r\n";
-            $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
-
-            $otsikko = "Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön";
-            $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
-            $viesti = 'Uusi käyttäjä on lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br>Rooli: ' . $rooli100 . '<br><br><em>Tähän viestiin ei voi vastata.</em>';
-
-            $viesti = str_replace("\n.", "\n..", $viesti);
-
-  if($_POST[rooli] != 'opiskelija'){
-                      $varmistus = mail($sposti3, $otsikko, $viesti, $headers); 
-            }
-
-     
-        }
-        $stmt2->close();
-    }    
+      $stmt2->close();
 }
 else{
    
    
     //generoidaan salasana
-  $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+      $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
@@ -194,8 +131,8 @@ else{
     $uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
     
-    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssiisi", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi, $nollattu, $uusitunnus);
+    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssiisiii", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi, $uusitunnus, $kayttoehdot, $nollattu);
        
     $etunimi = $siivottuetunimi;
     $sukunimi = $siivottusukunimi;
@@ -208,11 +145,10 @@ else{
     $nollattu=1;
       $uusitunnus=1;
     $koodi = $krypattu2;
-  
+  $kayttoehdot=0;
     $stmt->execute();
     $stmt->close();
-    
-  
+
    
     $stmt2 = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY sposti=?");
     $stmt2->bind_param("s", $sposti);
@@ -232,10 +168,18 @@ else{
 
 
 
-    $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
+     if($_SESSION[Rooli]!='admin'){
+           $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_SESSION[kouluId] . "', 1)");
 
+
+   }
+   else{
+           $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $id . "', '" . $_POST[koulu] . "', 1)");
+
+   }
 }
-   header("location: uusikayttajavahvistus.php?rooli=".$_POST[rooli]);
+
+   header('location: uusikayttajavahvistus.php?id='.$id.'&rooli='.$_POST[rooli]);
 
 
 

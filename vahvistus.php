@@ -152,25 +152,33 @@ while ($stmt->fetch()) {
 if ($stmt->num_rows == 1) {
 
     if (isset($_GET[admin])) {
-        echo'<div class="cm8-half">';
+        echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
-        echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
-        echo"<legend>Anna itsellesi salasana Cuulis-oppimisympäristöön</legend>";
+        echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
+        echo"<legend>Valitse itsellesi salasana</legend>";
+        echo'<br><b style="color: blue">Valitse salasana Cuulis-oppimisympäristöön</b><br> <br>';
 
-        echo'<p><b>Salasana: </b>  <b style="color: red">*</b><br><br>
-   <div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
-    <p></p>
-</div>              
-<input type="password" id="salasana"  style="width: 70%" name="Salasana"></p>
-		<br><p><b>Anna salasana uudelleen:	</b>  <b style="color: red">*</b><br><br>
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
-    <p></p>
-</div>                 
-<input type="password" id="salasana2" style="width: 70%" name="UusiSalasana">
+echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><br><br>';
+        echo'<p><b>Salasana: </b> <b style="color: red">*</b><br><br>
+             
+<input type="password" id="salasana" style="width: 50%" name="Salasana">
+  <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+    <p class="eimitaan"></p>
+</div>
+
+<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: red">*</b><br><br>
+             
+<input type="password" id="salasana2" style="width: 50%" name="UusiSalasana">
+  <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
+<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+    <p class="eimitaan"></p>
+</div>  
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> </p><br>
-		<input type="hidden" name="id" value=' . $id . '> <br>
+		<input type="hidden" name="id" value=' . $id . '> 
                     <input type="hidden" name="admin" value="1">
-		<br><input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
+		<input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
         $stmt->close();
     } else {
@@ -178,7 +186,7 @@ if ($stmt->num_rows == 1) {
 
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
         echo"<legend>Rekisteröitymisen vahvistaminen</legend>";
-        echo'<br><b style="color: blue">Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön antamalla henkilökohtainen salasanasi.</b><br> <br>';
+        echo'<br><b style="color: blue">Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön valitsemalla itsellesi salasana.</b><br> <br>';
 
 echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>';

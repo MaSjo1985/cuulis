@@ -166,7 +166,7 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 </div>';
 
 
-
+if($_SESSION[Rooli]!='admin'){
     if (!$resultkoulut = $db->query("select distinct * from koulut where id = '" . $_SESSION[kouluId] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -180,6 +180,32 @@ echo'<input type="hidden" id="koulu" name="koulu" value="koulu">';
 
        
         echo'</b></p>';
+echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+     <p class="eimitaan"></p>
+</div>';       
+}
+else{
+    if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+    echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b><br>
+<br>';
+echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
+echo' <option value="valitsekoulu" selected>Valitse oppilaitos';
+
+while ($rowko = $resultkoulut->fetch_assoc()) {
+    if ($rowko[id] != 19) {
+        echo '<option value=' . $rowko[id] . '>' . $rowko[Nimi];
+    }
+}
+echo'</select></p>';
+
+echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+     <p class="eimitaan"></p>
+</div>';
+}
+
+
 
 echo'<br><br><br><p style="font-size: 1.2em">Luo opiskelija salasana:</p>
 <br><b style="color: blue; font-size: 0.8em" >Muista antaa valitsemasi salasana opiskelijalle</b><br>
@@ -300,7 +326,7 @@ $('#uusi').on('keyup', function() {
  </script>
  <script type="text/javascript">
 $('#uusi2').on('keyup', function() {
-      var div3 = document.getElementById("divID7");
+      var div7 = document.getElementById("divID7");
     document.getElementById("uusi2").style.backgroundColor = "white";
         div7.style.padding = "10px 60px 10px 0px";
 

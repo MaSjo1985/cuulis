@@ -2791,7 +2791,7 @@ function validateForm4opiskelija()
 
     document.getElementById("etu").style.backgroundColor = "white";
     document.getElementById("suku").style.backgroundColor = "white";
- 
+ document.getElementById("spostir").style.backgroundColor = "white";
     document.getElementById("koulu").style.backgroundColor = "white";
      
  document.getElementById("kayttoehdot").style.backgroundColor = "white";
@@ -2890,6 +2890,7 @@ function validateForm4opiskelija()
 
         var username = $('#spostir').val();
         var returnVal = 0;
+        document.getElementById("spostir").style.backgroundColor = "white";
          var admin = $('#admin').val();
          
         var uusi = $('#uusi').val();
@@ -2898,7 +2899,7 @@ function validateForm4opiskelija()
         $.ajax({
             type: 'post',
             url: 'tarkistatunnusopiskelija.php',
-            data: {username: username},
+            data: {username: username, admin: admin, uusi: uusi, uusi2: uusi2},
             dataType: 'json',
             success: function (data) {
               
@@ -2907,11 +2908,20 @@ function validateForm4opiskelija()
                     document.getElementById("myForm").submit();
 
 
-                } else {
+                } else if (data.status == "errors") {
+                        document.getElementById("uusi").style.backgroundColor = "yellow";
+        div6.style.padding = "10px 0px 20px 0px";
+        div6.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+             document.getElementById("uusi2").style.backgroundColor = "yellow";
+        div7.style.padding = "10px 0px 20px 0px";
+        div7.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+
+
+                }else {
 
                
                          
-                         document.getElementById("spostir").style.backgroundColor = "yellow";
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
                  
                         div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
 
@@ -2921,11 +2931,7 @@ function validateForm4opiskelija()
                         
                         
                     }
-                    
-                    
-                    
-                   
-                        
+  
                 }
             
         });

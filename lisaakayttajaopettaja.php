@@ -165,8 +165,7 @@ echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>
 </div>';
-
-
+if($_SESSION[Rooli]!='admin'){
     if (!$resultkoulut = $db->query("select distinct * from koulut where id = '" . $_SESSION[kouluId] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -175,21 +174,41 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 
             $koulu = $rowko[Nimi];
         }
-        echo'<br><br><br><p >Ensisijainen oppilaitos: &nbsp&nbsp <b style="font-weight: normal">'.$koulu;
-
+        echo'<br><br><p >Ensisijainen oppilaitos: &nbsp&nbsp <b style="font-weight: normal">'.$koulu;
 echo'<input type="hidden" id="koulu" name="koulu" value="koulu">';
+
        
         echo'</b></p>';
+echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+     <p class="eimitaan"></p>
+</div>';       
+}
+else{
+    if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+    echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b><br>
+<br>';
+echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
+echo' <option value="valitsekoulu" selected>Valitse oppilaitos';
+
+while ($rowko = $resultkoulut->fetch_assoc()) {
+    if ($rowko[id] != 19) {
+        echo '<option value=' . $rowko[id] . '>' . $rowko[Nimi];
+    }
+}
+echo'</select></p>';
 
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
+}
 echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em; display: none" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot" checked>&nbsp&nbspHyväksyn <a href="kayttoehdot_opettaja.php" style="border-bottom:1px solid blue; color: blue;"> käyttöehdot </a><b style="color: red">*</b></label></p>';
 echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: none" id="divID5">
      <p class="eimitaan"></p>
 </div>';
 echo'<input type="hidden" id="admin" name="admin" value="admin">';
-echo'<input type="hidden" id="rooli" name="rooli" value="opiskelija">';
+echo'<input type="hidden" id="rooli" name="rooli" value="opettaja">';
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
 <br><input id="button" type="button" onclick="validateForm4ope()" value="&#10003 Rekisteröi opettaja" ><br><br>

@@ -129,13 +129,29 @@ if ((strpos($browser, 'Android'))) {
 
     echo'</div>';
 }
-
+if (!$result = $db->query("select distinct etunimi, sukunimi, koulut.Nimi as koulu, sposti from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_GET[id] . "'")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+while ($row = $result->fetch_assoc()) {
+    
+    $etunimi = $row[etunimi];
+     $sukunimi = $row[sukunimi];
+     $sposti = $row[sposti];
+     $koulu = $row[koulu];
+}
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
-echo '<p style="font-size:1.2em; font-weight: bold">Rekisteröityminen onnistui!</p><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
+ echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
+                echo '<br><b>Etunimi: &nbsp&nbsp&nbsp</b>'.$etunimi;
+                echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b>'.$sukunimi;
+                echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b>'.$sposti;
+                echo '<br><br><b>Ensisijainen oppilaitos:&nbsp&nbsp&nbsp </b>'.$koulu;
+                echo '<br><br><b>Rooli: &nbsp&nbsp&nbsp</b> Opettaja';
+                
+echo '<br><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
 echo '<b><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
-echo '<br><br><a href="etusivu.php">Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
+echo '<br><br><b><a href="etusivu.php">Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a></b>';
 echo "</div>";
 echo "</div>";
 

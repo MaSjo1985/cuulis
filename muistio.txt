@@ -1,29 +1,23 @@
-1) TESTAA ADMIN REKISTERÖINTI, ope/opiskelija
+1) TSEKKAA KAIKKI mail()-toiminnot
 
-2) TESTAA JOS EI VAIHDA SALASANAA, ope/opiskelija
+2) TESTAA KAIKKI REKISTERÖINNIT + JOS EI VAIHDA SALASANAA, ope/opiskelija
 
-3) VIESTIEN LÄHETYKSET!! Esim kun lisää Cuulikseen/kurssille niin hakee sähköpostin! 
+3) SALASANOJEN VAIHDOT!
 
-+ VIESTIEN fORMIT
+4) VIESTIEN fORMIT
 
-
-4) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
-
-
-5) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
+5) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
+6) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
 
-6) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
-
-
-7) UUDEN KÄYTTÄJÄN REKISTERÖINTILOMAKKEESSA VALMIITA JUTTUJA -> LAITA POIS!
+7) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
 8) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
-10) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
+9) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
 
 *******************************************************''''

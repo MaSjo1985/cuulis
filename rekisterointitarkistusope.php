@@ -17,6 +17,7 @@ echo'<div class="cm8-margin-top"></div>';
 $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
 $siivottuetunimi = mysqli_real_escape_string($db, $_POST[Etunimi]);
 $siivottusukunimi = mysqli_real_escape_string($db, $_POST[Sukunimi]);
+$siivottusposti = trim($siivottusposti);
 // $siivottusalasana=mysqli_real_escape_string($db, $_POST[Salasana]);
 // $siivottuuusisalasana=mysqli_real_escape_string($db, $_POST[UusiSalasana]);
  $_POST[Rooli]='opettaja';
@@ -158,7 +159,7 @@ $krypattu2 = md5($uniqid);
 
         $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
         $stmt2->close();
-        header("location: rekisterointisuoritettu2.php");
+
     } else {
 
         if (!$result100 = $db->query("select sposti from kayttajat where rooli='admin'")) {
@@ -195,11 +196,11 @@ $krypattu2 = md5($uniqid);
             $varmistus = mail($sposti3, $otsikko, $viesti, $headers);
         }
         $stmt2->close();
-        header("location: rekisterointisuoritettu2.php");
+      
     }
 
 
-
+  header('location: rekisterointisuoritettu2.php?id='.$id);
 
 
 

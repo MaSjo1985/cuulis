@@ -129,23 +129,41 @@ function myFunction2(y) {
         echo'</nav>';
         echo'<div class="cm8-container3">';
         echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
-        echo'<div class="cm8-margin-top"><br></div>';
-
-        echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uuden käyttäjän lisäys onnistui!</p>';
+    
+if (!$result = $db->query("select distinct etunimi, sukunimi, koulut.Nimi as koulu, sposti from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_GET[id] . "'")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+while ($row = $result->fetch_assoc()) {
+    
+    $etunimi = $row[etunimi];
+     $sukunimi = $row[sukunimi];
+     $sposti = $row[sposti];
+     $koulu = $row[koulu];
+}
+   
 
         echo '<br>';
         if($_GET[rooli]=='opettaja'){
-            echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br><br><br>';
+                 echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uusi opettaja on lisätty seuraavilla tiedoilla: </p>';
+                echo '<br><br><b>Etunimi:&nbsp&nbsp&nbsp </b> '.$etunimi;
+                echo '<br><br><b>Sukunimi:&nbsp&nbsp&nbsp </b> '.$sukunimi;
+                echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b> '.$sposti;
+                echo '<br><br><b>Ensisijainen oppilaitos: &nbsp&nbsp&nbsp</b> '.$koulu;
 
         }
         else{
-            echo'<b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus ja salasana.</b><br><br><br><br>';
+                   echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uusi opiskelija on lisätty seuraavilla tiedoilla: </p>';
+                         echo '<br><br><b>Etunimi: &nbsp&nbsp&nbsp</b> '.$etunimi;
+                echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b> '.$sukunimi;
+                echo '<br><br><b>Käyttäjätunnus: &nbsp&nbsp&nbsp</b> '.$sposti;
+                echo '<br><br><b>Ensisijainen oppilaitos: &nbsp&nbsp&nbsp</b> '.$koulu;
+            echo'<br><br><b style="color: red">Muista ilmoittaa käyttäjälle valitsemasi salasana.</b>';
 
         }
         
-        echo '<b><a href="lisaakayttajaeka.php">Lisää toinen käyttäjä tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></b></a>';
+        echo '<br><br><br><br><b><a href="lisaakayttajaeka.php">Lisää toinen käyttäjä tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a></b>';
 
-        echo "</b></div>";
+       echo "</b></div>";
         echo "</div>";
  echo "</div>";
   echo "</div>";

@@ -5,7 +5,7 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Käyttäjien vahvistus</title>';
+<title>Käyttäjän rekisteröityminen vahvistettu</title>';
 
 
 include("yhteys.php");
@@ -32,7 +32,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-    echo'<br><b>Valittujen käyttäjien rekisteröityminen Cuulis-oppimisympäristöön on hyväksytty!</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+    echo'<br><b style"color: #c7ef00;">Valittujen käyttäjien rekisteröityminen Cuulis-oppimisympäristöön on hyväksytty!</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
 
 
 

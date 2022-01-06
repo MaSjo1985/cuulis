@@ -1,8 +1,20 @@
-1) TSEKKAA KAIKKI mail()-toiminnot
+1) TUNNUKSEN VÄLILYÖNNIT VEKE -> EI OSAA VERRATA?!
 
-2) TESTAA KAIKKI REKISTERÖINNIT + JOS EI VAIHDA SALASANAA, ope/opiskelija
+-> tsekkaa opiskelijan rekisteröityminen + admin opiskelijan rekisteröityminen
 
-3) SALASANOJEN VAIHDOT!
+ON PAHASTI KESKEN!!! 
+
+
+2)  open sähköposti tietokantaan -> kaikki kirjaimet pieniksi
+
+
+
+3) TSEKKAA KAIKKI mail()-toiminnot
+Uuden käyttäjän rekisteröityminen odottaa oppilaitoksen ylläpitäjän vahvistusta
+Rekisteröitymisesi on vahvistettu Cuulis-oppimisympäristössä -> PUUTTUU KUVA
+Uuden käyttäjän rekisteröityminen vaatii vahvistustasi
+Sinut on lisätty Cuulis-oppimisympäristön käyttäjäksi -> KUVA PUUTTUU
+
 
 4) VIESTIEN fORMIT
 
@@ -19,6 +31,12 @@
 
 9) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
+
+10) VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
+
+11) ZOOMAUS NÄKYMÄT
+
+12) LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
 
 *******************************************************''''
 

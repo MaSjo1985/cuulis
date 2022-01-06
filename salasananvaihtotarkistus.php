@@ -57,8 +57,12 @@ $uniqid = $paivays.uniqid('', true);
     $stmt->execute();
 
     $stmt->close();
-    
-    header("location: salasanavaihdettu.php");
+    if(isset($_POST[omat])){
+          header('location: salasanavaihdettu.php?omat=1');
+    }
+    else{
+          header("location: salasanavaihdettu.php");
+    }
 
     echo'</div>';
 

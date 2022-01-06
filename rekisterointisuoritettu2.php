@@ -148,7 +148,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" 
                 echo '<br><br><b>Ensisijainen oppilaitos:&nbsp&nbsp&nbsp </b>'.$koulu;
                 echo '<br><br><b>Rooli: &nbsp&nbsp&nbsp</b> Opettaja';
                 
-echo '<br><br><p style="font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
+echo '<br><br><p style="font-size:1.2em; font-weight: bold; color: #c7ef00;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
 echo '<b><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
 echo '<br><br><b><a href="etusivu.php">Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a></b>';

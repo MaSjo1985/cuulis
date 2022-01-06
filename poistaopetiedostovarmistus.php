@@ -26,7 +26,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  class="currentLink">Materiaalit</a>  
 	  
 	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
-		¨
+		
 	 ';
             if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -192,6 +192,7 @@ function myFunction(y) {
  
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
 
+        if(isset($_POST[id])){
         if (!$result = $db->query("select distinct * from tiedostot where id = '" . $_POST[id] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -243,7 +244,9 @@ function myFunction(y) {
         echo '<br><a href="poistaopetiedosto.php?kaid=' . $_POST[kaid] . '&id=' . $id . '"  class="myButton9"  role="button"  style="margin-right: 30px">Kyllä</a>';
         echo '<a href="tiedostot.php?k=' . $_POST[kaid] . '"  class="myButton9"  role="button" >En</a><br>';
 
-
+       
+        }
+     
         echo'
 </div></div></div>';
     }

@@ -185,7 +185,7 @@ include("footer.php");
 <script type="text/javascript">
 $('#sposti').on('keyup', function() {
       var div1 = document.getElementById("divID");
-    document.getElementById("spostir").style.backgroundColor = "white";
+    document.getElementById("sposti").style.backgroundColor = "white";
         div1.style.padding = "10px 60px 10px 0px";
 
         div1.innerHTML = "";

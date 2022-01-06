@@ -141,7 +141,7 @@ echo'<div class="cm8-container7" style="padding-top: 0px; margin-top: 0px; margi
 
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-top: 0px; margin-top: 0px">';
 
-echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm4opiskelija();" action="rekisterointitarkistusopiskelija.php" method="post"><fieldset>';
+echo '<form name="Form" id="myForm" class="form-style-k"  action="tarkistatunnusopiskelija.php" method="post"><fieldset>';
 
 echo' <legend>Rekisteröidy opiskelijana Cuulis-oppimisympäristöön</legend>';
 echo '<a href="rekisteroityminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
@@ -201,7 +201,7 @@ echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; displ
 </div>';
 echo'<div id="username_availability_result"></div>  
 <input type="hidden" id="vali" value="99">
-<br><input id="button" type="button" onclick="validateForm4opiskelija()" value="&#10003 Rekisteröidy" ><br><br>
+<br><input id="button" type="submit"  value="&#10003 Rekisteröidy" ><br><br>
 	</fieldset></form>';
 echo'</div>';
 

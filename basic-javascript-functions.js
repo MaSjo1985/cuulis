@@ -2897,6 +2897,7 @@ function validateForm4opiskelija()
         var uusi2 = $('#uusi2').val();
         var okke = 0;
         $.ajax({
+           
             type: 'post',
             url: 'tarkistatunnusopiskelija.php',
             data: {username: username, admin: admin, uusi: uusi, uusi2: uusi2},
@@ -2905,6 +2906,7 @@ function validateForm4opiskelija()
               
                      
                 if (data.status == "success") {
+                    
                     document.getElementById("myForm").submit();
 
 
@@ -3237,7 +3239,7 @@ function validateForm5uusi()
         var okke = 0;
         $.ajax({
             type: 'post',
-            url: 'tarkistakirjautuminen.php',
+            url: 'tarkistakirjautuminenuusi.php',
             data: {username: username, password: password},
             dataType: 'json',
             success: function (data) {

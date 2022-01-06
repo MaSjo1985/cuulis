@@ -270,7 +270,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
   <span id="show3" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
-</div>     
+</div>
+<input type="hidden" name="omat" value="1">
 	<br><input type="button" id="button" onclick="validateForm6()" value="&#10003 Vaihda salasana" class="myButton9"><br><br>
 	</fieldset></form>';
     echo'</div>';

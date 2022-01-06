@@ -1,4 +1,5 @@
 <?php
+ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
 <title> Tuo itsearviointilomake</title>
@@ -15,6 +16,7 @@ session_start(); // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 }
+echo'session on: '.$_SESSION[Rooli];
 if (isset($_SESSION["Kayttajatunnus"])) {
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
         include("kurssisivustonheader.php");

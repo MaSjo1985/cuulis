@@ -3,7 +3,7 @@ ob_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Vahvistusta odottavat käyttäjät </title>
+<title>Uusi käyttäjä lisätty </title>
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.2.10/jquery.floatThead.min.js"></script>

@@ -5,7 +5,7 @@ ob_start();
 include("yhteys.php");
 
 $tarkistettusposti = htmlspecialchars($_POST['username']);
-
+ $tarkistettusposti = trim($tarkistettusposti);
 if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(array('status' => 'error', 'msg' => 'virhe'));
 } else {
@@ -15,7 +15,7 @@ if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL)) {
     $stmt = $db->prepare("SELECT DISTINCT * FROM kayttajat WHERE BINARY sposti=?");
     $stmt->bind_param("s", $sposti);
     // prepare and bind
-    $sposti = $siivottusposti;
+  $sposti = trim($siivottusposti);
 
     $stmt->execute();
 

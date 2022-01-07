@@ -17,8 +17,73 @@ session_start(); // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
-    include("header.php");
+     if(isset($_GET[kurssi])){
+        if (!isset($_SESSION["KurssiId"])) {
+    header('location: omatkurssit.php');
+}
+
+
+    include("kurssisivustonheader.php");
+
+    include "libchart/libchart/classes/libchart.php";
+
+    echo '<div class="cm8-container7" id="paluu" style="margin-top: 0px; padding-top:0px; padding-bottom: 30px; margin-bottom: 0px; ">';
+
+    echo'<nav class="topnav" id="myTopnav">
+	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
+	  
+	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a>
+          <a href="ia.php"  class="currentLink" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+		
+	 ';
+    if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($rowa = $haeakt->fetch_assoc()) {
+
+        $kysakt = $rowa[kysakt];
+    }
+    if ($kysakt == 1) {
+        
+    } else {
+        // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+    }
+
+
+    echo'
+	  <a href="keskustelut.php" >Keskustele</a> 
+	  <a href="osallistujat.php"   >Osallistujat</a>  	  
+	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></a>
+	</nav>';
+
+
+
+
+    echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+
+
+    echo '<div class="cm8-container7" style="margin-top: 20px; padding-top:10px; padding-bottom: 60px; margin-bottom: 0px; padding-left: 20px; padding-right: 20px; border: none">';
+
+    }
+    else{
+          include("header.php");
     include("header2.php");
+
     echo'<div class="cm8-container7">';
     echo'<nav class="topnavoppilas" id="myTopnav">';
     echo'         <a href="etusivu.php" >Etusivu</a> 
@@ -42,8 +107,8 @@ function myFunction(y) {
   <div class="bar3"></div></a>
 </nav>
 
-<div class="cm8-margin-bottom" style="padding-left: 20px">';
-
+<div class="cm8-margin-bottom" style="padding-left: 20px">';  
+    }
     if (!$haekurssi = $db->query("select distinct * from kurssit where id='" . $_GET[id] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
@@ -56,9 +121,12 @@ function myFunction(y) {
     }
     echo' <h4 style="color: #48E5DA">Itsearviointilomake kurssilta/opintojaksolta &nbsp ' . $koodi . ' ' . $nimi . '</h4>';
 
-    echo'<a href="omatiat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br><br>';
-
-
+    if(isset($_GET[kurssi])){
+          echo'<a href="omatiat.php?kurssi=1" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br><br>';
+    }
+    else{
+          echo'<a href="omatiat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br><br>';
+    }
     echo'<div class="cm8-responsive" style="margin: 0px; padding: 10px 0px 0px 0px; overflow-y: hidden">';
 
     if (!$onkoprojekti = $db->query("select * from kurssit where id='" . $_GET[id] . "' AND itsearviointi=1")) {

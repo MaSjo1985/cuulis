@@ -1,42 +1,35 @@
-1) TUNNUKSEN VÄLILYÖNNIT VEKE -> EI OSAA VERRATA?!
-
--> tsekkaa opiskelijan rekisteröityminen + admin opiskelijan rekisteröityminen
-
-ON PAHASTI KESKEN!!! 
-
-
-2)  open sähköposti tietokantaan -> kaikki kirjaimet pieniksi
-
-
-
-3) TSEKKAA KAIKKI mail()-toiminnot
+1) TSEKKAA KAIKKI mail()-toiminnot
 Uuden käyttäjän rekisteröityminen odottaa oppilaitoksen ylläpitäjän vahvistusta
 Rekisteröitymisesi on vahvistettu Cuulis-oppimisympäristössä -> PUUTTUU KUVA
 Uuden käyttäjän rekisteröityminen vaatii vahvistustasi
 Sinut on lisätty Cuulis-oppimisympäristön käyttäjäksi -> KUVA PUUTTUU
 
 
-4) VIESTIEN fORMIT
-
-5) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+2) VIESTIEN fORMIT, esim. lähettäjän sähköpostiosoite -> VAIKUTUS ITSE VIESTIIN!
 
 
-6) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
-
-7) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+3) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
 
 
-8) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
+4) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
+
+5) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
-9) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
+6) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
-10) VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
+7) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
-11) ZOOMAUS NÄKYMÄT
 
-12) LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
+8) KÄYTTÄJIEN VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
+
+9) ZOOMAUS NÄKYMÄT
+
+10) LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
+
+
+
 
 *******************************************************''''
 

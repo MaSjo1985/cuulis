@@ -3,9 +3,15 @@ ob_start();
 
 
 echo'<!DOCTYPE html><html> 
-<head>
-<title> Omat itsearviointilomakkeet </title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+<head>';
+if(isset($_GET[kurssi])){
+    echo'<title> Muut itsearviointilomakkeet </title>';
+}
+else{
+   echo'<title> Omat itsearviointilomakkeet </title>'; 
+}
+
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script>';
 
 include("yhteys.php");
@@ -19,7 +25,71 @@ session_start(); // ready to go!
 if (isset($_SESSION["Kayttajatunnus"])) {
 
 
-    include("header.php");
+    if(isset($_GET[kurssi])){
+        if (!isset($_SESSION["KurssiId"])) {
+    header('location: omatkurssit.php');
+}
+
+
+    include("kurssisivustonheader.php");
+
+    include "libchart/libchart/classes/libchart.php";
+
+    echo '<div class="cm8-container7" id="paluu" style="margin-top: 0px; padding-top:0px; padding-bottom: 30px; margin-bottom: 0px; ">';
+
+    echo'<nav class="topnav" id="myTopnav">
+	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
+	  
+	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a>
+          <a href="ia.php"  class="currentLink" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+		
+	 ';
+    if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($rowa = $haeakt->fetch_assoc()) {
+
+        $kysakt = $rowa[kysakt];
+    }
+    if ($kysakt == 1) {
+        
+    } else {
+        // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+    }
+
+
+    echo'
+	  <a href="keskustelut.php" >Keskustele</a> 
+	  <a href="osallistujat.php"   >Osallistujat</a>  	  
+	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></a>
+	</nav>';
+
+
+
+
+    echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+
+
+    echo '<div class="cm8-container7" style="margin-top: 20px; padding-top:10px; padding-bottom: 60px; margin-bottom: 0px; padding-left: 20px; padding-right: 20px; border: none">';
+
+    }
+    else{
+          include("header.php");
     include("header2.php");
 
     echo'<div class="cm8-container7">';
@@ -45,10 +115,18 @@ function myFunction(y) {
   <div class="bar3"></div></a>
 </nav>
 
-<div class="cm8-margin-bottom" style="padding-left: 20px">';
+<div class="cm8-margin-bottom" style="padding-left: 20px">';  
+    }
 
 
-    echo' <h4>Omat itsearviointilomakkeet</h4><br>';
+    if(isset($_GET[kurssi])){
+            echo' <h4>Muut itsearviointilomakkeet</h4><br>';
+                  echo'<a href="ia.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br><br>';
+    }
+    else{
+            echo' <h4>Omat itsearviointilomakkeet</h4><br>';
+    }
+
 
     $field = 'koodi';
 
@@ -150,16 +228,31 @@ function myFunction(y) {
         $field = "loppupvm";
     }
 
-    if (!$result = $db->query("select distinct alkupvm, loppupvm, lukuvuosi, etunimi, sukunimi, luomispvm, kurssit.nimi as nimi, koodi, koulut.Nimi as Nimi, kayttajat.id as kaid, koulut.id as koid, kurssit.id as kid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id) ORDER BY $field $sort")) {
+    if(isset($_GET[kurssi])){
+            if (!$result = $db->query("select distinct alkupvm, loppupvm, lukuvuosi, etunimi, sukunimi, luomispvm, kurssit.nimi as nimi, koodi, koulut.Nimi as Nimi, kayttajat.id as kaid, koulut.id as koid, kurssit.id as kid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id) AND kurssit.id<>'".$_SESSION[KurssiId]."' ORDER BY $field $sort")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
+    }
+    else{
+          if (!$result = $db->query("select distinct alkupvm, loppupvm, lukuvuosi, etunimi, sukunimi, luomispvm, kurssit.nimi as nimi, koodi, koulut.Nimi as Nimi, kayttajat.id as kaid, koulut.id as koid, kurssit.id as kid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id) ORDER BY $field $sort")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }  
+    }
+
 
     if ($result->num_rows == 0)
         echo"<br>Ei täytettyjä itsearviointilomakkeita<br>";
     else {
 
-        echo'<br><b style="color: #c7ef00" >Itsearviointilomake löytyy seuraavilta kursseilta/opintojaksoilta</b><br><br>';
+        if(isset($_GET[kurssi])){
+             echo'<br><b style="color: #c7ef00" >Itsearviointilomake löytyy myös seuraavilta kursseilta/opintojaksoilta</b><br><br>';
 
+        }
+        else{
+            echo'<br><b style="color: #c7ef00" >Itsearviointilomake löytyy seuraavilta kursseilta/opintojaksoilta</b><br><br>';
+ 
+        }
+       
         echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomaketta haluat tarkastella.</b><br><br>';
         echo '<form action="" method="get">';
 
@@ -189,7 +282,7 @@ function myFunction(y) {
 
 
             if ($haeia->num_rows != 0) {
-                echo '<tr><td><a href="omatiat3.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="omatiat3.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
+                echo '<tr><td><a href="omatiat3.php?kurssi=1&id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="omatiat3.php?kurssi=1&id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
             }
 
             if (!$haeia2 = $db->query("select distinct * from ia where kurssi_id='" . $row[kid] . "'")) {
@@ -198,7 +291,7 @@ function myFunction(y) {
 
 
             if ($haeia2->num_rows != 0) {
-                echo '<tr><td><a href="omatiat2.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="omatiat2.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
+                echo '<tr><td><a href="omatiat2.php?kurssi=1&id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="omatiat2.php?kurssi=1&id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td>' . $etunimi . ' ' . $sukunimi . '</td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td></tr>';
             }
         }
         echo "</table>";

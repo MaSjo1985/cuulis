@@ -421,7 +421,8 @@ function myFunction(y) {
             echo'<br><br><br><em id="ohje">Tätä osiota ei ole otettu käyttöön.</em><br><br>';
         } else {
 
-
+   echo'<div class="cm8-responsive" style="margin: 0px; padding: 00px 0px 0px 0px; overflow-y: hidden">';
+  echo'<div class="cm8-half" style="text-align: left; padding: 0px; margin: 0px"><br>';
 
 //INFORUUTU
             if (!$haeinfo = $db->query("select distinct infoitsearviointi from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
@@ -445,9 +446,22 @@ function myFunction(y) {
                 }
 //             
             }
+echo'</div>';
 
-
-
+  echo'<div class="cm8-half" style="text-align: center; "><br>';
+       if (!$result = $db->query("select distinct kurssit.id as kuid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id) AND kurssit.id<>'".$_SESSION[KurssiId]."'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+    if ($result->num_rows != 0){
+       
+        echo'<h4><a href="omatiat.php?kurssi=1" class="ia">Muut itsearviointilomakkeet</a></h4>';
+       
+    }
+    else{
+        echo'<h4></h4>';
+    }
+echo'</div>';
+echo'</div>';
             echo'<div class="cm8-responsive" style="margin: 0px; padding: 10px 0px 0px 0px; overflow-y: hidden">';
 
             if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SESSION["KurssiId"] . "' ORDER BY jarjestys")) {

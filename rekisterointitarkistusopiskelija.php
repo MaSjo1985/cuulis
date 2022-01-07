@@ -19,7 +19,6 @@ $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
 $siivottuetunimi = mysqli_real_escape_string($db, $_POST[Etunimi]);
 $siivottusukunimi = mysqli_real_escape_string($db, $_POST[Sukunimi]);
 $siivottusposti = trim($siivottusposti);
-$siivottusposti = preg_replace('/\s+/', '', $siivottusposti);
 // $siivottusalasana=mysqli_real_escape_string($db, $_POST[Salasana]);
 // $siivottuuusisalasana=mysqli_real_escape_string($db, $_POST[UusiSalasana]);
 

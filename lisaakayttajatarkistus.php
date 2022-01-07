@@ -17,7 +17,10 @@ $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
 $siivottuetunimi = mysqli_real_escape_string($db, $_POST[Etunimi]);
 $siivottusukunimi = mysqli_real_escape_string($db, $_POST[Sukunimi]);
 $siivottusposti = trim($siivottusposti);
-$siivottusposti = preg_replace('/\s+/', '', $siivottusposti);
+
+if($_POST[rooli]=='opettaja'){
+    $siivottusposti=strtolower($siivottusposti);
+}
 // $siivottusalasana=mysqli_real_escape_string($db, $_POST[Salasana]);
 // $siivottuuusisalasana=mysqli_real_escape_string($db, $_POST[UusiSalasana]);
 
@@ -123,6 +126,8 @@ else{
     //generoidaan salasana
       $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
+    $siivottusalasana = trim($siivottusalasana);
+$siivottuuusisalasana = trim($siivottuuusisalasana);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
      

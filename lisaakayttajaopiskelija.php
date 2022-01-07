@@ -156,7 +156,7 @@ echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
 </div>
 <br><br><p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
 <b style="color: red; font-size: 0.8em">Tietoturvasyistä on suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
-     
+     <b style="color: red; font-size: 0.8em">Käyttäjätunnuksessa ei saa olla välilyöntiä.</b><br><br>
 <b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br>
 
 <input type="text"  placeholder="Käyttäjätunnus"   id="spostir" name="Sposti" style="width: 60%"></p>';

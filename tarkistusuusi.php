@@ -22,10 +22,40 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
     if(isset($_POST[Sposti])){
             $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);
     $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+     $siivottusalasana = trim($siivottusalasana);
+     $siivottusposti = trim($siivottusposti);
+   
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
+     
+    //haetaan eka rooli
+    
+    
+    $stmt0 = $db->prepare("SELECT DISTINCT rooli FROM kayttajat WHERE sposti=?");
+    
+    $stmt0->bind_param("s", $sposti);
+    // prepare and bind
+    $sposti = $siivottusposti;
 
-    $stmt = $db->prepare("SELECT DISTINCT rooli, sposti, etunimi, sukunimi, id, paiva, kello, vahvistettu, tarkistettu, yritykset, nollattu, kayttoehdot_hyvaksytty, uusitunnus FROM kayttajat WHERE BINARY sposti=? AND BINARY salasana=?");
+    $stmt0->execute();
+
+    $stmt0->store_result();
+
+  $stmt0->bind_result($column1);
+  
+  while ($stmt0->fetch()) {
+            $rooli0 = $column1;
+            
+        }
+        if($rooli0=='opettaja'){
+             $stmt = $db->prepare("SELECT DISTINCT rooli, sposti, etunimi, sukunimi, id, paiva, kello, vahvistettu, tarkistettu, yritykset, nollattu, kayttoehdot_hyvaksytty, uusitunnus FROM kayttajat WHERE sposti=? AND BINARY salasana=?");
+    
+        }
+        else{
+             $stmt = $db->prepare("SELECT DISTINCT rooli, sposti, etunimi, sukunimi, id, paiva, kello, vahvistettu, tarkistettu, yritykset, nollattu, kayttoehdot_hyvaksytty, uusitunnus FROM kayttajat WHERE BINARY sposti=? AND BINARY salasana=?");
+    
+        }
+   
     $stmt->bind_param("ss", $sposti2, $salasana);
 // prepare and bind
     $sposti2 = $siivottusposti;
@@ -154,7 +184,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
  header("location: kirjautuminenuusi.php");
     }
 
-
+ $stmt0->close();
     $stmt->close();
     echo "</div>";
     echo "</div>";

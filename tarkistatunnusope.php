@@ -16,7 +16,7 @@ if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL)) {
     $stmt->bind_param("s", $sposti);
     // prepare and bind
   $sposti = trim($siivottusposti);
-
+    $sposti=strtolower($sposti);
     $stmt->execute();
 
     $stmt->store_result();

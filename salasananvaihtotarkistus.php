@@ -37,6 +37,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+      $siivottusalasana = trim($siivottusalasana);
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);

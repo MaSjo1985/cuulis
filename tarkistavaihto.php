@@ -6,6 +6,11 @@ include("yhteys.php");
 session_start();
 
 $siivottuvanhasalasana = mysqli_real_escape_string($db, $_POST[vanha]);
+    $siivottuvanhasalasana = trim($siivottuvanhasalasana);
+ $siivottusalasana = mysqli_real_escape_string($db, $_POST[uusi]);
+    $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[uusi2]);
+    $siivottusalasana = trim($siivottusalasana);
+$siivottuuusisalasana = trim($siivottuuusisalasana);
 $salt = "8CMr85";
 $kryptattu3 = md5($salt . $siivottuvanhasalasana);
 
@@ -22,7 +27,7 @@ if ($stmt2->num_rows != 1) {
     echo json_encode(array('status' => 'error', 'msg' => 'Vanha salasana väärin'));
 } else {
 
-    if ($_POST[uusi] == $_POST[uusi2]) {
+    if ( $siivottusalasana == $siivottuuusisalasana) {
 
         echo json_encode(array('status' => 'success', 'msg' => 'no error'));
     } else {

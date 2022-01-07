@@ -8,11 +8,13 @@ $tarkistettusposti = htmlspecialchars($_POST['username']);
 $tarkistettusposti = trim($tarkistettusposti);
 
     $siivottusposti = mysqli_real_escape_string($db, $_POST['username']);
-     $siivottuspostiposti = trim($siivottusposti);
+     $siivottusposti = trim($siivottusposti);
     
     
     
     $siivottusalasana = mysqli_real_escape_string($db, $_POST['password']);
+    
+    $siivottusalasana = trim($siivottusalasana);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
      
@@ -32,16 +34,16 @@ $tarkistettusposti = trim($tarkistettusposti);
   $stmt0->bind_result($column1);
   
   while ($stmt0->fetch()) {
-            $rooli = $column1;
+            $rooli0 = $column1;
             
         }
     
-  if($rooli=='opettaja'){
-       $stmt = $db->prepare("SELECT DISTINCT vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajat.sposti=?");
+  if($rooli0=='opettaja'){
+       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajat.sposti=?");
     
   }  
   else{
-       $stmt = $db->prepare("SELECT DISTINCT vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
+       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
     
   }
    
@@ -53,9 +55,10 @@ $tarkistettusposti = trim($tarkistettusposti);
 
     $stmt->store_result();
 
-  $stmt->bind_result($column1, $column2, $column3, $column4, $column5);
+  $stmt->bind_result($column0, $column1, $column2, $column3, $column4, $column5);
   
   while ($stmt->fetch()) {
+       $id = $column0;
             $vahvistettu = $column1;
             $koulu = $column2;
             $rooli=$column3;
@@ -67,10 +70,8 @@ if ($rooli=='opettaja' AND !filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL
     echo json_encode(array('status' => 'error1', 'msg' => 'Antamasi käyttäjätunnus on virheellinen!'));
 
 else {
-    //TÄHÄN TUTKITAAN, ONKO YRITYKSIÄ MAKSIMI
-
     if ($stmt->num_rows == 0) {
-        echo json_encode(array('status' => 'error8', 'msg' => 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!'));
+        echo json_encode(array('status' => 'error8', 'msg' => 'error'));
     } else {
         
 
@@ -109,10 +110,10 @@ else {
              
         }
         else{
-               $stmt3 = $db->prepare("SELECT DISTINCT yritykset FROM kayttajat WHERE BINARY sposti=?");
-        $stmt3->bind_param("s", $sposti2);
+        $stmt3 = $db->prepare("SELECT DISTINCT yritykset FROM kayttajat WHERE id=?");
+        $stmt3->bind_param("i", $id);
         // prepare and bind
-        $sposti2 = $siivottusposti;
+        $id = $id;
         $stmt3->execute();
         $stmt3->store_result();
         $stmt3->bind_result($col1);
@@ -126,10 +127,10 @@ else {
             echo json_encode(array('status' => 'error9', 'msg' => 'Liikaa yrityksiä!'));
         } else {
 
-            $stmt2 = $db->prepare("SELECT DISTINCT * FROM kayttajat WHERE BINARY sposti=? AND BINARY salasana=?");
-            $stmt2->bind_param("ss", $sposti2, $salasana);
+            $stmt2 = $db->prepare("SELECT DISTINCT * FROM kayttajat WHERE id=? AND BINARY salasana=?");
+            $stmt2->bind_param("is", $id, $salasana);
             // prepare and bind
-            $sposti2 = $siivottusposti;
+            $id = $id;
             $salasana = $krypattu;
             $stmt2->execute();
 
@@ -142,11 +143,11 @@ else {
 
                 echo json_encode(array('status' => 'success', 'msg' => 'no error'));
             } else {
-                $stmt4 = $db->prepare("UPDATE kayttajat SET yritykset=? WHERE sposti=?");
-                $stmt4->bind_param("is", $yritykset2, $sposti8);
+                $stmt4 = $db->prepare("UPDATE kayttajat SET yritykset=? WHERE id=?");
+                $stmt4->bind_param("ii", $yritykset2, $id);
                 // prepare and bind
                 $yritykset2 = $yritykset + 1;
-                $sposti8 = $siivottusposti;
+                $id = $id;
 
 
 
@@ -155,7 +156,7 @@ else {
 
                 $stmt4->close();
 
-                echo json_encode(array('status' => 'error', 'msg' => 'Antamasi salasana on virheellinen!'));
+                echo json_encode(array('status' => 'error', 'msg' => 'error'));
             }
             $stmt2->close();
             $stmt3->close();
@@ -164,7 +165,7 @@ else {
      
     }
 
-
+ $stmt0->close();
     $stmt->close();
 }
 ?>

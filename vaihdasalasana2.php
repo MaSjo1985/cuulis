@@ -23,6 +23,7 @@ if (isset($_POST[id])) {
 
 
     $siivottusalasana = mysqli_real_escape_string($db, $_POST[Salasana]);
+      $siivottusalasana = trim($siivottusalasana);
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
@@ -106,7 +107,7 @@ if (isset($_POST[id])) {
     
              if (empty($_POST[url])){
                     
-                    header("location: salasanavaihdettu.php?url=etusivu&id=". $_POST[id] );
+                    header("location: salasanavaihdettu.php?url=etusivu.php&id=". $_POST[id] );
              }
              else{
                  

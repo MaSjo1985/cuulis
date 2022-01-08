@@ -23,6 +23,8 @@ include("header.php");
 echo'<div class="cm8-container7">';
 
 $siivottusposti = mysqli_real_escape_string($db, $_POST["sposti"]);
+$siivottusposti = trim($siivottusposti);
+$siivottusposti=strtolower($siivottusposti);
 
 $headers .= "Organization: Cuulis-oppimisympäristö\r\n";
 $headers .= "MIME-Version: 1.0" . "\r\n";
@@ -50,7 +52,7 @@ $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 
 
-$stmt = $db->prepare("SELECT DISTINCT sposti FROM kayttajat WHERE BINARY sposti=?");
+$stmt = $db->prepare("SELECT DISTINCT sposti FROM kayttajat WHERE sposti=?");
 $stmt->bind_param("s", $sposti);
 // prepare and bind
 $sposti = $siivottusposti;
@@ -103,7 +105,6 @@ else{
 
 
     $body .= '<p>' . $kysely . '</p>';
-    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
     $body .= "</body></html>";
     if ($sent == 0) {
         $viesti = mail($sposti, $otsikko, $body, $headers);

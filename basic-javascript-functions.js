@@ -2800,9 +2800,9 @@ function validateForm5uusi()
                         }
                         else if (data.status == "errorv") {
 
-                        var tk = data.msg;
+                        var id = data.msg;
                                 document.getElementById("sposti").style.backgroundColor = "yellow";
-                                div1.innerHTML = '<b>Et ole valinnut itsellesi vielä salasanaa.<br><br>Voit tehdä sen <a class="osoite" href="vahvistus?tk=' + tk + '">tästä</a></b>';
+                                div1.innerHTML = '<b>Et ole valinnut itsellesi vielä salasanaa.<br><br>Voit tehdä sen <a class="osoite" href="vahvistus?id=' + id + '">tästä</a></b>';
                         }
                         else if (data.status == "error9") {
                         document.getElementById("salasana").style.backgroundColor = "yellow";

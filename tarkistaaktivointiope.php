@@ -6,7 +6,8 @@ include("yhteys.php");
 
 $tarkistettusposti = htmlspecialchars($_POST['username']);
 $siivottusposti = mysqli_real_escape_string($db, $_POST['username']);
-    $stmt = $db->prepare("SELECT DISTINCT rooli FROM kayttajat WHERE BINARY sposti=?");
+$siivottusposti = trim($siivottusposti);
+    $stmt = $db->prepare("SELECT DISTINCT rooli FROM kayttajat WHERE sposti=?");
     $stmt->bind_param("s", $sposti);
     // prepare and bind
     $sposti = $siivottusposti;

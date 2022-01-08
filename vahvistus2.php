@@ -5,10 +5,16 @@ echo'
 <!DOCTYPE html>
 <html>
  
-<head>
+<head>';
 
-<title> Rekisteröinti vahvistettu</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if($_GET[admin]==1){
+    echo'<title> Salasana on vaihdettu </title>';
+}
+else{
+    echo'<title> Rekisteröityminen on  vahvistettu</title>';
+}
+
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -216,12 +222,27 @@ echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-
 
 
             if($_GET[admin]==1){
-                echo '<b style="color: #c7ef00;">Olet nyt antanut itsellesi salasanan Cuulis-oppimisympäristöön!</b><br><br><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+               if (!$result = $db->query("select distinct koulut.Nimi as koulu from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_SESSION[Id] . "'")) {
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+}
+while ($row = $result->fetch_assoc()) {
+ 
+     $koulu = $row[koulu];
+}
 
+
+echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Sinut on nyt lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
+                echo '<br><b>Etunimi:  &nbsp&nbsp&nbsp</b>'.$etunimi;
+                echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b>'.$sukunimi;
+                echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b>'.$sposti;
+                echo '<br><br><b>Ensisijainen oppilaitos: &nbsp&nbsp&nbsp</b>'.$koulu;
+                echo '<br><br><b>Rooli:&nbsp&nbsp&nbsp </b> Opiskelija';
+                
+               echo '<br><br><br><b><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a></b>';
+ 
             }
             else{
-                
-if (!$result = $db->query("select distinct koulut.Nimi as koulu from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_SESSION[Id] . "'")) {
+                if (!$result = $db->query("select distinct koulut.Nimi as koulu from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_SESSION[Id] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 while ($row = $result->fetch_assoc()) {
@@ -237,6 +258,8 @@ echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Olet nyt re
                 
                echo '<br><br><br><b><a href="etusivu.php">Jatka Cuulis-oppimisympäristöön  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a></b>';
  
+            
+
             }
 
 

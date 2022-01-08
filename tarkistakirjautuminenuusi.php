@@ -39,11 +39,11 @@ $tarkistettusposti = trim($tarkistettusposti);
         }
     
   if($rooli0=='opettaja'){
-       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajat.sposti=?");
+       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu, nollattu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajat.sposti=?");
     
   }  
   else{
-       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
+       $stmt = $db->prepare("SELECT DISTINCT kayttajat.id as kaid, vahvistettu, koulu_id, rooli, tarkistuskoodi, tarkistettu, nollattu FROM kayttajat, kayttajankoulut WHERE kayttajankoulut.kayttaja_id=kayttajat.id AND BINARY kayttajat.sposti=?");
     
   }
    
@@ -55,7 +55,7 @@ $tarkistettusposti = trim($tarkistettusposti);
 
     $stmt->store_result();
 
-  $stmt->bind_result($column0, $column1, $column2, $column3, $column4, $column5);
+  $stmt->bind_result($column0, $column1, $column2, $column3, $column4, $column5, $column6);
   
   while ($stmt->fetch()) {
        $id = $column0;
@@ -64,6 +64,7 @@ $tarkistettusposti = trim($tarkistettusposti);
             $rooli=$column3;
             $tk = $column4;
             $tarkistettu = $column5;
+             $nollattu = $column6;
         }
 
 if ($rooli=='opettaja' AND !filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL))
@@ -100,10 +101,10 @@ else {
            
                  
         }
-        else if($vahvistettu==0){
+        else if($vahvistettu==0 && $nollattu==0){
             
           
-                 echo json_encode(array('status' => 'errorv', 'msg' => $tk));
+                 echo json_encode(array('status' => 'errorv', 'msg' => $id));
             
            
              

@@ -58,7 +58,7 @@ if($_POST[rooli]=='opettaja'){
 
    $krypattu2 = md5($uniqid);
    
-    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0)");
+    $stmt = $db->prepare("INSERT INTO kayttajat (etunimi, sukunimi, kokonimi, salasana, rooli, sposti, vahvistettu, tarkistettu, tarkistuskoodi, uusitunnus, kayttoehdot_hyvaksytty, nollattu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 0, 1)");
     $stmt->bind_param("ssssssiis", $etunimi, $sukunimi, $kokonimi, $salasana, $rooli, $sposti, $vahvistettu, $tarkistettu, $koodi);
     $etunimi = $siivottuetunimi;
     $sukunimi = $siivottusukunimi;
@@ -68,11 +68,12 @@ if($_POST[rooli]=='opettaja'){
     $sposti = $siivottusposti;
     $vahvistettu = 0;
     $tarkistettu = 1;
+    $nollattu = 1;
     $koodi = $krypattu2;
 
     $stmt->execute();
     $stmt->close();
-    $stmt2 = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY sposti=?");
+    $stmt2 = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE sposti=?");
     $stmt2->bind_param("s", $sposti);
     // prepare and bind
     $sposti = $siivottusposti;
@@ -99,7 +100,7 @@ if($_POST[rooli]=='opettaja'){
     $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
 
-    $viesti = 'Sinut on lisätty opettajaksi Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Käyttäjätunnus: '.$sposti100.'<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br><br>Sinun tulee vielä asettaa itsellesi salasana, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?admin=1&tk=' . $koodi . '"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+    $viesti = 'Sinut on lisätty opettajaksi Cuulis-oppimisympäristöön seuraavilla tiedoilla:<br><br>Etunimi: ' . $etunimi100 . '<br>Sukunimi: ' . $sukunimi100 . '<br>Käyttäjätunnus eli sähköpostiosoite: '.$sposti100.'<br>Ensisijainen oppilaitos: ' . $koulu100 . '<br><br>Sinun tulee vielä asettaa itsellesi salasana, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?admin=1&id=' . $id . '"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
     $viesti = str_replace("\n.", "\n..", $viesti);
 
@@ -146,7 +147,7 @@ $siivottuuusisalasana = trim($siivottuuusisalasana);
     $salasana = $krypattu;
     $rooli = $_POST[rooli];
     $sposti = $siivottusposti;
-    $vahvistettu = 1;
+    $vahvistettu = 0;
     $tarkistettu = 1;
     $nollattu=1;
       $uusitunnus=1;

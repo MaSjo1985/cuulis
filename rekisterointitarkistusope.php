@@ -92,7 +92,6 @@ $krypattu2 = md5($uniqid);
 
 
     $body .= '<p>' . $viesti . '</p>';
-    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
     $body .= "</body></html>";
 
 
@@ -118,11 +117,11 @@ $krypattu2 = md5($uniqid);
 
 
 
-            $otsikko2 = "Uuden käyttäjän rekisteröityminen vaatii vahvistustasi";
+            $otsikko2 = "Uuden opettajan rekisteröityminen vaatii vahvistustasi";
             $otsikko2 = "=?UTF-8?B?" . base64_encode($otsikko2) . "?=";
 
 
-            $viesti2 = 'Uusi käyttäjä on rekisteröitynyt Cuulis-oppimisympäristöön ylläpitämääsi oppilaitokseen ' . $koulunimi . '  roolissa "' . $_POST[Rooli] . '"<br><br><b>Liittyminen vaatii vielä hyväksyntäsi.</b><br><br>Käyttäjän nimi: ' . $kokonimi . '<br><br> Käyttäjän sähköpostiosoite: ' . $siivottusposti . '<br><br><b>Pääset suorittamaan vahvistuksen suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
+            $viesti2 = 'Uusi opettaja on rekisteröitynyt Cuulis-oppimisympäristöön ylläpitämääsi oppilaitokseen ' . $koulunimi . ' seuraavilla tiedoilla: <br><br>Etunimi: ' . $siivottuetunimi . '<br>Sukunimi: '.$siivottusukunimi.'<br>Käyttäjätunnus eli sähköpostiosoite: ' . $siivottusposti . '<br><br><b>Sinun on vielä vahvistettava tämä. Pääset suorittamaan vahvistuksen suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
             $viesti2 = str_replace("\n.", "\n..", $viesti2);
 
@@ -130,7 +129,6 @@ $krypattu2 = md5($uniqid);
 
 
             $body .= '<p>' . $viesti2 . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
 
@@ -155,10 +153,9 @@ $krypattu2 = md5($uniqid);
 
 
         $body .= '<p>' . $kysely3 . '</p>';
-        $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
         $body .= "</body></html>";
-
-        $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
+//
+//        $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
         $stmt2->close();
 
     } else {
@@ -181,7 +178,7 @@ $krypattu2 = md5($uniqid);
 
 
 
-            $viesti = 'Uusi käyttäjä on rekisteröitynyt Cuulis-oppimisympäristöön oppilaitokseen ' . $koulunimi . '  roolissa ' . $_POST[Rooli] . '<br><br><b>Liittyminen vaatii vielä hyväksyntäsi.</b><br><br>Käyttäjän nimi:' . $kokonimi . '<br><br> Käyttäjän sähköpostiosoite: ' . $siivottusposti . '<br><br><b>Pääset suorittamaan vahvistuksen suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
+             $viesti = 'Uusi opettaja on rekisteröitynyt Cuulis-oppimisympäristöön oppilaitokseen ' . $koulunimi . ' seuraavilla tiedoilla: <br><br>Etunimi: ' . $siivottuetunimi . '<br>Sukunimi: '.$siivottusukunimi.'<br>Käyttäjätunnus eli sähköpostiosoite: ' . $siivottusposti . '<br><br><b>Sinun on vielä vahvistettava tämä. Pääset suorittamaan vahvistuksen suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
 
 
 
@@ -191,7 +188,6 @@ $krypattu2 = md5($uniqid);
 
 
             $body .= '<p>' . $viesti . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
             $varmistus = mail($sposti3, $otsikko, $viesti, $headers);

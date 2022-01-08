@@ -97,7 +97,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
              
         }
 
-        if ($vahvistettu == 1 && $tarkistettu == 1) {
+       
             // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
@@ -124,7 +124,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
             else{
                 
                 //onko uusitunnus
-               if($nollattu==1){
+               if($nollattu==1 && $vahvistettu==1){
                 
                         if (!empty($_POST[url]))
                       header("location: vaihdasalasana.php?id='.$id.'&url=" . $_POST[url]);
@@ -132,7 +132,15 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
                       header("location: vaihdasalasana.php?id=".$id);
             
                   
-            }
+                }
+                else if($vahvistettu ==0 && $nollattu ==1){
+                    
+                        if (!empty($_POST[url]))
+                      header('location: vahvistus.php?admin=1&rooli='.$rooli.'&id='.$id.'&url=' . $_POST[url]);
+                  else
+                      header('location: vahvistus.php?admin=1&rooli='.$rooli.'&id='.$id);
+            
+                }
                 else{
            
                     
@@ -172,13 +180,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
             }
 
         
-        } else if ($vahvistettu == 0) {
-            echo"<br><b>Et ole vahvistanut käyttäjätunnustasi! Vahvistuslinkki on lähetetty rekisteröinnin yhteydessä antamaasi sähköpostiosoitteeseen!</b>";
-            echo'<br><br><a href="palaute.php">Voit ottaa yhteyttä Cuulis-oppimisympäristön ylläpitäjään tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
-        } else if ($tarkistettu == 0) {
-            echo"<br><b>Cuulis-oppimisympäristön ylläpitäjä ei ole vielä hyväksynyt rekisteröitymistäsi!</b><br><br>Kun hyväksyntä on suoritettu, saat erillisen vahvistuslinkin rekisteröinnin yhteydessä antamaasi sähköpostiosoitteeseen.";
-            echo'<br><br><a href="palaute.php">Voit ottaa yhteyttä Cuulis-oppimisympäristön ylläpitäjään tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
-        }
+      
     }
     else{
  header("location: kirjautuminenuusi.php");

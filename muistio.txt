@@ -1,4 +1,24 @@
-1) TSEKKAA KAIKKI mail()-toiminnot
+
+vahvistus.php -> enter ei toimi
+
+EI PYSTY ETTII KÄYTTÄJÄTUNNUKSEN PERUSTEELLA
+
+HAKUTULOKSIIN MYÖS SIIRTYMINEN ERI SIVUILLE
+
+
+KÄYTTÖEHTOIHIN
+* jokaisesta oppilaitoksella väh. 1 ylläpitäjä, joka on rekisteröitynyt opettaja 
+* opettajille ja kunkin oppilaitoksen ylläpitäjälle voi lähettää viestiä
+* opiskelijoiden etu ja sukunimi nähtävissä opettajalle
+* ylläpitäjä näkee kaikista ko oppilaitoksen käyttäjistä nimen ja käyttäjätunnuksen + pystyy vaihtamaan salasanan
+
+
+käyttöehdot ja tietosuojaseloste sivuille  -> FOOTER?!
+
+
+
+1) TSEKKAA KAIKKI mail()-toiminnot -> POISTA KUVA!!
+
 Uuden käyttäjän rekisteröityminen odottaa oppilaitoksen ylläpitäjän vahvistusta
 Rekisteröitymisesi on vahvistettu Cuulis-oppimisympäristössä -> PUUTTUU KUVA
 Uuden käyttäjän rekisteröityminen vaatii vahvistustasi

@@ -5,10 +5,16 @@ echo'
 <!DOCTYPE html>
 <html>
  
-<head>
+<head>';
 
-<title> Rekisteröinti vahvistettu</title>
-<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
+if(isset($_POST[admin])){
+    echo'<title> Salasana on vaihdettu </title>';
+}
+else{
+    echo'<title> Rekisteröityminen on  vahvistettu</title>';
+}
+
+echo'<script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js">   </script>
@@ -154,7 +160,7 @@ $krypattu = md5($salt . $siivottusalasana);
 $uniqid = $paivays.uniqid('', true);
    $krypattu2 = md5($uniqid);
 
-$stmt = $db->prepare("UPDATE kayttajat SET vahvistettu=?, salasana=?, tarkistuskoodi=? WHERE id=?");
+$stmt = $db->prepare("UPDATE kayttajat SET vahvistettu=?, salasana=?, tarkistuskoodi=?, nollattu=0 WHERE id=?");
 $stmt->bind_param("issi", $vahvistettu, $salasana, $koodi, $id);
 // prepare and bind
 $vahvistettu = 1;

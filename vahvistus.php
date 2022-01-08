@@ -131,11 +131,19 @@ if ((strpos($browser, 'Android'))) {
 }
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
-
-$stmt = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY tarkistuskoodi=?");
+if(isset($_GET[ope])){
+    $stmt = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY tarkistuskoodi=?");
 $stmt->bind_param("s", $koodi);
 // prepare and bind
 $koodi = $_GET["tk"];
+}
+else{
+    $stmt = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY id=?");
+$stmt->bind_param("i", $id);
+// prepare and bind
+$id = $_GET["id"];
+}
+
 
 $stmt->execute();
 
@@ -156,7 +164,16 @@ if ($stmt->num_rows == 1) {
 
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9();" action="vahvistusjasalasanatarkistus.php" method="post"><fieldset>';
         echo"<legend>Valitse itsellesi salasana</legend>";
-        echo'<br><b style="color: blue">Valitse salasana Cuulis-oppimisympäristöön</b><br> <br>';
+        
+        if($_GET[rooli]=='opiskelija'){
+             echo'<br><b style="color:blue">Ylläpitäjä on lisännyt sinut Cuulis-oppimisympäristöön ja antanut sinulle väliaikaisen salasanan.<br><br>Sinun tulee nyt vaihtaa tämä salasana.</b><br> <br>';
+
+        }
+        else{
+             echo'<br><b style="color:blue">Ylläpitäjä on lisännyt sinut Cuulis-oppimisympäristöön.<br><br>Sinun tulee nyt vielä asettaa itsellesi salasana.</b><br> <br>';
+
+        }
+      
 
 echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>';
@@ -206,7 +223,6 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
     <p class="eimitaan"></p>
 </div>  
 
-		<input type="hidden" name="tk" value=' . $_GET[tk] . '> <br>
 		<input type="hidden" name="id" value=' . $id . '> <br>
                     <input type="hidden" name="admin" value="0"> 
 		<input type="button" id="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>

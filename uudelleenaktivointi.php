@@ -171,7 +171,7 @@ echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähin
 } else if ($tulos->num_rows != 0 && ($rooli <> 'opiskelija' && $vahvistettu == 0)) {
     echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
 } else if ($tulos->num_rows == 0) {
-    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkysely.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
+    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkyselyope.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
 }
 
 

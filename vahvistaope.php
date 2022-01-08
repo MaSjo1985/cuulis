@@ -61,13 +61,12 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $otsikko = "Rekisteröitymisesi on vahvistettu Cuulis-oppimisympäristössä";
             $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
-            $viesti = 'Oppilaitoksen ylläpitäjä on vahvistanut rekisteröitymisesi Cuulis-oppimisympäristöön.<br><br><b>Sinun tulee vielä saattaa rekisteröinti loppuun asti, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?tk=' . $tk . '"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
+            $viesti = 'Ylläpitäjä on vahvistanut rekisteröitymisesi Cuulis-oppimisympäristöön.<br><br><b>Sinun tulee vielä asettaa itsellesi salasana, minkä voit tehdä suoraan <a href="https://cuulis.cm8solutions.fi/vahvistus.php?ope=1&tk=' . $tk . '"> tästä. </a></b><br><br><em>Tähän viestiin ei voi vastata.</em>';
             $viesti = str_replace("\n.", "\n..", $viesti);
             $body = '<html><body>';
 
 
             $body .= '<p>' . $viesti . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
             $varmistus = mail($sposti, $otsikko, $body, $headers);

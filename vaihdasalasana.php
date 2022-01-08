@@ -139,7 +139,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9(this);" action="vaihdasalasana2.php" method="post"><fieldset>';
         echo"<legend>Vaihda salasana</legend>";
-        echo'<br><br><b style="color:blue">Ylläpitäjä on antanut sinulle salasanan.<br><br>Sinun tulee nyt vaihtaa tämä salasana.</b><br> <br>';
+        echo'<br><b style="color:blue">Ylläpitäjä on antanut sinulle salasanan.<br><br>Sinun tulee nyt vaihtaa tämä salasana.</b><br> <br>';
 echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br>';
         echo'<br><p><b>Uusi salasana: </b> <b style="color: red">*</b><br>

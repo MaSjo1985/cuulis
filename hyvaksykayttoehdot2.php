@@ -16,9 +16,21 @@ if (isset($_POST[id])) {
     echo'<div class="cm8-container7">';
     echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
     echo'<div class="cm8-margin-top"></div>';
+  $paivays = "" . date("h:i:s") . "";
+    $uniqid = $paivays.uniqid('', true);
+   $krypattu2 = md5($uniqid);
 
+    $id = $_POST["id"];
 
-   $db->query("update kayttajat set kayttoehdot_hyvaksytty=1 where id='" . $_POST[id] . "'");
+    $stmt = $db->prepare("UPDATE kayttajat SET sposti=?, kayttoehdot_hyvaksytty = 1, tarkistuskoodi=? WHERE id=?");
+    $stmt->bind_param("ssi", $tunnus, $tarkistuskoodi,$id);
+// prepare and bind
+    $tarkistuskoodi = $krypattu2;
+
+    
+    $stmt->execute();
+
+    $stmt->close();
 
   
             

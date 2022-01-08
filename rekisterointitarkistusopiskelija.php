@@ -83,7 +83,7 @@ $uniqid = $paivays.uniqid('', true);
     $stmt2->close();
 
 
-    header("location: vahvistus.php?tk=" . $krypattu2);
+    header('location: vahvistus.php?id=' . $id);
 
 
 

@@ -75,7 +75,7 @@ if (isset($_POST['search'])) {
         echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br><br>';
         echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px"><br>';
         echo '<table id="mytable88"  class="cm8-bordered cm8-uusitable12 cm8-striped"  style="table-layout:fixed; max-width: 100%;"><thead>';
-        echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th></th></tr>';
+        echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Käyttäjätunnus</th><th></th></tr>';
         echo'</thead><tbody>';
 
 

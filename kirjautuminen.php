@@ -148,7 +148,7 @@ echo
 '<form name="Form" id="myForm" id="Form" onSubmit="return validateForm5()" action="tarkistus.php" method="post" class="form-style-p" style="max-width: 500px" ><fieldset>
 <legend>Kirjaudu sisään:</legend>   
 
-<br><input type="email"  id="sposti" placeholder="Sähköpostiosoite" name="Sposti" autofocus>
+<br><input type="email"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
 <div style="color: red; font-weight: bold; padding: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>

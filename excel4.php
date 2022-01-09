@@ -29,7 +29,7 @@ $list[0] = array();
 
 
 $list[0]['nimi'] = 'Opiskelija';
-$list[0]['sposti'] = 'Sähköpostiosoite';
+$list[0]['sposti'] = 'Käyttäjätunnus';
 
 
 $rivi = array();

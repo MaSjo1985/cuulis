@@ -18,7 +18,9 @@ if (isset($_POST[id])) {
 
 
     $siivottutunnus = mysqli_real_escape_string($db, $_POST[tunnus]);
+    $siivottutunnus = trim($siivottutunnus);
     $tunnus = $siivottutunnus;
+    
   
    $paivays = "" . date("h:i:s") . "";
     $uniqid = $paivays.uniqid('', true);

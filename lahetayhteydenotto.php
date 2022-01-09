@@ -70,9 +70,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $nimi = poista_rivinvaihdot($_POST[nimi]);
         $email = poista_rivinvaihdot($_POST[sposti]);
 
-        $headers .= "From: " . $nimi . " <" . $email . ">\r\n";
+      $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
 
-        $otsikko = "Olen lähettänyt sinulle yhteydenottoviestin Cuulis-oppimisympäristöstä";
+        $otsikko = "Olen lähettänyt sinulle viestin Cuulis-oppimisympäristöstä";
         $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
         if ($_POST[id] != 0) {
@@ -93,8 +93,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
                     $viesti2 = nl2br($viesti2);
                     $body = '<html><body>';
-                    $body .= '<p>' . $viesti2 . '</p>';
-                    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
+                    $body .= '<p>' . $viesti2 . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
                     $body .= "</body></html>";
                     $viesti = mail($sposti, $otsikko, $body, $headers);
 
@@ -107,7 +106,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     }
                     $otsikkoa = "Cuulis-oppimisympäristön sisällä on lähetetty viesti.";
                     $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-                    $kyselya = 'Cuulis-oppimisympäristön käyttäjä on lähettänyt yhteydenottoviestin oppilaitoksen ' . $koulunimi . ' ylläpitäjälle ' . $etunimi . ' ' . $sukunimi . '<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän sähköpostiosoite: ' . $email . '<br>Viesti: ' . $viesti2 . '.<br><br> Vastaanottajan sähköposti: ' . $sposti;
+                    $kyselya = 'Cuulis-oppimisympäristön käyttäjä on lähettänyt yhteydenottoviestin oppilaitoksen ' . $koulunimi . ' ylläpitäjälle ' . $etunimi . ' ' . $sukunimi . '<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän käyttäjätunnus: ' . $email . '<br>Viesti: ' . $viesti2 . '.<br><br> Vastaanottajan sähköposti: ' . $sposti;
                     $headers2 .= "MIME-Version: 1.0" . "\r\n";
                     $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -116,7 +115,6 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     $headers2 .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . PHP_EOL;
                     $body = '<html><body>';
                     $body .= '<p>' . $kyselya . '</p>';
-                    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                     $body .= "</body></html>";
 
 
@@ -147,8 +145,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
                 $viesti2 = nl2br($viesti2);
                 $body = '<html><body>';
-                $body .= '<p>' . $viesti2 . '</p>';
-                $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
+            $body .= '<p>' . $viesti2 . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
                 $body .= "</body></html>";
                 $viesti = mail($sposti, $otsikko, $body, $headers);
 

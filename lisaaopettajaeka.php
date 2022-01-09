@@ -135,7 +135,7 @@ function myFunction(y) {
 
 
             echo '<table id="mytable" class="cm8-table cm8-striped"><thead>';
-            echo '<tr><th style="padding-left: 6px">Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Sähköpostiosoite</th><th></th></tr>';
+            echo '<tr><th style="padding-left: 6px">Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Käyttäjätunnus</th><th></th></tr>';
             echo'</thead><tbody>';
 
             while ($row = $result2->fetch_assoc()) {

@@ -1,54 +1,55 @@
+1) VIESTIEN LÄHETYKSET:
 
-vahvistus.php -> enter ei toimi
-
-EI PYSTY ETTII KÄYTTÄJÄTUNNUKSEN PERUSTEELLA
-
-HAKUTULOKSIIN MYÖS SIIRTYMINEN ERI SIVUILLE
-
-
-KÄYTTÖEHTOIHIN
-* jokaisesta oppilaitoksella väh. 1 ylläpitäjä, joka on rekisteröitynyt opettaja 
-* opettajille ja kunkin oppilaitoksen ylläpitäjälle voi lähettää viestiä
-* opiskelijoiden etu ja sukunimi nähtävissä opettajalle
-* ylläpitäjä näkee kaikista ko oppilaitoksen käyttäjistä nimen ja käyttäjätunnuksen + pystyy vaihtamaan salasanan
+vastausosoitteeks: $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
++ 
+viestiin tieto lähettäjän käyttäjätunnuksesta: 
+$body .= '<p>' . $viesti2 . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
 
 
-käyttöehdot ja tietosuojaseloste sivuille  -> FOOTER?!
+poista kaikki viestit jotka menee opiskelijalle
+
+
+2) TESTAA VANHAN OPISKELIJAN KIRJAUTUMINEN
+
+
+3) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+
+
+4) POISTA LADATUT PROFIILIKUVAT
+
+
+*********************************************************************************
 
 
 
-1) TSEKKAA KAIKKI mail()-toiminnot -> POISTA KUVA!!
-
-Uuden käyttäjän rekisteröityminen odottaa oppilaitoksen ylläpitäjän vahvistusta
-Rekisteröitymisesi on vahvistettu Cuulis-oppimisympäristössä -> PUUTTUU KUVA
-Uuden käyttäjän rekisteröityminen vaatii vahvistustasi
-Sinut on lisätty Cuulis-oppimisympäristön käyttäjäksi -> KUVA PUUTTUU
+- VIESTISI ON LÄHETETTY -> keltainen väri
 
 
-2) VIESTIEN fORMIT, esim. lähettäjän sähköpostiosoite -> VAIKUTUS ITSE VIESTIIN!
+- ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
-3) KAIKKI NÄKYMÄT MISSÄ SÄHKÖPOSTIOSOITE:   Sähköpostiosoite -> Käyttäjätunnus
+- EI PYSTY ETTII KÄYTTÄJÄTUNNUKSEN PERUSTEELLA
 
 
-4) KÄYTTÖOHJEET PITÄÄ TEHDÄ, STUDEO??
-
-5) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
+- HAKUTULOKSIIN MYÖS SIIRTYMINEN ERI SIVUILLE
 
 
-6) ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
+- KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
 
-7) KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
+- KÄYTTÄJIEN VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
 
 
-8) KÄYTTÄJIEN VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
-
-9) ZOOMAUS NÄKYMÄT
-
-10) LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
+- ZOOMAUS NÄKYMÄT
 
 
+- LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
+
+
+- KÄYTTÄJÄPROFIILI -> VIESTIN LÄHETYS -> PALUU EI TOIMI
+
+
+- VIESTIT EI LÄHE?!
 
 
 *******************************************************''''

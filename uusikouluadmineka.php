@@ -197,7 +197,7 @@ function myFunction(y) {
             echo'<form action="uusikouluadmin.php" method="post">';
             echo'<input type="submit" value="&#10003 Lisää" class="myButton9"  role="button"  style="margin-left: 5px; padding:2px 4px; font-size: 0.7em"><br>';
             echo '<table id="mytable" class="cm8-table cm8-stripedeivikaa"><thead>';
-            echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting1=' . $sort . '&field10=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting2=' . $sort . '&field10=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting3=' . $sort . '&field10=rooli">Rooli &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting4=' . $sort . '&field10=sposti">Sähköpostiosoite &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th></tr>';
+            echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting1=' . $sort . '&field10=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting2=' . $sort . '&field10=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting3=' . $sort . '&field10=rooli">Rooli &nbsp&nbsp&nbsp' . $nuoli3 . ' </a></th><th><a href="muokkaakoulu.php?id=' . $kouluid . '&sorting4=' . $sort . '&field10=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th></tr>';
             echo'</thead></tbody>';
 
 

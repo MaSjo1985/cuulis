@@ -22,8 +22,8 @@ if (isset($_POST[id])) {
 
     $id = $_POST["id"];
 
-    $stmt = $db->prepare("UPDATE kayttajat SET sposti=?, kayttoehdot_hyvaksytty = 1, tarkistuskoodi=? WHERE id=?");
-    $stmt->bind_param("ssi", $tunnus, $tarkistuskoodi,$id);
+    $stmt = $db->prepare("UPDATE kayttajat SET kayttoehdot_hyvaksytty = 1, tarkistuskoodi=? WHERE id=?");
+    $stmt->bind_param("si", $tarkistuskoodi,$id);
 // prepare and bind
     $tarkistuskoodi = $krypattu2;
 

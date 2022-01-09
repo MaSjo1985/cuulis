@@ -156,7 +156,7 @@ function myFunction(y) {
             }
             $otsikkoa = "Opettaja on lähettänyt viestin kurssin/opintojakson " . $kurssinimi . " opiskelijoille";
             $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-            $kyselya = 'Cuulis-oppimisympäristön opettaja on lähettänyt viestin kurssin/opintojakson ' . $kurssinimi . ' opiskelijoille.<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän sähköpostiosoite: ' . $email . '<br>Viesti: ' . $viesti2 . '.';
+            $kyselya = 'Cuulis-oppimisympäristön opettaja on lähettänyt viestin kurssin/opintojakson ' . $kurssinimi . ' opiskelijoille.<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän käyttäjätunnus: ' . $email . '<br>Viesti: ' . $viesti2 . '.';
             $headers2 .= "MIME-Version: 1.0" . "\r\n";
             $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -248,7 +248,7 @@ function myFunction(y) {
             $otsikkoa = "Cuulis-oppimisympäristön sisällä on lähetetty viesti.";
             $otsikkoa = "Opettaja on lähettänyt viestin kurssin/opintojakson " . $kurssinimi . " opiskelijoille";
             $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-            $kyselya = 'Cuulis-oppimisympäristön opettaja on lähettänyt viestin kurssin/opintojakson ' . $kurssinimi . ' opiskelijoille.<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän sähköpostiosoite: ' . $email . '<br>Viesti: ' . $viesti2 . '.';
+            $kyselya = 'Cuulis-oppimisympäristön opettaja on lähettänyt viestin kurssin/opintojakson ' . $kurssinimi . ' opiskelijoille.<br><br>Lähettäjän nimi: ' . $nimi . '<br>Lähettäjän käyttäjätunnus: ' . $email . '<br>Viesti: ' . $viesti2 . '.';
             $headers2 .= "MIME-Version: 1.0" . "\r\n";
             $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 

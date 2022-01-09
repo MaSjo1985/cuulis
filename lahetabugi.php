@@ -53,7 +53,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $nimi = poista_rivinvaihdot($_POST[nimi]);
             $email = poista_rivinvaihdot($_POST[sposti]);
 
-            $headers .= "From: " . $nimi . " <" . $email . ">\r\n";
+            $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
 
             if (!$result = $db->query('select sposti from kayttajat where rooli="admin"')) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -73,8 +73,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $body = '<html><body>';
 
 
-            $body .= '<p>' . $palaute . '</p>';
-            $body .= '<img style="margin-top: 40px;" src="https://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
+           $body .= '<p>' . $palaute . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
             $body .= "</body></html>";
 
             $viesti = mail($sposti, $otsikko, $body, $headers);

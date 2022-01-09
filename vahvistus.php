@@ -195,7 +195,7 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> </p><br>
 		<input type="hidden" name="id" value=' . $id . '> 
                     <input type="hidden" name="admin" value="1">
-		<input type="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
+		<input type="button" id="button" onclick="validateForm9()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
         $stmt->close();
     } else {
@@ -303,6 +303,7 @@ $('#salasana2').on('keyup', function() {
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
+            
             document.getElementById("button").click();
         }
     });

@@ -228,7 +228,7 @@ function myFunction(y) {
         }
         $otsikkoa = "Cuulis-oppimisympäristön sisällä on lähetetty viesti.";
         $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-        $kyselya = 'Cuulis-oppimisympäristön opiskelija ' . $nimi . ' on lähettänyt viestin ryhmälle.<br><br>Lähettäjän sähköpostiosoite: ' . $email . ' <br>Viesti: ' . $viesti2 . '.';
+        $kyselya = 'Cuulis-oppimisympäristön opiskelija ' . $nimi . ' on lähettänyt viestin ryhmälle.<br><br>Lähettäjän käyttäjätunnus: ' . $email . ' <br>Viesti: ' . $viesti2 . '.';
         $headers2 .= "MIME-Version: 1.0" . "\r\n";
         $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 

@@ -195,11 +195,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     while ($row = $result->fetch_assoc()) {
 
-        if ($row[omakuva] != '') {
-            echo'<img src="/' . $row[omakuva] . '" style="width: 90px"><br><br><br>';
-        } else {
+   
             echo'<br>';
-        }
+        
 
 
         echo "<b>Etunimi: </b>" . $row[etunimi] . '<br><br>';
@@ -217,7 +215,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
 
-        echo "<b>Sähköpostiosoite: </b>" . $row[sposti] . '<br><br>';
+        echo "<b>Käyttäjätunnus: </b>" . $row[sposti] . '<br><br>';
     }
     if ($_SESSION["Rooli"] == 'opiskelija' || $_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') {
         echo "<b>Oppilaitokset, joihin olet liittynyt:</b><br> ";

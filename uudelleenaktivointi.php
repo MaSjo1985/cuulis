@@ -138,10 +138,10 @@ if (!$tulos = $db->query("select * from kayttajat where tarkistuskoodi='" . $_GE
 while ($row = $tulos->fetch_assoc()) {
     $id = $row[id];
     $rooli = $row[rooli];
-    $vahvistettu = $row[vahvistettu];
+    $tarkistettu = $row[tarkistettu];
 }
-//ONKO OPE JNE: VAHVISTETTU!?!?!??
-if ($tulos->num_rows == 1 && ($rooli == 'opiskelija' || ($rooli <> 'opiskelija' && $vahvistettu == 1))) {
+
+if ($tulos->num_rows !=0 && $tarkistettu==1) {
     echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
     echo '<form name="Form" id="myForm" onSubmit="return validateForm9();" action="salasanatarkistus.php" method="post" class="form-style-k" ><fieldset>';
     echo"<legend> Anna itsellesi uusi salasana  </legend> ";
@@ -168,7 +168,7 @@ echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähin
 		<input type="hidden" name="id" value=' . $id . '> <br>
 		<input type="button" id="button" onclick="validateForm9()"value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
-} else if ($tulos->num_rows != 0 && ($rooli <> 'opiskelija' && $vahvistettu == 0)) {
+} else if ($tulos->num_rows != 0 && $tarkistettu == 0) {
     echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
 } else if ($tulos->num_rows == 0) {
     echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkyselyope.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';

@@ -60,25 +60,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo '<form name="Form" id="myForm" onSubmit="return validateForm7();" class="form-style-k"  action="muokkaaomattiedot2.php" method="post" ><fieldset>';
 
 
-    echo'<legend>Profiilikuva</legend>';
-    if ($omakuva != '') {
-        echo'<img src="/' . $omakuva . '" style="width: 90px"><br>';
-    } else {
-        echo'<br>';
-    }
 
-
-
-    if (empty($omakuva)) {
-
-        echo'<br><a href="lisaaomakuva.php" class="buttonlinkki" >+ Lisää profiilikuva</a><br>';
-    } else {
-
-
-        echo'<br><br><a href="muokkaaomakuva.php"  class="buttonlinkki"  style="margin-right: 30px;">&#9998 Vaihda kuva</a>';
-        echo'<a href="poistaomakuvavarmistus.php" class="buttonlinkki" >&#10007 Poista kuva</a>';
-    }
-    echo'</fieldset>';
     echo'<br><fieldset>';
 
     echo'<legend>Perustiedot</legend>';
@@ -95,7 +77,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div> <br>
-	<p>Sähköpostiosoite:<br>
+	<p>Käyttäjätunnus:<br>
    
 <input type="email" style="width:50%" id="sposti" name="uusisposti" value=' . $sposti . ' ></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">

@@ -78,7 +78,7 @@ if (isset($_POST['search'])) {
             echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 0px; width: 100%">';
             echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br>';
             echo '<table id="mytable88" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Rooli</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
+            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Rooli</th><th>Käyttäjätunnus</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
 
             while ($stmt->fetch()) {
                 $row10[etunimi] = $c1;
@@ -111,7 +111,7 @@ if (isset($_POST['search'])) {
             echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br>';
             echo '<table id="mytable88" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 100%; ">  <thead>';
 
-            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Rooli</th><th>Sähköpostiosoite</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
+            echo '<tr><th>Sukunimi</th><th>Etunimi</th><th>Rooli</th><th>Käyttäjätunnus</th><th>Oppilaitos</th><th>Kirjautunut viimeksi</th><th>Valitse<br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
 
             while ($stmt->fetch()) {
                 $row10[etunimi] = $c1;

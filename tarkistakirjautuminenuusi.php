@@ -101,7 +101,7 @@ else {
            
                  
         }
-        else if($vahvistettu==0 && $nollattu==0){
+        else if($vahvistettu==0){
             
           
                  echo json_encode(array('status' => 'errorv', 'msg' => $id));

@@ -25,7 +25,7 @@ echo '<form action="rekisterointitarkistus.php" method="post">
 
 <br><b>Etunimi: <b style="color: red">*</b></b><br><input type="text"  name="Etunimi">
 <br><br><b>Sukunimi: <b style="color: red">*</b></b><br><input type="text"  name="Sukunimi" >
-<br><br><b>Sähköpostiosoite: <b style="color: red">*</b></b><br><input type="email"  name="Sposti">
+<br><br><b>Käyttäjätunnus: <b style="color: red">*</b></b><br><input type="email"  name="Sposti">
 
 </div></div>';
 

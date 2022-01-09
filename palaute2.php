@@ -25,7 +25,7 @@ echo'<div class="cm8-quarter style="padding-top: 0px; margin-top: 0px; margin-bo
 echo'<form action="lahetapalaute.php" method="post">
 <b>Lähettäjän tiedot:</b> <br> <br>
 	   Nimi: <br> <input type="text"name="Nimi" value="' . $_GET[nimi] . '"> <br><br>
-	   Sähköpostiosoite: <b style="color: red">*</b><br> <input type="email" name="sposti" > <br><br>
+	   Käyttäjätunnus: <b style="color: red">*</b><br> <input type="email" name="sposti" > <br><br>
 	   Puhelinnumero:<br> <input type="text" name="Puh" value="' . $_GET[puh] . '"> <br><br>
 	<br> <b>Viesti:</b><br><textarea name="Viesti" rows="8"  >' . $_GET[viesti] . '</textarea> </div>
 	   	

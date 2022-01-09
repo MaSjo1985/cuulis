@@ -148,7 +148,7 @@ function myFunction2(y) {
 <div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>
-<p>Sähköpostiosoite: <b style="color: red">*</b><br><br>
+<p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
 
 <input type="email" id="sposti" name="Sposti"></p>
 

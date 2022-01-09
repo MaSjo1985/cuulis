@@ -158,7 +158,7 @@ echo'<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle<
 <input type="text"name="Nimi" style="width: 60%" placeholder="Nimi">
 
 	   
-<br><br><input type="email" style="width: 60%"  id="tama" name="sposti" placeholder="Sähköpostiosoite"><b style="color: red; padding-left:5px"> *</b>
+<br><br><input type="email" style="width: 60%"  id="tama" name="sposti" placeholder="Käyttäjätunnus"><b style="color: red; padding-left:5px"> *</b>
 
 <div style="color: red; font-weight: bold;" id="divID">
     <p class="eimitaan"></p>

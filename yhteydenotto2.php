@@ -85,7 +85,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     echo'<br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $nimi . '"> ' . $nimi . ' </p>
-		<br><p style="font-weight: normal"><b>Lähettäjän sähköpostiosoite:</b>&nbsp&nbsp&nbsp<input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
+		<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b>&nbsp&nbsp&nbsp<input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
 <br><p style="font-weight: normal"><b>Vastaanottajan nimi:</b> &nbsp&nbsp&nbsp ' . $nimiv . ' </p>';
     if ($_SESSION[Rooli] == 'admin' || $_SESSION[Rooli] == 'admink' || $_SESSION[Rooli] == 'opeadmin') {
 

@@ -262,7 +262,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             echo' <legend>Lähetä viesti oppilaitoksen ' . $Nimi . ' ylläpitäjälle</legend>';
             echo '<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>';
             echo'<br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $nimi . '"> ' . $nimi . ' </p>
-			<br><p style="font-weight: normal"><b>Lähettäjän sähköpostiosoite:</b>&nbsp&nbsp&nbsp <input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
+			<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b>&nbsp&nbsp&nbsp <input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
 			 <input type="hidden" name="id" value="' . $kouluid . '">
                          <input type="hidden" name="url" value="' . $urlmihin . '">';
 
@@ -316,7 +316,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     echo '<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
 
                     echo'   <br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $nimi . '"> ' . $nimi . ' </p>
-			<br><p style="font-weight: normal"><b>Lähettäjän sähköpostiosoite:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
+			<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
 
 <input type="hidden" name="id" value="0">';
 
@@ -355,7 +355,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             echo '<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
 
             echo'   <br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $nimi . '"> ' . $nimi . ' </p>
-			<br><p style="font-weight: normal"><b>Lähettäjän sähköpostiosoite:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
+			<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
 
 <input type="hidden" name="id" value="0">';
 
@@ -388,7 +388,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             echo '<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
 
             echo'   <br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $nimi . '"> ' . $nimi . ' </p>
-			<br><p style="font-weight: normal"><b>Lähettäjän sähköpostiosoite:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
+			<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b><input type="hidden" size="30" name="sposti" value=' . $sposti . '> ' . $sposti . ' </p> 	
 
 <input type="hidden" name="id" value="0">';
 

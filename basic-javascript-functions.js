@@ -3061,34 +3061,41 @@ function validateForm8ope()
         var username = $('#spostir').val();
                 var returnVal = 0;
                 var okke = 0;
+            
                 $.ajax({
                 type: 'post',
                         url: 'tarkistaaktivointiope.php',
                         data: {username: username},
                         dataType: 'json',
                         success: function (data) {
+                           
                         if (data.status == "success") {
                         document.getElementById("myForm").submit();
-                        } else {
-                        if (data.msg == "opiskelija") {
+                        } else if (data.status == "erroropiskelija") {
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                                 div1.style.padding = "10px 60px 20px 0px";
                                 div1.innerHTML = 'Olet rekisteröitynyt Cuulis-oppimisympäristöön opiskelijana, joten et voi tiedustella käyttäjätunnusta/salasanaa tästä.<br><br><u><a href="tunnustenkyselyuusieka.php" class="osoite">Palaa edelliselle sivulle</a></u> ja yritä uudelleen.';
                         }
 
-                       else if (data.msg == "error") {
+                       else if (data.status == "error0") {
 
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                                 div1.style.padding = "10px 60px 20px 0px";
                                 div1.innerHTML = 'Antamaasi sähköpostiosoitetta ei ole rekisteröity oppimisympäristöön!';
-                        } else {
+                        }    else if (data.status == "errort") {
+                                var sposti = data.msg;
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                                div1.style.padding = "10px 60px 20px 0px";
+                               div1.innerHTML = '<b>Ylläpitäjä ei ole vielä vahvistanut rekisteröitymistäsi<br><br>Lähetä asiasta sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: ' + sposti + '">' + sposti + '</a></b>';
+                        
+                        }else {
 
                         document.getElementById("spostir").style.backgroundColor = "yellow";
                                 div1.style.padding = "10px 60px 20px 0px";
                                 div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                         }
 
-                        }
+                        
                         }
                 });
                 return false;

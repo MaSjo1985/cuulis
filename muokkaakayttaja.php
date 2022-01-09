@@ -85,26 +85,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
   
         }
       
-        echo'<legend>Profiilikuva</legend>';
-    
-
-        if ($omakuva != '') {
-            echo'<img src="/' . $omakuva . '" style="width: 90px"><br>';
-        } else {
-            echo'<br>';
-        }
-
-
-
-        if (empty($omakuva)) {
-
-            echo'<br><a href="lisaaomakuvak.php?kaid=' . $id . '" class="buttonlinkki"  role="button" >+ Lisää profiilikuva</a><br>';
-        } else {
-            echo'<br><br><a href="muokkaaomakuvak.php?kaid=' . $id . '" class="buttonlinkki"  role="button"  style="margin-right: 30px;">&#9998 Vaihda kuva</a>';
-            echo'<a href="poistaomakuvavarmistusk.php?kaid=' . $id . '" class="buttonlinkki"  role="button" >&#10007 Poista kuva</a>';
-        }
-
-        echo'</fieldset>';
+     
         echo'<br><fieldset>';
 
         echo'<legend>Perustiedot</legend>';

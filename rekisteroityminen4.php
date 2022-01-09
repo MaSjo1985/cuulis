@@ -17,7 +17,7 @@ echo'<div class="cm8-container7" style="padding-top: 20px; margin-top: 0px; marg
 
 echo' <h4 style="color: #f7f9f7; padding-top: 0px">Rekisteröityminen</h4>';
 
-echo '<a href="etusivu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br><p style="color:#FF0000; font-size:1.1em">Sähköpostiosoite on virheellinen! </p><br><b>Kaikki tiedot ovat pakollisia.  <br><p style="color: #f7f9f7">Huom! Roolia ja ensisijaista oppilaitosta ei voi enää myöhemmin muuttaa!!</b></p><br>Vahvistustiedot lähetetään antamaasi sähköpostiosoitteeseen.<br><br>';
+echo '<a href="etusivu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br><p style="color:#FF0000; font-size:1.1em">Käyttäjätunnus on virheellinen! </p><br><b>Kaikki tiedot ovat pakollisia.  <br><p style="color: #f7f9f7">Huom! Roolia ja ensisijaista oppilaitosta ei voi enää myöhemmin muuttaa!!</b></p><br>Vahvistustiedot lähetetään antamaasi sähköpostiosoitteeseen.<br><br>';
 echo '<form action="rekisterointitarkistus.php" method="post">
 
  
@@ -25,7 +25,7 @@ echo '<form action="rekisterointitarkistus.php" method="post">
 
 <br><b>Etunimi: <b style="color: red">*</b></b><br><input type="text"  name="Etunimi">
 <br><br><b>Sukunimi: <b style="color: red">*</b></b><br><input type="text"  name="Sukunimi" >
-<br><br><b>Sähköpostiosoite: <b style="color: red">*</b></b><br><input type="email"  name="Sposti">
+<br><br><b>Käyttäjätunnus: <b style="color: red">*</b></b><br><input type="email"  name="Sposti">
 
 </div></div>';
 

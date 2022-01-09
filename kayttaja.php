@@ -257,11 +257,9 @@ function myFunction(y) {
 
             echo "</td>" . "</tr>" . "</table>" . "</div><br><br>";
         } else {
-            if ($row[omakuva] != '') {
-                echo'<img src="/' . $row[omakuva] . '" style="width: 90px"><br><br><br>';
-            } else {
+           
                 echo'<br>';
-            }
+            
 
 
             echo "<b>Etunimi: </b> " . $row[etunimi] . '<br><br>';
@@ -283,11 +281,11 @@ function myFunction(y) {
             } else {
                 echo "<b>Rooli: </b>Opiskelija<br><br>";
             }
-            if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin')
-                echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br><br>';
+            if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin'){
+                echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br>';
 
             if ($row[rooli] <> 'admin') {
-                echo "<br><b>Oppilaitokset:</b>";
+                echo "<br><b>Oppilaitokset, joihin käyttäjä on liittynyt:</b>";
 
                 if (!$result2 = $db->query("select distinct etunimi, sukunimi, rooli, sposti, Nimi, koulut.id as koid from kayttajat, kayttajankoulut, koulut where kayttajankoulut.odottaa=1 AND kayttajat.id='" . $row[id] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajankoulut.koulu_id=koulut.id")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -316,7 +314,9 @@ function myFunction(y) {
                     $row[paiva] = date("d.m.Y", strtotime($row[paiva]));
                     echo "<br><br><b>Viimeisin sisäänkirjautuminen:</b> " . $row[paiva] . ' ' . $row[kello] . '<br><br>';
                 }
+            }       
             }
+         
 
 
 
@@ -335,8 +335,7 @@ function myFunction(y) {
         if ($resultkoulu->num_rows != 0) {
             echo'<form action="muokkaakayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';
 
-
-            echo'<form action="varmistuskayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <button class="pieniroskis" title="Poista käyttäjä" style="margin-right: 40px"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista käyttäjä</button></form>';
+            
         }
     } else if ($_SESSION["Rooli"] == 'admin') {
         echo'<form action="muokkaakayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';

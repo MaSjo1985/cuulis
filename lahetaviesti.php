@@ -134,7 +134,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             }
             $otsikkoa = "Oppilaitoksen ylläpitäjä on lähettänyt viestin kaikille käyttäjille.";
             $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-            $kyselya = 'Cuulis-oppimisympäristön oppilaitoksen ' . $koulunimi . ' ylläpitäjä ' . $nimi . ' on lähettänyt viestin kaikille käyttäjille.<br><br>Lähettäjän sähköpostiosoite: ' . $email . '<br>Viesti: ' . $viesti;
+            $kyselya = 'Cuulis-oppimisympäristön oppilaitoksen ' . $koulunimi . ' ylläpitäjä ' . $nimi . ' on lähettänyt viestin kaikille käyttäjille.<br><br>Lähettäjän käyttäjätunnus: ' . $email . '<br>Viesti: ' . $viesti;
             $headers2 .= "MIME-Version: 1.0" . "\r\n";
             $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 

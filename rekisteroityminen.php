@@ -164,7 +164,7 @@ echo'<br><p>Etunimi: <b style="color: red">*</b><br>
 <div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
  <p class="eimitaan"></p>
 </div>
-<br><p>Sähköpostiosoite: <b style="color: red">*</b><br>
+<br><p>Käyttäjätunnus: <b style="color: red">*</b><br>
 
 <input type="email"    id="sposti" name="Sposti" style="width: 50%"></p>';
 

@@ -168,7 +168,7 @@ else{
 }
 
 if($_POST[akt]==1){
-    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän vaihtaa sinulle uuden salasanan</p>';
+    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän asettaa sinulle uuden salasanan</p>';
 
 }
 else{

@@ -138,7 +138,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
         echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
 
-        echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateFormTunnus(this);" action="vaihdatunnus2.php" method="post"><fieldset>';
+        echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateFormTunnus();" action="vaihdatunnus2.php" method="post"><fieldset>';
         echo"<legend>Vaihda käyttäjätunnus</legend>";
         echo'<br><br><b style="color: blue">Cuulis-oppimisympäristön kirjautuminen on muuttunut.<br><br>Valitse itsellesi uusi käyttäjätunnus.</b><br>';
 
@@ -155,7 +155,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
 		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>
                     <input type="hidden" name="url" value=' . $_GET[url] . '> <br>
-		<input type="button" id="button" onclick="validateFormTunnus(this)" value="&#10003 Tallenna" class="myButton9"><br><br>
+		<input type="button" id="button" onclick="validateFormTunnus()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
 
 

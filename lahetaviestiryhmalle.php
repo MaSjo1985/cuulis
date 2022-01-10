@@ -212,7 +212,6 @@ function myFunction(y) {
                 $maara++;
                 $body = '<html><body>';
                 $body .= '<p>' . $viesti2 . '</p>';
-                $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                 $body .= "</body></html>";
                 $viesti = mail($sposti, $otsikko, $body, $headers);
             }
@@ -239,7 +238,6 @@ function myFunction(y) {
 
 
         $body .= '<p>' . $kyselya . '</p>';
-        $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
         $body .= "</body></html>";
         $viestia = mail($spostia, $otsikkoa, $body, $headers2);
 

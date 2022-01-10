@@ -3533,7 +3533,7 @@ function validateForm112()
         }
 
         }
-function validateFormTunnus(f)
+function validateFormTunnus()
         {
         var ok = 0;
                 var a = document.forms["Form"]["tunnus"].value;
@@ -3554,7 +3554,7 @@ function validateFormTunnus(f)
 
         if (ok == 1) {
         return false;
-        } else {
+        } else { 
 
 
         var tunnus = $('#tunnusr').val();
@@ -3566,20 +3566,21 @@ function validateFormTunnus(f)
                         data: {tunnus: tunnus},
                         dataType: 'json',
                         success: function (data) {
-                        if (data.status == "success") {
-
+                        if (data.status === "success") {
+                       
                         document.getElementById("myForm").submit();
-                        } else {
+                        }else if (data.status === "error") { 
 
 
-                        document.getElementById("tunnusr").style.backgroundColor = "yellow";
+                                document.getElementById("tunnusr").style.backgroundColor = "yellow";
                                 div1.style.padding = "10px 60px 20px 0px";
                                 div1.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
-                                return false;
+                              
+                               
                         }
                         }
                 });
-                return true;
+              return false;
         }
 
         }

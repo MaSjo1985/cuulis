@@ -5,13 +5,10 @@ ob_start();
 include("yhteys.php");
 
 
+$tarkistettusposti = htmlspecialchars($_POST['tunnus']);
 
-
-$tarkistettusposti = htmlspecialchars($_POST['username']);
-
-
-
-$siivottusposti = mysqli_real_escape_string($db, $_POST['username']);
+$siivottusposti = mysqli_real_escape_string($db, $_POST['tunnus']);
+$siivottusposti = trim($siivottusposti);
 
 $stmt = $db->prepare("SELECT DISTINCT * FROM kayttajat WHERE BINARY sposti=?");
 $stmt->bind_param("s", $sposti);
@@ -61,10 +58,7 @@ if ($stmt->num_rows == 0) {
     
     
     
-    
-   
-
-    
+ 
     
 }
 $stmt->close();

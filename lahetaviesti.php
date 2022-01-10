@@ -68,7 +68,6 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
                     $body .= '<p>' . $viesti . '</p>';
-                    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                     $body .= "</body></html>";
                     $viesti = mail($sposti, $otsikko, $body, $headers);
                 }
@@ -118,7 +117,6 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
                     $body .= '<p>' . $viesti . '</p>';
-                    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                     $body .= "</body></html>";
                     $maara++;
                     $viesti = mail($sposti, $otsikko, $viesti, $headers);
@@ -145,7 +143,6 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
             $body .= '<p>' . $kyselya . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
             $viestia = mail($spostia, $otsikkoa, $body, $headers2);

@@ -1,3 +1,20 @@
+- VAIHDATUNNUS.PHP EI TOIMI! Voi laittaa saman tunnuksen!?!
+
++ tunnuksen vaihto -> laita erillinen näkymä, missä näkyy se ja muistutus laitta ylös uusi tunnus 
+
+- TSEKKKAA VANHAN KÄYTTÄJÄN KIRJAUTUMINEN, OPISKELIJA + OPE
+
+
+
+
+
+- LISÄÄ OPISKELIJA/OPE KURSSILLE -> TSEKKAA TAuLUKKO + HAKUTULOKSET KUN EI LÖYDY
+
+- Yksilöllinen viesti -> käyttäjän tiedot!
+
+
+
+
 1) VIESTIEN LÄHETYKSET:
 
 vastausosoitteeks: $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
@@ -20,7 +37,7 @@ poista kaikki viestit jotka menee opiskelijalle
 
 *********************************************************************************
 
-
+- VIESTIEN LÄHETYKSEN VIIVE?!
 
 - VIESTISI ON LÄHETETTY -> keltainen väri
 

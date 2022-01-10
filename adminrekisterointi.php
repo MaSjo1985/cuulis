@@ -69,11 +69,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $otsikko = "Rekisteröintiviesti Cuulis-oppimisympäristöstä";
     $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
-    $viesti = 'Teidät on merkitty oppilaitoskohtaiseksi ylläpitäjäksi Cuulis-oppimisympäristöön.<br><br>Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+    $viesti = 'Sinut on lisätty oppilaitoskohtaiseksi ylläpitäjäksi Cuulis-oppimisympäristöön.<br><br>Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
     $viesti = str_replace("\n.", "\n..", $viesti);
 
 
-
+    
     $varmistus = mail($sposti, $otsikko, $viesti, $headers);
 
 

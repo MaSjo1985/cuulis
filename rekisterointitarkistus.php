@@ -105,7 +105,6 @@ if ($_POST[Rooli] == "opiskelija") {
 
 
     $body .= '<p>' . $viesti . '</p>';
-    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
     $body .= "</body></html>";
 
     $varmistus = mail($siivottusposti, $otsikko, $body, $headers);
@@ -132,7 +131,7 @@ if ($_POST[Rooli] == "opiskelija") {
     $stmt2->close();
 
 
-    header("location: vahvistus.php?tk=" . $krypattu2);
+    header("location: vahvistus.php?id=" . $id);
 } else if ($_POST[Rooli] == "opettaja" || $_POST[Rooli] == "muu") {
 
     //generoidaan salasana
@@ -191,7 +190,6 @@ $uniqid = $paivays.uniqid('', true);
 
 
     $body .= '<p>' . $viesti . '</p>';
-    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
     $body .= "</body></html>";
 
 
@@ -229,7 +227,6 @@ $uniqid = $paivays.uniqid('', true);
 
 
             $body .= '<p>' . $viesti2 . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
 
@@ -254,7 +251,6 @@ $uniqid = $paivays.uniqid('', true);
 
 
         $body .= '<p>' . $kysely3 . '</p>';
-        $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
         $body .= "</body></html>";
 
         $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
@@ -290,7 +286,6 @@ $uniqid = $paivays.uniqid('', true);
 
 
             $body .= '<p>' . $viesti . '</p>';
-            $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
             $body .= "</body></html>";
 
             $varmistus = mail($sposti3, $otsikko, $viesti, $headers);

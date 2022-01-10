@@ -117,7 +117,6 @@ function myFunction(y) {
 
 
                     $body .= '<p>' . $viesti . '</p>';
-                    $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                     $body .= "</body></html>";
                     $maara++;
                     $varmistus = mail($sposti, $otsikko, $body, $headers);

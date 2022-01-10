@@ -42,7 +42,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
             $db->query("insert into kayttajankoulut  (kayttaja_id, koulu_id, odottaa) values ('" . $_POST["kaid"] . "', '" . $tuote . "', 1)");
 
-            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti from kayttajat where id='" . $_POST[kaid] . "'")) {
+            if (!$result = $db->query("select distinct etunimi, sukunimi, sposti, rooli from kayttajat where id='" . $_POST[kaid] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
 
@@ -50,6 +50,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $sposti = $row[sposti];
                 $etunimi = $row[etunimi];
                 $sukunimi = $row[sukunimi];
+                $rooli = $row[rooli];
             }
 
 
@@ -79,10 +80,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
                 $body .= '<p>' . $viesti . '</p>';
-                $body .= '<img style="margin-top: 40px" src="http://cuulis.cm8solutions.fi/images/cuulis_email.png"  /><br/>';
                 $body .= "</body></html>";
-
+                if($rooli=='opettaja'){
+                    
                 $varmistus = mail($sposti, $otsikko, $body, $headers);
+                }
             }
 
 

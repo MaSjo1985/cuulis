@@ -1,12 +1,39 @@
 <?php
 ob_start();
 
-session_start(); // ready to go!
+
 echo'<!DOCTYPE html>
 <html>
+ 
 <head>
 
-<title>Vaihda käyttäjätunnus</title>
+<title>Käyttäjätunnus vaihdettu</title>';
+include("yhteys.php");
+// server should keep session data for AT LEAST 1 hour
+// each client should remember their session id for EXACTLY 1 hour
+
+
+session_start(); // ready to go!
+if (isset($_SESSION["Kayttajatunnus"])) {
+if(isset($_GET[omat])){
+    
+
+    include("header.php");
+    include("header2.php");
+    echo'<div class="cm8-container7">';
+    if ($_SESSION["Rooli"] == 'admin')
+        include("adminnavi.php");
+    else if ($_SESSION["Rooli"] == 'admink')
+        include("adminknavi.php");
+    else if ($_SESSION["Rooli"] == 'opeadmin')
+        include("opeadminnavi.php");
+    else
+        include ("opnavi.php");
+}
+else{
+
+
+echo'
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -131,80 +158,46 @@ if ((strpos($browser, 'Android'))) {
 
     echo'</div>';
 }
-
-echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
-
-
-
-        echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
-
-        echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateFormTunnus();" action="vaihdatunnus2.php" method="post"><fieldset>';
-        echo"<legend>Vaihda käyttäjätunnus</legend>";
-        echo'<br><br><b style="color: blue">Cuulis-oppimisympäristön kirjautuminen on muuttunut.<br><br>Valitse itsellesi uusi käyttäjätunnus.</b><br>';
-
-        echo'<br><br><b style="color: red">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b>';
-     
-        echo'<br><br><br><p><b>Uusi käyttäjätunnus: </b> <b style="color: red">*</b><br><br>
-             
-<input type="text" id="tunnusr" style="width: 60%" placeholder="Uusi käyttäjätunnus" name="tunnus"></p>
-
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
-    <p class="eimitaan"></p>
-</div>
+    echo'<div class="cm8-container7">';    
+}
 
 
-		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>
-                    <input type="hidden" name="url" value=' . $_GET[url] . '> <br>
-		<input type="button" id="button" onclick="validateFormTunnus()" value="&#10003 Tallenna" class="myButton9"><br><br>
-		</fieldset></form>';
-
-
-echo '</div>';
-echo '</div>';
-
-include("footer.php");
-?>
-<script type="text/javascript">
-$('#tunnusr').on('keyup', function() {
-      var div2 = document.getElementById("divID");
-    document.getElementById("tunnusr").style.backgroundColor = "white";
-        div2.style.padding = "10px 60px 10px 0px";
-
-        div2.innerHTML = "";
-});
- </script>
-
-<script>
-    $(function () {
-
-        $("#show1").on("click", function () {
-            var x = $("#salasana");
-            if (x.attr('type') === "password") {
-                x.attr('type', 'text');
-                $(this).removeClass('fa fa-eye-slash');
-                document.getElementById('show1').setAttribute('title', 'Piilota salasana');
-                $(this).addClass('fa fa-eye');
-            } else {
-                x.attr('type', 'password');
-                $(this).removeClass('fa fa-eye');
-                $(this).addClass('fa fa-eye-slash');
-                document.getElementById('show1').setAttribute('title', 'Näytä salasana');
-            } // End of if
-        })// End of click event
-
-    });
-</script>
-
-<script>
-    var input = document.getElementById("tunnusr");
-    input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("button").click();
+    
+    echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
+    echo'<div class="cm8-margin-top"></div>';
+      if (!$haetunnus = $db->query("select distinct sposti from kayttajat where id='" . $_GET[id] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
-    });
 
+        while ($rowt = $haetunnus->fetch_assoc()) {
 
-</script>
+            $sposti = $rowt[sposti];
+        }
+ 
+            
+             if (!empty($_GET[url])){
+                     echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnus on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'url='.$_GET[url].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+ 
+             }
+            else{
+                 echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnus on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+   
+       
+            }
+            
+           
+                 
+
+    echo'</div>';
+
+    echo'</div>';
+    include("footer.php");
+} else {
+    $url = $_SERVER[REQUEST_URI];
+    $url = substr($url, 1);
+    $url = strtok($url, '?');
+    header("location: kirjautuminen.php?url=" . $url);
+}
+?>
 </body>
-</html>			
+</html>		

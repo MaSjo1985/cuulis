@@ -3567,9 +3567,9 @@ function validateFormTunnus()
                         dataType: 'json',
                         success: function (data) {
                         if (data.status === "success") {
-                       
-                        document.getElementById("myForm").submit();
-                        }else if (data.status === "error") { 
+                                         document.getElementById("myForm").submit();
+                        }
+                        else if (data.status === "error") { 
 
 
                                 document.getElementById("tunnusr").style.backgroundColor = "yellow";

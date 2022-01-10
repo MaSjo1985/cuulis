@@ -1,6 +1,3 @@
-- VAIHDATUNNUS.PHP EI TOIMI! Voi laittaa saman tunnuksen!?!
-
-+ tunnuksen vaihto -> laita erillinen näkymä, missä näkyy se ja muistutus laitta ylös uusi tunnus 
 
 - TSEKKKAA VANHAN KÄYTTÄJÄN KIRJAUTUMINEN, OPISKELIJA + OPE
 

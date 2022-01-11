@@ -38,12 +38,18 @@ if (isset($_POST[id])) {
 
     $stmt->close();
 
+    
             
-             if (!empty($_POST[url]))
-                header("location: vaihdatunnustodennus.php?url=' . $_POST[url].'&id=". $_POST[id] );
-            else
+             if (!empty($_POST[url])){
+             
+                       header("location: vaihdatunnustodennus.php?url=' . $_POST[url].'&id=". $_POST[id] ); 
+             }
+             else{
+                  header("location: vaihdatunnustodennus.php?id=". $_POST[id] );
+             }
+           
                
-            header("location: vaihdatunnustodennus.php?id=". $_POST[id] );
+           
        
 
     echo "</div>";

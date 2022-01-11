@@ -1,39 +1,12 @@
 <?php
 ob_start();
 
-
+session_start(); // ready to go!
 echo'<!DOCTYPE html>
 <html>
- 
 <head>
 
-<title>Käyttäjätunnus vaihdettu</title>';
-include("yhteys.php");
-// server should keep session data for AT LEAST 1 hour
-// each client should remember their session id for EXACTLY 1 hour
-
-
-session_start(); // ready to go!
-if (isset($_SESSION["Kayttajatunnus"])) {
-if(isset($_GET[omat])){
-    
-
-    include("header.php");
-    include("header2.php");
-    echo'<div class="cm8-container7">';
-    if ($_SESSION["Rooli"] == 'admin')
-        include("adminnavi.php");
-    else if ($_SESSION["Rooli"] == 'admink')
-        include("adminknavi.php");
-    else if ($_SESSION["Rooli"] == 'opeadmin')
-        include("opeadminnavi.php");
-    else
-        include ("opnavi.php");
-}
-else{
-
-
-echo'
+<title>Käyttäjätunnus vaihdettu</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -158,9 +131,8 @@ if ((strpos($browser, 'Android'))) {
 
     echo'</div>';
 }
-    echo'<div class="cm8-container7">';    
-}
 
+echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
 
     
     echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
@@ -192,12 +164,7 @@ if ((strpos($browser, 'Android'))) {
 
     echo'</div>';
     include("footer.php");
-} else {
-    $url = $_SERVER[REQUEST_URI];
-    $url = substr($url, 1);
-    $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
-}
+
 ?>
 </body>
 </html>		

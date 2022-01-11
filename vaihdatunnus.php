@@ -153,8 +153,12 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 </div>
 
 
-		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>
-                    <input type="hidden" name="url" value=' . $_GET[url] . '> <br>
+		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>';
+                   if(!empty($_GET[url])){
+                       
+                    echo'öööö<input type="hidden" name="url" value=' . $_GET[url] . '>'; 
+                   }
+                    echo'<br>
 		<input type="button" id="button" onclick="validateFormTunnus()" value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
 

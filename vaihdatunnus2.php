@@ -41,11 +41,11 @@ if (isset($_POST[id])) {
     
             
              if (!empty($_POST[url])){
-             
+            
                        header("location: vaihdatunnustodennus.php?url=' . $_POST[url].'&id=". $_POST[id] ); 
              }
              else{
-                  header("location: vaihdatunnustodennus.php?id=". $_POST[id] );
+                  header('location: vaihdatunnustodennus.php?id='. $_POST[id] );
              }
            
                

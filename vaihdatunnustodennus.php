@@ -134,7 +134,7 @@ if ((strpos($browser, 'Android'))) {
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >';
 
-    
+   
     echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
     echo'<div class="cm8-margin-top"></div>';
       if (!$haetunnus = $db->query("select distinct sposti from kayttajat where id='" . $_GET[id] . "'")) {
@@ -143,17 +143,19 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 
         while ($rowt = $haetunnus->fetch_assoc()) {
 
-            $sposti = $rowt[sposti];
+            $tunnus = $rowt[sposti];
         }
- 
-            
+
+
              if (!empty($_GET[url])){
-                     echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnus on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'url='.$_GET[url].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+                
+                     echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnuksesi on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'url='.$_GET[url].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
  
              }
             else{
-                 echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnus on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
-   
+              
+                 echo'<br><b style="color: #c7ef00;">Käyttäjätunnuksesi on nyt vaihdettu!</b><br><br><b>Uusi käyttäjätunnuksesi on: &nbsp&nbsp </b>'.$tunnus.'<br><br><a href="tarkistusuusi.php?id='.$_GET[id].'">Jatka kirjautumista  tästä &nbsp&nbsp<p style="font-size: 1.2em; display: inline-block; padding:0; margin: 0">&#8631</p></b> </a>';
+  
        
             }
             

@@ -177,7 +177,7 @@ while ($rowP = $haeadmin->fetch_assoc()) {
 
     $id = $rowP[id];
 }
-header("location: Tietosuojaseloste_Cuulis.pdf");
+header("location: tietosuojaseloste.pdf");
 
 
 //$file = fopen("tietoa.txt", "r");

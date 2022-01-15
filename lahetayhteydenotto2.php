@@ -7,7 +7,7 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Viestin lähetys </title>';
+<title> Viesti lähetetty </title>';
 
 
 include("yhteys.php");
@@ -39,8 +39,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-    echo "<br>Viestisi on lähetetty!";
-    echo '<br><br><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
+    echo '<br><b style="color: #c7ef00;"> Viestisi on lähetetty!</b>';
+    echo '<br><br><a href="etusivu.php">Jatka etusivulle tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
 
 
 

@@ -7,7 +7,7 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Kehitysidea?</title>
+<title>Yhteydenotto lähetetty</title>
 <script src="basic-javascript-functions.js" language="javascript" type="text/javascript">
 </script><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -139,11 +139,8 @@ if ((strpos($browser, 'Android'))) {
 
 echo'<div class="cm8-container7">';
 echo'<div class="cm8-margin-bottom" style="padding-left: 20px; padding-top: 40px">';
-
-
-
-echo "<br>Kiitos, viestisi on vastaanotettu ja se pyritään käsittelemään mahdollisimman pian!";
-echo '<br><br><a href="etusivu.php">Jatka etusivulle tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
+echo '<br><b style="color: #c7ef00;">Viestisi on lähetetty ja se pyritään käsittelemään mahdollisimman pian!</b>';
+echo '<br><br><a href="etusivu.php">Jatka etusivulle tästä &nbsp&nbsp<p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
 
 echo "</div>";
 echo "</div>";

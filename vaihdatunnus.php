@@ -153,7 +153,7 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
 </div>
 
 
-		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>';
+		<input type="hidden" name="id" id="id" value=' . $_GET[id] . '> <br>';
                    if(!empty($_GET[url])){
                        
                     echo'öööö<input type="hidden" name="url" value=' . $_GET[url] . '>'; 

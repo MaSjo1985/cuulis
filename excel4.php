@@ -28,15 +28,15 @@ $list = array();
 $list[0] = array();
 
 
-$list[0]['nimi'] = 'Opiskelija';
-$list[0]['sposti'] = 'Käyttäjätunnus';
+$list[0]['sukunimi'] = 'Sukunimi';
+$list[0]['etunimi'] = 'Etunimi';
 
 
 $rivi = array();
 
 while ($row = $result->fetch_assoc()) {
-    $rivi['nimi'] = $row[sukunimi] . " " . $row[etunimi];
-    $rivi['sposti'] = $row[sposti];
+    $rivi['sukunimi'] = $row[sukunimi];
+    $rivi['etunimi'] = $row[etunimi];
     $list[] = $rivi;
 }
 

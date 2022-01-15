@@ -5,7 +5,7 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Lähetä viesti käyttäjälle</title>';
+<title> Lähetä viesti</title>';
 
 
 include("yhteys.php");
@@ -14,7 +14,9 @@ include("yhteys.php");
 
 
 session_start(); // ready to go!
+$urlmihin = $_SERVER[REQUEST_URI];
 
+$urlmihin = substr($urlmihin, 1);
 if (isset($_SESSION["Kayttajatunnus"])) {
     include("kurssisivustonheader.php");
 
@@ -153,39 +155,8 @@ function myFunction(y) {
     }
     echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
     echo'<div class="cm8-half" style="padding-left: 20px; padding-top: 0px">';
-    if (isset($_POST["id"])) {
-
-
-
-        if (!$result = $db->query("select * from kayttajat where id='" . $_POST[id] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-
-        while ($row = $result->fetch_assoc()) {
-            $nimi = $row[etunimi] . " " . $row[sukunimi];
-            $sposti = $row[sposti];
-        }
-
-        echo'<form action="lahetaviestiyksilollinen.php" class="form-style-k" method="post"><fieldset>';
-        echo' <legend>Lähetä viesti käyttäjälle ' . $nimi . '</legend>';
-        echo '<a href="kayttaja.php?url=' . $url . '&ka=' . $_POST[id] . '" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-
-        echo'<br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . '"> ' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . ' </p>
-				<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b>&nbsp&nbsp&nbsp <input type="hidden" size="30" name="sposti" value=' . $_SESSION["Sposti"] . '> ' . $_SESSION["Sposti"] . ' </p> 	
-<br><p style="font-weight: normal"><b>Vastaanottajan nimi:</b> &nbsp&nbsp&nbsp ' . $nimi . ' </p>';
-
-        if ($_SESSION[Rooli] == 'admin' || $_SESSION[Rooli] == 'admink' || $_SESSION[Rooli] == 'opeadmin') {
-
-            echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $sposti . ' </p> ';
-        }
-
-        echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" width="80%"></textarea></p> <br><br> 
-					<input type="hidden" name="id" value=' . $_POST[id] . '>
-                                        <input type="hidden" name="url" value="osallistujat.php">    
-	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px">';
-        echo '</fieldset></form></div></div>';
-    } else if (isset($_GET["id"])) {
+  
+    if (isset($_GET["id"])) {
 
         if (!$result = $db->query("select * from kayttajat where id='" . $_GET[id] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -200,15 +171,9 @@ function myFunction(y) {
         echo'<form action="lahetaviestiyksilollinen.php" class="form-style-k" method="post"><fieldset>';
         echo' <legend>Lähetä viesti käyttäjälle ' . $nimi . '</legend>';
 
-        if ($_GET[url] == "kayttaja.php") {
-            echo'<a href="kayttaja.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-        } else if ($_GET[url] == "osallistujat.php") {
+    
             echo'<a href="osallistujat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-        } else if ($_GET[url] == "ryhmatyot.php") {
-            echo'<a href="ryhmatyot.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-        } else {
-            echo'<br><br>';
-        }
+   
 
 
         echo'<br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . '"> ' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . ' </p>
@@ -218,14 +183,17 @@ function myFunction(y) {
 
             echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $sposti . ' </p> ';
         }
-
+echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
                                   <input type="hidden" name="id" value=' . $_GET[id] . '>
-                                       <input type="hidden" name="missa" value="kurssi">
-                                               <input type="hidden" name="url" value="osallistujat.php">   
+                                       
+                                             <input type="hidden" name="url" value=' . $urlmihin . '>   
 	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px" >';
         echo '</fieldset></form></div></div>';
     }
+   else{
+      header("location: osallistujat.php"); 
+   }
 
     echo'</div>';
     echo'</div>';

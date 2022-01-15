@@ -78,6 +78,8 @@ function myFunction(y) {
         echo '<div class="cm8-container3" style="padding-top: 0px">';
         echo' <h4>Lisää opiskelijoita kurssille/opintojaksolle</h4>';
         echo '<a href="osallistujat.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
+$results_per_page = 100;
+$start_from = ($page-1) * $results_per_page;
 
         $array = array();
         $array2 = array();
@@ -120,9 +122,9 @@ function myFunction(y) {
 
 
         if (!$loyty)
-            echo '<br><em>Oppilaitoksessa ei ole opiskelijoita, joita voisi vielä lisätä kurssille/opintojaksolle.</em><br>';
-        else {
+         echo '<br><b style="color: #c7ef00;">Oppilaitoksessa ei ole opiskelijoita, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
 
+        else {
 
 
             echo'&#128270 <input type="search"  onkeyup="showResult8(this.value)" name="search"   id="search_box" class="haku" style="width: 25%">
@@ -135,11 +137,13 @@ function myFunction(y) {
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
             echo'<form action="lisaaopiskelijavarmistus.php" method="post">';
 
-            echo'<div class="cm8-responsive" id="piilota">';
+            echo'<div class="cm8-responsive" id="piilota"><br>';
+            
             echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
 
 
-            echo '<table id="mytable" class="cm8-table cm8-bordered cm8-striped"><thead>';
+            echo '<table id="mytable" class="cm8-striped cm8-uusitableosallistujat" style="table-layout:fixed; max-width: 50%; "><thead>';
+            
             echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th></tr>';
             echo'</thead><tbody>';
 
@@ -159,13 +163,14 @@ function myFunction(y) {
                     echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td></tr>";
                 }
             }
-            echo'<tr style="border-bottom: none"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td></td><td></td><td vstyle="border-right: 4px solid #080708"></td></tr>';
+            echo'<tr style="border-bottom: none"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td style="border-right: 4px solid #080708"></td></tr>';
 
             echo "</tbody></table>";
 
             echo'</form></div></div>';
         }
     }
+      echo'</div>';
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

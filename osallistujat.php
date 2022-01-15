@@ -165,11 +165,9 @@ function myFunction(y) {
 
 
         if ($lkm == 0) {
-            if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-                echo '<a style="margin-right: 20px"  href="kayttaja.php?url=' . $url . '&ka=' . $id . '">' . $etunimi . ' ' . $sukunimi . '</a>';
-            } else {
-                echo '<b style="font-weight:normal; margin-right: 20px">' . $etunimi . ' ' . $sukunimi . '</b>';
-            }
+
+                echo '<b>' . $etunimi . ' ' . $sukunimi . '</b>';
+          
 
 
 
@@ -177,12 +175,9 @@ function myFunction(y) {
                 echo'<a href="viestikayttajalle2.php?url=' . $url . '&id=' . $id . '"  title="Lähetä viesti käyttäjälle">📧 &nbsp </a></b>';
             }
         } else {
-
-            if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-                echo '<b>Vastuuopettaja: &nbsp&nbsp&nbsp</b><a style="margin-right: 20px" href="kayttaja.php?url=' . $url . '&ka=' . $id . '">' . $etunimi . ' ' . $sukunimi . '</a>';
-            } else {
-                echo '<b>Vastuuopettaja: &nbsp&nbsp&nbsp</b><b style="font-weight:normal; margin-right: 20px">' . $etunimi . ' ' . $sukunimi . '</b>';
-            }
+   
+                echo '<b>Vastuuopettaja: &nbsp&nbsp&nbsp</b>' . $etunimi . ' ' . $sukunimi;
+          
 
 
             if ($_SESSION["Id"] != $id) {
@@ -195,11 +190,9 @@ function myFunction(y) {
             while ($rivi88 = $tulos88->fetch_assoc()) {
                 $laskuri++;
 
-                if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-                    echo'<a style="margin-right: 20px"  href="kayttaja.php?url=' . $url . '&ka=' . $rivi88[kaid] . '">' . $rivi88[etunimi] . ' ' . $rivi88[sukunimi] . '</a>';
-                } else {
-                    echo'<b style="font-weight:normal; margin-right: 20px">' . $rivi88[etunimi] . ' ' . $rivi88[sukunimi] . '</b>';
-                }
+                    echo$rivi88[etunimi] . ' ' . $rivi88[sukunimi];
+               
+               
 
 
 
@@ -215,7 +208,7 @@ function myFunction(y) {
         }
     }
     else {
-        echo '<a href="kayttaja.php?url=' . $url . '&ka=' . $id . '">' . $etunimi . ' ' . $sukunimi . '</a>';
+        echo $etunimi . ' ' . $sukunimi;
         if ($_SESSION["Id"] != $id)
             echo'<b><a href="viestikayttajalle2.php?url=' . $url . '&id=' . $id . '" style="padding: 0px 4px; margin-left: 60 px" title="Lähetä viesti käyttäjälle">📧 &nbsp &nbsp Lähetä viesti</a></b>';
     }
@@ -233,7 +226,7 @@ function myFunction(y) {
         echo'<br><p style="display: inline-block; margin-right: 10px">Opiskelijoita yhteensä: </p>' . $resultyht->num_rows;
         echo'<br>';
         echo'<br>';
-        echo'<a href="excel4.php?kurssi=' . $_SESSION[KurssiId] . '" class="myButtonLataa"  role="button"  style="padding:6px 8px; font-size: 0.9em"><i class="fa fa-download" style="font-size:0.8em"></i> &nbsp&nbsp Lataa opiskelijalista </a>';
+        echo'<a href="excel4.php?kurssi=' . $_SESSION[KurssiId] . '" class="myButtonLataa"  role="button"  style="padding:6px 6px 4px 6px; font-size: 0.8em"><i class="fa fa-download" style="font-size:0.8em"></i> &nbsp&nbsp Lataa opiskelijalista </a>';
 
         echo'<br>';
         echo'<br>';
@@ -276,15 +269,15 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';
-                echo '<table id="mytable" class="cm8-striped cm8-uusitable18" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-
+         
+              echo '<table id="mytable" class="cm8-striped cm8-uusitable18" style="table-layout:fixed; max-width: 100%; "><thead>';
 
                 if ($akt == 0) {
 
                     echo '<tr><th><a href="osallistujat.php?kaikki2=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
 
                     while ($row = $result->fetch_assoc()) {
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
                         
                         echo'</tr>';
                     }
@@ -298,7 +291,7 @@ function myFunction(y) {
 
                     while ($row = $result->fetch_assoc()) {
                         $tavoite = $row[tavoite];
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td>'. $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
                         echo'<td>' . $tavoite . '</td>';
                   
                         echo'</tr>';
@@ -316,15 +309,15 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';
-                echo '<table id="mytable" class="cm8-uusitable18 cm8-striped"  style="table-layout:fixed; max-width: 100%; ">  <thead>';
-
+              echo '<table id="mytable" class="cm8-striped cm8-uusitable18" style="table-layout:fixed; max-width: 100%; "><thead>';
+            
 
                 if ($akt == 0) {
 
                     echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
 
                     while ($row = $result->fetch_assoc()) {
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
                      
                         echo'</tr>';
                     }
@@ -338,7 +331,7 @@ function myFunction(y) {
                     while ($row = $result->fetch_assoc()) {
                         $tavoite = $row[tavoite];
                         //TESTAA TÄHÄN!!
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '" >' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
                         echo'<td>' . $tavoite . '</td>';
                     
                         echo'</tr>';
@@ -350,7 +343,7 @@ function myFunction(y) {
                 echo "</tbody></table>";
                 echo'</div>';
                 echo "<br>";
-                echo'<br><button class="pieniroskis" title="Poista kurssilta/opintojaksolta"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button>';
+                echo'<br><button class="pieniroskis" title="Poista kurssilta/opintojaksolta" style="font-size: 0.7em; padding: 4px"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button>';
                 echo'</form>';
             }
         }
@@ -389,7 +382,7 @@ function myFunction(y) {
                 echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
 
                 while ($row = $result->fetch_assoc()) {
-                    echo '<tr><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . '</a></td>';
+                    echo '<tr><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . '</td>';
                 
                     echo'</tr>';
                 }

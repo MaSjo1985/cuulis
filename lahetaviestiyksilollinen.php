@@ -1,13 +1,12 @@
 <?php
 ob_start();
 
-
 echo'<!DOCTYPE html>
 <html>
  
 <head>
 
-<title> Viestin lähetys </title>';
+<title>Lähetä viesti </title>';
 
 
 include("yhteys.php");
@@ -24,18 +23,156 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     } else if (isset($_GET[url])) {
         $mihin = $_GET[url];
     }
+    if (strpos($_POST[url], 'viestikayttajalle2.php') !== false) {
+            include("kurssisivustonheader.php");
 
-    include("header.php");
-    echo'<div class="cm8-container7">';
+
+
+    echo '<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; padding-bottom: 30px">';
+    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
+        echo'<nav class="topnav" id="myTopnav">';
+
+        echo'<a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
+	   
+	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a>';
+
+
+        if ($_GET[url] == "ryhmatyot.php") {
+            echo' <a href="ryhmatyot.php"  class="currentLink">Palautukset</a>';
+        } else {
+            echo' <a href="ryhmatyot.php">Palautukset</a>';
+        }
+
+        echo'<a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>';
+
+        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($rowa = $haeakt->fetch_assoc()) {
+
+            $kysakt = $rowa[kysakt];
+        }
+        if ($kysakt == 1) {
+            
+        } else {
+            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+        }
+
+
+        echo'
+	  <a href="keskustelut.php" >Keskustele</a>
+	  ';
+
+        if ($_GET[url] == "osallistujat.php") {
+            echo' <a href="osallistujat.php"  class="currentLink">Osallistujat</a>';
+        } else {
+            echo' <a href="osallistujat.php"  class="currentLink">Osallistujat</a>  ';
+        }
+
+
+
+        echo'   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></a>
+	</nav>';
+
+
+
+
+        echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+    }
+
+    if ($_SESSION["Rooli"] == "opiskelija") {
+        echo'<nav class="topnav" id="myTopnav">';
+
+        echo'<a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
+	   
+	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a>';
+
+
+        if ($_GET[url] == "ryhmatyot.php") {
+            echo' <a href="ryhmatyot.php"  class="currentLink">Palautukset</a>';
+        } else {
+            echo' <a href="ryhmatyot.php">Palautukset</a>';
+        }
+
+        echo'<a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>';
+
+        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+
+        while ($rowa = $haeakt->fetch_assoc()) {
+
+            $kysakt = $rowa[kysakt];
+        }
+        if ($kysakt == 1) {
+            
+        } else {
+            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
+        }
+
+
+        echo'
+	  <a href="keskustelut.php" >Keskustele</a>
+	  ';
+
+        if ($_GET[url] == "osallistujat.php") {
+            echo' <a href="osallistujat.php"  class="currentLink">Osallistujat</a>';
+        } else {
+            echo' <a href="osallistujat.php"  class="currentLink">Osallistujat</a>  ';
+        }
+
+
+        echo' <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></a>
+	</nav>';
+
+
+
+
+        echo'
+
+<script>
+function myFunction(y) {
+  y.classList.toggle("change");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>';
+    }
+    }
+    else{
+          include("header.php");
+echo'<div class="cm8-container7" style="border: none">';  
+    }
 
 
 
     echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
     echo'<div class="cm8-margin-top"></div>';
 
-    if (empty($_POST[viesti])) {
+       if (!strlen(trim($_POST['viesti']))) {
         echo '<b style="color: #c7ef00">Et voi lähettää tyhjää viestiä!</b>';
-        echo '<br><br><a href="' . $mihin . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+       echo '<br><br><a href="' . $_POST[url] . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
     } else {
 
         $headers .= "MIME-Version: 1.0" . "\r\n";
@@ -45,7 +182,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
 
 
-        $otsikko = "Olen lähettänyt sinulle viestin Cuulis-oppimisympäristöstä";
+        $otsikko = "Viesti Cuulis-oppimisympäristöstä";
         $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
         function poista_rivinvaihdot($teksti) {
@@ -68,7 +205,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $sposti = $row[sposti];
             $etunimi = $row[etunimi];
             $sukunimi = $row[sukunimi];
-
+        }
             if ($sposti != null) {
 
                 $viesti2 = $_POST[viesti];
@@ -78,7 +215,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $body = '<html><body>';
 
 
-                $body .= '<p>' . $viesti2 . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
+                  $body .= '<p>' . $viesti2 . '</p><br>----------------------------------<br><p>Viestin lähettäjän nimi: <b>'.$_POST[nimi].'</b><p>Viestin lähettäjän käyttäjätunnus: <b>'.$_POST[sposti].'</b></p>';
+            
                 $body .= "</body></html>";
                 $viesti = mail($sposti, $otsikko, $body, $headers);
 
@@ -91,8 +229,6 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 }
                 $otsikkoa = "Cuulis-oppimisympäristön sisällä on lähetetty viesti";
                 $otsikkoa = "=?UTF-8?B?" . base64_encode($otsikkoa) . "?=";
-                $kyselya = 'Cuulis-oppimisympäristön käyttäjä ' . $nimi . ' on lähettänyt yksilöllisen viestin. <br><br>Lähettäjän käyttäjätunnus: ' . $email . ' <br>Viesti: ' . $viesti2 . '.<br><br>Vastaanottajan nimi ' . $etunimi . ' ' . $sukunimi . '<br>Vastaanottajan sähköposti: ' . $sposti;
-
                 $headers2 .= "MIME-Version: 1.0" . "\r\n";
                 $headers2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -102,43 +238,21 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $body = '<html><body>';
 
 
-                $body .= '<p>' . $kyselya . '</p>';
+                  $body .= '<b>Cuulis-oppimisympäristön sisällä on lähetetty viesti: </b><br><p>' . $viesti2 . '</p><br>----------------------<br><p>Viestin vastaanottaja: <b>'.$etunimi.' '.$sukunimi.'</b<br>Vastaanottajan sähköpostiosoite: <b>'.$sposti.'<br><p>Viestin lähettäjän nimi: <b>'.$_POST[nimi].'</b><p>Viestin lähettäjän käyttäjätunnus: <b>'.$_POST[sposti].'</b></p>';
+            
                 $body .= "</body></html>";
                 $viestia = mail($spostia, $otsikkoa, $body, $headers2);
 
                 if ($viesti) {
-                    if ($_GET[url] == "osallistujat.php" || strpos($_POST[url], "osallistujat.php") !== false) {
-                        $mihin = "osallistujat.php";
-                    } else if ($_GET[url] == "lisaaopiskelijaeka.php" || strpos($_POST[url], "lisaaopiskelijaeka.php") !== false) {
-                        $mihin = "lisaaopiskelijaeka.php";
-                    } else if ($_GET[url] == "lisaaopettajaeka.php" || strpos($_POST[url], "lisaaopettajaeka.php") !== false) {
-                        $mihin = "lisaaopettajaeka.php";
-                    } else if ($_GET[url] == "ryhmatyot.php" || strpos($_POST[url], "ryhmatyot.php") !== false) {
-                        $koko = strlen($mihin);
-                        $arvo = strpos($mihin, "r=");
-                        $uusi = substr($mihin, $arvo, $koko);
+             
 
-                        $mihin = "ryhmatyot.php?" . $uusi;
-                    }
-                    if (strpos($_POST[url], "kayttajatvahvistus.php") !== false) {
-                        $mihin = "kayttajatvahvistus.php";
-                    } else if (strpos($_POST[url], "kayttajatkaikki.php") !== false) {
-                        $mihin = "kayttajatkaikki.php";
-                    } else if (strpos($_POST[url], "kayttajatopettajat.php") !== false) {
-                        $mihin = "kayttajatopettajat.php";
-                    } else if (strpos($_POST[url], "kayttajatopiskelijat.php") !== false) {
-                        $mihin = "kayttajatopiskelijat.php";
-                    } else if (strpos($_POST[url], "kayttajatmuut.php") !== false) {
-                        $mihin = "kayttajatmuut.php";
-                    }
-
-                    header("location: lahetaviestiyksilollinen2.php?url=" . $mihin);
+                    header('location: lahetaviestiyksilollinen2.php?url='.$_POST[url]);
                 } else {
                     echo '<b style="color: #c7ef00">Viestin lähettäminen ei onnistunut!</b>';
-                    echo '<br><br><a href="' . $mihin . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                    echo '<br><br><a href="' . $_POST[url] . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
                 }
             }
-        }
+        
     }
 
     echo'</div>';

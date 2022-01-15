@@ -1,33 +1,25 @@
-- Käyttäehdot -> tietosuojaselosta, tulee vaarailmoitus!
+KÄYTTÄJÄPROFIILIIN PÄÄSY VAAN ADMINEILLA JA SEKIN VAAN KÄYTTÄJÄLISTOISTA! -> PÄIVITÄ TIETO KÄYTTÖEHTOIHIN JA TIETOSUOJAAN
+
+- LISÄÄ OPISKELIJA KURSSILLE, LAITA SIIRTYMINEN TOISELLE SIVULLE (ks. kayttajatopiskelijat.php)
+
+LIMIT $start_from, $results_per_page")) 
+
+- Viesti käyttälle käyttäjäprofiilista, kun käyttäjä tulee 
+a) Osallistujat.php
+b) Kurssilistoista
+c) Käyttäjälistoista
+
+- Viesti käyttäjälle suoraan
+a) Kurssilistoista
+b) Käyttäjälistoista
 
 
-- TSEKKKAA VANHAN KÄYTTÄJÄN KIRJAUTUMINEN, OPISKELIJA + OPE
+TSEKKAA KAIKKI MISTÄ LÄHTEE VIESTI!
 
-- LISÄÄ OPISKELIJA/OPE KURSSILLE -> TSEKKAA TAuLUKKO + HAKUTULOKSET KUN EI LÖYDY
-
-- Yksilöllinen viesti -> käyttäjän tiedot!
+VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
 
-
-
-1) VIESTIEN LÄHETYKSET:
-
-vastausosoitteeks: $headers .= "From: Cuulis-oppimisympäristö <no-reply@cuulis.cm8solutions.fi>" . "\r\n";
-+ 
-viestiin tieto lähettäjän käyttäjätunnuksesta: 
-$body .= '<p>' . $viesti2 . '</p><br><br><p>Viestin lähettäjän käyttäjätunnus on '.$_POST[sposti].'</p>';
-
-
-poista kaikki viestit jotka menee opiskelijalle
-
-
-2) TESTAA VANHAN OPISKELIJAN KIRJAUTUMINEN
-
-
-3) VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
-
-
-4) POISTA LADATUT PROFIILIKUVAT
+POISTA LADATUT PROFIILIKUVAT
 
 
 *********************************************************************************

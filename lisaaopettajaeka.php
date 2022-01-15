@@ -116,7 +116,7 @@ function myFunction(y) {
             }
         }
         if (!$loyty)
-            echo '<br><em>Oppilaitoksessa ei ole opettajia, joita voisi vielä lisätä kurssille/opintojaksolle.</em><br>';
+            echo '<br><b style="color: #c7ef00;">Oppilaitoksessa ei ole opettajia, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
 
         else {
 
@@ -134,8 +134,9 @@ function myFunction(y) {
             echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
 
 
-            echo '<table id="mytable" class="cm8-table cm8-striped"><thead>';
-            echo '<tr><th style="padding-left: 6px">Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Käyttäjätunnus</th><th></th></tr>';
+            echo '<table id="mytable" class="cm8-striped cm8-uusitablekayttajat" style="table-layout:fixed; max-width: 50%; "><thead>';
+            
+            echo '<tr><th style="padding-left: 6px">Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th><th>Käyttäjätunnus</th></tr>';
             echo'</thead><tbody>';
 
             while ($row = $result2->fetch_assoc()) {
@@ -149,20 +150,21 @@ function myFunction(y) {
                         }
                     }
                     if (!$loyty2)
-                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td><td>" . $row[sposti] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '&paluu=lisaaopiskelijaeka" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td><td>" . $row[sposti] . '</td></tr>';
                 }
                 else {
-                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td><td>" . $row[sposti] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '&paluu=lisaaopiskelijaeka" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td><td>" . $row[sposti] . '</td></tr>';
                 }
             }
 
-            echo'<tr style="border: none; color: white"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td></td><td></td><td style="border-right: 4px solid #080708"></td></tr>';
+            echo'<tr style="border: none; color: white"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td></td><td style="border-right: 4px solid #080708"></td></tr>';
 
             echo "</tbody></table>";
 
             echo'</form></div></div>';
         }
     }
+         echo'</div>';
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

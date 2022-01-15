@@ -1425,6 +1425,31 @@ table.cm8-uusitablekayttajat tr:last-child td{
     border: 3px solid #080708;
 }
 
+
+table.cm8-uusitableosallistujat th{ border: 2px solid #080708; background-color: #c50076; color: #00ffff; text-align: left; padding-left: 6px }
+table.cm8-uusitableosallistujat tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
+table.cm8-uusitableosallistujat td{  padding: 6px; border: 1px solid grey; color: #080708 }
+table.cm8-uusitableosallistujat th a{ color: #00ffff;}
+table.cm8-uusitableosallistujat a{ color: #080708}
+table.cm8-uusitableosallistujat a:hover{ border-bottom: 1px solid transparent;}
+
+table.cm8-uusitableosallistujat{
+    margin-right: 40px;
+}
+
+table.cm8-uusitableosallistujat td:first-child {
+
+    width: 10%;
+}
+
+table.cm8-uusitableosallistujat th:first-child {
+    width: 10%;
+}
+
+table.cm8-uusitableosallistujat tr:last-child td{
+    background-color: #080708;
+    border: 3px solid #080708;
+}
 table.cm8-uusitable100 th{ border: 2px solid #080708 }
 table.cm8-uusitable100 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitable100 td{  padding: 6px 2px; border: 1px solid grey }
@@ -1477,9 +1502,9 @@ table.cm8-uusitable12 tr:last-child td{
 }
 
 
-table.cm8-uusitable18 th{ border: 2px solid #080708; background-color: #c50076; color: #00ffff }
+table.cm8-uusitable18 th{ text-align: left; border: 2px solid #080708; background-color: #c50076; color: #00ffff; padding: 10px 10px 8px 10px;}
 table.cm8-uusitable18 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
-table.cm8-uusitable18 td{  padding: 6px; border: 1px solid grey; color: #080708 }
+table.cm8-uusitable18 td{ text-align: left; padding: 8px 10px 8px 10px; border: 1px solid grey; color: #080708 }
 table.cm8-uusitable18 th{ border: 2px solid #080708 }
 table.cm8-uusitable18 th a{ color: #00ffff}
 table.cm8-uusitable18 td a{ color: #080708}
@@ -1487,11 +1512,11 @@ table.cm8-uusitable18 a:hover{ border-bottom: 1px solid transparent;}
 
 table.cm8-uusitable18 td:last-child{
 
-    text-align: center;
+ 
 }
 table.cm8-uusitable18 th:last-child{
 
-    text-align: center;
+
 }
 
 table.cm8-table5ope {

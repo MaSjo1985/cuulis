@@ -1349,6 +1349,8 @@ $('#searchresults').hide();
 $('#searchresults').hide();
         $('#piilota2').show();
         $('#piilota').show();
+        $('#piilota3').show();
+      
 }
 // if searchString is not empty
 else {
@@ -2153,23 +2155,6 @@ function validateForO2()
         }
         }
 
-
-function validateForm2()
-        {
-
-        var a = document.forms["Form"]["sposti"].value;
-                var div = document.getElementById("divID");
-                if (a == null || a == "")
-        {
-        document.getElementById("tama").style.backgroundColor = "yellow";
-                document.getElementById("divID").style.padding = "0px 60px 10px 0px";
-                div.innerHTML = "";
-                div.innerHTML = div.innerHTML + "Sähköpostiosoite on annettava!";
-                return false;
-        } else {
-        document.getElementById("myForm").submit();
-        }
-        }
 
 
 
@@ -3558,23 +3543,33 @@ function validateFormTunnus()
 
 
         var tunnus = $('#tunnusr').val();
+        var id = $('#id').val();
                 var returnVal = 0;
                 var okke = 0;
                 $.ajax({
                 type: 'post',
                         url: 'tarkistavaihtotunnus.php',
-                        data: {tunnus: tunnus},
+                        data: {tunnus: tunnus, id:id},
                         dataType: 'json',
                         success: function (data) {
                         if (data.status === "success") {
                                          document.getElementById("myForm").submit();
                         }
-                        else if (data.status === "error") { 
+                        else if (data.status === "error2") { 
 
 
                                 document.getElementById("tunnusr").style.backgroundColor = "yellow";
                                 div1.style.padding = "10px 60px 20px 0px";
                                 div1.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
+                              
+                               
+                        }
+                           else if (data.status === "error1") { 
+
+
+                                document.getElementById("tunnusr").style.backgroundColor = "yellow";
+                                div1.style.padding = "10px 60px 20px 0px";
+                                div1.innerHTML = '<b style="color:red">Et voi valita vanhaa käyttäjätunnusta!<br><br>Ole hyvä ja valitse uusi.</b>';
                               
                                
                         }

@@ -5,7 +5,7 @@ echo'<!DOCTYPE html>
  
 <head>
 
-<title> Viesti käyttäjälle</title>';
+<title>Lähetä viesti</title>';
 
 include("yhteys.php");
 // server should keep session data for AT LEAST 1 hour
@@ -195,10 +195,12 @@ function myFunction(y) {
             echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $spostiv . ' </p>';
         }
 
-
+        
+echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
 					<input type="hidden" name="id" value=' . $_POST[id] . '>
                                             <input type="hidden" name="url" value=' . $mihin . '>
+                                               
 	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px"  >';
         echo '</fieldset></form></div></div>';
     } else if (isset($_GET["id"])) {
@@ -255,12 +257,15 @@ function myFunction(y) {
         if ($_SESSION[Rooli] == 'admin' || $_SESSION[Rooli] == 'admink' || $_SESSION[Rooli] == 'opeadmin') {
             echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $spostiv . ' </p>';
         }
-
+echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
                                   <input type="hidden" name="id" value=' . $_GET[id] . '>
                                            <input type="hidden" name="url" value=' . $mihin . '>
 	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px" >';
         echo '</fieldset></form></div></div>';
+    }
+    else{
+      header("location: etusivu.php");  
     }
 
     echo'</div>';

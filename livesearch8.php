@@ -26,7 +26,15 @@ if (isset($_POST['search'])) {
     $stmt->store_result();
 
     $stmt->bind_result($c1, $c2, $c3, $c6);
+  $stmt2 = $db->prepare("SELECT DISTINCT etunimi, sukunimi, sposti, kayttajat.id as kaid FROM kayttajat, koulut, kayttajankoulut WHERE koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  kayttajat.rooli='opiskelija' AND (sposti like ? OR etunimi like ? OR sukunimi like ? OR kokonimi like ?) ORDER BY kayttajat.sukunimi ");
+    $stmt2->bind_param("ssss", $s1, $s1, $s1, $s1);
+    // prepare and bind
+    $s1 = "%" . $hakusanaop . "%";
+    $stmt2->execute();
 
+    $stmt2->store_result();
+
+    $stmt2->bind_result($c12, $c22, $c32, $c62);
 
 
     if (!$haeopiskelijat2 = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi ")) {
@@ -47,23 +55,31 @@ if (isset($_POST['search'])) {
         array_push($array2, $rowkaikki2[kaid]);
     }
 
-
     $loyty = false;
 
-    while ($row2 = $haeopiskelijat2->fetch_assoc()) {
+
+        while ($stmt2->fetch()) {
+            $row2[etunimi] = $c12;
+            $row2[sukunimi] = $c22;
+            $row2[sposti] = $c32;
+            $row2[kaid] = $c62;
         if (!empty($array2)) {
+           
             foreach ($array2 as $onid2) {
+                       
                 if ($row2[kaid] != $onid2) {
+                     
                     $loyty = true;
                 }
+                
             }
         } else {
+            
             $loyty = true;
         }
     }
-
     if (!$loyty)
-        echo "<b>Ei hakutuloksia.</b><br>";
+        echo "<br><b>Ei hakutuloksia.</b><br>";
 
     else {
         echo'<div class="cm8-margin-top"></div>';
@@ -71,10 +87,13 @@ if (isset($_POST['search'])) {
 
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 0px; padding-bottom: 10px; width: 100%" >';
         echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br><br>';
-        echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px"><br><br>';
-       echo '<table id="mytable88" class="cm8-table cm8-bordered cm8-striped"><thead>';
-        echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th></tr>';
-        echo'</thead><tbody>';
+     echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
+
+
+            echo '<table id="mytable88" class="cm8-striped cm8-uusitableosallistujat" style="table-layout:fixed; max-width: 50%; "><thead>';
+            
+            echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th></tr>';
+            echo'</thead><tbody>';
 
         while ($stmt->fetch()) {
             $row[etunimi] = $c1;
@@ -96,9 +115,9 @@ if (isset($_POST['search'])) {
                 echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td></tr>";
             }
         }
-        echo'<tr><td style="text-align: left"> <input type="submit" value="+ Lisää" class="myButton8" style="font-size: 0.8em; padding: 2px 4px; margin-left: 0px"></td><td></td><td></td></tr>';
+       echo'<tr style="border-bottom: none"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td style="border-right: 4px solid #080708"></td></tr>';
 
-        echo "</tbody></table>";
+            echo "</tbody></table>";
 
         echo'</form></div></div>';
     }

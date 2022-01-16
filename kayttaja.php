@@ -28,7 +28,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         include("header.php");
         include("header2.php");
     } else {
-        if ($_GET[url] == "osallistujat.php" || $_GET[url] == "ryhmatyot.php" || $_GET[url] == "lisaaopiskelijaeka.php") {
+        if ($_GET[url] == "osallistujat.php" || $_GET[url] == "ryhmatyot.php" || $_GET[url] == "lisaaopettajaeka.php" || $_GET[url] == "lisaaopiskelijaeka.php") {
             include("kurssisivustonheader.php");
         } else {
             include("header.php");
@@ -39,7 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     echo'<div class="cm8-container7">';
 
-    if (strpos($_GET[url], 'osallistujat.php') !== false) {
+    if (strpos($_GET[url], 'osallistujat.php') !== false || strpos($_GET[url], 'lisaaopiskelijaeka.php') !== false || strpos($_GET[url], 'lisaaopettajaeka.php') !== false) {
         echo'<nav class="topnav" id="myTopnav">';
 
         echo'<a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
@@ -217,7 +217,11 @@ function myFunction(y) {
         echo '<a href="omatkurssit.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
     } else if ($_GET[url] == "osallistujat.php") {
         echo '<a href="osallistujat.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
-    } else if ($_GET[url] == "ryhmatyot.php") {
+    } else if ($_GET[url] == "lisaaopettajaeka.php") {
+        echo '<a href="lisaaopettajaeka.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
+    }else if ($_GET[url] == "lisaaopiskelijaeka.php") {
+        echo '<a href="lisaaopiskelijaeka.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
+    }else if ($_GET[url] == "ryhmatyot.php") {
         echo '<a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
     } else {
         
@@ -247,13 +251,13 @@ function myFunction(y) {
             }
 
 
-            echo "<b>Etunimi: </b> " . $row[etunimi] . '<br><br>';
-            echo "<b>Sukunimi: </b>" . $row[sukunimi] . '<br><br>';
+            echo "<b>Etunimi: </b> &nbsp&nbsp&nbsp " . $row[etunimi] . '<br><br>';
+            echo "<b>Sukunimi: </b>&nbsp&nbsp&nbsp" . $row[sukunimi] . '<br><br>';
 
-            echo '<b>Rooli: </b>Yleinen ylläpitäjä<br><br>';
+            echo '<b>Rooli: </b>&nbsp&nbsp&nbspYleinen ylläpitäjä<br><br>';
 
 
-            echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br><br>';
+            echo "<b>Käyttäjätunnus:</b>&nbsp&nbsp&nbsp " . $row[sposti] . '<br><br>';
 
             echo "</td>" . "</tr>" . "</table>" . "</div><br><br>";
         } else {
@@ -262,27 +266,27 @@ function myFunction(y) {
             
 
 
-            echo "<b>Etunimi: </b> " . $row[etunimi] . '<br><br>';
-            echo "<b>Sukunimi: </b>" . $row[sukunimi] . '<br><br>';
+            echo "<b>Etunimi: </b> &nbsp&nbsp&nbsp" . $row[etunimi] . '<br><br>';
+            echo "<b>Sukunimi: </b>&nbsp&nbsp&nbsp" . $row[sukunimi] . '<br><br>';
             if ($row[rooli] == 'muu') {
-                echo '<b>Rooli: </b>Oppilaitoskohtainen ylläpitäjä<br><br>';
+                echo '<b>Rooli: </b>&nbsp&nbsp&nbspOppilaitoskohtainen ylläpitäjä<br><br>';
             } else if ($row[rooli] == 'admin') {
-                echo '<b>Rooli: </b>Yleinen ylläpitäjä<br><br>';
+                echo '<b>Rooli: </b>&nbsp&nbsp&nbspYleinen ylläpitäjä<br><br>';
             } else if ($row[rooli] == 'opettaja') {
 
                 if (!$result2 = $db->query("select distinct * from koulunadminit where kayttaja_id='" . $_GET[ka] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
                 if ($result2->num_rows != 0) {
-                    echo '<b>Rooli: </b>Opettaja ja oppilaitoskohtainen ylläpitäjä<br><br>';
+                    echo '<b>Rooli: </b>&nbsp&nbsp&nbspOpettaja ja oppilaitoskohtainen ylläpitäjä<br><br>';
                 } else {
-                    echo '<b>Rooli: </b>Opettaja<br><br>';
+                    echo '<b>Rooli: </b>&nbsp&nbsp&nbspOpettaja<br><br>';
                 }
             } else {
-                echo "<b>Rooli: </b>Opiskelija<br><br>";
+                echo "<b>Rooli: </b>&nbsp&nbsp&nbspOpiskelija<br><br>";
             }
             if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin'){
-                echo "<b>Käyttäjätunnus:</b> " . $row[sposti] . '<br>';
+                echo "<b>Käyttäjätunnus:</b>&nbsp&nbsp&nbsp " . $row[sposti] . '<br>';
 
             if ($row[rooli] <> 'admin') {
                 echo "<br><b>Oppilaitokset, joihin käyttäjä on liittynyt:</b>";
@@ -312,7 +316,7 @@ function myFunction(y) {
 
                 if ($row[paiva] != "0000-00-00" && $row[paiva] !== null) {
                     $row[paiva] = date("d.m.Y", strtotime($row[paiva]));
-                    echo "<br><br><b>Viimeisin sisäänkirjautuminen:</b> " . $row[paiva] . ' ' . $row[kello] . '<br><br>';
+                    echo "<br><br><b>Viimeisin sisäänkirjautuminen:</b> &nbsp&nbsp&nbsp" . $row[paiva] . ' ' . $row[kello] . '<br><br>';
                 }
             }       
             }

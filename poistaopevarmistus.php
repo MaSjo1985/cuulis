@@ -81,7 +81,7 @@ function myFunction(y) {
         } else {
 
 
-            echo '<p style="font-weight: bold" >Haluatko todella poistaa kurssilta/opintojaksolta opettajan </p>';
+            echo '<p style="font-weight: bold" >Haluatko todella poistaa kurssilta/opintojaksolta seuraavan opettajan? </p>';
 
 
             if (!$result = $db->query("select etunimi, sukunimi, id from kayttajat where id = '" . $_GET[id] . "'")) {

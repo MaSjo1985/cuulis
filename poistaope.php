@@ -16,18 +16,21 @@ session_start(); // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
-
+    if(isset($_POST[id])){
+        $tuote = $_POST[id];
 
 
     echo '<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; padding-bottom: 30px">';
 
-    if ($_POST["valinta"] == "ei")
-        header("location: osallistujat.php");
+    if ($_POST["valinta"] == "ei"){
+         header("location: osallistujat.php");
+    }
+       
 
     else {
 
 
- $pienimi = 'images/sektori' . $tuote . '.png';
+            $pienimi = 'images/sektori' . $tuote . '.png';
             if (file_exists($pienimi)) {
                 unlink($pienimi);
             }
@@ -176,10 +179,12 @@ if (isset($_SESSION["Kayttajatunnus"])) {
            
                     
             $db->query("delete from opiskelijankurssit where opiskelija_id='" . $tuote . "' AND  kurssi_id = '" . $_SESSION["KurssiId"] . "'");
-        
+       
 
         header("location: osallistujat.php");
     }
+    }
+
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

@@ -1341,12 +1341,15 @@ event.preventDefault();
         }
 function showResult8(str) {
 $('#searchresults').hide();
+$('#piilota99').hide();
+ $('#piilota100').show();
         // getting the value that user typed
         var searchString = str;
         // forming the queryString
         var data = 'search=' + searchString;
         if (searchString == '') {
 $('#searchresults').hide();
+$('#piilota99').show();
         $('#piilota2').show();
         $('#piilota').show();
         $('#piilota3').show();
@@ -1354,7 +1357,7 @@ $('#searchresults').hide();
 }
 // if searchString is not empty
 else {
-
+$('#piilota99').hide();
 $('#piilota').hide();
         $('#piilota2').hide();
         // ajax call
@@ -1384,15 +1387,21 @@ event.preventDefault();
 });
         return false;
         }
-function showResult9(str) {
+function piilota100(str) {
+$('#piilota100').hide();
+}
+    function showResult9(str) {
+        $('#searchresults').hide();
+    $('#piilota100').show();
 
-$('#searchresults').hide();
         // getting the value that user typed
         var searchString = str;
         // forming the queryString
         var data = 'search=' + searchString;
         if (searchString == '') {
+        
 $('#searchresults').hide();
+
         $('#piilota2').show();
         $('#piilota').show();
 }

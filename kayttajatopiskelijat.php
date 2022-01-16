@@ -253,7 +253,7 @@ function myFunction2(y) {
 
         echo'<div class="cm8-container3" style="padding-top: 0px;">';
         
-                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; } 
 $results_per_page = 100;
 $start_from = ($page-1) * $results_per_page;
         if ($_SESSION["Rooli"] == 'admin') {
@@ -664,7 +664,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
     else{
         echo '<a  style="margin-right: 10px" href="kayttajatopiskelijat.php?page='.$i.'">'.$i.' </a>';
     } 
-}; 
+}
   echo'</div>';
                 echo'</div>';
             }

@@ -1500,8 +1500,19 @@ table.cm8-uusitable12 tr:last-child td:first-child{
 table.cm8-uusitable12 tr:last-child td{
     background-color: #080708;
 }
+#title{
+    color: #080708;
+    font-weight: bold;
+    font-size: 1em;
+}
+#title:hover{ color: #473e47}
+#title3{color: #080708;}
+#title3:hover{  color: #473e47}
 
-
+#title2{
+    font-size: 1.4em;
+}
+#title2:hover{  font-size: 1.6em;}
 table.cm8-uusitable18 th{ text-align: left; border: 2px solid #080708; background-color: #c50076; color: #00ffff; padding: 10px 10px 8px 10px;}
 table.cm8-uusitable18 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitable18 td{ text-align: left; padding: 8px 10px 8px 10px; border: 1px solid grey; color: #080708 }

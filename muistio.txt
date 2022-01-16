@@ -1,13 +1,9 @@
-KÄYTTÄJÄPROFIILIIN PÄÄSY VAAN ADMINEILLA JA SEKIN VAAN KÄYTTÄJÄLISTOISTA! -> PÄIVITÄ TIETO KÄYTTÖEHTOIHIN JA TIETOSUOJAAN
-
-- LISÄÄ OPISKELIJA KURSSILLE, LAITA SIIRTYMINEN TOISELLE SIVULLE (ks. kayttajatopiskelijat.php)
-
-LIMIT $start_from, $results_per_page")) 
 
 - Viesti käyttälle käyttäjäprofiilista, kun käyttäjä tulee 
 a) Osallistujat.php
 b) Kurssilistoista
 c) Käyttäjälistoista
+
 
 - Viesti käyttäjälle suoraan
 a) Kurssilistoista
@@ -268,8 +264,6 @@ https://stackoverflow.com/questions/14379788/font-family-not-loading
 
 - Saako mainoksen pois sovelluksesta
 
-
-
 ***********************************************************************
 
 TAUSTA:     #080708 -> #080708
@@ -289,9 +283,10 @@ black -> #080708
 #fff -> #f7f9f7
 
 white -> #f7f9f7
+   echo'<p style="padding: 10px 40px 10px 8px ; background-color:  #f7f9f7; color: #080708; font-weight: bold; font-size: 1.1em;display: inline-block; margin-right: 20px"  ><a class="plinkki" style=" color: #080708;" href="kayttaja.php?url=osallistujat.php&ka=' . $id. '"> ' . $etunimi . ' ' . $sukunimi . '</a></p>';
+
 
 ***********************
-
 Taustaväri: 080708 
 
 vihreä1(palkin väri): 127475

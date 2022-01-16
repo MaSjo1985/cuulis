@@ -261,8 +261,6 @@ echo'</a>';
         die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
     }
 
-    if ($tulosP->num_rows != 0 || $onkoadmin->num_rows == 1) {
-
         if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
         echo'<div class="close-container" style="float: right; margin-top: 80px; margin-right: 40px">';
             echo'<form action="vaihda.php" method="post"><input type="hidden" name="url" value="' . $url . '" ><input type="hidden" name="arvo" value="vaihda"> <input type="submit" value="Opiskelijanäkymä" class="munNappula"  role="button"></form>';
@@ -274,7 +272,7 @@ echo'</a>';
             echo'<br><form action="vaihda.php" method="post"><input type="hidden" name="url" value="' . $url . '" ><input type="hidden" name="arvo" value="pois"> <input type="submit" value="Poistu opiskelijanäkymästä" class="munNappula"  role="button"></form>';
                    echo'</div>';
             }
-    }
+    
 
     echo'</div>';
     echo'</div>';

@@ -72,28 +72,41 @@ function myFunction(y) {
 }
 </script>';
 
-
+        if (isset($_GET["page"])) {
+            $page = $_GET["page"];
+        } else {
+            $page = 1;
+        }
+        $results_per_page = 50;
+        $start_from = ($page - 1) * $results_per_page;
 
 
         echo '<div class="cm8-container3" style="padding-top: 0px">';
         echo' <h4>Lisää opiskelijoita kurssille/opintojaksolle</h4>';
         echo '<a href="osallistujat.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br><br>';
-$results_per_page = 100;
-$start_from = ($page-1) * $results_per_page;
-
+       if (!$haeopiskelijateka = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1  AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+     
+   if (!$haekurssinopiskelijateka = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where opiskelijankurssit.opiskelija_id=kayttajat.id AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND projekti_id=0 AND itseprojekti_id=0 AND kayttajat.rooli='opiskelija' ORDER BY kayttajat.sukunimi")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+      
+             $yht = $haeopiskelijateka->num_rows - $haekurssinopiskelijateka -> num_rows;
         $array = array();
         $array2 = array();
-        if (!$haeopiskelijat = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi ")) {
+        if (!$haeopiskelijat = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1  AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi LIMIT $start_from, $results_per_page")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
-        if (!$haeopiskelijat2 = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1 AND kayttajat.vahvistettu=1 AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi ")) {
+     
+        if (!$haeopiskelijat2 = $db->query("select distinct etunimi, sukunimi, sposti, kayttajat.id as kaid from kayttajat, koulut, kayttajankoulut where koulut.id='" . $_SESSION["kouluId"] . "' AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id AND kayttajat.tarkistettu=1  AND  kayttajat.rooli='opiskelija'  ORDER BY kayttajat.sukunimi")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
-        if (!$haekurssinopiskelijat = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where opiskelijankurssit.opiskelija_id=kayttajat.id AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND projekti_id=0 AND itseprojekti_id=0 AND kayttajat.rooli='opiskelija'")) {
+        if (!$haekurssinopiskelijat = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where opiskelijankurssit.opiskelija_id=kayttajat.id AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND projekti_id=0 AND itseprojekti_id=0 AND kayttajat.rooli='opiskelija' ORDER BY kayttajat.sukunimi")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
-        if (!$haekurssinopiskelijat2 = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where opiskelijankurssit.opiskelija_id=kayttajat.id AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND projekti_id=0 AND itseprojekti_id=0 AND kayttajat.rooli='opiskelija'")) {
+        if (!$haekurssinopiskelijat2 = $db->query("select distinct kayttajat.id as kaid from kayttajat, opiskelijankurssit where opiskelijankurssit.opiskelija_id=kayttajat.id AND opiskelijankurssit.kurssi_id = '" . $_SESSION["KurssiId"] . "' AND projekti_id=0 AND itseprojekti_id=0 AND kayttajat.rooli='opiskelija' ORDER BY kayttajat.sukunimi")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -113,6 +126,9 @@ $start_from = ($page-1) * $results_per_page;
                     if ($row2[kaid] != $onid2) {
                         $loyty = true;
                     }
+                    else{
+                        
+                    }
                     $maara++;
                 }
             } else {
@@ -122,15 +138,13 @@ $start_from = ($page-1) * $results_per_page;
 
 
         if (!$loyty)
-         echo '<br><b style="color: #c7ef00;">Oppilaitoksessa ei ole opiskelijoita, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
+            echo '<br><b style="color: #c7ef00;">Oppilaitoksessa ei ole opiskelijoita, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
 
         else {
 
 
-            echo'&#128270 <input type="search"  onkeyup="showResult8(this.value)" name="search"   id="search_box" class="haku" style="width: 25%">
-
-			</form>';
-
+            echo'&#128270 <input type="search"  onkeyup="showResult8(this.value)" name="search"   id="search_box" class="haku" style="width: 25%">';
+            echo'<div  id="piilota100" ><br></div>';
             echo'<div style="margin-top: 0px; margin-bottom: 0px" id="searchresults">
 <ul id="results" class="update">
 </ul></div>';
@@ -138,14 +152,14 @@ $start_from = ($page-1) * $results_per_page;
             echo'<form action="lisaaopiskelijavarmistus.php" method="post">';
 
             echo'<div class="cm8-responsive" id="piilota"><br>';
-            
-            echo'<input type="submit" value="+ Lisää" id="piilota3" class="myButton8" style="padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
 
+            echo'<input type="submit" value="+ Lisää" title="Lisää opiskelija kurssille/opintojaksolle" id="piilota3" class="myButton8" style="font-size: 0.9em; padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
 
-            echo '<table id="mytable" class="cm8-striped cm8-uusitableosallistujat" style="table-layout:fixed; max-width: 50%; "><thead>';
-            
-            echo '<tr><th>Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th></tr>';
+            echo '<table id="mytable" class="cm8-striped cm8-uusitable18" style="font-size: 0.9em; font-weight: bold; table-layout:fixed; min-width: 40%; max-width: 100% "><thead>';
+
+            echo '<tr><th style="padding-left: 6px">Valitse<br>&nbsp&#9661&nbsp</th><th>Sukunimi</th><th>Etunimi</th></tr>';
             echo'</thead><tbody>';
+
 
             while ($row = $haeopiskelijat->fetch_assoc()) {
 
@@ -157,20 +171,34 @@ $start_from = ($page-1) * $results_per_page;
                         }
                     }
                     if (!$loyty2)
-                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td></tr>";
+                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid] . '">' . $row[etunimi] . "</a></td></tr>";
                 }
                 else {
-                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td>' . $row[sukunimi] . '</td><td>' . $row[etunimi] . "</td></tr>";
+                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid] . '">' . $row[etunimi] . "</a></td></tr>";
                 }
             }
-            echo'<tr style="border-bottom: none"><td style="text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td></td><td style="border-right: 4px solid #080708"></td></tr>';
+            echo'<tr style="border: none; background-color:  #080708"><td style="border: none;text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input title="Lisää opiskelija kurssille/opintojaksolle" type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td style="border: none;"></td><td style="border: none;"></td></tr>';
 
             echo "</tbody></table>";
 
-            echo'</form></div></div>';
+
+            echo'</form></div>';
+            echo'<div class="cm8-responsive" id="piilota99"  style="margin: 0px; padding: 0px; overflow: hidden; width: 50%">';
+            echo'<p style="font-weight: bold">Siirry muille sivuille: </p>';
+            
+            $total_pages = ceil($yht / $results_per_page); // calculate total pages with results
+
+            for ($i = 1; $i <= $total_pages; $i++) {  // print links for all pages
+                if ($i == $page) {
+                    echo '<a style="margin-right: 10px" href="lisaaopiskelijaeka.php?page=' . $i . '"><u>' . $i . '</u> </a>';
+                } else {
+                    echo '<a  style="margin-right: 10px" href="lisaaopiskelijaeka.php?page=' . $i . '">' . $i . ' </a>';
+                }
+            }
+            echo'</div>';
         }
     }
-      echo'</div>';
+    echo'</div>';
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);

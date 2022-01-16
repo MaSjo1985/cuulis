@@ -76,8 +76,8 @@ function myFunction(y) {
         echo '<div class="cm8-container3">';
 
 
-        echo'<p style="color: #f7f9f7; font-weight: bold">Valitut käyttäjät on nyt lisätty kurssille/opintojaksolle ja heille on lähetetty tieto tästä sähköpostiin.</p>';
-        echo '<a href="lisaaopiskelijaeka.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+        echo'<p style="color: #c7ef00; font-weight: bold">Valitut käyttäjät on nyt lisätty kurssille/opintojaksolle.</p>';
+        echo '<a href="osallistujats.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

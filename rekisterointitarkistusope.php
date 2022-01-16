@@ -154,8 +154,7 @@ $krypattu2 = md5($uniqid);
 
         $body .= '<p>' . $kysely3 . '</p>';
         $body .= "</body></html>";
-//
-//        $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
+    $viesti3 = mail($sposti3, $otsikko3, $body, $headers);
         $stmt2->close();
 
     } else {

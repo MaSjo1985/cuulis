@@ -213,7 +213,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
            
                     
             $db->query("delete from opiskelijankurssit where opiskelija_id='" . $tuote . "' AND  kurssi_id = '" . $_SESSION["KurssiId"] . "'");
-        }
+       
+            }
 
         header("location: poistakurssilta2.php");
     }

@@ -325,7 +325,6 @@ echo'</a>';
         die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
     }
 
-    if ($tulosP->num_rows != 0 || $onkoadmin->num_rows == 1) {
 
         if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
         echo'<div class="close-container" style="float: right; margin-top: 80px; margin-right: 40px">';
@@ -338,7 +337,7 @@ echo'</a>';
                    echo'</div>';
             
         }
-    }
+    
 
     echo'</div>';
     echo'</div>';

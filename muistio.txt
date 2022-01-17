@@ -1,4 +1,3 @@
-
 - Viesti käyttälle käyttäjäprofiilista, kun käyttäjä tulee 
 a) Osallistujat.php
 b) Kurssilistoista
@@ -14,8 +13,6 @@ TSEKKAA KAIKKI MISTÄ LÄHTEE VIESTI!
 
 VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
-
-POISTA LADATUT PROFIILIKUVAT
 
 
 *********************************************************************************

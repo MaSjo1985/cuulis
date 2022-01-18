@@ -18,12 +18,8 @@ session_start(); // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
-    if (isset($_POST[url])) {
-        $mihin = $_POST[url];
-    } else if (isset($_GET[url])) {
-        $mihin = $_GET[url];
-    }
-    if (strpos($_POST[url], 'viestikayttajalle2.php') !== false) {
+ 
+    if ($_POST[url]=='osallistujat.php' || $_POST[url]=='lisaaopettajaeka.php') {
             include("kurssisivustonheader.php");
 
 
@@ -172,7 +168,12 @@ echo'<div class="cm8-container7" style="border: none">';
 
        if (!strlen(trim($_POST['viesti']))) {
         echo '<b style="color: #c7ef00">Et voi lähettää tyhjää viestiä!</b>';
-       echo '<br><br><a href="' . $_POST[url] . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+          if ($_POST[url]=='osallistujat.php' || $_POST[url]=='lisaaopettajaeka.php') {
+                  echo '<br><br><a href="viestikayttajalle2.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                       }
+                       else{
+                            echo '<br><br><a href="viestikayttajalle.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                       }
     } else {
 
         $headers .= "MIME-Version: 1.0" . "\r\n";
@@ -245,11 +246,16 @@ echo'<div class="cm8-container7" style="border: none">';
 
                 if ($viesti) {
              
-
                     header('location: lahetaviestiyksilollinen2.php?url='.$_POST[url]);
                 } else {
-                    echo '<b style="color: #c7ef00">Viestin lähettäminen ei onnistunut!</b>';
-                    echo '<br><br><a href="' . $_POST[url] . '"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                    echo '<br><br><b style="color: red">Viestin lähettäminen ei onnistunut!</b>';
+                        if ($_POST[url]=='osallistujat.php' || $_POST[url]=='lisaaopettajaeka.php') {
+                  echo '<br><br><a href="viestikayttajalle2.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                       }
+                       else{
+                            echo '<br><br><a href="viestikayttajalle.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
+                       }
+                 
                 }
             }
         
@@ -257,7 +263,7 @@ echo'<div class="cm8-container7" style="border: none">';
 
     echo'</div>';
     echo'</div>';
-
+ echo'</div>';
     include("footer.php");
 } else {
     $url = $_SERVER[REQUEST_URI];

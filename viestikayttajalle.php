@@ -157,53 +157,7 @@ function myFunction(y) {
     echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
 
     echo'<div class="cm8-half" style="padding-top: 10px; padding-left: 20px">';
-    if (isset($_POST["id"])) {
-
-        if (!$result = $db->query("select * from kayttajat where id='" . $_POST[id] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-
-        while ($row = $result->fetch_assoc()) {
-            $nimi = $row[etunimi] . " " . $row[sukunimi];
-            $spostiv = $row[sposti];
-        }
-
-
-
-        echo'<form action="lahetaviestiyksilollinen.php" class="form-style-k" method="post"><fieldset>';
-        echo' <legend>Lähetä viesti käyttäjälle ' . $nimi . '</legend>';
-
-        if (strpos($_POST[url], 'kayttaja.php') !== false) {
-            echo'<a href="' . $_POST[url] . '" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-        } else {
-            echo'<br><br>';
-        }
-
-        if (isset($_GET[url])) {
-            $mihin = $_GET[url];
-        } else if (isset($_POST[url])) {
-            $mihin = $_POST[url];
-        }
-
-        echo'<br>';
-        echo'<br><p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . '"> ' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . ' </p>
-				<br><p style="font-weight: normal"><b>Lähettäjän käyttäjätunnus:</b> &nbsp&nbsp&nbsp<input type="hidden" size="30" name="sposti" value=' . $_SESSION["Sposti"] . '> ' . $_SESSION["Sposti"] . ' </p> 	
-<br><p style="font-weight: normal"><b>Vastaanottajan nimi:</b> &nbsp&nbsp&nbsp ' . $nimi . ' </p>';
-
-        if ($_SESSION[Rooli] == 'admin' || $_SESSION[Rooli] == 'admink' || $_SESSION[Rooli] == 'opeadmin') {
-            echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $spostiv . ' </p>';
-        }
-
-        
-echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
-        echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
-					<input type="hidden" name="id" value=' . $_POST[id] . '>
-                                            <input type="hidden" name="url" value=' . $mihin . '>
-                                               
-	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px"  >';
-        echo '</fieldset></form></div></div>';
-    } else if (isset($_GET["id"])) {
+if (isset($_GET["id"])) {
 
         if (!$result = $db->query("select * from kayttajat where id='" . $_GET[id] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');

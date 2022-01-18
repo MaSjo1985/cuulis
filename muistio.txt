@@ -1,19 +1,21 @@
 - Viesti käyttälle käyttäjäprofiilista, kun käyttäjä tulee 
-a) Osallistujat.php
-b) Kurssilistoista
-c) Käyttäjälistoista
-
+a) Kurssilistoista
+b) Käyttäjälistoista
+c) TULLAANKO RYHMÄTÖISTÄ!?
 
 - Viesti käyttäjälle suoraan
 a) Kurssilistoista
 b) Käyttäjälistoista
 
+KATO MYÖS VIRHETOIMINNOT (lahetaviestiyksilollinen.php + lahetaviestiyksilollinen2.php)
+
+-> KATO MALLI viestikayttajalle2.php
 
 TSEKKAA KAIKKI MISTÄ LÄHTEE VIESTI!
 
 VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
 
-
+SLIDER eri toimintoja aktivoimiselle ja päin vastoin
 
 *********************************************************************************
 

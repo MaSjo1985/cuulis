@@ -187,7 +187,7 @@ echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpo
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
                                   <input type="hidden" name="id" value=' . $_GET[id] . '>
                                        
-                                             <input type="hidden" name="url" value=' . $urlmihin . '>   
+                                             <input type="hidden" name="url" value=' . $_GET[url] . '>   
 	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px" >';
         echo '</fieldset></form></div></div>';
     }

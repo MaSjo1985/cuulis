@@ -18,12 +18,8 @@ session_start(); // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
-    if (isset($_POST[url])) {
-        $mihin = $_POST[url];
-    } else if (isset($_GET[url])) {
-        $mihin = $_GET[url];
-    }
-    if (strpos($_GET[url], 'viestikayttajalle2.php') !== false) {
+  
+        if ($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php') {
             include("kurssisivustonheader.php");
 
 
@@ -173,7 +169,7 @@ echo'<div class="cm8-container7" style="border: none">';
 
     echo '<p style="font-weight: bold; color: #c7ef00;">Viestisi on lähetetty!</p>';
 
-   if (strpos($_GET[url], 'viestikayttajalle2.php') !== false) {
+            if ($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php') {
         echo'<a href="osallistujat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
    }
    else{
@@ -185,7 +181,7 @@ echo'<div class="cm8-container7" style="border: none">';
 
     echo'</div>';
     echo'</div>';
-
+ echo'</div>';
     include("footer.php");
 } else {
     $url = $_SERVER[REQUEST_URI];

@@ -329,6 +329,7 @@ function myFunction(y) {
             echo "</td>" . "</tr>" . "</table>" . "</div><br><br>";
         }
         $rooli = $row[rooli];
+         
     }
 
     if ($_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') {
@@ -348,9 +349,17 @@ function myFunction(y) {
         echo'<form action="varmistuskayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <button class="pieniroskis" title="Poista käyttäjä" style="margin-right: 40px"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista käyttäjä</button></form>';
     }
 
-    if($rooli != 'opiskelija'){
-           echo'<form action="viestikayttajalle.php" method="post" style="display: inline-block"><input type="hidden" name="url" value=' . $urlmihin . '><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="📧 &nbsp Lähetä viesti" class="myButton8" style="padding: 4px 6px"  role="button" ></form>';
 
+    if($rooli != 'opiskelija' && $_GET[ka] != $_SESSION[Id]){
+            if($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php'){
+                 echo'<form action="viestikayttajalle2.php" method="get" style="display: inline-block"><input type="hidden" name="url" value=' . $_GET[url] . '><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="📧 &nbsp Lähetä viesti" class="myButton8" style="padding: 4px 6px"  role="button" ></form>';
+
+            }
+            else{
+                 echo'<form action="viestikayttajalle.php" method="get" style="display: inline-block"><input type="hidden" name="url" value=' . $_GET[url] . '><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="📧 &nbsp Lähetä viesti" class="myButton8" style="padding: 4px 6px"  role="button" ></form>';
+
+            }
+          
     }
  
     echo'<br><div class="form-style-k cm8-quarter" style="padding-top: 10px">';

@@ -185,7 +185,7 @@ function myFunction(y) {
 
         if ($sposti != null) {
 
-            $viesti = 'Opettaja on vahvistanut kurssin/opintojakson ' . $_SESSION["KurssiNimi"] . ' palautuksen ' . $kuvaus . ' ryhmät. Olet ryhmässä ' . $ryhmanimi . '.<br><br>Voit tarkastella ryhmiä sekä lähettää oman ryhmän jäsenille viestiä Cuulis-oppimisympäristössä. Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+            $viesti = 'Opettaja on vahvistanut kurssin/opintojakson ' . $_SESSION["KurssiNimi"] . ' palautuksen ' . $kuvaus . ' ryhmät. Olet ryhmässä ' . $ryhmanimi . '.<br><br>Voit tarkastella ryhmiä sekä lähettää oman ryhmän jäsenille viestiä Cuulis-oppimisympäristössä. Pääset Cuulis-oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/"> tästä. </a><br><br><em>Tähän viestiin ei voi vastata.</em>';
             $viesti = str_replace("\n.", "\n..", $viesti);
 
 //            $varmistus = mail($sposti, $otsikko, $viesti, $headers);
@@ -202,7 +202,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 echo "</div>";

@@ -85,7 +85,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     $otsikko = "Uusi käyttäjä on liittynyt ylläpitämääsi oppilaitokseen Cuulis-oppimisympäristössä";
                     $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
-                    $viesti = 'Uusi käyttäjä on liittynyt Cuulis-oppimisympäristössä oppilaitokseen ' . $koulu . ', jonka ylläpitäjäksi sinut on merkitty.<br><br>Käyttäjän nimi' . $etunimik . ' ' . $sukunimik . '<br><br><b>Sinun tulee vielä hyväksyä liittyminen.</b> <br><br>Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+                    $viesti = 'Uusi käyttäjä on liittynyt Cuulis-oppimisympäristössä oppilaitokseen ' . $koulu . ', jonka ylläpitäjäksi sinut on merkitty.<br><br>Käyttäjän nimi' . $etunimik . ' ' . $sukunimik . '<br><br><b>Sinun tulee vielä hyväksyä liittyminen.</b> <br><br>Pääset Cuulis-oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/kayttajatvahvistus.php">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
                     $viesti = str_replace("\n.", "\n..", $viesti);
                     $body = '<html><body>';
 
@@ -109,7 +109,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

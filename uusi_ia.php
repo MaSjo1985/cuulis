@@ -372,7 +372,7 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 

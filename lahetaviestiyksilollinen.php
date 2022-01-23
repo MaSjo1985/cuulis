@@ -157,8 +157,19 @@ function myFunction(y) {
     }
     }
     else{
-          include("header.php");
-echo'<div class="cm8-container7" style="border: none">';  
+ 
+        include("header.php");
+        include("header2.php");
+        echo'<div class="cm8-container7">';
+        if ($_SESSION["Rooli"] == 'admin')
+            include("adminnavi.php");
+        else if ($_SESSION["Rooli"] == 'admink')
+            include("adminknavi.php");
+        else if ($_SESSION["Rooli"] == 'opeadmin')
+            include("opeadminnavi.php");
+        else
+            include ("opnavi.php"); 
+        
     }
 
 
@@ -269,7 +280,7 @@ echo'<div class="cm8-container7" style="border: none">';
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

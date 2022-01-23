@@ -37,7 +37,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         if (isset($_GET[url])) {
 
-            if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminen.php') {
+            if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminenuusi.php') {
                 if ($_SESSION["Rooli"] == "admin")
                     header("location: admin.php");
 
@@ -84,7 +84,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     //merkitään opettaja yhteisrooliin
                     $_SESSION["Rooli"] = 'opeadmin';
                     $_SESSION["kouluId"] = $kouluid;
-                    if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminen.php') {
+                    if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminenuusi.php') {
 
                         header("location: omatkurssit.php");
                     } else
@@ -148,7 +148,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 

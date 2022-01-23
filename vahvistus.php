@@ -232,7 +232,7 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
 } else {
     echo'<div class="cm8-half" style="margin-top: 40px">';
     echo '<br><b style="color: red">Rekisteröitymisen vahvistuslinkki on vanhentunut!</b><br><br>Voit vaihtaa salasanasi etusivun linkin kautta.<br><br>';
-    echo '<br><a href="kirjautuminen.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
+    echo '<br><a href="kirjautuminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
 }
 
 echo '</div>';

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-
+header('location: kirjautuminenuusi.php');
 echo'
 <!DOCTYPE html>
 <html>

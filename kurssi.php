@@ -504,7 +504,7 @@ function myFunction(y) {
     $url = substr($url, 1);
     $url = strtok($url, '?');
 
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 

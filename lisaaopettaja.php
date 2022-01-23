@@ -124,7 +124,7 @@ function myFunction(y) {
                         $otsikko = "Sinut on lisätty kurssille/opintojaksolle Cuulis-oppimisympäristössä";
                         $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
-                        $viesti = 'Sinut on lisätty Cuulis-oppimisympäristössä kurssille/opintojaksolle <b>' . $koodi . '  ' . $nimi . '</b><br><br>Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+                        $viesti = 'Sinut on lisätty Cuulis-oppimisympäristössä kurssille/opintojaksolle <b>' . $koodi . '  ' . $nimi . '</b><br><br>Pääset Cuulis-oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
                         $viesti = str_replace("\n.", "\n..", $viesti);
                         $body = '<html><body>';
 
@@ -157,7 +157,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 echo "</div>";
 echo "</div>";

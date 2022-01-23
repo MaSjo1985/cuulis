@@ -707,7 +707,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 <script type="text/javascript">

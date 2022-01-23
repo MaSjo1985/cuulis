@@ -101,7 +101,7 @@ function myFunction(y) {
         }
         echo'<nav id="myTopnav2" class="topnav2">
   <a href="kayttajatvahvistus.php" class="currentLink3">Vahvistusta odottavat käyttäjät</a> 
-  <a href="kayttajatkaikki.php" >Kaikki käyttäjät</a> 
+   
 
   <a href="kayttajatopettajat.php" >Opettajat</a>
   <a href="kayttajatopiskelijat.php">Opiskelijat</a> 
@@ -189,7 +189,7 @@ function myFunction2(y) {
                 $field8 = "Nimi";
             }
 
-            if (!$result = $db->query("select distinct kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
+            if (!$result = $db->query("select distinct rekisteroitynyt, kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
@@ -205,13 +205,14 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive" >';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki8=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki8=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki8=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki8=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki8=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki8=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Rekisteröitynyt</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
+                          $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
                         echo'<tr><td style="padding-left: 10px"><input type="checkbox" name="lista8[]" id=' . $row[kaid] . '  value=' . $row[kaid] . ' checked>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[sukunimi] . '</label></td>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[etunimi] . '</label></td>';
-                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td>'.$row[rekisteroitynyt].'</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
                     }
                     echo "</table>";
                     echo'</div>';
@@ -230,13 +231,14 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Rekisteröitynyt</th><th>Läheta viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
+                        $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
                         echo'<tr><td style="padding-left: 10px"><input type="checkbox" name="lista8[]" id=' . $row[kaid] . '  value=' . $row[kaid] . '>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[sukunimi] . '</label></td>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[etunimi] . '</label></td>';
-                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td>'.$row[rekisteroitynyt].'</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
                     }
                     echo "</table>";
                     echo'</div>';
@@ -326,7 +328,7 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki81=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki81=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki81=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki81=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki81=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki81=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista81[]" value=' . $row[kaid] . ' checked ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . "</a></td><td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
@@ -348,7 +350,7 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista81[]" value=' . $row[kaid] . '></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . "</a></td><td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
@@ -426,7 +428,7 @@ function myFunction2(y) {
                 $field8 = "Nimi";
             }
 
-            if (!$result = $db->query("select distinct kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where koulut.id='" . $_SESSION["kouluId"] . "' AND  kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
+            if (!$result = $db->query("select distinct rekisteroitynyt, kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where koulut.id='" . $_SESSION["kouluId"] . "' AND  kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
@@ -442,13 +444,14 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki8=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki8=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki8=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki8=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki8=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki8=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Rekisteröitynyt</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
+                        $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
                         echo'<tr><td style="padding-left: 10px"><input type="checkbox" name="lista8[]" id=' . $row[kaid] . '  value=' . $row[kaid] . ' checked>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[sukunimi] . '</label></td>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[etunimi] . '</label></td>';
-                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td>'.$row[rekisteroitynyt].'</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
                     }
                     echo "</table>";
                     echo'</div>';
@@ -467,15 +470,15 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive" >';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort8 . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki8=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort8 . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Rekisteröitynyt</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
-
+$row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
 
                         echo'<tr><td style="padding-left: 10px"><input type="checkbox" name="lista8[]" id=' . $row[kaid] . '  value=' . $row[kaid] . '>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[sukunimi] . '</label></td>';
                         echo'<td><label for=' . $row[kaid] . '> ' . $row[etunimi] . '</label></td>';
-                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
+                        echo"<td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td>'.$row[rekisteroitynyt].'</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
                     }
                     echo "</table>";
                     echo'</div>';
@@ -570,7 +573,7 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki81=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki81=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki81=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=ei" > Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&kaikki81=joo&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&kaikki81=joo&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&kaikki81=joo&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista81[]" value=' . $row[kaid] . ' checked ></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[sukunimi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . "</a></td><td>" . $row[sposti] . '</td><td>' . $row[rooli] . '</td><td>' . $row[Nimi] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $row[kaid] . '" style="padding: 0px 4px; margin: 0" title="Lähetä viesti käyttäjälle">📧 &nbsp</a></td></tr>';
@@ -592,7 +595,7 @@ function myFunction2(y) {
                     echo "<br>";
                     echo'<div class="cm8-responsive">';
                     echo '<table id="mytable" class="cm8-striped cm8-uusitable10" style="table-layout:fixed; max-width: 100%; ">  <thead>';
-                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th></th></tr>';
+                    echo '<tr><th><a href="kayttajatvahvistus.php?kaikki81=joo" > Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th><a href="kayttajatvahvistus.php?sorting0=' . $sort . '&field8=sukunimi">Sukunimi &nbsp&nbsp&nbsp' . $nuoli0 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting1=' . $sort . '&field8=etunimi">Etunimi &nbsp&nbsp&nbsp' . $nuoli1 . ' </a></th><th><a href="kayttajatvahvistus.php?sorting2=' . $sort . '&field8=sposti">Käyttäjätunnus &nbsp&nbsp&nbsp' . $nuoli2 . ' </a></th><th>Rooli</th><th>Oppilaitos</th><th>Lähetä viesti</th></tr>';
                     echo'</thead>';
                     while ($row = $result->fetch_assoc()) {
 
@@ -633,7 +636,7 @@ function myFunction2(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 

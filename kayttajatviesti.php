@@ -97,7 +97,7 @@ function myFunction(y) {
         }
         echo'<nav id="myTopnav2" class="topnav2">
  <a href="kayttajatvahvistus.php" >Vahvistusta odottavat käyttäjät</a> 
-  <a href="kayttajatkaikki.php" >Kaikki käyttäjät</a> 
+   
  
   <a href="kayttajatopettajat.php" >Opettajat</a>
   <a href="kayttajatopiskelijat.php">Opiskelijat</a> 
@@ -167,7 +167,7 @@ function myFunction2(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 

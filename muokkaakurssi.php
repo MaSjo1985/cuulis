@@ -80,7 +80,7 @@ function myFunction(y) {
 
 
 
-        if (!$result = $db->query("select * from kurssit where id = '" . $_POST[id] . "'")) {
+        if (!$result = $db->query("select * from kurssit where id = '" . $_SESSION[KurssiId] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -94,11 +94,11 @@ function myFunction(y) {
             $nimi = $row2[nimi];
             $id = $row2[id];
         }
-        if (!$resultl1 = $db->query("select LEFT(lukuvuosi,4) as alku from kurssit where id = '" . $_POST[id] . "'")) {
+        if (!$resultl1 = $db->query("select LEFT(lukuvuosi,4) as alku from kurssit where id = '" .  $_SESSION[KurssiId]  . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
-        if (!$resultl2 = $db->query("select RIGHT(lukuvuosi,4) as loppu from kurssit where id = '" . $_POST[id] . "'")) {
+        if (!$resultl2 = $db->query("select RIGHT(lukuvuosi,4) as loppu from kurssit where id = '" . $_SESSION[KurssiId] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         while ($rowl1 = $resultl1->fetch_assoc()) {
@@ -120,7 +120,7 @@ function myFunction(y) {
         echo '<form action="muokkaakurssitiedot.php" autocomplete="off" method="post" class="form-style-k"><fieldset>';
         echo '<legend>Muokkaa kurssia/opintojaksoa/opintojaksoa</legend>';
 
-        echo'<a href="kurssi.php?id=' . $_POST[id] . '" class="palaa"> &#8630 &nbsp&nbsp&nbsp Palaa takaisin </a><br><br>';
+        echo'<a href="kurssi.php?id=' . $_SESSION[KurssiId] . '" class="palaa"> &#8630 &nbsp&nbsp&nbsp Palaa takaisin </a><br><br>';
 
 
 
@@ -232,7 +232,6 @@ function myFunction(y) {
                         var currentDate = $("#bdate").datepicker("getDate");
 
 
-
                         $('#edate').datepicker('option', 'minDate', new Date(currentDate));
                     });
 
@@ -246,7 +245,7 @@ function myFunction(y) {
 
                     $('#edate').datepicker({
                         dateFormat: 'dd.mm.yy',
-                        minDate: 0
+                     
                     });
                     $('#kdate').datepicker({
                         dateFormat: 'dd.mm.yy',
@@ -293,7 +292,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 echo "</div>";

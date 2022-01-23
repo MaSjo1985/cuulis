@@ -77,13 +77,13 @@ function myFunction(y) {
 
 
         echo'<p style="color: #c7ef00; font-weight: bold">Valitut käyttäjät on nyt lisätty kurssille/opintojaksolle.</p>';
-        echo '<a href="osallistujats.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+        echo '<a href="osallistujat.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
     }
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 echo "</div>";
 echo "</div>";

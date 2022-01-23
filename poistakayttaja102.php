@@ -34,9 +34,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     if ($_GET[minne] == "vahvistus") {
-        echo'<br><b>Valittujen käyttäjien liittyminen on hylätty.</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+        echo'<br><b style="color: #c7ef00;">Valittujen käyttäjien liittyminen on hylätty.</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
     } else {
-        echo'<br><b>Valitut käyttäjät on nyt poistettu Cuulis-oppimisympäristöstä.</b><br><br><a href="kayttajatkaikki.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+        echo'<br><b style="color: #c7ef00;">Valitut käyttäjät on nyt poistettu Cuulis-oppimisympäristöstä.</b><br><br><a href="kayttajatkaikki.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
     }
 
 
@@ -51,7 +51,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 

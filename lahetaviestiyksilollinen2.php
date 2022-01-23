@@ -157,8 +157,17 @@ function myFunction(y) {
     }
     }
     else{
-          include("header.php");
-echo'<div class="cm8-container7" style="border: none">';  
+       include("header.php");
+        include("header2.php");
+        echo'<div class="cm8-container7">';
+        if ($_SESSION["Rooli"] == 'admin')
+            include("adminnavi.php");
+        else if ($_SESSION["Rooli"] == 'admink')
+            include("adminknavi.php");
+        else if ($_SESSION["Rooli"] == 'opeadmin')
+            include("opeadminnavi.php");
+        else
+            include ("opnavi.php");  
     }
 
     echo '<div class="cm8-container7"  style="padding-left: 40px; padding-top:20px; border: none" >';
@@ -169,10 +178,31 @@ echo'<div class="cm8-container7" style="border: none">';
 
     echo '<p style="font-weight: bold; color: #c7ef00;">Viestisi on lähetetty!</p>';
 
-            if ($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php') {
+    if ($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php') {
         echo'<a href="osallistujat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
    }
-   else{
+   else if ($_GET[url]=='kurssit.php') {
+        echo'<a href="kurssit.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+       
+   }
+     else if ($_GET[url]=='omatkurssit.php') {
+        echo'<a href="omatkurssit.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+       
+   }
+   else if ($_GET[url]=='kurssitkaikki.php') {
+        echo'<a href="kurssitkaikki.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+       
+   }
+      else if ($_GET[url]=='kayttajatkaikki.php') {
+        echo'<a href="kayttajatkaikki.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+       
+   }
+    else if ($_GET[url]=='kayttajatvahvistus.php') {
+        echo'<a href="kayttajatvahvistus.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
+       
+   }
+     else if ($_GET[url]=='kayttajatopettajat.php') {
+        echo'<a href="kayttajatopettajat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
        
    }
            
@@ -187,7 +217,7 @@ echo'<div class="cm8-container7" style="border: none">';
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

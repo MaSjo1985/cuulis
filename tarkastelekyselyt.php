@@ -264,7 +264,7 @@ if (!$resultn = $db->query("select distinct nimella from kyselyt where kurssi_id
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 

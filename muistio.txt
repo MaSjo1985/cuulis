@@ -1,39 +1,25 @@
-- Viesti käyttälle käyttäjäprofiilista, kun käyttäjä tulee 
-a) Kurssilistoista
-b) Käyttäjälistoista
-c) TULLAANKO RYHMÄTÖISTÄ!?
+YLLÄPITÄJÄN LISÄYS + POISTO -> miten viestit menee
 
-- Viesti käyttäjälle suoraan
-a) Kurssilistoista
-b) Käyttäjälistoista
+kayttajatvahvistus.php:  voisi laittaa sortin kohtaan rekisteroitynyt
 
-KATO MYÖS VIRHETOIMINNOT (lahetaviestiyksilollinen.php + lahetaviestiyksilollinen2.php)
+*********************************************************************************************
 
--> KATO MALLI viestikayttajalle2.php
+PALAUTUKSET:
 
-TSEKKAA KAIKKI MISTÄ LÄHTEE VIESTI!
-
-VAIHDA JOKA PAIKKAAN kirjautuminen.php -> kirjautuminenuusi.php
-
-SLIDER eri toimintoja aktivoimiselle ja päin vastoin
+* Ryhmän nimen voi vaihtaa
+* Eri osioiden luettelo numerojärjestykseen (ks. itsetyot.php)
+* SLIDER eri toimintoja aktivoimiselle ja päin vastoin
 
 *********************************************************************************
 
 - VIESTIEN LÄHETYKSEN VIIVE?!
 
-- VIESTISI ON LÄHETETTY -> keltainen väri
-
+- ERI NÄKYMÄT KUN ZOOMAA
 
 - ERI FORMIEN VIRHEELLISTEN SUBMITTAUSTEN ULKOASU
 
 
 - EI PYSTY ETTII KÄYTTÄJÄTUNNUKSEN PERUSTEELLA
-
-
-- HAKUTULOKSIIN MYÖS SIIRTYMINEN ERI SIVUILLE
-
-
-- KÄYTTÄjÄPROFIILISTA JA MUOKKAUKSESTA PALUUNAPIT!?
 
 
 - KÄYTTÄJIEN VAHVISTUKSIIN MILLOIN REKISTERÖITYNYT
@@ -45,31 +31,11 @@ SLIDER eri toimintoja aktivoimiselle ja päin vastoin
 - LOMAKKEIDEN LÄHETYSTIEDOSTOT JOS PÄIVITTÄÄ SIVUN -> POST-JUTUT HÄVII!
 
 
-- KÄYTTÄJÄPROFIILI -> VIESTIN LÄHETYS -> PALUU EI TOIMI
-
-
-- VIESTIT EI LÄHE?!
-
-
-*******************************************************''''
-
-TURVALLISEMPI SALASANA TIETOKANTAAN:
-
-$pass = 'this is my password';
-$salt = uniqid('', true);
-$hash = sha1($pass . $salt);
-
-// INSERT INTO users ('hash', 'salt') VALUES ('$hash', '$salt') WHERE ...
-
--> ELI EI SITÄ ->  $salt = "8CMr85";
-
-
-
 *****************************************************************************
 
 KÄYTTÄJÄT:  Ei siirry muille sivuille-juttua jos vaan 1 sivu, tsekkaa kayttajatopettajat.php
 
-******************
+************************************************************************************************
 
 KYSELYLOMAKE:
 
@@ -78,31 +44,9 @@ KYSELYLOMAKE:
 * Muokkaa kyselylomake niin että oikeesti ei tallennut nimeä jos nimetön!
 
 
-------------------------------------------------------------------------------
-
-* kysy Jussi Matikaiselta mitä henkilötietoja voi olla
-
-* itsearviointi excelinä ulos?
-
-------------------------------------------------------------------------------------------------------------------------------------------
-
-
-* FIXED HEADER:
-https://imgur.com/a/8rptLeW
-
-position: fixed;
-top: 0px;        <--- ei saa muuttua
-left pois kokonaan
-
 *********************************************************
 
-* opiskelija katoaa kurssilta?!
-
-*******************************************************************
-
-PALAUTUKSET:
-
-* pisteitä palautuksista?
+* opiskelija katoaa kurssilta?
 
 ***********************************************************
 
@@ -202,10 +146,8 @@ keltanen väri   color: #c7ef00;
 
 ************************************************
 
-ERI NÄKYMÄT KUN ZOOMAA
 ******************************************
 
-- KAIKKI VIESTIT TULEE 2 KERTAAN?!?
 
 - taulukon sort nuolet ku pikku näyttö
 

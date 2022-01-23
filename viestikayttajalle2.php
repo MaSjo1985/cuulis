@@ -203,7 +203,7 @@ echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpo
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

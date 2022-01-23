@@ -492,7 +492,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
 

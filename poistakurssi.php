@@ -373,7 +373,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         if (empty($vaarat)) {
-            echo'<br><b>Valittujen kurssien poisto onnistui!</b><br><br>';
+            echo'<br><b style="color: #c7ef00;">Valitut kurssit on nyt poisto poistettu.</b><br><br>';
 
             if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink')
                 echo' <a href="kurssit.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
@@ -431,7 +431,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

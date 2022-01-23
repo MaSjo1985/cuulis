@@ -171,6 +171,7 @@ if (isset($_GET["id"])) {
 
         echo'<form action="lahetaviestiyksilollinen.php" class="form-style-k" method="post"><fieldset>';
         echo' <legend>Lähetä viesti käyttäjälle ' . $nimi . '</legend>';
+        
 
         if ($_GET[url] == "kayttaja.php") {
             echo'<a href="kayttaja.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
@@ -184,7 +185,7 @@ if (isset($_GET["id"])) {
             echo'<a href="kayttajatopettajat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
         } else if ($_GET[url] == "kayttajatopiskelijat.php") {
             echo'<a href="kayttajatopiskelijat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
-        } else if ($_GET[url] == "kayttajavahvistus.php") {
+        } else if ($_GET[url] == "kayttajatvahvistus.php") {
             echo'<a href="kayttajatvahvistus.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
         } else if ($_GET[url] == "kurssit.php") {
             echo'<a href="kurssit.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
@@ -214,7 +215,7 @@ if (isset($_GET["id"])) {
 echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
                                   <input type="hidden" name="id" value=' . $_GET[id] . '>
-                                           <input type="hidden" name="url" value=' . $mihin . '>
+                                         <input type="hidden" name="url" value=' . $_GET[url] . '> 
 	<input type="submit" value="📧 &nbsp Lähetä" style="padding-bottom: 5px" >';
         echo '</fieldset></form></div></div>';
     }
@@ -230,7 +231,7 @@ echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpo
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

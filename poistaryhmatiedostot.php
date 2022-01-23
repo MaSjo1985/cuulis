@@ -77,7 +77,7 @@ function myFunction(y) {
             }
         }
 
-        echo'<br>Valittujen tiedostojen poisto onnistui!!<br><br>';
+        echo'<br><b style="color: #c7ef00;">Valitut tiedostot on nyt poistettu.</b><br><br>';
 
 
         echo' <a href="kaikkitiedostot.php style="margin-bottom: 5px"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
@@ -91,7 +91,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

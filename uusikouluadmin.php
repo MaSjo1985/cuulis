@@ -104,7 +104,7 @@ function myFunction(y) {
                 $otsikko = "Sinut on lisätty oppilaitoksen  ylläpitäjäksi";
                 $otsikko = "=?UTF-8?B?" . base64_encode($otsikko) . "?=";
 
-                $viesti = 'Sinut on lisätty oppilaitoksen ' . $nimi . ' ylläpitäjäksi Cuulis-oppimisympäristössä.<br><br>Pääset oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
+                $viesti = 'Sinut on lisätty oppilaitoksen ' . $nimi . ' ylläpitäjäksi Cuulis-oppimisympäristössä.<br><br>Pääset Cuulis-oppimisympäristöön suoraan <a href="https://cuulis.cm8solutions.fi/">tästä.</a><br><br><em>Tähän viestiin ei voi vastata.</em>';
                 $viesti = str_replace("\n.", "\n..", $viesti);
 
                 if (!$tulos4 = $db->query("select distinct * from kayttajat where id='" . $tuote . "'")) {
@@ -142,7 +142,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

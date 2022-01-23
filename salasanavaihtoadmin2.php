@@ -46,7 +46,7 @@ echo'<br><br><br><a href="kayttaja.php?url='.$_GET[url].'&ka=' . $_GET["ka"] . '
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 </body>

@@ -33,7 +33,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
     echo'<div class="cm8-margin-top"></div>';
 
-    echo'<br>Valittujen käyttäjien Rekisteröityminen on hylätty.<br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+    echo'<br><b style="color: #c7ef00;">Valittujen käyttäjien rekisteröityminen on hylätty.</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
 
     echo'</div>';
     echo'</div>';
@@ -43,7 +43,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 

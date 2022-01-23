@@ -320,7 +320,7 @@ function myFunction(y) {
 
                 echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
-                echo '<tr id="kayn"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#kayn">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#kayn">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#kayn">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#kayn">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#kayn">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th></th></tr>';
+                echo '<tr id="kayn"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#kayn">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#kayn">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#kayn">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#kayn">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#kayn">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';
                 while ($row = $result->fetch_assoc()) {
                     $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
@@ -331,7 +331,15 @@ function myFunction(y) {
 
                     while ($rowope = $resultope->fetch_assoc()) {
 
-                        echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 &nbsp Viesti opettajalle</a></td></tr>';
+                        if($rowope[id] != $_SESSION[Id]){
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 </a></td></tr>';
+                    
+                        
+                        }
+                        else{
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td></td></tr>';
+                        }
+                      
                     }
                 }
                 echo "</tbody></table>";
@@ -343,7 +351,7 @@ function myFunction(y) {
 
                 echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable3" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
-                echo '<tr id="alk"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#alk">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#alk">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#alk">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#alk">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#alk">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th></th></tr>';
+                echo '<tr id="alk"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#alk">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#alk">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#alk">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#alk">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#alk">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';
                 while ($row = $result3->fetch_assoc()) {
                     $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
@@ -354,8 +362,15 @@ function myFunction(y) {
 
                     while ($rowope = $resultope->fetch_assoc()) {
 
-                        echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 &nbsp Viesti opettajalle</a></td></tr>';
-                    }
+                          if($rowope[id] != $_SESSION[Id]){
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 </a></td></tr>';
+                    
+                        
+                        }
+                        else{
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td></td></tr>';
+                        }
+                        }
                 }
                 echo "</tbody></table>";
                 echo "</div>";
@@ -367,7 +382,7 @@ function myFunction(y) {
 
                 echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable2" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
-                echo '<tr id="paat"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#paat">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#paat">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#paat">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#paat">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#paat">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th></th></tr>';
+                echo '<tr id="paat"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#paat">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#paat">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#paat">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#paat">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#paat">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';
                 while ($row = $result2->fetch_assoc()) {
                     $row[alkupvm] = date("d.m.Y", strtotime($row[alkupvm]));
@@ -378,8 +393,15 @@ function myFunction(y) {
 
                     while ($rowope = $resultope->fetch_assoc()) {
 
-                        echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 &nbsp Viesti opettajalle</a></td></tr>';
-                    }
+                         if($rowope[id] != $_SESSION[Id]){
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td><a href="viestikayttajalle.php?url=' . $url . '&id=' . $rowope[id] . '">&nbsp&nbsp&nbsp📧 </a></td></tr>';
+                    
+                        
+                        }
+                        else{
+                              echo '<tr><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[nimi] . '</a></td><td><a href="kurssi.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $rowope[id] . '">' . $rowope[etunimi] . ' ' . $rowope[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td></td></tr>';
+                        }
+                        }
                 }
                 echo "</tbody></table>";
                 echo "</div>";
@@ -398,7 +420,7 @@ function myFunction(y) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminen.php?url=" . $url);
+    header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
 <script type="text/javascript">

@@ -76,11 +76,21 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 <input type="text" id="suku"  style="width:50%"  name="uusisuku" value=' . $sukunimi . ' ></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
-</div> <br>
-	<p>Käyttäjätunnus:<br>
+</div> <br>';
+    
+    if($_SESSION["Rooli"]=='opiskelija'){
+        	echo'<p>Käyttäjätunnus:<br>
    
-<input type="email" style="width:50%" id="sposti" name="uusisposti" value=' . $sposti . ' ></p>
-    <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
+<textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
+    }
+    else{
+        	echo'<p>Käyttäjätunnus:<br>
+   
+<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' ></p>';
+    }
+
+        
+    echo'<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>      
 	<input type="hidden" id="id" name="id" value=' . $_SESSION["Id"] . ' >
@@ -168,6 +178,34 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     header("location: kirjautuminenuusi.php?url=" . $url);
 }
 ?>
+<script type="text/javascript">
+$('#etu').on('keyup', function() {
+      var div1 = document.getElementById("divID");
+    document.getElementById("etu").style.backgroundColor = "white";
+        div1.style.padding = "10px 60px 10px 0px";
+
+        div1.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#suku').on('keyup', function() {
+      var div2 = document.getElementById("divID2");
+    document.getElementById("suku").style.backgroundColor = "white";
+        div2.style.padding = "10px 60px 10px 0px";
+
+        div2.innerHTML = "";
+});
+ </script>
+ <script type="text/javascript">
+$('#spostir').on('keyup', function() {
+  
+      var div3 = document.getElementById("divID3");
+    document.getElementById("spostir").style.backgroundColor = "white";
+        div3.style.padding = "10px 60px 10px 0px";
+
+        div3.innerHTML = "";
+});
+ </script>
 <script>
     var input = document.getElementById("etu");
     input.addEventListener("keyup", function (event) {
@@ -187,7 +225,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     });
 </script>
 <script>
-    var input = document.getElementById("sposti");
+    var input = document.getElementById("spostir");
     input.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();

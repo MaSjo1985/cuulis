@@ -2912,7 +2912,7 @@ function validateForm7()
                 div3.innerHTML = "";
                 document.getElementById("etu").style.backgroundColor = "white";
                 document.getElementById("suku").style.backgroundColor = "white";
-                document.getElementById("sposti").style.backgroundColor = "white";
+                document.getElementById("spostir").style.backgroundColor = "white";
                 if (a == null || a == "")
         {
 
@@ -2931,7 +2931,7 @@ function validateForm7()
         if (c == null || c == "")
         {
 
-        document.getElementById("sposti").style.backgroundColor = "yellow";
+        document.getElementById("spostir").style.backgroundColor = "yellow";
                 div3.innerHTML = "Sähköpostiosoite on annettava!";
                 ok = 1;
         }
@@ -2943,32 +2943,36 @@ function validateForm7()
 
         var etu = $('#etu').val();
                 var suku = $('#suku').val();
-                var sposti = $('#sposti').val();
+                var username = $('#spostir').val();
                 var returnVal = 0;
                 var okke = 0;
                 $.ajax({
                 type: 'post',
-                        url: 'tarkistavaihto2.php',
-                        data: {etu: etu, suku: suku, sposti: sposti},
+                        url: 'tarkistatunnusopiskelija.php',
+                        data: {username: username},
                         dataType: 'json',
                         success: function (data) {
-                        if (data.status == "success" && data.msg == "vapaa") {
-                        document.getElementById("myForm").submit();
-                        } else if (data.status == "success" && data.msg == "vanha") {
-                        document.getElementById("myForm").submit();
-                        } else {
+              
+                        if (data.status === "lyonti") {
 
-                        if (data.msg == "Virheellinen") {
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
-                                div3.style.padding = "10px 60px 10px 0px";
-                                div1.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
-                        } else {
-                        document.getElementById("sposti").style.backgroundColor = "yellow";
-                                div3.style.padding = "10px 60px 10px 0px";
-                                div3.innerHTML = 'Antamasi sähköpostiosoite on varattu! Ole hyvä ja valitse toinen.';
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                                div3.innerHTML = '<b style="color:red">Käyttäjätunnuksessa ei saa olla välilyöntiä!</b>';
+                        } else if (data.status == "errors") {
+                        document.getElementById("uusi").style.backgroundColor = "yellow";
+                                div6.style.padding = "10px 0px 20px 0px";
+                                div6.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                                document.getElementById("uusi2").style.backgroundColor = "yellow";
+                                div7.style.padding = "10px 0px 20px 0px";
+                                div7.innerHTML = '<b style="font-size: 0.8em">Salasanat eivät vastaa toisiaan!</b>';
+                        } else if (data.status == "errork") {
+
+
+                        document.getElementById("spostir").style.backgroundColor = "yellow";
+                                div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
                         }
+                        else if (data.status == "success") {
 
-
+                        document.getElementById("myForm").submit();
                         }
                         }
                 });

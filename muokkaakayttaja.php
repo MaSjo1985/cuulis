@@ -58,8 +58,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $id = $row22[id];
             }
         }
+       
         echo"<h7>Muokkaa käyttäjän " . $etunimi . " " . $sukunimi . " tietoja</h7>";
-
+ 
         echo'<br><a href="kayttaja.php?url=' . $url . '&ka=' . $id . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin käyttäjäprofiiliin<br></a>';
     if (!$result = $db->query("select * from kayttajat where id = '" . $id . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -109,8 +110,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 </div> <br> <br>';
         
         if($rooli=='opiskelija'){
+           
             	echo'<p>Käyttäjätunnus:<br> <br>
- <input type="text" id="spostir" style="width: 50%" placeholder="Käyttäjätunnus" name="uusisposti" value=' . $sposti . ' ></p>';
+ <textarea id="spostir" style="width: 50%" placeholder="Käyttäjätunnus" name="uusisposti" value=' . $sposti . ' rows="1" >'.$sposti.'</textarea></p>';
         }
         else{
             	echo'<p>Käyttäjätunnus eli sähköpostiosoite:<br> <br>

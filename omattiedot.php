@@ -200,22 +200,22 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         
 
 
-        echo "<b>Etunimi: </b>" . $row[etunimi] . '<br><br>';
-        echo "<b>Sukunimi: </b>" . $row[sukunimi] . '<br><br>';
+        echo "<b>Etunimi: </b> &nbsp&nbsp&nbsp " . $row[etunimi] . '<br><br>';
+        echo "<b>Sukunimi: </b> &nbsp&nbsp&nbsp " . $row[sukunimi] . '<br><br>';
         if ($_SESSION["Rooli"] == 'opeadmin') {
-            echo '<b>Rooli:</b> opettaja ja oppilaitoskohtainen ylläpitäjä<br><br>';
+            echo '<b>Rooli:</b> &nbsp&nbsp&nbsp  Opettaja ja oppilaitoskohtainen ylläpitäjä<br><br>';
         } else if ($_SESSION["Rooli"] == 'admink') {
-            echo '<b>Rooli:</b> Oppilaitoskohtainen ylläpitäjä<br><br>';
+            echo '<b>Rooli:</b> &nbsp&nbsp&nbsp  Oppilaitoskohtainen ylläpitäjä<br><br>';
         } else if ($_SESSION["Rooli"] == 'admin') {
-            echo '<b>Rooli:</b> Yleinen ylläpitäjä<br><br>';
+            echo '<b>Rooli:</b>  &nbsp&nbsp&nbsp Yleinen ylläpitäjä<br><br>';
         } else if ($_SESSION["Rooli"] == 'opettaja') {
-            echo '<b>Rooli:</b> Opettaja<br><br>';
+            echo '<b>Rooli:</b>  &nbsp&nbsp&nbsp Opettaja<br><br>';
         } else if ($_SESSION["Rooli"] == 'opiskelija') {
-            echo '<b>Rooli:</b> Opiskelija<br><br>';
+            echo '<b>Rooli:</b>  &nbsp&nbsp&nbsp Opiskelija<br><br>';
         }
 
 
-        echo "<b>Käyttäjätunnus: </b>" . $row[sposti] . '<br><br>';
+        echo "<b>Käyttäjätunnus: </b> &nbsp&nbsp&nbsp " . $row[sposti] . '<br><br>';
     }
     if ($_SESSION["Rooli"] == 'opiskelija' || $_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') {
         echo "<b>Oppilaitokset, joihin olet liittynyt:</b><br> ";
@@ -229,7 +229,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
     }
     if ($_SESSION[Viimepaiva] != "") {
-        echo "<br><br><b>Edellisin sisäänkirjautumisesi:</b> " . $_SESSION[Viimepaiva] . ' ' . $_SESSION["Viimekello"] . '<br><br>';
+        echo "<br><br><br><b>Edellinen sisäänkirjautumisesi oli :</b>  &nbsp&nbsp&nbsp " . $_SESSION[Viimepaiva] . ' ' . $_SESSION["Viimekello"] . '<br><br>';
     }
     echo "</td></tr></table></div>";
 

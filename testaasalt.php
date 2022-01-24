@@ -6,23 +6,9 @@
  * and open the template in the editor.
  */
 
-  $salt2 = "CR74eve";
-    $paivays = "" . date("h:i:s") . "";
-    $krypattu2 = md5($salt2 . $paivays);
-
-    $maara=5;
+$sposti = "vaasauusi\r\n";
+    echo'<br>Sposti eka on: '.$sposti;
+  $sposti = str_replace("\r\n",'',$sposti);
+    echo'<br>Sposti toka on: '.$sposti;    
     
-    while($maara>0){
-          $salt2 = "CR74eve";
-  $uniqid = uniqid('', true);
-    $krypattu2 = md5($uniqid);
-     $uniqid2 = uniqid('pöö', true);
-    $krypattu3 = md5($uniqid2);
-  $uniqid3 = uniqid(true);
-    echo'<br>Uniqid1 on: '.$uniqid;
-    echo'<br>Uniqid2 on: '.$uniqid2;
-    echo'<br>Uniqid3 on: '.$uniqid3; 
-        $maara--;
-        
-    }
 

@@ -1,3 +1,16 @@
+OPISKELIJAN KÄYTTÄJÄTUNNUKSESSA ENTER KUN MUOKKAA -> koita nlbr tai joku vastaava
+
+ADMIN MUOKKKAA OPISKELIJAN TIETOJA
+
+OPISKELIJA MUOKKAA KÄYTTÄJÄTUNNUSTA -> HUOM! TEXTAREA
+
+OPE MUOKKAA OMIA TIETOJA + ADMIN MUOKKAA OPEN TIETOJA
+
+
+
+
+TSEKKAA:  Oppimisympäristön sisällä on lähetetty viesti -> se mikä tulee marianne.sjoberg@edu.hel.fi
+
 YLLÄPITÄJÄN LISÄYS + POISTO -> miten viestit menee
 
 kayttajatvahvistus.php:  voisi laittaa sortin kohtaan rekisteroitynyt

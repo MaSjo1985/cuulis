@@ -52,6 +52,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         $stmt->close();
+        header('location: kayttaja.php?url='.$url.'&ka='.$_POST[id]);
         echo "Muutokset tehty onnistuneesti!";
 
         echo '<br><br><a href="kayttaja.php?url=' . $url . '&ka=' . $_POST[id] . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin käyttäjäprofiiliin</a>';

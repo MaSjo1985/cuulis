@@ -233,5 +233,15 @@ $('#spostir').on('keyup', function() {
         }
     });
 </script>
+<script>
+$("textarea").keydown(function(e){
+// Enter was pressed without shift key
+if (e.keyCode == 13 && !e.shiftKey)
+{
+    // prevent default behavior
+    e.preventDefault();
+}
+});
+</script>
 </body>
 </html>			

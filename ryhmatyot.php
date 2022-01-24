@@ -202,10 +202,15 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top"></div>';
 
         if ($_SESSION["Rooli"] <> 'opiskelija') {
-            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding: 2px 6px"></form><br><br>';
+            
+            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding: 2px 6px"></form>';
+        
+                echo'<form action="tuoprojekti.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" title="Tuo Palautus-osio" value="+ Tuo Palautus-osio" class="myButton8"  role="button"  style="padding:4px 6px"></form><br><br>';
+              
+            
         }
     }
-    echo'</nav>
+  echo'</nav>
 </div>';
 
     echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 30px">';

@@ -338,12 +338,12 @@ function myFunction(y) {
         }
 
         if ($resultkoulu->num_rows != 0) {
-            echo'<form action="muokkaakayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';
+            echo'<form action="muokkaakayttaja.php" method="get" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';
 
             
         }
     } else if ($_SESSION["Rooli"] == 'admin') {
-        echo'<form action="muokkaakayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';
+        echo'<form action="muokkaakayttaja.php" method="get" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <input type="submit" value="&#9998 Muokkaa tietoja" class="myButton8" style="padding: 4px 6px; margin-right: 40px" role="button"  ></form>';
 
 
         echo'<form action="varmistuskayttaja.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_GET[ka] . '> <button class="pieniroskis" title="Poista käyttäjä" style="margin-right: 40px"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista käyttäjä</button></form>';

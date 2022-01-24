@@ -1480,7 +1480,7 @@ event.preventDefault();
 });
         return false;
         }
-function showResultKansio(str) {
+        function showResultKansio(str) {
 
 $('#searchresults').hide();
         // getting the value that user typed
@@ -1499,6 +1499,49 @@ $('#piilota').hide();
         $.ajax({
         type: "POST",
                 url: "livesearch_kansio.php",
+                data: data,
+                beforeSend: function (html) { // this happens before actual call
+                $("#results").html('');
+                        $(".word").html(searchString);
+                },
+                success: function (html) {
+
+                $("#searchresults").show(); // this happens after we get results
+                        $("#results").show();
+                        $("#results").html('');
+                        $("#results").append(html);
+                }
+        });
+}
+$(document).ready(function () {
+$(window).keydown(function (event) {
+if (event.keyCode == 13) {
+event.preventDefault();
+        return false;
+}
+});
+});
+        return false;
+        }
+function showResultPalautus(str) {
+
+$('#searchresults').hide();
+        // getting the value that user typed
+        var searchString = str;
+        // forming the queryString
+        var data = 'search=' + searchString;
+        if (searchString == '') {
+$('#searchresults').hide();
+        $('#piilota').show();
+}
+// if searchString is not empty
+else {
+
+$('#piilota').hide();
+        // ajax call
+        $.ajax({
+        type: "POST",
+                url: "livesearch_palautus.php",
                 data: data,
                 beforeSend: function (html) { // this happens before actual call
                 $("#results").html('');

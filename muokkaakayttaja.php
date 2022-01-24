@@ -109,15 +109,17 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     <p class="eimitaan"></p>
 </div> <br> <br>';
         
-        if($rooli=='opiskelija'){
-           
-            	echo'<p>Käyttäjätunnus:<br> <br>
- <textarea id="spostir" style="width: 50%" placeholder="Käyttäjätunnus" name="uusisposti" value=' . $sposti . ' rows="1" >'.$sposti.'</textarea></p>';
-        }
-        else{
-            	echo'<p>Käyttäjätunnus eli sähköpostiosoite:<br> <br>
- <input type="email" id="spostir" style="width: 50%" placeholder="Käyttäjätunnus eli sähköpostiosoite" name="uusisposti" value=' . $sposti . ' ></p>';
-        }
+      
+    if($rooli=='opiskelija'){
+        	echo'<p>Käyttäjätunnus:<br>
+   
+<textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
+    }
+    else{
+        	echo'<p>Käyttäjätunnus:<br>
+   
+<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' ></p>';
+    }
 	
                 
      echo' <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
@@ -247,5 +249,15 @@ $('#spostir').on('keyup', function() {
         }
     });
 </script>
+<script>
+$("textarea").keydown(function(e){
+// Enter was pressed without shift key
+if (e.keyCode == 13 && !e.shiftKey)
+{
+    // prevent default behavior
+    e.preventDefault();
+}
+});
+</script>a
 </body>
 </html>			

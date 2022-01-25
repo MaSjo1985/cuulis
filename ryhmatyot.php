@@ -484,7 +484,7 @@ function myFunction(y) {
                                                   echo'</td><td><form action="muokkaa_tiedosto_ope2.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope2.php" method="post" style="display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
     
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
 
                                                    echo'</td><td><form action="muokkaa_tiedosto_ope2.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope2.php" method="post" style="display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $idaut . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
     
@@ -773,7 +773,7 @@ function myFunction(y) {
                                                     
                                                         
                                                     } else {
-                                                        echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
+                                                        echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
 
                                                         echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                     
@@ -951,7 +951,7 @@ function myFunction(y) {
 
                                                         echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form> <form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                     } else {
-                                                        echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
+                                                        echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
 
                                                         echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                     }
@@ -1333,7 +1333,7 @@ function myFunction(y) {
 
                                                 echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form> <form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             } else {
-                                                echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
+                                                echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
 
                                                 echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form> <form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             }
@@ -1507,7 +1507,7 @@ function myFunction(y) {
 
                                                 echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form> <form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             } else {
-                                                echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
+                                                echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm] . '</td>';
 
                                                 echo'<td><form action="muokkaa_tiedosto_ope.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $ryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistusope.php" method="post" style="display: inline-block"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $tyoid . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             }
@@ -2120,7 +2120,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
 
                                                     echo'</td></tr>';
                                                 }
@@ -2145,7 +2145,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
 
                                                     echo'</td></tr>';
                                                 }
@@ -2398,7 +2398,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
 
                                                     echo'</td></tr>';
                                                 }
@@ -2422,7 +2422,7 @@ function myFunction(y) {
 
                                                 echo'</td></tr>';
                                             } else {
-                                                echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
+                                                echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
 
                                                 echo'</td></tr>';
                                             }
@@ -2706,7 +2706,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
 
                                                     echo'</td></tr>';
                                                 }
@@ -2730,7 +2730,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
 
                                                     echo'</td></tr>';
                                                 }
@@ -2954,7 +2954,7 @@ function myFunction(y) {
 
                                                     echo'</td></tr>';
                                                 } else {
-                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
+                                                    echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $nimiaut . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $idaut . ' target="_blank">' . $omatallennusnimiaut . '</a></td><td>' . $lisattyaut;
 
                                                     echo'</td></tr>';
                                                 }
@@ -2978,7 +2978,7 @@ function myFunction(y) {
 
                                             echo'</td></tr>';
                                         } else {
-                                            echo '<tr><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
+                                            echo '<tr><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto_ope2.php?pid=' . $pid . '&id=' . $tyoid . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
 
                                             echo'</td></tr>';
                                         }

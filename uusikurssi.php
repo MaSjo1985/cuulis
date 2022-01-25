@@ -106,9 +106,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-
-        echo'<br><p>Alkaa:<br><input type="text" style="width: 25%"  id="bdate" name="AlkuPvm"> </p><br>
-	<p>Päättyy:<br><input type="text"  style="width: 25%" id="edate" name="LoppuPvm"> </p><br>';
+ $alkuoletus =  date("j.n.Y");
+ $loppuoletus = date('j.n.Y', strtotime($alkuoletus. ' + 60 days'));
+ 
+        echo'<br><p>Alkaa:<br><input type="text" style="width: 25%"  id="bdate" name="AlkuPvm" value=' . $alkuoletus . '> </p><br>
+	<p>Päättyy:<br><input type="text"  style="width: 25%" id="edate" name="LoppuPvm" value=' . $loppuoletus. '> </p><br>';
 
         echo'<p style="color: blue; font-weight: bold" class="eimitaan">Voit halutessasi lisätä kokeen päivämäärän ja aikalaskurin (countdown) kokeeseen: </p>';
 

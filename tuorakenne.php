@@ -290,8 +290,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
                 $db->query("update itseprojektit set dmax='" . $dmax . "' where id = '" . $uusiprojekti_id . "'");
             }
-            
-             //pisteiden vaikutus
+
+            //pisteiden vaikutus
             if (!$onkorivi17 = $db->query("select distinct pisteetvaikuttaa from itseprojektit where id='" . $ipidvanha . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
@@ -347,6 +347,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         // Palautukset 
 
         $kurssi = $_POST["id"];
+        
         if (!$haetehtavat = $db->query("select distinct * from projektit where kurssi_id='" . $kurssi . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -360,69 +361,77 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $palautus = $rowT[palautus];
             $info = $rowT[info];
             $tarkkamaara = $rowT[tarkkamaara];
+            $pid = $rowT[id];
 
 
 
             $db->query("insert into projektit (kurssi_id, kuvaus, ryhmienmaksimi, opmaksimi, opminimi, palautus, info, tarkkamaara) values('" . $id . "', '" . $kuvaus . "', '" . $ryhmienmaksimi . "','" . $opmaksimi . "', '" . $opminimi . "', '" . $palautus . "', '" . $info . "', '" . $tarkkamaara . "')");
-        }
-
-        if (!$haeid = $db->query("select id from projektit where kurssi_id='" . $id . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-//projektin id
-        while ($rowid = $haeid->fetch_assoc()) {
-            $pid = $rowid[id];
-        }
-
-
-        if (!$haetarkka = $db->query("select distinct tarkkamaara from projektit where id='" . $pid . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-        //sallittu määrä
-        while ($rowtarkka = $haetarkka->fetch_assoc()) {
-            $tarkkamaara = $rowtarkka[tarkkamaara];
-        }
-
-        if ($tarkkamaara != 0) {
-            for ($i = 1; $i <= $tarkkamaara; $i++) {
-                if (!$maara = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                }
-
-                $ryhmanimi = (($maara->num_rows) + 1);
-
-                $nimi = "Ryhmä " . $ryhmanimi . " ";
-                $db->query("insert into ryhmat (projekti_id, nimi, suljettu) values('" . $pid . "', '" . $nimi . "', 0)");
-            }
-        } else {
-            if (!$resultmina = $db->query("select MIN(id) as pienin from ryhmat where projekti_id='" . $pid . "'")) {
+            $lisattypid = $db->insert_id;
+            //open automaattisesti ryhmiin lisätyt tiedostot
+            if (!$haeoa = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
-
-            if (!$resultmaxa = $db->query("select MAX(id) as suurin from ryhmat where projekti_id='" . $pid . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            while ($rowoa = $haeoa->fetch_assoc()) {
+                $kuvaus = $rowoa[kuvaus];
+                $tallennettunimi = $rowoa[tallennettunimi];
+                $linkki = $rowoa[linkki];
+                $omatallennusnimi = $rowoa[omatallennusnimi];
+                $tuotu = 1;
+                $db->query("insert into open_palautustiedosto (projekti_id, kuvaus, tallennettunimi, linkki, omatallennusnimi, tuotu) values('" . $lisattypid . "', '" . $kuvaus . "', '" . $tallennettunimi . "','" . $linkki . "', '" . $omatallennusnimi . "', '" . $tuotu . "')");
             }
+  
 
-            while ($minrowa = $resultmina->fetch_assoc()) {
-                $mina = $minrowa[pienin];
-            }
+                    if (!$haetarkka = $db->query("select distinct tarkkamaara from projektit where id='" . $lisattypid . "'")) {
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    }
 
-            while ($maxrowa = $resultmaxa->fetch_assoc()) {
-                $maxa = $maxrowa[suurin];
-            }
-            $a = 0;
-            for ($j = $mina; $j <= $maxa; $j++) {
-                $a++;
-            }
+                    //sallittu määrä
+                    while ($rowtarkka = $haetarkka->fetch_assoc()) {
+                        $tarkkamaara = $rowtarkka[tarkkamaara];
+                    }
+
+                    if ($tarkkamaara != 0) {
+                        for ($i = 1; $i <= $tarkkamaara; $i++) {
+                            if (!$maara = $db->query("select distinct * from ryhmat where projekti_id='" . $lisattypid . "'")) {
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            }
+
+                            $ryhmanimi = (($maara->num_rows) + 1);
+
+                            $nimi = "Ryhmä " . $ryhmanimi . " ";
+                            $db->query("insert into ryhmat (projekti_id, nimi, suljettu) values('" . $lisattypid . "', '" . $nimi . "', 0)");
+                        }
+                    } else {
+                        if (!$resultmina = $db->query("select MIN(id) as pienin from ryhmat where projekti_id='" . $lisattypid . "'")) {
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        }
+
+                        if (!$resultmaxa = $db->query("select MAX(id) as suurin from ryhmat where projekti_id='" . $lisattypid . "'")) {
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        }
+
+                        while ($minrowa = $resultmina->fetch_assoc()) {
+                            $mina = $minrowa[pienin];
+                        }
+
+                        while ($maxrowa = $resultmaxa->fetch_assoc()) {
+                            $maxa = $maxrowa[suurin];
+                        }
+                        $a = 0;
+                        for ($j = $mina; $j <= $maxa; $j++) {
+                            $a++;
+                        }
 
 
-            $ryhmanimi = $a;
+                        $ryhmanimi = $a;
 
-            $nimi = "Ryhmä " . $ryhmanimi . " ";
+                        $nimi = "Ryhmä " . $ryhmanimi . " ";
 
-            $db->query("insert into ryhmat (projekti_id, nimi, suljettu) values('" . $pid . "', '" . $nimi . "', 0)");
+                        $db->query("insert into ryhmat (projekti_id, nimi, suljettu) values('" . $lisattypid . "', '" . $nimi . "', 0)");
+                    }
         }
+
+
 
 
         header("location: omatkurssit.php");

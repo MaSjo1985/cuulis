@@ -2825,7 +2825,7 @@ function validateForm5uusi()
                         } else {
 
                         if (data.status == "error8") {
-                          
+                         
                         document.getElementById("sposti").style.backgroundColor = "yellow";
                                 div1.innerHTML = 'Antamaasi käyttäjätunnusta ei ole rekisteröity oppimisympäristöön!<br><br>Jos et muista käyttäjätunnustasi, niin klikkaa alla olevaa linkkiä.';
                         }

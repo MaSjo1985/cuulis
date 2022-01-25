@@ -170,6 +170,7 @@ function myFunction(y) {
 
 
         $db->query("update aanestysvastaukset set aanestys_id='" . $_POST[id] . "' where id = '" . $id . "'");
+        
         $db->query("update aanestysvastaukset set aanestysvaihtoehdot_id='" . $_POST[vastaus] . "' where id = '" . $id . "'");
     }
     header('location: aanestykset.php?tall=1&a=' . $_POST[id]);

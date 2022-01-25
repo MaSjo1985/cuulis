@@ -72,7 +72,7 @@ if ($rooli=='opettaja' AND !filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL
 
 else {
     if ($stmt->num_rows == 0) {
-        echo json_encode(array('status' => 'error8', 'msg' => 'error'));
+        echo json_encode(array('status' => 'error8', 'msg' => $id));
     } else {
         
 

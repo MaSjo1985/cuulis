@@ -111,13 +111,15 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         
       
     if($rooli=='opiskelija'){
-        	echo'<p>Käyttäjätunnus:<br>
-   
+        	echo'<p>Käyttäjätunnus:<br><br>
+   <b style="color: red; font-size: 0.8em">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
+     <b style="color: red; font-size: 0.8em">Käyttäjätunnuksessa ei saa olla välilyöntiä.</b><br><br>
+<b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi uusi käyttäjätunnus.</b><br><br>
 <textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
     }
     else{
-        	echo'<p>Käyttäjätunnus:<br>
-   
+        	echo'<p>Käyttäjätunnus:<br><br>
+   <b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi uusi käyttäjätunnus.</b><br><br>
 <input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' ></p>';
     }
 	

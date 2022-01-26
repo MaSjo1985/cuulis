@@ -57,45 +57,59 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<h7> Muokkaa omia tietojasi</h7>';
     echo'<br><a href="omattiedot.php?id=' . $_SESSION["Id"] . '" > <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin muutoksia tekemättä</a><br>';
     echo'<div class="cm8-half" style="padding-top: 10px; margin-left: 0px; padding-left: 0px">';
-    echo '<form name="Form" id="myForm" onSubmit="return validateForm7();" class="form-style-k"  action="muokkaaomattiedot2.php" method="post" ><fieldset>';
+    if($_SESSION[Rooli]=='opiskelija'){
+         echo '<form name="Form" id="myForm" onSubmit="return validateForm7opiskelija();" class="form-style-k"  action="muokkaaomattiedot2.php" method="post" ><fieldset>';
 
+    }
+    else{
+         echo '<form name="Form" id="myForm" onSubmit="return validateForm7ope();" class="form-style-k"  action="muokkaaomattiedot2.php" method="post" ><fieldset>';
+
+    }
+   
 
 
     echo'<br><fieldset>';
 
     echo'<legend>Perustiedot</legend>';
 
-    echo'<p>Etunimi:<br>
+    echo'<p>Etunimi:<br><br>
     
 <input type="text" id="etu"  style="width:50%"  name="uusietu" value=' . $etunimi . ' ></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID" >
     <p class="eimitaan" style="display: inline-block"></p>
 </div>    <br> 
-	<p>Sukunimi:<br>
+	<p>Sukunimi:<br><br>
         
 <input type="text" id="suku"  style="width:50%"  name="uusisuku" value=' . $sukunimi . ' ></p>
     <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
-</div> <br>';
+</div> <br><br>';
     
     if($_SESSION["Rooli"]=='opiskelija'){
-        	echo'<p>Käyttäjätunnus:<br>
+        	echo'<p>Käyttäjätunnus:<br><br>
+                      <b style="color: red; font-size: 0.8em">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
+     <b style="color: red; font-size: 0.8em">Käyttäjätunnuksessa ei saa olla välilyöntiä.</b><br><br>
    
 <textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
     }
     else{
-        	echo'<p>Käyttäjätunnus:<br>
-   
-<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' ></p>';
+        	echo'<p>Käyttäjätunnus eli sähköpostiosoite:<br><br>  
+<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus eli sähköpostiosoite" value=' . $sposti . ' ></p>';
     }
 
         
     echo'<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>      
-	<input type="hidden" id="id" name="id" value=' . $_SESSION["Id"] . ' >
-	<br><br><input id="button" type="button" onclick="validateForm7()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br> 			
-	</fieldset></form>';
+	<input type="hidden" id="id" name="id" value=' . $_SESSION["Id"] . ' >';
+   if($_SESSION[Rooli]=='opiskelija'){
+          echo'<br><br><input id="button" type="button" onclick="validateForm7opiskelija()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br>';
+   }
+   else{
+          echo'<br><br><input id="button" type="button" onclick="validateForm7ope()" value="&#10003 Tallenna perustiedot" class="myButton9" style="font-size: 0.9em"><br>';
+   }
+ 		
+	echo'</fieldset></form>';
 
 
     if ($_SESSION[Rooli] != 'admin' && $_SESSION[Rooli] != 'admink') {

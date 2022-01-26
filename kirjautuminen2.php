@@ -39,32 +39,32 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
             if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminenuusi.php') {
                 if ($_SESSION["Rooli"] == "admin")
-                    header("location: admin.php");
+                    header('location: admin.php');
 
                 else if ($_SESSION["Rooli"] == 'opettaja')
-                    header("location: omatkurssit.php");
+                    header('location: omatkurssit.php');
 
                 else if ($_SESSION["Rooli"] == 'opiskelija')
-                    header("location: omatkurssit.php");
+                    header('location: omatkurssit.php');
 
                 else if ($_SESSION["Rooli"] == 'muu')
                     header("location: muu.php");
             }
             else {
-                header("location: " . $_GET[url]);
+                header('location: ' . $_GET[url]);
             }
         } else {
             if ($_SESSION["Rooli"] == "admin")
-                header("location: admin.php");
+                header('location: admin.php');
 
             else if ($_SESSION["Rooli"] == 'opettaja')
-                header("location: omatkurssit.php");
+                header('location: omatkurssit.php');
 
             else if ($_SESSION["Rooli"] == 'opiskelija')
-                header("location: omatkurssit.php");
+                header('location: omatkurssit.php');
 
             else if ($_SESSION["Rooli"] == 'muu')
-                header("location: muu.php");
+                header('location: muu.php');
         }
     }
 
@@ -86,26 +86,26 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     $_SESSION["kouluId"] = $kouluid;
                     if ($_GET[url] == 'etusivu.php' || $_GET[url] == 'kirjautuminenuusi.php') {
 
-                        header("location: omatkurssit.php");
+                        header('location: omatkurssit.php');
                     } else
                         header("location: " . $_GET[url]);
                 } else if ($_SESSION["Rooli"] == 'muu') {
                     //merkitään muu-käyttäjä pelkäksi ylläpitäjäksi
                     $_SESSION["kouluId"] = $kouluid;
                     $_SESSION["Rooli"] = 'admink';
-                    header("location: " . $_GET[url]);
+                    header('location: ' . $_GET[url]);
                 }
             } else {
                 if ($_SESSION["Rooli"] == 'opettaja') {
                     //merkitään opettaja yhteisrooliin
                     $_SESSION["Rooli"] = 'opeadmin';
                     $_SESSION["kouluId"] = $kouluid;
-                    header("location: omatkurssit.php");
+                    header('location: omatkurssit.php');
                 } else if ($_SESSION["Rooli"] == 'muu') {
                     //merkitään muu-käyttäjä pelkäksi ylläpitäjäksi
                     $_SESSION["kouluId"] = $kouluid;
                     $_SESSION["Rooli"] = 'admink';
-                    header("location: admink.php");
+                    header('location: admink.php');
                 }
             }
         }
@@ -121,9 +121,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 //                          $_SESSION["Rooli"]='admink';
 //                    }    
             if (isset($_GET[url])) {
-                header("Location: kirjautuminen3.php?url=" . $_GET[url]);
+                header('location: kirjautuminen3.php?url=' . $_GET[url]);
             } else {
-                header("Location: kirjautuminen3.php");
+                header('location: kirjautuminen3.php');
             }
 
 //			if($_SESSION["Rooli"]=='opettaja' || $_SESSION["Rooli"]=='opiskelija')
@@ -148,7 +148,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
     $url = strtok($url, '?');
-    header("location: kirjautuminenuusi.php?url=" . $url);
+    header('location: kirjautuminenuusi.php?url=' . $url);
 }
 ?>
 

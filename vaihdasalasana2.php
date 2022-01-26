@@ -14,6 +14,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 if (isset($_POST[id])) {
+  
     include("yhteys.php");
 
     include("header.php");
@@ -27,8 +28,9 @@ if (isset($_POST[id])) {
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[UusiSalasana]);
     $salt = "8CMr85";
     $krypattu = md5($salt . $siivottusalasana);
- 
+
     $stmt = $db->prepare("UPDATE kayttajat SET salasana=?, yritykset = 0, nollattu=0 WHERE id=?");
+   
     $stmt->bind_param("si", $salasana, $id);
 // prepare and bind
 

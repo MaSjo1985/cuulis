@@ -158,7 +158,7 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
     <p class="eimitaan"></p>
 </div>  
 
-		<input type="hidden" name="id" value=' . $_GET[id] . '> <br>';
+		<input type="hidden" name="id" value='. $_GET[id] . '> <br>';
                   
     if(!empty($_GET[url])){
                        

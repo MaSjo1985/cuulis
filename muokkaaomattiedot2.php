@@ -21,6 +21,13 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     $siivottusposti = mysqli_real_escape_string($db, $_POST[uusisposti]);
   
     $siivottusposti = trim($siivottusposti);
+    
+ if($_SESSION[Rooli]!='opiskelija'){
+     $siivottusposti=strtolower($siivottusposti);
+ }
+
+    
+    
     $siivottuetu = mysqli_real_escape_string($db, $_POST[uusietu]);
     $siivottusuku = mysqli_real_escape_string($db, $_POST[uusisuku]);
 

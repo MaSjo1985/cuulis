@@ -5,7 +5,6 @@ echo'<!DOCTYPE html>
 <html>
  
 <head>
-
 <title>Salasana vaihdettu </title>';
 
 
@@ -109,11 +108,11 @@ if (isset($_POST[id])) {
     
              if (empty($_POST[url])){
                     
-                    header("location: salasanavaihdettu.php?url=etusivu.php&id=". $_POST[id] );
+                    header('location: salasanavaihdettu.php?url=etusivu.php&id='. $_POST[id] );
              }
              else{
                  
-                    header("location: salasanavaihdettu.php?url=' . $_POST[url].'&id=". $_POST[id] );
+                    header('location: salasanavaihdettu.php?url=' . $_POST[url].'&id='. $_POST[id] );
              }
             
            

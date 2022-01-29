@@ -3651,6 +3651,9 @@ a.linkkiroskis:hover{
     font-weight: bold;
 
 }
+button.myButton8{
+    font-size: 1em;  
+}
 .myButtonValittu {
 
 
@@ -3950,7 +3953,7 @@ input[type="submit"].myButton8:hover {
     background-color: #f7f9f7;
 }
 
-input[type="submit"].myButtonTuo{
+.myButtonTuo{
     display: inline-block;
     border: 1px solid #080708;
     -moz-box-shadow: 1px 0px 3px 1px #c7ef00;
@@ -3968,8 +3971,8 @@ input[type="submit"].myButtonTuo{
     font-size: 1em;
 
 }
-input[type="submit"].myButtonTuo:hover,
-input[type="submit"].myButtonTuo:focus{
+.myButtonTuo:hover,
+.myButtonTuo:focus{
     background-color: #f7f9f7;
     color: #080708;
     border: 1px solid #080708;

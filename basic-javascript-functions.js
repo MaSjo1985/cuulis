@@ -3090,11 +3090,9 @@ function validateForm7ope()
                         div3.innerHTML = 'Käyttäjätunnuksen tulee olla sähköpostiosoite!';
                     else {
 
-                        if (admin == 'admin') {
+                   
                             div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus eli sähköpostiosoite on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
-                        } else {
-                            div3.innerHTML = '<b style="color:red">Antamasi käyttäjätunnus eli sähköpostiosoite on käytössä!<br><br>Ole hyvä ja valitse toinen.</b>';
-                        }
+                        
 
                     }
 
@@ -3481,10 +3479,11 @@ function validateForm11()
             data: {id: id, sposti: sposti, rooli: rooli},
             dataType: 'json',
             success: function (data) {
+            
                 if (data.status == "success" && data.msg == "vapaa") {
-                    document.getElementById("myForm").submit();
+              document.getElementById("myForm").submit();
                 } else if (data.status == "success" && data.msg == "vanha") {
-                    document.getElementById("myForm").submit();
+                  document.getElementById("myForm").submit();
                 } else {
 
                     if (data.msg == "virhe") {

@@ -118,9 +118,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 <textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
     }
     else{
-        	echo'<p>Käyttäjätunnus:<br><br>
+        	echo'<p>Käyttäjätunnus eli sähköpostiosoite:<br><br>
    <b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi uusi käyttäjätunnus.</b><br><br>
-<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' ></p>';
+<input type="email" style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus eli sähköpostiosoite" value=' . $sposti . ' ></p>';
     }
 	
                 

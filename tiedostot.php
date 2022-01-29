@@ -412,10 +412,12 @@ function myFunction(y) {
                                         $kurssi = $rowtuotu[kurssi];
                                         $koodi = $rowtuotu[koodi];
                                     }
-                                    echo'<em style="font-size: 0.8em">(Tuotu kurssista/opintojaksosta ' . $koodi . ' ' . $kurssi . ')</em><br><br>';
-                                } else {
+//                                    echo'<em style="font-size: 0.8em">(Tuotu kurssista/opintojaksosta ' . $koodi . ' ' . $kurssi . ')</em><br><br>';
+//                                
+                                    
+                                    } else {
                                     $maara = $onkotuotu->num_rows;
-                                    echo'<em style="font-size: 0.8em">(Tuotu muista kursseista)</em><br><br>';
+//                                    echo'<em style="font-size: 0.8em">(Tuotu muista kursseista)</em><br><br>';
                                 }
                             }
 //                            } else if ($rowt[linkki] == 1 && $rowt[tuotu] == 1) {

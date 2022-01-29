@@ -103,10 +103,10 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
 
             if ($kayttoehdot == 0) {
                     if (!empty($_POST[url]))
-                       header("location: hyvaksykayttoehdot.php?id='.$id.'&url=" . $_POST[url]);
+                       header('location: hyvaksykayttoehdot.php?id='.$id.'&url=' . $_POST[url]);
                    else
 
-                   header("location: hyvaksykayttoehdot.php?id=".$id);
+                   header('location: hyvaksykayttoehdot.php?id='.$id);
              }
              else{
             //onko nollattu?!
@@ -114,9 +114,9 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
              if($uusitunnus == 0 && $rooli=='opiskelija'){
                     
                             if (!empty($_POSTI[url]))
-                      header("location: vaihdatunnus.php?id='.$id.'&url=" . $_POST[url]);
+                      header('location: vaihdatunnus.php?id='.$id.'&url=' . $_POST[url]);
                       else
-                      header("location: vaihdatunnus.php?id=".$id);
+                      header('location: vaihdatunnus.php?id='.$id);
 
                 
                 
@@ -127,9 +127,9 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
                if($nollattu==1 && $vahvistettu==1){
                 
                         if (!empty($_POST[url]))
-                      header("location: vaihdasalasana.php?id='.$id.'&url=" . $_POST[url]);
+                      header('location: vaihdasalasana.php?id='.$id.'&url=' . $_POST[url]);
                   else
-                      header("location: vaihdasalasana.php?id=".$id);
+                      header('location: vaihdasalasana.php?id='.$id);
             
                   
                 }

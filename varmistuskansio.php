@@ -169,10 +169,10 @@ function myFunction(y) {
                 if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $tnimi . "' AND linkki=0")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
-                if ($result2->num_rows > 1) {
-                    echo'<br><br><b style="color: #c7ef00">Huom! Tämän kansion tiedosto <b style="color: #080708">"' . $nimi . '"</b> on tuotu myös muiden kurssien </b><br>';
-                    echo' <br><b style="color: #c7ef00">materiaaleihin.Kansion poisto poistaa tiedostot myös näistä kursseista!</b><br>';
-                }
+//                if ($result2->num_rows > 1) {
+//                    echo'<br><br><b style="color: #c7ef00">Huom! Tämän kansion tiedosto <b style="color: #080708">"' . $nimi . '"</b> on tuotu myös muiden kurssien </b><br>';
+//                    echo' <br><b style="color: #c7ef00">materiaaleihin.Kansion poisto poistaa tiedostot myös näistä kursseista!</b><br>';
+//                }
             }
         }
 

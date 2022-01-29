@@ -7,17 +7,24 @@ session_start();
 
 
 $tarkistettusposti = htmlspecialchars($_POST[sposti]);
+ $tarkistettusposti = trim($tarkistettusposti);
 
 if (!filter_var($tarkistettusposti, FILTER_VALIDATE_EMAIL) && $_POST[rooli]!='opiskelija') {
     echo json_encode(array('status' => 'error', 'msg' => 'virhe'));
 } else {
 
     $siivottusposti = mysqli_real_escape_string($db, $_POST[sposti]);
-
+  $siivottusposti = trim($siivottusposti);
+  if( $_POST[rooli]!='opiskelija'){
+    $siivottusposti=strtolower($siivottusposti);  
+  }
+    
+    
     $stmt = $db->prepare("SELECT DISTINCT id FROM kayttajat WHERE BINARY sposti=? AND BINARY id<>?");
     $stmt->bind_param("si", $sposti, $idv);
     // prepare and bind
     $sposti = $siivottusposti;
+    
     $idv = $_POST[id];
     $stmt->execute();
 

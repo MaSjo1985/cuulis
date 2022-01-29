@@ -205,8 +205,10 @@ function myFunction(y) {
             
             echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding: 2px 6px"></form>';
         
-                echo'<form action="tuoprojekti.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" title="Tuo Palautus-osio" value="+ Tuo Palautus-osio" class="myButton8"  role="button"  style="padding:4px 6px"></form><br><br>';
-              
+                echo'<form action="tuoprojekti.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '>';
+           
+ echo'<button  name="painike" title="Tuo Palautus-osio" class="myButton8" style="font-size: 0.8em"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu Palautus-osio </button>';
+  echo'</form><br><br>';
             
         }
     }
@@ -230,9 +232,11 @@ function myFunction(y) {
 
 
             echo'<br><p id="ohje">Tähän on mahdollista luoda osio, jossa opiskelijat voivat liittyä ryhmiin ja palauttaa tiedostoja.</p>';
-            echo'<div class="cm8-margin-top"></div>';
-            echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Palautus-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
-
+            echo'<div class="cm8-margin-top"><br></div>';
+            echo'<form action="uusiprojekti.php" method="post" style="display: inline-block; margin-right: 100px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Palautus-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
+    echo'<form action="tuoprojekti.php" method="post" style="font-size: 1em; display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '>';
+      echo'<button  name="painike" title="Tuo Palautus-osio" class="myButton8 style="font-size: 1em;"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu Palautus-osio </button>';
+  echo'</form><br><br>';         
 
             echo'<div class="cm8-margin-top"></div>';
         } else if ($onkoprojekti->num_rows > 0 && !isset($_GET[r])) {

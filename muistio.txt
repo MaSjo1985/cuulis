@@ -1,14 +1,27 @@
- ADMIN MUOKKAA OPISKELIJAN + OPEN TIETOJA  -> PALJON BUGEJA!
+TSEKKAA KAIKKI TUONTIJUTUT -> UUS BUTTON
 
-evästeet, google analytics
+TSEKKAA TYHJÄT OSIOT -> ONKO TUONTINAPPULA
 
-ERI TUONTIEN HAKUTOIMINTOON : Voi hakea myös ko kurssi
+
+NÄKYMÄT KUN TUODAAN TYHJÄT JUTUT, esim. kurssiaikataulu
+
 
 LISÄTTYJEN TIEDOSTOJEN POISTO KUN VIETY TOISEEN KURSSIIN?
 * tiedoston poisto
 * kansion poisto
 * projektin poisto
 * kurssin poisto 
+
+-> ÄLÄ POISTA TIEDOSTOA, JOS SE ON VIELÄ JOSSAIN
+
+
+
+****************************************************************************
+
+
+evästeet, google analytics
+
+
 
 
 ADMININ KÄYTTÄJÄHAKU KESTÄÄ IKUISUUDEN + LAITA MYÖS ETTÄ VOI HAKEE KÄYTTÄJÄTUNNUKSELLA

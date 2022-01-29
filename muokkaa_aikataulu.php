@@ -307,7 +307,10 @@ function myFunction(y) {
 
         echo'<div style="text-align: center">';
 
-        echo'<br><form action="tuoaikataulu.php" method="get" style="display: inline-block; font-size: 1.1em "><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9850;&nbsp&nbsp Tuo aikataulu toisesta kurssista/opintojaksosta" class="myButtonTuo"  role="button"  ></form>';
+  echo'<br><form action="tuoaikataulu.php" method="get" style="display: inline-block; font-size: 1.1em "><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '>';
+
+  echo'<button  name="painike" title="Tuo aikataulu" class="myButtonTuo"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu aikataulu </button>';
+  echo'</form>';
 
         echo'</div>';
         if (!$haeaikataulu = $db->query("select distinct * from kurssiaikataulut where kurssi_id='" . $_SESSION[KurssiId] . "' ORDER BY jarjestys")) {

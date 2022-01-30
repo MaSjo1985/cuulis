@@ -373,7 +373,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         if (empty($vaarat)) {
-            echo'<br><b style="color: #c7ef00;">Valitut kurssit on nyt poisto poistettu.</b><br><br>';
+            echo'<br><b style="color: #c7ef00;">Valitut kurssit/opintojaksot on nyt poistettu.</b><br><br>';
 
             if ($_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink')
                 echo' <a href="kurssit.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';

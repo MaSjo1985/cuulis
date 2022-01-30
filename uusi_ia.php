@@ -134,7 +134,10 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
 
         if ($onko == 0) {
 
-            echo'<form action="tuoia.php" method="get" style="display: inline-block; margin-bottom: 40px"><input type="hidden" name="mihin" value="uusi"><input type="submit" name="painike" value="&#9850;&nbsp&nbsp  Tuo lomake toisesta kurssista/opintojaksosta" class="myButtonTuo"  role="button" ></form>';
+            echo'<form action="tuoia.php" method="get" style="display: inline-block; margin-bottom: 40px"><input type="hidden" name="mihin" value="uusi">';
+          echo'<button  name="painike" title="Tuo itsearviointi" class="myButtonTuo"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu itsearviointilomake </button>';
+  echo'</form>';
+            
         }
 
 

@@ -130,7 +130,7 @@ function myFunction(y) {
 
             echo'<div class="cm8-margin-top"></div>';
             if ($_SESSION["Rooli"] <> 'opiskelija') {
-                echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
+                echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää  Tehtävälista-osio" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
             }
 
             echo'</div>';

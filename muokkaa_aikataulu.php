@@ -13,7 +13,10 @@ include("yhteys.php");
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
-
+$url = $_SERVER[REQUEST_URI];
+if( !strpos($url,"?")){
+    header('location: muokkaa_aikataulu.php?#tanne');
+}
 session_start(); // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
@@ -302,7 +305,7 @@ function myFunction(y) {
 
 
 
-        echo'<br><h7>Muokkaa aikataulua</h7>';
+        echo'<br><h7 id="tanne">Muokkaa aikataulua</h7>';
         echo'<br><a href="kurssi.php?id=' . $_SESSION[KurssiId] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br>';
 
         echo'<div style="text-align: center">';

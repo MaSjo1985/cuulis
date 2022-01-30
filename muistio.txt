@@ -1,11 +1,3 @@
-TSEKKAA KAIKKI TUONTIJUTUT -> UUS BUTTON
-
-TSEKKAA TYHJÄT OSIOT -> ONKO TUONTINAPPULA
-
-
-NÄKYMÄT KUN TUODAAN TYHJÄT JUTUT, esim. kurssiaikataulu
-
-
 LISÄTTYJEN TIEDOSTOJEN POISTO KUN VIETY TOISEEN KURSSIIN?
 * tiedoston poisto
 * kansion poisto
@@ -15,11 +7,16 @@ LISÄTTYJEN TIEDOSTOJEN POISTO KUN VIETY TOISEEN KURSSIIN?
 -> ÄLÄ POISTA TIEDOSTOA, JOS SE ON VIELÄ JOSSAIN
 
 
+UUS NOPEEMPI HAKUTOIMINTO:  ks. testaasearch.php + backend_search.php
+
+
+TEHTÄVÄLISTAKIN PITÄÄ PYSTYÄ TUOMAAN NIINKU PALAUTUS
+
 
 ****************************************************************************
 
 
-evästeet, google analytics
+evästeet, google analytics, tsekkaa cm8solutions.fi -> ONKO VIELÄKIN!?
 
 
 

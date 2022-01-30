@@ -161,10 +161,10 @@ function myFunction(y) {
                     $akt = $rowa[keskakt];
                 }
                 if ($akt != 0) {
-                    echo '<div class="cm8-margin-top"></div>';
-                    echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 0.8em; padding:2px 4px"></form>';
-                    echo '<div class="cm8-margin-top"></div>';
-                }
+              echo '<div class="cm8-margin-top"></div>';
+                echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää Keskustelu-osio" class="myButton8" role="button" style="font-size: 0.8em; padding:4px 6px"></form>';
+                echo '<div class="cm8-margin-top"></div>';
+                    }
             }
             echo' </div></nav>';
         }

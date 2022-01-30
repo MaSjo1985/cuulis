@@ -451,8 +451,8 @@ function myFunction(y) {
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
             echo '<br><h2 style="padding-top: 20px; display: inline-block">AIKATAULU</h2>';
-            echo'<br><br><p id="ohje">Halutessasi voit lisätä tähän aikataulun.</p>';
-            echo' <form action="aktivoiaikataulu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää aikataulu" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+
+            echo' <form action="aktivoiaikataulu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää aikataulu" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 1em"></form>';
         }
     } else {
 

@@ -91,7 +91,7 @@ function myFunction(y) {
 
         echo'</div>';
 
-        echo'<div class="cm8-twothird" style="padding-top: 0px;">';
+    
 
 
 
@@ -103,12 +103,19 @@ function myFunction(y) {
 
 
         if ($onkoprojekti->num_rows == 0) {
-                   echo'<form action="uusikyselyeka.php" method="post" style="margin-top: 40px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää kyselylomake" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
+               echo'<div class="cm8-half" style="padding-top: 60px;">';
+
+             echo'<div style="text-align: center; margin:0px; padding:0px">';
+                   echo'<form action="uusikyselyeka.php" method="post" style="margin-right: 100px; display:inline-block" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Kyselylomake-osio" title="Lisää Kyselylomake-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
         
+                          echo'<form action="tuokyselylomake.php" method="get" style="display: inline-block; "><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '>';
+  echo'<button  name="painike" title="Tuo kyselylomake" class="myButton8"  style="font-size: 1em;"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu Kyselylomake-osio </button>';
+  echo'</form>';
+                   echo'</div>';
             } else {
 
 
-
+    echo'<div class="cm8-twothird" style="padding-top: 0px;">';
 //INFORUUTU
             if (!$haeinfo = $db->query("select distinct kyselyinfo as info from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -123,7 +130,7 @@ function myFunction(y) {
 
         if ($onkoprojekti->num_rows != 0) {
             echo'<div style="float: right">';
-            echo'<form action="varmistuskysely.php" method="post" style="margin-top: 0px; margin-bottom: 20px"><button class="isoroskis" title="Poista kysely"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista kyselylomake</b></i></button></form>';
+            echo'<form action="varmistuskysely.php" method="post" style="margin-top: 0px; margin-bottom: 20px"><button class="isoroskis" title="Poista Kyselylomake-osio"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista Kyselylomake-osio</b></i></button></form>';
         echo'</div><br>';
             
         }
@@ -305,7 +312,7 @@ function myFunction(y) {
             if ($haearvioinnit->num_rows != 0) {
                 echo'<form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Muokkaa"  title ="Muokkaa kyselylomaketta" class="myButton9"  role="button"  style="padding:2px 4px; margin-bottom: 20px; margin-top: 20px"></form>';
             } else {
-                echo'<form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="&#9998 Lisää kysymyksiä"  title ="Lisää kysymyksiä" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 1em"></form>';
+                echo'<form action="uusikyselyvarmistus.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="submit" name="painike" value="+ Lisää kysymyksiä"  title ="Lisää kysymyksiä" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 1em"></form>';
             }
             echo'<div class="cm8-responsive" style="padding-right: 10px">';
             echo '<table id="mytable" class="cm8-uusitableia" style="table-layout:fixed; max-width: 100%;"> ';

@@ -91,7 +91,7 @@ function myFunction(y) {
         if ($onkoprojekti->num_rows != 0) {
 
 
-            echo'<form action="varmistusia.php" method="post" style="float: right; margin-right: 100px"><button class="isoroskis" title="Poista itsearviointiosio"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista itsearviointiosio</b></i></button></form>';
+            echo'<form action="varmistusia.php" method="post" style="float: right; margin-right: 100px"><button class="isoroskis" title="Poista Itsearviointi-osio"><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista Itsearviointi-osio</b></i></button></form>';
         }
 
         if ($onkoprojekti->num_rows == 0) {
@@ -100,7 +100,10 @@ function myFunction(y) {
 
 
             echo'<div style="text-align: center">';
-            echo'<form action="uusi_ia.php" method="post" style="display: inline-block; margin-right: 60px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikelu" value="+ Lisää itsearviointiosio" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+            echo'<form action="uusi_ia.php" method="post" style="display: inline-block; margin-right: 60px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikelu" value="+ Lisää Itsearviointi-osio" title="Lisää Itsearviointi-osio" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 1em"></form>';
+               echo'<form action="tuoia.php" method="get" style="display: inline-block; margin-bottom: 40px"><input type="hidden" name="mihin" value="uusi">';
+          echo'<button  name="painike" title="Tuo itsearviointi" class="myButton8" style="font-size: 1em"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin luotu Itsearviointi-osio </button>';
+  echo'</form>';
             echo'</div>';
         } else {
 

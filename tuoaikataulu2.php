@@ -91,7 +91,12 @@ function myFunction(y) {
 
         echo'<br><a href="tuoaikataulu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
-        if (!$haevika = $db->query("select distinct MAX(jarjestys) as jarjestys from kurssiaikataulut where kurssi_id='" . $_SESSION[KurssiId] . "'")) {
+          if (!$haeaikataulu = $db->query("select distinct * from kurssiaikataulut where kurssi_id='" . $_GET[id] . "' ORDER BY jarjestys")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        
+        if($haeaikataulu->num_rows!=0){
+                  if (!$haevika = $db->query("select distinct MAX(jarjestys) as jarjestys from kurssiaikataulut where kurssi_id='" . $_SESSION[KurssiId] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -110,11 +115,11 @@ function myFunction(y) {
         echo'<div class="cm8-responsive"  >';
         echo '<table id="mytable" class="cm8-uusitable" >  <thead>';
 
+        //Tää pitää piilottaa, jos ei oo
+        
         echo '<tr style="border: 1px solid grey; background-color: #48E5DA" id="palaa"><th style="border: 1px solid grey">Ajankohta</th><th style="border: 1px solid grey ">Aihe</th><th style=" border: 1px solid grey">Lisätietoja</th></tr></thead><tbody>';
 
-        if (!$haeaikataulu = $db->query("select distinct * from kurssiaikataulut where kurssi_id='" . $_GET[id] . "' ORDER BY jarjestys")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
+      
 
         while ($rowt = $haeaikataulu->fetch_assoc()) {
 
@@ -153,6 +158,11 @@ function myFunction(y) {
         echo'</div>';
 
         echo'</form>';
+        }
+        else{
+            echo'<br><br><p style="color: #c7ef00; font-weight: bold;">Kurssilla/opintojaksolla ei ole aikataulua.</p>';
+        }
+  
         echo'</div>';
 
         echo'</div>';

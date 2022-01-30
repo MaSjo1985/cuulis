@@ -160,7 +160,7 @@ function myFunction(y) {
 
         echo'<div class="cm8-margin-top"></div>';
         if ($_SESSION["Rooli"] <> 'opiskelija') {
-            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
+            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää  Tehtävälista-osio" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
         }
 
         echo'</div>';
@@ -210,7 +210,7 @@ function myFunction(y) {
 
         if ($onkoprojekti->num_rows == 0) {
 
-            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää  Tehtävälista-osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
             echo'<br><br>Tähän on mahdollista luoda Tehtävälista-projekteja, jotka sisältävät kurssin/opintojakson suorittamiseen liittyvän tehtäväluettelon, johon opiskelijat voivat kirjata suorituksiaan.<br><br>';
         } else if ($onkoprojekti->num_rows > 0 && !isset($_GET[i])) {
             echo'<br>Valitse oheisesta valikosta haluamasi Tehtävälista-osio.<br><br>';

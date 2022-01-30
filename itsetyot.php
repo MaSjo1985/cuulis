@@ -467,7 +467,7 @@ function myFunction(y) {
 
         echo'<div class="cm8-margin-top"></div>';
         if ($_SESSION["Rooli"] <> 'opiskelija') {
-            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää uusi" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
+            echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Tehtävälista-osio" class="myButton8"  role="button"  style="padding:2px 4px"></form><br><br>';
         }
 
         echo'</div>';
@@ -1211,7 +1211,7 @@ echo'</div>';
                 if ($haetehtavat->num_rows != 0) {
                     echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa tehtävälistaa" title="Muokkaa tehtävälistaa" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                 } else {
-                    echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Lisää tehtäviä" class="myButton8"  role="button" title="Lisää tehtäviä" style=" padding:2px 4px"></form>';
+                    echo'<br><br><form action="testaamuokkaus.php" method="get"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Lisää tehtäviä" class="myButton8"  role="button" title="Lisää tehtäviä" style=" padding:4px 6px; font-size:1em"></form>';
                 }
             }
             echo'<input type="hidden" id="monta" value=' . $otmaara . '>';

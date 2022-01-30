@@ -218,7 +218,7 @@ function myFunction(y) {
             }
             if ($akt != 0) {
                 echo '<div class="cm8-margin-top"></div>';
-                echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 0.8em; padding:4px 6px"></form>';
+                echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää Keskustelu-osio" class="myButton8" role="button" style="font-size: 0.8em; padding:4px 6px"></form>';
                 echo '<div class="cm8-margin-top"></div>';
             }
         }
@@ -353,7 +353,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
             $akt = $rowa[keskakt];
         }
         if ($akt == 0) {
-            echo'<br><p id="ohje">Ei keskusteluja.</p><form action="aktivoikeskustelu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää keskustelu" class="myButton8" role="button" style="font-size: 1em; padding:4px 6px"></form></div>';
+            echo'<form action="aktivoikeskustelu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää Keskustele-osio" title="Lisää Keskustele-osio" class="myButton8" role="button" style="font-size: 1em; padding:4px 6px"></form></div>';
         } else if ($akt == 1 && !isset($_GET[r]) && !$onyksi) {
             echo'Valitse haluamasi keskustelu';
         } else if ($akt == 1 && !isset($_GET[r]) && $onyksi) {

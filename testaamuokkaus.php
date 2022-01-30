@@ -412,7 +412,9 @@ function myFunction(y) {
             $onko = $haetehtavat->num_rows;
 
             echo'<div style="text-align: center">';
-            echo'<form action="tuotehtavat.php" method="get" style="display: inline-block; font-size: 1.1em"><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9850;&nbsp&nbsp Tuo aiemmin valittuja tehtäviä" class="myButtonTuo"  role="button"  ></form><br>';
+            echo'<form action="tuotehtavat.php" method="get" style="display: inline-block; font-size: 1.1em"><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '>';
+              echo'<button  name="painike" title="Tuo tehtäviä" class="myButtonTuo"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo aiemmin valittuja tehtäviä</button>';
+  echo'</form>';
             echo'</div>';
             echo'<form name="myForm" action="testi.php" method="post">';
             if (!$haetehtavat2 = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipid . "' AND aihe=0")) {

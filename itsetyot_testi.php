@@ -17,8 +17,6 @@ include("yhteys.php");
 include("tsekkaa_oikeus.php");
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
-} else {
-    tsekkaa_oikeus($_SESSION["KurssiId"]);
 }
 
 if (isset($_SESSION["Kayttajatunnus"])) {

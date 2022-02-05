@@ -167,17 +167,22 @@ function myFunction(y) {
 
         header("location: ryhmatyot.php?r=" . $pid);
     } else {
-        if (file_exists($nimi)) {
-            unlink($nimi);
-        }
+       
+        
+            if (!$resultmuut = $db->query("select distinct * from open_palautustiedosto where id <> '" . $_GET[id] . "' AND tallennettunimi='" . $nimi . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
 
-        if (file_exists($nimi)) {
-            echo'<br>Tiedostoa ei pystytty poistamaan! <br><br><a href="ryhmatyot.php?r=' . $_GET[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
-        } else {
+            if ($resultmuut->num_rows == 0) {
+
+                if (file_exists($nimi)) {
+                    unlink($nimi);
+                }
+            }
             $db->query("delete from open_palautustiedosto where id = '" . $_GET[id] . "'");
 
             header("location: ryhmatyot.php?r=" . $pid);
-        }
+        
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

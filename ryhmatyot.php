@@ -28,9 +28,7 @@ session_start(); // ready to go!
 
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
-} else {
-    tsekkaa_oikeus($_SESSION["KurssiId"]);
-}
+} 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
 

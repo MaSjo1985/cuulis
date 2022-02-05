@@ -38,7 +38,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             }
         }
     }
-    
+
     if (!$resultope = $db->query("select distinct * from open_palautustiedosto where projekti_id = '" . $_GET[id] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
@@ -46,26 +46,26 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     while ($rowope = $resultope->fetch_assoc()) {
         $nimi = $rowope[tallennettunimi];
         $linkki = $rowope[linkki];
-        $id2=$rowope[id];
-       
-    
-    if ($linkki == 1) {
-        $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
+        $id2 = $rowope[id];
 
-    } else {
-        if (file_exists($nimi)) {
-            unlink($nimi);
-        }
 
-        if (file_exists($nimi)) {
-            echo'<br>Tiedostoa ei pystytty poistamaan! <br><br><a href="ryhmatyot.php?r=' . $_GET[id] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
-        } else {
+        if ($linkki == 1) {
             $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
+        } else {
 
-      
+            if (!$resultmuut = $db->query("select distinct * from open_palautustiedosto where id <> '" . $id2 . "' AND tallennettunimi='" . $nimi . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            if ($resultmuut->num_rows == 0) {
+
+                if (file_exists($nimi)) {
+                    unlink($nimi);
+                }
+            }
+
+            $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
         }
-    }
-    
     }
 
     if (!$result = $db->query("select distinct * from ryhmat2 where projekti_id = '" . $_GET[id] . "'")) {

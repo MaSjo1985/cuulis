@@ -12,13 +12,13 @@ echo'<!DOCTYPE html><html>
 
 include("yhteys.php");
 include("tsekkaa_oikeus.php");
+
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
-} else {
-    tsekkaa_oikeus($_SESSION["KurssiId"]);
 }
 
 if (isset($_SESSION["Kayttajatunnus"])) {
+
 
     $startkoko = microtime(true);
     include("diagrammit.php");
@@ -27,22 +27,37 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     include("diagrammit3.php");
     include("pie.php");
 
-    if (!$haeprojekti = $db->query("select * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
+    if (!$result0 = $db->query("select distinct id from itseprojektit where kurssi_id='" . $_SESSION[KurssiId] . "' AND eka_auki = 1")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
+    if ($result0->num_rows != 0) {
+        while ($rowe = $result0->fetch_assoc()) {
+            $ekaid = $rowe[id];
+        }
 
-    if ($haeprojekti->num_rows == 1 && !isset($_GET[i])) {
+        if ($_GET[i] != $ekaid && !isset($_GET[valittu])) {
+            header('location: itsetyot.php?i=' . $ekaid);
+        }
+    } else {
 
-        if (!$hae_eka = $db->query("select MIN(id) as id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
+        if (!$haeprojekti = $db->query("select * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
-        while ($rivieka = $hae_eka->fetch_assoc()) {
-            $eka_id = $rivieka[id];
-        }
+        if ($haeprojekti->num_rows == 1 && !isset($_GET[i])) {
 
-        header('location: itsetyot.php?i=' . $eka_id);
+            if (!$hae_eka = $db->query("select MIN(id) as id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+
+            while ($rivieka = $hae_eka->fetch_assoc()) {
+                $eka_id = $rivieka[id];
+            }
+
+            header('location: itsetyot.php?i=' . $eka_id);
+        }
     }
+
 
     if (isset($_GET[i])) {
 //        if (!$haelinkki = $db->query("select distinct * from opiskelijankirja where itseprojekti_id='" . $_GET[i] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'")) {
@@ -247,68 +262,66 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
 
-while ($row8 = $result8->fetch_assoc()) {
-    echo '<div class="cm8-quarter" style="margin-top: 0px; padding-top: 0px;margin-left: 0px"; padding-left: 10px">';
-    echo'<h1 style="font-size: 1.2em; padding-top: 0px; padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</a></h1>
+    while ($row8 = $result8->fetch_assoc()) {
+        echo '<div class="cm8-quarter" style="margin-top: 0px; padding-top: 0px;margin-left: 0px"; padding-left: 10px">';
+        echo'<h1 style="font-size: 1.2em; padding-top: 0px; padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</a></h1>
   <em style="font-style: normal; font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</em><br>';
-    echo'<img src="/' . $row8[kuva] . '" style="margin-left: 10px; padding-top: 10px; height: 80px; max-width: 100px; margin-bottom: 1px">';
+        echo'<img src="/' . $row8[kuva] . '" style="margin-left: 10px; padding-top: 10px; height: 80px; max-width: 100px; margin-bottom: 1px">';
 
-    echo'</div>';
+        echo'</div>';
 
-    if ($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin' || $_SESSION["Rooli"] == 'opiskelija') {
-        $originalDate = $_SESSION["Koepvm"];
-        $kello = $_SESSION["Koeaika"];
-        $_SESSION["Alkupvm"] = date("d.m.Y", strtotime($_SESSION["Alkupvm"]));
-        $_SESSION["Loppupvm"] = date("d.m.Y", strtotime($_SESSION["Loppupvm"]));
-        $newDate = date("Y-m-d", strtotime($originalDate));
-        $koe = $newDate . ' ' . $kello;
-        $nyt = date("Y-m-d H:i");
+        if ($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin' || $_SESSION["Rooli"] == 'opiskelija') {
+            $originalDate = $_SESSION["Koepvm"];
+            $kello = $_SESSION["Koeaika"];
+            $_SESSION["Alkupvm"] = date("d.m.Y", strtotime($_SESSION["Alkupvm"]));
+            $_SESSION["Loppupvm"] = date("d.m.Y", strtotime($_SESSION["Loppupvm"]));
+            $newDate = date("Y-m-d", strtotime($originalDate));
+            $koe = $newDate . ' ' . $kello;
+            $nyt = date("Y-m-d H:i");
 
-        if ($_SESSION["Sallicd"] == 1 && date("Y-m-d H:i") <= $koe && $originalDate != '' && $kello != '') {
-            echo'<div class="cm8-half" style="text-align: center;">';
+            if ($_SESSION["Sallicd"] == 1 && date("Y-m-d H:i") <= $koe && $originalDate != '' && $kello != '') {
+                echo'<div class="cm8-half" style="text-align: center;">';
 
-            echo'<div style="padding-top: 0px; height: 60px; text-align: center; display: inline-block; ">';
+                echo'<div style="padding-top: 0px; height: 60px; text-align: center; display: inline-block; ">';
 
-            echo'<H2 style="padding-top: 0px;font-size: 1.4em; color: #f7f9f7; display: inline-block; margin-right: 80px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
-            echo'<br><br></div>';
+                echo'<H2 style="padding-top: 0px;font-size: 1.4em; color: #f7f9f7; display: inline-block; margin-right: 80px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
+                echo'<br><br></div>';
 
 
-            echo'<div class="demo" data-date="' . $newDate . ' ' . $kello . '" style="padding-top: 0px; height: 60px; text-align: center; display: inline-block; ">';
+                echo'<div class="demo" data-date="' . $newDate . ' ' . $kello . '" style="padding-top: 0px; height: 60px; text-align: center; display: inline-block; ">';
 
-            echo'<script language="javascript" type="text/javascript">
+                echo'<script language="javascript" type="text/javascript">
 	count();
 </script>';
-            echo'<p style="font-size: 0.8em; margin-top: 10px"> (Koe on ' . $originalDate . ' klo ' . $kello . ')</p></div>';
-            echo'<br>';
-            echo'<br>';
-        } else if ($_SESSION["Sallicd"] == 1 && date("Y-m-d H:i") > $koe && $originalDate != '' && $kello != '') {
-            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
+                echo'<p style="font-size: 0.8em; margin-top: 10px"> (Koe on ' . $originalDate . ' klo ' . $kello . ')</p></div>';
+                echo'<br>';
+                echo'<br>';
+            } else if ($_SESSION["Sallicd"] == 1 && date("Y-m-d H:i") > $koe && $originalDate != '' && $kello != '') {
+                echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
 
-            echo'<p style="font-size: 0.7em; margin-top: 15px"><em>(Koe oli ' . $originalDate . ' klo ' . $kello . ')</em></p>';
-        } else {
-            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">(' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . ')</b></H2>';
-        }
+                echo'<p style="font-size: 0.7em; margin-top: 15px"><em>(Koe oli ' . $originalDate . ' klo ' . $kello . ')</em></p>';
+            } else {
+                echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">(' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . ')</b></H2>';
+            }
             if (!$tulosP = $db->query("select distinct * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND opettaja_id='" . $_SESSION["Id"] . "'")) {
-        die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
-    }
-    if (!$onkoadmin = $db->query("select distinct * from kayttajat where id='" . $_SESSION["Id"] . "' AND rooli='admin'")) {
-        die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
-    }
+                die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
+            }
+            if (!$onkoadmin = $db->query("select distinct * from kayttajat where id='" . $_SESSION["Id"] . "' AND rooli='admin'")) {
+                die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
+            }
 
-    if ($tulosP->num_rows != 0 || $onkoadmin->num_rows == 1) {
+            if ($tulosP->num_rows != 0 || $onkoadmin->num_rows == 1) {
 
-        if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
-    
-            echo'<form action="muokkaakurssi.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '> <input type="submit" value="&#9998 Muokkaa tietoja" title="Muokkaa tietoja" class="munNappula3"  role="button"></form>';
-        
-            
-        } 
-    }
-    }
+                if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
 
-    echo'</div><div class="cm8-quarter" > ';
-    echo'<a href="sulje_kurssisivu.php" role="button" > ';
-echo'<div class="close-container" style="float: right">
+                    echo'<form action="muokkaakurssi.php" method="post" ><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '> <input type="submit" value="&#9998 Muokkaa tietoja" title="Muokkaa tietoja" class="munNappula3"  role="button"></form>';
+                }
+            }
+        }
+
+        echo'</div><div class="cm8-quarter" > ';
+        echo'<a href="sulje_kurssisivu.php" role="button" > ';
+        echo'<div class="close-container" style="float: right">
  
 <div class="leftright"></div>
   <div class="rightleft"></div>
@@ -316,40 +329,39 @@ echo'<div class="close-container" style="float: right">
  <label class="close suljelabel" style="margin-top: 50px">Sulje kurssisivu</label>  
 
 </div>';
-echo'</a>';
+        echo'</a>';
 
-    if (!$tulosP = $db->query("select distinct * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND opettaja_id='" . $_SESSION["Id"] . "'")) {
-        die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
-    }
-    if (!$onkoadmin = $db->query("select distinct * from kayttajat where id='" . $_SESSION["Id"] . "' AND rooli='admin'")) {
-        die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
-    }
+        if (!$tulosP = $db->query("select distinct * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND opettaja_id='" . $_SESSION["Id"] . "'")) {
+            die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
+        }
+        if (!$onkoadmin = $db->query("select distinct * from kayttajat where id='" . $_SESSION["Id"] . "' AND rooli='admin'")) {
+            die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
+        }
 
 
         if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
-        echo'<div class="close-container" style="float: right; margin-top: 80px; margin-right: 40px">';
+            echo'<div class="close-container" style="float: right; margin-top: 80px; margin-right: 40px">';
             echo'<form action="vaihda.php" method="post"><input type="hidden" name="url" value="' . $url . '" ><input type="hidden" name="arvo" value="vaihda"> <input type="submit" value="Opiskelijanäkymä" class="munNappula"  role="button"></form>';
-           echo'</div>';
+            echo'</div>';
         } else if ($_SESSION["Rooli"] == 'opiskelija' && $_SESSION["vaihto"] == 1) {
- echo'<div class="close-container" style="float: right; margin-top: 65px; margin-right: 80px; margin-bottom: 10px">';
-            
+            echo'<div class="close-container" style="float: right; margin-top: 65px; margin-right: 80px; margin-bottom: 10px">';
+
             echo'<br><form action="vaihda.php" method="post"><input type="hidden" name="url" value="' . $url . '" ><input type="hidden" name="arvo" value="pois"> <input type="submit" value="Poistu opiskelijanäkymästä" class="munNappula"  role="button"></form>';
-                   echo'</div>';
-            
+            echo'</div>';
         }
-    
-
-    echo'</div>';
-    echo'</div>';
 
 
-    echo'<div class="cm8-container4" id="progdivi" style="padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; border: none; ">';
+        echo'</div>';
+        echo'</div>';
 
-    echo'<div id="myprogress2"></div>';
-    echo'<div id="myprogress"></div>';
-    echo'</div>';
-    echo'</div>';
-}
+
+        echo'<div class="cm8-container4" id="progdivi" style="padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; border: none; ">';
+
+        echo'<div id="myprogress2"></div>';
+        echo'<div id="myprogress"></div>';
+        echo'</div>';
+        echo'</div>';
+    }
 
     echo'<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -461,7 +473,7 @@ function myFunction(y) {
                 echo'<a href="itsetyot.php?i=' . $id . '" class="btn-info3-valittu"  style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
             } else {
 
-                echo'<a href="itsetyot.php?i=' . $id . '" class="btn-info3"  style="font-size: 0.9em; margin-right: 20px; margin-bottom: 5px;  padding: 6px 6px 4px 20px">' . $kuvaus . '</a>';
+                echo'<a href="itsetyot.php?i=' . $id . '&valittu=1" class="btn-info3"  style="font-size: 0.9em; margin-right: 20px; margin-bottom: 5px;  padding: 6px 6px 4px 20px">' . $kuvaus . '</a>';
             }
         }
 
@@ -505,52 +517,52 @@ function myFunction(y) {
 //        echo' <button id="klik2"  class="myButtonOhjeA" title="Avaa digikirja">+ Avaa digikirja</button></p>';
 //    }
     if (!$onkoprojekti = $db->query("select distinct * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-        if ($onkoprojekti->num_rows != 0) {
-             if (!$haetaulu = $db->query("select distinct taulu from itseprojektit where id='" . $_GET[i] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
-    while ($rowt = $haetaulu->fetch_assoc()) {
-        $taulu = $rowt[taulu];
-    }
-    $taulu = htmlspecialchars_decode($taulu);
+    if ($onkoprojekti->num_rows != 0) {
+        if (!$haetaulu = $db->query("select distinct taulu from itseprojektit where id='" . $_GET[i] . "'")) {
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        }
+        while ($rowt = $haetaulu->fetch_assoc()) {
+            $taulu = $rowt[taulu];
+        }
+        $taulu = htmlspecialchars_decode($taulu);
 
 
-    if (($taulu == '' || $taulu == '<div><br></div>' || $taulu == '<br>') && $_SESSION[Rooli] == 'opiskelija') {
-        
-    } else if (($taulu == '' || $taulu == '<div><br></div>' || $taulu == '<br>') && ($_SESSION[Rooli] != 'opiskelija' || $_SESSION[vaihto] != 1)) {
-        echo'<div class="cm8-responsive cm8-taulu" style="font-size: 0.6em; height: 80px; width: 15%; z-index: 1001; position: fixed; top: 60%; right: 2%;">';
+        if (($taulu == '' || $taulu == '<div><br></div>' || $taulu == '<br>') && $_SESSION[Rooli] == 'opiskelija') {
+            
+        } else if (($taulu == '' || $taulu == '<div><br></div>' || $taulu == '<br>') && ($_SESSION[Rooli] != 'opiskelija' || $_SESSION[vaihto] != 1)) {
+            echo'<div class="cm8-responsive cm8-taulu" style="font-size: 0.6em; height: 80px; width: 15%; z-index: 1001; position: fixed; top: 60%; right: 2%;">';
 
-        echo'<form action="aktivoiaihe.php" method="post" style="display: inline-block; margin-top: 0px; margin-bottom: 5px;  left: 1%"><input type="hidden" name="ipid" value=' . $_GET[i] . '><input type="submit" name="painikem" value="&#9998" title="Muokkaa sisältöä" class="muokkausN"  role="button" style="font-size: 0.8em; padding: 0px 1px 1.5px 1px; margin-left: 0px; margin-bottom: 4px"></form>';
-
-        echo '</form>';
-
-
-        echo '<br><br><em>Tähän voi lisätä ilmoitusasioita.</em>';
-
-        echo'</div>';
-    } else {
-
-        echo'<div class="cm8-responsive cm8-taulu" style="font-size:0.8em;max-width: 15%; z-index: 1001; position: fixed; top: 60%; right: 1%;">';
-        if ($_SESSION[Rooli] != 'opiskelija' || ($_SESSION[vaihto] != 1)) {
             echo'<form action="aktivoiaihe.php" method="post" style="display: inline-block; margin-top: 0px; margin-bottom: 5px;  left: 1%"><input type="hidden" name="ipid" value=' . $_GET[i] . '><input type="submit" name="painikem" value="&#9998" title="Muokkaa sisältöä" class="muokkausN"  role="button" style="font-size: 0.8em; padding: 0px 1px 1.5px 1px; margin-left: 0px; margin-bottom: 4px"></form>';
 
-            echo '</form><br>';
+            echo '</form>';
+
+
+            echo '<br><br><em>Tähän voi lisätä ilmoitusasioita.</em>';
+
+            echo'</div>';
         } else {
+
+            echo'<div class="cm8-responsive cm8-taulu" style="font-size:0.8em;max-width: 15%; z-index: 1001; position: fixed; top: 60%; right: 1%;">';
+            if ($_SESSION[Rooli] != 'opiskelija' || ($_SESSION[vaihto] != 1)) {
+                echo'<form action="aktivoiaihe.php" method="post" style="display: inline-block; margin-top: 0px; margin-bottom: 5px;  left: 1%"><input type="hidden" name="ipid" value=' . $_GET[i] . '><input type="submit" name="painikem" value="&#9998" title="Muokkaa sisältöä" class="muokkausN"  role="button" style="font-size: 0.8em; padding: 0px 1px 1.5px 1px; margin-left: 0px; margin-bottom: 4px"></form>';
+
+                echo '</form><br>';
+            } else {
+                echo'<br>';
+            }
+
+            echo $taulu;
+
+
             echo'<br>';
+
+            echo'</div>';
         }
-
-        echo $taulu;
-
-
-        echo'<br>';
-
-        echo'</div>';
     }
-        }
 
-   
+
 
 
 
@@ -568,7 +580,7 @@ function myFunction(y) {
 
         if ($onkoprojekti->num_rows == 0) {
 
-                 echo'<br><p id="ohje">Tähän on mahdollista luoda osio, jossa opiskelijat voivat kirjata suorituksiaan.</p>';
+            echo'<br><p id="ohje">Tähän on mahdollista luoda osio, jossa opiskelijat voivat kirjata suorituksiaan.</p>';
             echo'<div class="cm8-margin-top"></div>';
             echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Tehtävälista-osio" class="myButton8"  role="button"  style="font-size: 1em; padding:4px 6px"></form>';
         } else if ($onkoprojekti->num_rows > 0 && !isset($_GET[i])) {
@@ -584,17 +596,36 @@ function myFunction(y) {
                 $ipid = $rowP[id];
                 $kuvaus = $rowP[kuvaus];
 
-
-                echo'<h6tiedosto id="' . $ipid . '" style="margin-top: 10px;margin-right: 40px; padding: 6px 10px 6px 20px; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus;
-                
-                echo'<form action="muokkaaitseprojektieka.php" method="post"  style="margin-left: 60px;display: inline-block; "><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"></form>';
+                echo'<div class="cm8-half" style="margin: 0px 0px 0px 0px; padding: 0px">';
+                echo'<h6tiedosto id="' . $ipid . '" style="width: 100%; margin-right: 40px;padding: 6px 10px 6px 20px; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus;
+                echo'<div style=" display: inline-block; float: right">';
+                echo'<form action="muokkaaitseprojektieka.php" method="post"  style="margin-right: 0px; display: inline-block; "><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"></form>';
                 echo'<form action="varmistusitseprojekti.php" method="post" style="display: inline-block;"><input type="hidden" name="id" value=' . $ipid . '><button class="roskis" title="Poista Kurssitehtävä-projekti"  ><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista</b></i></button></form>';
+                echo'</div>';
+
+                echo'</h6tiedosto></div>';
+                echo'<div class="cm8-half" style="margin: 0px; padding: 5px 0px 0px 40px; font-size: 0.7em">';
+                echo'<p style="padding: 0px; margin: 0px;">Avataanko tämä osio automaattisesti?</p><br>';
+                if (!$result = $db->query("select distinct eka_auki from itseprojektit where id = '" . $ipid . "' AND eka_auki = 1")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+                echo'<form id="form2" name="form2" style="font-size: 0.9em;margin:0px; padding: 0px" method="post" action="ekatehtavaosioauki.php">';
+                if ($result->num_rows != 0) {
 
 
-                echo'</h6tiedosto>';
+                    echo'<input type="radio" onchange="this.form.submit();" name="auki" value="1" checked>&nbsp Kyllä &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0">&nbsp Ei';
+                } else {
+                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="1" >&nbsp Kyllä &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+                    echo'<input type="radio" name="auki" onchange="this.form.submit();" value="0" checked>&nbsp Ei';
+                }
+                echo'<input type="hidden" name="ipid" value="' . $ipid . '">';
+                echo'</form>';
 
-                
-                
+                echo'</div></div>';
+
+
+                echo'<div class="cm8-threequarter" style="width: 65%; padding-top: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px; ">';
 
                 if (!$haeinfo = $db->query("select distinct info, palautus_sulkeutuu, palautus_suljettu from itseprojektit where id='" . $ipid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -696,11 +727,9 @@ function myFunction(y) {
                     tuoMalli($ipid);
                     echo'<form action="naytad.php" method="post" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="piilota"  value="- Piilota ympyrädiagrammi opiskelijoiden näkyvistä" title="Piilota ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form>';
                 } else {
-                  
+
                     echo'<b style="font-size: 1em">Näytetäänkö opiskelijoille sektoridiagrammi, joka havainnollistaa tehtävien teossa edistymistä?</b>';
-                   echo'<br><br><form action="naytad.php" method="post" style="" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="nayta"  value="+ Näytä ympyrädiagrammi opiskelijoille" title="Näytä ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                 
-                    
+                    echo'<br><br><form action="naytad.php" method="post" style="" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="nayta"  value="+ Näytä ympyrädiagrammi opiskelijoille" title="Näytä ympyrädiagrammi" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
                 }
                 echo'</div>';
 
@@ -713,12 +742,10 @@ function myFunction(y) {
                 }
 
                 if ($minimi == '') {
-                                     echo'<br><b style="font-size: 1em">Asetetaanko tehtäville minimiraja?</b>';
-             
-                
+                    echo'<br><b style="font-size: 1em">Asetetaanko tehtäville minimiraja?</b>';
+
+
                     echo'<form action="muokkaaminimia.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta tehtäville minimi%-raja" title="Aseta tehtäville minimi%-raja" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                
-                    
                 } else {
 
                     echo'<br><p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtävien minimi%-raja on: ' . $minimi . ' %</p>';
@@ -730,49 +757,44 @@ function myFunction(y) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
-                if((!$pisteetvaikuttaa && $pisteet) || !$pisteet){
-                             if ($onkorivi2->num_rows == 0) {
-                                 
-                                 echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
-                   echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                
-                } else {
-                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; ">';
-                    echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
+                if ((!$pisteetvaikuttaa && $pisteet) || !$pisteet) {
+                    if ($onkorivi2->num_rows == 0) {
 
-                    while ($row = $onkorivi2->fetch_assoc()) {
+                        echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
+                        echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                    } else {
+                        echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; ">';
+                        echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
 
-                        echo'<tr><td><b>Tehtäviä tehty: </b>' . $row[osuus] . ' %</td>';
-                        echo'<td><b>Lisäpisteitä: </b>' . $row[pisteet] . ' pistettä</td></tr>';
+                        while ($row = $onkorivi2->fetch_assoc()) {
+
+                            echo'<tr><td><b>Tehtäviä tehty: </b>' . $row[osuus] . ' %</td>';
+                            echo'<td><b>Lisäpisteitä: </b>' . $row[pisteet] . ' pistettä</td></tr>';
+                        }
+
+                        echo'</table>';
+                        echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
                     }
-
-                    echo'</table>';
-                      echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
-                
-                }
-                }
-                 else{
-                             if ($onkorivi2->num_rows == 0) {
-                                      echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
-                   echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                
                 } else {
-                    echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80% ">';
-                    echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
+                    if ($onkorivi2->num_rows == 0) {
+                        echo'<b style="font-size: 1em">Annetaanko tehtävistä lisäpisteitä?</b>';
+                        echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="+ Aseta lisäpisterajat" title="Aseta lisäpisterajat" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                    } else {
+                        echo'<table  class="tehtavatauluope" style="font-size: 0.9em; display: inline-block; width: 80% ">';
+                        echo'<tr ><th colspan="2"  style="border:none; padding: 10px">Lisäpisteiden muodostuminen</th></tr>';
 
-                    while ($row = $onkorivi2->fetch_assoc()) {
+                        while ($row = $onkorivi2->fetch_assoc()) {
 
-                        echo'<tr><td style="padding-right: 60px; width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus: </b>' . $row[osuus] . ' %</td>';
-                        echo'<td style="width: 30%"><b>Lisäpisteitä: </b>' . $row[pisteet] . ' p</td></tr>';
+                            echo'<tr><td style="padding-right: 60px; width: 70%"><b>Tehtyjen tehtävien pistemäärän osuus: </b>' . $row[osuus] . ' %</td>';
+                            echo'<td style="width: 30%"><b>Lisäpisteitä: </b>' . $row[pisteet] . ' p</td></tr>';
+                        }
+
+                        echo'</table>';
+                        echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
                     }
+                }
 
-                    echo'</table>';
-                      echo'<form action="muokkaalisapisteita.php" method="get" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisteiden rajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form>';
-                
-                }
-                }
-       
-              
+
                 echo'</div>';
 
 
@@ -782,12 +804,10 @@ function myFunction(y) {
                 //pisteytyshässäkkä
                 echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
                 if (!$pisteet) {
-                  
-                   
+
+
                     echo'<b style="font-size: 1em">Pisteytetäänkö tehtävät?</b>';
-                echo'<form action="aktivoipisteytys.php" method="post" style="display:inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="+ Ota tehtävien pisteytys käyttöön" title="+ Ota tehtävien pisteytys käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                       
-                    
+                    echo'<form action="aktivoipisteytys.php" method="post" style="display:inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="+ Ota tehtävien pisteytys käyttöön" title="+ Ota tehtävien pisteytys käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
                 } else {
 
                     echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Tehtävien pisteytys on käytössä.</p>';
@@ -799,7 +819,7 @@ function myFunction(y) {
                     echo'<form action="aktivoipisteytys.php" method="post" style="margin-top: 10px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep"  value="x &nbsp Poista pisteytys käytöstä" title="- Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form><br>';
 
 
-                 
+
 
 
 
@@ -821,13 +841,11 @@ function myFunction(y) {
 
 
                 if ($pisteet && !$pisteetvaikuttaa) {
-                   echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
+                    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
                     echo'<b style="font-size: 1em">Painotetaanko yllä olevissa prosenttimäärissä tehtävien pisteitä?</b>';
-                 echo'<form action="aktivoipisteytys2.php" method="post" style="margin-left: 20px; display: inline-block" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="Painota tehtävien pistemääriä" title="Painota tehtävien pistemääriä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                     
+                    echo'<form action="aktivoipisteytys2.php" method="post" style="margin-left: 20px; display: inline-block" ><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikea"  value="Painota tehtävien pistemääriä" title="Painota tehtävien pistemääriä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+
                     echo'</div>';
-                
-                    
                 } else if ($pisteet && $pisteetvaikuttaa) {
                     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding: 0px 0px 0px 20px">';
                     echo'<p class="info" style="display: inline-block; color: #c7ef00">Yllä olevissa prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
@@ -836,21 +854,17 @@ function myFunction(y) {
                 }
 
 
-   // TÄHÄN SAAKO PISTEYTTÄÄ
-                     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
-                    if ($itsepisteytys) {
-                        echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat saavat pisteyttää tekemänsä tehtävät.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep" value="x &nbsp Poista käytöstä" title="X Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
-                    
-                        
-                    } else if ($pisteet && !$itsepisteytys) {
-                      
-                        echo'<b style="font-size: 1em">Annetaanko opiskelijoille mahdollisuus pisteyttää itse tehtävät?</b>';
-                  echo'<form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikel" value="+ Ota käyttöön" title="+ Ota käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
-                      
-                        
-                    }
+                // TÄHÄN SAAKO PISTEYTTÄÄ
+                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
+                if ($itsepisteytys) {
+                    echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat saavat pisteyttää tekemänsä tehtävät.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep" value="x &nbsp Poista käytöstä" title="X Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
+                } else if ($pisteet && !$itsepisteytys) {
 
-echo'</div>';
+                    echo'<b style="font-size: 1em">Annetaanko opiskelijoille mahdollisuus pisteyttää itse tehtävät?</b>';
+                    echo'<form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikel" value="+ Ota käyttöön" title="+ Ota käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                }
+
+                echo'</div>';
 
 
                 echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 0px; padding-top: 0px">';
@@ -941,7 +955,7 @@ echo'</div>';
                     echo '<tr style="border: 2px solid #080708; background-color: #c50076;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody id="palaa2">';
                 }
-                
+
                 $otmaara = 0;
                 $maara = 0;
                 $maaratehtavat = 0;
@@ -1002,10 +1016,10 @@ echo'</div>';
                             while ($rows = $haeseuraava->fetch_assoc()) {
                                 $onkoaihe = $rows[aihe];
                             }
-                         
+
                             if ($onkoaihe != 1) {
-                                
-                                echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><a href="ykskohdat2.php?id=' . $ipid . '&tid=' . $rowt[id] . '"><b>'. $rowt[otsikko] . '</b><br></a>';
+
+                                echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><a href="ykskohdat2.php?id=' . $ipid . '&tid=' . $rowt[id] . '"><b>' . $rowt[otsikko] . '</b><br></a>';
                             } else {
                                 echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #ffb1e0;"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="6" style="border-top: 2px solid #080708;border-right: 2px solid #080708; border-bottom: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br>';
                             }
@@ -2412,7 +2426,7 @@ include("footer.php");
 
     var $table = $('#mytable');
     $table.floatThead({zIndex: 1});
- 
+
 
 </script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>

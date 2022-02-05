@@ -55,7 +55,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 if (!$onkovastuuope = $db->query("select distinct * from kurssit where id = '" . $tuote . "' AND opettaja_id = '" . $_SESSION["Id"] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
-                if ($onkovastuuope->num_rows == 0 || $_SESSION[Rooli=='opettaja']) {
+                if ($onkovastuuope->num_rows == 0 || $_SESSION[Rooli == 'opettaja']) {
 
                     $vaarat[] = $tuote;
                 } else {
@@ -87,45 +87,43 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                                 }
 
                                 if (file_exists($nimi)) {
-                                    echo'<br>Tiedostoa '.$nimi.' ei pystytty poistamaan!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
-                               
-                                    } else {
+                                    echo'<br>Tiedostoa ' . $nimi . ' ei pystytty poistamaan!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
+                                } else {
                                     $db->query("delete from ryhmatope where id = '" . $id . "'");
                                 }
                             }
                         }
 
 
-                  if (!$resultope = $db->query("select distinct * from open_palautustiedosto where projekti_id = '" . $row[id] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
+                        if (!$resultope = $db->query("select distinct * from open_palautustiedosto where projekti_id = '" . $row[id] . "'")) {
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        }
 
-    while ($rowope = $resultope->fetch_assoc()) {
-        $nimi = $rowope[tallennettunimi];
-        $linkki = $rowope[linkki];
-        $id2=$rowope[id];
-       
-    
-    if ($linkki == 1) {
-        $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
+                        while ($rowope = $resultope->fetch_assoc()) {
+                            $nimi = $rowope[tallennettunimi];
+                            $linkki = $rowope[linkki];
+                            $id2 = $rowope[id];
 
-    } else {
-        if (file_exists($nimi)) {
-            unlink($nimi);
-        }
 
-        if (file_exists($nimi)) {
-          echo'<br>Tiedostoa '.$nimi.' ei pystytty poistamaan!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
-                               
-            
-        } else {
-            $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
 
-      
-        }
-    }
-    
-    }
+                            if ($linkki == 1) {
+                                $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
+                            } else {
+
+                                if (!$resultmuut = $db->query("select distinct * from open_palautustiedosto where id <> '" . $id2 . "' AND tallennettunimi='" . $nimi . "'")) {
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                }
+
+                                if ($resultmuut->num_rows == 0) {
+
+                                    if (file_exists($nimi)) {
+                                        unlink($nimi);
+                                    }
+                                }
+
+                                $db->query("delete from open_palautustiedosto where id = '" . $id2 . "'");
+                            }
+                        }
 
 
 
@@ -146,10 +144,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                                 if (file_exists($nimi)) {
                                     unlink($nimi);
                                 }
-                                 if (file_exists($nimi)) {
-                                    echo'<br>Tiedostoa '.$nimi.' ei pystytty poistamaan!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
-                               
-                                    }
+                                if (file_exists($nimi)) {
+                                    echo'<br>Tiedostoa ' . $nimi . ' ei pystytty poistamaan!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br><br>';
+                                }
                             }
                         }
 
@@ -175,34 +172,24 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($row3 = $result3->fetch_assoc()) {
-                            $nimi3 = $row3[nimi];
+                            $nimi = $row3[nimi];
                             $tuotu = $row3[tuotu];
                             $kuvaus = $row3[kuvaus];
                             $linkki = $row3[linkki];
-
-                            if ($tuotu == 0 && $linkki == 0) {
-                                if (file_exists($nimi3)) {
-                                    unlink($nimi3);
+                            if ($linkki == 0) {
+                                if (!$resultmuut = $db->query("select distinct * from tiedostot where kansio_id <> '" . $rowk[id] . "' AND nimi='" . $nimi . "'")) {
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
-                            }
-                            //jos tiedostoa ei ole tuotu toisesta kurssista/opintojaksosta, niin haetaan onko se viety johonki toiseen, jolloin se pitää poistaa myös siitä kurssista/opintojaksosta JOS SE ON TIEDOSTO EIKÄ LINKKI
 
-                            if (!$result8 = $db->query("select distinct * from tiedostot where id = '" . $row3[id] . "' AND tuotu=0")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                            }
+                                if ($resultmuut->num_rows == 0) {
+                                    $tiedostonimi = 'tiedostot/' . $omatallennusnimi;
 
-                            if ($result8->num_rows > 0) {
-                                if ($linkki == 0) {
-                                    if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $nimi3 . "' AND tuotu=1")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                                    }
-                                    if ($result2->num_rows > 0) {
-                                        while ($row2 = $result2->fetch_assoc()) {
-                                            $db->query("delete from tiedostot where id = '" . $row2[id] . "'");
-                                        }
+                                    if (file_exists($tiedostonimi)) {
+                                        unlink($tiedostonimi);
                                     }
                                 }
                             }
+
 
 
                             $db->query("delete from tiedostot where id = '" . $row3[id] . "'");
@@ -369,7 +356,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     $db->query("delete from kurssit where id = '" . $tuote . "'");
                 }
             }
-        } 
+        }
 
 
         if (empty($vaarat)) {

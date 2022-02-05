@@ -106,75 +106,7 @@ function myFunction(y) {
 
                 echo '<br><b style="font-size: 1.1em">' . $koodi . ' ' . $nimi . '</b>';
 
-                //katsotaan kurssikohtaisesti, onko jotain tiedostoja, jotka viety toisen kurssiin:
-                if (!$resultk = $db->query("select distinct * from kansiot where kurssi_id = '" . $tuote . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                }
 
-                $onko = false;
-                $kurssit = array();
-
-                //hakee kurssin/opintojakson kansiot
-                while ($rowk = $resultk->fetch_assoc()) {
-
-                    if (!$result3 = $db->query("select distinct * from tiedostot where kansio_id = '" . $rowk[id] . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                    }
-                    //hakee kansion tiedostot
-                    while ($row3 = $result3->fetch_assoc()) {
-
-                        $nimi = $row3[omatallennusnimi];
-                        $id = $row3[id];
-                        $tnimi = $row3[nimi];
-                        $tuotu = $row3[tuotu];
-                        $linkki = $row3[linkki];
-                        if ($tuotu == 0 && $linkki == 0) {
-                            if (!$result2 = $db->query("select distinct kurssit.nimi as kurssi, kurssit.koodi as koodi from kurssit, kansiot, tiedostot where kansiot.kurssi_id=kurssit.id AND tiedostot.tuotu=1 AND tiedostot.linkki=0 AND tiedostot.kansio_id=kansiot.id AND tiedostot.nimi='" . $tnimi . "'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                            }
-                            if ($result2->num_rows > 0) {
-                                $onko = true;
-                                while ($row88 = $result2->fetch_assoc()) {
-                                    $kokonimi = $row88[koodi] . ' ' . $row88[kurssi];
-                                    $onkolaitettu = false;
-                                    if (!empty($kurssit)) {
-                                        foreach ($kurssit as $tuote2) {
-                                            if ($kokonimi == $tuote2) {
-                                                $onkolaitettu = true;
-                                            }
-                                        }
-                                    }
-                                    if (!$onkolaitettu) {
-                                        array_push($kurssit, $kokonimi);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if ($onko) {
-
-                    $kurssimaara = count($kurssit);
-                    $kurssimaara2 = count($kurssit);
-                    if ($kurssimaara > 1) {
-                        echo'<br><br><b style="color: #c7ef00">Huom! Tämän kurssin/opintojakson tiedostoja on viety kurssien <b style="color: #080708">';
-                    } else if ($kurssimaara == 1) {
-                        echo'<br><br><b style="color: #c7ef00">Huom! Tämän kurssin/opintojakson tiedostoja on viety kurssin/opintojakson <b style="color: #080708">';
-                    }
-                    foreach ($kurssit as $tuote2) {
-                        $kurssimaara--;
-                        if ($kurssimaara == 0) {
-                            if ($kurssimaara2 > 1) {
-                                echo$tuote2 . '</b> materiaaleihin. Kurssin poisto poistaa kyseiset tiedostot myös näistä kursseista!</b><br>';
-                            } else if ($kurssimaara2 == 1) {
-                                echo$tuote2 . '</b> materiaaleihin. Kurssin poisto poistaa kyseiset tiedostot myös tästä kurssista/opintojaksosta!</b><br>';
-                            }
-                        } else {
-                            echo$tuote2 . ', ';
-                        }
-                    }
-                }
             }
 
             echo "<br>";

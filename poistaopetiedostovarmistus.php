@@ -208,36 +208,8 @@ function myFunction(y) {
             $vanhalinkki = $row2[vanhalinkki];
         }
 
-        if ($tuotu == 0 && $linkki == 0) {
-            if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $tnimi . "' AND linkki=0")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-            }
-            if ($result2->num_rows > 1) {
-
-                $jaljella = $result2->num_rows;
-                echo'<br><br><b style="color: #c7ef00">Huom! Tiedosto on lisätty myös kurssien </b>';
-                while ($row3 = $result2->fetch_assoc()) {
-                    $kansio = $row3[kansio_id];
-                    if (!$result3 = $db->query("select distinct kurssit.koodi as koodi, kurssit.nimi as nimi from kansiot, kurssit where kansiot.id = '" . $kansio . "' AND kansiot.kurssi_id = kurssit.id AND kurssit.id <> '" . $_SESSION[KurssiId] . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                    }
-
-                    while ($row4 = $result3->fetch_assoc()) {
-                        $jaljella--;
-                        echo' <b>' . $row4[koodi] . ' ' . $row4[nimi] . '</b>';
-                        if ($jaljella > 1) {
-                            echo',';
-                        }
-                    }
-                }
-                echo' <b style="color: #f7f9f7">materiaalipankkiin. Tiedoston poisto poistaa kyseisen tiedoston myös näistä kursseista!</b><br><br>';
-            }
-        }
 
         echo '<p><b>Haluatko todella poistaa lisäämäsi materiaalin:  </b> ' . $nimi . '?</p>';
-
-
-
 
 
 

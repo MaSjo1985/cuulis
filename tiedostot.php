@@ -18,9 +18,7 @@ include("tsekkaa_oikeus.php");
 session_start(); // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
-} else {
-    tsekkaa_oikeus($_SESSION["KurssiId"]);
-}
+} 
 if (isset($_SESSION["Kayttajatunnus"])) {
 
     include("kurssisivustonheader.php");
@@ -218,13 +216,12 @@ function myFunction(y) {
 
 
             if ($_SESSION["Rooli"] <> 'opiskelija') {
-                echo'<p style="color: #c7ef00; font-size: 0.8em">(Jos numeroit kansiot, niin ne luetellaan siinä järjestyksessä.)</p>';
-
-                echo'<b style="font-size: 0.8em">Avataanko 1. kansio automaattisesti?</b><br><br>';
+             
+                echo'<br><b style="font-size: 0.7em">Avataanko 1. kansio automaattisesti?</b><br>';
                 if (!$result = $db->query("select distinct ekakansio from kurssit where id = '" . $_SESSION[KurssiId] . "' AND ekakansio = 1")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
-                echo'<form id="form2" name="form2" style="font-size: 0.9em" method="post" action="ekakansioauki.php">';
+                echo'<form id="form2" name="form2" style="font-size: 0.7em" method="post" action="ekakansioauki.php">';
                 if ($result->num_rows != 0) {
 
 

@@ -154,27 +154,7 @@ function myFunction(y) {
         }
 
         echo'<p  style="font-weight: bold">Haluatko todella poistaa kansion: ' . $nimi . '?</p>';
-        if (!$result3 = $db->query("select distinct * from tiedostot where kansio_id = '" . $idk . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-        //hakee kansion tiedostot
-        while ($row3 = $result3->fetch_assoc()) {
 
-            $nimi = $row3[omatallennusnimi];
-            $id = $row3[id];
-            $tnimi = $row3[nimi];
-            $tuotu = $row3[tuotu];
-            $linkki = $row3[linkki];
-            if ($tuotu == 0 && $linkki == 0) {
-                if (!$result2 = $db->query("select distinct * from tiedostot where nimi = '" . $tnimi . "' AND linkki=0")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-                }
-//                if ($result2->num_rows > 1) {
-//                    echo'<br><br><b style="color: #c7ef00">Huom! Tämän kansion tiedosto <b style="color: #080708">"' . $nimi . '"</b> on tuotu myös muiden kurssien </b><br>';
-//                    echo' <br><b style="color: #c7ef00">materiaaleihin.Kansion poisto poistaa tiedostot myös näistä kursseista!</b><br>';
-//                }
-            }
-        }
 
         echo '<br><a href="poistakansio.php?id=' . $idk . '"  class="myButton9"  role="button"  style="margin-right: 30px">Kyllä</a>';
         echo '<a href="tiedostot.php?k=' . $_POST[id] . '"  class="myButton9"  role="button" >En</a><br>';

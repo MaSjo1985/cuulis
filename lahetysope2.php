@@ -186,7 +186,7 @@ function myFunction(y) {
 
 
         try {
-echo'try';
+
             $nimi = upload_tarkista('my_file', 10.0 * 1024 * 1024);
 
             $fileCount = count($nimi);
@@ -194,7 +194,7 @@ echo'try';
           $stmt = $db->prepare("INSERT INTO open_palautustiedosto (linkki, kuvaus, tallennettunimi, projekti_id, omatallennusnimi) VALUES (?, ?, ?, ?,?)");
          $stmt->bind_param("issis", $linkki, $kuvaus, $tallennettunimi, $pid, $omatallennusnimi);
      
-            echo'pö';
+          
             
             $paateloyty = false;
             for ($j = 0; $j < $fileCount; $j++) {
@@ -258,9 +258,9 @@ echo'try';
                     $tyonimi = $_POST[tyonimi];
                     $tallennettunimi = $kohde;
                     $omatallennusnimi = $nimi[$j];
-echo'<br>ennen ece';
+
                     $stmt->execute();
-                    echo'<br>exejälkeen';
+                  
                 }
 
 
@@ -293,7 +293,7 @@ echo'<br>ennen ece';
 //               $stmt2->close();
         } catch (UploadException $e) {
 
-            die('<b style="font-size: 1em; color: #FF0000">' . $e->getMessage() . '</b><br><br><a href="tiedosto_ope.php?ryid=' . $_POST[ryid] . '&pid=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<b style="font-size: 1em; color: #FF0000">' . $e->getMessage() . '</b><br><br><a href="tiedosto_ope_automaattinen.php?ryid=' . $_POST[ryid] . '&pid=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
     }
 

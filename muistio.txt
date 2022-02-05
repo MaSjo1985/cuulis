@@ -1,16 +1,50 @@
+AUTOMAATTISTEN TIEDOSTOJEN AVAUS JA POISTO:
+
+kato ero välillä omatallennusnimi ja tallennettunimi!!
+
+
+VIRHEILMOTUKSET KUN TIEDOSTO PUUTTUU -> MIHIN PALATAAN?!
+
+
 LISÄTTYJEN TIEDOSTOJEN POISTO KUN VIETY TOISEEN KURSSIIN?
 * tiedoston poisto
 * kansion poisto
+* kaikkien kansioiden poisto
+* open_palautustiedoston poisto   cuulis.cm8solutions.fi/poistatiedosto_ope2.php
 * projektin poisto
 * kurssin poisto 
 
--> ÄLÄ POISTA TIEDOSTOA, JOS SE ON VIELÄ JOSSAIN
+TESTAAA!!
+
+PALAUTUSTIEDOSTO KATOAA?!
+
+open palautustiedoston lisäys -> tuonti toisesta kurssista
 
 
 UUS NOPEEMPI HAKUTOIMINTO:  ks. testaasearch.php + backend_search.php
 
 
 TEHTÄVÄLISTAKIN PITÄÄ PYSTYÄ TUOMAAN NIINKU PALAUTUS
+
+MIKSI HEITTÄÄ ULOS?
+
+UUS VÄRIMAAILMA 
+
+https://99designs.com/blog/tips/website-color-schemes/
+
+isot navit #2b6777
+nappulat #52ab98
+tausta #ffffff
+
+himmee valkonen #f2f2f2
+himmee vihree #c8d8e4
+
+
+***********************************************************
+
+
+
+
 
 
 ****************************************************************************

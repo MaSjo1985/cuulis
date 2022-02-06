@@ -363,11 +363,11 @@ function myFunction(y) {
 
                         echo'<b style="margin-right: 5px; font-size: 0.8em; ">Klo:</b>
     
-               <input type="text"  name="kelloA" style="width: 20%; color: #080708;font-size: 0.8em;" class="kello">
+               <input type="text"  name="kelloA" style="width: 20%; color: #080708;font-size: 0.8em;" id="kelloA" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
-	<input type="submit" style="margin-left:10px; padding: 4px 6px; " value="Tallenna" class="myButton8" name="tallennaA"  title="Tallenna avautumisaika">';
+	<input type="submit" style="margin-left:10px; padding: 4px 6px; " value="Tallenna" class="myButton8" name="tallennaA" id="buttonA" title="Tallenna avautumisaika">';
                     } else {
                         
                     }
@@ -395,10 +395,10 @@ function myFunction(y) {
 
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text" class="kello"  name="kelloS" style="width: 20%; font-size: 0.8em; color: #080708" >';
+               <input type="text" class="kello"  name="kelloS" id="kelloS" style="width: 20%; font-size: 0.8em; color: #080708" >';
 
 
-                        echo'<input type="submit" style=" margin-left:10px; padding: 2px;" value="Tallenna" class="myButton8" name="tallennaS"  title="Tallenna sulkeutumisaika">';
+                        echo'<input type="submit" style=" margin-left:10px; padding: 2px;" value="Tallenna" class="myButton8" name="tallennaS" id="buttonS"  title="Tallenna sulkeutumisaika">';
                     }
              
                     echo'</form>';
@@ -3033,6 +3033,25 @@ echo"</div>";
 echo "</div>";
 echo "</div>";
 include("footer.php");
-echo'</body>
-</html>	</!DOCTYPE html>';
-?>	
+?>
+<script>
+    var input = document.getElementById("kelloA");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("buttonA").click();
+        }
+    });
+</script>
+<script>
+    var input = document.getElementById("kelloS");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("buttonS").click();
+        }
+    });
+</script>
+
+</body>
+</html>		

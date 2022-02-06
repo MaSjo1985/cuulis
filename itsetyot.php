@@ -854,17 +854,23 @@ function myFunction(y) {
                 }
 
 
-                // TÄHÄN SAAKO PISTEYTTÄÄ
-                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
+              
                 if ($itsepisteytys) {
+                      // TÄHÄN SAAKO PISTEYTTÄÄ
+                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
                     echo'<p class="info" style="display: inline-block; margin: 0px;color: #c7ef00">Opiskelijat saavat pisteyttää tekemänsä tehtävät.</p><form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikep" value="x &nbsp Poista käytöstä" title="X Poista käytöstä" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
+                
+                    echo'</div>';
                 } else if ($pisteet && !$itsepisteytys) {
-
+  // TÄHÄN SAAKO PISTEYTTÄÄ
+                echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 10px">';
                     echo'<b style="font-size: 1em">Annetaanko opiskelijoille mahdollisuus pisteyttää itse tehtävät?</b>';
                     echo'<form action="muokkaaitsepisteytys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painikel" value="+ Ota käyttöön" title="+ Ota käyttöön" class="myButton8"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form>';
+                echo'</div>';
+                    
                 }
 
-                echo'</div>';
+                
 
 
                 echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-bottom: 0px; padding-top: 0px">';

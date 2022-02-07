@@ -61,8 +61,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $nyt = date("Y-m-d");
         echo'<div class="cm8-container" style="padding-top: 5px; padding-bottom: 5px;padding-left: 20px">';
         echo'<div class="cm8-quarter" style="padding: 0px; margin:0px">';
-        echo'<h1 style="padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</a></h1>
-  <em style="font-style: normal; font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</em>';
+        echo'<h1 style="padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</h1>
+  <b style="font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</b></a>';
 
         echo'</div>';
 

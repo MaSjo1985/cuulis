@@ -185,8 +185,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 while ($row8 = $result8->fetch_assoc()) {
     echo '<div class="cm8-quarter" style="margin-top: 0px; padding-top: 0px;margin-left: 0px"; padding-left: 10px">';
-    echo'<h1 style="font-size: 1.2em; padding-top: 0px; padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</a></h1>
-  <em style="font-style: normal; font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</em><br>';
+    echo'<h1 style="font-size: 1.2em; padding-top: 0px; padding-bottom: 0px; display: inline-block;"><a href="etusivu.php">Cuulis</h1>
+  <b style="font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</b></a><br>';
     echo'<img src="/' . $row8[kuva] . '" style="margin-left: 10px; padding-top: 10px; height: 80px; max-width: 100px; margin-bottom: 1px">';
 
     echo'</div>';

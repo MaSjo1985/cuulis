@@ -6331,3 +6331,10 @@ a.cm8-navigointilinkki:hover{
     font-size: .9em;
     
 }
+
+body{
+    font-weight: bold; 
+}
+html{
+    font-weight: bold; 
+}

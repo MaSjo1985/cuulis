@@ -1,7 +1,3 @@
-ITSETYOT: Takarajan submittaus enterillä ei toimi
-
-kato tyhjä osio testikurssin tehtävälistassa! TSEKKAA ONKO NYT OK!
-
 
 AUTOMAATTISTEN TIEDOSTOJEN AVAUS JA POISTO:
 

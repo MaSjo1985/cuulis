@@ -604,6 +604,8 @@ function myFunction(y) {
                 echo'</div>';
 
                 echo'</h6tiedosto></div>';
+                
+                
                 echo'<div class="cm8-half" style="margin: 0px; padding: 5px 0px 0px 40px; font-size: 0.7em">';
                 echo'<p style="padding: 0px; margin: 0px;">Avataanko tämä osio automaattisesti?</p><br>';
                 if (!$result = $db->query("select distinct eka_auki from itseprojektit where id = '" . $ipid . "' AND eka_auki = 1")) {

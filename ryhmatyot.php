@@ -1,5 +1,5 @@
 <?php
-
+session_start(); // ready to go!
 ob_start();
 
 
@@ -7,9 +7,7 @@ ob_start();
 
 echo'<!DOCTYPE html><html> 
 <head>
-<title> Palautukset </title>
-
-';
+<title> Palautukset </title>';
 $urlmihin = $_SERVER[REQUEST_URI];
 
 if (strpos($urlmihin, "?")) {
@@ -22,7 +20,7 @@ include("tsekkaa_oikeus.php");
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
-session_start(); // ready to go!
+
 
 
 
@@ -41,6 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     if (!$haeprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
+    
 
     if ($haeprojekti->num_rows == 1 && !isset($_GET[r])) {
         if (!$hae_eka = $db->query("select MIN(id) as id from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
@@ -171,28 +170,21 @@ function myFunction(y) {
     echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> <h2 style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px">Palautukset</h2>';
     echo '<nav class="cm8-sidenav " style="padding-top: 0px; margin-top:0px; height: 100%; padding-left: 0px">';
 
-    if (!$hae_eka = $db->query("select id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
-
-    if ($hae_eka->num_rows == 1) {
-        while ($rivieka = $hae_eka->fetch_assoc()) {
-            $eka_id = $rivieka[id];
-        }
-    }
 
 
 
+ $nyt = date("Y-m-d H:i");
 
     if ($haeprojekti->num_rows != 0) {
         echo'<div class="cm8-sidenav" style="padding-top: 20px; margin-top:0px; height: 100%; padding-left: 0px">';
         while ($rowP = $haeprojekti->fetch_assoc()) {
             $kuvaus = $rowP[kuvaus];
+            $nakyville = $rowP[nakyville];
             $id = $rowP[id];
             if ($_GET[r] == $id) {
 
                 echo'<a href="ryhmatyot.php?r=' . $id . '" class="btn-info3-valittu" style="font-size: 0.9em; margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
-            } else {
+            } else if($_SESSION[Rooli] <> 'opiskelija' || ($_SESSION[Rooli] == 'opiskelija' && $nakyville != NULL && $nyt >= $nakyville) || ($_SESSION[Rooli] == 'opiskelija' && $nakyville == NULL) ){
 
                 echo'<a href="ryhmatyot.php?r=' . $id . '" class="btn-info3" style="font-size: 0.9em; margin-right: 20px; margin-bottom: 5px;  padding: 6px 6px 6px 20px">' . $kuvaus . '</a>';
             }
@@ -213,7 +205,7 @@ function myFunction(y) {
   echo'</nav>
 </div>';
 
-    echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 30px">';
+    echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px">';
   
 
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
@@ -245,7 +237,7 @@ function myFunction(y) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             while ($rowP = $onkoprojekti->fetch_assoc()) {
-
+                
                 $kuvaus = $rowP[kuvaus];
                 $pid = $rowP[id];
                 $ryhmienmaksimi = $rowP[ryhmienmaksimi];
@@ -255,7 +247,13 @@ function myFunction(y) {
                 $palautus = $rowP[palautus];
                 $sulkeutuu = $rowP[palautus_sulkeutuu];
                 $avautuu = $rowP[palautus_avautuu];
-
+                $nakyville = $rowP[nakyville];
+                
+                 $nakyvillepaiva = substr($nakyville, 0, 10);
+                $nakyvillepaiva = date("d.m.Y", strtotime($nakyvillepaiva));
+                $nakyvillekello = substr($nakyville, 11, 5);
+                echo'<div class="cm8-half" style="margin: 0px 0px 0px 0px; padding: 0px">';
+                
                 echo'<h6tiedosto id="' . $pid . '"  style="margin-top: 10px;margin-right: 40px; padding: 6px 10px 6px 20px; ">&#9997 &nbsp&nbsp&nbsp ' . $kuvaus;
 
                 echo'<form action="muokkaaprojektieka.php" method="post" style="margin-left: 60px;display: inline-block; "><input type="hidden" name="id" value=' . $pid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"  role="button"></form>';
@@ -263,7 +261,45 @@ function myFunction(y) {
                 echo'<form action="varmistusprojekti.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $pid . '><button class="roskis" title="Poista" ><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista</b></i></button></form><br>';
 
 
-                echo'</h6tiedosto>';
+                echo'</h6tiedosto></div>';
+                
+                echo'<div class="cm8-half" style="margin: 0px 0px 0px 0px; padding: 0px">';
+                echo '<br><form id="palautuauki" action="palautusauki.php" style="padding-bottom: 10px; font-size: 0.7em" method="post" autocomplete="off">';
+
+
+            if ($nakyville != NULL) {
+
+                if ($nyt > $nakyville) {
+                    echo'<b style="margin-right: 20px; color: #c7ef00">Tämä osio tuli opiskelijoille näkyville ';
+                } else {
+                    echo'<b style="margin-right: 20px; color: #c7ef00">Tämä osio näkyy opiskelijoille';
+                   
+                }
+
+                echo'&nbsp&nbsp&nbsp' . $nakyvillepaiva . ' klo ' . $nakyvillekello . '</b>';
+                 
+                echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaN"  title="Muokkaa">';
+            } else  {
+                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #c7ef00;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
+                echo'<p><b style="margin-right: 5px; color:  ">Pvm:</b>
+     
+            <input type="text" style="margin-right: 10px; width: 20%; color: #080708" class="kdate"  name="paivaN">';
+
+
+                echo'<b style="margin-right: 5px; color: ">Klo:</b>
+    
+               <input type="text" id="kelloN" name="kelloN" style="width: 20%; color: #080708" class="kello">
+                                   	
+
+	<input type="submit" style="margin-left:10px; padding: 4px 6px; " value="Tallenna" class="myButton8" name="tallennaN"  title="Tallenna" id="buttonN"></p>';
+            }
+               echo'<input type="hidden" name="pid" value=' . $pid . '>';
+        
+
+            echo'</form>';
+                
+                echo'</div></div>';
+  echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px; ">';
 
                 if (!$haeinfo = $db->query("select * from projektit where id='" . $pid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1719,7 +1755,12 @@ function myFunction(y) {
                 $opminimi = $rowP[opminimi];
                 $palautus = $rowP[palautus];
 
-
+    $nakyville = $rowP[nakyville];
+                
+                 $nakyvillepaiva = substr($nakyville, 0, 10);
+                $nakyvillepaiva = date("d.m.Y", strtotime($nakyvillepaiva));
+                $nakyvillekello = substr($nakyville, 11, 5);
+                
                 echo'<h6tiedosto id="peite3" style="padding: 6px 100px 6px 20px;">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . '</h6tiedosto>';
                 if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -3052,6 +3093,14 @@ include("footer.php");
         }
     });
 </script>
-
+<script>
+    var input = document.getElementById("kelloN");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("buttonN").click();
+        }
+    });
+</script>
 </body>
 </html>		

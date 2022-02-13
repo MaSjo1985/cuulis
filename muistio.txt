@@ -1,7 +1,10 @@
-- TIEDOSTOJEN AUKI SAAMISEEN OIKEUS -> ks. avaatiedosto.php PAITSI MUUT OPET PITÄÄ HUOMIOIDA!! ELI MUUTA VIELÄ
+MIKSI KANSIOISSA kurssi_id=0?
 
-MITKÄ MUUT PITÄÄ PYSYY SUOJASSA?!
+->  KYSY HESSULTA M6_ratkaisut6.pdf , laitettu muka 25.1.2022
 
+NYT kurssi_id=0 on huomioitu tiedostossa :  avaaopetiedosto.php
+
+MIKSI RYHMAT2:ssa ryhma_id = 0?
 
 ULKOASUMUUTOS -> KELTANEN VÄRI PITÄÄ OLLA JOKU TOINEN!
 

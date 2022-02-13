@@ -21,147 +21,77 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     include("header.php");
 
 
+    echo'<div class="cm8-half" style="text-align: center; padding-top: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 60px">';
 
-
-    echo '<div class="cm8-container7" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 60px">';
-    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-        echo'<nav class="topnav" id="myTopnav">
-	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  class="currentLink">Materiaalit</a>  
-	  
-	  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
-	
-	 ';
-        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-        while ($rowa = $haeakt->fetch_assoc()) {
-
-            $kysakt = $rowa[kysakt];
-        }
-        if ($kysakt == 1) {
-            
-        } else {
-            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
-        }
-
-
-        echo'
-	  <a href="keskustelut.php" >Keskustele</a> 
-	  <a href="osallistujat.php"   >Osallistujat</a>  	  
-	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div></a>
-	</nav>';
-
-
-
-
-        echo'
-
-<script>
-function myFunction(y) {
-  y.classList.toggle("change");
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>';
-    }
-
-    if ($_SESSION["Rooli"] == "opiskelija") {
-        echo'<nav class="topnav" id="myTopnav">
-		 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  class="currentLink">Materiaalit</a>  
-		  
-		  <a href="itsetyot.php" onclick="loadProgress()" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
-		
-		 ';
-        if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-        }
-
-        while ($rowa = $haeakt->fetch_assoc()) {
-
-            $kysakt = $rowa[kysakt];
-        }
-        if ($kysakt == 1) {
-            
-        } else {
-            // echo'<a  href="kysymyksetkommentit.php">Kysy/kommentoi</a>';
-        }
-
-
-        echo'
-	  <a href="keskustelut.php" >Keskustele</a> 
-	  <a href="osallistujat.php"   >Osallistujat</a>  	  
-	   <a href="javascript:void(0);" class="icon" onclick="myFunction(this)"><div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div></a>
-	</nav>';
-
-
-
-
-        echo'
-
-<script>
-function myFunction(y) {
-  y.classList.toggle("change");
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>';
-    }
-
-    echo'<div class="cm8-margin-top"></div>';
-
-
-
-    echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> <h2 style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px">Materiaalit</h2>';
-
-    echo '<nav class="cm8-sidenav " style="padding-top: 0px; margin-top:0px; height: 100%; padding-left: 0px">
-
-
-  
-  
- 
-	
-</nav>
-
- </div>';
-
-    echo'<div class="cm8-quarter" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
 
     if (!$result = $db->query("select distinct * from tiedostot where id = '" . $_GET[id] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
-
-    while ($row = $result->fetch_assoc()) {
-        $nimi = $row[nimi];
-        $vanhanimi = $row[omatallennusnimi];
-    }
-
-    if (file_exists($nimi)) {
-        if (preg_match("/Edge\/1(2|3|4)\./", getenv('HTTP_USER_AGENT'))) {
-            $pituus = strlen($nimi);
-            $loppupituus = $pituus - 9;
-            $osanimi = substr($nimi, 10, $loppupituus);
-
-            $osanimi = rawurlencode($osanimi);
-            header('location: /tiedostot/' . $osanimi);
-        } else {
-            header('location: /' . $nimi);
-        }
+    if ($result->num_rows == 0) {
+        echo'<br><br><b style="font-size: 1em; color: #FF0000">Tällaista tiedostoa ei ole olemassa!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div>';
     } else {
-        echo'<p style="font-size: 1.5em; color:red"> Tiedoston avaamisessa esiintyi ongelmia!</p>';
-        echo'<p style="font-weight: bold; font-size: 1.1em">Lähetäthän viestiä asiasta Cuulis-oppimisympäristön ylläpitäjälle, joka korjaa ongelman. Saat henkilökohtaisen viestin heti, kun asia on korjattu.<br><br> Voit tehdä sen <a href="bugi.php"><u>tästä linkistä.</u></a></p>';
+        while ($row = $result->fetch_assoc()) {
+            $nimi = $row[nimi];
+            $vanhanimi = $row[omatallennusnimi];
+            $kansio = $row[kansio_id];
+        }
+
+        $oikeus = 0;
+
+        if ($_SESSION[Rooli] == 'admin') {
+            $oikeus = 1;
+        } else {
+            if (!$haekurssi = $db->query("select distinct kurssit.id as kuid, koulut.id as koid from koulut, kurssit, kansiot where koulut.id=kurssit.koulu_id AND kansiot.id='" . $kansio . "' AND kansiot.kurssi_id=kurssit.id")) {
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            }
+            while ($row = $haekurssi->fetch_assoc()) {
+                $kurssi = $row[kuid];
+                $koulu = $row[koid];
+            }
+            if ($_SESSION[Rooli] == 'opeadmin') {
+                if (!$onkooikeus2 = $db->query("select distinct * from koulunadminit where koulu_id='" . $koulu . "' AND kayttaja_id = '" . $_SESSION[Id] . "'")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+
+                if ($onkooikeus2->num_rows != 0) {
+
+                    $oikeus = 1;
+                }
+            } else {
+
+                if($kurssi == 0){
+                      $oikeus = 1;
+                }
+                else{
+                           if (!$onkooikeus = $db->query("select distinct * from kurssit, opiskelijankurssit where kurssit.id=opiskelijankurssit.kurssi_id AND kurssit.id = '" . $kurssi . "' AND (kurssit.opettaja_id='" . $_SESSION[Id] . "' OR opiskelijankurssit.opiskelija_id='" . $_SESSION[Id] . "')")) {
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                }
+                if ($onkooikeus->num_rows != 0) {
+
+                    $oikeus = 1;
+                }
+                }
+         
+            }
+        }
+        if ($oikeus == 0) {
+            echo'<br><br><b style="font-size: 1em; color: #FF0000">Sinulla ei ole oikeutta tähän resurssiin!</b><br><br></div></div>';
+        } else {
+            if (file_exists($nimi)) {
+                if (preg_match("/Edge\/1(2|3|4)\./", getenv('HTTP_USER_AGENT'))) {
+                    $pituus = strlen($nimi);
+                    $loppupituus = $pituus - 9;
+                    $osanimi = substr($nimi, 10, $loppupituus);
+
+                    $osanimi = rawurlencode($osanimi);
+                    header('location: /tiedostot/' . $osanimi);
+                } else {
+                    header('location: /' . $nimi);
+                }
+            } else {
+                echo'<br><br><b style="font-size: 1em; color: #FF0000">Tiedostoa ei löytynyt!<br><br>Voit ottaa yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div>';
+            }
+        }
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

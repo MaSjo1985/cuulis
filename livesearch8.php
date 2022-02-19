@@ -86,7 +86,7 @@ if (isset($_POST['search'])) {
         echo'<form action="lisaaopiskelijavarmistus.php" method="post">';
 
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 0px; padding-bottom: 10px; width: 100%" >';
-        echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br><br>';
+        echo'<b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Hakutulokset:</b><br><br><br>';
            echo'<input type="submit" value="+ Lisää" title="Lisää opiskelija kurssille/opintojaksolle" id="piilota3" class="myButton8" style="font-size: 0.9em; padding: 2px 4px; margin-left: 5px; margin-top: 5px"><br>';
 
       echo '<table id="mytable88" class="cm8-striped cm8-uusitable18" style="font-size: 0.9em; font-weight: bold; table-layout:fixed; min-width: 40%; max-width: 100% "><thead>';

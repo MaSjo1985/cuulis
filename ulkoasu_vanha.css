@@ -68,7 +68,7 @@ table a:hover{
 }
 
 .fa-window-close-o:hover{
-    color: #f7f9f7;
+    color: #2b6777;
 }
 
 
@@ -92,7 +92,7 @@ table a:hover{
     border:1px solid #127475;
     padding: 4px 6px;
     cursor:pointer;
-    color: #f7f9f7;
+    color: #2b6777;
     display: inline-block;
 
     font-size: 0.9em;
@@ -103,7 +103,7 @@ table a:hover{
 
 #sulje:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
     color: #127475;
 
 
@@ -115,7 +115,7 @@ table a:hover{
     height: auto;
     position: fixed !important;
     z-index: 1001;
-    background: #f7f9f7;
+    background-color: white;
     padding-top: 5px;
     border: 1px solid grey;
     margin-left: 10px;
@@ -125,7 +125,7 @@ table a:hover{
 
 #ohje{
     font-weight: bold;
-    color: #c7ef00;
+    color: red;
     font-size: 0.9em;
 }
 
@@ -402,7 +402,7 @@ a:hover{
 
 #kys
 {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 #ilmoitus{
@@ -492,8 +492,8 @@ optgroup{font-weight:bold}
 
 
 html,body
-{ color: #f7f9f7;
-  background-color: #f7f9f7;
+{ color: #2b6777;
+  background-color: white;
   font-family: Questrial;
   font-size: 1em;
 }
@@ -516,13 +516,13 @@ h1 a {
 h2 {
     font-family: Questrial; 	
     font-size: 1.1em;
-    color: #f7f9f7;
+    color: #2b6777;
     margin: 0px 0px 0px 0px;
 }
 h88 {
     font-family: Questrial; 
     font-size: 1.2em;
-    color: #f7f9f7;
+    color: #2b6777;
     margin: 0px 0px 0px 0px;
 }
 h88 a{
@@ -535,7 +535,7 @@ h3 {
     font-family: Questrial; 
     padding-top:20px;
     font-size: 1.2em;
-    color: #f7f9f7;
+    color: #2b6777;
 
 
 }
@@ -543,14 +543,14 @@ h4 {
     font-family: Questrial; 
     font-size: 1.3em;
     padding-top: 20px;
-    color: #f7f9f7;
+    color: #2b6777;
 
 
 }
 h5 {
     font-family: Questrial; 
     font-size: 1em;
-    color: #f7f9f7;
+    color: #2b6777;
 
 }
 
@@ -559,7 +559,7 @@ h6{
     font-size: 1.1em;
     margin: 0px 0px 0px 0px;
     font-weight: bold;
-    color: #f7f9f7;
+    color: #2b6777;
 }
 h6tiedosto{
     font-family: Questrial; 
@@ -578,7 +578,7 @@ h6tiedosto{
 h7{
     font-family: Questrial; 	
     font-size: 1.4em;
-    color: #f7f9f7;
+    color: #2b6777;
     margin: 10px 0px 10px 0px ;
     font-weight: bold;
     display: block;
@@ -587,7 +587,7 @@ h7{
 h8{
     font-family: Questrial; 	
     font-size: 1.2em;
-    color: #f7f9f7;
+    color: #2b6777;
     margin: 10px 0px 10px 0px ;
     font-weight: bold;
 
@@ -641,7 +641,7 @@ table.tehtavataulu{
     border-radius: 0.5em;
     border: 1px solid #080708;
     font-size: 0.8em;
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
     margin-left: 20px;
 
@@ -675,7 +675,7 @@ table.tehtavatauluope{
     border-radius: 0.5em;
     border: 1px solid #080708;
     font-size: 0.8em;
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 
@@ -702,22 +702,22 @@ table.tehtavatauluope th{
 }
 
 
-table.cm8-uusitablekurssi { border: 2px solid grey; vertical-align: top; background-color: #f7f9f7 }
+table.cm8-uusitablekurssi { border: 2px solid grey; vertical-align: top; background-color: white }
 
-table.cm8-uusitablekurssi th{background-color: #c50076; text-align: left; vertical-align: top; color: #48E5DA }
-table.cm8-uusitablekurssi td{ text-align: left;  vertical-align: top; padding: 20px; color: #080708; background-color: #f7f9f7; }
+table.cm8-uusitablekurssi th{background-color: #52ab98; text-align: left; vertical-align: top; color: #48E5DA }
+table.cm8-uusitablekurssi td{ text-align: left;  vertical-align: top; padding: 20px; color: #080708; background-color: white; }
 table.cm8-uusitablekurssi a {color: inherit}
 table.cm8-uusitablekurssi a:hover{ cursor: pointer ; border-bottom: 1px solid transparent;}
 
 table.cm8-uusitable{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 }
 
 table.cm8-uusitable a:hover{ cursor: pointer ; border-bottom: 1px solid transparent;}
 
 table.cm8-uusitable td{  padding: 6px 4px;  }
-table.cm8-uusitable th{ text-align: left; background-color: #c50076; color: #48E5DA }
+table.cm8-uusitable th{ text-align: left; background-color: #52ab98; color: #48E5DA }
 table.cm8-uusitable2 a{
     border: 1px solid #080708;
     -moz-box-shadow: 1px 0px 3px 1px #127475;
@@ -740,7 +740,7 @@ table.cm8-uusitable2 a{
     font-size: 0.8em;
     padding: 8px;
 }
-table.cm8-uusitable2 a:hover{ background-color: #f7f9f7; color: #080708; font-weight: normal;  border-bottom: 1px solid transparent;}
+table.cm8-uusitable2 a:hover{ background-color: white; color: #080708; font-weight: normal;  border-bottom: 1px solid transparent;}
 table.cm8-uusitable2 td{  padding: 6px 4px; border-bottom: 1px solid transparent; color: #080708}
 table.cm8-uusitable2 th{  border: 2px solid #080708; text-align: center; color: #48E5DA}
 
@@ -751,13 +751,13 @@ table.cm8-uusitable3 th{ text-align: left;  }
 table.cm8-uusitable2 tr{
     border-bottom: 1.3px solid #080708;
     text-align: left;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 table.cm8-uusitable2 td:first-child {
     border-left: 2px solid #080708;
 }
 table.cm8-uusitable2 td:last-child {
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 
 table.cm8-uusitable2 th:last-child{
@@ -765,7 +765,7 @@ table.cm8-uusitable2 th:last-child{
 }
 
 table.cm8-uusitable2 th:last-child {
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 table.cm8-uusitable2 {
     border-collapse: separate;
@@ -773,11 +773,11 @@ table.cm8-uusitable2 {
 
 }
 table.cm8-uusitable2 tr:last-child {
-    background-color: #080708;
+    background-color: #e5e5e5;
     border-left: 3px solid #080708;
 }
 table.cm8-uusitable2 tr:last-child td:first-child{
-    background-color: #080708;
+    background-color: #e5e5e5;
     border-left: 3px solid #080708;
 }
 
@@ -790,12 +790,12 @@ table.cm8-keskustelutable a{
 
 table.cm8-keskustelutable a:hover{font-weight: bold;  border-bottom: 1px solid transparent;}
 table.cm8-keskustelutable td{  padding: 6px 4px; border-bottom: 1px solid transparent; color: #080708}
-table.cm8-keskustelutable th{ border: 2px solid #080708; background-color: #c50076; color: #48E5DA ; text-align: left; border: 2px solid #080708; padding: 6px}
+table.cm8-keskustelutable th{ border: 2px solid #080708; background-color: #52ab98; color: #48E5DA ; text-align: left; border: 2px solid #080708; padding: 6px}
 
 table.cm8-keskustelutable tr{
     border-bottom: 1.3px solid #080708;
     text-align: left;
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 }
 
@@ -811,11 +811,11 @@ table.cm8-keskustelutable {
 
 }
 table.cm8-keskustelutable tr:last-child {
-    background-color: #080708;
+    background-color: #e5e5e5;
     border-left: 3px solid #080708;
 }
 table.cm8-keskustelutable tr:last-child td:first-child{
-    background-color: #080708;
+    background-color: #e5e5e5;
 
     text-align: left;
     padding: 20px 0px 0px 0px ;
@@ -824,11 +824,11 @@ table.cm8-keskustelutable tr:last-child td:first-child{
 
 
 table.cm8-uusitable2ope a{ color: #080708; padding: 2px}
-table.cm8-uusitable2ope a:hover{padding: 5px; background-color: #858390; color: #f7f9f7; font-weight: normal;  border-bottom: 1px solid transparent; text-decoration: none}
+table.cm8-uusitable2ope a:hover{padding: 5px; background-color: #858390; color: #2b6777; font-weight: normal;  border-bottom: 1px solid transparent; text-decoration: none}
 table.cm8-uusitable2ope tr{
     border-bottom: 1.3px solid #080708;
     text-align: left;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 table.cm8-uusitable2ope td{  padding: 6px 4px; border-bottom: 1px solid transparent; color: #080708 }
 table.cm8-uusitable2ope th{  border: 2px solid #080708; text-align: center; color: #48E5DA}
@@ -879,7 +879,7 @@ table.cm8-uusitable8 a:hover{
     border: 1.1px solid transparent;
 }
 table.cm8-uusitable8 tr{
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 table.cm8-uusitablemuokkaus{
@@ -888,7 +888,7 @@ table.cm8-uusitablemuokkaus{
 }
 table.cm8-uusitableitse {overflow: hidden; color: #080708 }
 table.cm8-uusitableitse td{padding: 20px; border: 2px solid grey;  }
-table.cm8-uusitableitse tr{padding: 20px; background-color: #f7f9f7}
+table.cm8-uusitableitse tr{padding: 20px; background-color: white}
 
 
 table.cm8-uusitableitse a:hover{
@@ -899,7 +899,7 @@ table.cm8-uusitableitse th:first-child{ text-align: center; padding: 10px; width
 table.cm8-uusitableitse th:last-child{ text-align: center; padding: 10px ;width: 10% }
 table.cm8-uusitableitse td:first-child{ text-align: center; padding: 10px; width: 10%}
 table.cm8-uusitableitse td:last-child{ text-align: center; padding: 10px; width: 10%  }
-table.cm8-uusitableitse th{ text-align: center; background-color: #c50076; color: #48E5DA }
+table.cm8-uusitableitse th{ text-align: center; background-color: #52ab98; color: #48E5DA }
 table.cm8-uusitableitse th:first-child{ text-align: center;  }
 table.cm8-uusitableitse th:last-child{ text-align: center;  }
 table.cm8-uusitableitse a{
@@ -919,7 +919,7 @@ table.cm8-uusitableteht th{color:#48E5DA; font-size: 1.1em}
 
 table.cm8-uusitableteht input[type="submit"]{margin-top: 5px; padding: 4px 8px}
 table.cm8-uusitableteht th a{color:#48E5DA}
-table.cm8-uusitableteht tr{padding: 10px; background-color: #f7f9f7}
+table.cm8-uusitableteht tr{padding: 10px; background-color: white}
 table.cm8-uusitableteht a{
     color: #080708;
 
@@ -978,7 +978,7 @@ table.cm8-uusitableteht tr:last-child td:last-child{
 table.cm8-uusitableteht2 {overflow: hidden }
 table.cm8-uusitableteht2 td{padding: 10px; border: 2px solid grey; color: #080708 }
 table.cm8-uusitableteht2 th{color: #080708 }
-table.cm8-uusitableteht2 tr{padding: 10px; background-color: #f7f9f7}
+table.cm8-uusitableteht2 tr{padding: 10px; background-color: white}
 table.cm8-uusitableteht2 a{
     color: #080708;
 
@@ -1053,7 +1053,7 @@ table.cm8-uusitableteht2 td:first-child{
 
 table.cm8-uusitableaika {overflow: hidden }
 table.cm8-uusitableaika td{border: 2px solid grey; color: #080708;}
-table.cm8-uusitableaika tr{background-color: #f7f9f7}
+table.cm8-uusitableaika tr{background-color: white}
 table.cm8-uusitableaika a:hover{
     border: 1.1px solid transparent;
 
@@ -1071,7 +1071,7 @@ table.cm8-uusitableaika input[type="submit"]{padding: 6px 8px; font-size: 0.9em;
 table.cm8-uusitableaika tr:last-child td{
     text-align: center; 
     border: 1.1px solid transparent;
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 
 table.cm8-uusitableaika th:nth-last-child(3){
@@ -1130,7 +1130,7 @@ table.cm8-uusitableaika tr:last-child td{
 table.cm8-uusitableitsea {overflow: hidden;color: #080708 }
 table.cm8-uusitableitsea a{color: #080708 }
 table.cm8-uusitableitsea td{padding: 20px; border: 2px solid grey; text-align: center;  }
-table.cm8-uusitableitsea tr{padding: 20px; background-color: #f7f9f7}
+table.cm8-uusitableitsea tr{padding: 20px; background-color: white}
 table.cm8-uusitableitsea th{ border: 2px solid grey;}  
 table.cm8-uusitableitsea a:hover{
     border: 1.1px solid transparent;
@@ -1144,12 +1144,12 @@ table.cm8-uusitableitsea th:first-child{ width: 6%}
 table.cm8-uusitableitsea th:last-child{ width: 20% }
 table.cm8-uusitableitsea td:first-child{width: 6%}
 table.cm8-uusitableitsea td:last-child{ width: 20%}
-table.cm8-uusitableitsea th{ text-align: center; ; background-color:  #c50076; color: #48E5DA; padding: 10px }
+table.cm8-uusitableitsea th{ text-align: center; ; background-color: #52ab98; color: #48E5DA; padding: 10px }
 
 table.cm8-uusitableitsea tr:last-child td{
 
     border: 1.1px solid transparent;
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 
 
@@ -1182,7 +1182,7 @@ table.cm8-uusitableitsea tr:last-child td:first-child{
 table.cm8-uusitablekysely {overflow: hidden;color: #080708 }
 table.cm8-uusitablekysely a{color: #080708 }
 table.cm8-uusitablekysely td{padding: 20px; border: 2px solid grey; text-align: center;  }
-table.cm8-uusitablekysely tr{padding: 20px; background-color: #f7f9f7}
+table.cm8-uusitablekysely tr{padding: 20px; background-color: white}
 table.cm8-uusitablekysely th{ border: 2px solid grey;}  
 table.cm8-uusitablekysely a:hover{
     border: 1.1px solid transparent;
@@ -1196,12 +1196,12 @@ table.cm8-uusitablekysely th:first-child{ width: 6%}
 table.cm8-uusitablekysely th:last-child{ width: 20% }
 table.cm8-uusitablekysely td:first-child{width: 6%}
 table.cm8-uusitablekysely td:last-child{ width: 20%}
-table.cm8-uusitablekysely th{ text-align: center; ; background-color:  #c50076; color: #48E5DA; padding: 10px }
+table.cm8-uusitablekysely th{ text-align: center; ; background-color: #52ab98; color: #48E5DA; padding: 10px }
 
 table.cm8-uusitablekysely tr:last-child td{
 
     border: 1.1px solid transparent;
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 
 
@@ -1241,14 +1241,14 @@ table.cm8-uusitablekysely tr:last-child td:first-child{
 
 
 table.cm8-uusitableia td{padding: 20px; border: 2px solid grey; color: #080708 }
-table.cm8-uusitableia tr{padding: 20px; border: 2px solid grey; background-color: #f7f9f7}
+table.cm8-uusitableia tr{padding: 20px; border: 2px solid grey; background-color: white}
 
 
 table.cm8-uusitableitse tr:last-child td:first-child{padding: 0px; margin: 0px}
-table.cm8-uusitableitse tbody > tr:last-child > td{background-color: #080708; border: none}
+table.cm8-uusitableitse tbody > tr:last-child > td{background-color: #e5e5e5; border: none}
 
 
-table.cm8-uusitable10 th{ border: 2px solid #080708; background-color: #c50076; color: #48E5DA ; text-align: left; border: 2px solid #080708; padding: 6px}
+table.cm8-uusitable10 th{ border: 2px solid #080708; background-color: #52ab98; color: #48E5DA ; text-align: left; border: 2px solid #080708; padding: 6px}
 table.cm8-uusitable10 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitable10 td{ border: 1px solid grey; color: #080708; text-align: left; padding: 6px }
 
@@ -1279,7 +1279,7 @@ table.cm8-uusitable10 th:last-child {
 }
 /*
 taa*/
-table.cm8-uusitablekayttajat th{ border: 2px solid #080708; background-color: #c50076; color: #48E5DA; text-align: left; padding-left: 6px }
+table.cm8-uusitablekayttajat th{ border: 2px solid #080708; background-color: #52ab98; color: #48E5DA; text-align: left; padding-left: 6px }
 table.cm8-uusitablekayttajat tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitablekayttajat td{  padding: 6px; border: 1px solid grey; color: #080708 }
 table.cm8-uusitablekayttajat th a{ color: #48E5DA;}
@@ -1308,7 +1308,7 @@ table.cm8-uusitablekayttajat th:last-child {
     width: 10%;
 }
 table.cm8-uusitablekayttajat tr:last-child td{
-    background-color: #080708;
+    background-color: #e5e5e5;
     border: 3px solid #080708;
 }
 
@@ -1329,7 +1329,7 @@ table.cm8-uusitable12 {
 
 
 table.cm8-uusitable12 a{ color: #080708}
-table.cm8-uusitable12 th{padding: 20px 10px; color: #48E5DA; text-align: left; background-color: #c50076; width: 1%;   word-wrap: break-word;         /* All browsers since IE 5.5+ */
+table.cm8-uusitable12 th{padding: 20px 10px; color: #48E5DA; text-align: left; background-color: #52ab98; width: 1%;   word-wrap: break-word;         /* All browsers since IE 5.5+ */
                          overflow-wrap: break-word; }
 table.cm8-uusitable12 th a{color: #48E5DA }
 table.cm8-uusitable12 td{ padding: 6px; color: #080708}
@@ -1355,16 +1355,16 @@ table.cm8-uusitable12 tr:last-child td:nth-last-child(1){
 
 }
 table.cm8-uusitable12 tr:last-child td:first-child{
-    background-color: #080708;
+    background-color: #e5e5e5;
 
 
 }
 table.cm8-uusitable12 tr:last-child td{
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 
 
-table.cm8-uusitable18 th{ border: 2px solid #080708; background-color: #c50076; color: #48E5DA }
+table.cm8-uusitable18 th{ border: 2px solid #080708; background-color: #52ab98; color: #48E5DA }
 table.cm8-uusitable18 tr{ border-right: 1px solid #080708; border-left: 1px solid #080708;  }
 table.cm8-uusitable18 td{  padding: 6px; border: 1px solid grey; color: #080708 }
 table.cm8-uusitable18 th{ border: 2px solid #080708 }
@@ -1475,7 +1475,7 @@ table.cm8-tableoppilas td{
 }
 table.cm8-tableoppilas .osisalto {
     border: 2px solid grey;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 table.cm8-bordered tr{border-bottom:1px solid #d0d0d0}
@@ -1491,8 +1491,8 @@ table.cm8-stripedeivikaa tbody tr:nth-child(odd){background-color:			#f7f9f7	}
 table.cm8-stripedeivikaa thead tr:nth-child(odd){background-color:			#158696	}
 
 table.cm8-striped3 tbody tr:nth-child(even){background-color:				#f7f9f7}
-table.cm8-striped3 thead tr:nth-child(even){background-color:			#f7f9f7; color: #f7f9f7	}
-table.cm8-striped3 thead tr:nth-child(odd){background-color:			#f7f9f7; color: #f7f9f7	}
+table.cm8-striped3 thead tr:nth-child(even){background-color:			#f7f9f7; color: #2b6777	}
+table.cm8-striped3 thead tr:nth-child(odd){background-color:			#f7f9f7; color: #2b6777	}
 table.cm8-striped2 tbody tr:nth-child(even){background-color:			#f7f9f7}
 table.cm8-striped2 thead tr:nth-child(odd){background-color:			#f7f9f7	}
 table.cm8-hoverable tbody tr{transition:background-color .25s ease}
@@ -1505,7 +1505,7 @@ table.cm8-tableyks2 {
 }
 table.cm8-tableyks2 a{color: #080708}
 table.cm8-tableyks2 a:hover{font-weight: bold; border-bottom: 1px solid transparent}
-table.cm8-tableyks2 th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #c50076; color: #48E5DA;}
+table.cm8-tableyks2 th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #52ab98; color: #48E5DA;}
 table.cm8-tableyks2 td{padding:6px 8px; text-align:left; color: #080708; }
 
 table.cm8-tableyks2 td:last-child {
@@ -1521,7 +1521,7 @@ table.cm8-tableyks {
 }
 table.cm8-tableyks a{color: #080708}
 table.cm8-tableyks a:hover{font-weight: bold; border-bottom: 1px solid transparent}
-table.cm8-tableyks th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #c50076; color: #48E5DA;}
+table.cm8-tableyks th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #52ab98; color: #48E5DA;}
 table.cm8-tableyks td{padding:6px 8px; text-align:left; color: #080708; font-size: 0.8em}
 
 table.cm8-tableyks td:last-child {
@@ -1531,12 +1531,12 @@ table.cm8-tableyks td:last-child {
 
 
 table.cm8-table {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 table.cm8-table a{
     color: #080708;
 }
-table.cm8-table th{padding:6px 8px;text-align:left; background-color: 	#c50076; color: #48E5DA}
+table.cm8-table th{padding:6px 8px;text-align:left; background-color: 	#52ab98; color: #48E5DA}
 table.cm8-table th a{text-align:left; color: #48E5DA }
 table.cm8-table td,th{padding:6px 8px;display:table-cell;text-align:left;}
 table.cm8-table th:first-child,table.cm8-table td:first-child{padding-left:16px}
@@ -1550,18 +1550,18 @@ table.cm8-table td {
 }
 table.cm8-table tr:last-child td{
 
-    background-color: #080708;;
+    background-color: #e5e5e5;;
 
 }
 
 
 table.cm8-tableoppilaitos {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 table.cm8-tableoppilaitos a{
     color: #080708;
 }
-table.cm8-tableoppilaitos th{padding:6px 8px;text-align:left; background-color: 	#c50076;color: #48E5DA; font-weight: bold}
+table.cm8-tableoppilaitos th{padding:6px 8px;text-align:left; background-color: 	#52ab98;color: #48E5DA; font-weight: bold}
 table.cm8-tableoppilaitos td{padding:6px 8px;display:table-cell;text-align:left;}
 table.cm8-tableoppilaitos td {
     #f7f9f7-space: nowrap;
@@ -1571,13 +1571,13 @@ table.cm8-tableoppilaitos td {
 }
 table.cm8-tableoppilaitos tr:last-child td{
 
-    background-color: #080708;;
+    background-color: #e5e5e5;;
 
 }
 
 
 table.cm8-tabler {
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 0.9em;
     margin-right: 10px;
     border: 1px solid #080708;
@@ -1592,7 +1592,7 @@ table.cm8-tabler td {
     color: #080708;
 
 }
-table.cm8-tabler th{padding:6px 8px;text-align:left; background-color: 	#c50076; color: #48E5DA}
+table.cm8-tabler th{padding:6px 8px;text-align:left; background-color: 	#52ab98; color: #48E5DA}
 table.cm8-tabler td{padding:6px 8px;display:table-cell;text-align:left;  color: #080708}
 
 table.cm8-table2 td,th{padding:20px 20px 20px 20px;display:table-cell;text-align:left;vertical-align:center}
@@ -1610,7 +1610,7 @@ table.cm8-table3 {
 
 
 table.cm8-table3 tr{border-bottom: 1px solid #080708;}
-table.cm8-table3 td{border: 1px solid #080708; word-break: break-all; padding:6px 8px; text-align:left; color: #080708; background-color: #f7f9f7}
+table.cm8-table3 td{border: 1px solid #080708; word-break: break-all; padding:6px 8px; text-align:left; color: #080708; background-color: white}
 table.cm8-table3 th{padding:6px 8px;  text-align:left; color: #080708; background-color: #0099ff; border: 1px solid #080708}
 
 
@@ -1634,7 +1634,7 @@ table.cm8-tablevailla {
 
 
 table.cm8-tablevailla tr{border-bottom: 1px solid #080708;}
-table.cm8-tablevailla td{border: 1px solid #080708; word-break: break-all; padding:6px 8px; text-align:left; color: #080708; background-color: #f7f9f7}
+table.cm8-tablevailla td{border: 1px solid #080708; word-break: break-all; padding:6px 8px; text-align:left; color: #080708; background-color: white}
 table.cm8-tablevailla th{padding:6px 8px;  text-align:left; color: #080708; background-color: #0099ff; border: 1px solid #080708}
 
 
@@ -1646,7 +1646,7 @@ table.cm8-tablevailla td a{
 table.cm8-tablevailla a:hover{color:#080708; font-weight: bold; border-bottom: 1px solid transparent}
 
 table.cm8-table6 tr{border: 2px solid #080708;}
-table.cm8-table6 td{background-color: #f7f9f7; color: #080708; padding:6px 8px;display:table-cell;text-align:left}
+table.cm8-table6 td{background-color: white; color: #080708; padding:6px 8px;display:table-cell;text-align:left}
 
 table.cm8-table6 a{color: #080708}
 
@@ -1698,7 +1698,7 @@ table.cm8-stripedeivikaa tr:last-child td:first-child{
 
 
 
-.cm8-container4{padding:5px 20px 5px 30px; font-size: 0.9em;  background-color: #080708;  margin: 10px 10px 10px 10px; color: #f7f9f7; border: 1px solid #127475}
+.cm8-container4{padding:5px 20px 5px 30px; font-size: 0.9em;  background-color: #e5e5e5;  margin: 10px 10px 10px 10px; color: #2b6777; border: 1px solid #127475}
 .cm8-container4 a {text-decoration:none !important}
 .cm8-container4 a {border-bottom:3px solid transparent;
                    -webkit-transition: all s ease;-moz-transition: all 0s ease;-o-transition: all 0s ease;transition: all 0s ease;color:#f7f9f7}
@@ -1728,7 +1728,7 @@ table.cm8-stripedeivikaa tr:last-child td:first-child{
 .cm8-container88 a:hover {border-bottom: none}
 
 
-.cm8-containerFooter{padding:5px 20px 5px 30px; font-size: 0.8em;  background-color: #080708;  margin: 10px 10px 10px 10px; color: #f7f9f7; border: 1px solid #127475}
+.cm8-containerFooter{padding:5px 20px 5px 30px; font-size: 0.8em;  background-color: #e5e5e5;  margin: 10px 10px 10px 10px; color: #2b6777; border: 1px solid #127475}
 .cm8-containerFooter a {text-decoration:none !important; }
 .cm8-containerFooter a {border-bottom:3px solid transparent;
                         -webkit-transition: all s ease;-moz-transition: all 0s ease;-o-transition: all 0s ease;transition: all 0s ease;color:#f7f9f7}
@@ -1743,7 +1743,7 @@ table.cm8-stripedeivikaa tr:last-child td:first-child{
 .cm8-btn.cm8-disabled:hover,.cm8-btn-floating.cm8-disabled:hover,.cm8-btn:disabled:hover,.cm8-btn-floating:disabled:hover{
     background-color:#080708 !important;color:#f7f9f7 !important}
 .cm8-btn:hover,.cm8-btn-floating:hover,.cm8-btn-floating i:hover,.cm8-btn-floating-large:hover,.cm8-btn-floating-large i:hover{
-    opacity:0.7; background-color: #080708; color: #f7f9f7 !important}
+    opacity:0.7; background-color: #e5e5e5; color: #2b6777 !important}
 .cm8-btn-floating,.cm8-btn-floating-large{
     display:inline-block;color:#f7f9f7;background-color:#080708;position:relative;overflow:hidden;z-index:1;
     width:40px;height:40px;line-height:40px;padding:0;border-radius:50%;transition:.3s;cursor:pointer}
@@ -2020,7 +2020,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
         right: 0;
         top: 0;
         background: transparent;
-        color: #f7f9f7;
+        color: #2b6777;
 
     }
     .topnav.responsive a {
@@ -2303,7 +2303,7 @@ a.currentLink3
     }
     .topnav2 a.icon:hover {
 
-        background: #f7f9f7;
+        background-color: white;
 
 
     }
@@ -2383,7 +2383,7 @@ a.currentLink3
                -webkit-transition: all 0s ease;-moz-transition: all 0s ease;-o-transition: all 0s ease;transition: all 0s ease;}
 .cm8-topnav a:hover {border-bottom:1px solid}
 
-.cm8-topnav2 {padding:30px 0px 20px 0px; font-size: 0.9em; color: #f7f9f7; margin-right: 0px}
+.cm8-topnav2 {padding:30px 0px 20px 0px; font-size: 0.9em; color: #2b6777; margin-right: 0px}
 .cm8-topnav2 a,.cm8-sidenav a,.cm8-dropnav a {border-radius: 25px;text-decoration:none !important}
 .cm8-topnav2 a {box-shadow: 5px 5px 5px #888888;font-size: 1.2em; font-weight: bold; border-radius: 25px;border:1px solid; text-align:center; margin-right: 2px; margin-bottom: 4px; padding: 10px 20px; display: inline-block; background-color: #127475;
                 -webkit-transition: all 1s ease;-moz-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;
@@ -2398,7 +2398,7 @@ a.currentLink3
 }
 .cm8-topnav2 a:hover { border-radius: 25px;font-weight: bold; border: 1px solid; 
                        color: #080708;
-                       background: #f7f9f7; 
+                       background-color: white; 
                        background: -webkit-linear-gradient( #f7f9f7, #ff80cc);
                        background: -o-linear-gradient( #f7f9f7, #ff80cc); 
                        background: -moz-linear-gradient( #f7f9f7, #ff80cc);  
@@ -2417,7 +2417,7 @@ a.currentLink3
 
 .cm8-topnav3 {padding:30px 20px; font-size: 0.9em;color: #080708; border-bottom:1px solid #ccc}
 .cm8-topnav3 a,.cm8-sidenav a,.cm8-dropnav a {border-radius: 25px;text-decoration:none !important}
-.cm8-topnav3 a {box-shadow: 5px 5px 5px #888888;border:1px solid; text-align:center; margin-right: 5px; ; margin-bottom: 10px; padding: 4px 10px; display: inline-block; background-color: #f7f9f7;
+.cm8-topnav3 a {box-shadow: 5px 5px 5px #888888;border:1px solid; text-align:center; margin-right: 5px; ; margin-bottom: 10px; padding: 4px 10px; display: inline-block; background-color: white;
                 -webkit-transition: all 1s ease;-moz-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;}
 .cm8-topnav3 a:hover {font-weight: bold; border: 1px solid; font-size: 1.1em;
                       color: #080708;
@@ -2427,7 +2427,7 @@ a.currentLink3
                       -moz-transition: background-color .2s ease-out;
                       -o-transition: background-color .2s ease-out;
                       transition: background-color .2s ease-out;
-                      border-color: #f7f9f7;
+                      border-color: #2b6777;
                       border-style: solid;
 
 
@@ -2476,7 +2476,7 @@ a.btn-info {
     background: -o-linear-gradient( #127475, #ff80cc); 
     background: -moz-linear-gradient( #127475, #ff80cc); 
     background: linear-gradient( #127475, #ff80cc); 
-    border-color: #f7f9f7;
+    border-color: #2b6777;
     margin-bottom: 4px;
     -o-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -2498,7 +2498,7 @@ a.btn-info.focus {
 }
 a.btn-info:hover {
     color: #080708;
-    background: #f7f9f7; 
+    background-color: white; 
     background: -webkit-linear-gradient( #f7f9f7, #ff80cc); 
     background: -o-linear-gradient( #f7f9f7, #ff80cc); 
     background: -moz-linear-gradient( #f7f9f7, #ff80cc);  
@@ -2519,7 +2519,7 @@ a.btn-info:active,
 a.btn-info.active,
 .open > .dropdown-toggle.btn-info {
     color: #e3eee6;
-    background: #f7f9f7; 
+    background-color: white; 
     background: -webkit-linear-gradient( #f7f9f7,  #b9b8bf);
     background: -o-linear-gradient( #f7f9f7,   #b9b8bf);
     background: -moz-linear-gradient( #f7f9f7,   #b9b8bf);
@@ -2559,7 +2559,7 @@ a.btn-info2 {
     background: -o-linear-gradient( #127475, #ff80cc); 
     background: -moz-linear-gradient( #127475, #ff80cc); 
     background: linear-gradient( #127475, #ff80cc);  
-    border-color: #f7f9f7;
+    border-color: #2b6777;
     margin: 0px;
     -o-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -2578,12 +2578,12 @@ a.btn-info2:focus,
 a.btn-info2.focus {
     color: #48E5DA;
     background-color: #127475;
-    border-color: #f7f9f7;
+    border-color: #2b6777;
     border-style: solid;
 }
 a.btn-info2:hover {
     color: #080708;
-    background: #f7f9f7;
+    background-color: white;
     background: -webkit-linear-gradient( #f7f9f7, #ff80cc); 
     background: -o-linear-gradient( #f7f9f7, #ff80cc); 
     background: -moz-linear-gradient( #f7f9f7, #ff80cc); 
@@ -2601,7 +2601,7 @@ a.btn-info2:active,
 a.btn-info2.active,
 .open > .dropdown-toggle.btn-info {
     color: #080708;
-    background: #f7f9f7; 
+    background-color: white; 
     background: -webkit-linear-gradient( #f7f9f7,  #b9b8bf); 
     background: -o-linear-gradient( #f7f9f7,   #b9b8bf); 
     background: -moz-linear-gradient( #f7f9f7,   #b9b8bf);
@@ -2621,7 +2621,7 @@ a.btn-info2:active.focus,
 a.btn-info2.active.focus,
 .open > .dropdown-toggle.btn-info.focus {
     color: #e3eee6;
-    background: #f7f9f7; 
+    background-color: white; 
     background: -webkit-linear-gradient( #f7f9f7,  #b9b8bf); 
     background: -o-linear-gradient( #f7f9f7,   #b9b8bf); 
     background: -moz-linear-gradient( #f7f9f7,   #b9b8bf);
@@ -2657,7 +2657,7 @@ a.munNappula{
 
 
 a.munNappula:hover {
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 }
@@ -2681,7 +2681,7 @@ a.suljeNappula{
 
 
 a.suljeNappula:hover {
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 }
@@ -2706,7 +2706,7 @@ input[type="submit"].munNappula {
 
 
 input[type="submit"].munNappula:hover {
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 }
@@ -2736,7 +2736,7 @@ input[type="submit"].munNappula:hover {
 
 .munNappula2:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
 
 }
 
@@ -2752,12 +2752,12 @@ a.btn-info3 {
     padding-right: 4px;
 }
 a.btn-info3:hover{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 }
 a.btn-info3-valittu {
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 0.8em;
     border-style: 2px solid red;
     margin-top: 10px;
@@ -2786,7 +2786,7 @@ a.cm8-linkk3 {
 }
 a.cm8-linkk3:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 a.cm8-linkk3-valittu{
     background-color:  #f7f9f7;
@@ -2831,7 +2831,7 @@ a.cm8-linkk4 {
 
     transition: 0.3s;
     cursor: pointer;
-    background: linear-gradient(to right, #c7ef00 , #9caf40);
+    background: linear-gradient(to right, red , #9caf40);
     text-align: center;
 }
 
@@ -2847,7 +2847,7 @@ a.cm8-linkk4:hover{
 
     border: 1px solid #080708;
     background-color:#181b24;
-    color: #f7f9f7;
+    color: #2b6777;
     font-weight: normal;
     padding: 2px;
 
@@ -2904,7 +2904,7 @@ a.cm8-linkk4:hover{
 .cm8-tavoitedivi{
     display: inline-block;
 
-    background-color: #f7f9f7;
+    background-color: white;
     border: 1px solid grey;
     width: 50%;
     box-sizing: border-box;
@@ -2917,7 +2917,7 @@ a.cm8-linkk4:hover{
 }
 .cm8-tavoitedivi2{
     margin-top: 20px;
-    background-color: #f7f9f7;
+    background-color: white;
     border: 1px solid grey;
     color: #080708;
     box-sizing: border-box;
@@ -2940,7 +2940,7 @@ a.cm8-linkk4:hover{
 .cm8-tavoitediviope{
     display: inline-block;
     font-size: 0.8em;
-    background-color: #f7f9f7;
+    background-color: white;
     border: 1px solid grey;
     color: #080708;
     box-sizing: border-box;
@@ -2973,7 +2973,7 @@ a.cm8-linkk4:hover{
     border-radius: 0.5em;
     font-weight: bold;
     box-shadow: 0 0 1em rgba(0,0,0,0.2);
-    color: #f7f9f7;
+    color: #2b6777;
     font-family: sans-serif;
 
     transition: 0.3s;
@@ -2989,7 +2989,7 @@ a.cm8-linkk4:hover{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    background: #f7f9f7; 
+    background-color: white; 
     box-sizing: border-box;
     border: 2px solid orange;
     padding: 12px;
@@ -2998,7 +2998,7 @@ a.cm8-linkk4:hover{
     border-radius: 0.5em;
     font-weight: bold;
     box-shadow: 0 0 1em rgba(0,0,0,0.2);
-    color: #f7f9f7;
+    color: #2b6777;
     font-family: sans-serif;
     background: linear-gradient(to right, orange, tomato);
     transition: 0.3s;
@@ -3053,7 +3053,7 @@ a.cm8-linkk4:hover{
 }
 .myButtonOhjeA:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
     cursor: pointer;
     border: 2px solid #080708;
     font-weight: bold;
@@ -3083,7 +3083,7 @@ a.cm8-linkk4:hover{
 
 .myButtonOhjeS:hover{
 
-    background-color: #f7f9f7;
+    background-color: white;
     cursor: pointer;
     border: 2px solid #080708;
     font-weight: bold;
@@ -3200,14 +3200,14 @@ a.iconlinkki:hover{border: none;
 }
 button.roskis:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
     border: solid #127475;
 }
 
 a.roskis:hover {
 
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
     border: 1px solid #080708;
     font-size: 0.9em;
 }
@@ -3257,7 +3257,7 @@ button.pieniroskis {
 }
 button.pieniroskis:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 
@@ -3286,7 +3286,7 @@ button.pienikyna: {
 }
 button.pienikyna:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
     color:  #080708;
     border: 1px solid #080708;
 }
@@ -3318,7 +3318,7 @@ button.keskroskis: {
 }
 button.keskroskis:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
     color:  #127475;
 
 }
@@ -3345,12 +3345,12 @@ button.keskroskis:hover {
 
 }
 .linkkiroskis:hover{
-    color: #f7f9f7;
+    color: #2b6777;
     font-size: 0.6em;
 }
 
 a.linkkiroskis:hover{
-    background-color: #f7f9f7;
+    background-color: white;
     color:  #080708;
 }
 .muokkausN {
@@ -3398,7 +3398,7 @@ a.linkkiroskis:hover{
 
 }
 .muokkausinfo:hover {
-    background-color: #f7f9f7;
+    background-color: white;
     border: 2px solid #127475;
     font-size: 0.9em;
 }
@@ -3465,18 +3465,18 @@ a.myButton8{
     margin-bottom: 10px;
 }
 .myButton8:hover {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 .myButton9:hover {
 
-    background-color: #f7f9f7;
+    background-color: white;
 }
 a.myButton9:hover{
-    background-color: #f7f9f7;
+    background-color: white;
 
 }
 input[type="submit"].myButton9:hover{
-    background-color: #f7f9f7;
+    background-color: white;
 
 }
 input[type="submit"].myButton9{
@@ -3735,32 +3735,32 @@ input[type="submit"].myButton8{
 
 }
 input[type="submit"].myButton8:hover {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 input[type="submit"].myButtonTuo{
     display: inline-block
         border: 1px solid #080708;
-    -moz-box-shadow: 1px 0px 3px 1px #c7ef00;
-    -webkit-box-shadow: 1px 0px 3px 1px #c7ef00;
-    box-shadow: 1px 0px 3px 1px #c7ef00;
+    -moz-box-shadow: 1px 0px 3px 1px red;
+    -webkit-box-shadow: 1px 0px 3px 1px red;
+    box-shadow: 1px 0px 3px 1px red;
 
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:10px;
     cursor:pointer;
     color: #080708;
-    background-color: #c7ef00;
+    background-color: red;
     font-weight: bold;
     padding:2px 4px; 
     font-size: 0.8em;
 
 }
 input[type="submit"].myButtonTuo:hover {
-    background-color: #f7f9f7;
+    background-color: white;
 }
 a.myButton8:hover {
-    background-color: #f7f9f7;
+    background-color: white;
 
 
 }
@@ -3792,7 +3792,7 @@ a.myButton8:hover {
     border:1px solid #127475;
     padding: 4px 6px;
     cursor:pointer;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -3813,8 +3813,8 @@ a.myButton8:hover {
 a.currentLink2
 {
     color: #127475;
-    background-color: #f7f9f7;
-    border-color: #f7f9f7;
+    background-color: white;
+    border-color: #2b6777;
 }
 
 
@@ -4180,7 +4180,7 @@ label:hover{
     box-shadow: inset 1px 1px 4px #b9b8bf;
     -moz-box-shadow: inset 1px 1px 4px #b9b8bf;
     -webkit-box-shadow: inset 1px 1px 4px #b9b8bf;
-    background: #f7f9f7;
+    background-color: white;
     width:50%;
     font-size: 1em;
 
@@ -4197,7 +4197,7 @@ label:hover{
     box-shadow: inset 1px 1px 4px #b9b8bf;
     -moz-box-shadow: inset 1px 1px 4px #b9b8bf;
     -webkit-box-shadow: inset 1px 1px 4px #b9b8bf;
-    background: #f7f9f7;
+    background-color: white;
     width: 90%;
     font-size: 1em
 }
@@ -4224,7 +4224,7 @@ label:hover{
     padding: 4px 6px;
     cursor:pointer;
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -4253,7 +4253,7 @@ label:hover{
     padding: 4px 6px;
     cursor:pointer;
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -4282,7 +4282,7 @@ label:hover{
     padding: 4px 6px;
 
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -4330,7 +4330,7 @@ label:hover{
     -webkit-box-shadow: inset 0px 0px 15px #127475;
 
 
-    background: #f7f9f7;
+    background-color: white;
     margin: 0px 0px 10px 0px;
 
     padding: 20px 20px 10px 20px;
@@ -4340,7 +4340,7 @@ label:hover{
 }
 .form-style-p fieldset legend{
     color: #080708;
-    background: #f7f9f7;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -4383,7 +4383,7 @@ label:hover{
     color: #080708;
     padding: 5px;
 
-    background: #f7f9f7;
+    background-color: white;
     width: 80%;
     font-size: 0.8em;
 
@@ -4403,7 +4403,7 @@ label:hover{
     color: #080708;
     padding: 5px;
 
-    background: #f7f9f7;
+    background-color: white;
     width: 80%;
     font-size: 0.9em;
 }
@@ -4492,14 +4492,14 @@ label:hover{
 .form-style-p  input[type=submit]:hover,
 .form-style-p  input[type=button]:hover{
     border: none;
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 }
 input[type=submit]:focus,
 input[type=button]:focus{
     border: none;
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 
@@ -4525,7 +4525,7 @@ input[type=button]:focus{
 
 
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
     padding: 10px 6px;
     display: inline-block;
     font-weight: bold;
@@ -4676,7 +4676,7 @@ p.form-style-8 {
     box-shadow: inset 1px 1px 4px #b9b8bf;
     -moz-box-shadow: inset 1px 1px 4px #b9b8bf;
     -webkit-box-shadow: inset 1px 1px 4px #b9b8bf;
-    background: #f7f9f7;
+    background-color: white;
     width:80%;
     height:80%;
     font-size: 1em;
@@ -4702,7 +4702,7 @@ p.form-style-8 {
     padding: 4px 6px;
     cursor:pointer;
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -4729,7 +4729,7 @@ p.form-style-8 {
     padding: 4px 6px;
     cursor:pointer;
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
     display: inline-block;
     font-weight: bold;
     font-size: 1em;
@@ -4790,7 +4790,7 @@ p.form-style-8 {
     -webkit-box-shadow: inset 0px 0px 15px #127475;
 
 
-    background: #f7f9f7;
+    background-color: white;
     margin: 0px 0px 10px 0px;
 
     padding: 20px 20px 10px 20px;
@@ -4818,7 +4818,7 @@ p.form-style-8 {
 }
 .form-style-k fieldset legend{
     color: #080708;
-    background: #f7f9f7;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -4877,7 +4877,7 @@ p.form-style-8 {
     outline: none;
     color: #080708;
     padding: 5px;
-    background: #f7f9f7;
+    background-color: white;
     width: 100%;
     height:90%;
     font-size: 0.9em;
@@ -4923,7 +4923,7 @@ p.form-style-8 {
 }
 .form-style-k  input[type=submit]:hover,
 .form-style-k  input[type=button]:hover{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 }
 
@@ -4944,7 +4944,7 @@ p.form-style-8 {
 
 .form-style-k a{padding: 0px}
 .form-style-k .myButton9{padding: 2px 4px}
-.form-style-k a:hover{background-color: #f7f9f7; cursor: pointer; color:#080708 }
+.form-style-k a:hover{background-color: white; cursor: pointer; color:#080708 }
 
 .form-style-k  p{
     margin:0px;
@@ -4972,7 +4972,7 @@ p.form-style-8 {
     padding: 4px 6px;
 
     background: #127475;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
 
@@ -5055,7 +5055,7 @@ p.form-style-8 {
     -webkit-box-shadow: inset 0px 0px 15px #127475;
 
 
-    background: #f7f9f7;
+    background-color: white;
     margin: 0px 0px 10px 0px;
 
     padding: 20px 20px 10px 20px;
@@ -5065,7 +5065,7 @@ p.form-style-8 {
 }
 .form-style-spinner fieldset legend{
     color: #080708;
-    background: #f7f9f7;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -5107,7 +5107,7 @@ p.form-style-8 {
     outline: none;
     color: #080708;
     padding: 5px;
-    background: #f7f9f7;
+    background-color: white;
     width: 100%;
     height:90%;
     font-size: 0.9em;
@@ -5185,7 +5185,7 @@ p.form-style-8 {
     margin-top: 0px;
 }
 .form-style-k .erilainen {
-    color: #f7f9f7;
+    color: #2b6777;
 
     padding: 2px 4px;
 }
@@ -5221,7 +5221,7 @@ p.form-style-8 {
 }
 
 .form-style-spinner .erilainen:hover{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 }
 .form-style-spinner textarea{
@@ -5239,7 +5239,7 @@ p.form-style-8 {
     outline: none;
     color: #080708;
     padding: 5px;
-    background: #f7f9f7;
+    background-color: white;
 
     font-size: 0.9em;
     display: inline-block;
@@ -5331,7 +5331,7 @@ form-style-9{
     padding: 4px 6px;
     cursor:pointer;
     background: #080708;
-    color: #f7f9f7;
+    color: #2b6777;
 
     display: inline-block;
     font-weight: bold;
@@ -5348,22 +5348,22 @@ form-style-9{
 .form-style-3  input[type=submit]:hover,
 .form-style-3  input[type=button]:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 .form-style-3  a:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 .form-style-8  input[type=submit]:hover,
 .form-style-8  input[type=button]:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 .form-style-9  input[type=submit]:hover,
 .form-style-9  input[type=button]:hover{
     color: #080708;
-    background-color: #f7f9f7;
+    background-color: white;
 }
 
 .outer-div
@@ -5397,12 +5397,12 @@ tr.aihe td:nth-child(2) {
 }
 
 tr.sisalto {
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 1em;
 }
 
 tr.sisalto textarea{
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 0.9em;
     border: 0 none #f7f9f7;
     overflow: hidden;
@@ -5447,13 +5447,13 @@ tr.ivaliaihe td:nth-child(2){
 
 
 tr.isisalto {
-    background-color: #f7f9f7;
+    background-color: white;
 
     font-style: italic;
     padding: 20px;
 }
 td.sisaltoselitys {
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 0.9em;
     font-style: italic;
     padding: 10px;
@@ -5485,7 +5485,7 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableitse .isisalto2 {
-    background-color: #f7f9f7;
+    background-color: white;
 
     font-style: italic;
     font-size: 0.8em;
@@ -5514,7 +5514,7 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableia .isisalto2 {
-    background-color: #f7f9f7;
+    background-color: white;
 
     font-style: italic;
     font-size: 0.8em;
@@ -5543,14 +5543,14 @@ td.sisaltoselitys {
 
 
 .cm8-tableoppilas .isisalto2 {
-    background-color: #f7f9f7;
+    background-color: white;
 
     font-style: italic;
     font-size: 1em;
 }
 
 .cm8-tableoppilas .isisalto2 .muokkaus{
-    background-color: #080708;
+    background-color: #e5e5e5;
     border: none;
     font-style: normal;
     font-size: 0.8em;
@@ -5573,12 +5573,12 @@ tr.taihe td:nth-child(2) {
 }
 
 tr.tsisalto {
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 1em;
 }
 
 tr.tsisalto textarea{
-    background-color: #f7f9f7;
+    background-color: white;
     font-size: 0.9em;
     border: 0 none #f7f9f7;
     overflow: hidden;
@@ -5602,7 +5602,7 @@ html {
 .myButtonKom{
     margin-top: 20px;
     background-color:  blue;
-    color: #f7f9f7;
+    color: #2b6777;
     margin: 0px;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
@@ -5620,7 +5620,7 @@ html {
     text-decoration:none;
 }
 .myButtonKom:hover {
-    background-color: #f7f9f7;
+    background-color: white;
     color:  blue;
 }
 .myButtonKom:active,
@@ -5632,7 +5632,7 @@ html {
 
 
 .cm8-ilmoitus{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
 
 }
@@ -5644,7 +5644,7 @@ html {
 }
 
 .cm8-keskustelu{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
     padding: 20px;
     margin-top: 30px; 
@@ -5667,7 +5667,7 @@ html {
     color: #080708;
 }
 .cm8-taulu{
-    background-color: #f7f9f7;
+    background-color: white;
     color: #080708;
     padding: 5px;
     border: 2px solid grey; 
@@ -5724,7 +5724,7 @@ a{color: inherit}
 }
 
 button:hover{
-    background-color: #f7f9f7;
+    background-color: white;
 }
 button:active,
 button:focus

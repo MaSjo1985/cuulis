@@ -57,7 +57,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $db->query("delete from koulunadminit where koulu_id = '" . $tuote . "'");
             }
 
-            echo'<br><b style="color: #c7ef00;">Valitut oppilaitokset on nyt poistettu.</b><br><br><a href="oppilaitokset.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+            echo'<br><b style="color: red;">Valitut oppilaitokset on nyt poistettu.</b><br><br><a href="oppilaitokset.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
         }
 
 

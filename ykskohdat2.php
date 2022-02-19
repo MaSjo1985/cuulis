@@ -218,9 +218,9 @@ function myFunction(y) {
 
 
 
-        echo'<br><h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.2em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6>';
+        echo'<br><h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.2em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
         echo'<br><a href="itsetyot.php?i=' . $_GET[id] . '""><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
-        echo'<br><br><b style="font-size: 1.1em; color:  #c50076">Aiheeseen "' . $otsikko . '" liittyvät tehtävätilastot: </b><br>';
+        echo'<br><br><b style="font-size: 1.1em; color:  #9dffff">Aiheeseen "' . $otsikko . '" liittyvät tehtävätilastot: </b><br>';
 
 
 

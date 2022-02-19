@@ -20,7 +20,7 @@ if ($resulteka->num_rows == 0) {
         if ($resulteka->num_rows == 1)
             echo'<p style="display: inline-block; " >(1 arvostelu, keskiarvo: ' . round($row[keski], 1) . '/5)</p>';
         else {
-            echo'<p style="display: inline-block; " >(' . $resulteka->num_rows . ' arvostelua, keskiarvo: ' . round($row[keski], 1) . '/5)</p>';
+            echo'<p style="display: inline-block;  " >(' . $resulteka->num_rows . ' arvostelua, keskiarvo: ' . round($row[keski], 1) . '/5)</p>';
         }
     }
 }

@@ -87,7 +87,7 @@ function myFunction(y) {
         }
         echo'<div class="cm8-container3" style="padding-top: 30px">';
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Muokkaa itserviointilomaketta</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Muokkaa itserviointilomaketta</h6>';
         echo'<a href="itsearviointi.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
 

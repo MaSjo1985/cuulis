@@ -156,7 +156,7 @@ function myFunction(y) {
         $aanid = $rowa[id];
         $kysymys = $rowa[kysymys];
     }
-    echo'<h6 style="padding-top: 10px; color: #f7f9f7">Äänestystilanne</h6>';
+    echo'<h6 style="padding-top: 10px; color: #2b6777">Äänestystilanne</h6>';
     echo'<br><a href="aanestykset.php?a=' . $_POST[id] . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin </a><br><br><br>';
     echo'<b>Kysymys:  </b>' . $kysymys . '<br><br>';
 

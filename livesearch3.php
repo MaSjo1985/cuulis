@@ -69,7 +69,7 @@ if (isset($_POST['search'])) {
 
 
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
-        echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Hakutulokset:</b><br><br>';
+        echo'<b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Hakutulokset:</b><br><br>';
         echo '<table id="mytable88" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="table-layout:fixed; max-width: 100%;"><thead>';
         echo '<tr id="tanne"><th>Kurssi/Opintojakso</th><th>Koodi</th><th>Vastuuopettaja</th><th>Oppilaitos</th><th>Lukuvuosi</th><th>Alkaa</th><th>Päättyy</th><th></th></tr>';
         echo'</thead><tbody>';

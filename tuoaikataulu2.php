@@ -87,7 +87,7 @@ function myFunction(y) {
             $nimi = $rivi[nimi];
         }
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; display: inline-block">Tuo aikataulu kurssista/opintojaksosta ' . $koodi . ' ' . $nimi . ' </h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777; display: inline-block">Tuo aikataulu kurssista/opintojaksosta ' . $koodi . ' ' . $nimi . ' </h6>';
 
         echo'<br><a href="tuoaikataulu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
@@ -160,7 +160,7 @@ function myFunction(y) {
         echo'</form>';
         }
         else{
-            echo'<br><br><p style="color: #c7ef00; font-weight: bold;">Kurssilla/opintojaksolla ei ole aikataulua.</p>';
+            echo'<br><br><p style="color: red; font-weight: bold;">Kurssilla/opintojaksolla ei ole aikataulua.</p>';
         }
   
         echo'</div>';

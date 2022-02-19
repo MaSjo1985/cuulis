@@ -42,7 +42,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     }
 
 
-    echo'<p  style="color: #f7f9f7; font-size: 0.1em" id="haeid" >' . $_GET[r] . '</p>';
+    echo'<p  style="color: #2b6777; font-size: 0.1em" id="haeid" >' . $_GET[r] . '</p>';
     include("kurssisivustonheader.php");
 
 
@@ -254,7 +254,7 @@ function myFunction(y) {
 
 
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7"><fieldset style="border: 2px solid #f5e1da">';
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white"><fieldset style="border: 2px solid #f5e1da">';
 
 
 
@@ -364,7 +364,7 @@ function myFunction(y) {
                 echo'<div class="cm8-third" style="padding-left: 40px;">';
                 $nimi = $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"];
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7"><fieldset style=" padding-right: 20px; border: 2px solid #f5e1da">
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white"><fieldset style=" padding-right: 20px; border: 2px solid #f5e1da">
 						<b>Nimimerkki:</b> <br><br><textarea name="nimi" rows="2" style="font-size:0.9em">' . $nimi . '</textarea><br><br><b>Viesti:</b> <br> <br><textarea id="sendie"  class="content" name="uusi" rows="2" style="font-size:0.9em" ></textarea>
 								<input type="hidden" name="paiva" value=' . $paiva . '>
 								<input type="hidden" name="kello" value=' . $kello . '>

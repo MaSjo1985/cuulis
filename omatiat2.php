@@ -176,7 +176,7 @@ function myFunction(y) {
 
                     echo'<p style="margin-bottom: 5px;font-size: 0.7em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
 
-                    echo'<div style="width: 80%;padding: 6px; height: 60px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: #f7f9f7">' . $kommentti . '</div>';
+                    echo'<div style="width: 80%;padding: 6px; height: 60px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: white">' . $kommentti . '</div>';
                 } else {
                     echo'<p style="margin-bottom: 5px;font-size: 0.7em; font-weight: bold; color:  #080708;">Opettajan kommentit tästä sarakkeesta: </p>';
 

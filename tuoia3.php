@@ -105,7 +105,7 @@ function myFunction(y) {
             $koodi = $rowk[koodi];
         }
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Tuo itsearviointilomake</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Tuo itsearviointilomake</h6>';
 
 
 
@@ -121,7 +121,7 @@ function myFunction(y) {
         }
         if ($haesarakkeet->num_rows == 0) {
 
-            echo'<br><b style="color: #c7ef00">Kurssilla ei ole valmista itsearviointilomaketta.</b><br>';
+            echo'<br><b style="color: red">Kurssilla ei ole valmista itsearviointilomaketta.</b><br>';
         } else {
 
 

@@ -43,7 +43,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     }
 
     include("kurssisivustonheader.php");
-    echo'<p  style="color: #f7f9f7; font-size: 0.1em;" id="haeid"   hidden>' . $_GET[r] . '</p>';
+    echo'<p  style="color: #2b6777; font-size: 0.1em;" id="haeid"   hidden>' . $_GET[r] . '</p>';
 
 
 
@@ -323,7 +323,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
 
 
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
 
 
 
@@ -389,7 +389,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
             echo'</h6tiedosto>';
 
                  echo'<br><div class="cm8-responsive" id="info_ope" style="display: inline-block">';
-        echo'<div class="cm8-responsive" style="padding: 0px; margin: 0px; background-color: #f7f9f7;">';
+        echo'<div class="cm8-responsive" style="padding: 0px; margin: 0px; background-color: white;">';
 
          echo'<form action="aktivoikeskustelu.php" method="post" ><input type="hidden" name="id" value=' . $_GET[r] . '><input type="submit" name="painikemt" value="&#9998" title="Muokkaa tekstiä" class="muokkausN"  role="button" style="font-size: 0.8em; padding: 0px 1px 1.5px 1px; margin:0px"></form>';
       
@@ -418,7 +418,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
 
 
 
-            echo'<br><p style="color: #c7ef00; font-weight: bold">Viestin todellisen lähettäjän saat selville klikkaamalla viestiä.</p>';
+            echo'<br><p style="color: red; font-weight: bold">Viestin todellisen lähettäjän saat selville klikkaamalla viestiä.</p>';
             echo'<div class="cm8-margin-top"></div>';
 
             if (!$haekeskustelu = $db->query("select distinct * from keskustelut where kurssin_keskustelut_id='" . $_GET[r] . "' order by id desc")) {
@@ -464,7 +464,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
                 $nimi = $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"];
 
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
 
 
 

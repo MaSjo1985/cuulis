@@ -74,7 +74,7 @@ _____________
 
 
 - uusi ulkoasu, kato nykyinen alertbox!
-background-color: #080708;
+background-color: #e5e5e5;
 
 button:
     background-color: #48E5DA;

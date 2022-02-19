@@ -150,7 +150,7 @@ function myFunction(y) {
             $eka_id = $rivieka[id];
         }
     }
-    echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6>';
+    echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
     echo'<br><a href="itsetyot.php?i=' . $eka_id . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
     echo'<br><br>Seuraavat opiskelijat ovat osanneet tehtävän <b>' . $sisalto . '</b>: <br>';
     echo'<div class="cm8-responsive cm8-margin-top">';

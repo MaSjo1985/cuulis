@@ -140,7 +140,7 @@ function myFunction(y) {
             $kuvaus = $rowP[kuvaus];
         }
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em;  color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em;  color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
         echo'<br><a href="testaamuokkaus.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
         $field = 'koodi';
@@ -266,7 +266,7 @@ function myFunction(y) {
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
         
             echo'<div class="cm8-responsive" id="piilota">';
-                echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka tehtäviä haluat tuoda.</b><br><br>';
+                echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka tehtäviä haluat tuoda.</b><br><br>';
             echo '<table id="mytable" class="cm8-bordered cm8-table cm8-stripedeivikaa"  style="overflow: hidden; width: 99%;"><thead>';
 
             echo '<tr><th><a href="tuotehtavat.php?sorting0=' . $sort . '&field=koodi">Koodi &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="tuotehtavat.php?sorting1=' . $sort . '&field=kurssit.nimi">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuotehtavat.php?sorting2=' . $sort . '&field=lukuvuosi">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="tuotehtavat.php?sorting3=' . $sort . '&field=alkupvm">Alkaa' . $nuoli3 . '</a></th><th><a href="tuotehtavat.php?sorting4=' . $sort . '&field=loppupvm">Päättyy' . $nuoli4 . ' </a></th></tr>';

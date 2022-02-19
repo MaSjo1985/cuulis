@@ -17,7 +17,7 @@ echo'<div class="cm8-container7" style="padding-top: 20px; margin-top: 0px; marg
 
 
 
-echo' <h4 style="padding-top: 20px; margin-top: 0px; color: #f7f9f7">Lähetä viesti Cuulis-oppimisympäristön ylläpitäjälle</h4>';
+echo' <h4 style="padding-top: 20px; margin-top: 0px; color: #2b6777">Lähetä viesti Cuulis-oppimisympäristön ylläpitäjälle</h4>';
 echo'<a href="etusivu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br>';
 echo'<p style="color:red ; font-size:1.1em">Sähköpostiosoite on virheellinen!</p><br><br>';
 echo'<div class="cm8-quarter style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px">';

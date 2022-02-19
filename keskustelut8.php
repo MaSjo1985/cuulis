@@ -43,7 +43,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     }
 
     include("kurssisivustonheader.php");
-    echo'<p  style="color: #f7f9f7; font-size: 0.1em" id="haeid" >' . $_GET[r] . '</p>';
+    echo'<p  style="color: #2b6777; font-size: 0.1em" id="haeid" >' . $_GET[r] . '</p>';
 
 
 
@@ -276,7 +276,7 @@ function myFunction(y) {
 
 
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
 
 
 
@@ -390,7 +390,7 @@ function myFunction(y) {
                 $nimi = $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"];
 
 
-                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: #f7f9f7;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
+                echo'<form name="form1" class="form-style-k" style="width: 80%; background-color: white;"><fieldset style="border: 2px solid #f5e1da; font-size: 0.8em">';
 
 
 

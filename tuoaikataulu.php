@@ -137,7 +137,7 @@ function myFunction(y) {
             
              
             echo'<div class="cm8-responsive" id="piilota">';
-             echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka aikataulun haluat tuoda.</b><br><br>';
+             echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka aikataulun haluat tuoda.</b><br><br>';
             
             echo '<table id="mytable" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
 

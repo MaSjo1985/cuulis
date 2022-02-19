@@ -91,7 +91,7 @@ function myFunction(y) {
         }
 
 
-        echo'<p style="font-size: 1.3em; color: #f7f9f7"><b>Opiskelijan ' . $etunimi . ' ' . $sukunimi . ' itsearviointi</b></p>';
+        echo'<p style="font-size: 1.3em; color: #2b6777"><b>Opiskelijan ' . $etunimi . ' ' . $sukunimi . ' itsearviointi</b></p>';
         echo'<a href="tarkastelearvioinnit.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
 
@@ -102,7 +102,7 @@ function myFunction(y) {
         }
 
         echo'<div class="cm8-margin-top"></div>';
-        echo'<p id="ohje" style="color: #c7ef00; font-weight: bold">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
+        echo'<p id="ohje" style="color: red; font-weight: bold">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
         echo'<div class="cm8-margin-top"></div>';
         echo'<form action="tallennaopearvioinnit.php" method="post">';
 
@@ -128,7 +128,7 @@ function myFunction(y) {
                     if ($rowkp[opetallennus] == 1) {
 
 
-                        echo '<tr id="' . $rowt[id] . '" class="isisalto2"><td style="border: 1px solid grey">' . $rowkp[teksti] . '</td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td class="muokkaus"><a  href="korjaaopearviointi.php?opid=' . $_GET[kaid] . '&teid=' . $rowt[id] . '"  class="myButton9"  role="button"  style="padding:2px 4px; margin: 0px">&#9998 &nbsp Muokkaa</a></td></tr>';
+                        echo '<tr id="' . $rowt[id] . '" class="isisalto2"><td style="border: 1px solid grey">' . $rowkp[teksti] . '</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td class="muokkaus"><a  href="korjaaopearviointi.php?opid=' . $_GET[kaid] . '&teid=' . $rowt[id] . '"  class="myButton9"  role="button"  style="padding:2px 4px; margin: 0px">&#9998 &nbsp Muokkaa</a></td></tr>';
                     } else {
                         if ($rowt[id] == $_GET[minne]) {
 
@@ -175,14 +175,14 @@ function myFunction(y) {
         if ($opetallennus2 == 1) {
 
 
-            echo '<b style="margin-right: 20px; color: #c7ef00">Pisteet opiskelijalle lomakkeesta:</b><b style="font-weight: bold; font-size: 1.1em; color: #c7ef00">' . $pisteet . ' pistettä</b> <a  href="korjaaopearviointi2.php?opid=' . $_GET[kaid] . '"  class="myButton9" title="Korjaa" role="button"  style="margin-left: 20px; padding: 2px 4px">&#9998 &nbsp Muokkaa</a>';
+            echo '<b style="margin-right: 20px; color: red">Pisteet opiskelijalle lomakkeesta:</b><b style="font-weight: bold; font-size: 1.1em; color: red">' . $pisteet . ' pistettä</b> <a  href="korjaaopearviointi2.php?opid=' . $_GET[kaid] . '"  class="myButton9" title="Korjaa" role="button"  style="margin-left: 20px; padding: 2px 4px">&#9998 &nbsp Muokkaa</a>';
         } else {
 
             echo'<form action="tallennaopearvioinnit2.php" method="post">';
             if (empty($pisteet)) {
-                echo'<b style="margin-right: 10px; color: #c7ef00">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet">';
+                echo'<b style="margin-right: 10px; color: red">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet">';
             } else {
-                echo'<b style="margin-right: 10px;color: #c7ef00">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet" >';
+                echo'<b style="margin-right: 10px;color: red">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet" >';
             }
 
 

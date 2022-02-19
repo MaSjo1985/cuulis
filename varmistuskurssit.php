@@ -91,7 +91,7 @@ function myFunction(y) {
             $lista = $_POST["lista"];
             $idt = $_POST["lista"];
 
-            echo '<p style="font-weight: bold; font-size: 1.2em; padding-top: 20px; color: #f7f9f7" >Olet poistamassa seuraavat kurssit/opintojaksot: </p>';
+            echo '<p style="font-weight: bold; font-size: 1.2em; padding-top: 20px; color: #2b6777" >Olet poistamassa seuraavat kurssit/opintojaksot: </p>';
 
             foreach ($lista as $tuote) {
 
@@ -111,7 +111,7 @@ function myFunction(y) {
 
             echo "<br>";
             echo "<br>";
-            echo '<p style="font-weight: bold; font-size: 1em; padding-top: 20px; color: #f7f9f7" >Haluatko jatkaa? </p>';
+            echo '<p style="font-weight: bold; font-size: 1em; padding-top: 20px; color: #2b6777" >Haluatko jatkaa? </p>';
             echo'<form action="poistakurssi.php" method="post">
 			 <input type="radio" name = "valinta" id="joo"  value="joo"> Kyllä<br>
 		   <input type="radio" name = "valinta" id="ei" value="ei" selected> En';

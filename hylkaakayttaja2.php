@@ -33,7 +33,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
     echo'<div class="cm8-margin-top"></div>';
 
-    echo'<br><b style="color: #c7ef00;">Valittujen käyttäjien liittyminen oppilaitokseen on hylätty.</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+    echo'<br><b style="color: red;">Valittujen käyttäjien liittyminen oppilaitokseen on hylätty.</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
 
     echo'</div>';
     echo'</div>';

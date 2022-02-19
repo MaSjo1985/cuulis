@@ -64,7 +64,7 @@ while ($row8 = $result8->fetch_assoc()) {
     if ($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin' || $_SESSION["Rooli"] == 'opiskelija') {
 
         if ($_SESSION["Sallicd"] == 1) {
-            echo'<div class="cm8-quarter" style="text-align: center;"><H2 style="padding-top: 10px; font-size: 1.4em; color: #f7f9f7;">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.8em">(lv ' . $_SESSION["Lukuvuosi"] . ')</b></H2><br>';
+            echo'<div class="cm8-quarter" style="text-align: center;"><H2 style="padding-top: 10px; font-size: 1.4em; color: #2b6777;">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.8em">(lv ' . $_SESSION["Lukuvuosi"] . ')</b></H2><br>';
             $originalDate = $_SESSION["Koepvm"];
             $kello = $_SESSION["Koeaika"];
 
@@ -83,7 +83,7 @@ while ($row8 = $result8->fetch_assoc()) {
                 echo' <br><em style="font-size: 0.8em"> (aikaa jäljellä kokeeseen)</em>';
             }
         } else {
-            echo'<div class="cm8-quarter" style="text-align: center;"><H2 style="padding-top: 60px; font-size: 1.4em; color: #f7f9f7;">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.8em">(lv ' . $_SESSION["Lukuvuosi"] . ')</b></H2><br>';
+            echo'<div class="cm8-quarter" style="text-align: center;"><H2 style="padding-top: 60px; font-size: 1.4em; color: #2b6777;">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.8em">(lv ' . $_SESSION["Lukuvuosi"] . ')</b></H2><br>';
         }
     }
 

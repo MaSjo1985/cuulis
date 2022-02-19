@@ -1,3 +1,53 @@
+UUS VÄRIMAAILMA, ulkoasu2.css
+https://99designs.com/blog/tips/website-color-schemes/
+
+1) LAITA NAVIEN TAUSTAVÄRIKSI:   #2b6777
+
+2) TSEKKAA NAPPULAT
+
+3) TSEKKAA HOVERIT!!!
+
+
+
+
+TURKOOSI:  #00ffff
+
+TAUSTA:
+background-color: #e5e5e5
+
+
+
+VÄLIVAIHTO:
+
+background-color: white
+
+
+
+
+
+TEKSTIEN VÄRIT:   color: #2b6777
+
+
+TAULUKOIDEN TAUSTAVÄRI:  background-color: #52ab98  
+
+NAPPULOIDEN SISÄVÄRIT:  #9dffff -> #9dffff
+
+
+
+KELTANEN VÄRI:
+color: red -> color: red
+
+STRIPED:
+#c8d8e4
+
+
+HUOM! Match Case!
+
+*****************************************************************'
+
+
+Cuulis lagaa : Opiskelijanäkymä -> Itsearviointi
+
 MIKSI KANSIOISSA kurssi_id=0?
 
 ->  KYSY HESSULTA M6_ratkaisut6.pdf , laitettu muka 25.1.2022
@@ -33,26 +83,7 @@ TEHTÄVÄLISTAKIN PITÄÄ PYSTYÄ TUOMAAN NIINKU PALAUTUS
 
 MIKSI HEITTÄÄ ULOS?
 
-UUS VÄRIMAAILMA, ulkoasu2.css
 
-https://99designs.com/blog/tips/website-color-schemes/
-
-isot navit #b1006a -> #2b6777
-nappulat #00ffff -> #52ab98
-tausta:  background-color: #080708 -> background-color: #e5e5e5;
-tekstien värit:
-
-color: #f7f9f7 -> color: #2b6777      MATCH CASE
-color:#f7f9f7 -> color: #2b6777      MATCH CASE
-color: #080708 -> color: #2b6777       MATCH CASE
-
-navien värit  
-
-vanha turkoosi   color: #00ffff -> color: #2b6777
-
-striped: #c8d8e4
-
-HUOM! Match Case!
 
 
 
@@ -176,9 +207,9 @@ Formien ilmoitusten värit yms.
 
 painikkeiden hover:
 
-  color: #c50076;
+  color: #9dffff;
 
-KATO ETTÄ TEKSTIN VÄRI EI OO   #b1006a
+KATO ETTÄ TEKSTIN VÄRI EI OO   #2b6777
 
 PITÄÄ OLLA:
 
@@ -213,17 +244,17 @@ TSEKKAA, ONKO VÄRIT OIKEIN, ELI ONKO KAIKKI KORVATTU!
 - PINKKI VÄRI: KOKEILE ulkoasu2.css
 https://www.colorhexa.com/ff0099
 
-NAVIPALKIT:    #127475 -> #b1006a
+NAVIPALKIT:    #127475 -> #2b6777
 
 STRIPED:   eka #f7f9f7, toka #98ABAE -> #ffd8ef
 
-ISOT TAULUKOT:   #0D3E3F ->  #c50076 
+ISOT TAULUKOT:   #0D3E3F ->  #9dffff 
 
 PIENET TAULUKOT:  #0099ff -> 
 
 VAALEENSININEN VÄRI:   #48E5DA  -> #00ffff
 
-keltanen väri   color: #c7ef00;
+keltanen väri   color: red;
 
 ************************************************
 
@@ -660,7 +691,7 @@ _____________
 
 
 - uusi ulkoasu, kato nykyinen alertbox!
-background-color: #080708;
+background-color: #e5e5e5;
 
 button:
     background-color: #48E5DA;

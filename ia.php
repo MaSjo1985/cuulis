@@ -159,9 +159,9 @@ function myFunction(y) {
 //
 //                if ($nyt <= $takaraja) {
 //
-//                    echo'<br><b style="color: #c7ef00">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+//                    echo'<br><b style="color: red">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
 //                } else {
-//                    echo'<br><b style="color: #c7ef00">Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+//                    echo'<br><b style="color: red">Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
 //                }
 //            } else {
 //                echo'<p id="ohje" style="display: inline-block">Itsearviointilomakkeen muokkaukselle ei ole asetettu takarajaa.</p>';
@@ -242,9 +242,9 @@ function myFunction(y) {
                     if ($avautuu != NULL) {
 
                         if ($nyt > $avautuu) {
-                            echo'<b style="font-size:0.8em; margin-right: 20px; color: #c7ef00">Tämä osio avautui ';
+                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red">Tämä osio avautui ';
                         } else {
-                            echo'<b style="font-size:0.8em; margin-right: 20px; color: #c7ef00">Tämä osio avautuu';
+                            echo'<b style="font-size:0.8em; margin-right: 20px; color: red">Tämä osio avautuu';
                         }
 
 
@@ -256,7 +256,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaA" value='.$avautumispaiva.'>';
                         echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaaA"  title="Muokkaa avatumisaikaa">';
                     } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
-                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #c7ef00;">Aseta avautumissajankohta tälle osiolle: </p>';
+                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: red;">Aseta avautumissajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaA">';
@@ -288,7 +288,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaK" value='.$sulkeutumispaiva.'>';
                         echo'<input type="submit" style="font-size: 0.6em; margin-left: 10px; padding: 2px" value="Muokkaa (' . $sid . ')" class="myButton8" name="muokkaaK"  title="Muokkaa sulkeutumisaikaa">';
                     } else {
-                        echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #c7ef00;">Aseta sulkeutumisajankohta tälle osiolle: </p>';
+                        echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: red;">Aseta sulkeutumisajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaK">';
@@ -542,14 +542,14 @@ echo'</div>';
                             echo'<div style="padding: 0px; margin: 0px; text-align: center">';
                             echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
 
-                            echo'<div style="text-align: left;width: 80%;padding: 10px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.8em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: #f7f9f7">' . $kommentti . '</div><br><br>';
+                            echo'<div style="text-align: left;width: 80%;padding: 10px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.8em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: white">' . $kommentti . '</div><br><br>';
                             echo'</div>';
                             } else {
                             
                             echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #080708;">Opettajan kommentit tästä sarakkeesta: </p>';
 
                           
-                            echo'<div style="width: 100%;padding: 6px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #080708; border-radius: 10px; color: #080708; background-color: #080708">' . $kommentti . '</div><br><br>';
+                            echo'<div style="width: 100%;padding: 6px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #080708; border-radius: 10px; color: #080708; background-color: #e5e5e5">' . $kommentti . '</div><br><br>';
                      
                             
                             }
@@ -567,9 +567,9 @@ echo'</div>';
                     if ($avautuu != NULL) {
 
                         if ($avautuu > $nyt) {
-                            echo'<p style="margin: 0px; font-size: 0.7em; color:#c7ef00; font-weight: bold">Tämä osio avautuu ';
+                            echo'<p style="margin: 0px; font-size: 0.7em; color:red; font-weight: bold">Tämä osio avautuu ';
                         } else {
-                            echo'<p style="margin: 0px; font-size: 0.7em; color: #c7ef00; font-weight: bold">Tämä osio avautui ';
+                            echo'<p style="margin: 0px; font-size: 0.7em; color: red; font-weight: bold">Tämä osio avautui ';
                         }
 
                         echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '</p>';

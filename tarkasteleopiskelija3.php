@@ -91,7 +91,7 @@ function myFunction(y) {
         }
 
 
-        echo'<p style="font-size: 1.3em; color: #f7f9f7"><b>Vastaus nro ' . $_GET[nro] . ':</b></p>';
+        echo'<p style="font-size: 1.3em; color: #2b6777"><b>Vastaus nro ' . $_GET[nro] . ':</b></p>';
         echo'<a href="tarkastelekyselyt.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
 

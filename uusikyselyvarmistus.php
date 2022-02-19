@@ -106,8 +106,8 @@ function myFunction(y) {
 
 
         if ($loyty == 1) {
-            echo '<p style="font-weight: bold; color: #c7ef00" >Lomakkeeseen on tullut jo vastauksia.</p>';
-            echo '<p style="font-weight: bold; color: #c7ef00" >Annettuja vastauksia ei poisteta, kun muokkaat lomaketta, mikä voi vääristää vastausten tarkastelua.</p>';
+            echo '<p style="font-weight: bold; color: red" >Lomakkeeseen on tullut jo vastauksia.</p>';
+            echo '<p style="font-weight: bold; color: red" >Annettuja vastauksia ei poisteta, kun muokkaat lomaketta, mikä voi vääristää vastausten tarkastelua.</p>';
   
             echo '<p style="font-weight: bold; display: inline-block; margin-right: 40px" >Voit tarkastella ja poistaa annetut vastaukset tästä: </p>';
             echo'<form action="tarkastelekyselyt.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" style="font-size: 0.8em; padding: 4px 6px" title="Katso vastaukset" value="🕵 Katso vastaukset" class="myButton8"  role="button" ></form>';

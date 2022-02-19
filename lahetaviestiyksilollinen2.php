@@ -176,7 +176,7 @@ function myFunction(y) {
 
 
 
-    echo '<p style="font-weight: bold; color: #c7ef00;">Viestisi on lähetetty!</p>';
+    echo '<p style="font-weight: bold; color: red;">Viestisi on lähetetty!</p>';
 
     if ($_GET[url]=='osallistujat.php' || $_GET[url]=='lisaaopettajaeka.php') {
         echo'<a href="osallistujat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';

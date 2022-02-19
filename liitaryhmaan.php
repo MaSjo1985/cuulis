@@ -144,7 +144,7 @@ function myFunction(y) {
             $opmaksimi = $rowP[opmaksimi];
             $opminimi = $rowP[opminimi];
 
-            echo'<h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">' . $kuvaus . '</h6>';
+            echo'<h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">' . $kuvaus . '</h6>';
             echo '<a href="ryhmatyot.php?r=' . $_GET[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
             echo'<div class="cm8-margin-top"><br></div>';
@@ -166,7 +166,7 @@ function myFunction(y) {
             if ($result->num_rows == 0)
                 echo '<br><em>Kurssilla ei ole opiskelijoita, joilla ei ole vielä ryhmää.</em><br>';
             else {
-                echo'<p style="font-size: 1.2em; color: #f7f9f7; font-weight: bold">Valitse, kenet haluat lisätä ryhmään: <b style="color: #f7f9f7">' . $nimi . '</b></p>';
+                echo'<p style="font-size: 1.2em; color: #2b6777; font-weight: bold">Valitse, kenet haluat lisätä ryhmään: <b style="color: #2b6777">' . $nimi . '</b></p>';
 
                 echo'<div class="cm8-margin-top"></div>';
 

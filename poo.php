@@ -44,7 +44,7 @@ if (!empty($sulkeutuu) && $sulkeutuu != ' ') {
     if ($nyt <= $takaraja) {
         echo'<br>Itsearviointilomakkeen muokkaus sulkeutuu <b>' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
     } else {
-        echo'<br><b style="color: #c7ef00"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+        echo'<br><b style="color: red"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
     }
 } else {
     echo'<br>Itsearviointilomakkeen muokkaukselle ei ole asetettu takarajaa.';

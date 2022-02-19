@@ -138,7 +138,7 @@ function myFunction(y) {
         if (isset($_POST["painiket"])) {
 
             if (empty($_POST[minimi])) {
-                echo'<p style="color: #c7ef00; font-weight: bold">Et laittanut prosenttimäärää!</p>';
+                echo'<p style="color: red; font-weight: bold">Et laittanut prosenttimäärää!</p>';
                 echo '<a href="muokkaadmax.php?id=' . $_POST[ipid] . '" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
             } else {
                 $stmt = $db->prepare("UPDATE itseprojektit SET dmax=? WHERE id=?");

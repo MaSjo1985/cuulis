@@ -44,7 +44,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
         echo'<div class="cm8-responsive" >';
 
 
-        echo'<table class="cm8-table5" style="background-color: #f7f9f7">';
+        echo'<table class="cm8-table5" style="background-color: white">';
 
         while ($rowv = $haekeskustelu->fetch_assoc()) {
 
@@ -71,7 +71,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                 // 1 tykkäys
                 if ($yht == 1) {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
                     foreach ($array as $nimet) {
 
                         echo'<em title="' . $nimet . ' tykkää tästä." id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td></tr>';
@@ -79,7 +79,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                 }
                 //monta tykkäystä
                 else {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
                     echo'<em title="';
                     $tykmaara = 0;
                     if ($yht != 0) {
@@ -105,13 +105,13 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                 // 1 tykkäys
                 if ($yht == 1) {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="background-color: #f7f9f7; padding-right: 10px"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="background-color: white; padding-right: 10px"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
 
                     echo'<em title="Sinä tykkäät tästä" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td></tr>';
                 }
                 //monta tykkäystä
                 else {
-                    echo'<tr id="' . $rowv[id] . '" ><td style=" width: 85%; background-color: #f7f9f7">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '" ><td style=" width: 85%; background-color: white">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
                     echo'<em title="';
                     $tykmaara = 0;
                     $jaljella = $yht;
@@ -167,7 +167,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
         echo'<input type="hidden" name="id" value=' . $id . '>';
         echo'</form>';
         
-        echo'<br><br><table class="cm8-table5ope" style="background-color: #f7f9f7">';
+        echo'<br><br><table class="cm8-table5ope" style="background-color: white">';
 
 
 
@@ -198,7 +198,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                 // 1 tykkäys
                 if ($yht == 1) {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
                     foreach ($array as $nimet) {
 
                         echo'<em title="' . $nimet . ' tykkää tästä." id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td></tr>';
@@ -212,7 +212,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                 }
                 //monta tykkäystä
                 else {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Tykkää"><img src="images/tykkays.jpg" style="height: 25px;"></a><br>';
                     echo'<em title="';
                     $tykmaara = 0;
                     if ($yht != 0) {
@@ -243,7 +243,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                 // 1 tykkäys
                 if ($yht == 1) {
-                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="background-color: #f7f9f7; padding-right: 10px"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '"><td style=" width: 85%; background-color: white"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="background-color: white; padding-right: 10px"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
 
                     echo'<em title="Sinä tykkäät tästä" id="tykkays" style="font-size: 0.8em">(' . $yht . '&nbsptykkäys)</em></td>';
                      echo'<td><form action="poistakeskusteluviestiyksilollinen.php" method="get"  style="margin-bottom: 0px; display: inline-block">';
@@ -254,7 +254,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                 }
                 //monta tykkäystä
                 else {
-                    echo'<tr id="' . $rowv[id] . '" ><td style=" width: 85%; background-color: #f7f9f7"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: #f7f9f7"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
+                    echo'<tr id="' . $rowv[id] . '" ><td style=" width: 85%; background-color: white"><a href="selvitakeskustelija.php?id=' . $id . '&kesid=' . $rowv[id] . '&kaid=' . $rowv[kayttaja_id] . '">(' . $rowv[paiva] . ' ' . $rowv[kello] . ') ' . $rowv[nimi] . '  : <br><br> <b style="font-size: 1em">' . $rowv[sisalto] . '</b><br><br></a></td><td id="keskid" value="' . $rowv[id] . '" style="padding-right: 10px; background-color: white"><a onclick="myNouLikes(' . $rowv[id] . ')" href="javascript:void(0);" class="cm8-linkki" title="Peru tykkäys"><img src="images/tykatty.jpg" style="height: 30px;"></a><br>';
                     echo'<em title="';
                     $tykmaara = 0;
                     $jaljella = $yht;

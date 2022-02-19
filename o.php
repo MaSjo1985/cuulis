@@ -234,7 +234,7 @@ function myFunction(y) {
             if (!$onkoprojekti = $db->query("select distinct * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
-            echo'<h6 style="padding-top: 20px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Tehtävälista</h6>';
+            echo'<h6 style="padding-top: 20px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Tehtävälista</h6>';
             if ($onkoprojekti->num_rows == 0) {
 
                 echo'<form action="uusiitseprojektieka.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
@@ -252,7 +252,7 @@ function myFunction(y) {
                 $ipid = $rowP[id];
                 $kuvaus = $rowP[kuvaus];
                 echo'<div class="cm8-margin-top"></div>';
-                echo'<h6 id="' . $ipid . '" style="margin-right: 20px; padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6><form action="muokkaaitseprojektieka.php" method="post" style="display: inline-block; margin-right:20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"  role="button"  style="padding:2px 4px"></form>';
+                echo'<h6 id="' . $ipid . '" style="margin-right: 20px; padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6><form action="muokkaaitseprojektieka.php" method="post" style="display: inline-block; margin-right:20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa" class="muokkausN"  role="button"  style="padding:2px 4px"></form>';
                 echo'<form action="varmistusitseprojekti.php" method="post" style="display: inline-block; margin-top: 20px"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#10007" title="Poista projekti" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
 
                 if (!$haeinfo = $db->query("select distinct info from itseprojektit where id='" . $ipid . "'")) {
@@ -302,7 +302,7 @@ function myFunction(y) {
                 $yht = $haetehtavat2->num_rows;
 
 
-                echo'<br><br><p style="color: #f7f9f7"><em>Tehtäviä on yhteensä: <b>' . $yht . ' kpl.</b></em></p>';
+                echo'<br><br><p style="color: #2b6777"><em>Tehtäviä on yhteensä: <b>' . $yht . ' kpl.</b></em></p>';
                 echo'<p id="ohje">Klikkaamalla otsikkoa pääset tarkastelemaan, ketkä opiskelijat ovat yrittäneet tehdä siihen liittyviä tehtäviä.</em></p>';
                 echo'<p id="ohje">Klikkaamalla tehtävää pääset tarkastelemaan siihen liittyviä tietoja.</p>';
                 echo'<div class="cm8-margin-top"></div>';
@@ -311,7 +311,7 @@ function myFunction(y) {
                 echo '<table id="mytable" class="cm8-table cm8-bordered">  <thead>';
 
                 echo '<tr style="border: 1px solid grey; background-color: #ffcceb" id="palaa"><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey ">Tehdyt yht.</th><th style="text-align: center; border: 1px solid grey ">Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid grey">Tehty,<br> muttei osattu ilman apua</th><th style="text-align: center; border: 1px solid grey">Toivottu yhdessä<br>läpikäytäväksi</th><th style="text-align: center; border: 1px solid grey">Kommentoitu'
-                . '</th><th style="border: 1px solid transparent; background-color: #f7f9f7"></th></tr>  </thead><tbody>';
+                . '</th><th style="border: 1px solid transparent; background-color: white"></th></tr>  </thead><tbody>';
 
                 while ($rowt = $haetehtavat->fetch_assoc()) {
 
@@ -376,7 +376,7 @@ function myFunction(y) {
             if (!$onkoprojekti = $db->query("select * from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
-            echo'<h6 style="padding-top: 20px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Tehtävälista</h6>';
+            echo'<h6 style="padding-top: 20px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Tehtävälista</h6>';
             if ($onkoprojekti->num_rows == 0) {
 
                 echo'<br><em>Ei aktiivisia Tehtävälista-projekteja</em><br>';
@@ -396,7 +396,7 @@ function myFunction(y) {
                 $kuvaus = $rowP[kuvaus];
 
 
-                echo'<br><h6 style="padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6><br><br>';
+                echo'<br><h6 style="padding-bottom: 20px; font-size: 1.3em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6><br><br>';
                 if (!$haeinfo = $db->query("select * from itseprojektit where id='" . $ipid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
@@ -581,15 +581,15 @@ function myFunction(y) {
                 echo "<img id='palaa' alt='Pie chart' src='images/" . $pienimi . "'/>";
                 echo'</div>';
 
-                echo'<ul style="color: #f7f9f7; font-weight: bold"><li>Tehtäviä yhteensä: ' . $yht . ' kpl.</li><li style="margin-left: 30px">Tehtyjä tehtäviä: ' . $osuus . ' %.</li></ul>';
-                echo'<b style="color: #c7ef00">Huom! Muista tallentaa tehtäväluettelo muokattuasi sitä!</b>';
+                echo'<ul style="color: #2b6777; font-weight: bold"><li>Tehtäviä yhteensä: ' . $yht . ' kpl.</li><li style="margin-left: 30px">Tehtyjä tehtäviä: ' . $osuus . ' %.</li></ul>';
+                echo'<b style="color: red">Huom! Muista tallentaa tehtäväluettelo muokattuasi sitä!</b>';
                 echo'<form action="tallennatehtavat.php" method="post">';
                 echo'<br><br><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px">';
 
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable2" class="cm8-table" style="text-align: center"><thead>';
 
-                echo '<tr style="background-color: #ffcceb" ><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey">Osasin</th><th style="text-align: center; border: 1px solid grey">Tein,<br>mutten osannut<br>ilman apua</th><th style="text-align: center; border: 1px solid grey">Haluan käydä<br>tunnilla läpi</th><th style="text-align: center; border: 1px solid grey">Kommentti</th><th style="border: none; background-color:#f7f9f7"></th></tr></thead><tbody>';
+                echo '<tr style="background-color: #ffcceb" ><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey">Osasin</th><th style="text-align: center; border: 1px solid grey">Tein,<br>mutten osannut<br>ilman apua</th><th style="text-align: center; border: 1px solid grey">Haluan käydä<br>tunnilla läpi</th><th style="text-align: center; border: 1px solid grey">Kommentti</th><th style="border: none; background-color: white"></th></tr></thead><tbody>';
 
                 while ($rowt = $haetehtavat->fetch_assoc()) {
 
@@ -621,21 +621,21 @@ function myFunction(y) {
 
 
                                 if ($rowkp[tehty] == 1 && $rowkp[osattu] == 1 && $rowkp[toive] == 0) {
-                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #7FD858"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '" class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #7FD858"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '" class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 0 && $rowkp[toive] == 0) {
 
-                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #f7f9f70ff"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey">&#10006</td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: white0ff"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey">&#10006</td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 1 && $rowkp[toive] == 1) {
-                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #7FD858"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #7FD858"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 0 && $rowkp[toive] == 1) {
 
-                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: #f7f9f70ff"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey">&#10006</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em; background-color: white0ff"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey">&#10006</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 } elseif ($rowkp[tehty] == 0 && $rowkp[toive] == 0 && $rowkp[kommentti] <> '') {
 
-                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" style="font-size: 0.9em"><td style="text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 } elseif ($rowkp[tehty] == 0 && $rowkp[toive] == 1) {
 
-                                    echo '<tr id="' . $rowt[id] . '" "><td style="font-size: 0.9em; text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: #f7f9f7">' . $rowkp[kommentti] . '</td><td style="background-color: #f7f9f7"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
+                                    echo '<tr id="' . $rowt[id] . '" "><td style="font-size: 0.9em; text-align: center; border: 1px solid grey">' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	#f7f9f7f4d">!</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td style="background-color: white"><a  href="korjaatehtava.php?id=' . $ipid . '&teid=' . $rowt[id] . '"  class="myButton8"  role="button"  style="padding:2px 4px; margin: 0px">&#9998</a></td></tr>';
                                 }
                             } else {
                                 if ($rowt[id] == $_GET[minne]) {

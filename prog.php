@@ -20,7 +20,7 @@
     #label {
         text-align: center;
         line-height: 30px;
-        color: #f7f9f7;
+        color: #2b6777;
     }
 </style>
 <body onload="move()">

@@ -270,9 +270,9 @@ function myFunction(y) {
             if ($nakyville != NULL) {
 
                 if ($nyt > $nakyville) {
-                    echo'<b style="margin-right: 20px; color: #c7ef00">Tämä osio tuli opiskelijoille näkyville ';
+                    echo'<b style="margin-right: 20px; color: red">Tämä osio tuli opiskelijoille näkyville ';
                 } else {
-                    echo'<b style="margin-right: 20px; color: #c7ef00">Tämä osio näkyy opiskelijoille';
+                    echo'<b style="margin-right: 20px; color: red">Tämä osio näkyy opiskelijoille';
                    
                 }
 
@@ -280,7 +280,7 @@ function myFunction(y) {
                  
                 echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaN"  title="Muokkaa">';
             } else  {
-                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #c7ef00;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
+                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: red;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
                 echo'<p><b style="margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; color: #080708" class="kdate"  name="paivaN">';
@@ -340,9 +340,9 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive ohjeboxi" style="padding-top: 20px; padding-bottom: 0px">';
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #c7ef00;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #c7ef00;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: red;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #c7ef00;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #c7ef00;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: red;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 //TÄHÄN
                 echo '<form action="muokkaaprojekti2.php" method="post" style="display:inline-block; margin-left: 40px; margin-top: 0px" ><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name= "painiker" value="&#9998 Muokkaa tietoja" title="Muokkaa tietoja" class="myButton8"  role="button" style="padding: 2px 6px;"></form>';
@@ -357,7 +357,7 @@ function myFunction(y) {
                     echo'<form action="suljekasa2.php" method="get" style="margin-top: 10px; display: inline-block; margin-left: 30px"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name="painike" value="- Sulje ilmoittautuminen" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form><br>';
                 } else {
 
-                    echo'<p style="display: inline-block; margin-right: 20px; font-size: 0.9em; color: #c7ef00; font-weight: bold; margin-top: 10px">Ilmoittautuminen ryhmiin on suljettu.</p>';
+                    echo'<p style="display: inline-block; margin-right: 20px; font-size: 0.9em; color: red; font-weight: bold; margin-top: 10px">Ilmoittautuminen ryhmiin on suljettu.</p>';
                     echo'<form action="avaakasa.php" method="post" style="margin-top: 0px; display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name="painike" value="+ Avaa ilmoittautuminen" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form><br>';
                 }
                 echo'</div>';
@@ -381,9 +381,9 @@ function myFunction(y) {
                     if ($avautuu != NULL) {
 
                         if ($nyt > $avautuu) {
-                            echo'<br><b style="margin-right: 20px; color: #c7ef00">Palautusmahdollisuus avautui opiskelijoille ';
+                            echo'<br><b style="margin-right: 20px; color: red">Palautusmahdollisuus avautui opiskelijoille ';
                         } else {
-                            echo'<br><b style="margin-right: 20px; color: #c7ef00">Palautumismahdollisuus avautuu opiskelijoille ';
+                            echo'<br><b style="margin-right: 20px; color: red">Palautumismahdollisuus avautuu opiskelijoille ';
                         }
 
                         echo'' . $avautumispaiva . ' klo ' . $avautumiskello . '.</b>';
@@ -391,7 +391,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaA" value=' . $avautumispaiva . '>';
                         echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaA"  title="Muokkaa avautumisaikaa">';
                     } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
-                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #c7ef00;">Aseta avautumissajankohta palautuksille: </p>';
+                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: red;">Aseta avautumissajankohta palautuksille: </p>';
                         echo'<b style="margin-right: 5px; font-size: 0.8em;  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; color: #080708;font-size: 0.8em;" class="kdate"  name="paivaA">';
@@ -413,7 +413,7 @@ function myFunction(y) {
                     if (!empty($sulkeutuu) && $sulkeutuu != ' ' && $sulkeutuu != NULL) {
 
                         if ($nyt <= $sulkeutuu) {
-                            echo'<p style="display: inline-block; margin-right: 20px; color: #c7ef00; font-weight: bold;" >Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                            echo'<p style="display: inline-block; margin-right: 20px; color: red; font-weight: bold;" >Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                         } else {
                             echo'<p style="display: inline-block; margin-right: 20px; color: red; font-weight: bold;" >Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                         }
@@ -422,7 +422,7 @@ function myFunction(y) {
                         echo'<input type="submit" style="margin-left: 10px; padding: 2px" value="Muokkaa" class="myButton8" name="muokkaaS"  title="Muokkaa sulkeutumisaikaa">';
                     } else {
 
-                        echo'<p style="margin-bottom: 10px; font-weight: bold; color: #c7ef00;">Aseta palautuksille sulkeutumisajankohta: </p>';
+                        echo'<p style="margin-bottom: 10px; font-weight: bold; color: red;">Aseta palautuksille sulkeutumisajankohta: </p>';
      
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color:  ">Pvm:</b>
      
@@ -491,8 +491,8 @@ function myFunction(y) {
                 echo'</div>';
     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px">';
 
-   echo'<p style="margin-bottom: 10px; font-weight: bold; color: #c7ef00;">Ryhmiin lisätyt tiedostot: </p>';
-          echo'<p style="color: #c7ef00; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+   echo'<p style="margin-bottom: 10px; font-weight: bold; color: red;">Ryhmiin lisätyt tiedostot: </p>';
+          echo'<p style="color: red; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
                 if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
                                               die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
@@ -586,10 +586,10 @@ function myFunction(y) {
                         if ($rlopullinen == 1) {
 
 
-                            echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block">Lopulliset ryhmät:</h2>';
+                            echo '<h2  style="color: #2b6777; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block">Lopulliset ryhmät:</h2>';
                         } else {
 
-                            echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
+                            echo '<h2  style="color: #2b6777; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
                         }
                         if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
@@ -604,7 +604,7 @@ function myFunction(y) {
                  
 
                         if ($opmaksimi == 1 && $haeryhmat->num_rows != 0) {
-                            echo'<p style="color: #c7ef00; padding-top: 10px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                            echo'<p style="color: red; padding-top: 10px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                         }$aika = microtime(true);
                         echo'<p id="ohje" style="margin-top: 20px; ">Klikkaamalla opiskelijan nimeä pääset käyttäjäprofiiliin.</p><br>';
                         foreach ($ryhmatkaikki as $onid) {
@@ -634,7 +634,7 @@ function myFunction(y) {
 
 
 
-                                        echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                        echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
                                         echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
@@ -695,7 +695,7 @@ function myFunction(y) {
                                             if ($haetyotope2->num_rows != 0) {
 
                                                 echo'<div class="cm8-margin-left"><br>';
-                                                echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
+                                                echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
 
 
 
@@ -784,7 +784,7 @@ function myFunction(y) {
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
 
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
+                                            echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
                                             if ($haetyot->num_rows != 0) {
 
@@ -832,7 +832,7 @@ function myFunction(y) {
                                         echo'<div class="cm8-margin-top"><br></div>';
                                     } else {
 
-                                        echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                        echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
                                         echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
 
@@ -871,7 +871,7 @@ function myFunction(y) {
 
                                             if ($haetyotope2->num_rows != 0) {
                                                 echo'<div class="cm8-margin-left"><br>';
-                                                echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
+                                                echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
 
 
 
@@ -964,7 +964,7 @@ function myFunction(y) {
                                         }
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
+                                            echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
 
                                             if ($haetyot->num_rows != 0) {
@@ -1040,7 +1040,7 @@ function myFunction(y) {
 
                         if ($resultvailla->num_rows != 0) {
                             echo'<div class="cm8-border-top" style="width: 70%; padding-bottom: 20px; "></div>';
-                            echo'<br><b style="color: #f7f9f7">Seuraavat opiskelijat eivät ole missään ryhmässä: </b><br><br>';
+                            echo'<br><b style="color: #2b6777">Seuraavat opiskelijat eivät ole missään ryhmässä: </b><br><br>';
 
                             echo '<table class="cm8-tablevailla" style="margin-left: 0px;"><thead>';
                             echo '<tr ><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
@@ -1105,7 +1105,7 @@ function myFunction(y) {
                             }
 
                             if ($onko == 1) {
-                                echo'<br><br><b style="color: #f7f9f7;">Seuraavat opiskelijat eivät ole palauttaneet tiedostoa: </b><br><br>';
+                                echo'<br><br><b style="color: #2b6777;">Seuraavat opiskelijat eivät ole palauttaneet tiedostoa: </b><br><br>';
 
                                 echo '<table class="cm8-tablevailla" style="margin-left: 0px"><thead>';
                                 echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
@@ -1142,7 +1142,7 @@ function myFunction(y) {
                                 echo "</tbody></table>";
                             } else {
                                 if ($onkoketaan == 1)
-                                    echo'<br><b style="color: #f7f9f7;"><em>Kaikki opiskelijat ovat tehneet palautuksen. </em></b><br><br>';
+                                    echo'<br><b style="color: #2b6777;"><em>Kaikki opiskelijat ovat tehneet palautuksen. </em></b><br><br>';
                             }
                         }
                         echo'</div>';
@@ -1168,10 +1168,10 @@ function myFunction(y) {
                         if ($rlopullinen == 1) {
 
 
-                            echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block">Lopulliset ryhmät:</h2>';
+                            echo '<h2  style="color: #2b6777; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block">Lopulliset ryhmät:</h2>';
                         } else {
 
-                            echo '<h2  style="color: #f7f9f7; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
+                            echo '<h2  style="color: #2b6777; text-decoration: underline;  font-size: 1.4em; padding-top: 30px; display:inline-block; padding-bottom: 0px">Ryhmät:</h2>';
                         }
                         if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
@@ -1187,7 +1187,7 @@ function myFunction(y) {
 
    
                         if ($opmaksimi == 1) {
-                            echo'<p style="color: #c7ef00">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                            echo'<p style="color: red">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                         }
                         echo'<p id="ohje" style="">Klikkaamalla opiskelijan nimeä pääset käyttäjäprofiiliin.</p><br>';
 
@@ -1200,7 +1200,7 @@ function myFunction(y) {
                             if ($row[lopullinen] == 0) {
 
 
-                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
                                 echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
@@ -1257,7 +1257,7 @@ function myFunction(y) {
 
                                     if ($haetyotope2->num_rows != 0) {
                                         echo'<div class="cm8-margin-left"><br>';
-                                        echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
+                                        echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
 
 
                                         $nyt = date("Y-m-d H:i");
@@ -1390,7 +1390,7 @@ function myFunction(y) {
                                 echo'<div class="cm8-margin-top"><br></div>';
                             } else {
 
-                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #f7f9f7" >';
+                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
                                 echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
 
@@ -1429,7 +1429,7 @@ function myFunction(y) {
                                     }
                                     if ($haetyotope2->num_rows != 0) {
                                         echo'<div class="cm8-margin-left"><br>';
-                                        echo '<h2 style="color: #f7f9f7;font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
+                                        echo '<h2 style="color: #2b6777;font-size: 1em; padding-top: 10px; padding-bottom: 10px">Palautetut tiedostot:</h2>';
 
                                         $nyt = date("Y-m-d H:i");
                                         if ($haetyotope2->num_rows != 0) {
@@ -1586,7 +1586,7 @@ function myFunction(y) {
 
                             if ($resultvailla->num_rows != 0) {
                                 echo'<div class="cm8-border-top" style="width: 70%; padding-bottom: 20px; "></div>';
-                                echo'<br><b style="color: #f7f9f7">Seuraavat opiskelijat eivät ole missään ryhmässä: </b><br><br>';
+                                echo'<br><b style="color: #2b6777">Seuraavat opiskelijat eivät ole missään ryhmässä: </b><br><br>';
 
                                 echo '<table class="cm8-tablevailla" style="margin-left: 0px"><thead>';
                                 echo '<tr ><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
@@ -1640,7 +1640,7 @@ function myFunction(y) {
                                     }
                                 }
                                 if ($onko) {
-                                    echo'<br><br><b style="color: #f7f9f7;">Seuraavat opiskelijat eivät ole palauttaneet tiedostoa: </b><br><br>';
+                                    echo'<br><br><b style="color: #2b6777;">Seuraavat opiskelijat eivät ole palauttaneet tiedostoa: </b><br><br>';
 
                                     echo '<table class="cm8-tablevailla" style="margin-left: 0px"><thead>';
                                     echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead><tbody>';
@@ -1677,7 +1677,7 @@ function myFunction(y) {
                                 } else {
 
                                     if ($haeoppilaat->num_rows != 0) {
-                                        echo'<br><b style="color: #f7f9f7;"><em>Kaikki opiskelijat ovat tehneet palautuksen. </em></b><br><br>';
+                                        echo'<br><b style="color: #2b6777;"><em>Kaikki opiskelijat ovat tehneet palautuksen. </em></b><br><br>';
                                     }
                                 }
 
@@ -1805,9 +1805,9 @@ function myFunction(y) {
 
 
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #c7ef00;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #c7ef00;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: red;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #c7ef00;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #c7ef00;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: red;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 
                 echo'</div>';
@@ -1840,9 +1840,9 @@ function myFunction(y) {
                         if ($avautuu != NULL) {
                             echo'<br>';
                             if ($nyt > $avautuu) {
-                                echo'<b style="margin-right: 20px; color: #c7ef00">Palautusmahdollisuus avautui ';
+                                echo'<b style="margin-right: 20px; color: red">Palautusmahdollisuus avautui ';
                             } else {
-                                echo'<b style="margin-right: 20px; color: #c7ef00">Palautumismahdollisuus avautuu ';
+                                echo'<b style="margin-right: 20px; color: red">Palautumismahdollisuus avautuu ';
                             }
 
                             echo'' . $avautumispaiva . ' klo ' . $avautumiskello . '</b><br><br>';
@@ -1856,7 +1856,7 @@ function myFunction(y) {
 
 
                             if ($nyt <= $sulkeutuu) {
-                                echo'<p  style="color: #c7ef00; font-weight: bold">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                                echo'<p  style="color: red; font-weight: bold">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                             } else {
                                 echo'<p style="color: red; font-weight: bold">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                             }
@@ -1925,9 +1925,9 @@ function myFunction(y) {
                         }
 
 
-                        echo '<h2  style="color: #f7f9f7; text-decoration: underline; font-size: 1.3em; padding-top: 30px; padding-bottom: 10px">Ryhmät:</h2> ';
+                        echo '<h2  style="color: #2b6777; text-decoration: underline; font-size: 1.3em; padding-top: 30px; padding-bottom: 10px">Ryhmät:</h2> ';
 
-                        echo'<p style="color: #c7ef00">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                        echo'<p style="color: red">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
 
                         echo'<div class="cm8-margin-top"></div>';
 
@@ -1944,7 +1944,7 @@ function myFunction(y) {
                                 while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
+                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
                                     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
 
@@ -2014,7 +2014,7 @@ function myFunction(y) {
                                             $nyt = date("Y-m-d H:i");
 
                                             echo'<div class="cm8-margin-left"><br>';
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
+                                            echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
 
                                             if ($haetyot->num_rows != 0) {
                                                 echo '<table class="cm8-table3">';
@@ -2113,14 +2113,14 @@ function myFunction(y) {
                                                         if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                             if ($nyt <= $sulkeutuu) {
-                                                                echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                                echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                             } else {
                                                                 echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                                echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                                echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                             }
                                                         }
                                                     } else {
-                                                        echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                        echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                                     }
                                                 } else {
 
@@ -2142,7 +2142,7 @@ function myFunction(y) {
 
                                         if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                             echo'<div class="cm8-margin-left"><br>';
-                                            echo '<h2 style="color: #f7f9f7;font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
+                                            echo '<h2 style="color: #2b6777;font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
                                             echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
@@ -2206,7 +2206,7 @@ function myFunction(y) {
                         }
                     } else {
 
-                        echo '<h2  style="color: #f7f9f7; text-decoration: underline; font-size: 1.3em; padding-top: 30px; padding-bottom: 10px">Ryhmät:</h2> ';
+                        echo '<h2  style="color: #2b6777; text-decoration: underline; font-size: 1.3em; padding-top: 30px; padding-bottom: 10px">Ryhmät:</h2> ';
 
                         echo'<div class="cm8-margin-top"></div>';
 
@@ -2219,7 +2219,7 @@ function myFunction(y) {
 
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
-                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #f7f9f7" >';
+                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
                             echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
@@ -2288,7 +2288,7 @@ function myFunction(y) {
                                     $nyt = date("Y-m-d H:i");
 
                                     echo'<div class="cm8-margin-left" ><br>';
-                                    echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
+                                    echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                     if ($haetyot->num_rows != 0) {
 
                                         echo '<table class="cm8-table3">';
@@ -2386,14 +2386,14 @@ function myFunction(y) {
                                                 if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                     if ($nyt <= $sulkeutuu) {
-                                                        echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                        echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                     } else {
                                                         echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                        echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                        echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                     }
                                                 }
                                             } else {
-                                                echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                             }
                                         } else {
 
@@ -2500,9 +2500,9 @@ function myFunction(y) {
                 if ($oplopullinen == 1) {
 
 
-                    echo '<h2  style="color: #f7f9f7; text-decoration: underline; font-size: 1.4em; padding-top: 30px">Lopulliset ryhmät:</h2>';
+                    echo '<h2  style="color: #2b6777; text-decoration: underline; font-size: 1.4em; padding-top: 30px">Lopulliset ryhmät:</h2>';
                     if ($opmaksimi == 1) {
-                        echo'<p style="color: #c7ef00; padding-top: 20px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                        echo'<p style="color: red; padding-top: 20px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                     }
                     echo'<div class="cm8-margin-top"></div>';
                     //haetaan kaikki projektin ryhmät
@@ -2552,7 +2552,7 @@ function myFunction(y) {
                                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
+                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
                                     echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th><th></th><th></th></tr>';
@@ -2603,7 +2603,7 @@ function myFunction(y) {
                                         }
                                         $nyt = date("Y-m-d H:i");
                                         echo'<div class="cm8-margin-left"><br>';
-                                        echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
+                                        echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                         if ($haetyot->num_rows != 0) {
                                             echo '<table class="cm8-table3" style="font-size: 0.9em">';
                                             echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
@@ -2697,14 +2697,14 @@ function myFunction(y) {
                                                     if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                         if ($nyt <= $sulkeutuu) {
-                                                            echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                            echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                         } else {
                                                             echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                            echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                            echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                         }
                                                     }
                                                 } else {
-                                                    echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                    echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                                 }
                                             } else {
 
@@ -2728,7 +2728,7 @@ function myFunction(y) {
 
      if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                             echo'<div class="cm8-margin-left"><br>';
-                                            echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
+                                            echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
                                             echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
@@ -2796,7 +2796,7 @@ function myFunction(y) {
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #f7f9f7" >';
+                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
                             echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
@@ -2850,7 +2850,7 @@ function myFunction(y) {
                                 }
                                 $nyt = date("Y-m-d H:i");
                                 echo'<div class="cm8-margin-left"><br>';
-                                echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
+                                echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                 if ($haetyot->num_rows != 0) {
                                     echo '<table class="cm8-table3" style="font-size: 0.9em">';
                                     echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
@@ -2945,14 +2945,14 @@ function myFunction(y) {
                                             if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                 if ($nyt <= $sulkeutuu) {
-                                                    echo'<br><b style="color: #c7ef00">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                    echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                 } else {
                                                     echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                    echo'<p style="color: #c7ef00;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                    echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                 }
                                             }
                                         } else {
-                                            echo'<b style="color: #c7ef00;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                            echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                         }
                                     } else {
 
@@ -2976,7 +2976,7 @@ function myFunction(y) {
 
                                       if ($haetyot->num_rows != 0 || ($haetyotaut -> num_rows !=0 && $onkopalautettu ==1)) {
                                     echo'<div class="cm8-margin-left"><br>';
-                                    echo '<h2 style="color: #f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
+                                    echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                     echo '<table class="cm8-table3">';
                                     echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty></th></tr>';

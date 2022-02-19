@@ -144,7 +144,7 @@ while ($row = $result->fetch_assoc()) {
 
         echo '<br>';
         if($_GET[rooli]=='opettaja'){
-                 echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uusi opettaja on lisätty seuraavilla tiedoilla: </p>';
+                 echo '<p style="font-size:1.2em;  color: red; font-weight: bold">Uusi opettaja on lisätty seuraavilla tiedoilla: </p>';
                 echo '<br><br><b>Etunimi:&nbsp&nbsp&nbsp </b> '.$etunimi;
                 echo '<br><br><b>Sukunimi:&nbsp&nbsp&nbsp </b> '.$sukunimi;
                 echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b> '.$sposti;
@@ -152,7 +152,7 @@ while ($row = $result->fetch_assoc()) {
 
         }
         else{
-                   echo '<p style="font-size:1.2em;  color: #c7ef00; font-weight: bold">Uusi opiskelija on lisätty seuraavilla tiedoilla: </p>';
+                   echo '<p style="font-size:1.2em;  color: red; font-weight: bold">Uusi opiskelija on lisätty seuraavilla tiedoilla: </p>';
                          echo '<br><br><b>Etunimi: &nbsp&nbsp&nbsp</b> '.$etunimi;
                 echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b> '.$sukunimi;
                 echo '<br><br><b>Käyttäjätunnus: &nbsp&nbsp&nbsp</b> '.$sposti;

@@ -39,7 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-    echo '<br><b style="color: #c7ef00;"> Viestisi on lähetetty!</b>';
+    echo '<br><b style="color: red;"> Viestisi on lähetetty!</b>';
     echo '<br><br><a href="etusivu.php">Jatka etusivulle tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
 
 

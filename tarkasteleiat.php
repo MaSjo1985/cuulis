@@ -75,7 +75,7 @@ function myFunction(y) {
         echo'<div class="cm8-container3" style="padding-top: 30px">';
 
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.2em; color: #f7f9f7; ">Tarkastele opiskelijoiden itsearviointilomakkeita</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.2em; color: #2b6777; ">Tarkastele opiskelijoiden itsearviointilomakkeita</h6>';
         echo'<a href="ia.php" ><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
@@ -110,7 +110,7 @@ echo'<input type="hidden" name="smaara" id="smaara" value="'.$smaara.'">';
            
             echo '<table id="mytable'.$smaara.'" class="cm8-uusitable10uusi cm8-striped" style="width: 100%; overflow-x: auto"><thead>';
              $smaara--;
-            echo'<p style="margin: 0px; font-weight: bold; background-color: #c50076; padding: 8px;font-size: 0.8em; border: none">Sarake ' . $rows[jarjestys] . '</p>';
+            echo'<p style="margin: 0px; font-weight: bold; background-color: #52ab98; padding: 8px;font-size: 0.8em; border: none">Sarake ' . $rows[jarjestys] . '</p>';
             echo '<tr style="background-color: #48E5DA"><th>Opiskelija</th>';
             if (!$haesisalto = $db->query("select distinct * from ia WHERE kurssi_id='" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys ='" . $rows[jarjestys] . "' ORDER BY jarjestys")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');

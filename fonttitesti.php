@@ -290,7 +290,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
-            echo'<h2 style="color: #f7f9f7; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>    <button id="klik" style="display: inline-block; margin-left: 20px" class="myButton8" title="Piilota näkyvistä">- Piilota</button>';
+            echo'<h2 style="color: #2b6777; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>    <button id="klik" style="display: inline-block; margin-left: 20px" class="myButton8" title="Piilota näkyvistä">- Piilota</button>';
 
 
 
@@ -303,7 +303,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-            echo'<h2 style="color: #f7f9f7; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>    <button id="klik" style="display: inline-block; margin-left: 20px" class="myButton8" title="Piilota näkyvistä">- Piilota</button>';
+            echo'<h2 style="color: #2b6777; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>    <button id="klik" style="display: inline-block; margin-left: 20px" class="myButton8" title="Piilota näkyvistä">- Piilota</button>';
 
             if (!$haepalaute = $db->query("select * from palautteet where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -318,7 +318,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
             echo' ';
 
-            echo'<h2 style="color: #f7f9f7; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>
+            echo'<h2 style="color: #2b6777; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>
                    <button id="klik" style="display: inline-block; margin-left: 20px" class="myButton8" title="Piilota näkyvistä">- Piilota</button>
                     <form id="kirja" action="lahetakurssipalaute.php" method="post">
 		<br><textarea name="viesti" rows="6" placeholder="Tähän voit antaa nimettömästi palautetta kurssista/opintojaksosta." style="font-size: 0.9em"></textarea><br><br> 
@@ -353,7 +353,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             background: #15565f;
       
            
-color: #f7f9f7;
+color: #2b6777;
             font-weight: bold;
             width: 20 px;
          }
@@ -566,7 +566,7 @@ function myFunction(y) {
 
 
 
-    echo '<h2 style="color: #f7f9f7; display: inline-block; padding-top: 10px">ILMOITUSTAULU</h2>';
+    echo '<h2 style="color: #2b6777; display: inline-block; padding-top: 10px">ILMOITUSTAULU</h2>';
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
         echo' <form action="ilmoitus.php" method="post" style="margin-left: 20px; display: inline-block"><input type="submit" name= "painikek" value="&#9998 Muokkaa" title="Muokkaa ilmoitustaulua" class="myButton9"  role="button"  style="padding:2px 4px; display: inline-block"></form>';
     }
@@ -615,13 +615,13 @@ function myFunction(y) {
 
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
-            echo '<br><h2 style="color: #f7f9f7; padding-top: 20px; display: inline-block">KURSSIAIKATAULU</h2>';
+            echo '<br><h2 style="color: #2b6777; padding-top: 20px; display: inline-block">KURSSIAIKATAULU</h2>';
             echo'<br><br><em style="font-size: 0.8em">Halutettasi voit lisätä tähän kurssin/opintojakson aikataulun.</em>';
             echo' <form action="aktivoiaikataulu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Lisää aikataulu" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
         }
     } else {
 
-        echo '<br><h2 style="color: #f7f9f7; padding-top: 20px; display: inline-block; margin-right: 20px">KURSSIAIKATAULU</h2>';
+        echo '<br><h2 style="color: #2b6777; padding-top: 20px; display: inline-block; margin-right: 20px">KURSSIAIKATAULU</h2>';
         if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
             echo' <form action="aikatauluvarmistus.php" method="post" style="display: inline-block; margin-right: 10px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikep" value="&#10007" title="Poista aikataulu" class="myButton9"  role="button"  style="padding:2px 4px"></form>';

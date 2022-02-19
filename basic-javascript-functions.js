@@ -153,7 +153,7 @@ function check(e, f) {
             backgroundColor: 'rgb(127, 216, 88)'
         });
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().next().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
         // Poistaa kommenttikentän
 // $(e).parent().next().next().next().text('');
 // var b = document.getElementById('kom'+f).value;
@@ -210,7 +210,7 @@ function check(e, f) {
                 backgroundColor: 'rgb(127, 216, 88)'
             });
             // Lisää kommentinmuokkausnapin
-            $(e).parent().next().next().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+            $(e).parent().next().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
             $(e).parent().prev().text(a);
 // 
 //  var b = document.getElementById('kom'+f).value;
@@ -286,7 +286,7 @@ function check2(e, f) {
         });
         // Lisää kommentinmuokkausnapin
 
-        $(e).parent().next().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
         // Poistaa kommenttikentän
 //                $(e).parent().next().next().text('');
 // var b = document.getElementById('kom'+f).value;
@@ -350,7 +350,7 @@ function check2(e, f) {
             //Läpikäyntivalinta
             $(e).parent().next().html('<input type="checkbox" onclick="check3(this, ' + f + ')" name="lista3[]" id="lista1" value="' + f + '">');
             // Lisää kommentinmuokkausnapin
-            $(e).parent().next().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+            $(e).parent().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
             // Poistaa kommenttikentän
 //                $(e).parent().next().next().text('');
 
@@ -403,7 +403,7 @@ function check3(e, f) {
         // Poistaa kommenttikentän
         $(e).parent().next().next().text('');
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa" role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
 // var b = document.getElementById('kom'+f).value;
         $(e).parent().next().html('<textarea name="kommentti[]" class="kommentti" rows="1" style=" font-size: 0.8em"></textarea>');
 //var kommentti = b;
@@ -437,7 +437,7 @@ function check3(e, f) {
         // Poistaa kommenttikentän
         $(e).parent().next().next().text('');
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().after('<td style="background-color: #080708"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaa(this, ' + fuusi + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
 //
 // var b = document.getElementById('kom'+f).value;
         $(e).parent().next().html('<textarea name="kommentti[]" class="kommentti" rows="1" style=" font-size: 0.8em"></textarea>');
@@ -600,7 +600,7 @@ function checkope(e, f, g, h) {
             backgroundColor: 'rgb(127, 216, 88)'
         });
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().next().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
         // Poistaa kommenttikentän
 //                $(e).parent().next().next().next().text('');
 //  var b = document.getElementById('kom'+f).value;
@@ -661,7 +661,7 @@ function checkope(e, f, g, h) {
                 backgroundColor: 'rgb(127, 216, 88)'
             });
             // Lisää kommentinmuokkausnapin
-            $(e).parent().next().next().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+            $(e).parent().next().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
             // Poistaa kommenttikentän
 //                $(e).parent().next().next().next().text('');
             $(e).parent().prev().text(a);
@@ -735,7 +735,7 @@ function checkope2(e, f, g, h) {
             backgroundColor: 'rgb(0, 191, 255)'
         });
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px;">Korjaa</a></td>');
+        $(e).parent().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px;">Korjaa</a></td>');
         // Poistaa kommenttikentän
 //                $(e).parent().next().next().text('');
 //
@@ -796,7 +796,7 @@ function checkope2(e, f, g, h) {
                 backgroundColor: 'rgb(0, 191, 255)'
             });
             // Lisää kommentinmuokkausnapin
-            $(e).parent().next().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px;">Korjaa</a></td>');
+            $(e).parent().next().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px;">Korjaa</a></td>');
             $(e).parent().prev().prev().text(a);
             // Poistaa kommenttikentän
 //                $(e).parent().next().next().text('');
@@ -849,7 +849,7 @@ function checkope3(e, f, g, h) {
         // Poistaa kommenttikentän
         $(e).parent().next().next().text('');
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
         // Lisää check-merkin
         $(e).parent().text('☝');
 //var lista = $('.lista1:checked').val();
@@ -882,7 +882,7 @@ function checkope3(e, f, g, h) {
         // Poistaa kommenttikentän
         $(e).parent().next().next().text('');
         // Lisää kommentinmuokkausnapin
-        $(e).parent().next().after('<td style="background-color: #080708"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
+        $(e).parent().next().after('<td style="background-color: #e5e5e5"><a onclick="korjaaope(this, ' + fuusi + ', ' + opid + ', ' + h + ')" title="Korjaa"  role="button" style="padding:2px 4px; margin: 0px">Korjaa</a></td>');
         // Lisää check-merkin
         $(e).parent().text('☝');
 //var lista = $('.lista1:checked').val();

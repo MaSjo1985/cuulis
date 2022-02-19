@@ -73,7 +73,7 @@ function myFunction(y) {
         echo'<div class="cm8-container3" style="padding-top: 30px">';
 
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; ">Tarkastele opiskelijoiden itsearviointilomakkeita</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777; ">Tarkastele opiskelijoiden itsearviointilomakkeita</h6>';
         echo'<a href="itsearviointi.php" ><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
@@ -136,7 +136,7 @@ function myFunction(y) {
         <?php
         if ($on == 0) {
             echo'<div class="cm8-margin-top"></div>';
-            echo'<em style="color: #f7f9f7">Kukaan opiskelijoista ei ole vielä täydentänyt lomaketta.</em>';
+            echo'<em style="color: #2b6777">Kukaan opiskelijoista ei ole vielä täydentänyt lomaketta.</em>';
         }
         echo'</div>';
 

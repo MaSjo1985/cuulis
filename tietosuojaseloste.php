@@ -259,7 +259,7 @@ header("location: tietosuojaseloste.pdf");
  */
 
 
-echo'<br><br><p style="font-weight: bold; "><em>Lisätietoja antaa Cuulis-oppimisympäristön kehittäjä ja ylläpitäjä<a href="admininfo.php" class="cm8-linkki" style="color: #f7f9f7; font-weight: bold; text-decoration: underline"> <u>Marianne Sjöberg</u></em></a></p>';
+echo'<br><br><p style="font-weight: bold; "><em>Lisätietoja antaa Cuulis-oppimisympäristön kehittäjä ja ylläpitäjä<a href="admininfo.php" class="cm8-linkki" style="color: #2b6777; font-weight: bold; text-decoration: underline"> <u>Marianne Sjöberg</u></em></a></p>';
 
 
 

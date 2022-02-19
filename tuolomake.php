@@ -99,7 +99,7 @@ function myFunction(y) {
  
 <div class="cm8-twothird" style="padding-top: 0px; margin-top: 0px">';
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Tuo itsearviointilomake</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Tuo itsearviointilomake</h6>';
         echo'<a href="uusi_itsearviointi.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
@@ -211,7 +211,7 @@ function myFunction(y) {
             echo"<br><em>Ei kursseja/opintojaksoja.</em><br>";
         else {
 
-            echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
+            echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
             echo '<form action="tuolomake.php" method="get">
 
 			<br>&#128270 <input type="search"  onkeyup="showResultItse(this.value)" name="search"  id="search_box" class="haku" style="width: 50%"> 

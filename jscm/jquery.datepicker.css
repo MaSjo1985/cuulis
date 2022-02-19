@@ -17,7 +17,7 @@
 
 }
 .ui-datepicker .ui-datepicker-header {
-    background:  #c50076;
+    background-color: #52ab98;
     color: #00ffff;
     position: relative;
     padding: .2em 0;
@@ -81,7 +81,7 @@
     text-align: center;
     font-weight: bold;
     border: 0;
-    color: #c50076;
+    color: #9dffff;
 }
 .ui-datepicker td {
 
@@ -204,7 +204,7 @@
 
 
 .ui-datepicker-calendar .ui-state-default {
-    background:  #c50076;
+    background-color: #52ab98;
     color: #00ffff;
     font-weight: normal;
     height:30px;
@@ -215,16 +215,16 @@
 }
 .ui-datepicker-calendar .ui-state-active {
 
-    border: 2px solid #c50076;
+    border: 2px solid #9dffff;
     background-color: #00ffff;
-    color: #c50076;
+    color: #9dffff;
     font-weight: bold;
 }
 .ui-datepicker-calendar .ui-state-hover {
 
-    border: 2px solid #c50076;
+    border: 2px solid #9dffff;
     background-color: #00ffff;
-    color: #c50076;
+    color: #9dffff;
     font-weight: bold;
 }
 

@@ -91,7 +91,7 @@ function myFunction(y) {
         }
 
 
-        echo'<p style="font-size: 1.2em; color: #f7f9f7; margin: 10px"><b>Opiskelijan ' . $etunimi . ' ' . $sukunimi . ' itsearviointi</b></p>';
+        echo'<p style="font-size: 1.2em; color: #2b6777; margin: 10px"><b>Opiskelijan ' . $etunimi . ' ' . $sukunimi . ' itsearviointi</b></p>';
         echo'<a href="tarkasteleiat.php" style="font-size: 0.8em"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
         //ONKO EKA 
@@ -281,9 +281,9 @@ function myFunction(y) {
                 if ($avautuu != NULL) {
 
                     if ($avautuu > $nyt) {
-                        echo'<p style="font-size: 0.7em; color:#c7ef00; font-weight: bold">Tämä osio avautuu ';
+                        echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio avautuu ';
                     } else {
-                        echo'<p style="font-size: 0.7em; color:  #c7ef00; font-weight: bold">Tämä osio on avautunut ';
+                        echo'<p style="font-size: 0.7em; color:  red; font-weight: bold">Tämä osio on avautunut ';
                     }
 
                     echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '</p>';
@@ -482,7 +482,7 @@ function myFunction(y) {
                 } else {
                     echo'<p style="font-weight: bold; color:  #48E5DA; font-size: 0.8em; margin-bottom: 5px">Kommenttisi tästä sarakkeesta: </p>';
                     echo'<div style="text-align: left;  margin-bottom: 5px;padding: 0px; display: inline-block; width: 80%" >';
-                    echo'<p style="margin: 0px;padding: 0px; font-weight: bold; font-size: 0.7em; padding: 10px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: #f7f9f7">' . $kommentti . '</p>';
+                    echo'<p style="margin: 0px;padding: 0px; font-weight: bold; font-size: 0.7em; padding: 10px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: white">' . $kommentti . '</p>';
                     echo'</div>';
                     echo'<br><input type="submit" name="painikem" class="myButton8" value="&#9998 Muokkaa" title="Muokkaa" id="tuutanne" style="font-size: 0.7em; padding: 2px 4px; background-color: #00FF00;">';
                 }

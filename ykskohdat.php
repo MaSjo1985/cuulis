@@ -155,12 +155,12 @@ function myFunction(y) {
             $sisalto = $rowT[sisalto];
         }
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 10px; font-size: 1.2em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 10px; font-size: 1.2em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
         echo'<br><a href="itsetyot.php?i=' . $_GET[id] . '""><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
-        echo'<br><b style="font-size: 1.2em; color:  #c50076">Tehtävän ' . $sisalto . ' opiskelijoiden merkinnät</b>';
+        echo'<br><b style="font-size: 1.2em; color:  #9dffff">Tehtävän ' . $sisalto . ' opiskelijoiden merkinnät</b>';
         echo'<br><br><p id="ohje" style="font-size: 0.9em">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p>';
 
-        echo'<p style="font-weight: bold; color: #f7f9f7; margin-top:30px"><b style="font-size: 1.5em">&#9786</b>&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat osannut tehtävän: </b></p>';
+        echo'<p style="font-weight: bold; color: #2b6777; margin-top:30px"><b style="font-size: 1.5em">&#9786</b>&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat osannut tehtävän: </b></p>';
         if (!$haeosatut = $db->query("select distinct kayttajat.etunimi as etunimi, kayttajat.sukunimi as sukunimi, kayttajat.id as id from itsetehtavatkp, kayttajat where kayttajat.rooli='opiskelija' AND kayttajat.id=itsetehtavatkp.kayttaja_id AND itsetehtavat_id='" . $_GET[tid] . "' AND tehty=1 AND osattu=1 ORDER BY kayttajat.sukunimi ASC")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
@@ -186,7 +186,7 @@ function myFunction(y) {
 
 
 
-        echo'<br><br><p style="font-weight: bold; color: #f7f9f7">&#9785 &nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka eivät ole osanneet tehtävää ilman apua:</b> </p>';
+        echo'<br><br><p style="font-weight: bold; color: #2b6777">&#9785 &nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka eivät ole osanneet tehtävää ilman apua:</b> </p>';
 
         if (!$haeeiosatut = $db->query("select distinct kayttajat.etunimi as etunimi, kayttajat.sukunimi as sukunimi, kayttajat.id as id from itsetehtavatkp, kayttajat where kayttajat.rooli='opiskelija' AND kayttajat.id=itsetehtavatkp.kayttaja_id AND itsetehtavat_id='" . $_GET[tid] . "' AND osattu=0 AND tehty=1 ORDER BY kayttajat.sukunimi ASC")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -216,7 +216,7 @@ function myFunction(y) {
 
 
 
-        echo'<br><br><p style="font-weight: bold; color: #f7f9f7"><b style="font-size: 1.1em">&#9757</b>&nbsp&nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat toivoneet, että tehtävän läpikäytäväksi:</b> </p>';
+        echo'<br><br><p style="font-weight: bold; color: #2b6777"><b style="font-size: 1.1em">&#9757</b>&nbsp&nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat toivoneet, että tehtävän läpikäytäväksi:</b> </p>';
 
         if (!$haetoiveet = $db->query("select distinct kayttajat.etunimi as etunimi, kayttajat.sukunimi as sukunimi, kayttajat.id as id from itsetehtavatkp, kayttajat where kayttajat.rooli='opiskelija' AND kayttajat.id=itsetehtavatkp.kayttaja_id AND itsetehtavat_id='" . $_GET[tid] . "' AND toive=1 ORDER BY kayttajat.sukunimi ASC")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -241,7 +241,7 @@ function myFunction(y) {
         }
 
 
-        echo'<br><br><p style="font-weight: bold; color: #f7f9f7">&#10000&nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat kommentoineet tehtävää:</b> </p>';
+        echo'<br><br><p style="font-weight: bold; color: #2b6777">&#10000&nbsp&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat kommentoineet tehtävää:</b> </p>';
 
 
 

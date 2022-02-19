@@ -148,7 +148,7 @@ function myFunction(y) {
 <div class="cm8-half" style="padding-top: 0px">';
 
 
-        echo '<p style="color: #f7f9f7; font-weight: bold" >Olet poistamassa kaikki esitetyt kysymykset.</p>';
+        echo '<p style="color: #2b6777; font-weight: bold" >Olet poistamassa kaikki esitetyt kysymykset.</p>';
 
 
         echo("<br><br>Haluatko jatkaa?");

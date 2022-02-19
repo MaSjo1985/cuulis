@@ -140,7 +140,7 @@ function myFunction(y) {
             $opmaksimi = $rowP[opmaksimi];
             $opminimi = $rowP[opminimi];
 
-            echo'<h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">' . $kuvaus . '</h6>';
+            echo'<h6 style="padding-top: 10px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">' . $kuvaus . '</h6>';
             echo '<a href="ryhmatyot.php?r=' . $_GET[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
             echo'<div class="cm8-margin-top"><br></div>';
@@ -162,7 +162,7 @@ function myFunction(y) {
 
 
 
-            echo'<p style="font-size: 1.2em; color: #f7f9f7; font-weight: bold">Valitse, ketkä opiskelijat haluat arpoa ryhmiin</p>';
+            echo'<p style="font-size: 1.2em; color: #2b6777; font-weight: bold">Valitse, ketkä opiskelijat haluat arpoa ryhmiin</p>';
 
 
             if (!$result = $db->query("select distinct kayttajat.id as kaid, sukunimi, etunimi from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND ryhma_id=0 AND projekti_id='" . $_GET[pid] . "' AND kayttajat.rooli <> 'admin' AND kayttajat.rooli <> 'opettaja' ORDER BY kayttajat.sukunimi")) {

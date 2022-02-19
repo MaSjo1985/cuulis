@@ -318,7 +318,7 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="piilota" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
 
 
-                echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
+                echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
                 echo '<tr id="kayn"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#kayn">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#kayn">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#kayn">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#kayn">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#kayn">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';
@@ -349,7 +349,7 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="piilota8" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
 
 
-                echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
+                echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable3" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
                 echo '<tr id="alk"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#alk">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#alk">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#alk">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#alk">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#alk">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';
@@ -380,7 +380,7 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="piilota3" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';
 
 
-                echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
+                echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
                 echo '<table id="mytable2" class="cm8-bordered cm8-uusitable12 cm8-stripedeivikaa"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
                 echo '<tr id="paat"><th><a href="kurssitkaikki.php?sorting1=' . $sort . '&field=kurssit.nimi#paat">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th><a href="kurssitkaikki.php?sorting2=' . $sort . '&field=koodi#paat">Koodi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="kurssitkaikki.php?sorting3=' . $sort . '&field=lukuvuosi#paat">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli3 . '</a></th><th><a href="kurssitkaikki.php?sorting0=' . $sort . '&field=alkupvm#paat">Alkaa &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="kurssitkaikki.php?sorting4=' . $sort . '&field=loppupvm#paat">Päättyy &nbsp&nbsp&nbsp' . $nuoli4 . ' </a></th><th>Viesti opettajalle</th></tr>';
                 echo'</thead><tbody>';

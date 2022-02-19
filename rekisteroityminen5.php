@@ -15,9 +15,9 @@ include("yhteys.php");
 include("header.php");
 echo'<div class="cm8-container7" style="padding-top: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px">';
 
-echo' <h4 style="color: #f7f9f7; padding-top: 0px">Rekisteröityminen</h4>';
+echo' <h4 style="color: #2b6777; padding-top: 0px">Rekisteröityminen</h4>';
 
-echo '<a href="etusivu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br><p style="color:#FF0000 ; font-size:1.1em">Antamasi sähköpostiosoite on jo rekisteröity!</p> <br><b>Kaikki tiedot ovat pakollisia. <br><p style="color: #f7f9f7">Huom! Roolia ja ensisijaista oppilaitosta ei voi enää myöhemmin muuttaa!!</b></p><br>Vahvistustiedot lähetetään antamaasi sähköpostiosoitteeseen.<br><br>';
+echo '<a href="etusivu.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br><p style="color:#FF0000 ; font-size:1.1em">Antamasi sähköpostiosoite on jo rekisteröity!</p> <br><b>Kaikki tiedot ovat pakollisia. <br><p style="color: #2b6777">Huom! Roolia ja ensisijaista oppilaitosta ei voi enää myöhemmin muuttaa!!</b></p><br>Vahvistustiedot lähetetään antamaasi sähköpostiosoitteeseen.<br><br>';
 echo '<form action="rekisterointitarkistus.php" method="post">
 
  

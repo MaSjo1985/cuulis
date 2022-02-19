@@ -46,7 +46,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
 
                 echo'<div class="cm8-margin-top"><br></div>';
-                echo'<b style="color: #f7f9f7;">Tämänhetkiset tulokset: </b><br><br>';
+                echo'<b style="color: #2b6777;">Tämänhetkiset tulokset: </b><br><br>';
 
                 if (!$haeakt = $db->query("select distinct * from aanestykset where id='" . $_SESSION[aid] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -98,10 +98,10 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
 
                 echo'<h5 id="' . $rowa[id] . '"  style="display: inline-block; padding-top:0px; font-size:1.1em">' . $rowa[kysymys] . '</h5>';
-                echo'<br><br><b style="color: #c7ef00">Äänestys on suljettu.</b>';
+                echo'<br><br><b style="color: red">Äänestys on suljettu.</b>';
                 //tähän opiskelijan tulokset
                 echo'<div class="cm8-margin-top"></div>';
-                echo'<b style="color: #f7f9f7;">Tulokset: </b><br><br>';
+                echo'<b style="color: #2b6777;">Tulokset: </b><br><br>';
 
                 if (!$haeakt = $db->query("select distinct * from aanestykset where id='" . $_SESSION[aid] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -149,7 +149,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
             if ($rowa[aktiivinen] == 0) {
                 echo'<div class="cm8-margin-top"></div>';
 
-                echo'<b  style="color: #f7f9f7">Tulokset: </b><br><br>';
+                echo'<b  style="color: #2b6777">Tulokset: </b><br><br>';
 
                 if (!$haevaihtoehdot = $db->query("select distinct * from aanestysvaihtoehdot where aanestys_id='" . $rowa[id] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -171,12 +171,12 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
                 }
 
                 if ($rowa[nakyvissa] == 0) {
-                    echo'<br><b style="color: #c7ef00">Äänestys on suljettu.';
+                    echo'<br><b style="color: red">Äänestys on suljettu.';
                     echo'<form action="aktivoiaanestys.php" style="display: inline-block; margin-left: 20px" method="post"><input type="hidden" name="id" value=' . $rowa[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikeaktivoi" value="+ Avaa" title="Avaa äänestys" class="myButton8" role="button" style="padding:2px 4px"></form>';
                     echo'<br><br>Äänestystulos on piilotettu opiskelijoilta.</b>';
                     echo'<form action="aktivoiaanestys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $rowa[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikenayta" value="+ Näytä" title="Näytä äänestystilanne opiskelijoille" class="myButton8" role="button" style="padding:2px 4px;"></form>';
                 } else if ($rowa[nakyvissa] == 1) {
-                    echo'<br><b style="color: #c7ef00;">Äänestys on suljettu.';
+                    echo'<br><b style="color: red;">Äänestys on suljettu.';
                     echo'<form action="aktivoiaanestys.php" style="display: inline-block; margin-left: 20px" method="post"><input type="hidden" name="id" value=' . $rowa[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikeaktivoi" value="+ Avaa" class="myButton8" title="Avaa äänestys" role="button" style="padding:2px 4px"></form>';
                     echo'<br><br>Opiskelijatkin näkevät äänestystulokset.</b>';
                     echo'<form action="aktivoiaanestys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $rowa[id] . '><input type="hidden" name="kid" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikepiilota" value="- Piilota" title="Piilota äänestystilanne opiskelijoilta" class="myButton8" role="button" style="padding:2px 4px" ></form>';
@@ -190,7 +190,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
                 echo'<div class="cm8-margin-top"><br></div>';
 
-                echo'<b style="color: #f7f9f7;">Tämänhetkiset tulokset: </b><br><br>';
+                echo'<b style="color: #2b6777;">Tämänhetkiset tulokset: </b><br><br>';
 
                 if (!$haeakt = $db->query("select distinct * from aanestykset where id='" . $_SESSION[aid] . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -217,10 +217,10 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
 
 
                     if ($rowa[nakyvissa] == 1) {
-                        echo'<br><b style="color: #c7ef00;">Äänestystilanne on näkyvissä opiskelijoille.</b>';
+                        echo'<br><b style="color: red;">Äänestystilanne on näkyvissä opiskelijoille.</b>';
                         echo'<form action="aktivoiaanestys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $_GET[a] . '>  <input type="submit" name="painikepiilota"  value="- Piilota" title="Piilota äänestystilanne opiskelijoilta" class="myButton8" role="button" style="padding:2px 4px"></form>';
                     } else {
-                        echo'<br><b style="color: #c7ef00;">Opiskelijat eivät näe äänestystilannetta.</b>';
+                        echo'<br><b style="color: red;">Opiskelijat eivät näe äänestystilannetta.</b>';
                         echo'<form action="aktivoiaanestys.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $_GET[a] . '>  <input type="submit" name="painikenayta" value="+ Näytä" title="Näytä äänestystilanne opiskelijoille" class="myButton8" role="button" style="padding:2px 4px"></form>';
                     }
                 }

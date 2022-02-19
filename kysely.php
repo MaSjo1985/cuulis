@@ -170,9 +170,9 @@ function myFunction(y) {
             if ($avautuu != NULL) {
 
                 if ($nyt > $avautuu) {
-                    echo'<b style="margin-right: 20px; color: #c7ef00">Kyselylomake avautui opiskelijoille ';
+                    echo'<b style="margin-right: 20px; color: red">Kyselylomake avautui opiskelijoille ';
                 } else {
-                    echo'<b style="margin-right: 20px; color: #c7ef00">Kyselylomake avautuu opiskelijoille';
+                    echo'<b style="margin-right: 20px; color: red">Kyselylomake avautuu opiskelijoille';
                 }
 
                 echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '.</b>';
@@ -180,7 +180,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaA" value='.$avautumispaiva.'>';
                 echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaA"  title="Muokkaa avautumisaikaa">';
             } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
-                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #c7ef00;">Aseta avautumissajankohta kyselylomakkeelle: </p>';
+                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: red;">Aseta avautumissajankohta kyselylomakkeelle: </p>';
                 echo'<b style="margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.9em; color: #080708" class="kdate"  name="paivaA">';
@@ -213,7 +213,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaS" value='.$sulkeutumispaiva.'>';
                 echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaS"  title="Muokkaa sulkeutumisaikaa">';
             } else {
-                echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; color: #c7ef00;">Aseta sulkeutumisajankohta kyselylomakkeelle: </p>';
+                echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; color: red;">Aseta sulkeutumisajankohta kyselylomakkeelle: </p>';
                 echo'<b style="margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%;color: #080708" class="kdate"  name="paivaS">';
@@ -229,7 +229,7 @@ function myFunction(y) {
             }
 
             echo'</form>';
-                                echo'<b style="font-size: 0.9em;  color: #c7ef00;">Tuleeko vastaukset nimettömänä?</b>';
+                                echo'<b style="font-size: 0.9em;  color: red;">Tuleeko vastaukset nimettömänä?</b>';
                 if (!$result = $db->query("select distinct nimella from kyselyt where kurssi_id = '" . $_SESSION[KurssiId] . "' AND nimella = 0")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
@@ -448,10 +448,10 @@ function myFunction(y) {
             if ($avautuu != NULL) {
                 echo'<br>';
                 if ($avautuu > $nyt) {
-                    echo'<p style=" color:#c7ef00; font-weight: bold">Kyselylomake avautuu ';
+                    echo'<p style=" color:red; font-weight: bold">Kyselylomake avautuu ';
                     $aukiok = 0;
                 } else {
-                    echo'<p style="color: #c7ef00; font-weight: bold">Kyselylomake avautui ';
+                    echo'<p style="color: red; font-weight: bold">Kyselylomake avautui ';
                 }
 
                 echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '</p>';

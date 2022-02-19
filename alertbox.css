@@ -24,7 +24,7 @@
 
 }
 .divi button {
-    background-color: #b1006a;
+    background-color: white;
     display: inline-block;
     border-radius: 5px;
     border: 1px solid #aaa;
@@ -34,7 +34,7 @@
     cursor: pointer;
     margin-top: 20px;
     font-family: Questrial;
-    color: #f7f9f7;  
+    color: #2b6777;  
     font-size: 0.9em;
 
 }

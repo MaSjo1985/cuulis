@@ -103,11 +103,11 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
         $onko = $haeonko->num_rows;
         
         if($onko !=0){
-             echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Muokkaa itserviointilomaketta</h6>';
+             echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Muokkaa itserviointilomaketta</h6>';
        
         }
         else{
-             echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Lisää sisältöä itserviointilomakkeeseen</h6>';
+             echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Lisää sisältöä itserviointilomakkeeseen</h6>';
        
         }
        

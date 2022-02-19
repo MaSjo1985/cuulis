@@ -220,7 +220,7 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top" style="padding-left: 40px; padding-right: 20px">';
         echo'<h4>Palvelimella olevat tiedostot:</h4>';
         echo'<div class="cm8-margin-top"></div>';
-        echo'<h6 style="text-decoration: underline; color: #f7f9f7">Opettajien lisäämät tiedostot:</h6>';
+        echo'<h6 style="text-decoration: underline; color: #2b6777">Opettajien lisäämät tiedostot:</h6>';
         $field = 'lisayspvm';
         $sort = 'DESC';
         $nuoli = "&#8661";
@@ -314,7 +314,7 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top"></div>';
         echo'<div class="cm8-border-top"></div>';
         echo'<div class="cm8-margin-top"></div>';
-        echo'<h6 style="text-decoration: underline; color: #f7f9f7">Kurssitöiden tiedostot:</h6>';
+        echo'<h6 style="text-decoration: underline; color: #2b6777">Kurssitöiden tiedostot:</h6>';
         $field2 = 'lisayspvm';
         $sort2 = 'ASC';
         $nuoli2 = "&#8661";
@@ -406,7 +406,7 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top"></div>';
         echo'<div class="cm8-border-top"></div>';
         echo'<div class="cm8-margin-top"></div>';
-        echo'<h6 style="text-decoration: underline; color: #f7f9f7">Opettajan ryhmiin lisäämät tiedostot:</h6>';
+        echo'<h6 style="text-decoration: underline; color: #2b6777">Opettajan ryhmiin lisäämät tiedostot:</h6>';
         $field2 = 'lisayspvm';
         $sort2 = 'ASC';
         $nuoli2 = "&#8661";
@@ -498,7 +498,7 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top"></div>';
         echo'<div class="cm8-border-top"></div>';
         echo'<div class="cm8-margin-top"></div>';
-        echo'<h6 style="text-decoration: underline; color: #f7f9f7">Profiilikuvan lisänneet käyttäjät:</h6><br><br>';
+        echo'<h6 style="text-decoration: underline; color: #2b6777">Profiilikuvan lisänneet käyttäjät:</h6><br><br>';
 
 
         $field3 = 'sukunimi';

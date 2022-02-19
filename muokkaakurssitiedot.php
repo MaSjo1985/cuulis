@@ -181,7 +181,7 @@ function myFunction(y) {
             }
         }
 
-        echo'<b style="color: #c7ef00;">Kurssitiedot muutettu!</b><br><br><a href="kurssi.php?id=' . $_POST[id] . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br>';
+        echo'<b style="color: red;">Kurssitiedot muutettu!</b><br><br><a href="kurssi.php?id=' . $_POST[id] . '"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa etusivulle</a><br><br>';
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

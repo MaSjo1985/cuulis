@@ -56,7 +56,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<h1 style="margin-bottom: 16px"><a href="etusivu.php" style="font-size: 1em">Cuulis</a>
   <em style="font-size: 0.8em">&nbsp&nbsp&nbsp - &nbsp&nbsp&nbspoppimisympäristö</em></h1></div>';
 
-    echo'<div class="cm8-third"><a class="myButton9" style="font-size: 1.1em; text-align: center;color: #f7f9f7; border-radius: 25px; padding: 2px 6px"  onclick="closeWin()" title="Sulje kysymyssivu">&#10005</a><br><br></div>';
+    echo'<div class="cm8-third"><a class="myButton9" style="font-size: 1.1em; text-align: center;color: #2b6777; border-radius: 25px; padding: 2px 6px"  onclick="closeWin()" title="Sulje kysymyssivu">&#10005</a><br><br></div>';
     ?>
 
 

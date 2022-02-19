@@ -202,7 +202,7 @@ function myFunction(y) {
             background: #15565f;
       
            
-color: #f7f9f7;
+color: #2b6777;
             font-weight: bold;
             width: 20 px;
          }

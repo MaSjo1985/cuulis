@@ -33,7 +33,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     if (empty($_POST[viesti])) {
-        echo '<b style="color: #c7ef00">Viesti-kenttä on tyhjä!</b>';
+        echo '<b style="color: red">Viesti-kenttä on tyhjä!</b>';
         echo '<br><br><a href="kayttajatviesti.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
     } else {
         $nimi = strip_tags($_POST[nimi]);
@@ -150,7 +150,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             if ($viesti) {
 //            header("location: lahetaviesti2.php");
             } else {
-                echo '<br><b style="color: #c7ef00">Viestin lähettäminen ei onnistunut!</b>';
+                echo '<br><b style="color: red">Viestin lähettäminen ei onnistunut!</b>';
                 echo '<br><br><a href="kayttajatviesti.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
             }
         }

@@ -140,8 +140,8 @@ function myFunction(y) {
      
   <br><br><b style="font-size: 1.2em">Lisää video</b>
 <br><form action="lahetavideo.php" method="POST">
-	<br><p><b style="color: #f7f9f7">Anna halutessasi kuvaus videosta:</b><br> <input type="text" name="kuvaus" /></p><br>	
-			<p><b style="color: #f7f9f7">Anna videon url-osoite täydellisessä muodossa,<br>esim. http://google.fi tai http://www.google.fi</b>: <br>(EI pelkkä google.fi tai www.google.fi)</b><br> <input type="text" name="osoite" /></p>
+	<br><p><b style="color: #2b6777">Anna halutessasi kuvaus videosta:</b><br> <input type="text" name="kuvaus" /></p><br>	
+			<p><b style="color: #2b6777">Anna videon url-osoite täydellisessä muodossa,<br>esim. http://google.fi tai http://www.google.fi</b>: <br>(EI pelkkä google.fi tai www.google.fi)</b><br> <input type="text" name="osoite" /></p>
 	
 		<br><p><input type="submit" value="&#10003 Tallenna" class="myButton9"></p>
 	</form>';

@@ -67,7 +67,7 @@ if ($resulteka->num_rows == 0) {
         echo'<input type="hidden" id="oma" value=' . $keski . '></>';
     }
 }
-echo'<div class="cm8-container" style="padding-top: 5px; padding-bottom: 5px;padding-left: 20px">';
+echo'<div class="cm8-container" style="padding-top: 5px; padding-bottom: 5px;padding-left: 20px;">';
 echo'<div class="cm8-half" style="padding: 0px; margin:0px">';
 echo'<h1 style="padding-bottom: 0px; display: inline-block;" ><a href="etusivu.php">Cuulis</h1>
   <b style="font-size: 0.8em; display: inline-block">&nbsp - &nbspoppimisympäristö</b></a>';
@@ -77,7 +77,7 @@ echo'</div>';
 
 //echo'<a href="Tietoa Cuulis-oppimisympäristöstä.pdf" target="_blank" class="cm8-linkk3" title="Tietoa"  style="visibility: hidden; width: 0%; margin-right: 0px">Mikä on Cuulis? 
 // </a>';
-echo'<div class="cm8-half" style="padding: 5px 0px 0px 0px; margin:0px">';
+echo'<div class="cm8-half" style="padding: 5px 0px 0px 0px; margin:0px;">';
 echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-left: 0px; padding-bottom: 0px; margin-bottom: 0px" id="stars"><select id="example">
 
 <option style="display: inline-block" id="taa" value="1">1</option>
@@ -89,7 +89,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #f7f9f7; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #c7ef00; font-style: italic" ></div>';
+echo'<div id="stars2" style="padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em;  font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';

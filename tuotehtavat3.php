@@ -138,7 +138,7 @@ function myFunction(y) {
         }
 
 
-        echo'<h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.2em;  color: #f7f9f7; display: inline-block">Valitse, mitkä tehtävät haluat lisätä.</h6>';
+        echo'<h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.2em;  color: #2b6777; display: inline-block">Valitse, mitkä tehtävät haluat lisätä.</h6>';
         echo'<br><a href="tuotehtavat.php?id=' . $_GET[ipid] . '&monesko=' . $_GET[monesko] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
@@ -183,7 +183,7 @@ function myFunction(y) {
                 
                 echo'</div>';
                 
-                 echo'<p style="color: #c7ef00; font-weight: bold">Valitse ensin ne tehtävät, jotka haluat tuoda.</p>';
+                 echo'<p style="color: red; font-weight: bold">Valitse ensin ne tehtävät, jotka haluat tuoda.</p>';
                 echo'<input type="submit" value="&#10003 Lisää nämä tehtävät"  id="tanne' . $maara . '" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em"><br>';
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable" class="cm8-uusitableitse" style="font-size: 0.9em; width: 99%"><thead>';

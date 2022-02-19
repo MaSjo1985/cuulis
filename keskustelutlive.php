@@ -169,7 +169,7 @@ function myFunction(y) {
 
 
 
-            echo'<h6 style="color: #f7f9f7">' . $kaihe . '</h6>';
+            echo'<h6 style="color: #2b6777">' . $kaihe . '</h6>';
 
 
 
@@ -231,7 +231,7 @@ function myFunction(y) {
             echo'<br><em>Toimintoa ei ole aktivoitu.</em><form action="aktivoikeskustelu.php" method="post"><br><br><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+ Aktivoi toiminto" class="myButton8" role="button" style="padding:2px 4px"></form></div>';
         } else {
 
-            echo'<h6 style="display: inline-block; color: #f7f9f7">' . $kaihe . '</h6>';
+            echo'<h6 style="display: inline-block; color: #2b6777">' . $kaihe . '</h6>';
 
 
             echo'<form action="aktivoikeskustelu.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikem" value="&#9998 Muokkaa" title="Muokkaa keskusteluaihetta" class="myButton9"  role="button"  style="padding:2px 4px"></form>';

@@ -34,7 +34,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-top"></div>';
 
     echo '<p style="font-weight: bold; font-size: 1.2em" >Haluatko todella poistua kokonaan Cuulis-oppimisympäristöstä?</p>';
-    echo '<p style="font-weight: bold; color: #c7ef00" >Tämän jälkeen kaikki tietosi poistuvat oppimisympäristöstä!</p>';
+    echo '<p style="font-weight: bold; color: red" >Tämän jälkeen kaikki tietosi poistuvat oppimisympäristöstä!</p>';
 
     echo '<br><br><a href="poistu.php" class="myButton9"  role="button"  style="margin-right: 30px">Kyllä</a>';
     echo '<a href="omattiedot.php" class="myButton9"  role="button" >En</a><br>';

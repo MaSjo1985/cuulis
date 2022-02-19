@@ -67,7 +67,7 @@ function myFunction(y) {
 
 
 
-            echo'<br><p style="font-size: 1.1 em; font-weight: bold; color: #f7f9f7">Klikkauksia yhteensä ' . $result2->num_rows . ' kpl</p><br>';
+            echo'<br><p style="font-size: 1.1 em; font-weight: bold; color: #2b6777">Klikkauksia yhteensä ' . $result2->num_rows . ' kpl</p><br>';
         }
         echo'</div>';
         echo'</div>';

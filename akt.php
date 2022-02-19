@@ -28,7 +28,7 @@ while ($rowkys8 = $haekysakt->fetch_assoc()) {
 }
 if ($kysakt == 1) {
 
-    echo'<br><br><a href="" onClick="submitChat()"  class="myButton9" style="color: #f7f9f7" role="button" > Lähetä</a></form></div>';
+    echo'<br><br><a href="" onClick="submitChat()"  class="myButton9" style="color: #2b6777" role="button" > Lähetä</a></form></div>';
 } else {
 
     echo'<br><br><a href="" onClick="submitChat()" class="mybutton8Disabled" role="button"> Lähetä</a></form></div>';

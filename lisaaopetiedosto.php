@@ -141,9 +141,9 @@ function myFunction(y) {
  </div>
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
         if (isset($_POST[kid])) {
-            echo'   <h6 style="font-size: 1.2em;  color: #c7ef00;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo'   <h6 style="font-size: 1.2em;  color: red;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         } else {
-            echo' <h6 style="font-size: 1.2em; color: #c7ef00;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo' <h6 style="font-size: 1.2em; color: red;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         }
 
 

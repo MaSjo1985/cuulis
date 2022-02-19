@@ -100,7 +100,7 @@ function myFunction(y) {
  
 <div class="cm8-twothird" style="padding-top: 0px; margin-top: 0px">';
 
-        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7">Tuo kyselylomake</h6>';
+        echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777">Tuo kyselylomake</h6>';
         echo'<a href="kysely.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
 
 
@@ -224,7 +224,7 @@ function myFunction(y) {
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
            
             echo'<div class="cm8-responsive" id="piilota">';
-             echo'<br><b style="color: #c7ef00" >Klikkaa sen kurssin/opintojakson nimeä, jonka kyselylomakkeen haluat tuoda.</b><br><br>';
+             echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka kyselylomakkeen haluat tuoda.</b><br><br>';
             
             echo '<table id="mytable" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
 

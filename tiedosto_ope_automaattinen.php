@@ -205,7 +205,7 @@ function myFunction(y) {
         echo '<br><br><a href="ryhmatyot.php?r=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
         echo'<div class="cm8-margin-top" ></div>';
         
-        echo'<p style="color: #c7ef00; font-size: 1.2em">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+        echo'<p style="color: red; font-size: 1.2em">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
         
         echo'<form action="lahetysope2.php" method="POST" enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
         echo'<legend>1) Lisää tiedosto omalta laitteelta</legend>';

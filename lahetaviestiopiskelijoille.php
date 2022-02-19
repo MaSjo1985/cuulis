@@ -74,7 +74,7 @@ function myFunction(y) {
     echo'<div class="cm8-margin-bottom" style="margin-top: 40px; padding-left: 20px">';
 
     if (empty($_POST[viesti])) {
-        echo'<p style="color: #c7ef00">Et voi lähettää tyhjää viestiä!</p>';
+        echo'<p style="color: red">Et voi lähettää tyhjää viestiä!</p>';
 
         echo'<a href="viestiopiskelijoille.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';
     } else {

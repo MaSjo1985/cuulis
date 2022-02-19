@@ -205,7 +205,7 @@ while ($row8 = $result8->fetch_assoc()) {
 
             echo'<div style="padding-top: 0px; height: 60px; text-align: center; display: inline-block; ">';
 
-            echo'<H2 style="padding-top: 0px;font-size: 1.4em; color: #f7f9f7; display: inline-block; margin-right: 80px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
+            echo'<H2 style="padding-top: 0px;font-size: 1.4em; color: #2b6777; display: inline-block; margin-right: 80px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br> <b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
             echo'<br><br></div>';
 
 
@@ -218,11 +218,11 @@ while ($row8 = $result8->fetch_assoc()) {
             echo'<br>';
             echo'<br>';
         } else if ($_SESSION["Sallicd"] == 1 && date("Y-m-d H:i") > $koe && $originalDate != '' && $kello != '') {
-            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
+            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #2b6777; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . '</b></H2>';
 
             echo'<p style="font-size: 0.7em; margin-top: 15px"><em>(Koe oli ' . $originalDate . ' klo ' . $kello . ')</em></p>';
         } else {
-            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #f7f9f7; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">(' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . ')</b></H2>';
+            echo'<div class="cm8-half" style="text-align: center"><H2 style="padding-left: 0px; margin-left: 0px; padding-top: 10px; font-size: 1.4em; color: #2b6777; padding-bottom: 0px; margin-bottom: 0px">' . $_SESSION["Koodi"] . ' ' . $_SESSION["KurssiNimi"] . '<br><b style="font-size: 0.6em">(' . $_SESSION[Alkupvm] . '-' . $_SESSION[Loppupvm] . ')</b></H2>';
         }
             if (!$tulosP = $db->query("select distinct * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND opettaja_id='" . $_SESSION["Id"] . "'")) {
         die('Tietokantahaussa ilmeni ongelmia [' . $db->error . ']');
@@ -553,9 +553,9 @@ function myFunction(y) {
 
                 if ($onko != 0) {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #c50076;"><th style="border-right: 1px solid grey;"><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th ><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #52ab98;"><th style="border-right: 1px solid grey;"><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th ><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th></tr></thead><tbody>';
                 } else {
-                    echo '<tr style="border: 1px solid grey; background-color: #c50076"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="text-align: center; "></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #52ab98"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="text-align: center; "></th></tr></thead><tbody>';
                 }
 
 
@@ -617,10 +617,10 @@ function myFunction(y) {
 
                 if ($onko != 0) {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #c50076; "><th style="border-right: 1px solid grey; "><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 2px solid grey; text-align: center; ">Pisteet</th><th style="border-right: 1px solid grey"><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th><th><button class="pieniroskis" name="painikek">Kopioi</button><br><br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #52ab98; "><th style="border-right: 1px solid grey; "><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 2px solid grey; text-align: center; ">Pisteet</th><th style="border-right: 1px solid grey"><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th><th><button class="pieniroskis" name="painikek">Kopioi</button><br><br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
                 } else {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #c50076; "><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="padding-right: 0px; "></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #52ab98; "><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="padding-right: 0px; "></th></tr></thead><tbody>';
                 }
 
 

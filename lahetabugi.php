@@ -32,7 +32,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-bottom" style="margin-top: 40px; padding-left: 20px;">';
 
     if (!strlen(trim($_POST['viesti']))) {
-        echo'<p style="color: #c7ef00; font-weight: bold">Et voi lähettää tyhjää viestiä!</p>';
+        echo'<p style="color: red; font-weight: bold">Et voi lähettää tyhjää viestiä!</p>';
 
         echo'<a href="yhteydenotto.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';
     } else {

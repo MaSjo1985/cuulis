@@ -91,7 +91,7 @@ function myFunction(y) {
             $kaihe = str_replace('<br />', "", $kaihe);
             echo '<form action="aktivoikeskustelu28.php" method="post" class="form-style-k"><fieldset>';
 
-            echo'<label style="color: #f7f9f7; padding-top:20px; font-weight: bold; font-size: 1.2em">Muokkaa keskusteluaihetta</label>';
+            echo'<label style="color: #2b6777; padding-top:20px; font-weight: bold; font-size: 1.2em">Muokkaa keskusteluaihetta</label>';
 
             echo'<a href="keskustelut.php"><b style="font-weight: normal; font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8630</b> Palaa takaisin</a><br><br><br>';
             echo'<b>Otsikko: <br><br>

@@ -363,7 +363,7 @@ function myFunction(y) {
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
             echo'<form action="varmistuskurssit.php" method="post" style=" padding-bottom: 0px; padding-top: 0px">';
             echo'<div class="cm8-responsive" id="piilota"  style="padding-bottom: 0px; width: 100%">';
-            echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
+            echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
             echo '<table id="mytable88" class="cm8-uusitable12 cm8-striped"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiK] == 'joo') {
                 $urlK = $_SERVER[REQUEST_URI];
@@ -437,7 +437,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708;"><td style="background-color: #080708"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708;"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -446,7 +446,7 @@ function myFunction(y) {
             echo'<div id="scrollbar8"><div id="spacer8"></div></div>';
 
             echo'<div class="cm8-responsive" id="piilota8"  style=" padding-bottom: 0px; padding-top: 10px; width: 100%; margin-top: 0px">';
-            echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
+            echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
 
             echo '<table id="mytable3" class="cm8-uusitable12 cm8-striped"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiA] == 'joo') {
@@ -529,7 +529,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #080708"><td style="background-color: #080708"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -542,7 +542,7 @@ function myFunction(y) {
 
             echo'<form action="varmistuskurssit.php" method="post"  style=" padding-bottom: 0px; padding-top: 0px">';
             echo'<div class="cm8-responsive" id="piilota3"  style="padding-top: 20px; padding-bottom: 0px; width: 100%">';
-            echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
+            echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
             echo '<table id="mytable2" class="cm8-uusitable12 cm8-striped"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiP] == 'joo') {
                 $urlP = $_SERVER[REQUEST_URI];
@@ -615,7 +615,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #080708"><td style="background-color: #080708"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
             echo'<div class="cm8-margin-top"></div>';
@@ -799,7 +799,7 @@ function myFunction(y) {
             echo'<form action="varmistuskurssit3.php" method="post"  style=" padding-bottom: 0px; padding-top: 0px">';
 
             echo'<div class="cm8-responsive" id="piilota"  style="padding-bottom: 0px; width: 100%">';
-            echo'<b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
+            echo'<b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Käynnissä olevat kurssit/opintojaksot:</b><br><br>';
             echo '<table id="mytable88" class="cm8-uusitable12 cm8-striped"  style="table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiK] == 'joo') {
 
@@ -851,7 +851,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #080708"><td style="background-color: #080708"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
 
 
             echo "</tbody></table>";
@@ -862,7 +862,7 @@ function myFunction(y) {
             echo'<form action="varmistuskurssit3.php" method="post"  style=" padding-bottom: 0px; padding-top: 0px">';
 
             echo'<div class="cm8-responsive" id="piilota8"  style="padding-top: 10px; padding-bottom: 0px; width: 100%">';
-            echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
+            echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Alkamassa olevat kurssit/opintojaksot:</b><br><br>';
             echo '<table id="mytable3" class="cm8-uusitable12 cm8-striped"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiA] == 'joo') {
 
@@ -913,7 +913,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #080708"><td style="background-color: #080708"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -921,7 +921,7 @@ function myFunction(y) {
         if ($result2->num_rows != 0) {
             echo'<form action="varmistuskurssit3.php" method="post"  style=" padding-bottom: 0px; padding-top: 0px">';
             echo'<div class="cm8-responsive" id="piilota3"  style="padding-top: 20px; padding-bottom: 0px; width: 100%">';
-            echo'<br><b style="font-size: 1.2em; color: #f7f9f7; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
+            echo'<br><b style="font-size: 1.2em; color: #2b6777; font-weight: bold;">Päättyneet kurssit/opintojaksot:</b><br><br>';
             echo '<table id="mytable2" class="cm8-uusitable12 cm8-striped"  style="overflow: hidden; table-layout:fixed; max-width: 100%;"><thead>';
             if ($_GET[kaikkiP] == 'joo') {
 
@@ -969,7 +969,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #080708"><td style="background-color: #080708"></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }

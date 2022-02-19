@@ -126,7 +126,7 @@ function myFunction(y) {
             $kuvaus = $rowP[kuvaus];
 
 
-            echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #f7f9f7; display: inline-block">' . $kuvaus . '</h6>';
+            echo'<br><h6 style="padding-top: 0px; padding-bottom: 20px; font-size: 1.3em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
             echo'<br><a href="itsetyot.php?i=' . $ipid . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
             if (!$haetehtavat = $db->query("select distinct * from itsetehtavat where itseprojektit_id='" . $ipid . "'")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -137,7 +137,7 @@ function myFunction(y) {
             }
             $yht = $haetehtavat2->num_rows;
 
-            echo'<p style="color: #f7f9f7">Tehtäviä yhteensä: <b>' . $yht . ' kpl.</b></p>';
+            echo'<p style="color: #2b6777">Tehtäviä yhteensä: <b>' . $yht . ' kpl.</b></p>';
 
 
             echo'<br><br><form action="tuotehtavat.php" method="get" style="display: inline-block"><input type="hidden" name="monesko" value=' . $_GET[monesko] . '><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#10000 Tuo tehtävät toisesta kurssista/opintojaksosta" class="myButton8"  role="button"  style="padding:2px 4px"></form>';

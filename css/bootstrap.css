@@ -5754,7 +5754,7 @@ button.close {
     top: 0;
     right: 0;
     left: 0;
-    background-color: #080708;
+    background-color: #e5e5e5;
 }
 .modal-backdrop.fade {
     filter: alpha(opacity=0);
@@ -5858,7 +5858,7 @@ button.close {
     color: #fff;
     text-align: center;
     text-decoration: none;
-    background-color: #080708;
+    background-color: #e5e5e5;
     border-radius: 4px;
 }
 .tooltip-arrow {
@@ -6216,7 +6216,7 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #080708 \9;
+    background-color: #e5e5e5 \9;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px;

@@ -48,9 +48,9 @@ echo'<div class="cm8-half">';
 echo'<div id="siirto" title="Siirrä kirjaa" style="width: auto; height: auto;z-index: 1;position: fixed !important">';
 
 
-echo'<div class="cm8-container" id="siirto" style="z-index: 1;position: fixed; background: #f7f9f7; padding: 10px; ">';
+echo'<div class="cm8-container" id="siirto" style="z-index: 1;position: fixed; background-color: white; padding: 10px; ">';
 
-echo'<h2  style="color: #f7f9f7">OIKOPOLUT:</h2>';
+echo'<h2  style="color: #2b6777">OIKOPOLUT:</h2>';
 echo'<br><a href="tiedostot.php" class="cm8-linkki"><b style="font-size: 1.2em">&#10032&nbsp&nbsp </b> <b>Tiedostot</b></a><br>';
 echo'<a href="linkit.php" class="cm8-linkki"><b style="font-size: 1.2em">&#10032&nbsp&nbsp </b>  <b>Linkit</b></a><br>';
 
@@ -89,7 +89,7 @@ if ($palaute == 0) {
 
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
-        echo'<h2 style="color: #f7f9f7; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>';
+        echo'<h2 style="color: #2b6777; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>';
 
         echo' <form action="aktivoipalaute.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikea" value="+" title="Aktivoi kurssipalaute" class="myButton9"  role="button"  style="padding:2px 4px"></form>';
 
@@ -101,7 +101,7 @@ if ($palaute == 0) {
 
 
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-        echo'<h2 style="color: #f7f9f7; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>';
+        echo'<h2 style="color: #2b6777; font-size: 1em; display: inline-block">KURSSIPALAUTE:</h2>';
         echo' <form action="aktivoipalaute.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painikep" title="Peru kurssipalautteen antamismahdollisuus" value="-" class="myButton9"  role="button"  style="padding:2px 4px"></form>';
 
         if (!$haepalaute = $db->query("select * from palautteet where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
@@ -116,7 +116,7 @@ if ($palaute == 0) {
 
 
         echo'<form id="kirja" action="lahetakurssipalaute.php" method="post">
-               <h2 style="color: #f7f9f7; font-size: 1em">KURSSIPALAUTE:</h2>
+               <h2 style="color: #2b6777; font-size: 1em">KURSSIPALAUTE:</h2>
 		<br><textarea name="viesti" rows="6" placeholder="Tähän voit antaa nimettömästi palautetta kurssista/opintojaksosta." style="font-size: 0.9em"></textarea><br><br> 
             <input type="submit" class="myButton9" value="Lähetä">
             
@@ -135,7 +135,7 @@ echo'
             background: #15565f;
       
            
-color: #f7f9f7;
+color: #2b6777;
             font-weight: bold;
             width: 20 px;
          }

@@ -1,41 +1,43 @@
-UUS VÄRIMAAILMA, ulkoasu2.css
-https://99designs.com/blog/tips/website-color-schemes/
+UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
 
-1) LAITA NAVIEN TAUSTAVÄRIKSI:   #2b6777
+
+1) VALKONEN TEKSTIVÄRI, KATO MISSÄ ON!
 
 2) TSEKKAA NAPPULAT
 
-3) TSEKKAA HOVERIT!!!
+3) TSEKKAA LOMAKKEET: Onko nyt selkeät muka?
+
+4) TEHTÄVÄlistASSA OUTO TAUSTAVÄRI, KOITAPA ETTII SE VALKOSEN TOINEN VERSIO
+
+5) DATEPICKER + TIMEPICKER
+
+6) OPPILaITOSTEN LOGOT
+
+7) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php + tehtävälistan vieressä olevan taulun muokkaus
+
+8) ARVOSTELU EI NÄY + VAIHDA TÄHTIEN ÄÄRIVIIVAN VÄRI
+
+9) TSEKKAA KYSELYLOMAKKEEN TUONTI
 
 
-
+*******************************************************************************************
 
 TURKOOSI:  #00ffff
 
 TAUSTA:
 background-color: #e5e5e5
 
+VÄLIVAIHTO:  background-color: white
 
-
-VÄLIVAIHTO:
-
-background-color: white
-
-
-
-
+NAVIEN TAUSTA:   background-color: #2b6777
 
 TEKSTIEN VÄRIT:   color: #2b6777
 
-
 TAULUKOIDEN TAUSTAVÄRI:  background-color: #52ab98  
 
-NAPPULOIDEN SISÄVÄRIT:  #9dffff -> #9dffff
+NAPPULOIDEN SISÄVÄRIT:  #2b6777 -> #2b6777
 
-
-
-KELTANEN VÄRI:
-color: red -> color: red
+KELTANEN VÄRI: -> color: red
 
 STRIPED:
 #c8d8e4
@@ -207,7 +209,7 @@ Formien ilmoitusten värit yms.
 
 painikkeiden hover:
 
-  color: #9dffff;
+  color: #2b6777;
 
 KATO ETTÄ TEKSTIN VÄRI EI OO   #2b6777
 
@@ -248,7 +250,7 @@ NAVIPALKIT:    #127475 -> #2b6777
 
 STRIPED:   eka #f7f9f7, toka #98ABAE -> #ffd8ef
 
-ISOT TAULUKOT:   #0D3E3F ->  #9dffff 
+ISOT TAULUKOT:   #0D3E3F ->  #2b6777 
 
 PIENET TAULUKOT:  #0099ff -> 
 

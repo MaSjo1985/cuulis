@@ -157,7 +157,7 @@ function myFunction(y) {
 
         echo'<br><h6 style="padding-top: 0px; padding-bottom: 10px; font-size: 1.2em; color: #2b6777; display: inline-block">' . $kuvaus . '</h6>';
         echo'<br><a href="itsetyot.php?i=' . $_GET[id] . '""><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
-        echo'<br><b style="font-size: 1.2em; color:  #9dffff">Tehtävän ' . $sisalto . ' opiskelijoiden merkinnät</b>';
+        echo'<br><b style="font-size: 1.2em; color:  #2b6777">Tehtävän ' . $sisalto . ' opiskelijoiden merkinnät</b>';
         echo'<br><br><p id="ohje" style="font-size: 0.9em">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p>';
 
         echo'<p style="font-weight: bold; color: #2b6777; margin-top:30px"><b style="font-size: 1.5em">&#9786</b>&nbsp<b style="font-size: 1.1em;">Opiskelijat, jotka ovat osannut tehtävän: </b></p>';

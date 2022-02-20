@@ -394,7 +394,7 @@
                 {name: 'libreak', hex: null},
 
                 {name: 'Red', hex: '#FF0000'},
-                {name: 'Orange', hex: '#FF9900'},
+                {name: '#2b6777', hex: '#FF9900'},
                 {name: 'Yellow', hex: '#FFFF00'},
                 {name: 'Lime', hex: '#7FD858'},
                 {name: 'Cyan', hex: '#00FFFF'},

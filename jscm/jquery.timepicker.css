@@ -95,15 +95,15 @@
 }
 .ui-timepicker-container a:hover{
 
-    border: 2px solid #9dffff;
+    border: 2px solid #2b6777;
     background: #00ffff;
-    color: #9dffff;
+    color: #2b6777;
     font-weight: bold;
 }
 .ui-timepicker-container .ui-state-hover {
-    border: 2px solid #9dffff;
+    border: 2px solid #2b6777;
     background: #00ffff;
-    color: #9dffff;
+    color: #2b6777;
     font-weight: bold;
 }
 

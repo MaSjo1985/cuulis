@@ -1,5 +1,6 @@
 .ui-widget.ui-widget-content{
-    background-color: #eeeeee;
+    background-color: #52ab98;
+    color: #00ffff;
 
 }
 
@@ -12,7 +13,7 @@
 
     font-family: Questrial; 
 
-
+color: #00ffff;
 
 
 }
@@ -81,7 +82,7 @@
     text-align: center;
     font-weight: bold;
     border: 0;
-    color: #9dffff;
+    color: #2b6777;
 }
 .ui-datepicker td {
 
@@ -215,16 +216,15 @@
 }
 .ui-datepicker-calendar .ui-state-active {
 
-    border: 2px solid #9dffff;
+    border: 2px solid #2b6777;
     background-color: #00ffff;
-    color: #9dffff;
+    color: #2b6777;
     font-weight: bold;
 }
 .ui-datepicker-calendar .ui-state-hover {
 
-    border: 2px solid #9dffff;
-    background-color: #00ffff;
-    color: #9dffff;
+    border: 2px solid #2b6777;
+   color: #00ffff;
     font-weight: bold;
 }
 

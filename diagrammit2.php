@@ -277,7 +277,7 @@ echo'<div class="cm8-margin-top"></div>';
 //          echo'<p style="font-weight: bold; font-size: 1.5em; display: inline-block; margin-right: 40px"> Tavoitteesi on: '. $prostavoite. ' %</p>';
 //           echo'<p style="font-weight: bold; font-size: 1.3em; display: inline-block; margin-right: 40px"> -></p>';
 //         if($osuus >= $prostavoite){
-//              echo'<p style="font-weight: bold; color:orange; font-size: 1.5em; display: inline-block"> Hienoa, olet saavuttanut tavoitteesi!</p>';
+//              echo'<p style="font-weight: bold; color:#2b6777; font-size: 1.5em; display: inline-block"> Hienoa, olet saavuttanut tavoitteesi!</p>';
 //         }
 //         else{
 //             $ero = $prostavoite - $osuus;

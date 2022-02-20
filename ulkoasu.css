@@ -96,7 +96,7 @@ table a:hover{
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2b6777;', endColorstr='#ef027d',GradientType=0);
 
 
-    background-color: white;
+    background-color: #2b6777;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:10px;
@@ -581,7 +581,7 @@ h6tiedosto{
     border: 2px solid #15565f; 
     padding: 6px 40px 6px 20px; 
     margin-right: 20px; 
-    background-color: white ; 
+   background-color: #2b6777;
     color: #00ffff;
     display: inline-block;
 }
@@ -1286,7 +1286,7 @@ table.cm8-uusitableia th{
     padding:10px;
 
 }
-table.cm8-uusitableia td{border: 2px solid grey; color: #2b6777; padding: 10px 100px 10px 10px }
+table.cm8-uusitableia td{border: 2px solid grey;  padding: 10px 100px 10px 10px }
 table.cm8-uusitableia tr{ border: 2px solid grey; background-color: white}
 table.cm8-uusitableia input[type="submit"]{
     -moz-border-radius:10px;
@@ -1959,7 +1959,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 
 
 .topnav {
-    background-color: white;
+  background-color: #2b6777;
     overflow: hidden;
 
     font-family: Questrial; 
@@ -1988,7 +1988,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 
 
 .topnav a:hover {
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
 
     border: 1px solid #2b6777;
@@ -1998,7 +1998,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 /*TÄHÄN*/
 
 .topnavoppilas {
-    background-color: white;
+    background-color: #2b6777;
     overflow: hidden;
 
     font-family: Questrial; 
@@ -2028,7 +2028,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 
 
 .topnavoppilas a:hover {
-    color: #9dffff;
+    color: #2b6777;
     background-color: white; 
 
     border: 1px solid #2b6777;
@@ -2120,7 +2120,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
     border: 1px solid transparent;
 }
 .topnavOpe {
-    background-color: white;
+    background-color: #2b6777;
     overflow: hidden;
 
     font-family: Questrial; 
@@ -2147,7 +2147,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 
 
 .topnavOpe a:hover {
-    color: #9dffff;
+    color: #2b6777;
     background-color: white; 
 
     border: 1px solid #2b6777;
@@ -2357,7 +2357,7 @@ ul.cm8-ul li:last-child{border-bottom:none}
 
 a.currentLink
 {
-    color: #9dffff;
+    color: #2b6777;
     background-color: white; 
 
     border: 1px solid #2b6777;
@@ -2823,9 +2823,9 @@ a.btn-info2.active,
 
 
 a.munNappula{
-    background-color:  #69626d;
-    -moz-box-shadow: 1px 0px 3px 1px    #69626d;
-    -webkit-box-shadow: 1px 0px 3px 1px    #69626d;
+    background-color:  #00ffff;
+    -moz-box-shadow: 1px 0px 3px 1px    #00ffff;
+    -webkit-box-shadow: 1px 0px 3px 1px    #00ffff;
     box-shadow: 1px 0px 3px 1px  #c4bdc1;
 
     -moz-border-radius:10px;
@@ -2847,9 +2847,9 @@ a.munNappula:hover {
 
 }
 a.suljeNappula{
-    background-color:  #69626d;
-    -moz-box-shadow: 1px 0px 3px 1px    #69626d;
-    -webkit-box-shadow: 1px 0px 3px 1px    #69626d;
+    background-color:  #00ffff;
+    -moz-box-shadow: 1px 0px 3px 1px    #00ffff;
+    -webkit-box-shadow: 1px 0px 3px 1px    #00ffff;
     box-shadow: 1px 0px 3px 1px  #c4bdc1;
 
     -moz-border-radius:10px;
@@ -2871,9 +2871,9 @@ a.suljeNappula:hover {
 
 }
 input[type="submit"].munNappula {
-    background-color:  #69626d;
-    -moz-box-shadow: 1px 0px 3px 1px    #69626d;
-    -webkit-box-shadow: 1px 0px 3px 1px    #69626d;
+    background-color:  #00ffff;
+    -moz-box-shadow: 1px 0px 3px 1px    #00ffff;
+    -webkit-box-shadow: 1px 0px 3px 1px    #00ffff;
     box-shadow: 1px 0px 3px 1px  #c4bdc1;
 
     -moz-border-radius:10px;
@@ -2881,7 +2881,7 @@ input[type="submit"].munNappula {
     border-radius:10px;
     cursor:pointer;
     color: #2b6777;
-    border: 2px solid   #69626d;
+    border: 2px solid   #00ffff;
     padding: 4px;
     display: inline-block;
     font-size: .9em;
@@ -2891,9 +2891,9 @@ input[type="submit"].munNappula {
 
 }
 input[type="submit"].munNappula4 {
-    background-color:  #69626d;
-    -moz-box-shadow: 1px 0px 3px 1px    #69626d;
-    -webkit-box-shadow: 1px 0px 3px 1px    #69626d;
+    background-color:  #00ffff;
+    -moz-box-shadow: 1px 0px 3px 1px    #00ffff;
+    -webkit-box-shadow: 1px 0px 3px 1px    #00ffff;
     box-shadow: 1px 0px 3px 1px  #c4bdc1;
 
     -moz-border-radius:10px;
@@ -2901,7 +2901,7 @@ input[type="submit"].munNappula4 {
     border-radius:10px;
     cursor:pointer;
     color: #2b6777;
-    border: 2px solid   #69626d;
+    border: 2px solid   #00ffff;
     padding: 4px;
     display: inline-block;
     font-size: .9em;
@@ -2971,21 +2971,22 @@ input[type="submit"].munNappula:hover {
 
 a.btn-info3 {
     color: #00ffff;
-    background-color: white;
+    background-color: #2b6777;
     font-size: 0.8em;
-    border-style: 2px solid red;
+    border: 2px solid #2b6777;
     margin-top: 10px;
     padding-right: 4px;
 }
 a.btn-info3:hover{
     background-color: white;
     color: #2b6777;
+    border: 2px solid #2b6777;
 }
 a.btn-info3-valittu {
     color: #2b6777;
     background-color: white;
     font-size: 0.8em;
-    border-style: 2px solid red;
+ border: 2px solid #2b6777;
     margin-top: 10px;
     padding-right: 4px;
     font-weight: bold;
@@ -2995,7 +2996,7 @@ a.cm8-linkk3 {
     width: 20%;
 
     font-size: 0.7em;
-    background-color: white;
+    background-color: #2b6777;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:10px;
@@ -3011,12 +3012,12 @@ a.cm8-linkk3 {
     text-decoration:none;
 }
 a.cm8-linkk3:hover{
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
 }
 a.cm8-linkk3-valittu{
     background-color:  #f7f9f7;
-    color: #9dffff;
+    color: #2b6777;
     width: 20%;
 
     font-size: 0.7em;
@@ -3178,7 +3179,7 @@ a.cm8-linkk4:hover{
 }
 .cm8-isotavoite{
     display: inline-block; 
-    border: 2px solid orange;
+    border: 2px solid #2b6777;
     width: 90%;
     box-sizing: border-box;
     border-radius: 0.5em;
@@ -3204,7 +3205,7 @@ a.cm8-linkk4:hover{
 
     transition: 0.3s;
 
-    background: linear-gradient(to right, orange, tomato);
+    background: linear-gradient(to right, #2b6777, tomato);
     text-align: center;
     max-width: 100%;
 }
@@ -3217,7 +3218,7 @@ a.cm8-linkk4:hover{
     justify-content: center;
     background-color: white; 
     box-sizing: border-box;
-    border: 2px solid orange;
+    border: 2px solid #2b6777;
     padding: 12px;
     font-size: 1em;
     margin: 0;
@@ -3226,7 +3227,7 @@ a.cm8-linkk4:hover{
     box-shadow: 0 0 1em rgba(0,0,0,0.2);
     color: #2b6777;
     font-family: sans-serif;
-    background: linear-gradient(to right, orange, tomato);
+    background: linear-gradient(to right, #2b6777, tomato);
     transition: 0.3s;
     margin-bottom: 0px;
     text-align: center;
@@ -3278,7 +3279,7 @@ a.cm8-linkk4:hover{
     font-size: 0.9em;
 }
 .myButtonOhjeA:hover{
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
     cursor: pointer;
     border: 2px solid #2b6777;
@@ -3987,7 +3988,7 @@ input[type="submit"].myButton8:hover {
     -webkit-border-radius:10px;
     border-radius:10px;
     cursor:pointer;
-    color: #2b6777;
+    color: #00ffff;
     background-color: blue;
     font-weight: bold;
     padding: 6px; 
@@ -4293,10 +4294,10 @@ ul:after{content:"";display:table;clear:both}
 .cm8-khaki{color: #2b6777 !important;background-color:#f0e68c !important}
 .cm8-text-lime{color:#cddc39 !important}
 .cm8-lime{color: #2b6777 !important;background-color:#cddc39 !important}
-.cm8-text-orange{color:#ff9800 !important}
-.cm8-orange{color: #2b6777 !important;background-color:#ff9800 !important}
-.cm8-text-deep-orange{color:#ff5722 !important}
-.cm8-deep-orange{color: #2b6777 !important;background-color:#ff5722 !important}
+.cm8-text-#2b6777{color:#ff9800 !important}
+.cm8-#2b6777{color: #2b6777 !important;background-color:#ff9800 !important}
+.cm8-text-deep-#2b6777{color:#ff5722 !important}
+.cm8-deep-#2b6777{color: #2b6777 !important;background-color:#ff5722 !important}
 .cm8-text-pink{color:#e91e63 !important}
 
 .cm8-pink{color:#2b6777 !important;background-color: white !important}
@@ -4561,7 +4562,7 @@ label:hover{
     -webkit-box-shadow: inset 0px 0px 5px #2b6777;
 
 
-    background-color: white;
+    background-color: #f7f9f7;
     margin: 0px 0px 10px 0px;
 
     padding: 20px 20px 10px 20px;
@@ -4711,14 +4712,14 @@ label:hover{
 .form-style-p  input[type=button]:focus{
     border: 2px solid #2b6777;
     background-color: white;
-    color: #9dffff;
+    color: #2b6777;
 
 }
 input[type=submit]:focus,
 input[type=button]:focus{
     border: 2px solid #2b6777;
     background-color: white;
-    color: #9dffff;
+    color: #2b6777;
 
 
 
@@ -5131,7 +5132,7 @@ p.form-style-8 {
 }
 
 .form-style-k button:hover{
-    color: #9dffff;
+    color: #2b6777;
 }
 .form-style-k  input[type=submit]:hover,
 .form-style-k  input[type=button]:hover,
@@ -5139,7 +5140,7 @@ p.form-style-8 {
 .form-style-k  input[type=button]:focus{
     border: 1px solid #2b6777;
     background-color: white;
-    color: #9dffff;
+    color: #2b6777;
 
 }
 
@@ -5364,7 +5365,7 @@ p.form-style-8 {
 .form-style-spinner button:focus{
     border:1px solid  #2b6777;
     background-color: white;
-    color: #9dffff;
+    color: #2b6777;
 
 }
 .form-style-spinner input[type=submit]:active,
@@ -5563,7 +5564,7 @@ form-style-9{
 
 .form-style-3  input[type=submit]:hover,
 .form-style-3  input[type=button]:hover{
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
 }
 .form-style-3  a:hover{
@@ -5572,13 +5573,13 @@ form-style-9{
 }
 .form-style-8  input[type=submit]:hover,
 .form-style-8  input[type=button]:hover{
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
 }
 
 .form-style-9  input[type=submit]:hover,
 .form-style-9  input[type=button]:hover{
-    color: #9dffff;
+    color: #2b6777;
     background-color: white;
 }
 
@@ -5597,7 +5598,7 @@ form-style-9{
 }
 
 tr.aihe textarea{
-    background-color: #ff0099;
+    background-color: #52ab98;
     font-weight: bold; 
     width:100%; 
     font-size: 1em;
@@ -5606,7 +5607,7 @@ tr.aihe textarea{
     padding: 10px 10px 0px 10px;
 }
 tr.aihe td:nth-child(2) {
-    background-color: #ff0099;
+    background-color: #52ab98;
     font-weight: bold; 
     width:100%; 
     font-size: 1em;
@@ -5625,14 +5626,14 @@ tr.sisalto textarea{
     padding: 10px 10px 0px 10px;
 }
 tr.iaihe td:nth-child(2){
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
     text-align: center;
     font-size: 1em;
 }
 
 tr.iaihe textarea{
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
     text-align: center;
     font-size: 1em;
@@ -5641,7 +5642,7 @@ tr.iaihe textarea{
     padding: 20px;
 }
 tr.ivaliaihe textarea{
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
     text-align: center;
     font-size: 1em;
@@ -5653,7 +5654,7 @@ tr.ivaliaihe textarea{
 
 
 tr.ivaliaihe td:nth-child(2){
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
     text-align: center;
     font-size: 1em;
@@ -5681,9 +5682,9 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableitse .iaihe2 {
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
-
+color: #2b6777;
     font-size: 1em;
 }
 
@@ -5691,7 +5692,7 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableitse .ivaliaihe2{
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
 
     font-size: 0.9em;
@@ -5710,8 +5711,9 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableia .iaihe2 {
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
+    color: #00ffff;
 
     font-size: 1em;
 
@@ -5725,7 +5727,7 @@ td.sisaltoselitys {
 }
 
 .cm8-uusitableia .ivaliaihe2{
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
 
     font-size: 0.9em;
@@ -5743,7 +5745,7 @@ table.cm8-uusitableiauusi td, th{
     border:1px solid grey;
     font-size: 0.9em;
 }
-table.cm8-uusitableiauusi td{color: #2b6777; padding: 10px 100px 10px 10px }
+table.cm8-uusitableiauusi td{padding: 10px 100px 10px 10px }
 table.cm8-uusitableiauusi tr{ background-color: white}
 table.cm8-uusitableiauusi input[type="submit"]{
     -moz-border-radius:10px;
@@ -5757,8 +5759,9 @@ table.cm8-uusitableiauusi input[type="submit"]{
     font-size: 0.8em;
 }
 .cm8-uusitableiauusi .iaihe2 {
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
+    color: #00ffff;
 
 
 }
@@ -5771,7 +5774,7 @@ table.cm8-uusitableiauusi input[type="submit"]{
 }
 
 .cm8-uusitableiauusi .ivaliaihe2{
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
 
 }
@@ -5786,9 +5789,9 @@ table.cm8-uusitableiauusi input[type="submit"]{
 
 
 .cm8-tableoppilas .iaihe2 {
-    background-color: #ff0099; 
+    background-color: #52ab98; 
     font-weight: bold; 
-
+color: #2b6777;
     font-size: 1em;
 }
 
@@ -5796,7 +5799,7 @@ table.cm8-uusitableiauusi input[type="submit"]{
 
 
 .cm8-tableoppilas .ivaliaihe2{
-    background-color: #ffd9f0; 
+    background-color: #c8d8e4; 
     font-weight: bold; 
 
     font-size: 0.9em;
@@ -6235,7 +6238,7 @@ background: #0078a3 url("images/ui-bg_glass_40_0078a3_1x400.png") 50% 50% repeat
 .ohjeboxi{
     margin-top: 40px;
     border: 2px solid #2b6777;
-    background-color: #272227;
+    background-color: white;
     max-width: 90%;
     padding: 20px;
 }
@@ -6283,7 +6286,7 @@ a.cm8-navigointilinkki:hover{
   width: 40px;
   position: absolute;
   margin-top: 24px;
-  background-color: orange;
+  background-color: #2b6777;
   border-radius: 2px;
   transform: rotate(45deg);
   transition: all .3s ease-in;
@@ -6294,14 +6297,14 @@ a.cm8-navigointilinkki:hover{
   width: 40px;
   position: absolute;
   margin-top: 24px;
-  background-color: orange;
+  background-color: #2b6777;
   border-radius: 2px;
   transform: rotate(-45deg);
   transition: all .3s ease-in;
 }
 
 .suljelabel{
-  color: white;
+ color: #2b6777;
   font-family: Questrial; 
   font-size: .8em;
   letter-spacing: 0px;
@@ -6315,11 +6318,11 @@ a.cm8-navigointilinkki:hover{
 
 .close-container:hover .leftright{
   transform: rotate(-45deg);
-  background-color: red;
+  background-color: #2b6777;
 }
 .close-container:hover .rightleft{
   transform: rotate(45deg);
-  background-color: red;
+  background-color: #2b6777;
 }
 .close-container:hover label{
   opacity: 1;

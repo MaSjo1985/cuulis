@@ -1,7 +1,7 @@
 <?php
 ob_start();
-
-
+ob_start();
+ob_start();
 echo'
 <!DOCTYPE html>
 
@@ -95,17 +95,25 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     $_SESSION["Rooli"] = 'admink';
                     header('location: ' . $_GET[url]);
                 }
+                else{
+                     header('location: omatkurssit.php');
+                }
             } else {
                 if ($_SESSION["Rooli"] == 'opettaja') {
+                   
                     //merkitään opettaja yhteisrooliin
                     $_SESSION["Rooli"] = 'opeadmin';
                     $_SESSION["kouluId"] = $kouluid;
+                  
                     header('location: omatkurssit.php');
                 } else if ($_SESSION["Rooli"] == 'muu') {
                     //merkitään muu-käyttäjä pelkäksi ylläpitäjäksi
                     $_SESSION["kouluId"] = $kouluid;
                     $_SESSION["Rooli"] = 'admink';
                     header('location: admink.php');
+                }
+                else{
+                     header('location: omatkurssit.php');
                 }
             }
         }

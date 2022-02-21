@@ -594,7 +594,7 @@ function myFunction(y) {
                         if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
 
-                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 1.2em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
+                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 0.9em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
                         
                             
                         }
@@ -1176,7 +1176,7 @@ function myFunction(y) {
                         if ($palautus == 1 && $ryhmatiedot->num_rows!=0) {
 
 
-                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 1.2em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
+                            echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 0.9em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
                         
                             
                         }

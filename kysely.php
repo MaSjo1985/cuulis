@@ -97,7 +97,7 @@ function myFunction(y) {
 
 
 
-        if (!$onkoprojekti = $db->query("select * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND kysely=1")) {
+        if (!$onkoprojekti = $db->query("select * from kyselyt where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -124,7 +124,7 @@ function myFunction(y) {
             while ($rowv = $haeinfo->fetch_assoc()) {
                 $viesti = $rowv[info];
             }
-    if (!$onkoprojekti = $db->query("select * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND kysely=1")) {
+    if (!$onkoprojekti = $db->query("select * from kyselyt where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
@@ -376,7 +376,7 @@ function myFunction(y) {
         echo'</div>';
         echo'<div class="cm8-twothird">';
 
-        if (!$onkoprojekti = $db->query("select * from kurssit where id='" . $_SESSION["KurssiId"] . "' AND kysely=1")) {
+        if (!$onkoprojekti = $db->query("select * from kyselyt where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 

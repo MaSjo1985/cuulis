@@ -1,23 +1,12 @@
 UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
 
-
-1) VALKONEN TEKSTIVÄRI, KATO MISSÄ ON!
+1) VALKONEN TEKSTIVÄRI, KATO MISSÄ ON! -> KOITA ETTII PELKKÄ color: #f7f9f7
 
 2) TSEKKAA NAPPULAT
 
-3) TSEKKAA LOMAKKEET: Onko nyt selkeät muka?
+3) DATEPICKER + TIMEPICKER
 
-4) TEHTÄVÄlistASSA OUTO TAUSTAVÄRI, KOITAPA ETTII SE VALKOSEN TOINEN VERSIO
-
-5) DATEPICKER + TIMEPICKER
-
-6) OPPILaITOSTEN LOGOT
-
-7) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php + tehtävälistan vieressä olevan taulun muokkaus
-
-8) ARVOSTELU EI NÄY + VAIHDA TÄHTIEN ÄÄRIVIIVAN VÄRI
-
-9) TSEKKAA KYSELYLOMAKKEEN TUONTI
+4) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
 
 
 *******************************************************************************************
@@ -34,6 +23,8 @@ NAVIEN TAUSTA:   background-color: #2b6777
 TEKSTIEN VÄRIT:   color: #2b6777
 
 TAULUKOIDEN TAUSTAVÄRI:  background-color: #52ab98  
+
+LOMAKKEIDEN OTSIKOIDEN TAUSTAVÄRI:  background-color: #04f9c5;
 
 NAPPULOIDEN SISÄVÄRIT:  #2b6777 -> #2b6777
 

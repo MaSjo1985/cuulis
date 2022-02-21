@@ -83,8 +83,8 @@
                 'purple': 'Purple',
                 'darkTurquois': 'Dark Turquois',
                 'turquois': 'Turquois',
-                'dark#2b6777': 'Dark #2b6777',
-                '#2b6777': '#2b6777',
+                'darkOrange': 'Dark Orange',
+                'orange': 'Orange',
                 'yellow': 'Yellow',
                 'imageURL': 'Image URL',
                 'fileURL': 'File URL',
@@ -1676,8 +1676,8 @@
             colors["#3F3151"] = settings.translations.purple;
             colors["#31859B"] = settings.translations.darkTurquois;
             colors["#4BACC6"] = settings.translations.turquois;
-            colors["#E36C09"] = settings.translations.dark#2b6777;
-            colors["#F79646"] = settings.translations.#2b6777;
+            colors["#E36C09"] = settings.translations.darkOrange;
+            colors["#F79646"] = settings.translations.orange;
             colors["#FFFF00"] = settings.translations.yellow;
 
             if (settings.colors && settings.colors.length > 0) {

@@ -1,12 +1,15 @@
 UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
 
-1) VALKONEN TEKSTIVÄRI, KATO MISSÄ ON! -> KOITA ETTII PELKKÄ color: #f7f9f7
+1) DATEPICKER  ->  css tiedosto: <link rel="stylesheet" href="css/trontastic.css" />   ->  muokkaa tarvittaessa
+-> TSEKKAA MYÖS images ja muokkaa tarvittaessa
+
+tiedostot löytyy personal onedrivestä
+
 
 2) TSEKKAA NAPPULAT
 
-3) DATEPICKER + TIMEPICKER
 
-4) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
+3) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
 
 
 *******************************************************************************************

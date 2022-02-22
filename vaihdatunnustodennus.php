@@ -24,7 +24,7 @@ echo'<!DOCTYPE html>
 <link href="csscm/jquery-ui.css" rel="stylesheet" />
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/trontastic.css" />
 <link rel="stylesheet" type="text/css" href="jscm/jquery.timepicker.css" /><link rel="stylesheet" type="text/css" href="jscm/jquery.datepicker.css" />
 <link rel="shortcut icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="css/TimeCircles.css" />

@@ -34,7 +34,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 <link rel="stylesheet" type="text/css" href="jscm/jquery.timepicker.css" /><link rel="stylesheet" type="text/css" href="jscm/jquery.datepicker.css" />
 
 
-  <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/trontastic.css" />
 
 
 

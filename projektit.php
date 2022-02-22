@@ -26,7 +26,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css"> <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Neucha" /><link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="ulkoasu.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="favicon.png" type="image/png">
-  <link href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/trontastic.css" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
 <meta charset="UTF-8">
 

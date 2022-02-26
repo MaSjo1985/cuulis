@@ -76,7 +76,7 @@ function myFunction(y) {
         echo '<div class="cm8-container3">';
 
 
-        echo'<p style="color: red; font-weight: bold">Valitut opettajat on nyt lisätty kurssille/opintojaksolle ja heille on lähetetty tieto tästä sähköpostiin.</p>';
+        echo'<p style="color: #e608b8; font-weight: bold">Valitut opettajat on nyt lisätty kurssille/opintojaksolle ja heille on lähetetty tieto tästä sähköpostiin.</p>';
         echo '<a href="osallistujat.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
     }
 } else {

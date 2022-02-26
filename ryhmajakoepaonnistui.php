@@ -121,15 +121,15 @@ function myFunction(y) {
 
     if ($_GET[time] == 1) {
 
-        echo('<br><b style="color: red">Ryhmäjakoa ei voida viimeistellä automaattisesti, sillä asetetut ehdot (ryhmäkohtainen min/maxmäärä) eivät ole realistiset.</b><br><br>Ryhmäjako on siis viimeisteltävä manuaalisesti.<br><br><a <a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
+        echo('<br><b style="color: #e608b8">Ryhmäjakoa ei voida viimeistellä automaattisesti, sillä asetetut ehdot (ryhmäkohtainen min/maxmäärä) eivät ole realistiset.</b><br><br>Ryhmäjako on siis viimeisteltävä manuaalisesti.<br><br><a <a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
     } else if ($_GET[tyhja] == 1) {
 
-        echo('<br><b style="color: red">Et valinnut yhtään opiskelijaa arvontaan! <br><br><a <a href="lopullinenryhmajakoeka.php?pid=' . $_GET[r] . '"></b><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
+        echo('<br><b style="color: #e608b8">Et valinnut yhtään opiskelijaa arvontaan! <br><br><a <a href="lopullinenryhmajakoeka.php?pid=' . $_GET[r] . '"></b><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
     } else if (isset($_GET[vapaa])) {
 
-        echo('<br><b style="color: red">Vapaata tilaa ei ole riittävästi! Tarkista ryhmäjakoon liittyvät ehdot!</b> <br><br><a <a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
+        echo('<br><b style="color: #e608b8">Vapaata tilaa ei ole riittävästi! Tarkista ryhmäjakoon liittyvät ehdot!</b> <br><br><a <a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin<br><br>');
     } else if (isset($_GET[minimi])) {
-        echo('<br><br><b style="font-size: 1em; color: red">Automaattinen ryhmäjako ei onnistunut. Tarkista ryhmäjakoon liittyvät ehdot tai tee ryhmäjako manuaalisesti.</b><br><br><a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>');
+        echo('<br><br><b style="font-size: 1em; color: #e608b8">Automaattinen ryhmäjako ei onnistunut. Tarkista ryhmäjakoon liittyvät ehdot tai tee ryhmäjako manuaalisesti.</b><br><br><a href="ryhmatyot.php?r=' . $_GET[r] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>');
     }
 } else {
     $url = $_SERVER[REQUEST_URI];

@@ -1,20 +1,41 @@
-UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
+1) YMPYRÄDIAGRAMMIN VÄRIT VÄÄRIN, JOS EI OLE MERKITTYNÄ
+* osattu
+* tehty muttei osattu
+-> ELI MOLEMMAT PITÄÄ OLLA MERKITTY!
 
-1) DATEPICKER  ->  css tiedosto: <link rel="stylesheet" href="css/trontastic.css" />   ->  muokkaa tarvittaessa
--> TSEKKAA MYÖS images ja muokkaa tarvittaessa
-
-tiedostot löytyy personal onedrivestä
-
-
-2) TSEKKAA NAPPULAT
+ks. diagrammit.php  ja dmalli.php
 
 
-3) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
+2) TEHTÄVÄLISTÄ NÄKYMÄ MUUTEN, kun on
+* opettaja
+* opiskelija, esim. lisäpistepalkki epäselvä
 
+
+3) PALAUTUKSET NÄKYMÄ, kun on 
+* opettaja
+* opiskelija
+
+
+4) TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red
+
+
+
+5)  TSEKKAA NAPPULAT
+
+
+6) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
+
+
+7)  TIEDOSTOJEN POISTO!
 
 *******************************************************************************************
 
+UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
+
 TURKOOSI:  #00ffff
+
+HUOMIO  VÄRI #e608b8
+
 
 TAUSTA:
 background-color: #e5e5e5

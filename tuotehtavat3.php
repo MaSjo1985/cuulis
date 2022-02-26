@@ -183,7 +183,7 @@ function myFunction(y) {
                 
                 echo'</div>';
                 
-                 echo'<p style="color: red; font-weight: bold">Valitse ensin ne tehtävät, jotka haluat tuoda.</p>';
+                 echo'<p style="color: #e608b8; font-weight: bold">Valitse ensin ne tehtävät, jotka haluat tuoda.</p>';
                 echo'<input type="submit" value="&#10003 Lisää nämä tehtävät"  id="tanne' . $maara . '" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.9em"><br>';
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable" class="cm8-uusitableitse" style="font-size: 0.9em; width: 99%"><thead>';

@@ -138,7 +138,7 @@ function myFunction(y) {
 
 
         if (!$loyty)
-            echo '<br><b style="color: red;">Oppilaitoksessa ei ole opiskelijoita, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
+            echo '<br><b style="color: #e608b8;">Oppilaitoksessa ei ole opiskelijoita, joita voisi lisätä kurssille/opintojaksolle.</b><br>';
 
         else {
 

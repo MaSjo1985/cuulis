@@ -133,7 +133,7 @@ function myFunction(y) {
         }
 
         echo'</select><br></p><br>';
-        echo'<div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
+        echo'<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     
 </div>';
 

@@ -95,7 +95,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             <br>
   
 <input type="text" id="etu" placeholder="Etunimi" style="width: 50%" name="uusietu" value=' . $etunimi . ' ></p>
-    <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+    <div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div> <br>
     
@@ -105,15 +105,15 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 <input type="text" id="suku" placeholder="Sukunimi"  style="width: 50%" name="uusisuku" value=' . $sukunimi . ' ></p>
                                          
-                                        <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+                                        <div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div> <br> <br>';
         
       
     if($rooli=='opiskelija'){
         	echo'<p>Käyttäjätunnus:<br><br>
-   <b style="color: red; font-size: 0.8em">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
-     <b style="color: red; font-size: 0.8em">Käyttäjätunnuksessa ei saa olla välilyöntiä.</b><br><br>
+   <b style="color: #e608b8; font-size: 0.8em">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b><br><br>
+     <b style="color: #e608b8; font-size: 0.8em">Käyttäjätunnuksessa ei saa olla välilyöntiä.</b><br><br>
 <b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi uusi käyttäjätunnus.</b><br><br>
 <textarea style="width:50%" id="spostir" name="uusisposti" placeholder="Käyttäjätunnus" value=' . $sposti . ' rows="1">'.$sposti.'</textarea></p>';
     }
@@ -124,7 +124,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     }
 	
                 
-     echo' <div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
+     echo' <div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div> <br>
 				<input type="hidden" id="id" name="id" value=' . $id . ' >';

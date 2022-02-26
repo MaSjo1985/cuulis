@@ -83,7 +83,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -175,21 +175,21 @@ if ($stmt->num_rows == 1) {
         }
       
 
-echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+echo'<br><b style="color: #e608b8; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>';
-        echo'<p><b>Salasana: </b> <b style="color: red">*</b><br><br>
+        echo'<p><b>Salasana: </b> <b style="color: #e608b8">*</b><br><br>
              
 <input type="password" id="salasana" style="width: 50%" name="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
 
-<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: red">*</b><br><br>
+<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: #e608b8">*</b><br><br>
              
 <input type="password" id="salasana2" style="width: 50%" name="UusiSalasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>  
 		<input type="hidden" name="tk" value=' . $_GET[tk] . '> </p><br>
@@ -205,21 +205,21 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
         echo"<legend>Rekisteröitymisen vahvistaminen</legend>";
         echo'<br><b style="color: blue">Vahvista vielä rekisteröitymisesi Cuulis-oppimisympäristöön valitsemalla itsellesi salasana.</b><br> <br>';
 
-echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+echo'<br><b style="color: #e608b8; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>';
-        echo'<p><b>Salasana: </b> <b style="color: red">*</b><br><br>
+        echo'<p><b>Salasana: </b> <b style="color: #e608b8">*</b><br><br>
              
 <input type="password" id="salasana" style="width: 50%" name="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
 
-<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: red">*</b><br><br>
+<br><p><b>Anna salasana uudelleen: 	</b>  <b style="color: #e608b8">*</b><br><br>
              
 <input type="password" id="salasana2" style="width: 50%" name="UusiSalasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>  
 
@@ -231,7 +231,7 @@ echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähin
     }
 } else {
     echo'<div class="cm8-half" style="margin-top: 40px">';
-    echo '<br><b style="color: red">Rekisteröitymisen vahvistuslinkki on vanhentunut!</b><br><br>Voit vaihtaa salasanasi etusivun linkin kautta.<br><br>';
+    echo '<br><b style="color: #e608b8">Rekisteröitymisen vahvistuslinkki on vanhentunut!</b><br><br>Voit vaihtaa salasanasi etusivun linkin kautta.<br><br>';
     echo '<br><a href="kirjautuminenuusi.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a>';
 }
 

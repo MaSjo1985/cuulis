@@ -467,7 +467,7 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
         tuoDiagrammi3($kayttaja_id, $ipid);
     }
 //
-//    echo'<br><br><p style="font-weight: bold; color:  red">Tehtävädiagrammin maksimiprosenttimäärä on '.$dmax.' %</p>';
+//    echo'<br><br><p style="font-weight: bold; color:  #e608b8">Tehtävädiagrammin maksimiprosenttimäärä on '.$dmax.' %</p>';
     if (!$haeomatpisteet = $db->query("select itsetehtavat.paino as paino from itsetehtavat, itsetehtavatkp where itsetehtavat.itseprojektit_id='" . $ipid . "' AND itsetehtavatkp.itsetehtavat_id=itsetehtavat.id AND itsetehtavatkp.kayttaja_id='" . $kayttaja_id . "' AND itsetehtavatkp.tehty=1 AND itsetehtavatkp.osattu=1")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
@@ -478,13 +478,13 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
 
     if ($pisteet && $pisteetvaikuttaa) {
 
-        echo'<ul style="max-width: 99%; color:  red"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdytkpl. ' kpl</li><br><br><li><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Pisteitä kerätty: </b>' . $tehdyt . ' p</li><li style="margin-left: 30px"><b>Tehtyjen tehtävien pisteiden osuus on: </b>' . $osuus . ' %</li></ul>';
+        echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdytkpl. ' kpl</li><br><br><li><b>Tehtävien yhteispistemäärä: </b>' . $pisteetyht . ' p</li><br><br><li style=""><b>Pisteitä kerätty: </b>' . $tehdyt . ' p</li><li style="margin-left: 30px"><b>Tehtyjen tehtävien pisteiden osuus on: </b>' . $osuus . ' %</li></ul>';
     } else if ($pisteet && !$pisteetvaikuttaa) {
 
-        echo'<ul style="max-width: 99%; color:  red"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
+        echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
     } else {
 
-        echo'<ul style="max-width: 99%; color:  red"><li><b>Tehtäviä on yhteensä:</b> ' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
+        echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä:</b> ' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
     }
 
     echo'<div vertical-align="top" style="border: 2px solid #f7f9f7; text-align: center;  margin-right: 40px; margin-top: 30px; margin-bottom: 20px; ">
@@ -571,9 +571,9 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
         echo'</div>';
 //        echo'<br>';
 //        if ($pisteet && !$pisteetvaikuttaa) {
-//            echo'<p class="info" style="font-size: 1.1em; margin-top: 20px;display: inline-block;color: red">Tehtävien pisteet ei vaikuta yllä oleviin prosenttimääriin.</p>';
+//            echo'<p class="info" style="font-size: 1.1em; margin-top: 20px;display: inline-block;color: #e608b8">Tehtävien pisteet ei vaikuta yllä oleviin prosenttimääriin.</p>';
 //        } else if ($pisteet && $pisteetvaikuttaa) {
-//            echo'<p class="info" style="font-size: 1.1em; display: inline-block; margin-top: 20px;color: red">Yllä olevissa prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
+//            echo'<p class="info" style="font-size: 1.1em; display: inline-block; margin-top: 20px;color: #e608b8">Yllä olevissa prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
 //        }
     }
 

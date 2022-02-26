@@ -39,7 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 	<br><b>Oppilaitoksen nimi:&nbsp&nbsp&nbsp </b> <input type="text" name="Nimi" maxlength="50"> <br>	<br><br>					
 
-	<b>Oppilaitoksen logo:</b> <br><b style="color: red">Huom! Kuvan maksimikoko on 5,0 MB.</b><br>
+	<b>Oppilaitoksen logo:</b> <br><b style="color: #e608b8">Huom! Kuvan maksimikoko on 5,0 MB.</b><br>
 	<p><input type="file" name="kuva"  style="font-size: 0.8em"></p>	
 	
 	<br><input type="submit" value="&#10003 Lisää oppilaitos">

@@ -85,7 +85,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -139,7 +139,7 @@ if ((strpos($browser, 'Android'))) {
 
 echo'<div class="cm8-container7">';
 echo'<div class="cm8-margin-bottom" style="padding-left: 20px; padding-top: 40px">';
-echo '<br><b style="color: red;">Viestisi on lähetetty ja se pyritään käsittelemään mahdollisimman pian!</b>';
+echo '<br><b style="color: #e608b8;">Viestisi on lähetetty ja se pyritään käsittelemään mahdollisimman pian!</b>';
 echo '<br><br><a href="etusivu.php">Jatka etusivulle tästä &nbsp&nbsp<p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p></a>';
 
 echo "</div>";

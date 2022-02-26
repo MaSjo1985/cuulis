@@ -84,7 +84,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -144,10 +144,10 @@ echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return valida
 
 echo' <legend>Hyväksy käyttöehdot</legend>';
 
-echo'<br><b style="color: red; font-size: 1em">Ennen seuraavaa kirjautumista sinun on vielä hyväksyttävä<br><a href="kayttoehdot.php" target="_blank" style="border-bottom:1px solid blue; color: blue;"><br>Cuulis-oppimisympäristön käyttöehdot. </a></b><br>';
+echo'<br><b style="color: #e608b8; font-size: 1em">Ennen seuraavaa kirjautumista sinun on vielä hyväksyttävä<br><a href="kayttoehdot.php" target="_blank" style="border-bottom:1px solid blue; color: blue;"><br>Cuulis-oppimisympäristön käyttöehdot. </a></b><br>';
 
-echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn käyttöehdot <b style="color: red">*</b></label></p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
+echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot">&nbsp&nbspHyväksyn käyttöehdot <b style="color: #e608b8">*</b></label></p>';
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
      <p class="eimitaan"></p>
 </div>';
 echo'<div id="username_availability_result"></div>  

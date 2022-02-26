@@ -173,9 +173,9 @@ function myFunction(y) {
 
                 if ($nyt <= $takaraja) {
 
-                    echo'<br><b style="color: red">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                    echo'<br><b style="color: #e608b8">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                 } else {
-                    echo'<br><b style="color: red"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                    echo'<br><b style="color: #e608b8"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                 }
             } else {
                 echo'<p id="ohje" style="display: inline-block">Itsearviointilomakkeen muokkaukselle ei ole asetettu takarajaa.</p>';
@@ -309,9 +309,9 @@ function myFunction(y) {
                 $takarajaon = 1;
 
                 if ($nyt <= $takaraja) {
-                    echo'<b style="color: red">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                    echo'<b style="color: #e608b8">Itsearviointilomakkeen muokkaus sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                 } else {
-                    echo'<b style="color:red"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                    echo'<b style="color:#e608b8"> Itsearviointilomakkeen muokkaus on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                 }
                 echo'<br>';
             } else {
@@ -335,7 +335,7 @@ function myFunction(y) {
             echo'<div class="cm8-responsive" style="overflow-y: hidden">';
 
             if (($nyt <= $takaraja && $takarajaon == 1) || $takarajaon == 0) {
-                echo'<p id="ohje" style="font-weight: bold; color: red">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
+                echo'<p id="ohje" style="font-weight: bold; color: #e608b8">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
             }
 
             echo'<form action="tallennaarvioinnit.php" method="post">';

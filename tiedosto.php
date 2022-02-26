@@ -226,13 +226,13 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top" ></div>';
         echo'<form action="lahetys_yksi.php" id="myForm1" method="POST" onSubmit="return validateFormOT()"  enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
         echo'<legend>1)&nbsp&nbsp Lisää tiedosto omalta laitteelta &nbsp&nbsp </legend>';
-        echo '<p class="eimitaan" style="color: red"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
+        echo '<p class="eimitaan" style="color: #e608b8"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
 
 
 
-        echo'<br><p><b>Tiedoston nimi: </b> <b style="color: red">*</b><br><input type="text" name="tyonimi" id="tyonimi" ></p>
-               <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
-    <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
+        echo'<br><p><b>Tiedoston nimi: </b> <b style="color: #e608b8">*</b><br><input type="text" name="tyonimi" id="tyonimi" ></p>
+               <div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
+    <p class="eimitaan" style="color: #e608b8; padding:0px; margin:0px"></p>
 </div>
 	<br><p><input type="file" name="my_file" style="font-size: 0.9em;"  ></p>
 		<input type="hidden" name="pid" value=' . $pid . ' >
@@ -247,11 +247,11 @@ function myFunction(y) {
 
 
 
-        echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+        echo'<p><b>Tiedoston nimi: </b><b style="color: #e608b8">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
 
 
-   <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
-    <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
+   <div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+    <p class="eimitaan" style="color: #e608b8; padding:0px; margin:0px"></p>
 </div>
 <p><b>Tiedoston URL-osoite</b>:<br> <input type="text" name="osoite" id="osoite"/></p>
 	<input type="hidden" name="pid" value=' . $pid . ' >

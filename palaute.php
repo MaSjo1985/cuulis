@@ -6,7 +6,7 @@ echo'
 <!DOCTYPE html>
 <html>
  <style>
-#text {display:none;color:red}
+#text {display:none;color:#e608b8}
 </style>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=9,IE=8,IE=7,IE=Edge" />
@@ -103,7 +103,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.8em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 ?>
@@ -158,9 +158,9 @@ echo'<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle<
 <input type="text"name="Nimi" style="width: 60%" placeholder="Nimi">
 
 	   
-<br><br><input type="email" style="width: 60%"  id="tama" name="sposti" placeholder="Käyttäjätunnus"><b style="color: red; padding-left:5px"> *</b>
+<br><br><input type="email" style="width: 60%"  id="tama" name="sposti" placeholder="Käyttäjätunnus"><b style="color: #e608b8; padding-left:5px"> *</b>
 
-<div style="color: red; font-weight: bold;" id="divID">
+<div style="color: #e608b8; font-weight: bold;" id="divID">
     <p class="eimitaan"></p>
 </div>    
 <br><br><input type="text" name="Puh" style="width: 60%"  placeholder="Puh"> <br><br>

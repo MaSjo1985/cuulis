@@ -34,8 +34,8 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-top"></div>';
 
 
-    echo'<br><b style="color: red">Käyttäjän salasana on vaihdettu!</b> <br><br>';
-    echo'<b style="color: red;font-size: 0.9em">Muistathan ilmoittaa valitsemasi salasanan käyttäjälle.</b>';
+    echo'<br><b style="color: #e608b8">Käyttäjän salasana on vaihdettu!</b> <br><br>';
+    echo'<b style="color: #e608b8;font-size: 0.9em">Muistathan ilmoittaa valitsemasi salasanan käyttäjälle.</b>';
 echo'<br><br><br><a href="kayttaja.php?url='.$_GET[url].'&ka=' . $_GET["ka"] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
 
     echo'</div>';

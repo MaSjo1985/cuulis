@@ -160,7 +160,7 @@ function myFunction(y) {
         echo'</form>';
         }
         else{
-            echo'<br><br><p style="color: red; font-weight: bold;">Kurssilla/opintojaksolla ei ole aikataulua.</p>';
+            echo'<br><br><p style="color: #e608b8; font-weight: bold;">Kurssilla/opintojaksolla ei ole aikataulua.</p>';
         }
   
         echo'</div>';

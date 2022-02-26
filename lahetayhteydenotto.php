@@ -49,7 +49,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-half" style="padding-top: 0px; margin-left: 0px; margin-top: 0px">';
 
     if (empty($_POST[viesti])) {
-        echo'<p style="color: red">Et voi lähettää tyhjää viestiä!</p>';
+        echo'<p style="color: #e608b8">Et voi lähettää tyhjää viestiä!</p>';
 
         if ($_POST[url] == "yhteydenotto.php") {
             echo'<a href="yhteydenotto.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';

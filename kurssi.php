@@ -366,7 +366,7 @@ function myFunction(y) {
 //
 //              
 //            }
-//              echo '<br><p style="margin-bottom: 0px; display: inline-block; margin-left: 30px;  margin-right: 10px; color: red"><b>Tavoitteeni kurssille/opintojaksolle: </b></p>';
+//              echo '<br><p style="margin-bottom: 0px; display: inline-block; margin-left: 30px;  margin-right: 10px; color: #e608b8"><b>Tavoitteeni kurssille/opintojaksolle: </b></p>';
 //
 //                echo'<form action="muokkaatavoite.php" method="post" style="display: inline-block; padding-top: 0px; margin-top: 0px; text-align: top; margin-left: 20px"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '> <input type="submit" value="&#9998 Muokkaa" title="Muokkaa tavoitetta" class="myButton8"  role="button" style="padding: 2px 4px" ></form></p>';
 //                echo '<p style="margin-top: 0px; margin-left: 30px;  margin-right: 10px; font-size: 0.8em">'.$tavoitteeni.'</p>';
@@ -443,7 +443,7 @@ function myFunction(y) {
 
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
 
-        echo'<p style="color: red"><b style="margin-right: 20px;">Kurssin/Opintojakson avain on: </b>' . $_SESSION[Avain] . '</p>';
+        echo'<p style="color: #e608b8; font-size: 0.8em"><b style="margin-right: 20px;">Kurssin/Opintojakson avain on: </b>' . $_SESSION[Avain] . '</p>';
     }
 
     if ($aikataulu == 0) {

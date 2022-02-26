@@ -88,7 +88,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -165,13 +165,13 @@ while ($rowko = $resultkoulut->fetch_assoc()) {
 }
 echo'</select>';
 echo'</p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
 echo'<input type="hidden" name="akt" value="'.$_GET[akt].'">';
 echo'<br><input id="button" type="submit" onclick="validateForm8uusi()" value="&#10003 Valitse">';
 
-echo'<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista, mihin oppilaitoksen olet rekisteröitynyt, niin lähetä Cuulis-oppimisympäristön ylläpitäjälle sähköpostia osoitteeseen  <u> <a class="osoite" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></u></p>
+echo'<br><br><p class="eimitaan" style="color: #e608b8; font-size: 0.9em">Jos et muista, mihin oppilaitoksen olet rekisteröitynyt, niin lähetä Cuulis-oppimisympäristön ylläpitäjälle sähköpostia osoitteeseen  <u> <a class="osoite" href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></u></p>
 <br>
  </fieldset> </form>';
 

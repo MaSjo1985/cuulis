@@ -83,7 +83,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -162,7 +162,7 @@ $stmt->close();
 header("location: salasanatarkistus2.php");
 
 echo '<div class="cm8-container3"  style="padding-left: 20px; padding-top:10px" >';
-echo('<br><br><b style="color: red;">Salasanasi on vaihdettu.</b> <br><br><a href="etusivu.php"><b>Pääset kirjautumaan tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </b></a>');
+echo('<br><br><b style="color: #e608b8;">Salasanasi on vaihdettu.</b> <br><br><a href="etusivu.php"><b>Pääset kirjautumaan tästä &nbsp&nbsp <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </b></a>');
 
 
 

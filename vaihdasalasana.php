@@ -84,7 +84,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -140,21 +140,21 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
         echo '<form name="Form" id="myForm" class="form-style-k" style="onSubmit="return validateForm9(this);" action="vaihdasalasana2.php" method="post"><fieldset>';
         echo"<legend>Vaihda salasana</legend>";
         echo'<br><b style="color:blue">Ylläpitäjä on antanut sinulle salasanan.<br><br>Sinun tulee nyt vaihtaa tämä salasana.</b><br> <br>';
-echo'<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+echo'<br><b style="color: #e608b8; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br>';
-        echo'<br><p><b>Uusi salasana: </b> <b style="color: red">*</b><br>
+        echo'<br><p><b>Uusi salasana: </b> <b style="color: #e608b8">*</b><br>
              
 <input type="password" id="salasana" style="width: 50%" placeholder="Uusi salasana" name="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
 
-<br><p><b>Toista uusi salasana: 	</b>  <b style="color: red">*</b><br>
+<br><p><b>Toista uusi salasana: 	</b>  <b style="color: #e608b8">*</b><br>
              
 <input type="password" id="salasana2" placeholder="Toista uusi salasana" style="width: 50%" name="UusiSalasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>  
 

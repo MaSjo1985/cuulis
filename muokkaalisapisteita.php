@@ -172,9 +172,9 @@ function myFunction(y) {
         while ($row = $onkorivi2->fetch_assoc()) {
             $maara++;
             $maara2++;
-            echo'<br><p style="display: inline-block;"><b style="margin-right: 10px">Tehtäviä tehty (%):&nbsp&nbsp&nbsp</b><input type="text" id="spinner' . $maara . '" style="width: 50px; " name="osuus[]" value=' . $row[osuus] . '></p>';
+            echo'<br><p style="display: inline-block;"><b style="margin-right: 10px">Tehtäviä tehty (%):&nbsp&nbsp&nbsp</b><input type="text" id="spinner' . $maara . '" style="width: 50px; color: #2b6777; font-weight: bold" name="osuus[]" value=' . $row[osuus] . '></p>';
 
-            echo'<p style="display: inline-block; margin-right: 40px"><b>Lisäpisteitä: &nbsp&nbsp&nbsp</b><input type="text" id="spinner2' . $maara2 . '" name="selite[]"  style="width: 50px" value=' . $row[pisteet] . '></p>';
+            echo'<p style="display: inline-block; margin-right: 40px"><b>Lisäpisteitä: &nbsp&nbsp&nbsp</b><input type="text" id="spinner2' . $maara2 . '" name="selite[]"  style="width: 50px; color: #2b6777; font-weight: bold" value=' . $row[pisteet] . '></p>';
 
             echo'<input type="hidden" name="id[]" value=' . $row[id] . '>';
             echo'<input type="hidden" name="lista" value=' . $row[id] . '>';

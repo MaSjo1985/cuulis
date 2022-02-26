@@ -23,9 +23,9 @@ echo '<form action="rekisterointitarkistus.php" method="post">
  
 <div class="cm8-quarter style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px">
 
-<br><b>Etunimi: <b style="color: red">*</b></b><br><input type="text"  name="Etunimi">
-<br><br><b>Sukunimi: <b style="color: red">*</b></b><br><input type="text"  name="Sukunimi" >
-<br><br><b>Käyttäjätunnus: <b style="color: red">*</b></b><br><input type="email"  name="Sposti">
+<br><b>Etunimi: <b style="color: #e608b8">*</b></b><br><input type="text"  name="Etunimi">
+<br><br><b>Sukunimi: <b style="color: #e608b8">*</b></b><br><input type="text"  name="Sukunimi" >
+<br><br><b>Käyttäjätunnus: <b style="color: #e608b8">*</b></b><br><input type="email"  name="Sposti">
 
 </div></div>';
 
@@ -35,7 +35,7 @@ if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 
-echo'<br><b>Ensisijainen oppilaitos: <b style="color: red">*</b></b><br> (Voit myöhemmin liittyä myös muihin)<br><br><select name="koulu">';
+echo'<br><b>Ensisijainen oppilaitos: <b style="color: #e608b8">*</b></b><br> (Voit myöhemmin liittyä myös muihin)<br><br><select name="koulu">';
 echo' <option value="valitsekoulu" selected> Valitse';
 
 while ($rowko = $resultkoulut->fetch_assoc()) {
@@ -44,7 +44,7 @@ while ($rowko = $resultkoulut->fetch_assoc()) {
 }
 echo'</select>';
 echo'
-<br><br><br><b>Rooli: <b style="color: red">*</b></b><br><select name="Rooli">
+<br><br><br><b>Rooli: <b style="color: #e608b8">*</b></b><br><select name="Rooli">
 <option value="valitser" selected> Valitse
 		<option value="opettaja"> Opettaja
 		<option value="opiskelija"> Opiskelija

@@ -102,7 +102,7 @@ function myFunction(y) {
         }
 
         echo'<div class="cm8-margin-top"></div>';
-        echo'<p id="ohje" style="color: red; font-weight: bold">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
+        echo'<p id="ohje" style="color: #e608b8; font-weight: bold">Huom! Muista tallentaa lomake muokattuasi sitä.</p>';
         echo'<div class="cm8-margin-top"></div>';
         echo'<form action="tallennaopearvioinnit.php" method="post">';
 
@@ -175,14 +175,14 @@ function myFunction(y) {
         if ($opetallennus2 == 1) {
 
 
-            echo '<b style="margin-right: 20px; color: red">Pisteet opiskelijalle lomakkeesta:</b><b style="font-weight: bold; font-size: 1.1em; color: red">' . $pisteet . ' pistettä</b> <a  href="korjaaopearviointi2.php?opid=' . $_GET[kaid] . '"  class="myButton9" title="Korjaa" role="button"  style="margin-left: 20px; padding: 2px 4px">&#9998 &nbsp Muokkaa</a>';
+            echo '<b style="margin-right: 20px; color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b><b style="font-weight: bold; font-size: 1.1em; color: #e608b8">' . $pisteet . ' pistettä</b> <a  href="korjaaopearviointi2.php?opid=' . $_GET[kaid] . '"  class="myButton9" title="Korjaa" role="button"  style="margin-left: 20px; padding: 2px 4px">&#9998 &nbsp Muokkaa</a>';
         } else {
 
             echo'<form action="tallennaopearvioinnit2.php" method="post">';
             if (empty($pisteet)) {
-                echo'<b style="margin-right: 10px; color: red">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet">';
+                echo'<b style="margin-right: 10px; color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet">';
             } else {
-                echo'<b style="margin-right: 10px;color: red">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet" >';
+                echo'<b style="margin-right: 10px;color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet" >';
             }
 
 

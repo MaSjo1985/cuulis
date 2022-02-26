@@ -238,7 +238,7 @@ function myFunction(y) {
             echo'<div id="scrollbar"><div id="spacer"></div></div>';
            
             echo'<div class="cm8-responsive" id="piilota">';
-             echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
+             echo'<br><b style="color: #e608b8" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
            
             echo '<table id="mytable" class="cm8-table cm8-bordered cm8-stripedeivikaa" style="width: 99%"><thead>';
             echo '<tr><th><a href="tuoia.php?sorting0=' . $sort . '&field=koodi&mihin=' . $_GET[mihin] . '">Koodi &nbsp&nbsp&nbsp' . $nuoli0 . '</a></th><th><a href="tuoia.php?sorting1=' . $sort . '&field=kurssit.nimi&mihin=' . $_GET[mihin] . '">Kurssi/Opintojakso &nbsp&nbsp&nbsp' . $nuoli1 . '</a></th><th>Vastuuopettaja</th><th>Oppilaitos</th><th><a href="tuoia.php?sorting2=' . $sort . '&field=lukuvuosi&mihin=' . $_GET[mihin] . '">Lukuvuosi &nbsp&nbsp&nbsp' . $nuoli2 . '</a></th><th><a href="tuoia.php?sorting3=' . $sort . '&field=alkupvm&mihin=' . $_GET[mihin] . '">Alkaa' . $nuoli3 . '</a></th><th><a href="tuolomake.php?sorting4=' . $sort . '&field=loppupvm&mihin=' . $_GET[mihin] . '">Päättyy' . $nuoli4 . ' </a></th></tr>';

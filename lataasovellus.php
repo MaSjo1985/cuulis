@@ -233,7 +233,7 @@ else {
 
 
     echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-    echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+    echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
     echo'</div>';
     echo'</div>';
@@ -289,7 +289,7 @@ if (isset($_SESSION[KurssiId])) {
 }
 echo'<div class="cm8-margin-top"></div>';
 
-echo'<br><p style="font-size: 1em; color: red; font-weight: bold; padding-bottom: 20px">Huom! Koska lataat sovelluksen tältä sivulta, niin voit joutua vaihtamaan suojausasetuksia puhelimestasi ennen kuin voit asentaa sovelluksen.</p>';
+echo'<br><p style="font-size: 1em; color: #e608b8; font-weight: bold; padding-bottom: 20px">Huom! Koska lataat sovelluksen tältä sivulta, niin voit joutua vaihtamaan suojausasetuksia puhelimestasi ennen kuin voit asentaa sovelluksen.</p>';
 
 echo'<b style="padding-top: 30px; "> <a href="/tiedostot/cuulis.apk" class="linkki"> Lataa sovellus tästä >></a></b>';
 

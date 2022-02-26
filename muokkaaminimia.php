@@ -168,7 +168,7 @@ function myFunction(y) {
         echo '<a href="itsetyot.php?i=' . $ipid . '" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
         while ($row = $onkorivi2->fetch_assoc()) {
 
-            echo'<br><p style="display: inline-block;"><b style="margin-right: 20px">Minimi: </b><input type="text" id="spinner" style="width: 60px" name="minimi" value=' . $row[minimi] . ' > <b>%</b></p>';
+            echo'<br><p style="display: inline-block;"><b style="margin-right: 20px">Minimi: </b><input type="text" id="spinner" style="width: 60px; color: #2b6777; font-weight: bold" name="minimi" value=' . $row[minimi] . ' > <b>%</b></p>';
         }
         echo'<input type="hidden" id="ipid" name="ipid" value=' . $ipid . '>';
 

@@ -35,7 +35,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo"<legend>Lisää profiilikuva </legend>";
     echo'<a href="muokkaaomat.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa takaisin</a><br><br>';
     echo '
-	<p style="color: red" class="eimitaan"><b>Huom! </b><br>Sallitun kuvatiedoston maksimikoko on 5,0 MB.<br>Sallittuja tiedostomuotoja ovat .jpg, .gif., .png ja .jpeg</p><br>
+	<p style="color: #e608b8" class="eimitaan"><b>Huom! </b><br>Sallitun kuvatiedoston maksimikoko on 5,0 MB.<br>Sallittuja tiedostomuotoja ovat .jpg, .gif., .png ja .jpeg</p><br>
 	<input type="file" name="uusikuva" />
 	<input type="hidden" name="id" value=' . $_SESSION["Id"] . '>  	
 	<br><br><input type="submit" value="&#10003 Tallenna" class="myButton9">		

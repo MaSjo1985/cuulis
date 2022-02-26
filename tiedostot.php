@@ -710,7 +710,7 @@ function myFunction(y) {
         }
 
         if ($ekatiedosto) {
-            echo'<p style="color: red; font-weight: bold">Jos tiedosto ei aukea automaattisesti, niin tarkista, että selaimen ponnahdusikkunat on sallittu.</p>';
+            echo'<p style="color: #e608b8; font-weight: bold">Jos tiedosto ei aukea automaattisesti, niin tarkista, että selaimen ponnahdusikkunat on sallittu.</p>';
 
 
             if ($linkki == 1 && $upotus == 0 && $youtube == 0) {

@@ -244,13 +244,13 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
     echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm6();" action="salasananvaihtotarkistus.php" method="post"><fieldset>
  <legend>Vaihda salasana:</legend>
-<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><b style="color: #e608b8; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>
 <p>Vanha salasana: <br>
 
 <input type="password" style="width: 80%" id="vanha" name="VanhaSalasana" > 
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
  
@@ -258,7 +258,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
      
 <input type="password" style="width: 80%" id="uusi" name="Salasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>  
 
@@ -266,7 +266,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
    
 <input type="password" style="width: 80%" id="uusi2" name="UusiSalasana">
   <span id="show3" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>
 <input type="hidden" name="omat" value="1">

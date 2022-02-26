@@ -582,7 +582,7 @@ function myFunction(y) {
                 echo'</div>';
 
                 echo'<ul style="color: #2b6777; font-weight: bold"><li>Tehtäviä yhteensä: ' . $yht . ' kpl.</li><li style="margin-left: 30px">Tehtyjä tehtäviä: ' . $osuus . ' %.</li></ul>';
-                echo'<b style="color: red">Huom! Muista tallentaa tehtäväluettelo muokattuasi sitä!</b>';
+                echo'<b style="color: #e608b8">Huom! Muista tallentaa tehtäväluettelo muokattuasi sitä!</b>';
                 echo'<form action="tallennatehtavat.php" method="post">';
                 echo'<br><br><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px">';
 

@@ -123,7 +123,7 @@ function myFunction(y) {
 <p><b>Anna kurssin/opintojakson avain:</b><br><br>
  
     <input type="text" id="Avain" name="Avain" > </p>
-    <div style="color: red; font-weight: bold; padding: 0px; margin-bottom: 0px" id="divID">
+    <div style="color: #e608b8; font-weight: bold; padding: 0px; margin-bottom: 0px" id="divID">
     <p style="padding: 0px; margin-bottom: 0px" class="eimitaan"></p>
     </div>
 <input type="hidden" id="kurssi_id" name="kurssi_id" value=' . $_GET[id] . '>

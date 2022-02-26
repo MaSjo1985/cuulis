@@ -28,7 +28,7 @@ if ($_SESSION["Rooli"] == 'opiskelija') {
     }
 
     if ($kysakt == 0) {
-        echo('<br><p style="font-weight: bold; color: red">Toiminto ei ole aktiivinen, uusia kysymyksiä/kommentteja ei voi enää lähettää! </p><p>Voit sulkea näkymän oikean yläkulman painikkella.<br><br>');
+        echo('<br><p style="font-weight: bold; color: #e608b8">Toiminto ei ole aktiivinen, uusia kysymyksiä/kommentteja ei voi enää lähettää! </p><p>Voit sulkea näkymän oikean yläkulman painikkella.<br><br>');
     } else {
 
         if (!$haekysymykset = $db->query("select distinct * from kysymykset where kurssi_id='" . $kuid . "' order by id desc")) {

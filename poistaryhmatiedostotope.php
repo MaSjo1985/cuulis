@@ -77,7 +77,7 @@ function myFunction(y) {
             }
         }
 
-       echo'<br><b style="color: red;">Valitut tiedostot on nyt poistettu.</b><br><br>';
+       echo'<br><b style="color: #e608b8;">Valitut tiedostot on nyt poistettu.</b><br><br>';
 
 
         echo' <a href="kaikkitiedostot.php style="margin-bottom: 5px"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';

@@ -83,7 +83,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -145,13 +145,13 @@ if ($tulos->num_rows !=0 && $tarkistettu==1) {
     echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 0px; padding-right: 20px; padding-top: 0px">';
     echo '<form name="Form" id="myForm" onSubmit="return validateForm9();" action="salasanatarkistus.php" method="post" class="form-style-k" ><fieldset>';
     echo"<legend> Anna itsellesi uusi salasana  </legend> ";
-echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+echo'<br><b style="color: #e608b8; font-size: 0.9em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br><br>';
     echo'<p><b>Uusi salasana:</b><br>
                   
 <input type="password" style="width: 50%" id="salasana" placeholder="Uusi salasana" name="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div> 
 
@@ -160,7 +160,7 @@ echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähin
 <input type="password" style="width: 50%" id="salasana2" placeholder="Toista uusi salasana" name="UusiSalasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
 
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>     
 
@@ -169,9 +169,9 @@ echo'<br><b style="color: red; font-size: 0.9em">Hyvässä salasanassa on vähin
 		<input type="button" id="button" onclick="validateForm9()"value="&#10003 Tallenna" class="myButton9"><br><br>
 		</fieldset></form>';
 } else if ($tulos->num_rows != 0 && $tarkistettu == 0) {
-    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
+    echo '<br><br><p style="color:#e608b8; font-weigth: 1.1em; font-weight: bold">Rekisteröitymistäsi ei ole vielä vahvistettu!</p><br>Oppimisympäristön ylläpitäjän tulee ensin vahvistaa rekisteröitymisesi, minkä jälkeen saat vahvistuslinkin rekisteröitymisen yhteydessä antamaasi sähköpostiosoitteeseen.<br><br><b><a href="etusivu.php">Etusivulle <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a></b>';
 } else if ($tulos->num_rows == 0) {
-    echo '<br><br><p style="color:red; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkyselyope.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
+    echo '<br><br><p style="color:#e608b8; font-weigth: 1.1em; font-weight: bold">Käyttäjätunnuksen uudelleenaktivointilinkki on vanhentunut!</p><br> <a href="tunnustenkyselyope.php">Voit pyytää uuden aktivointilinkin tästä <p style="font-size: 1.5em; display: inline-block; padding:0; margin: 0">&#8631</p> </a>';
 }
 
 

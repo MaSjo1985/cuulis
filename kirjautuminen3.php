@@ -6,7 +6,7 @@ echo'
 <!DOCTYPE html>
 <html>
  <style>
-#text {display:none;color:red}
+#text {display:none;color:#e608b8}
 </style>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=9,IE=8,IE=7,IE=Edge" />
@@ -93,7 +93,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-    echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+    echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
     echo'</div>';
     echo'</div>';

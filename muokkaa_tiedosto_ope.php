@@ -258,9 +258,9 @@ function myFunction(y) {
         if ($linkki == 0) {
             echo'<form action="muokkaatiedostoope.php" method="POST" onSubmit="return validateFormOT()"  enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
 
-            echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br><br><textarea class="textarea" rows="1" name="tyonimi" id="tyonimi">' . $tyonimi . '</textarea><br></p>
-                 <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
-    <p class="eimitaan" style="color: red; padding:0px; margin:0px"></p>
+            echo'<p><b>Tiedoston nimi: </b><b style="color: #e608b8">*</b><br><br><textarea class="textarea" rows="1" name="tyonimi" id="tyonimi">' . $tyonimi . '</textarea><br></p>
+                 <div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
+    <p class="eimitaan" style="color: #e608b8; padding:0px; margin:0px"></p>
 </div>
 		<input type="hidden" name="pid" value=' . $pid . ' >
 		<input type="hidden" name="ryid" value=' . $ryid . ' >
@@ -273,9 +273,9 @@ function myFunction(y) {
             echo'<form name="Form" id="myForm" onSubmit="return validateFormO()" action="muokkaalinkkiope.php" method="POST" class="form-style-k"><fieldset style="width: 80%">';
 
 
-            echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br><br> <textarea class="textarea" type="text" name="kuvaus" rows="1" id="tama1">' . $tyonimi . '</textarea></p>
-  <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
-    <p style="color: red; padding:0px; margin:0px" id="demo4" class="eimitaan"></p>
+            echo'<p><b>Tiedoston nimi: </b><b style="color: #e608b8">*</b><br><br> <textarea class="textarea" type="text" name="kuvaus" rows="1" id="tama1">' . $tyonimi . '</textarea></p>
+  <div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+    <p style="color: #e608b8; padding:0px; margin:0px" id="demo4" class="eimitaan"></p>
 </div> 
 
 <p><b>Tiedoston URL-osoite</b>:<br> <input type="text" name="osoite" id="osoite" value=' . $omatallennusnimi . ' /></p>

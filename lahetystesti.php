@@ -9,7 +9,7 @@ echo'<div id="content"  style="padding-left: 20px; margin-right: 0px; margin-top
        
 	
 
-<p style="color: red; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx	</b></p>
+<p style="color: #e608b8; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx	</b></p>
 
 			<br><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" >
  	

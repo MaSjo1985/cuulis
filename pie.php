@@ -119,21 +119,21 @@ function tuoDiagrammi2($kayttaja_id, $ipid) {
         if ($itsepisteytys) {
             echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
 
-            echo'<p style="color: red; font-weight: bold; font-size: 0.8em">(Oma pisteytys tehtävistä vaikuttaa pylvääseen.)</p>';
+            echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">(Oma pisteytys tehtävistä vaikuttaa pylvääseen.)</p>';
         } else {
             echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
 
-            echo'<p style="color: red; font-weight: bold; font-size: 0.8em">(Vain osatut tehtävät vaikuttavat pylvääseen.)</p>';
+            echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">(Vain osatut tehtävät vaikuttavat pylvääseen.)</p>';
         }
     } else {
         if ($itsepisteytys) {
             echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
 
-            echo'<p style="color: red; font-weight: bold; font-size: 0.8em">Opiskelijoiden itselleen antamat pisteet vaikuttavat edistymispylvääseen</p>';
+            echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">Opiskelijoiden itselleen antamat pisteet vaikuttavat edistymispylvääseen</p>';
         } else {
             echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
 
-            echo'<p style="color: red; font-weight: bold; font-size: 0.8em">Vain osattujen tehtävien pisteet vaikuttavat edistymispylvääseen</p>';
+            echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">Vain osattujen tehtävien pisteet vaikuttavat edistymispylvääseen</p>';
         }
     }
 

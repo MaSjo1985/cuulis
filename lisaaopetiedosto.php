@@ -141,9 +141,9 @@ function myFunction(y) {
  </div>
     <div id="content" class="cm8-twothird" style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';
         if (isset($_POST[kid])) {
-            echo'   <h6 style="font-size: 1.2em;  color: red;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo'   <h6 style="font-size: 1.2em;  color: #e608b8;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_POST[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         } else {
-            echo' <h6 style="font-size: 1.2em; color: red;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
+            echo' <h6 style="font-size: 1.2em; color: #e608b8;">Valitse, millaisen tiedoston / linkin haluat lisätä</h6><br><a href="tiedostot.php?k=' . $_GET[kid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
         }
 
 
@@ -152,7 +152,7 @@ function myFunction(y) {
        
 	
 
-<p style="color: red; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx, .png, .jpg, 	</b></p>
+<p style="color: #e608b8; font-size: 1em" class="eimitaan"><b>Huom! </b><b style="font-weight: normal">Tiedoston maksimikoko on 20,0MB.<br>Sallitut tiedostomuodot: .pdf,  .tnsp, .tns, .docx, .ods, .odt, .odp, .odg, .csv, .zip, .rar, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx, .png, .jpg, 	</b></p>
 <br><input type="hidden" name="kid" value=' . $_POST[kid] . '> 
 			<br><input type="file" name="my_file[]" style="font-size: 0.9em" multiple="" >
  	
@@ -176,10 +176,10 @@ function myFunction(y) {
 
 
         echo'
-	<p><b>Tiedoston nimi:</b> <b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>';
+	<p><b>Tiedoston nimi:</b> <b style="color: #e608b8">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>';
 
 
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p class="eimitaan"></p>
 </div>';
 
@@ -196,8 +196,8 @@ function myFunction(y) {
         echo'<legend>3)&nbsp&nbsp Lisää upotuslinkki &nbsp&nbsp </legend>';
 
         echo'
-	<p><b>Tiedoston nimi:</b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama2"/></p>';
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
+	<p><b>Tiedoston nimi:</b><b style="color: #e608b8">*</b><br> <input type="text"  name="kuvaus" id="tama2"/></p>';
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
   <p class="eimitaan"></p>
 </div>';
         echo'<p><b>Tiedoston URL-osoite:</b><br> <input type="text"  name="osoite" id="osoite2"/></p>
@@ -213,8 +213,8 @@ function myFunction(y) {
         echo'<legend>4)&nbsp&nbsp Lisää Youtube-upotuslinkki &nbsp&nbsp </legend>';
 
         echo'
-	<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <input type="text"  name="kuvaus" id="tama3"/></p>';
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID3" id="divID3">
+	<p><b>Tiedoston nimi: </b><b style="color: #e608b8">*</b><br> <input type="text"  name="kuvaus" id="tama3"/></p>';
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID3" id="divID3">
 <p class="eimitaan"></p>
 </div>';
         echo'<p><b>Youtuben upotuskoodi:</b><br> <input type="text" id="osoite3"  name="osoite" /></p>

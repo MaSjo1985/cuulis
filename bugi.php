@@ -175,7 +175,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<form name="Form" id="myForm" class="form-style-k" onSubmit="return validateForm2()" action="lahetabugi.php" method="post"><fieldset>';
     echo' <legend>Lähetä kehitysidea Cuulis-oppimisympäristön ylläpitäjälle</legend>';
     echo'<a href="etusivu.php" class="palaa">&#8630 &nbsp&nbsp&nbspPalaa etusivulle</a><br><br>
-<div style="color: red; font-weight: bold;" id="divID">
+<div style="color: #e608b8; font-weight: bold;" id="divID">
     <p class="eimitaan"></p>
 </div>           
 	   <p style="font-weight: normal"><b>Lähettäjän nimi:</b>&nbsp&nbsp&nbsp <input type="hidden" name="nimi" value="' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . '"> ' . $_SESSION["Etunimi"] . ' ' . $_SESSION["Sukunimi"] . ' </p>

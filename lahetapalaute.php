@@ -45,7 +45,7 @@ echo'<div class="cm8-container7">';
 echo'<div class="cm8-margin-bottom" style="margin-top: 40px; padding-left: 20px">';
 
 if (empty($_POST[viesti])) {
-    echo'<p style="color: red">Et voi lähettää tyhjää viestiä!</p>';
+    echo'<p style="color: #e608b8">Et voi lähettää tyhjää viestiä!</p>';
 
     echo'<a href="palaute.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';
 } else {
@@ -110,7 +110,7 @@ if (empty($_POST[viesti])) {
             echo '<br><br><a href="palaute.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin viestin lähettämiseen</a>';
         }
     } else {
-        echo'<p style="color: red">Sähköpostiosoite ei ole kelvollinen!</p>';
+        echo'<p style="color: #e608b8">Sähköpostiosoite ei ole kelvollinen!</p>';
 
         echo'<a href="palaute.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';
     }

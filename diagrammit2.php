@@ -304,10 +304,10 @@ echo'<br>';
 
 if ($pisteet) {
 
-    echo'<ul style="max-width: 99%; color:  red"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl.</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . ' %.</li><li style="margin-left: 30px"><b>Kertoimet yhteensä: </b>' . $pisteetyht . ' p.</li></ul>';
+    echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä: </b>' . $yht . ' kpl.</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . ' %.</li><li style="margin-left: 30px"><b>Kertoimet yhteensä: </b>' . $pisteetyht . ' p.</li></ul>';
 } else {
 
-    echo'<ul style="max-width: 99%; color:  red"><li><b>Tehtäviä on yhteensä:</b> ' . $yht . ' kpl.</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . ' %</li></ul>';
+    echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä:</b> ' . $yht . ' kpl.</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . ' %</li></ul>';
 }
 
 echo'</div>';

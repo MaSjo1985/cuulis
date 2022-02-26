@@ -199,7 +199,7 @@ function myFunction(y) {
 
 
 
-    echo'<div class="cm8-twothird" style="padding-top: 20px; border: 2px solid red">';
+    echo'<div class="cm8-twothird" style="padding-top: 20px; border: 2px solid #e608b8">';
 
 
 
@@ -367,8 +367,8 @@ include("footer.php");
                 'purple': 'Purppura',
                 'darkTurquois': 'Tummanturkoosi',
                 'turquois': 'Turkoosi',
-                'dark#2b6777': 'Tummanoranssi',
-                '#2b6777': 'Oranssi',
+             'darkOrange': 'Tummanoranssi',
+                            'orange': 'Oranssi',
                 'yellow': 'Keltainen',
                 'imageURL': 'Kuvan URL-osoite',
                 'fileURL': 'Tiedoston URL-osoite',

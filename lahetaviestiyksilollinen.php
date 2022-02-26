@@ -178,7 +178,7 @@ function myFunction(y) {
     echo'<div class="cm8-margin-top"></div>';
 
        if (!strlen(trim($_POST['viesti']))) {
-        echo '<b style="color: red">Et voi lähettää tyhjää viestiä!</b>';
+        echo '<b style="color: #e608b8">Et voi lähettää tyhjää viestiä!</b>';
           if ($_POST[url]=='osallistujat.php' || $_POST[url]=='lisaaopettajaeka.php') {
                   echo '<br><br><a href="viestikayttajalle2.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
                        }
@@ -259,7 +259,7 @@ function myFunction(y) {
              
                     header('location: lahetaviestiyksilollinen2.php?url='.$_POST[url]);
                 } else {
-                    echo '<br><br><b style="color: red">Viestin lähettäminen ei onnistunut!</b>';
+                    echo '<br><br><b style="color: #e608b8">Viestin lähettäminen ei onnistunut!</b>';
                         if ($_POST[url]=='osallistujat.php' || $_POST[url]=='lisaaopettajaeka.php') {
                   echo '<br><br><a href="viestikayttajalle2.php?id='.$_POST[id].'&url='.$_POST[url].'"><p>&#8630 &nbsp&nbsp&nbspPalaa takaisin </p></a>';
                        }

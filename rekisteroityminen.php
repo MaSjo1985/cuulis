@@ -85,7 +85,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -145,30 +145,30 @@ echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return valida
 
 echo' <legend>Rekisteröityminen</legend>';
 
-echo '<a href="etusivu.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a><br><br><b style="color: red; font-size: 0.8em">Kaikki tiedot ovat pakollisia. </b><br>';
+echo '<a href="etusivu.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa etusivulle</a><br><br><b style="color: #e608b8; font-size: 0.8em">Kaikki tiedot ovat pakollisia. </b><br>';
 
 
 
 
-echo'<br><p>Etunimi: <b style="color: red">*</b><br>
+echo'<br><p>Etunimi: <b style="color: #e608b8">*</b><br>
  
 <input type="text"   id="etu" name="Etunimi" style="width: 30%"></p>
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
+<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
     <p class="eimitaan"></p>
 </div>
-<p>Sukunimi: <b style="color: red">*</b><br>
+<p>Sukunimi: <b style="color: #e608b8">*</b><br>
 
 <input type="text" id="suku"    name="Sukunimi" style="width: 30%"></p>
 
 
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
+<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
  <p class="eimitaan"></p>
 </div>
-<br><p>Käyttäjätunnus: <b style="color: red">*</b><br>
+<br><p>Käyttäjätunnus: <b style="color: #e608b8">*</b><br>
 
 <input type="email"    id="sposti" name="Sposti" style="width: 50%"></p>';
 
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>
 </div>';
 
@@ -176,9 +176,9 @@ if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 
-echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b>
+echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: #e608b8">*</b>
 <br>';
-echo'<br><b style="font-size: 0.8em; color: red">Voit myöhemmin liittyä myös muihin oppilaitoksiin.</b><br><br>';
+echo'<br><b style="font-size: 0.8em; color: #e608b8">Voit myöhemmin liittyä myös muihin oppilaitoksiin.</b><br><br>';
 echo'<select id="koulu" name="koulu">';
 echo' <option value="valitsekoulu" selected> Valitse';
 
@@ -189,10 +189,10 @@ while ($rowko = $resultkoulut->fetch_assoc()) {
 }
 echo'</select>';
 echo'</p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
-echo'<br><br><p>Valitse rooli, jossa aiot toimia oppimisympäristössä: <b style="color: red">*</b>
+echo'<br><br><p>Valitse rooli, jossa aiot toimia oppimisympäristössä: <b style="color: #e608b8">*</b>
 
 
 
@@ -204,7 +204,7 @@ echo'<br><br><p>Valitse rooli, jossa aiot toimia oppimisympäristössä: <b styl
 		<option value="opiskelija"> Opiskelija
 			
 		</select></p>
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
+<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID5">
     <p class="eimitaan"></p>
 </div>
 <div id="username_availability_result"></div>  

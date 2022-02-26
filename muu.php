@@ -27,7 +27,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-    echo'<br><br><b style="color: red">Käyttäjäoikeutesi ovat puutteelliset! </b><br><br>Olet kirjautunut roolissa "muu", mutta sinua ei ole lisätty vielä minkään oppilaitoksen ylläpitäjäksi.<br><br><br><u><a href="yhteydenotto.php">Voit ottaa yhteyttä oppimisympäristön ylläpitäjään tästä >> </u> </a>';
+    echo'<br><br><b style="color: #e608b8">Käyttäjäoikeutesi ovat puutteelliset! </b><br><br>Olet kirjautunut roolissa "muu", mutta sinua ei ole lisätty vielä minkään oppilaitoksen ylläpitäjäksi.<br><br><br><u><a href="yhteydenotto.php">Voit ottaa yhteyttä oppimisympäristön ylläpitäjään tästä >> </u> </a>';
 
     echo"</div>";
     include("footer.php");

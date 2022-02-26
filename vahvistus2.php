@@ -91,7 +91,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -231,7 +231,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-echo '<p style="font-size:1.2em;  color: red; font-weight: bold">Sinut on nyt lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
+echo '<p style="font-size:1.2em;  color: #e608b8; font-weight: bold">Sinut on nyt lisätty Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
                 echo '<br><b>Etunimi:  &nbsp&nbsp&nbsp</b>'.$etunimi;
                 echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b>'.$sukunimi;
                 echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b>'.$sposti;
@@ -249,7 +249,7 @@ while ($row = $result->fetch_assoc()) {
  
      $koulu = $row[koulu];
 }
-echo '<p style="font-size:1.2em;  color: red; font-weight: bold">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
+echo '<p style="font-size:1.2em;  color: #e608b8; font-weight: bold">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
                 echo '<br><b>Etunimi:  &nbsp&nbsp&nbsp</b>'.$etunimi;
                 echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b>'.$sukunimi;
                 echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b>'.$sposti;

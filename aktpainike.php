@@ -67,7 +67,7 @@ if (($suljettu == 0 && $takarajaon == 0) || ($takarajaon == 1 && $nyt < $takaraj
         echo'<p><em>Kurssitöiden palautusmahdollisuus on suljettu.</em></p>';
     } else if (($takarajaon == 1 && ($nyt >= $takaraja))) {
 
-        echo'<br><b style="color:red"> Kurssitöiden palautuksen takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+        echo'<br><b style="color:#e608b8"> Kurssitöiden palautuksen takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
         echo'<p>Voit silti palauttaa työn, mutta siihen tulee merkintä myöhästymisestä.</p>';
         echo'<br><form action="tiedosto.php" method="post"><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Palauta uusi työ" style="margin-right: 30px; padding: 2px"></form>';
     }

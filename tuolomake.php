@@ -211,7 +211,7 @@ function myFunction(y) {
             echo"<br><em>Ei kursseja/opintojaksoja.</em><br>";
         else {
 
-            echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
+            echo'<br><b style="color: #e608b8" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomakkeen haluat tuoda.</b><br><br>';
             echo '<form action="tuolomake.php" method="get">
 
 			<br>&#128270 <input type="search"  onkeyup="showResultItse(this.value)" name="search"  id="search_box" class="haku" style="width: 50%"> 

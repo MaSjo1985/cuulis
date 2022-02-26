@@ -32,7 +32,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $eka_id = $rivieka[id];
         }
         if (!empty($eka_id))
-            header('location: itsetyot.php?i=' . $eka_id);
+            header('location: itsetyot_testi.php?i=' . $eka_id);
     }
     if (isset($_GET[i])) {
         if (!$haelinkki = $db->query("select distinct * from opiskelijankirja where itseprojekti_id='" . $_GET[i] . "' AND kayttaja_id='" . $_SESSION["Id"] . "'")) {
@@ -84,7 +84,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         echo'<nav class="topnav" id="myTopnav">
 	 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a>  
 	  
-	  <a href="itsetyot.php" onclick="loadProgress()" class="currentLink">Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+	  <a href="itsetyot_testi.php" onclick="loadProgress()" class="currentLink">Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 		
 	 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
@@ -130,7 +130,7 @@ function myFunction(y) {
         echo'<nav class="topnav" id="myTopnav">
 		 <a href="kurssi.php?id=' . $_SESSION["KurssiId"] . '">Etusivu</a><a href="tiedostot.php"  >Materiaalit</a> 
 		
-		  <a href="itsetyot.php" onclick="loadProgress()" class="currentLink" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
+		  <a href="itsetyot_testi.php" onclick="loadProgress()" class="currentLink" >Tehtävälista</a><a href="ryhmatyot.php" >Palautukset</a><a href="itsearviointi.php" >Itsearviointi</a><a href="kysely.php"  >Kyselylomake</a>
 			
 		 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
@@ -204,10 +204,10 @@ function myFunction(y) {
 
             if ($_GET[i] == $id) {
 
-                echo'<a href="itsetyot.php?i=' . $id . '" class="btn-info3"  style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
+                echo'<a href="itsetyot_testi.php?i=' . $id . '" class="btn-info3"  style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px"><b style="font-size: 1.1em; ">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . ' </b></a>';
             } else {
 
-                echo'<a href="itsetyot.php?i=' . $id . '" class="btn-info3"  style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">' . $kuvaus . '</a>';
+                echo'<a href="itsetyot_testi.php?i=' . $id . '" class="btn-info3"  style="margin-right: 20px; margin-bottom: 5px;  padding: 3px 6px 3px 20px">' . $kuvaus . '</a>';
             }
         }
 
@@ -339,7 +339,7 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive" style="margin-bottom: 20px; margin-top: 60px">';
                 echo'<table  class="tehtavataulu" style="display: inline-block">';
-                echo'<tr><th colspan="2">Lisäpisteiden muodostuminen: <form action="muokkaalisapisteita.php" method="get" style="display: inline-block"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisterajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form></th><th></th></tr>';
+                echo'<tr><th colspan="2">Lisäpisteiden muodostuminen:ddsaads <form action="muokkaalisapisteita.php" method="get" style="display: inline-block"><input type="hidden" name="id" value=' . $ipid . '><input type="submit" name="painike" value="&#9998 Muokkaa" title="Muokkaa lisäpisterajoja" class="myButton8"  role="button"  style="padding:2px 4px; font-size: 0.7em"></form></th><th></th></tr>';
 
 
 
@@ -380,15 +380,7 @@ function myFunction(y) {
 
                 echo'</div>';
 
-
-
-
-
-
-
-
-
-                if ($pisteet) {
+                if (1==1) {
                     if (!$haepisteet = $db->query("select paino from itsetehtavat where itseprojektit_id='" . $ipid . "' AND aihe=0")) {
                         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
@@ -483,7 +475,7 @@ function myFunction(y) {
                         if ($suljettu == 0 && $nyt <= $takaraja) {
                             echo'<br><b>Opiskelijoiden mahdollisuus muokata taulukkoa sulkeutuu ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                         } else {
-                            echo'<br><b style="color: red"> Opiskelijoiden mahdollisuus muokata taulukkoa on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                            echo'<br><b style="color: #e608b8"> Opiskelijoiden mahdollisuus muokata taulukkoa on sulkeutunut ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
                         }
                     } else {
                         echo'<br><b>Opiskelijoille ei ole asetettu takarajaa taulukon muokkaukseen.</b>';
@@ -622,7 +614,7 @@ function myFunction(y) {
                                     echo'<form action="suljeaihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="- Sulje" title="Sulje osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                                 else if ($rowt[aihekiinni] == 1)
                                 //jos kiinni
-                                    echo '<br><em style="font-size: 0.8em; color: red">Tämä osio on suljettu.</em><form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+                                    echo '<br><em style="font-size: 0.8em; color: #e608b8">Tämä osio on suljettu.</em><form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
 
 
                                 if ($rowt[aihekiinni] == 0 && ($osiovapaa || $takaraja2 == '')) {
@@ -630,9 +622,9 @@ function myFunction(y) {
 
                                     if ($automaattinen == 1) {
                                         if ($nyt <= $takaraja2) {
-                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: red">Osio sulkeutuu: </b>';
+                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: #e608b8">Osio sulkeutuu: </b>';
                                         } else {
-                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: red">Osio on sulkeutunut: </b>';
+                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: #e608b8">Osio on sulkeutunut: </b>';
                                         }
 
                                         echo'<b style="font-size: 0.8em">Pvm:</b> 
@@ -653,7 +645,7 @@ function myFunction(y) {
 	<input type="submit" style="margin-left: 20px" value="Tallenna" class="myButton8">
 	</form>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo'<b style="font-size:0.8em; margin-left: 20px; color: red">Osio on sulkeutunut: ';
+                                    echo'<b style="font-size:0.8em; margin-left: 20px; color: #e608b8">Osio on sulkeutunut: ';
                                     echo $sulkeutumispaiva2 . ', klo: ' . $sulkeutumiskello2 . '.</b>';
                                     echo '<form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                                 }
@@ -685,7 +677,7 @@ function myFunction(y) {
                                     echo'<form action="suljeaihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="- Sulje" title="Sulje osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                                 else if ($rowt[aihekiinni] == 1)
                                 //jos kiinni
-                                    echo '<br><em style="font-size: 0.8em; color: red">Tämä osio on suljettu.</em><form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
+                                    echo '<br><em style="font-size: 0.8em; color: #e608b8">Tämä osio on suljettu.</em><form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
 
 
                                 if ($rowt[aihekiinni] == 0 && ($osiovapaa || $takaraja2 == '')) {
@@ -693,9 +685,9 @@ function myFunction(y) {
 
                                     if ($automaattinen == 1) {
                                         if ($nyt <= $takaraja2) {
-                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: red">Osio sulkeutuu: </b>';
+                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: #e608b8">Osio sulkeutuu: </b>';
                                         } else {
-                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: red">Osio on sulkeutunut: </b>';
+                                            echo'<b style="font-size:0.8em; margin-left: 20px; margin-right: 20px; color: #e608b8">Osio on sulkeutunut: </b>';
                                         }
 
                                         echo'<b style="font-size: 0.8em">Pvm:</b> 
@@ -716,7 +708,7 @@ function myFunction(y) {
 	<input type="submit" style="margin-left: 20px" value="Tallenna" class="myButton8">
 	</form>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo'<b style="font-size:0.8em; margin-left: 20px; color: red">Osio on sulkeutunut: ';
+                                    echo'<b style="font-size:0.8em; margin-left: 20px; color: #e608b8">Osio on sulkeutunut: ';
                                     echo $sulkeutumispaiva2 . ', klo: ' . $sulkeutumiskello2 . '.</b>';
                                     echo '<form action="avaa_aihe.php" method="post" style="display: inline-block; margin-left: 20px"><input type="hidden" name="monesko" value=' . $monesko . '><input type="hidden" name="id" value=' . $ipid . '><input type="hidden" name="tid" value=' . $rowt[id] . '><input type="submit" name="painikep"  value="+ Avaa" title="Avaa osio" class="myButton8"  role="button"  style="padding:2px 4px"></form>';
                                 }
@@ -873,7 +865,7 @@ function myFunction(y) {
 
 
 
-//                echo'<p id="ohje" style="color: red; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutten osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
+//                echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutten osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
 //       
                 $esta = false;
                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from itseprojektit where id='" . $ipid . "'")) {
@@ -908,11 +900,11 @@ function myFunction(y) {
                     }
                 } else if ($suljettu == 1 || ($takarajaon == 1 && ($nyt >= $takaraja))) {
                     if ($suljettu == 1) {
-                        echo'<p style="color: red; font-size: 1.1em"><b>Taulukon muokkausmahdollisuus on suljettu.</b></p>';
+                        echo'<p style="color: #e608b8; font-size: 1.1em"><b>Taulukon muokkausmahdollisuus on suljettu.</b></p>';
                         $esta = true;
                     } else if (($takarajaon == 1 && ($nyt >= $takaraja))) {
 
-                        echo'<p style="color: red; font-size: 1.1em"><b>Taulukon muokkausmahdollisuus on sulkeutunut <b>' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b></b></p>';
+                        echo'<p style="color: #e608b8; font-size: 1.1em"><b>Taulukon muokkausmahdollisuus on sulkeutunut <b>' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b></b></p>';
                         $esta = true;
                     }
                 }
@@ -921,7 +913,7 @@ function myFunction(y) {
 
 
                 if (!$esta) {
-                    echo'<p id="ohje" style="color: red; font-weight: bold; font-size: 1.1em">Huom! Muista painaa Tallenna-nappia, kun teet muutoksia <u>kommenttikenttään!</u></p>';
+                    echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Muista painaa Tallenna-nappia, kun teet muutoksia <u>kommenttikenttään!</u></p>';
 
 
                     echo'<br><form action="tallennatehtavat.php" id="formi" method="post">';
@@ -981,21 +973,21 @@ function myFunction(y) {
                             //TÄHÄN MUOKATTU
                             if ($rowt[aihe] == 1 && $pisteet == 1) {
                                 if ($rowt[aihekiinni] == 1) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $osiovapaa)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else {
                                     echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="5" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 }
                             } else if ($rowt[aihe] == 1 && $pisteet == 0) {
                                 if ($rowt[aihekiinni] == 1) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $osiovapaa)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else {
                                     echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 }
@@ -1133,21 +1125,21 @@ function myFunction(y) {
                         } else {
                             if ($rowt[aihe] == 1 && $pisteet == 1) {
                                 if ($rowt[aihekiinni] == 1) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $osiovapaa)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 } else {
                                     echo '<tr style=" font-size: 1em; background-color:#d0d0d0"><td style="border: 2px solid #080708; border-right: none"></td><td colspan="4" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b></td><td style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708"></td></tr>';
                                 }
                             } else if ($rowt[aihe] == 1 && $pisteet == 0) {
                                 if ($rowt[aihekiinni] == 1) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on suljettu!</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $estaosio)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio on sulkeutunut: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else if (($rowt[aihekiinni] == 0 && $osiovapaa)) {
-                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: red; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
+                                    echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b><br><em style="color: #e608b8; font-weight: bold">Tämä osio sulkeutuu: ' . $sulkeutumispaiva2 . ', klo ' . $sulkeutumiskello2 . '</em></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 } else {
                                     echo '<tr style=" font-size: 1em; background-color:#d0d0d0" ><td style="border: 2px solid #080708; border-right: none"></td><td colspan="3" style="background-color:#d0d0d0; border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-left: none"><b>' . $rowt[otsikko] . '</b></td><td style="background-color:#d0d0d0;  border-bottom: 2px solid #080708; border-top: 2px solid #080708; border-right: 2px solid #080708 "></td></tr>';
                                 }

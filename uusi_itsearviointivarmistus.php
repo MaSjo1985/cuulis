@@ -106,8 +106,8 @@ function myFunction(y) {
 
 
         if ($loyty == 1) {
-            echo '<p style="font-weight: bold; color: red" >Lomakkeeseen on tullut jo vastauksia.</p>';
-            echo '<p style="font-weight: bold; color: red" >Annettuja vastauksia ei poisteta, kun muokkaat lomaketta, mikä voi vääristää vastausten tarkastelua.</p>';
+            echo '<p style="font-weight: bold; color: #e608b8" >Lomakkeeseen on tullut jo vastauksia.</p>';
+            echo '<p style="font-weight: bold; color: #e608b8" >Annettuja vastauksia ei poisteta, kun muokkaat lomaketta, mikä voi vääristää vastausten tarkastelua.</p>';
 
             echo'<div class="cm8-responsive" style="display: inline-block; margin-right: 100px; margin-top: 0px; padding:0px">';
             echo '<p style="margin-top: 0px; padding-top: 0px;font-weight: bold;" >Haluatko silti muokata lomaketta?</p>';

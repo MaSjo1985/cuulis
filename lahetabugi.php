@@ -32,7 +32,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo'<div class="cm8-margin-bottom" style="margin-top: 40px; padding-left: 20px;">';
 
     if (!strlen(trim($_POST['viesti']))) {
-        echo'<p style="color: red; font-weight: bold">Et voi lähettää tyhjää viestiä!</p>';
+        echo'<p style="color: #e608b8; font-weight: bold">Et voi lähettää tyhjää viestiä!</p>';
 
         echo'<a href="yhteydenotto.php"><p style="font-size: 1em; display: inline-block;">&#8630 &nbsp&nbsp&nbsp</p> Palaa takaisin</a>';
     } else {
@@ -76,7 +76,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             if ($viesti) {
                 header("location: bugi2.php");
             } else {
-                echo '<br><b style="red">Viestin lähettäminen ei onnistunut. Yritä uudelleen!</b>';
+                echo '<br><b style="#e608b8">Viestin lähettäminen ei onnistunut. Yritä uudelleen!</b>';
                 echo '<br><br><a href="yhteydenotto.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a>';
             }
       

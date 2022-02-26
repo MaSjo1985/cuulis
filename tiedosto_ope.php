@@ -247,7 +247,7 @@ function myFunction(y) {
         echo'<div class="cm8-margin-top" ></div>';
         echo'<form action="lahetysope.php" method="POST" enctype="multipart/form-data" class="form-style-k"><fieldset style="width: 80%">';
         echo'<legend>1) Lisää tiedosto omalta laitteelta</legend>';
-        echo '<p class="eimitaan" style="color: red"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
+        echo '<p class="eimitaan" style="color: #e608b8"><b>Huom!</b> Tiedoston maksimikoko on 10,0 MB.<br>Sallitut tiedostomuodot: .pdf, .rar, .zip, .tnsp, .tns, .docx, .ods, .odt, .odg, .odp, .csv, .doc, .dat, .ppt, .txt tai .rtf, .ppt, .pptx, .xls, .xlsx		</p><br>';
 
 
         echo'<p><b>Tiedoston nimi: </b><br><input type="text" name="tyonimi" ><br></p>
@@ -265,9 +265,9 @@ function myFunction(y) {
 
 
 
-        echo'<p><b>Tiedoston nimi: </b><b style="color: red">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
-  <div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
-    <p style="color: red; padding:0px; margin:0px" class="eimitaan"></p>
+        echo'<p><b>Tiedoston nimi: </b><b style="color: #e608b8">*</b><br> <input type="text" name="kuvaus" id="tama1"/></p>
+  <div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+    <p style="color: #e608b8; padding:0px; margin:0px" class="eimitaan"></p>
 </div> 
 
 <p><b>Tiedoston URL-osoite</b>:<br> <input type="text" name="osoite" /></p>

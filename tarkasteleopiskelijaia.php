@@ -281,9 +281,9 @@ function myFunction(y) {
                 if ($avautuu != NULL) {
 
                     if ($avautuu > $nyt) {
-                        echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio avautuu ';
+                        echo'<p style="font-size: 0.7em; color:#e608b8; font-weight: bold">Tämä osio avautuu ';
                     } else {
-                        echo'<p style="font-size: 0.7em; color:  red; font-weight: bold">Tämä osio on avautunut ';
+                        echo'<p style="font-size: 0.7em; color:  #e608b8; font-weight: bold">Tämä osio on avautunut ';
                     }
 
                     echo'&nbsp&nbsp&nbsp' . $avautumispaiva . ' klo ' . $avautumiskello . '</p>';
@@ -294,9 +294,9 @@ function myFunction(y) {
                 if ($sulkeutuu != NULL) {
 
                     if ($sulkeutuu > $nyt) {
-                        echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio sulkeutuu ';
+                        echo'<p style="font-size: 0.7em; color:#e608b8; font-weight: bold">Tämä osio sulkeutuu ';
                     } else {
-                        echo'<p style="font-size: 0.7em; color:red; font-weight: bold">Tämä osio on sulkeutunut ';
+                        echo'<p style="font-size: 0.7em; color:#e608b8; font-weight: bold">Tämä osio on sulkeutunut ';
                     }
 
                     echo'&nbsp&nbsp&nbsp' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';

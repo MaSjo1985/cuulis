@@ -34,12 +34,12 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     if ($_GET["muut"] == "ei") {
 
 
-        echo '<b style="color: red;">Kurssin lisäys onnistui!</b>';
+        echo '<b style="color: #e608b8;">Kurssin lisäys onnistui!</b>';
         echo '<br><br><a href="omatkurssit.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa Omat kurssit/opintojaksot-osioon</a>';
     } else {
 
 
-          echo '<b style="color: red;">Kurssin lisäys onnistui!</b>';
+          echo '<b style="color: #e608b8;">Kurssin lisäys onnistui!</b>';
         echo '<br><br><a href="omatkurssit.php"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa Omat kurssit/opintojaksot-osioon</a>';
     }
 

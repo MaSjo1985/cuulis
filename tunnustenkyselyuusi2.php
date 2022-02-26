@@ -88,7 +88,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -168,11 +168,11 @@ else{
 }
 
 if($_POST[akt]==1){
-    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän asettaa sinulle uuden salasanan</p>';
+    echo'<br><p class="eimitaan" style="font-size: 1em; color:#e608b8">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä, että hän asettaa sinulle uuden salasanan</p>';
 
 }
 else{
-    echo'<br><p class="eimitaan" style="font-size: 1em; color:red">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>';
+    echo'<br><p class="eimitaan" style="font-size: 1em; color:#e608b8">Lähetä sähköpostia ylläpitäjälle osoitteeseen <a class="osoite" href="mailto: '.$sposti.'" >'.$sposti.' </a>  ja pyydä häneltä käyttäjätunnusta ja salasanaa </p>';
 
 }
 

@@ -112,7 +112,7 @@ function myFunction(y) {
 
 
 
-        echo'<p style="color: red" class="eimitaan"> <b>Huom! </b><br><br>Sallitun kuvatiedoston maksimikoko on 5,0 MB.<br>Sallittuja tiedostomuotoja ovat .jpg, .gif., .png ja .jpeg</p>
+        echo'<p style="color: #e608b8" class="eimitaan"> <b>Huom! </b><br><br>Sallitun kuvatiedoston maksimikoko on 5,0 MB.<br>Sallittuja tiedostomuotoja ovat .jpg, .gif., .png ja .jpeg</p>
 	<br><br><p>Lisää kuva:<br><br><input type="file" name="uusilogo" ></p>
 	<input type="hidden" name="id" value=' . $id . '>  	
 	<br><br><input type="submit" value="&#10003 Tallenna" class="myButton9">	

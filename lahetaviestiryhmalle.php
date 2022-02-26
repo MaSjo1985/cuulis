@@ -169,7 +169,7 @@ function myFunction(y) {
     echo'<div class="cm8-half" style="padding-top: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
 
     if (empty($_POST[viesti])) {
-        echo '<b style="color: red">Et voi lähettää tyhjää viestiä!</b>';
+        echo '<b style="color: #e608b8">Et voi lähettää tyhjää viestiä!</b>';
 
         echo '<br><br><a href="viestiryhmalle.php?pid=' . $_POST[pid] . '&ryid=' . $_POST[ryid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> &nbsp&nbsp&nbspPalaa takaisin</a>';
     } else {
@@ -244,7 +244,7 @@ function myFunction(y) {
         if ($viesti) {
             header("location: lahetaviestiryhmalle2.php?id=" . $_POST[pid]);
         } else {
-            echo '<b style="color: red">Viestin lähettäminen ei onnistunut!</b>';
+            echo '<b style="color: #e608b8">Viestin lähettäminen ei onnistunut!</b>';
 
             echo '<br><br><a href="ryhmatyot.php?r=' . $_POST[pid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> &nbsp&nbsp&nbspPalaa takaisin</a>';
         }

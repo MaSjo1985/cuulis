@@ -418,7 +418,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
 
 
 
-            echo'<br><p style="color: red; font-weight: bold">Viestin todellisen lähettäjän saat selville klikkaamalla viestiä.</p>';
+            echo'<br><p style="color: #e608b8; font-weight: bold">Viestin todellisen lähettäjän saat selville klikkaamalla viestiä.</p>';
             echo'<div class="cm8-margin-top"></div>';
 
             if (!$haekeskustelu = $db->query("select distinct * from keskustelut where kurssin_keskustelut_id='" . $_GET[r] . "' order by id desc")) {
@@ -522,8 +522,8 @@ include("footer.php");
                 'purple': 'Purppura',
                 'darkTurquois': 'Tummanturkoosi',
                 'turquois': 'Turkoosi',
-                'dark#2b6777': 'Tummanoranssi',
-                '#2b6777': 'Oranssi',
+             'darkOrange': 'Tummanoranssi',
+                            'orange': 'Oranssi',
                 'yellow': 'Keltainen',
                 'imageURL': 'Kuvan URL-osoite',
                 'fileURL': 'Tiedoston URL-osoite',

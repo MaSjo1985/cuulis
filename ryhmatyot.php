@@ -270,9 +270,9 @@ function myFunction(y) {
             if ($nakyville != NULL) {
 
                 if ($nyt > $nakyville) {
-                    echo'<b style="margin-right: 20px; color: red">Tämä osio tuli opiskelijoille näkyville ';
+                    echo'<b style="margin-right: 20px; color: #e608b8">Tämä osio tuli opiskelijoille näkyville ';
                 } else {
-                    echo'<b style="margin-right: 20px; color: red">Tämä osio näkyy opiskelijoille';
+                    echo'<b style="margin-right: 20px; color: #e608b8">Tämä osio näkyy opiskelijoille';
                    
                 }
 
@@ -280,7 +280,7 @@ function myFunction(y) {
                  
                 echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaN"  title="Muokkaa">';
             } else  {
-                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: red;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
+                echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #e608b8;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
                 echo'<p><b style="margin-right: 5px; color:  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; color: #080708" class="kdate"  name="paivaN">';
@@ -340,9 +340,9 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive ohjeboxi" style="padding-top: 20px; padding-bottom: 0px">';
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: red;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: red;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 //TÄHÄN
                 echo '<form action="muokkaaprojekti2.php" method="post" style="display:inline-block; margin-left: 40px; margin-top: 0px" ><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name= "painiker" value="&#9998 Muokkaa tietoja" title="Muokkaa tietoja" class="myButton8"  role="button" style="padding: 2px 6px;"></form>';
@@ -357,7 +357,7 @@ function myFunction(y) {
                     echo'<form action="suljekasa2.php" method="get" style="margin-top: 10px; display: inline-block; margin-left: 30px"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name="painike" value="- Sulje ilmoittautuminen" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 0.9em"></form><br>';
                 } else {
 
-                    echo'<p style="display: inline-block; margin-right: 20px; font-size: 0.9em; color: red; font-weight: bold; margin-top: 10px">Ilmoittautuminen ryhmiin on suljettu.</p>';
+                    echo'<p style="display: inline-block; margin-right: 20px; font-size: 0.9em; color: #e608b8; font-weight: bold; margin-top: 10px">Ilmoittautuminen ryhmiin on suljettu.</p>';
                     echo'<form action="avaakasa.php" method="post" style="margin-top: 0px; display: inline-block"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name="painike" value="+ Avaa ilmoittautuminen" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 0.8em"></form><br>';
                 }
                 echo'</div>';
@@ -381,9 +381,9 @@ function myFunction(y) {
                     if ($avautuu != NULL) {
 
                         if ($nyt > $avautuu) {
-                            echo'<br><b style="margin-right: 20px; color: red">Palautusmahdollisuus avautui opiskelijoille ';
+                            echo'<br><b style="margin-right: 20px; color: #e608b8">Palautusmahdollisuus avautui opiskelijoille ';
                         } else {
-                            echo'<br><b style="margin-right: 20px; color: red">Palautumismahdollisuus avautuu opiskelijoille ';
+                            echo'<br><b style="margin-right: 20px; color: #e608b8">Palautumismahdollisuus avautuu opiskelijoille ';
                         }
 
                         echo'' . $avautumispaiva . ' klo ' . $avautumiskello . '.</b>';
@@ -391,7 +391,7 @@ function myFunction(y) {
                         echo'<input type="hidden" name="paivaA" value=' . $avautumispaiva . '>';
                         echo'<input type="submit" style="margin-left: 10px; padding: 4px 6px" value="Muokkaa" class="myButton8" name="muokkaaA"  title="Muokkaa avautumisaikaa">';
                     } else if ($avautuu == NULL && (($sulkeutuu != NULL && $nyt < $sulkeutuu) || $sulkeutuu == NULL)) {
-                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: red;">Aseta avautumissajankohta palautuksille: </p>';
+                        echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #e608b8;">Aseta avautumissajankohta palautuksille: </p>';
                         echo'<b style="margin-right: 5px; font-size: 0.8em;  ">Pvm:</b>
      
             <input type="text" style="margin-right: 10px; width: 20%; color: #080708;font-size: 0.8em;" class="kdate"  name="paivaA">';
@@ -413,16 +413,16 @@ function myFunction(y) {
                     if (!empty($sulkeutuu) && $sulkeutuu != ' ' && $sulkeutuu != NULL) {
 
                         if ($nyt <= $sulkeutuu) {
-                            echo'<p style="display: inline-block; margin-right: 20px; color: red; font-weight: bold;" >Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                            echo'<p style="display: inline-block; margin-right: 20px; color: #e608b8; font-weight: bold;" >Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                         } else {
-                            echo'<p style="display: inline-block; margin-right: 20px; color: red; font-weight: bold;" >Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                            echo'<p style="display: inline-block; margin-right: 20px; color: #e608b8; font-weight: bold;" >Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                         }
                         echo'<input type="hidden" name="kelloS" value=' . $sulkeutumiskello . '>';
                         echo'<input type="hidden" name="paivaS" value=' . $sulkeutumispaiva . '>';
                         echo'<input type="submit" style="margin-left: 10px; padding: 2px" value="Muokkaa" class="myButton8" name="muokkaaS"  title="Muokkaa sulkeutumisaikaa">';
                     } else {
 
-                        echo'<p style="margin-bottom: 10px; font-weight: bold; color: red;">Aseta palautuksille sulkeutumisajankohta: </p>';
+                        echo'<p style="margin-bottom: 10px; font-weight: bold; color: #e608b8;">Aseta palautuksille sulkeutumisajankohta: </p>';
      
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color:  ">Pvm:</b>
      
@@ -491,8 +491,8 @@ function myFunction(y) {
                 echo'</div>';
     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px">';
 
-   echo'<p style="margin-bottom: 10px; font-weight: bold; color: red;">Ryhmiin lisätyt tiedostot: </p>';
-          echo'<p style="color: red; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+   echo'<p style="margin-bottom: 10px; font-weight: bold; color: #e608b8;">Ryhmiin lisätyt tiedostot: </p>';
+          echo'<p style="color: #e608b8; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
                 if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
                                               die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
@@ -604,7 +604,7 @@ function myFunction(y) {
                  
 
                         if ($opmaksimi == 1 && $haeryhmat->num_rows != 0) {
-                            echo'<p style="color: red; padding-top: 10px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                            echo'<p style="color: #e608b8; padding-top: 10px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                         }$aika = microtime(true);
                         echo'<p id="ohje" style="margin-top: 20px; ">Klikkaamalla opiskelijan nimeä pääset käyttäjäprofiiliin.</p><br>';
                         foreach ($ryhmatkaikki as $onid) {
@@ -733,14 +733,14 @@ function myFunction(y) {
                                                             if ($linkki == 1) {
                                                                 echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
@@ -749,7 +749,7 @@ function myFunction(y) {
                                                                 echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
@@ -757,7 +757,7 @@ function myFunction(y) {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.9em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold">Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold">Palautettu myöhässä!</em>';
                                                                 }
 
                                                                 //loppu alle
@@ -914,14 +914,14 @@ function myFunction(y) {
                                                             if ($linkki == 1) {
                                                                 echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
@@ -930,7 +930,7 @@ function myFunction(y) {
                                                                 echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
                                                                 echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
@@ -938,7 +938,7 @@ function myFunction(y) {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                                    echo'<br><em style="color: red; font-weight: bold">Palautettu myöhässä!</em>';
+                                                                    echo'<br><em style="color: #e608b8; font-weight: bold">Palautettu myöhässä!</em>';
                                                                 }
 
                                                                 //loppu alle
@@ -1187,7 +1187,7 @@ function myFunction(y) {
 
    
                         if ($opmaksimi == 1) {
-                            echo'<p style="color: red">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                            echo'<p style="color: #e608b8">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                         }
                         echo'<p id="ohje" style="">Klikkaamalla opiskelijan nimeä pääset käyttäjäprofiiliin.</p><br>';
 
@@ -1297,14 +1297,14 @@ function myFunction(y) {
                                                     if ($linkki == 1) {
                                                         echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
@@ -1313,7 +1313,7 @@ function myFunction(y) {
                                                         echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
@@ -1321,7 +1321,7 @@ function myFunction(y) {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
                                                         //loppu alle
@@ -1468,14 +1468,14 @@ function myFunction(y) {
                                                     if ($linkki == 1) {
                                                         echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
@@ -1484,7 +1484,7 @@ function myFunction(y) {
                                                         echo'<tr id="' . $rowt22[tyoid] . '"><td ><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt22[tyonimi] . '</a></p></td><td><a href="' . $tallnimi2 . '" target="_blank" class="cm8-linkki">' . $rowt22[omatallennusnimi] . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
                                                         echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
@@ -1492,7 +1492,7 @@ function myFunction(y) {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold">Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold">Palautettu myöhässä!</em>';
                                                         }
 
                                                         //loppu alle
@@ -1805,9 +1805,9 @@ function myFunction(y) {
 
 
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: red;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: red;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: red;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 
                 echo'</div>';
@@ -1840,9 +1840,9 @@ function myFunction(y) {
                         if ($avautuu != NULL) {
                             echo'<br>';
                             if ($nyt > $avautuu) {
-                                echo'<b style="margin-right: 20px; color: red">Palautusmahdollisuus avautui ';
+                                echo'<b style="margin-right: 20px; color: #e608b8">Palautusmahdollisuus avautui ';
                             } else {
-                                echo'<b style="margin-right: 20px; color: red">Palautumismahdollisuus avautuu ';
+                                echo'<b style="margin-right: 20px; color: #e608b8">Palautumismahdollisuus avautuu ';
                             }
 
                             echo'' . $avautumispaiva . ' klo ' . $avautumiskello . '</b><br><br>';
@@ -1856,9 +1856,9 @@ function myFunction(y) {
 
 
                             if ($nyt <= $sulkeutuu) {
-                                echo'<p  style="color: red; font-weight: bold">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                                echo'<p  style="color: #e608b8; font-weight: bold">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                             } else {
-                                echo'<p style="color: red; font-weight: bold">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
+                                echo'<p style="color: #e608b8; font-weight: bold">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</p>';
                             }
                         } else {
                             
@@ -1874,7 +1874,7 @@ function myFunction(y) {
 
                 if ($oplopullinen == 1) {
                     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 0px; padding-bottom: 0px;">';
-                    echo'<p style="font-weight: bold; color: red; font-size: 0.9em">Ilmoittautuminen ryhmiin on suljettu.</p>';
+                    echo'<p style="font-weight: bold; color: #e608b8; font-size: 0.9em">Ilmoittautuminen ryhmiin on suljettu.</p>';
                     echo'</div>';
                 }
 
@@ -1927,7 +1927,7 @@ function myFunction(y) {
 
                         echo '<h2  style="color: #2b6777; text-decoration: underline; font-size: 1.3em; padding-top: 30px; padding-bottom: 10px">Ryhmät:</h2> ';
 
-                        echo'<p style="color: red">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                        echo'<p style="color: #e608b8">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
 
                         echo'<div class="cm8-margin-top"></div>';
 
@@ -2041,7 +2041,7 @@ function myFunction(y) {
                                                         echo'<tr><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         if ($omatkommentit_tallennettu == 1) {
                                                             echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2058,7 +2058,7 @@ function myFunction(y) {
                                                     } else {
                                                         echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                            echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                            echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         if ($omatkommentit_tallennettu == 1) {
                                                             echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2113,14 +2113,14 @@ function myFunction(y) {
                                                         if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                             if ($nyt <= $sulkeutuu) {
-                                                                echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                                echo'<br><b style="color: #e608b8">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                             } else {
-                                                                echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                                echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                                echo'<br><b style="color:#e608b8">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                                echo'<p style="color: #e608b8;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                             }
                                                         }
                                                     } else {
-                                                        echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                        echo'<b style="color: #e608b8;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                                     }
                                                 } else {
 
@@ -2315,7 +2315,7 @@ function myFunction(y) {
                                                 echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                 }
                                                 if ($omatkommentit_tallennettu == 1) {
                                                     echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2330,7 +2330,7 @@ function myFunction(y) {
                                             } else {
                                                 echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                    echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                    echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                 }
                                                 if ($omatkommentit_tallennettu == 1) {
                                                     echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2386,14 +2386,14 @@ function myFunction(y) {
                                                 if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                     if ($nyt <= $sulkeutuu) {
-                                                        echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                        echo'<br><b style="color: #e608b8">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                     } else {
-                                                        echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                        echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                        echo'<br><b style="color:#e608b8">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                        echo'<p style="color: #e608b8;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                     }
                                                 }
                                             } else {
-                                                echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                echo'<b style="color: #e608b8;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                             }
                                         } else {
 
@@ -2502,7 +2502,7 @@ function myFunction(y) {
 
                     echo '<h2  style="color: #2b6777; text-decoration: underline; font-size: 1.4em; padding-top: 30px">Lopulliset ryhmät:</h2>';
                     if ($opmaksimi == 1) {
-                        echo'<p style="color: red; padding-top: 20px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
+                        echo'<p style="color: #e608b8; padding-top: 20px">Koska ryhmissä on vain 1 opiskelija, niin ryhmät listataan aakkosjärjestyksessä.</p>';
                     }
                     echo'<div class="cm8-margin-top"></div>';
                     //haetaan kaikki projektin ryhmät
@@ -2628,7 +2628,7 @@ function myFunction(y) {
                                                     echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                                     if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                        echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                        echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                     }
                                                     if ($omatkommentit_tallennettu == 1) {
                                                         echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2643,7 +2643,7 @@ function myFunction(y) {
                                                 } else {
                                                     echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                                     if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                        echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                        echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                     }
                                                     if ($omatkommentit_tallennettu == 1) {
                                                         echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2697,14 +2697,14 @@ function myFunction(y) {
                                                     if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                         if ($nyt <= $sulkeutuu) {
-                                                            echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                            echo'<br><b style="color: #e608b8">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                         } else {
-                                                            echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                            echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                            echo'<br><b style="color:#e608b8">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                            echo'<p style="color: #e608b8;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                         }
                                                     }
                                                 } else {
-                                                    echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                                    echo'<b style="color: #e608b8;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                                 }
                                             } else {
 
@@ -2875,7 +2875,7 @@ function myFunction(y) {
                                             echo'<tr><td ><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki"><p><b style="font-size: 0.8em; font-weight: normal">&#128279; &nbsp</b>' . $rowt[tyonimi] . '</a></p></td><td><a href="' . $tallnimi . '" target="_blank" class="cm8-linkki">' . $rowt[omatallennusnimi] . '</a></td><td>' . $rowt[lisayspvm];
 
                                             if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                             }
                                             if ($omatkommentit_tallennettu == 1) {
                                                 echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2891,7 +2891,7 @@ function myFunction(y) {
                                         } else {
                                             echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
                                             if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
-                                                echo'<br><em style="color: red; font-weight: bold"> Palautettu myöhässä!</em>';
+                                                echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                             }
                                             if ($omatkommentit_tallennettu == 1) {
                                                 echo'</td><td>' . $omatkommentit . '<form action="tallennaomatkommentit.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $tyoid . '"><input type="submit" value="&#9998" name="muokkaa" role="button" class="myButton8" style="padding: 2px 4px; margin-top:5px"> </form></td><td>' . $rowt[palaute] . '</td>';
@@ -2945,14 +2945,14 @@ function myFunction(y) {
                                             if ($sulkeutuu != ' ' && $sulkeutuu != NULL && !empty($sulkeutuu)) {
 
                                                 if ($nyt <= $sulkeutuu) {
-                                                    echo'<br><b style="color: red">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
+                                                    echo'<br><b style="color: #e608b8">Palautusten takaraja on ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b><br><br>';
                                                 } else {
-                                                    echo'<br><b style="color:red">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
-                                                    echo'<p style="color: red;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
+                                                    echo'<br><b style="color:#e608b8">Palautusten takaraja oli ' . $sulkeutumispaiva . ' klo ' . $sulkeutumiskello . '</b>';
+                                                    echo'<p style="color: #e608b8;">Voit silti tehdä palautuksen, mutta siihen tulee merkintä myöhästymisestä.</p>';
                                                 }
                                             }
                                         } else {
-                                            echo'<b style="color: red;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
+                                            echo'<b style="color: #e608b8;">Palautusmahdollisuus avautuu ' . $avautumispaiva . ' klo ' . $avautumiskello . ' </b><br><br>';
                                         }
                                     } else {
 

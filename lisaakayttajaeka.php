@@ -145,7 +145,7 @@ echo' <option value="valitserooli" id="kelt" selected>Valitse rooli';
  
 echo'</select>';
 echo'</p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
 echo'<br><input id="button" type="submit" onclick="validateFormRek()" value="&#10003 Valitse"><br>';

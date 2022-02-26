@@ -88,7 +88,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -154,12 +154,12 @@ else{
  
 <input type="email" id="spostir" name="sposti"  placeholder="Käyttäjätunnus eli sähköpostiosoite" style="width: 80%"></p>
     
-<div style="display: inline-block; color: red; font-weight: bold; padding: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding: 0px" id="divID">
     <p style="padding: 0px" class="eimitaan" style="display: inline-block"></p>
 </div>
 <input type="hidden" name="akt" value="'.$_GET[akt].'">
 <br><input id="button" type="button" onclick="validateForm8ope()" value="&#10003 Lähetä">
-<br><br><p class="eimitaan" style="color: red; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite"  href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
+<br><br><p class="eimitaan" style="color: #e608b8; font-size: 0.9em">Jos et muista antamaasi sähköpostiosoitetta, niin lähetä asiasta sähköpostia Cuulis-oppimisympäristön ylläpitäjälle osoitteeseen <a class="osoite"  href="mailto: marianne.sjoberg@cm8solutions.fi">marianne.sjoberg@cm8solutions.fi</a></p>
 <br>
  </fieldset> </form>';
 

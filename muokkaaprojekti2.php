@@ -140,7 +140,7 @@ function myFunction(y) {
             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         if ($haeoppilaat->num_rows != 0) {
-//            echo'<p class="eimitaan" style="color: red; font-weight: bold;">HUOM! Jos muutat alla olevia tietoja, niin ryhmäjako tehdään uudestaan!</p>';
+//            echo'<p class="eimitaan" style="color: #e608b8; font-weight: bold;">HUOM! Jos muutat alla olevia tietoja, niin ryhmäjako tehdään uudestaan!</p>';
         }
 
         echo'<br><p>Muokkaa nimeä: <br><br><input type="text" name="kuvaus" maxlength="60" value="' . $kuvaus . '"></p><br>
@@ -172,7 +172,7 @@ function myFunction(y) {
 
         echo'</select><br></p><br>';
 
-        echo'<div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
+        echo'<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     
 </div>';
 

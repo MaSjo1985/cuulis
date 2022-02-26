@@ -83,7 +83,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -141,15 +141,15 @@ while ($row = $result->fetch_assoc()) {
 }
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:20px" >';
 
- echo '<p style="font-size:1.2em;  color: red; font-weight: bold">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
+ echo '<p style="font-size:1.2em;  color: #e608b8; font-weight: bold">Olet nyt rekisteröitynyt Cuulis-oppimisympäristöön seuraavilla tiedoilla: </p>';
                 echo '<br><b>Etunimi: &nbsp&nbsp&nbsp</b>'.$etunimi;
                 echo '<br><br><b>Sukunimi: &nbsp&nbsp&nbsp</b>'.$sukunimi;
                 echo '<br><br><b>Käyttäjätunnus:&nbsp&nbsp&nbsp </b>'.$sposti;
                 echo '<br><br><b>Ensisijainen oppilaitos:&nbsp&nbsp&nbsp </b>'.$koulu;
                 echo '<br><br><b>Rooli: &nbsp&nbsp&nbsp</b> Opettaja';
                 
-echo '<br><br><p style="font-size:1.2em; font-weight: bold; color: red;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
-echo '<b><p style="color: red">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
+echo '<br><br><p style="font-size:1.2em; font-weight: bold; color: #e608b8;">Sähköpostiisi on lähetetty vahvistusviesti rekisteröitymisestä. <br></p>';
+echo '<b><p style="color: #e608b8">Huom! Tarkista roskapostilaatikko, jos viestiä ei näy.<br><br>Viestin saapumisessa voi myös olla viivettä.</p></b> ';
 
 echo '<br><br><b><a href="etusivu.php">Pääset etusivulle tästä &nbsp&nbsp&nbsp<p style="font-size: 1em; display: inline-block; padding:0; margin: 0">&#8631</p></a></b>';
 echo "</div>";

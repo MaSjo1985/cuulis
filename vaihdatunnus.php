@@ -85,7 +85,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -142,13 +142,13 @@ echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px" >
         echo"<legend>Vaihda käyttäjätunnus</legend>";
         echo'<br><br><b style="color: blue">Cuulis-oppimisympäristön kirjautuminen on muuttunut.<br><br>Valitse itsellesi uusi käyttäjätunnus.</b><br>';
 
-        echo'<br><br><b style="color: red">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b>';
+        echo'<br><br><b style="color: #e608b8">On suositeltavaa, että et valitse sähköpostiosoitetta käyttäjätunnukseksi.</b>';
      
-        echo'<br><br><br><p><b>Uusi käyttäjätunnus: </b> <b style="color: red">*</b><br><br>
+        echo'<br><br><br><p><b>Uusi käyttäjätunnus: </b> <b style="color: #e608b8">*</b><br><br>
              
 <input type="text" id="tunnusr" style="width: 60%" placeholder="Uusi käyttäjätunnus" name="tunnus"></p>
 
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
 

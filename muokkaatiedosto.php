@@ -230,11 +230,11 @@ function myFunction(y) {
         echo' <legend>Muokkaa tiedoston nimeä</legend>';
         echo '<a href="tiedostot.php?k=' . $_POST[kaid] . '" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
 
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID" id="divID">
     <p class="eimitaan"></p>
 </div>';
         echo'
-	<br><br><p style="width: 100%">Tiedoston nimi: <b style="color: red">*</b><br> <textarea class="textarea" rows="1" name="kuvaus" id="tama1" style="width: 40%">' . $osoite . '</textarea>
+	<br><br><p style="width: 100%">Tiedoston nimi: <b style="color: #e608b8">*</b><br> <textarea class="textarea" rows="1" name="kuvaus" id="tama1" style="width: 40%">' . $osoite . '</textarea>
 			<br><p style="width: 100%">Tiedoston URL-osoite:<br> <input type="text" name="osoite" id="osoite" style="width: 100%" value=' . $kuvaus . '></p>
 <input type="hidden" name="id" value=' . $id . ' ><br>
     <input type="hidden" name="kaid" value=' . $_POST[kaid] . ' >
@@ -245,11 +245,11 @@ function myFunction(y) {
         echo' <legend>Muokkaa tiedoston nimeä</legend>';
         echo '<a href="tiedostot.php?k=' . $_POST[kaid] . '" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
 
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID2" id="divID2">
     <p style="padding:0px; margin:0px" id="demo2" class="eimitaan"></p>
 </div>';
         echo'
-	<br><br><p style="width: 100%">Tiedoston nimi:<b style="color: red">*</b><br> <textarea class="textarea" name="kuvaus" id="tama2" rows="1">' . $osoite . '</textarea>';
+	<br><br><p style="width: 100%">Tiedoston nimi:<b style="color: #e608b8">*</b><br> <textarea class="textarea" name="kuvaus" id="tama2" rows="1">' . $osoite . '</textarea>';
 
         echo'<br><p style="width: 100%">Tiedoston URL-osoite:<br> <input type="text" id="osoite"  name="osoite" value=' . $kuvaus . '></p>';
 
@@ -265,11 +265,11 @@ function myFunction(y) {
         echo' <legend>Muokkaa tiedoston nimeä</legend>';
         echo '<a href="tiedostot.php?k=' . $_POST[kaid] . '" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
 
-        echo'<div style="color: red; font-weight: bold; padding:0px; margin:0px" name="divID3" id="divID3">
+        echo'<div style="color: #e608b8; font-weight: bold; padding:0px; margin:0px" name="divID3" id="divID3">
     <p style="padding:0px; margin:0px" id="demo3" class="eimitaan"></p>
 </div>';
         echo'
-	<br><br><p style="width: 100%">Tiedoston nimi: <b style="color: red">*</b><br> <textarea class="textarea"  rows="1" name="kuvaus" id="tama3">' . $osoite . '</textarea>';
+	<br><br><p style="width: 100%">Tiedoston nimi: <b style="color: #e608b8">*</b><br> <textarea class="textarea"  rows="1" name="kuvaus" id="tama3">' . $osoite . '</textarea>';
 
         echo'<br><p style="width: 100%"><b>Youtube-upotuskoodi</b>:<br> <input type="text" id="osoite" name="osoite" value=' . $kuvaus . '></p>';
 

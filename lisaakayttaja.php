@@ -135,24 +135,24 @@ function myFunction2(y) {
 
         echo' <legend>Lisää uusi käyttäjä</legend>';
 
-        echo'<b style="color: red">Kaikki tiedot ovat pakollisia.</b> <br>';
+        echo'<b style="color: #e608b8">Kaikki tiedot ovat pakollisia.</b> <br>';
 
-        echo'<br><p>Etunimi: <b style="color: red">*</b><br><br>
+        echo'<br><p>Etunimi: <b style="color: #e608b8">*</b><br><br>
 
 <input type="text" id="etu" name="Etunimi"></p>
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID">
     <p class="eimitaan" style="padding:0px; margin: 0px"></p>
 </div>
-<p>Sukunimi: <b style="color: red">*</b><br><br>
+<p>Sukunimi: <b style="color: #e608b8">*</b><br><br>
 <input type="text" id="suku" name="Sukunimi" ></p>
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>
-<p>Käyttäjätunnus: <b style="color: red">*</b><br><br>
+<p>Käyttäjätunnus: <b style="color: #e608b8">*</b><br><br>
 
 <input type="email" id="sposti" name="Sposti"></p>
 
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID3">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>';
 
@@ -170,8 +170,8 @@ function myFunction2(y) {
         echo'<br></p>';
 
         echo'
-<br><p>Rooli: <b style="color: red">*</b><br>
-      <br><b style="color: red; font-size: 0.9em">Huom! Roolia ei voi enää myöhemmin muuttaa!</b><br><br>
+<br><p>Rooli: <b style="color: #e608b8">*</b><br>
+      <br><b style="color: #e608b8; font-size: 0.9em">Huom! Roolia ei voi enää myöhemmin muuttaa!</b><br><br>
 
 <select id="rooli" name="Rooli">
 <option value="valitser" selected> Valitse
@@ -180,7 +180,7 @@ function myFunction2(y) {
 	<option value="muu"> Muu		
 		</select><br></p><br>
 
-<div style="color: red; font-weight: bold; padding-top: 0px" id="divID5">
+<div style="color: #e608b8; font-weight: bold; padding-top: 0px" id="divID5">
     <p class="eimitaan" ></p>
 </div>
 <div id="username_availability_result"></div>  

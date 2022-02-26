@@ -37,7 +37,7 @@ if (isset($_POST['search'])) {
 
     else {
 
- echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda kansioita.</b><br><br>';
+ echo'<br><b style="color: #e608b8" >Klikkaa sen kurssin/opintojakson nimeä, josta haluat tuoda kansioita.</b><br><br>';
             
 
         echo'<div class="cm8-responsive" id="piilota88" style="padding-top: 20px; padding-bottom: 10px; width: 100%" >';

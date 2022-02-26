@@ -34,7 +34,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
 
-    echo'<br><b style="color: red;">Valittujen käyttäjien liittyminen oppilaitokseen on nyt hyväksytty!</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
+    echo'<br><b style="color: #e608b8;">Valittujen käyttäjien liittyminen oppilaitokseen on nyt hyväksytty!</b><br><br><a href="kayttajatvahvistus.php"> <p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin';
 
 
 

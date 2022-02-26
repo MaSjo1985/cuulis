@@ -5,7 +5,7 @@ echo'
 <!DOCTYPE html>
 <html>
  <style>
-#text {display:none;color:red}
+#text {display:none;color:#e608b8}
 </style>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=9,IE=8,IE=7,IE=Edge" />
@@ -71,7 +71,7 @@ echo'<p style="margin-top: 0px;display: inline-block; padding-top: 0px; padding-
 
 
 echo'<div style="display: inline-block; margin-left: 20px; font-size: 0.7em" id="keski" ></div>';
-echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: red; font-style: italic" ></div>';
+echo'<div id="stars2" style="color: #2b6777; padding: 0px; margin: 0px; display: inline-block; margin-left: 30px; font-size: 0.7em; color: #e608b8; font-style: italic" ></div>';
 
 echo'</div>';
 echo'</div>';
@@ -131,7 +131,7 @@ echo
 <legend>Kirjaudu sisään:</legend>   
 
 <br><input type="text"  id="sposti" placeholder="Käyttäjätunnus" name="Sposti" autofocus>
-<div style="color: red; font-weight: bold; padding: 0px" id="divID">
+<div style="color: #e608b8; font-weight: bold; padding: 0px" id="divID">
     <p class="eimitaan"></p>
 </div>
 
@@ -140,7 +140,7 @@ echo
   
   <span id="show" class="fa fa-eye-slash" title="Näytä salasana"> </span>
 <p id="text" class="eimitaan">Caps lock on päällä!</p>
-<div style="color: red; font-weight: bold; padding: 0px" id="divID2">
+<div style="color: #e608b8; font-weight: bold; padding: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>';
 

@@ -183,7 +183,7 @@ function myFunction(y) {
 
             echo'<br><p style="font-weight: normal"><b>Vastaanottajan sähköpostiosoite:</b> &nbsp&nbsp&nbsp ' . $sposti . ' </p> ';
         }
-echo'<br><p style="font-weight: bold; color: red">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
+echo'<br><p style="font-weight: bold; color: #e608b8">Huom! Laita viestiin sähköpostiosoitteesi, jos haluat siihen vastauksen.</p>';
         echo'<br><p><b> Viesti: </b><br><textarea name="viesti" rows="8" style="width: 80%"></textarea></p> <br><br> 
                                   <input type="hidden" name="id" value=' . $_GET[id] . '>
                                        

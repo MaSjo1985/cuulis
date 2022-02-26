@@ -137,32 +137,32 @@ echo '<form name="Form" id="myForm" class="form-style-k" onSubmit="return valida
 echo' <legend>Lisää opettaja Cuulis-oppimisympäristöön</legend>';
 
 echo '<a href="lisaakayttajaeka.php" class="palaa">&#8630&nbsp&nbsp&nbsp Palaa takaisin</a>';
-echo'<br><br><br><b style="color: red; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
+echo'<br><br><br><b style="color: #e608b8; font-size: 1em">Kaikki tiedot ovat pakollisia. </b><br>';
 
 
 
 
-echo'<br><br><p>Etunimi: <b style="color: red">*</b><br><br>
+echo'<br><br><p>Etunimi: <b style="color: #e608b8">*</b><br><br>
  
 <input type="text"   id="etu" name="Etunimi" placeholder="Etunimi"  style="width: 60%"></p>
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
+<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID">
     <p class="eimitaan"></p>
 </div>
-<br><br><p>Sukunimi: <b style="color: red">*</b><br><br>
+<br><br><p>Sukunimi: <b style="color: #e608b8">*</b><br><br>
 
 <input type="text" id="suku"    name="Sukunimi" placeholder="Etunimi" style="width: 60%"></p>
 
 
-<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
+<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID2">
  <p class="eimitaan"></p>
 </div>
-<br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: red">*</b><br><br>
+<br><br><p>Käyttäjätunnus eli sähköpostiosoite: <b style="color: #e608b8">*</b><br><br>
 <b style="color: blue; font-size: 0.8em" >Muista ilmoittaa käyttäjälle valitsemasi käyttäjätunnus.</b><br><br>
 
 
 <input type="email"  placeholder="Käyttäjätunnus eli sähköpostiosoite"   id="spostir" name="Sposti" style="width: 60%"></p>';
 
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID3">
    <p class="eimitaan"></p>
 </div>';
 if($_SESSION[Rooli]!='admin'){
@@ -179,7 +179,7 @@ echo'<input type="hidden" id="koulu" name="koulu" value="koulu">';
 
        
         echo'</b></p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';       
 }
@@ -187,7 +187,7 @@ else{
     if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
-    echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: red">*</b><br>
+    echo'<br><br><p>Valitse ensisijainen oppilaitos: <b style="color: #e608b8">*</b><br>
 <br>';
 echo'<select id="koulu" name="koulu"  onchange="changeFunc();">';
 echo' <option value="valitsekoulu" selected>Valitse oppilaitos';
@@ -199,12 +199,12 @@ while ($rowko = $resultkoulut->fetch_assoc()) {
 }
 echo'</select></p>';
 
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: inline-block" id="divID4">
      <p class="eimitaan"></p>
 </div>';
 }
-echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em; display: none" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot" checked>&nbsp&nbspHyväksyn <a href="kayttoehdot_opettaja.php" style="border-bottom:1px solid blue; color: blue;"> käyttöehdot </a><b style="color: red">*</b></label></p>';
-echo'<div style="color: red; font-weight: bold; padding: 0px; margin: 0px; display: none" id="divID5">
+echo'<br><br><p><label style="margin:0px; padding:0px; font-weight:bold; font-size: 1em; display: none" id="kayttoehdotl"><input onchange="isChecked()" type="checkbox" id="kayttoehdot" checked>&nbsp&nbspHyväksyn <a href="kayttoehdot_opettaja.php" style="border-bottom:1px solid blue; color: blue;"> käyttöehdot </a><b style="color: #e608b8">*</b></label></p>';
+echo'<div style="color: #e608b8; font-weight: bold; padding: 0px; margin: 0px; display: none" id="divID5">
      <p class="eimitaan"></p>
 </div>';
 echo'<input type="hidden" id="admin" name="admin" value="admin">';

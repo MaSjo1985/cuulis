@@ -121,7 +121,7 @@ function myFunction(y) {
         }
         if ($haesarakkeet->num_rows == 0) {
 
-            echo'<br><b style="color: red">Kurssilla ei ole valmista itsearviointilomaketta.</b><br>';
+            echo'<br><b style="color: #e608b8">Kurssilla ei ole valmista itsearviointilomaketta.</b><br>';
         } else {
 
 

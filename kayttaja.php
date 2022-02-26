@@ -371,7 +371,7 @@ function myFunction(y) {
 <br><b style="color: blue;">Muista ilmoittaa käyttäjälle valitsemasi salasana.</b>
 <br><br>
 
-<br><b style="color: red; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
+<br><b style="color: #e608b8; font-size: 0.8em">Hyvässä salasanassa on vähintään 12 merkkiä, pieniä ja isoja kirjaimia sekä erikoismerkkejä ja numeroita.</b>
 <br><br>
 
 
@@ -380,7 +380,7 @@ function myFunction(y) {
     
 <input type="password" style="width: 80%" id="uusi" name="Salasana" placeholder="Salasana">
   <span id="show1" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID2">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID2">
     <p class="eimitaan"></p>
 </div>    
 	
@@ -388,7 +388,7 @@ function myFunction(y) {
 
 <input type="password" style="width: 80%" id="uusi2" name="UusiSalasana" placeholder="Toista uusi salasana">
   <span id="show2" class="fa fa-eye-slash" style="display: inline-block" title="Näytä salasana"> </span></p>
-<div style="display: inline-block; color: red; font-weight: bold; padding-top: 0px" id="divID3">
+<div style="display: inline-block; color: #e608b8; font-weight: bold; padding-top: 0px" id="divID3">
     <p class="eimitaan"></p>
 </div>        <br>
 <input type="hidden" name="url" value=' . $_GET[url] . '>

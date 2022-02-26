@@ -245,15 +245,15 @@ function myFunction(y) {
     else {
 
         if(isset($_GET[kurssi])){
-             echo'<br><b style="color: red" >Itsearviointilomake löytyy myös seuraavilta kursseilta/opintojaksoilta</b><br><br>';
+             echo'<br><b style="color: #e608b8" >Itsearviointilomake löytyy myös seuraavilta kursseilta/opintojaksoilta</b><br><br>';
 
         }
         else{
-            echo'<br><b style="color: red" >Itsearviointilomake löytyy seuraavilta kursseilta/opintojaksoilta</b><br><br>';
+            echo'<br><b style="color: #e608b8" >Itsearviointilomake löytyy seuraavilta kursseilta/opintojaksoilta</b><br><br>';
  
         }
        
-        echo'<br><b style="color: red" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomaketta haluat tarkastella.</b><br><br>';
+        echo'<br><b style="color: #e608b8" >Klikkaa sen kurssin/opintojakson nimeä, jonka itsearviointilomaketta haluat tarkastella.</b><br><br>';
         echo '<form action="" method="get">';
 
 

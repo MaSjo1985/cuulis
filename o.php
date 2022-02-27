@@ -310,7 +310,7 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable" class="cm8-table cm8-bordered">  <thead>';
 
-                echo '<tr style="border: 1px solid grey; background-color: #ffcceb" id="palaa"><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey ">Tehdyt yht.</th><th style="text-align: center; border: 1px solid grey ">Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid grey">Tehty,<br> muttei osattu ilman apua</th><th style="text-align: center; border: 1px solid grey">Toivottu yhdessä<br>läpikäytäväksi</th><th style="text-align: center; border: 1px solid grey">Kommentoitu'
+                echo '<tr style="border: 1px solid grey; background-color: #ffcceb" id="palaa"><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey ">Tehdyt yht.</th><th style="text-align: center; border: 1px solid grey ">Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid grey">Tehty,<br> mutta ei osattu ilman apua</th><th style="text-align: center; border: 1px solid grey">Toivottu yhdessä<br>läpikäytäväksi</th><th style="text-align: center; border: 1px solid grey">Kommentoitu'
                 . '</th><th style="border: 1px solid transparent; background-color: white"></th></tr>  </thead><tbody>';
 
                 while ($rowt = $haetehtavat->fetch_assoc()) {
@@ -455,7 +455,7 @@ function myFunction(y) {
                 $osatut = $haeosatut->num_rows;
                 $eiosatut = $haeeiosatut->num_rows;
                 $osatutnimi = 'Tehty ja osattu';
-                $eiosatutnimi = 'Tehty, muttei osattu';
+                $eiosatutnimi = 'Tehty, mutta ei osattu';
                 $tekemattomatnimi = 'Tekemättä';
                 $tehdythuijaus = 0;
                 if (($yht - $tehdyt) >= 0) {
@@ -589,7 +589,7 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive">';
                 echo '<table id="mytable2" class="cm8-table" style="text-align: center"><thead>';
 
-                echo '<tr style="background-color: #ffcceb" ><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey">Osasin</th><th style="text-align: center; border: 1px solid grey">Tein,<br>mutten osannut<br>ilman apua</th><th style="text-align: center; border: 1px solid grey">Haluan käydä<br>tunnilla läpi</th><th style="text-align: center; border: 1px solid grey">Kommentti</th><th style="border: none; background-color: white"></th></tr></thead><tbody>';
+                echo '<tr style="background-color: #ffcceb" ><th style="border: 1px solid grey">Tehtävä</th><th style="text-align: center; border: 1px solid grey">Osasin</th><th style="text-align: center; border: 1px solid grey">Tein,<br>mutta en osannut<br>ilman apua</th><th style="text-align: center; border: 1px solid grey">Haluan käydä<br>tunnilla läpi</th><th style="text-align: center; border: 1px solid grey">Kommentti</th><th style="border: none; background-color: white"></th></tr></thead><tbody>';
 
                 while ($rowt = $haetehtavat->fetch_assoc()) {
 

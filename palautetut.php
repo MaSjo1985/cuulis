@@ -248,9 +248,9 @@ function myFunction(y) {
         echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em">';
 
         if ($pisteet) {
-            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti  <br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButton11"  role="button"  style="padding:4px 6px; background-color: white"></th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
+            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti  <br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButton11"  role="button"  style="padding:4px 6px; background-color: white"></th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
         } else {
-            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButton11"  role="button"  style="padding:4px 6px; background-color: white"></th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
+            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButton11"  role="button"  style="padding:4px 6px; background-color: white"></th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
         }
 
         while ($rowt = $haetehtavat->fetch_assoc()) {

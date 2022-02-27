@@ -1,14 +1,10 @@
-1) YMPYRÄDIAGRAMMIN VÄRIT VÄÄRIN, JOS EI OLE MERKITTYNÄ
-* osattu
-* tehty muttei osattu
--> ELI MOLEMMAT PITÄÄ OLLA MERKITTY!
-
-ks. diagrammit.php  ja dmalli.php
+1) TESTAA TOIMIIKO YMPYRÄDIAGRAMMIT OIKEESTI!
 
 
 2) TEHTÄVÄLISTÄ NÄKYMÄ MUUTEN, kun on
 * opettaja
-* opiskelija, esim. lisäpistepalkki epäselvä
+* opiskelija
+* TARKISTA MINIMI% saavutuspalkki!
 
 
 3) PALAUTUKSET NÄKYMÄ, kun on 
@@ -16,7 +12,7 @@ ks. diagrammit.php  ja dmalli.php
 * opiskelija
 
 
-4) TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red
+4) TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red, PITÄISKÖ blue OLLA MYÖS sama huomio väri   #e608b8
 
 
 

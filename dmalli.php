@@ -69,9 +69,9 @@ function tuoMalli($ipid) {
         $osatut = $haeosatut->num_rows;
         $eiosatut = $haeeiosatut->num_rows;
         $osatutnimi = 'Tehty ja osattu';
-        $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
+        $eiosatutnimi = 'Tehty, mutta ei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'Tehtyjä tehtäviä yhteensä';
+        $tehdytnimi = 'Tehtyjä tehtäviä';
         $tehdythuijaus = 0;
         if (($yht - $tehdyt) >= 0) {
             $tekemattomat = $yht - $tehdyt;
@@ -92,86 +92,18 @@ function tuoMalli($ipid) {
 
 
         $chart2 = new PieChart(900, 300);
-        //osatut,eiosatut,tekemattomat
-        if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat <= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
+           $chart2->getPlot()->getPalette()->setPieColor(array(
+                          //valkonen
+                new Color(255, 255, 255),
+                          //oranssi
+                new Color(255, 165, 0),
                 //vihree
                 new Color(127, 216, 88),
-//punanen
+                //sininen
                 new Color(0, 191, 255),
-                //valkonen
-                new Color(255, 255, 255),
-                //oranssi
-                new Color(255, 165, 0),
+             
+             
             ));
-        }
-
-        //tekemattomat, osatut, eiosatut
-        else if ($osatut >= $eiosatut && $osatut <= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //valkonen
-                new Color(255, 255, 255),
-                //vihree
-                new Color(127, 216, 88),
-//punanen
-                new Color(0, 191, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //tekemattomat, eiosatut, osatut
-        else if ($osatut <= $eiosatut && $osatut <= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //valkonen
-                new Color(255, 255, 255),
-//punanen
-                new Color(0, 191, 255),
-                //vihree
-                new Color(127, 216, 88),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //osatut,tekemattomat, eiosatut
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //vihree
-                new Color(127, 216, 88),
-                new Color(255, 255, 255),
-//punanen
-                new Color(0, 191, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-
-        //eiosatut, osatut, tekemattomat
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //punanen
-                new Color(0, 191, 255),
-//vihree
-                new Color(127, 216, 88),
-                //valkonen
-                new Color(255, 255, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //eiosatut, tekemattomat, osatut
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //punanen
-                new Color(0, 191, 255),
-                //valkonen
-                new Color(255, 255, 255),
-                //
-                //vihree
-                new Color(127, 216, 88),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
 
         $chart2->getPlot()->getPalette()->setBackgroundColor(array(
             new Color(230, 230, 255),
@@ -182,10 +114,10 @@ function tuoMalli($ipid) {
         //data set instance
         $dataSet2 = new XYDataSet();
 
-        $dataSet2->addPoint(new Point("{$osatutnimi} ({$osatut} kpl)", $osatut));
-        $dataSet2->addPoint(new Point("{$eiosatutnimi} ({$eiosatut} kpl)", $eiosatut));
-        $dataSet2->addPoint(new Point("{$tekemattomatnimi} ({$tekemattomat} kpl)", $tekemattomat));
-        $dataSet2->addPoint(new Point("{$osuusnimi} ({$osuus} %)", 0));
+       $dataSet2->addPoint(new Point("{$eiosatutnimi} ({$eiosatut} kpl)", $eiosatut));
+           $dataSet2->addPoint(new Point("{$tehdytnimi} ({$tehdyt} kpl)", 0));         
+               $dataSet2->addPoint(new Point("{$osatutnimi} ({$osatut} kpl)", $osatut));            
+                $dataSet2->addPoint(new Point("{$tekemattomatnimi} ({$tekemattomat} kpl)", $tekemattomat));
 
 
         //finalize dataset
@@ -243,9 +175,9 @@ function tuoMalli($ipid) {
 
 
         $osatutnimi = 'Tehty ja osattu';
-        $eiosatutnimi = 'Tehty, muttei osattu ilman apua';
+        $eiosatutnimi = 'Tehty, mutta ei osattu ilman apua';
         $tekemattomatnimi = 'Tekemättä';
-        $osuusnimi = 'Tehtyjen tehtävien pistemäärän osuus';
+        $tehdytnimi = 'Tehtyjä tehtäviä';
         $tehdythuijaus = 0;
 
         if (($yht - $tehdyt) >= 0) {
@@ -267,86 +199,19 @@ function tuoMalli($ipid) {
 
 
         $chart2 = new PieChart(900, 300);
-        //osatut,eiosatut,tekemattomat
-        if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat <= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
+        
+           $chart2->getPlot()->getPalette()->setPieColor(array(
+                          //valkonen
+                new Color(255, 255, 255),
+                          //oranssi
+                new Color(255, 165, 0),
                 //vihree
                 new Color(127, 216, 88),
-//punanen
+                //sininen
                 new Color(0, 191, 255),
-                //valkonen
-                new Color(255, 255, 255),
-                //oranssi
-                new Color(255, 165, 0),
+             
+             
             ));
-        }
-
-        //tekemattomat, osatut, eiosatut
-        else if ($osatut >= $eiosatut && $osatut <= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //valkonen
-                new Color(255, 255, 255),
-                //vihree
-                new Color(127, 216, 88),
-//punanen
-                new Color(0, 191, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //tekemattomat, eiosatut, osatut
-        else if ($osatut <= $eiosatut && $osatut <= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //valkonen
-                new Color(255, 255, 255),
-//punanen
-                new Color(0, 191, 255),
-                //vihree
-                new Color(127, 216, 88),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //osatut,tekemattomat, eiosatut
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //vihree
-                new Color(127, 216, 88),
-                new Color(255, 255, 255),
-//punanen
-                new Color(0, 191, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-
-        //eiosatut, osatut, tekemattomat
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //punanen
-                new Color(0, 191, 255),
-//vihree
-                new Color(127, 216, 88),
-                //valkonen
-                new Color(255, 255, 255),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
-        //eiosatut, tekemattomat, osatut
-        else if ($osatut >= $eiosatut && $osatut >= $tekemattomat && $tekemattomat >= $eiosatut) {
-            $chart2->getPlot()->getPalette()->setPieColor(array(
-                //punanen
-                new Color(0, 191, 255),
-                //valkonen
-                new Color(255, 255, 255),
-                //
-                //vihree
-                new Color(127, 216, 88),
-                //oranssi
-                new Color(255, 165, 0),
-            ));
-        }
 
         $chart2->getPlot()->getPalette()->setBackgroundColor(array(
             new Color(230, 230, 255),
@@ -357,10 +222,10 @@ function tuoMalli($ipid) {
         //data set instance
         $dataSet2 = new XYDataSet();
 
-        $dataSet2->addPoint(new Point("{$osatutnimi} ({$osatut} p)", $osatut));
-        $dataSet2->addPoint(new Point("{$eiosatutnimi} ({$eiosatut} p)", $eiosatut));
-        $dataSet2->addPoint(new Point("{$tekemattomatnimi} ({$tekemattomat} p)", $tekemattomat));
-        $dataSet2->addPoint(new Point("{$osuusnimi} ({$osuus} %)", 0));
+         $dataSet2->addPoint(new Point("{$eiosatutnimi} ({$eiosatut} p)", $eiosatut));
+           $dataSet2->addPoint(new Point("{$tehdytnimi} ({$tehdyt} p)", 0));         
+               $dataSet2->addPoint(new Point("{$osatutnimi} ({$osatut} p)", $osatut));            
+                $dataSet2->addPoint(new Point("{$tekemattomatnimi} ({$tekemattomat} p)", $tekemattomat));
 
 
         //finalize dataset

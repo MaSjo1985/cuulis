@@ -35,7 +35,7 @@ $tehdyt = $haetehdyt->num_rows;
 $osatut = $haeosatut->num_rows;
 $eiosatut = $haeeiosatut->num_rows;
 $osatutnimi = 'Tehty ja osattu';
-$eiosatutnimi = 'Tehty, muttei osattu ilman apua';
+$eiosatutnimi = 'Tehty, mutta ei osattu ilman apua';
 $tekemattomatnimi = 'Tekemättä';
 $tehdythuijaus = 0;
 if (($yht - $tehdyt) >= 0) {
@@ -245,7 +245,7 @@ if ($pisteet) {
 //
 //	$dataSet3 = new XYSeriesDataSet();
 //	$dataSet3->addSerie("Tehdyt ja osatut", $serie1);
-//	$dataSet3->addSerie("Tehdyt, muttei osattu ilman apua", $serie2);
+//	$dataSet3->addSerie("Tehdyt, mutta ei osattu ilman apua", $serie2);
 //        $dataSet3->addSerie("Pisteet yhteensä", $serie3);
 //         $dataSet3->addSerie("Maksimipisteet", $serie4);
 //	$chart3->setDataSet($dataSet3);

@@ -352,10 +352,10 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="container2" >';
                 echo '<table id="mytable" class="cm8-uusitable2" style="table-layout:fixed; max-width: 100%">   <thead>';
                 if ($pisteet) {
-                    echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody>';
                 } else {
-                    echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody>';
                 }
 
@@ -618,7 +618,7 @@ function myFunction(y) {
 
 
 
-//                echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutten osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
+//                echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutta en osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
 //       
                 $esta = false;
                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from itseprojektit where id='" . $ipid . "'")) {
@@ -676,9 +676,9 @@ function myFunction(y) {
                     echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em">';
 
                     if ($pisteet) {
-                        echo'<th><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px; background-color: white"><br>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
+                        echo'<th><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px; background-color: white"><br>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
                     } else {
-                        echo'<th><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px; background-color: white"><br>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
+                        echo'<th><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="padding:4px 6px; background-color: white"><br>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
                     }
 
                     while ($rowt = $haetehtavat->fetch_assoc()) {
@@ -1113,9 +1113,9 @@ function myFunction(y) {
                     echo'<thead>';
                     echo '<tr style="border: 2px solid #080708; background-color: #48E5DA;  font-size: 1em">';
                     if ($pisteet) {
-                        echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
+                        echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 2px solid #f7f9f7; background-color: white"></th></tr></thead><tbody>';
                     } else {
-                        echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
+                        echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: 3px solid #f7f9f7; background-color: white; border-right: 5px solid #f7f9f7"></th></tr></thead><tbody>';
                     }
 
                     while ($rowt = $haetehtavat->fetch_assoc()) {

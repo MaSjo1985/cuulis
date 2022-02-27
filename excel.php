@@ -90,7 +90,7 @@ if ($pisteet) {
         $list[0]['tehdytpros'] = "Tehdyt tehtävät (%)";
         $list[0]['tehdytkpl'] = "Tehdyt tehtävät  (/' . $yht . ' kpl)";
         $list[0]['osatut'] = "Osatut (%)";
-        $list[0]['eiosatut'] = "Tehdyt, muttei osatut ilman apua (%)";
+        $list[0]['eiosatut'] = "Tehdyt, mutta ei osatut ilman apua (%)";
       
         if ($onkorivi3->num_rows != 0) {
             $list[0]['lpisteet'] = "Lisäpisteet (/" . $lpmax2 . "p)";

@@ -957,10 +957,10 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="container2" >';
                 echo '<table id="mytable" class="cm8-uusitable2ope" style=" table-layout:fixed; max-width: 90%; overflow:hidden">   <thead>';
                 if ($pisteet) {
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody id="palaa2">';
                 } else {
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>muttei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody id="palaa2">';
                 }
 
@@ -1292,7 +1292,7 @@ function myFunction(y) {
 //                echo'<p style="font-weight: bold; font-size: 1em; margin-top: 0px; display:inline-block">Ohje tehtävätaulukon merkintöihin:</p>';
 //
 //
-//                echo'<p style="margin-top: 0px">* <b>Taulukko tallentuu automaattisesti</b>, kun merkitset rastin kohtiin<br>"Osasin", "Tein, mutten osannut ilman apua", "Haluan käydä tunnilla läpi"</p>';
+//                echo'<p style="margin-top: 0px">* <b>Taulukko tallentuu automaattisesti</b>, kun merkitset rastin kohtiin<br>"Osasin", "Tein, mutta en osannut ilman apua", "Haluan käydä tunnilla läpi"</p>';
 //
 //                if ($itsepisteytys) {
 //                    echo'<p>* <b>Lisää ensin tehtävän pisteet</b> ja vasta sitten merkitse rasti oikeaan kohtaan</p>';
@@ -1370,7 +1370,7 @@ function myFunction(y) {
 
 
 
-//                echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutten osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
+//                echo'<p id="ohje" style="color: #e608b8; font-weight: bold; font-size: 1.1em">Huom! Tehtäväluettelo tallentuu automaattisesti, kun klikkaat joko "Osasin" tai "Tein, mutta en osannut ilman apua"- ruutuja.<br><br>Muut merkinnät on tallennettava painamalla "Tallenna"-nappia.</p>';
 //       
                 $esta = false;
                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from itseprojektit where id='" . $ipid . "'")) {
@@ -1431,19 +1431,19 @@ function myFunction(y) {
 
                     if ($pisteet) {
                         if ($itsepisteytys) {
-                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button" style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button" style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         } else {
-                            echo'<th>Tehtävä<th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä<th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         }
                     } else {
 
                         if ($itsepisteytys) {
                             //TÄMÄKÖ
 
-                            echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         } else {
 
-                            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit"   role="button" class="myButtonKom" style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit"   role="button" class="myButtonKom" style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         }
                     }
                     //LÄHTEE HAKEE TEHTÄVIÄ
@@ -1966,18 +1966,18 @@ function myFunction(y) {
                     echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em">';
                     if ($pisteet) {
                         if ($itsepisteytys) {
-                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
                         } else {
-                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
                         }
                     } else {
 
                         if ($itsepisteytys) {
 
-                            echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
                         } else {
 
-                            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutten osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';
                         }
                     }
 

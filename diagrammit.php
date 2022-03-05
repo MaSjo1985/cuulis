@@ -609,8 +609,8 @@ function tuoDiagrammi($kayttaja_id, $ipid) {
         echo'<ul style="max-width: 99%; color:  #e608b8"><li><b>Tehtäviä on yhteensä:</b> ' . $yht . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $tehdyt . ' kpl</li><li style="margin-left: 30px"><b>Tehtyjä tehtäviä: </b>' . $osuus . '%</li></ul>';
     }
 
-    echo'<div vertical-align="top" style="width: 75%;border: 2px solid #8fc8d7; text-align: center;  margin-right: 40px; margin-top: 30px; margin-bottom: 20px; ">
-  <div class="cm8-pinkki" style="width:' . $osuus . '%"><b style="margin-left: 5px; color:   #e608b8;">' . $osuus . '%</b></div>';
+    echo'<div vertical-align="top" style="position: relative; height: 50px;width: 75%;border: 4px solid #8fc8d7; margin-right: 40px; margin-top: 30px; margin-bottom: 20px; padding:0px ">
+ <div class="cm8-pinkki" style="display: inline-block;min-width:' . $osuus . '%; overflow: hidden; height: 100%; text-align: center"><b style="padding-top: 10px;display: inline-block;margin-left: 5px; color:#e608b8; font-size: 1.2em; ">' . $osuus . '%</b></div>';
 
     echo'</div>';
 

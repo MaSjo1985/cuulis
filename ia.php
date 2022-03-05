@@ -405,9 +405,6 @@ function myFunction(y) {
         echo'</div>';
     }
 
-
-
-
 //opiskelija
     else {
 

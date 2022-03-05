@@ -340,9 +340,9 @@ function myFunction(y) {
 
                 echo'<div class="cm8-responsive ohjeboxi" style="padding-top: 20px; padding-bottom: 0px">';
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 //TÄHÄN
                 echo '<form action="muokkaaprojekti2.php" method="post" style="display:inline-block; margin-left: 40px; margin-top: 0px" ><input type="hidden" name="pid" value=' . $pid . '><input type="submit" name= "painiker" value="&#9998 Muokkaa tietoja" title="Muokkaa tietoja" class="myButton8"  role="button" style="padding: 2px 6px;"></form>';
@@ -491,8 +491,8 @@ function myFunction(y) {
                 echo'</div>';
     echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px">';
 
-   echo'<p style="margin-bottom: 10px; font-weight: bold; color: #e608b8;">Ryhmiin lisätyt tiedostot: </p>';
-          echo'<p style="color: #e608b8; ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
+   echo'<p style="margin-bottom: 10px; font-weight: bold; ">Ryhmiin lisätyt tiedostot: </p>';
+          echo'<p style="color: #e608b8; font-size: 0.8em ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
                 if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
                                               die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
@@ -533,7 +533,7 @@ function myFunction(y) {
                                              }
                                              echo'</table>';
                                         }
-        echo'<br><form action="tiedosto_ope_automaattinen.php" method="post" style="margin-bottom: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="&#9763 Lisää ryhmiin tiedosto" style="font-size: 1em; margin-right: 0px; padding: 4px 6px"></form>';
+        echo'<br><form action="tiedosto_ope_automaattinen.php" method="post" style="margin-bottom: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="submit" class="myButton8" name="painike" value="+ Lisää ryhmiin tiedosto" style="margin-right: 0px; padding: 4px 6px"></form>';
                              echo'</div>';
                           
 
@@ -636,7 +636,7 @@ function myFunction(y) {
 
                                         echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                                        echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -834,7 +834,7 @@ function myFunction(y) {
 
                                         echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
+                                        echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1202,7 +1202,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                                echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1392,7 +1392,7 @@ function myFunction(y) {
 
                                 echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
                                 echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th></tr>';
+                                echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
 
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
@@ -1805,9 +1805,9 @@ function myFunction(y) {
 
 
                 if ($tarkkamaara != 0) {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="margin: 0px;color: #e608b8;">Ryhmiä on yhteensä: <b>' . $tarkkamaara . '.</b></p><p class="info" style="color: #e608b8;display: inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 } else {
-                    echo '<p class="info" style="font-weight: normal; margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="font-weight: normal; color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
+                    echo '<p class="info" style="margin: 0px;color: #e608b8;">Ryhmien maksimimäärä on <b>' . $ryhmienmaksimi . '.</b></p><p class="info" style="color: #e608b8;display:inline-block">Jokaisessa ryhmässä on oltava vähintään <b>' . $opminimi . '</b> ja saa olla korkeintaan <b>' . $opmaksimi . '</b> opiskelijaa.</p>';
                 }
 
                 echo'</div>';
@@ -1946,7 +1946,7 @@ function myFunction(y) {
 
                                     echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
 
                                     if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
@@ -2222,7 +2222,7 @@ function myFunction(y) {
                             echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
-                            echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                            echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                             if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2555,7 +2555,7 @@ function myFunction(y) {
                                     echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
                                     echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th><th></th><th></th></tr>';
+                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th><th></th><th></th></tr>';
 
 
 
@@ -2799,7 +2799,7 @@ function myFunction(y) {
                             echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
                             echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
 
-                            echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em">(Sukunimi Etunimi)</th>';
+                            echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {

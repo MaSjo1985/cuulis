@@ -199,7 +199,7 @@ function myFunction(y) {
 
 
 
-            echo'<div class="cm8-sidenav" style="padding-left: 0px; margin-left: 0px; padding-top: 20px; margin-top:0px;  margin-left: 0px; height: 100%;">';
+            echo'<div class="cm8-sidenav" style="padding-left: 2px; margin-left: 0px; padding-top: 20px; margin-top:0px;  margin-left: 0px; height: 100%;">';
 
 
             while ($rowK = $haekansio->fetch_assoc()) {

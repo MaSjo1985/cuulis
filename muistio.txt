@@ -1,28 +1,18 @@
-1) TESTAA TOIMIIKO YMPYRÄDIAGRAMMIT OIKEESTI!
+- OPISKELIJAN ITSEARVIOINTI KESTÄÄ IKUISUUDEn!!
 
+- Nopeat klikkaukset tehtävälistassa -> diagrammi ei päivity + heittää yhtäkkiä kirjautumisivun
 
-2) TEHTÄVÄLISTÄ NÄKYMÄ MUUTEN, kun on
-* opettaja
-* opiskelija
-* TARKISTA MINIMI% saavutuspalkki!
+- MIKSI HEITTÄÄ KIRJAUTUMINEN-SIVULLE VAIKKA Session on vielä voimasssa?!
+-> OPIskeliJA menee itsearviointiin
 
-
-3) PALAUTUKSET NÄKYMÄ, kun on 
-* opettaja
-* opiskelija
-
-
-4) TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red, PITÄISKÖ blue OLLA MYÖS sama huomio väri   #e608b8
+- TESTAA OPISKELIJAN LISÄPISTEPALKIN VÄRI
 
 
 
-5)  TSEKKAA NAPPULAT
+- TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red, PITÄISKÖ blue OLLA MYÖS sama huomio väri   #e608b8
 
 
-6) JAVASCRIPT EI TOIMI KUNNOLLA -> HEITTÄÄ ULOS, esim. itsetyot.php kun klikkaa tehtyjä tehtäviä
-
-
-7)  TIEDOSTOJEN POISTO!
+-  TIEDOSTOJEN POISTO!
 
 *******************************************************************************************
 

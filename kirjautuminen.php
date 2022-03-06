@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 header('location: kirjautuminenuusi.php');
 echo'
@@ -131,6 +132,7 @@ echo'</div>';
 
 
 <?php
+session_start();
 ob_start();
 if ((strpos($browser, 'Android'))) {
     echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';

@@ -1,10 +1,12 @@
 <?php
+session_start();
+session_start();
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
-session_start(); // ready to go!
+ // ready to go!
 $ipid = $_POST[ipid];
 $kayttaja_id = $_SESSION[Id];
 include "libchart/libchart/classes/libchart.php";
@@ -12,7 +14,7 @@ include("yhteys.php");
 include("pie.php");
 include("diagrammit.php");
 include("diagrammit3.php");
-if (isset($_SESSION["Kayttajatunnus"])) {
+
     $lista = $_POST["lista"];
     $ipid = $_POST["ipid"];
 
@@ -45,12 +47,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     tuoDiagrammi($_SESSION["Id"], $ipid);
-} else {
-    $url = $_SERVER[REQUEST_URI];
-    $url = substr($url, 1);
-    $url = strtok($url, '?');
-    header("location: kirjautuminenuusi.php?url=" . $url);
-}
+
 ?>
 </body>
 </html>		

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -498,6 +499,7 @@ function myFunction(y) {
         $table.floatThead();
     </script>        
     <?php
+session_start();
     ob_start();
 } else {
     $url = $_SERVER[REQUEST_URI];

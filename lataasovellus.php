@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -275,6 +276,7 @@ else {
 
 
     <?php
+session_start();
     ob_start();
     echo'<div class="cm8-container7" style="padding-top: 40px; padding-left: 40px">';
 }

@@ -1,12 +1,22 @@
 - OPISKELIJAN ITSEARVIOINTI KESTÄÄ IKUISUUDEn!!
 
-- Nopeat klikkaukset tehtävälistassa -> diagrammi ei päivity + heittää yhtäkkiä kirjautumisivun
+* Johtuu "Muut itsearviointilomakkeet"-hausta, nyt otettu haku pois vanhoista itsearvioinnit-taulusta
 
-- MIKSI HEITTÄÄ KIRJAUTUMINEN-SIVULLE VAIKKA Session on vielä voimasssa?!
--> OPIskeliJA menee itsearviointiin
+MITEN VOI NOPEUTTAA!?  Lue tää tarkemmin:
+https://www.bridge-global.com/blog/tips-to-improve-mysql-query-performance/
+
+INDEKSIT?!
+
+
+*******************************************************'
+
+- MIKSI HEITTÄÄ KIRJAUTUMINEN-SIVULLE VAIKKA Session on vielä voimasssa?!  -> RIITTÄÄKÖ ETTÄ LAITAA session_start ihan alkuu php-tägin perään
+`
+********************************************************************'
 
 - TESTAA OPISKELIJAN LISÄPISTEPALKIN VÄRI
 
+- NOPEAMPI HAKUTOIMINTO, pohja on jossain tehtynä!
 
 
 - TSEKKAA MISSÄ HUOMIO VÄRI PITÄS OLLA red, PITÄISKÖ blue OLLA MYÖS sama huomio väri   #e608b8
@@ -651,7 +661,8 @@ Ja sama kotona/työpaikalla!
 
 JOS HEADER LOCATION EI TOIMI:
 
-<?php  ob_start(); pitää olla ihan alussa
+<?php
+session_start();  ob_start(); pitää olla ihan alussa
  + 
 ob_start() alkuun
 
@@ -733,7 +744,8 @@ f9f8fb
 _____________________________________
 
 TIEDOSTON TALLENGTHTAMINEN SUORAAN KONEELLE:
-<?php  ob_start();
+<?php
+session_start();  ob_start();
 // We'll be outputting a PDF
 header('Content-type: application/pdf');
 

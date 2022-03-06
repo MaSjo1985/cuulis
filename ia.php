@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
@@ -389,6 +390,7 @@ function myFunction(y) {
 
                 </script>        
                 <?php
+session_start();
                 ob_start();
             }
         }
@@ -449,7 +451,7 @@ function myFunction(y) {
 echo'</div>';
 
   echo'<div class="cm8-half" style="text-align: center; "><br>';
-       if (!$result = $db->query("select distinct kurssit.id as kuid from ia, itsearvioinnit, kurssit, koulut, opiskelijankurssit, kayttajat WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.kurssi_id=kurssit.id AND kurssit.koulu_id=koulut.id AND kurssit.opettaja_id=kayttajat.id AND (ia.kurssi_id=kurssit.id OR itsearvioinnit.kurssi_id=kurssit.id) AND kurssit.id<>'".$_SESSION[KurssiId]."'")) {
+       if (!$result = $db->query("select distinct opiskelijankurssit.id as kuid from ia, opiskelijankurssit WHERE opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND ia.kurssi_id=opiskelijankurssit.kurssi_id AND opiskelijankurssit.kurssi_id<>'".$_SESSION[KurssiId]."'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
     if ($result->num_rows != 0){
@@ -788,6 +790,7 @@ echo'</div>';
 
                     </script>        
                     <?php
+session_start();
                     ob_start();
                 } else {
                     

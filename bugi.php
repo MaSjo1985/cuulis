@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -151,6 +152,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         });
     </script>
     <?php
+session_start();
     ob_start();
     echo'<div class="cm8-container7">';
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -76,6 +77,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     <?php
+session_start();
     ob_start();
 
     echo'<div class="cm8-margin-top"></div>';

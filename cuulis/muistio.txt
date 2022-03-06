@@ -238,6 +238,7 @@ _____________________________________
 
 TIEDOSTON TALLENGTHTAMINEN SUORAAN KONEELLE:
 <?php
+session_start();
 // We'll be outputting a PDF
 header('Content-type: application/pdf');
 

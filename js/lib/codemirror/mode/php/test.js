@@ -8,27 +8,32 @@
     }
 
     MT('simple_test',
-            '[meta <?php  ob_start();] ' +
+            '[meta <?php
+session_start();  ob_start();] ' +
             '[keyword echo] [string "aaa"]; ' +
             '[meta ?>]');
 
     MT('variable_interpolation_non_alphanumeric',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "aaa$~$!$@$#$$$%$^$&$*$($)$.$<$>$/$\\$}$\\\"$:$;$?$|$[[$]]$+$=aaa"]',
             '[meta ?>]');
 
     MT('variable_interpolation_digits',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "aaa$1$2$3$4$5$6$7$8$9$0aaa"]',
             '[meta ?>]');
 
     MT('variable_interpolation_simple_syntax_1',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "aaa][variable-2 $aaa][string .aaa"];',
             '[meta ?>]');
 
     MT('variable_interpolation_simple_syntax_2',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "][variable-2 $aaaa][[', '[number 2]', ']][string aa"];',
             '[keyword echo] [string "][variable-2 $aaaa][[', '[number 2345]', ']][string aa"];',
             '[keyword echo] [string "][variable-2 $aaaa][[', '[number 2.3]', ']][string aa"];',
@@ -42,7 +47,8 @@
             '[meta ?>]');
 
     MT('variable_interpolation_simple_syntax_3',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "aaa][variable-2 $aaaa]->[variable aaaaa][string .aaaaaa"];',
             '[keyword echo] [string "aaa][variable-2 $aaaa][string ->][variable-2 $aaaaa][string .aaaaaa"];',
             '[keyword echo] [string "aaa][variable-2 $aaaa]->[variable aaaaa][string [[2]].aaaaaa"];',
@@ -50,7 +56,8 @@
             '[meta ?>]');
 
     MT('variable_interpolation_escaping',
-            '[meta <?php  ob_start();] [comment /* Escaping */]',
+            '[meta <?php
+session_start();  ob_start();] [comment /* Escaping */]',
             '[keyword echo] [string "aaa\\$aaaa->aaa.aaa"];',
             '[keyword echo] [string "aaa\\$aaaa[[2]]aaa.aaa"];',
             '[keyword echo] [string "aaa\\$aaaa[[asd]]aaa.aaa"];',
@@ -63,15 +70,18 @@
             '[meta ?>]');
 
     MT('variable_interpolation_complex_syntax_1',
-            '[meta <?php  ob_start();]',
+            '[meta <?php
+session_start();  ob_start();]',
             '[keyword echo] [string "aaa][variable-2 $]{[variable aaaa]}[string ->aaa.aaa"];',
             '[keyword echo] [string "aaa][variable-2 $]{[variable-2 $aaaa]}[string ->aaa.aaa"];',
             '[keyword echo] [string "aaa][variable-2 $]{[variable-2 $aaaa][[', '  [number 42]', ']]}[string ->aaa.aaa"];',
             '[keyword echo] [string "aaa][variable-2 $]{[variable aaaa][meta ?>]aaaaaa');
 
     MT('variable_interpolation_complex_syntax_2',
-            '[meta <?php  ob_start();] [comment /* Monsters */]',
-            '[keyword echo] [string "][variable-2 $]{[variable aaa][comment /*}?>} $aaa<?php  ob_start(); } */]}[string ->aaa.aaa"];',
+            '[meta <?php
+session_start();  ob_start();] [comment /* Monsters */]',
+            '[keyword echo] [string "][variable-2 $]{[variable aaa][comment /*}?>} $aaa<?php
+session_start();  ob_start(); } */]}[string ->aaa.aaa"];',
             '[keyword echo] [string "][variable-2 $]{[variable aaa][comment /*}?>*/][[', '  [string "aaa][variable-2 $aaa][string {}][variable-2 $]{[variable aaa]}[string "]', ']]}[string ->aaa.aaa"];',
             '[keyword echo] [string "][variable-2 $]{[variable aaa][comment /*} } $aaa } */]}[string ->aaa.aaa"];');
 
@@ -90,7 +100,8 @@
             );
 
     MT('variable_interpolation_complex_syntax_3_1',
-            '[meta <?php  ob_start();] [comment /* Recursive monsters */]',
+            '[meta <?php
+session_start();  ob_start();] [comment /* Recursive monsters */]',
             '[keyword echo] ' + m1[4] + ';',
             '[keyword echo] ' + m1[7] + ';',
             '[keyword echo] ' + m1[8] + ';',
@@ -112,7 +123,8 @@
             );
 
     MT('variable_interpolation_complex_syntax_3_2',
-            '[meta <?php  ob_start();] [comment /* Recursive monsters 2 */]',
+            '[meta <?php
+session_start();  ob_start();] [comment /* Recursive monsters 2 */]',
             '[keyword echo] ' + m2[0] + ';',
             '[keyword echo] ' + m2[1] + ';',
             '[keyword echo] ' + m2[5] + ';',
@@ -138,7 +150,8 @@
             );
 
     MT('variable_interpolation_complex_syntax_3_3',
-            '[meta <?php  ob_start();] [comment /* Recursive monsters 2 */]',
+            '[meta <?php
+session_start();  ob_start();] [comment /* Recursive monsters 2 */]',
             '[keyword echo] ' + m3[4] + ';',
             '[keyword echo] ' + m3[0] + ';',
             '[keyword echo] ' + m3[3] + ';',
@@ -148,7 +161,8 @@
             '[meta ?>]');
 
     MT("variable_interpolation_heredoc",
-            "[meta <?php  ob_start();]",
+            "[meta <?php
+session_start();  ob_start();]",
             "[string <<<here]",
             "[string doc ][variable-2 $]{[variable yay]}[string more]",
             "[string here]; [comment // normal]");

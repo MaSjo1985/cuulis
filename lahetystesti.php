@@ -1,4 +1,5 @@
-<?php // ob_start();
+<?php
+session_start(); // ob_start();
 
 
 echo'<div id="content"  style="padding-left: 20px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px; padding-bottom: 10px">';

@@ -14,9 +14,6 @@ include("pie.php");
 
 include("diagrammit.php");
 include("diagrammit3.php");
-if (isset($_SESSION["Kayttajatunnus"])) {
-
-
 
 
 
@@ -35,12 +32,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     tuoDiagrammi($opid, $ipid);
-} else {
-    $url = $_SERVER[REQUEST_URI];
-    $url = substr($url, 1);
-    $url = strtok($url, '?');
-    header("location: kirjautuminenuusi.php?url=" . $url);
-}
+
 ?>
 
 

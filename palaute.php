@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -144,6 +145,7 @@ echo'</div>';
 
 
 <?php
+session_start();
 ob_start();
 
 echo '<div class="cm8-container7"  style="padding-left: 20px; padding-top:0px; padding-right: 20px" >';

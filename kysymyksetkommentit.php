@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -205,6 +206,7 @@ function myFunction(y) {
             }
         </script>   
         <?php
+session_start();
         ob_start();
 
         echo'<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; margin-bottom:0px">';
@@ -233,6 +235,7 @@ function myFunction(y) {
             }
         </script>   
         <?php
+session_start();
         ob_start();
 
         echo'<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; margin-bottom:0px">';

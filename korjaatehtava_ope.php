@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
@@ -14,7 +15,6 @@ include("yhteys.php");
 include("pie.php");
 include("diagrammit3.php");
 include("diagrammit.php");
-if (isset($_SESSION["Kayttajatunnus"])) {
     $lista = $_POST["lista"];
     $ipid = $_POST["ipid"];
 
@@ -48,12 +48,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $db->query("update itsetehtavatkp set opiskelijan_pisteet=0 where itsetehtavat_id = '" . $lista . "' AND kayttaja_id='" . $opid . "'");
     }
     tuoDiagrammi($opid, $ipid);
-} else {
-    $url = $_SERVER[REQUEST_URI];
-    $url = substr($url, 1);
-    $url = strtok($url, '?');
-    header("location: kirjautuminenuusi.php?url=" . $url);
-}
+
 ?>
 </body>
 </html>		

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -289,6 +290,7 @@ else {
 
 
     <?php
+session_start();
     ob_start();
     if ((strpos($browser, 'Android'))) {
         echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';

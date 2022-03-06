@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -622,6 +623,7 @@ $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
 
         </script>        
         <?php
+session_start();
         ob_start();
 
         echo'</div>';

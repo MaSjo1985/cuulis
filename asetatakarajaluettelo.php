@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 session_start();
@@ -281,6 +282,7 @@ function myFunction(y) {
         </script>
 
         <?php
+session_start();
         ob_start();
 
         echo'<input type="hidden" name="pid" value=' . $pid . '>	

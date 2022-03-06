@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -216,6 +217,7 @@ function myFunction(y) {
             });
         </script>
         <?php
+session_start();
         ob_start();
 
         echo "</div>";

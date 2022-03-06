@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
@@ -359,6 +360,7 @@ function myFunction(y) {
 
                 </script>        
                 <?php
+session_start();
                 ob_start();
 
                 echo"</div>";
@@ -722,6 +724,7 @@ function myFunction(y) {
 
                 </script>        
                 <?php
+session_start();
                 ob_start();
 
                 echo'</div><input type="hidden" name="ipid" value=' . $ipid . '>';

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 session_start();
@@ -339,7 +340,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         }
 
 
-        if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') && $_SESSION["vaihto"] == 0) {
+        if (($_SESSION["Rooli"] == 'opettaja' || $_SESSION["Rooli"] == 'admin' || $_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin')) {
             echo'<div class="close-container" style="float: right; margin-top: 80px; margin-right: 40px">';
             echo'<form action="vaihda.php" method="post"><input type="hidden" name="url" value="' . $url . '" ><input type="hidden" name="arvo" value="vaihda"> <input type="submit" value="Opiskelijanäkymä" class="munNappula"  role="button"></form>';
             echo'</div>';
@@ -1307,6 +1308,7 @@ function myFunction(y) {
 
 
                 echo'<h6tiedosto id="peite3" style="padding: 6px 100px 6px 20px;">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . '</h6tiedosto>';
+                
                 if (!$haeinfo = $db->query("select * from itseprojektit where id='" . $ipid . "'")) {
                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }

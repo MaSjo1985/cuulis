@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
@@ -173,6 +174,7 @@ function myFunction(y) {
         </script>
 
         <?php
+session_start();
         ob_start();
 
 

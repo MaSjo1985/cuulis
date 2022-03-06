@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -486,12 +487,14 @@ function myFunction(y) {
             $table.floatThead({zIndex: 1});
 
         </script>        
-        <?php ob_start();
+        <?php
+session_start(); ob_start();
         ?>
 
 
 
         <?php
+session_start();
         ob_start();
     } else {
         header("location: etusivu.php");

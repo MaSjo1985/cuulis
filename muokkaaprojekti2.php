@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 echo'<!DOCTYPE html><html> 
@@ -321,6 +322,7 @@ function myFunction(y) {
             }
         </script>
         <?php
+session_start();
         ob_start();
     }
 } else {

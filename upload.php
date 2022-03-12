@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Paikkaillaan PHP:n vanhempien versioiden puutteita; nykyversioilla nämä eivät ole tarpeen.
 defined("UPLOAD_ERR_OK") || define("UPLOAD_ERR_OK", 0);

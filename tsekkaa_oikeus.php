@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 function tsekkaa_oikeus($sessiokurssi) {
 
     include("yhteys.php");
-    session_start();
+    
 
     if (isset($_GET[r])) {
         if (!$haeprojekti = $db->query("select distinct kurssi_id from projektit where id='" . $_GET[r] . "'")) {

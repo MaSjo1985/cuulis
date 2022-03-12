@@ -1,12 +1,14 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 // Start counting
 // Your code
 
 
-session_start();
+
 
 echo'<!DOCTYPE html><html> 
 <head>

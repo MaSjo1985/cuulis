@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -14,7 +16,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
     include("header.php");
@@ -163,7 +165,9 @@ function myFunction(y) {
             }
         </script>   
         <?php
-session_start();
+session_start(); 
+
+
         ob_start();
 
         echo'<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; margin-bottom:0px">';
@@ -191,7 +195,9 @@ session_start();
             }
         </script>   
         <?php
-session_start();
+session_start(); 
+
+
         ob_start();
 
         echo'<div class="cm8-container7" style="margin-top: 0px; padding-top: 0px; margin-bottom:0px">';

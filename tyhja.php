@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 echo'<input type="checkbox" onclick="return false;">';
 

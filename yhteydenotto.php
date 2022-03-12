@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 
@@ -11,7 +12,7 @@ echo'<!DOCTYPE html>
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 // ready to go!
-session_start();
+
 include("yhteys.php");
 if (isset($_SESSION["Kayttajatunnus"])) {
     include("header.php");
@@ -151,6 +152,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         });
     </script>
     <?php
+session_start();
     ob_start();
     echo'<div class="cm8-container7">';
 

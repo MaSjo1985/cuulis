@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
@@ -12,7 +13,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 }
@@ -233,6 +234,7 @@ function myFunction(y) {
 
             </script>        
             <?php
+session_start();
         } else {
             if ($onko != 0) {
                 echo '<tr style="border: 1px solid grey; background-color: #48E5DA"><th style="border-right: 1px solid grey; "><button class="roskis" title="Poista" style="font-size: 0.8em; margin-left: 0px" name="painikep"><i class="fa fa-trash-o" style="display: inline-block; margin-right: 10px"></i>Poista</button><br><br><a href="uusikysely.php?kaikki=joo&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 0.9em; padding:4px 6px;"><br><br>Sisältö</th><th>Pakollinen</th><th><input type="submit" name="painikelo" value="+ Lisää kysymys yläpuolelle" class="myButton8"  role="button" ><br><input type="submit" name="painikel" value="+ Lisää vastauskenttä yläpuolelle" class="myButton8"  role="button"></th></tr></thead><tbody>';
@@ -345,6 +347,7 @@ function myFunction(y) {
 
             </script>        
             <?php
+session_start();
         }
         if ($onko != 0) {
             echo '<tr style="border-bottom: none"><td><button class="pieniroskis" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td><td><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 0.9em; padding:4px 6px; margin-bottom: 20px;"></td><td><input type="hidden" name="ipid" value=' . $ipid . '> ';

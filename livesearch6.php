@@ -1,9 +1,11 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
-session_start();
+
 //if we got something through $_POST
 if (isset($_POST['search'])) {
     // here you would normally include some database connection

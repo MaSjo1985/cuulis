@@ -1,8 +1,10 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
-session_start();
+
 
 echo'<!DOCTYPE html><html> 
 <head>

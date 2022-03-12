@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 ob_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
@@ -15,7 +18,7 @@ include("tsekkaa_oikeus.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 } 
@@ -717,10 +720,12 @@ function myFunction(y) {
                 ?>
 
                 <script type="text/javascript" language="Javascript">var myvar = <?php
+session_start();
                 ob_start();
                 echo json_encode($kuvaus);
                 ?>; window.open(myvar);</script> 
                 <?php
+session_start();
                 ob_start();
             } else if ($linkki == 0) {
 
@@ -728,10 +733,12 @@ function myFunction(y) {
                 ?>
 
                 <script type="text/javascript" language="Javascript">var myvar = <?php
+session_start();
                 ob_start();
                 echo json_encode($ohjaa);
                 ?>; window.open(myvar);</script> 
                 <?php
+session_start();
                 ob_start();
             }
         }

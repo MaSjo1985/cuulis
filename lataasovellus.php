@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -12,7 +14,7 @@ echo'<!DOCTYPE html>
 <link rel="shortcut icon" href="favicon.png" type="image/png" />';
 include("yhteys.php");
 
-session_start();
+
 
 
 // server should keep session data for AT LEAST 1 hour
@@ -276,7 +278,9 @@ else {
 
 
     <?php
-session_start();
+session_start(); 
+
+
     ob_start();
     echo'<div class="cm8-container7" style="padding-top: 40px; padding-left: 40px">';
 }

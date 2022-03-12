@@ -1,10 +1,11 @@
 <?php
+session_start();
 ob_start();
 ob_start();
 echo'<!DOCTYPE html>
 <html>
 <head>';
-session_start();
+
 include("yhteys.php");
 
 include("header.php");

@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -54,7 +56,7 @@ $browser = $_SERVER['HTTP_USER_AGENT'];
 
 
 include("yhteys.php");
-session_start(); // ready to go!
+ // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
     if (!$resulteka = $db->query("select arvo as keski from kayttajan_arvostelu ")) {
@@ -136,7 +138,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 
 
     <?php
-session_start();
+session_start(); 
+
+
     ob_start();
     if ((strpos($browser, 'Android'))) {
         echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';

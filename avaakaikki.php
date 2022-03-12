@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 echo'<!DOCTYPE html><html> 
@@ -14,7 +16,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!$result23 = $db->query("select * from ryhmat2 where projekti_id = '" . $_GET[id] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
@@ -121,15 +123,19 @@ if ($result23->num_rows != 0 && $result24->num_rows != 0) {
 
     $maara8 = 0;
     foreach ($tiedostot as $file) {
+       
         $zip->addFile($file);
         $maara8++;
         $fileuusi = substr($file, 10);
+    
         $fileuusi = "/" . $kuvaus . ' (' . $_SESSION[Koodi] . ' ' . $_SESSION[KurssiNimi] . ')/' . $fileuusi;
+          
         $zip->renameName($file, $fileuusi);
     }
 
 
     $maara = $zip->numFiles;
+  
 
     $zip->close();
     while (ob_get_level()) {
@@ -141,8 +147,9 @@ if ($result23->num_rows != 0 && $result24->num_rows != 0) {
     header('Content-type: application/zip');
 
     readfile($zipname);
-
+    
     unlink($zipname);
+    exit();
 }
 
 

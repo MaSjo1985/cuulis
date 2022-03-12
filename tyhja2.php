@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($rowkp[tallennettu] == 1) {
 

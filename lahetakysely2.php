@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 echo'<!DOCTYPE html>
 <html>
@@ -128,7 +130,9 @@ echo'</div>';
 </script>
 
 <?php
-session_start();
+session_start(); 
+
+
 if ((strpos($browser, 'Android'))) {
     echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';
 

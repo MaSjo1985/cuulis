@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo'<!DOCTYPE html><html> 
 <head>
 <title> Tarkastele opiskelijoiden itsearviointeja</title>
@@ -11,7 +12,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 }
@@ -134,6 +135,7 @@ function myFunction(y) {
 
         </script>        
         <?php
+session_start();
         if ($on == 0) {
             echo'<div class="cm8-margin-top"></div>';
             echo'<em style="color: #2b6777">Kukaan opiskelijoista ei ole vielä täydentänyt lomaketta.</em>';

@@ -1,8 +1,10 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
-session_start();
+
 
 ini_set('display_errors', '0');
 echo'<!DOCTYPE html><html> 
@@ -1433,7 +1435,7 @@ function myFunction(y) {
 
                     if ($pisteet) {
                         if ($itsepisteytys) {
-                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button" style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
+                            echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><thf padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         } else {
                             echo'<th>Tehtävä<th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black; padding:4px 6px; font-size: 1em"></th><th style="border: none"></th></tr></thead><tbody>';
                         }

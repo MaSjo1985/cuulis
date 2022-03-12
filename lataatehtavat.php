@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
@@ -8,7 +10,7 @@ ob_start();
 // Your code
 
 
-session_start();
+
 
 
 include("yhteys.php");

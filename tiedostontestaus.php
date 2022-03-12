@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // We'll be outputting a PDF
 header('Content-type: application/pdf');

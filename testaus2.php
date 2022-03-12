@@ -2,12 +2,14 @@
 <html>
     <head>
         <?php
+session_start();
         ob_start();
         $id = 1222;
         ?>
         <script>
             function newDoc(d) {
                 var myVariable = <?php
+session_start();
         ob_start();
         echo(json_encode($id));
         ?>;
@@ -17,6 +19,7 @@
     </head>
     <body>
         <?php
+session_start();
         ob_start();
         echo'<a href="#" onclick="newDoc(' . $id . ')">Testi</a>';
 

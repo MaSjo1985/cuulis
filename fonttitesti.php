@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -74,7 +76,7 @@ echo'
 </header>';
 
 
-session_start(); // ready to go!
+ // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
 

@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
@@ -7,7 +9,7 @@ ob_start();
 
 include("yhteys.php");
 
-session_start(); // ready to go!
+ // ready to go!
 
 $stmt2 = $db->prepare("update itseprojektit set taulu=? WHERE id=?");
 $stmt2->bind_param("si", $otsikko2, $id);

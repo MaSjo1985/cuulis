@@ -1,5 +1,6 @@
-<?php
+<?php 
 session_start();
+
 ob_start();
 /* Libchart - PHP chart library
  * Copyright (C) 2005-2011 Jean-Marc Tr�meaux (jm.tremeaux at gmail.com)

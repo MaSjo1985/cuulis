@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 echo'<!DOCTYPE html>
@@ -73,7 +74,7 @@ if (isset($_POST[id])) {
         }
    }
     
-            session_start(); // ready to go!
+             // ready to go!
             if ($paiva != "0000-00-00" || $paiva != null) {
                 $paiva = date("d.m.Y", strtotime($paiva));
                 $_SESSION["Viimepaiva"] = $paiva;

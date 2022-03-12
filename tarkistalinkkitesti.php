@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 ob_start();
 
 include("yhteys.php");
-session_start();
+
 
 $pid = $_POST[pid];
 

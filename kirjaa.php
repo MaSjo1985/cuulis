@@ -1,12 +1,14 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
 
 
 include("yhteys.php");
-session_start();
+
 
 $arvo = $_POST[arvo];
 $kayttaja = $_SESSION["Id"];

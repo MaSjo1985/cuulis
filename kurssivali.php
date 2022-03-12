@@ -1,10 +1,12 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
 
-session_start();
+
 
 
 include("yhteys.php");

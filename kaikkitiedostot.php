@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -14,7 +16,7 @@ include("yhteys.php");
 
 
 ini_set('display_errors', '0');
-session_start(); // ready to go!
+ // ready to go!
 
 if (isset($_SESSION["Kayttajatunnus"])) {
     if ($_SESSION["Rooli"] == "admin") {
@@ -189,7 +191,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             });
         </script>
         <?php
-session_start();
+session_start(); 
+
+
         ob_start();
 
         echo'<div class="cm8-container7" style="padding-top: 20px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 60px">';

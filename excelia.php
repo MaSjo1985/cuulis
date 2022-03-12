@@ -1,11 +1,13 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
 
 
-session_start();
+
 include("yhteys.php");
 
 if (!$haenimi = $db->query("select distinct nimi, koodi from kurssit where id='" . $_SESSION[KurssiId] . "'")) {

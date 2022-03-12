@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
@@ -12,7 +13,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 }
@@ -327,6 +328,7 @@ if (!$haeonko = $db->query("select distinct * from ia where kurssi_id='" . $_SES
 
             </script>        
             <?php
+session_start();
             if ($onko != 0) {
                    echo'<input type="hidden" name="sid" value=' . $sid . '>';
                 echo '<tr style="border: none; text:align: left" id="poistopaluu'.$sid.'"><td><button class="pieniroskis" value="'.$sid.'" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td><td style="text-align: center; padding-top: 10px"><input type="hidden" name="ipid" value=' . $ipid . '><input type="hidden" name="sid" value="'.$sid.'">';

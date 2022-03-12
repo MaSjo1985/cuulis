@@ -1,10 +1,12 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
 
-session_start();
+
 $ipid = $_POST[ipid];
 $kayttaja_id = $_SESSION[Id];
 include "libchart/libchart/classes/libchart.php";

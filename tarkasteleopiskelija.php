@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 echo'<!DOCTYPE html><html> 
 <head>
@@ -12,7 +13,7 @@ include("yhteys.php");
 // each client should remember their session id for EXACTLY 1 hour
 
 
-session_start(); // ready to go!
+ // ready to go!
 if (!isset($_SESSION["KurssiId"])) {
     header('location: omatkurssit.php');
 }
@@ -197,7 +198,7 @@ function myFunction(y) {
         }
 
 
-        echo'<h6tiedosto>Opiskelijan <b>' . $etunimi . ' ' . $sukunimi . '</b> merkinnät projektissa <b>&nbsp&nbsp' . $kuvaus . '</h6tiedosto><br><br>';
+        echo'<h6tiedosto>' . $etunimi . ' ' . $sukunimi . '</h6tiedosto><br><br>';
         if ($_GET[url] == "ykskohdat.php") {
             echo'<a href="ykskohdat.php?id=' . $ipid . '&tid=' . $_GET[tid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br><br>';
         } else if ($_GET[url] == "ykskohdat2.php") {
@@ -437,18 +438,18 @@ function myFunction(y) {
 
         if ($pisteet) {
             if ($itsepisteytys) {
-                echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="padding:4px 6px;"></th><th style="border: none"></th></tr></thead><tbody>';
+                echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black;padding:4px 6px;"></th><th style="border: none"></th></tr></thead><tbody>';
             } else {
-                echo'<th>Tehtävä<th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="padding:4px 6px;"></th><th style="border: none"></th></tr></thead><tbody>';
+                echo'<th>Tehtävä<th>Tehtävän<br>pistemäärä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br><input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black;padding:4px 6px;"></th><th style="border: none"></th></tr></thead><tbody>';
             }
         } else {
 
             if ($itsepisteytys) {
 
-                echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="padding:4px 6px"></th><th style="border: none"></th></tr></thead><tbody>';
+                echo'<th>Tehtävä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit" class="myButtonKom"  role="button"  style="background-color: yellow; color: black;padding:4px 6px"></th><th style="border: none"></th></tr></thead><tbody>';
             } else {
 
-                echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit"   role="button" class="myButtonKom" style="padding:4px 6px"></th><th style="border: none"></th></tr></thead><tbody>';
+                echo'<th>Tehtävä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti <br><br> <input type="submit" name="painiket" value="&#10003 Tallenna kommentit"   role="button" class="myButtonKom" style="background-color: yellow; color: black;padding:4px 6px"></th><th style="border: none"></th></tr></thead><tbody>';
             }
         }
 
@@ -892,12 +893,14 @@ function myFunction(y) {
             $table.floatThead({zIndex: 1});
 
         </script>        
-        <?php ob_start();
+        <?php
+session_start(); ob_start();
         ?>
 
 
 
         <?php
+session_start();
         ob_start();
     } else {
         header("location: etusivu.php");

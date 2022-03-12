@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
@@ -7,7 +9,7 @@ ob_start();
 
 include("yhteys.php");
 
-session_start(); // ready to go!
+ // ready to go!
 
 if (isset($_POST[tallennao])) {
     $stmt2 = $db->prepare("update kurssin_keskustelut set otsikko=? WHERE id=?");

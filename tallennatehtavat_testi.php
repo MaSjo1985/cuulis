@@ -1,11 +1,12 @@
 <?php
+session_start();
 
 ob_start();
 
 // server should keep session data for AT LEAST 1 hour
 // each client should remember their session id for EXACTLY 1 hour
 
-session_start(); // ready to go!
+ // ready to go!
 $ipid = $_POST[ipid];
 $kayttaja_id = $_SESSION[Id];
 include "libchart/libchart/classes/libchart.php";

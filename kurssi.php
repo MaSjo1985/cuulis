@@ -1,9 +1,11 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
-session_start();
+
 echo'<!DOCTYPE html><html> 
 <head>
 <title>  ' . $_SESSION[Koodi] . ' ' . $_SESSION[KurssiNimi] . ' </title>';
@@ -499,7 +501,9 @@ function myFunction(y) {
         $table.floatThead();
     </script>        
     <?php
-session_start();
+session_start(); 
+
+
     ob_start();
 } else {
     $url = $_SERVER[REQUEST_URI];

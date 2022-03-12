@@ -1,4 +1,5 @@
-<?php ob_start();
+<?php
+session_start(); ob_start();
 ob_start();
 ob_start();
 ob_start();
@@ -144,7 +145,7 @@ if (isset($_POST[Sposti]) || isset($_GET[id])) {
                 else{
            
                     
-            session_start(); // ready to go!
+             // ready to go!
             if ($paiva != "0000-00-00" || $paiva != null) {
                 $paiva = date("d.m.Y", strtotime($paiva));
                 $_SESSION["Viimepaiva"] = $paiva;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 
 echo'
@@ -133,6 +134,7 @@ echo'</div>';
 
 
 <?php
+session_start();
 ob_start();
 if ((strpos($browser, 'Android'))) {
     echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';
@@ -147,7 +149,7 @@ echo'<div class="cm8-container7" style="padding-top: 30px; margin-top: 0px; marg
 
 echo'<div class="cm8-half" style="margin-left: 0px; padding-left: 20px; padding-top: 20px; margin-top: 0px">';
 
-      session_start(); // ready to go!
+       // ready to go!
       
           if(isset($_POST[Sposti])){
             $siivottusposti = mysqli_real_escape_string($db, $_POST[Sposti]);

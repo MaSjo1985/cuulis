@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include("yhteys.php");
 echo'<br><br><b>ENNEN KORJAUKSIA: </b>';

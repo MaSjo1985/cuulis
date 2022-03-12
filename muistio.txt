@@ -1,3 +1,15 @@
+Linkissä pitää olla   https://
+
+PIKANÄPPÄIN MILLÄ VOI POISTAA KURSSITEHTÄVÄTIEDOSTOT!
+
+XSS injektio -> javascriptillä pystyy muokkaamaan
+
+AJATTELUN pohja
+* ope laittaa kysymyksen, jokainen kirjoittaa omat vastauksensa
+* voi nähdä kaikki tuotokset yhdessä mutta nimiä ei näy
+* usempi eri kysymys mahdollinen
+* ks mallia kyselylomake
+
 - OPISKELIJAN ITSEARVIOINTI KESTÄÄ IKUISUUDEn!!
 
 * Johtuu "Muut itsearviointilomakkeet"-hausta, nyt otettu haku pois vanhoista itsearvioinnit-taulusta
@@ -662,7 +674,8 @@ Ja sama kotona/työpaikalla!
 JOS HEADER LOCATION EI TOIMI:
 
 <?php
-session_start();  ob_start(); pitää olla ihan alussa
+session_start();
+  ob_start(); pitää olla ihan alussa
  + 
 ob_start() alkuun
 
@@ -745,7 +758,8 @@ _____________________________________
 
 TIEDOSTON TALLENGTHTAMINEN SUORAAN KONEELLE:
 <?php
-session_start();  ob_start();
+session_start();
+  ob_start();
 // We'll be outputting a PDF
 header('Content-type: application/pdf');
 

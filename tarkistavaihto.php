@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 ob_start();
 
 include("yhteys.php");
-session_start();
+
 
 $siivottuvanhasalasana = mysqli_real_escape_string($db, $_POST[vanha]);
     $siivottuvanhasalasana = trim($siivottuvanhasalasana);

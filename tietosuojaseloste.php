@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 ob_start();
 echo'<!DOCTYPE html>
@@ -22,7 +23,7 @@ echo'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min
 <script src="js/jquery.barrating.min.js"></script>';
 include("yhteys.php");
 include("header.php");
-session_start();
+
 if (!$resultoma = $db->query("select * from kayttajan_arvostelu where kayttaja_id = '" . $_SESSION["Id"] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></figure></a></p></footer>');
 }
@@ -143,6 +144,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         });
     </script>
     <?php
+session_start();
     ob_start();
     echo'<div class="cm8-container7" style="padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;">';
 

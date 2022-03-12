@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $db = @mysqli_connect('mysql1.shellit.org', 'u38085', 'Mariann3', 'u38085B1');
 

@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 ob_start();
 
 
@@ -18,7 +20,7 @@ echo'<!DOCTYPE html>
 echo '<link rel="shortcut icon" href="favicon.png" type="image/png">';
 include("yhteys.php");
 
-session_start();
+
 if (!$resultoma = $db->query("select * from kayttajan_arvostelu where kayttaja_id = '" . $_SESSION["Id"] . "'")) {
     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></figure></a></p></footer>');
 }
@@ -290,7 +292,9 @@ else {
 
 
     <?php
-session_start();
+session_start(); 
+
+
     ob_start();
     if ((strpos($browser, 'Android'))) {
         echo'<div class="cm8-container" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">';

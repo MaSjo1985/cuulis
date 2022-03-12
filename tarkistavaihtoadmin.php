@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 ob_start();
 
 include("yhteys.php");
-session_start();
+
 
  $siivottusalasana = mysqli_real_escape_string($db, $_POST[uusi]);
     $siivottuuusisalasana = mysqli_real_escape_string($db, $_POST[uusi2]);

@@ -1,8 +1,9 @@
 <?php
+session_start();
 
 function tsekkaa($kurssi) {
     include("yhteys.php");
-    session_start();
+    
     if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "opeadmin" || $_SESSION["Rooli"] == "admink") {
         $_SESSION["vaihto"] = 0;
         if (!$tulosAvain = $db->query("select * from kurssit where id='" . $kurssi . "' AND opettaja_id='" . $_SESSION["Id"] . "'")) {

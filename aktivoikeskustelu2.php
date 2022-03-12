@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
@@ -7,7 +9,7 @@ ob_start();
 
 include("yhteys.php");
 
-session_start(); // ready to go!
+ // ready to go!
 $db->query("update kurssit set keskakt=1 where id = '" . $_SESSION[KurssiId] . "'");
 
 $stmt2 = $db->prepare("insert into kurssin_keskustelut (kurssi_id, keskusteluaihe, otsikko) values (?, ?, ?)");

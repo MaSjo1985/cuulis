@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 
 include("yhteys.php");
 //haetaan kaikki kurssit

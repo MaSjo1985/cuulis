@@ -1,11 +1,13 @@
 <?php
-session_start();
+session_start(); 
+
+
 
 ob_start();
 
 
 
-session_start();
+
 ini_set('display_errors', '0');
 echo'
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">

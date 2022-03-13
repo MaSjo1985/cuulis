@@ -132,7 +132,7 @@ function myFunction2(y) {
         echo'<div class="cm8-margin-bottom" style="padding-left: 20px">';
     
 if (!$result = $db->query("select distinct etunimi, sukunimi, koulut.Nimi as koulu, sposti from kayttajat, kayttajankoulut, koulut where koulut.id=kayttajankoulut.koulu_id AND kayttajat.id=kayttajankoulut.kayttaja_id AND kayttajat.id='" . $_GET[id] . "'")) {
-    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 while ($row = $result->fetch_assoc()) {
     

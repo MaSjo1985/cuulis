@@ -193,7 +193,7 @@ function myFunction2(y) {
             }
 
             if (!$result = $db->query("select distinct rekisteroitynyt, kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
                 echo"<br><em>Ei rekisteröinnin vahvistusta odottavia käyttäjiä.</em><br>";
@@ -315,7 +315,7 @@ function myFunction2(y) {
             }
 
             if (!$result = $db->query("select distinct koulut.Nimi as Nimi, etunimi, sukunimi, sposti, rooli, kayttajat.id as kaid from kayttajat, kayttajankoulut, koulut where odottaa=0 AND kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajankoulut.koulu_id=koulut.id ORDER BY $field8 $sort")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
                 echo"<br><em>Ei vahvistusta odottavia käyttäjiä.</em>";
@@ -369,7 +369,7 @@ function myFunction2(y) {
             }
         } else if ($_SESSION["Rooli"] == 'admink' || $_SESSION["Rooli"] == 'opeadmin') {
             if (!$haekoulu = $db->query("select distinct * from koulut where id = '" . $_SESSION[kouluId] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             while ($row2 = $haekoulu->fetch_assoc()) {
                 $koulu = $row2[Nimi];
@@ -432,7 +432,7 @@ function myFunction2(y) {
             }
 
             if (!$result = $db->query("select distinct rekisteroitynyt, kayttajat.id as kaid, etunimi, sukunimi,Nimi,rooli, sposti from kayttajat, kayttajankoulut, koulut where koulut.id='" . $_SESSION["kouluId"] . "' AND  kayttajat.tarkistettu=0 AND kayttajat.id=kayttajankoulut.kayttaja_id AND koulut.id=kayttajankoulut.koulu_id ORDER BY $field8 $sort")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
                 echo"<br><em>Ei rekisteröinnin vahvistusta odottavia käyttäjiä.</em><br>";
@@ -496,7 +496,7 @@ $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
 
             echo'<br><br><div class="cm8-border"></div>';
             if (!$haekoulu = $db->query("select distinct * from koulut where id = '" . $_SESSION[kouluId] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             while ($row2 = $haekoulu->fetch_assoc()) {
                 $koulu = $row2[Nimi];
@@ -560,7 +560,7 @@ $row[rekisteroitynyt] = date("d.m.Y H:i", strtotime($row[rekisteroitynyt]));
             }
 
             if (!$result = $db->query("select distinct koulut.Nimi as Nimi, etunimi, sukunimi, sposti, rooli, kayttajat.id as kaid from kayttajat, kayttajankoulut, koulut where koulut.id='" . $_SESSION["kouluId"] . "' AND  odottaa=0 AND kayttajankoulut.kayttaja_id=kayttajat.id AND kayttajankoulut.koulu_id=koulut.id ORDER BY $field8 $sort")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             if ($result->num_rows == 0)
                 echo"<br><em>Ei liittymisen vahvistusta odottavia käyttäjiä.</em>";

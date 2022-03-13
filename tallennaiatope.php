@@ -25,7 +25,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
         $tallennettu = 1;
 
         if (!$haekommentti = $db->query("select distinct * from iakommentit where ia_sarakkeet_jarjestys = '" . $jarjestys . "' AND kurssi_id='" . $_SESSION["KurssiId"] . "' AND kayttaja_id='" . $kaid . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
         if ($haekommentti->num_rows == 0) {
             $stmt = $db->prepare("insert into iakommentit (kommentti, tallennettu, kurssi_id, kayttaja_id, ia_sarakkeet_jarjestys) values (?,?,?,?,?)");

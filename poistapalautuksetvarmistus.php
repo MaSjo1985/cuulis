@@ -1,7 +1,5 @@
 <?php
-session_start(); 
-
-
+session_start();
 ob_start();
 
 
@@ -121,27 +119,16 @@ function myFunction(y) {
 
     echo'<div class="cm8-margin-top"></div>';
 
-    if (!$hae_eka = $db->query("select MIN(id) as id from itseprojektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
-    }
-
-    if ($hae_eka->num_rows != 0) {
-        while ($rivieka = $hae_eka->fetch_assoc()) {
-            $eka_id = $rivieka[id];
-        }
-    }
-
 
     echo'<div class="cm8-quarter" style="width: 300px; padding-left: 20px"> <h2 style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px">Palautukset</h2>';
-    echo '<nav class="cm8-sidenav " style="padding-top: 0px; margin-top:0px; height: 100%; padding-left: 0px">
+
+    echo '<nav class="cm8-sidenav " style="padding-top: 0px; margin-top:0px; height: 100%; padding-left: 0px">';
 
 
-';
+
     if (!$haeprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
         die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
-
-
     if ($haeprojekti->num_rows != 0) {
         echo'<div class="cm8-sidenav" style="padding-top: 20px; margin-top:0px; height: 100%; padding-left: 0px">';
         while ($rowP = $haeprojekti->fetch_assoc()) {
@@ -156,46 +143,47 @@ function myFunction(y) {
             }
         }
         echo'<div class="cm8-margin-top"></div>';
-
-        if ($_SESSION["Rooli"] <> 'opiskelija') {
-              echo'<form action="uusiprojekti.php" method="post"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '><input type="submit" name="painike" value="+ Lisää Palautus-osio" class="myButton8"  role="button"  style="padding: 2px 6px"></form>';
-        
-                echo'<form action="tuoprojekti.php" method="post" style="display: inline-block"><input type="hidden" name="id" value=' . $_SESSION["KurssiId"] . '>';
-           
- echo'<button  name="painike" title="Tuo Palautus-osio" class="myButton8" style="font-size: 0.8em"><i class="fa fa-recycle"></i>&nbsp&nbsp Tuo Palautus-osio </button>';
-  echo'</form><br><br>';
-        }
     }
+
+
     echo'</nav>
- <div class="cm8-margin-top"></div></div>';
-
-
-
-    echo'<div class="cm8-threequarter" style="padding-top: 30px">';
-
-
-    // Esimerkki: Tarkistetaan, että tiedosto on lähetetty ja että se on kooltaan
-    // enintään 10,0 megatavua. Käsitellään myös virheilmoitus.
-
-    $projekti = $_POST[pid];
-    $nimi = $_POST[tyonimi];
-    $id = $_POST[id];
-
-
-//tulee array!!
-    $stmt = $db->prepare("UPDATE open_palautustiedosto SET kuvaus=? WHERE id=?");
-
-    $stmt->bind_param("si", $nimi, $id);
-    $stmt->execute();
-
-
-    $stmt->close();
+ </div>';
 
 
 
 
+    echo'<div class="cm8-threequarter" style="margin-left: 40px;padding-top: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px">';
 
-    header("location: ryhmatyot.php?r=" . $_POST[pid]);
+    if (!$projekti = $db->query("select * from projektit where id='" . $_POST[pid] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+
+    while ($rowP = $projekti->fetch_assoc()) {
+        $kuvaus = $rowP[kuvaus];
+        $pid = $rowP[id];
+    }
+
+
+
+    if (!$result = $db->query("select distinct * from ryhmat2 where id = '" . $_POST[id] . "'")) {
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    }
+
+    while ($row = $result->fetch_assoc()) {
+        $nimi = $row[tallennettunimi];
+        $id = $row[id];
+        $tyonimi = $row[tyonimi];
+        $omatallennusnimi = $row[omatallennusnimi];
+        $linkki = $row[linkki];
+    }
+
+        echo '<br><p><b>Haluatko todella kaikki palautetut tiedostot?</p>';
+
+
+
+    echo '<a href="poistapalautukset.php?id=' . $id . '&pid=' . $_POST[pid] . '" class="myButton9"  role="button"  style="margin-right: 30px">Kyllä</a>';
+    echo '<a href="ryhmatyot.php?r=' . $pid .'" class="myButton9"  role="button"  style="margin-right: 30px">En</a><br>';
 } else {
     $url = $_SERVER[REQUEST_URI];
     $url = substr($url, 1);
@@ -203,11 +191,11 @@ function myFunction(y) {
     header("location: kirjautuminenuusi.php?url=" . $url);
 }
 
-echo "</div>";
-echo "</div>";
+echo '</div>';
+echo '</div>';
 
 include("footer.php");
 ?>
 
 </body>
-</html>
+</html>	

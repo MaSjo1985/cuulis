@@ -57,7 +57,7 @@ function myFunction(y) {
             foreach ($lista as $tuote) {
 
                 if (!$result2 = $db->query("select distinct omatallennusnimi, lisayspvm, kurssit.nimi as nimi, ryhmat2.id as tid from kurssit, ryhmat2, projektit where kurssit.id=projektit.kurssi_id AND ryhmat2.projekti_id=projektit.id AND ryhmat2.id = '" . $tuote . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($row2 = $result2->fetch_assoc()) {

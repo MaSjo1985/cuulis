@@ -1,8 +1,16 @@
-Linkissä pitää olla   https://
 
-PIKANÄPPÄIN MILLÄ VOI POISTAA KURSSITEHTÄVÄTIEDOSTOT!
+VOIT OTTAA YHTEYTTÄ YLLÄPITÄJÄÄN:  pistä color: #e608b8;
+
+VIRHETAPAUKSET:  ks. mallia poistapalautukset.php
+
+
+TAULUKOT: Älä katkaise sanaa: css on word-break: break-word;
+
 
 XSS injektio -> javascriptillä pystyy muokkaamaan
+
+
+********************************************************************************
 
 AJATTELUN pohja
 * ope laittaa kysymyksen, jokainen kirjoittaa omat vastauksensa
@@ -10,7 +18,7 @@ AJATTELUN pohja
 * usempi eri kysymys mahdollinen
 * ks mallia kyselylomake
 
-- OPISKELIJAN ITSEARVIOINTI KESTÄÄ IKUISUUDEn!!
+- OPISKELIJAN ITSEARVIOINTI KESTÄÄ IKUISUUDEN!!
 
 * Johtuu "Muut itsearviointilomakkeet"-hausta, nyt otettu haku pois vanhoista itsearvioinnit-taulusta
 

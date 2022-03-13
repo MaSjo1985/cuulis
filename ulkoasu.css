@@ -1799,11 +1799,14 @@ table.cm8-table3 {
 
 table.cm8-table3 tr{border-bottom: 1px solid #2b6777;}
 table.cm8-table3 td{border: 1px solid #2b6777; word-break: break-all; padding:6px 8px; text-align:left; color: #2b6777; background-color: white}
-table.cm8-table3 th{padding:6px 8px;  text-align:left; color: #2b6777; background-color: #ec008d; border: 1px solid #2b6777}
+table.cm8-table3 th{padding:6px 8px;  text-align:left; color: #2b6777;   background-color: #04f9c5; border: 1px solid #2b6777}
 
 
 table.cm8-table3 td a{
     color: #2b6777;
+}
+table.cm8-table3 td:last-child{
+   word-break: break-word;
 }
 
 table.cm8-table3 th:last-child{
@@ -6117,6 +6120,7 @@ a.ui-button:active,
     background-color: white;
     max-width: 90%;
     padding: 20px;
+    overflow: hidden; 
 }
 
 .info{

@@ -96,7 +96,7 @@ function myFunction(y) {
 
 
         if (!$result = $db->query("select distinct * from koulut where id = '" . $kouluid . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
         while ($row2 = $result->fetch_assoc()) {
@@ -118,7 +118,7 @@ function myFunction(y) {
                 echo'<form action="uusikouluadmineka.php" method="post" style="display: inline-block; margin-left: 30px"><input type="hidden" name="koid" value=' . $kouluid . '><input type="submit" value="+ Lisää ylläpitäjä" title="+ Lisää ylläpitäjä" class="myButton9"  role="button"  style="padding:4px 6px; font-size: 0.7em"></form>';
                 echo'<br>';
                 if (!$result2 = $db->query("select distinct koulunadminit.koulu_id as kid, kayttajat.id as kaid, etunimi,sukunimi from kayttajat, koulunadminit where koulunadminit.koulu_id='" . $row2[id] . "' AND koulunadminit.kayttaja_id=kayttajat.id")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
                 if ($result2->num_rows == 0)
                     echo'<p>Ei merkittyjä ylläpitäjiä</p>';

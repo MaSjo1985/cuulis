@@ -33,7 +33,7 @@ echo '<form action="rekisterointitarkistus.php" method="post">
 echo'<div class="cm8-container3" style="padding-bottom: 60px">';
 
 if (!$resultkoulut = $db->query("select distinct * from koulut ORDER BY Nimi ASC")) {
-    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
 }
 
 echo'<br><b>Ensisijainen oppilaitos: <b style="color: #e608b8">*</b></b><br> (Voit myöhemmin liittyä myös muihin)<br><br><select name="koulu">';

@@ -94,7 +94,7 @@ if (isset($_POST['search'])) {
             $rowh[alkupvm] = date("d.m.Y", strtotime($rowh[alkupvm]));
             $rowh[loppupvm] = date("d.m.Y", strtotime($rowh[loppupvm]));
             if (!$resulthope = $db->query("select distinct etunimi, sukunimi, id from kayttajat where kayttajat.id='" . $rowh[oid] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             while ($rowhope = $resulthope->fetch_assoc()) {
 

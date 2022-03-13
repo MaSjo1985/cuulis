@@ -38,13 +38,13 @@ if (isset($_SESSION["Kayttajatunnus"])) {
     echo '<div class="cm8-container7" id="paluu" style="margin-top: 0px; padding-top:0px; padding-bottom: 30px; margin-bottom: 0px; ">';
 
     if (!$haeprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
     }
     
 
     if ($haeprojekti->num_rows == 1 && !isset($_GET[r])) {
         if (!$hae_eka = $db->query("select MIN(id) as id from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
         while ($rivieka = $hae_eka->fetch_assoc()) {
@@ -60,7 +60,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 		
 	 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
         while ($rowa = $haeakt->fetch_assoc()) {
@@ -108,7 +108,7 @@ function myFunction(y) {
 	
 		 ';
         if (!$haeakt = $db->query("select distinct kysakt from kurssit where id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
         while ($rowa = $haeakt->fetch_assoc()) {
@@ -216,7 +216,7 @@ function myFunction(y) {
       </div>';
 
         if (!$onkoprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
         }
 
         if ($onkoprojekti->num_rows == 0) {
@@ -235,7 +235,7 @@ function myFunction(y) {
             echo'<br>Valitse oheisesta valikosta haluamasi Palautus-osio.<br><br>';
         } else {
             if (!$onkoprojekti = $db->query("select * from projektit where id='" . $_GET[r] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
             while ($rowP = $onkoprojekti->fetch_assoc()) {
                 
@@ -303,7 +303,7 @@ function myFunction(y) {
   echo'<div class="cm8-threequarter" style="padding-top: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; padding-bottom: 10px; ">';
 
                 if (!$haeinfo = $db->query("select * from projektit where id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowv = $haeinfo->fetch_assoc()) {
@@ -311,7 +311,7 @@ function myFunction(y) {
                 }
 
                 if (!$haeoppilaat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
 
@@ -332,7 +332,7 @@ function myFunction(y) {
                 echo'</div>';
 
                 if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -491,12 +491,12 @@ session_start();
                     //TÄNNE KAIKKI
                 }
                 echo'</div>';
-    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px">';
+    echo'<div class="cm8-responsive ohjeboxi" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px; overflow: hidden">';
 
    echo'<p style="margin-bottom: 10px; font-weight: bold; ">Ryhmiin lisätyt tiedostot: </p>';
           echo'<p style="color: #e608b8; font-size: 0.8em ">Tiedosto tulee näkyviin ryhmään automaattisesti sen jälkeen, kun ryhmä on palauttanut tiedoston.</p>';
                 if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
-                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
 
  
@@ -505,7 +505,7 @@ session_start();
                                        
                                          
                                             echo '<table class="cm8-table3">';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th><th>Muokkaa / Poista</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th><th>Muokkaa / Poista</th></tr>';
                                             while ($rowtaut = $haetyotaut->fetch_assoc()) {
                                                  $nimiaut = $rowtaut[kuvaus];
                                                  $linkkiaut = $rowtaut[linkki];
@@ -547,13 +547,13 @@ session_start();
 
 
                     if (!$haeryhmat = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
 
                     while ($hae = $haeryhmat->fetch_assoc()) {
                         $rid = $hae[id];
                         if (!$haeoppilaat = $db->query("select distinct * from ryhmat, opiskelijankurssit where ryhmat.id='" . $rid . "' AND ryhmat.id=opiskelijankurssit.ryhma_id")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         //tyhjät ryhmät talteen
                         if ($haeoppilaat->num_rows == 0) {
@@ -565,7 +565,7 @@ session_start();
 
 
                     if (!$kaikkiryhmat2 = $db->query("select distinct ryhmat.nimi as nimi, suljettu, ryhmat.id as id, lopullinen from ryhmat, opiskelijankurssit, kayttajat where ryhmat.id=opiskelijankurssit.ryhma_id AND opiskelijankurssit.opiskelija_id=kayttajat.id AND ryhmat.projekti_id='" . $pid . "' ORDER BY sukunimi, etunimi")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
                     while ($haek = $kaikkiryhmat2->fetch_assoc()) {
                         array_push($ryhmatkaikki, $haek[id]);
@@ -578,7 +578,7 @@ session_start();
                     }
 
                            if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
 
                         while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -598,8 +598,10 @@ session_start();
 
                             echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 0.9em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
                         
-                            
-                        }
+                              
+                          echo' <form action="poistapalautuksetvarmistus.php" method="post" style="display: inline-block; margin-left: 60px"><input type="hidden" name="pid" value=' . $pid . ' ><button class="roskis" style="padding: 4px 6px; font-size: 1em" title="Poista kaikki palautetut tiedostot"><i class="fa fa-trash-o" ></i>&nbsp Poista kaikki palautetut tiedostot</button></form>'; 
+
+                          }
                     
                     
                     if (!empty($ryhmatkaikki)) {
@@ -612,14 +614,14 @@ session_start();
                         foreach ($ryhmatkaikki as $onid) {
 
                             if (!$result = $db->query("select distinct * from ryhmat where id='" . $onid . "'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
                             $ryhmienlkm = count($ryhmatkaikki);
 
                             if ($ryhmienlkm > 0) {
 
                                 if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -636,12 +638,12 @@ session_start();
 
 
 
-                                        echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777" >';
-                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
+                                        echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                                         echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
                                         if ($row[suljettu] == 0 && $ryhmanopiskelijat2->num_rows < $opmaksimi && $ryhmienlkm > 1)
@@ -668,7 +670,7 @@ session_start();
                                         $ryhmaid = $row[id];
 
                                         if (!$result2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from ryhmat, kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "' AND kayttajat.rooli <> 'admin' ORDER BY sukunimi, etunimi")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         //jos liittyneitä opiskelijoita
                                         if ($result2->num_rows != 0) {
@@ -691,7 +693,7 @@ session_start();
 
 
                                             if (!$haetyotope2 = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute_tallennettu as tall, ryhmat2.palaute as palaute, linkki, lisayspvm, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "'")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
 
                                             if ($haetyotope2->num_rows != 0) {
@@ -705,7 +707,7 @@ session_start();
 
                                                 if ($haetyotope2->num_rows != 0) {
                                                     echo '<table class="cm8-table3" >';
-                                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                                    echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                                     while ($rowt22 = $haetyotope2->fetch_assoc()) {
                                                         $omatkommentit = $rowt22[omatkommentit];
@@ -715,7 +717,11 @@ session_start();
                                                         }
 
                                                         $lukittu = $rowt22[lukittu];
-
+  if ($lukittu == 1) {
+                                                            $lukitus = '🔒<b style="color: #e608b8"> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                        } else {
+                                                            $lukitus = '🔓<b style="color: #e608b8">&nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                        }
 
                                                         $tallnimi2 = $rowt22[omatallennusnimi];
                                                         $tyoid2 = $rowt22[tyoid];
@@ -738,13 +744,13 @@ session_start();
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
                                                         } else {
                                                             if ($linkki == 1) {
@@ -754,7 +760,7 @@ session_start();
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.9em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -763,7 +769,7 @@ session_start();
                                                                 }
 
                                                                 //loppu alle
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             }
                                                         }
                                                         echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -781,7 +787,7 @@ session_start();
                                         // tähän open tiedostot
 
                                         if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $ryhmaid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
@@ -793,7 +799,7 @@ session_start();
 
 
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
                                                     $tallnimi = $rowt[omatallennusnimi];
@@ -834,19 +840,19 @@ session_start();
                                         echo'<div class="cm8-margin-top"><br></div>';
                                     } else {
 
-                                        echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
-                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
+                                                           echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                                         echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
 
                                         $ryhmaid = $row[id];
 
                                         if (!$result2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from ryhmat, kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "' AND kayttajat.rooli <> 'admin' ORDER BY sukunimi, etunimi")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         //jos liittyneitä opiskelijoita
                                         if ($result2->num_rows != 0) {
@@ -868,7 +874,7 @@ session_start();
 
 
                                             if (!$haetyotope2 = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute_tallennettu as tall, ryhmat2.palaute as palaute, linkki, lisayspvm, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "'")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
 
                                             if ($haetyotope2->num_rows != 0) {
@@ -880,7 +886,7 @@ session_start();
                                                 $nyt = date("Y-m-d H:i");
                                                 if ($haetyotope2->num_rows != 0) {
                                                     echo '<table class="cm8-table3" >';
-                                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                                    echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                                     while ($rowt22 = $haetyotope2->fetch_assoc()) {
                                                         $omatkommentit = $rowt22[omatkommentit];
@@ -893,9 +899,9 @@ session_start();
 
                                                         $lukittu = $rowt22[lukittu];
                                                         if ($lukittu == 1) {
-                                                            $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                            $lukitus = '🔒<b style="color: #e608b8"> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                         } else {
-                                                            $lukitus = '🔓<b>&nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                            $lukitus = '🔓<b style="color: #e608b8">&nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                         }
 
                                                         $tallnimi2 = $rowt22[omatallennusnimi];
@@ -919,13 +925,13 @@ session_start();
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
 
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                                 if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                             }
                                                         } else {
                                                             if ($linkki == 1) {
@@ -935,7 +941,7 @@ session_start();
                                                                     echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                                 }
                                                                 //loppu alle
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             } else {
                                                                 echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -944,7 +950,7 @@ session_start();
                                                                 }
 
                                                                 //loppu alle
-                                                                echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                                echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                             }
                                                         }
                                                         echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -962,7 +968,7 @@ session_start();
                                         // tähän open tiedostot
 
                                         if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $ryhmaid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         echo'<div class="cm8-margin-left"><br>';
                                         if ($haetyot->num_rows != 0) {
@@ -973,7 +979,7 @@ session_start();
 
 
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
                                                     $tallnimi = $rowt[omatallennusnimi];
@@ -1020,7 +1026,7 @@ session_start();
                     }
       
                     if (!$lopulliset = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
                     if($lopulliset->num_rows==0){
                         echo'<br><br><br>';
@@ -1028,7 +1034,7 @@ session_start();
                     if ($lopulliset->num_rows >= 0) {
 
                         if (!$maara = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
 
                         if ($maara->num_rows < $ryhmienmaksimi && $rlopullinen == 0)
@@ -1036,7 +1042,7 @@ session_start();
 
 
                         if (!$resultvailla = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND opiskelijankurssit.projekti_id='" . $pid . "' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id=0 AND kayttajat.rooli='opiskelija' ORDER BY sukunimi, etunimi")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         echo "<br>";
 
@@ -1065,7 +1071,7 @@ session_start();
                         } else {
 
                             if (!$opiskelijattaas = $db->query("select distinct * from kayttajat, opiskelijankurssit where opiskelijankurssit.projekti_id='" . $pid . "' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kayttajat.rooli='opiskelija' ORDER BY sukunimi, etunimi")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             if ($opiskelijattaas->num_rows != 0) {
@@ -1078,7 +1084,7 @@ session_start();
 
                             if (!$resulthae = $db->query("select distinct opiskelija_id as oid from opiskelijankurssit, kayttajat where opiskelijankurssit.projekti_id='" . $pid . "' AND opiskelijankurssit.opiskelija_id=kayttajat.id AND kayttajat.rooli='opiskelija'")) {
 
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             while ($rowhae = $resulthae->fetch_assoc()) {
@@ -1086,7 +1092,7 @@ session_start();
                                 $oid = $rowhae[oid];
                                 if (!$resulttyot = $db->query("select distinct id from opiskelijan_kurssityot where kayttaja_id='" . $oid . "' AND projekti_id='" . $pid . "'")) {
 
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 //ei ole palauttanut
 
@@ -1097,7 +1103,7 @@ session_start();
                             }
                             if (!$onkoketaan = $db->query("select distinct opiskelija_id as oid from opiskelijankurssit, kayttajat where opiskelijankurssit.projekti_id='" . $pid . "' AND opiskelijankurssit.opiskelija_id=kayttajat.id AND kayttajat.rooli='opiskelija'")) {
 
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             if ($onkoketaan->num_rows == 0) {
@@ -1116,7 +1122,7 @@ session_start();
 
                                 if (!$resulthae = $db->query("select distinct opiskelija_id as oid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND projekti_id='" . $pid . "' order by sukunimi, etunimi")) {
 
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 while ($rowhae = $resulthae->fetch_assoc()) {
@@ -1124,14 +1130,14 @@ session_start();
                                     $oid = $rowhae[oid];
                                     if (!$resulttyot = $db->query("select distinct id from opiskelijan_kurssityot where kayttaja_id='" . $oid . "' AND projekti_id='" . $pid . "'")) {
 
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     //ei ole palauttanut
 
                                     if ($resulttyot->num_rows == 0) {
                                         if (!$resultei = $db->query("select distinct sukunimi, etunimi, id as kid from kayttajat where id = '" . $oid . "' AND rooli='opiskelija'")) {
 
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
                                         while ($rowhae2 = $resultei->fetch_assoc()) {
@@ -1157,10 +1163,10 @@ session_start();
                     echo "</div>";
                 } else {
                     if (!$result = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
                    if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
 
                         while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -1180,7 +1186,8 @@ session_start();
 
                             echo'<button onclick="tarkistaLinkki(' . $pid . ')" class="myButtonLataa" style="font-size: 0.9em; padding: 8px; margin-left: 60px" title="Lataa kaikki tiedostot (linkkejä ei voida ladata)"><i class="fa fa-download" style="font-size:18px; margin-right: 10px"></i> Lataa kaikki tiedostot (linkkejä ei voida ladata)</button>';
                         
-                            
+                                  echo' <form action="poistapalautuksetvarmistus.php" method="post" style="display: inline-block; margin-left: 60px"><input type="hidden" name="pid" value=' . $pid . ' ><button class="roskis" style="padding: 4px 6px; font-size: 1em" title="Poista kaikki palautetut tiedostot"><i class="fa fa-trash-o" ></i>&nbsp Poista kaikki palautetut tiedostot</button></form>'; 
+
                         }
 
                     $ryhmienlkm = $result->num_rows;
@@ -1202,12 +1209,12 @@ session_start();
                             if ($row[lopullinen] == 0) {
 
 
-                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
-                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
+                                                      echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                                 echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 if ($row[suljettu] == 0 && $ryhmanopiskelijat2->num_rows < $opmaksimi && $ryhmienlkm > 1)
@@ -1233,7 +1240,7 @@ session_start();
                                 $ryhmaid = $row[id];
 
                                 if (!$result2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from ryhmat, kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "' AND kayttajat.rooli <> 'admin' ORDER BY sukunimi, etunimi")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 //jos liittyneitä opiskelijoita
                                 if ($result2->num_rows != 0) {
@@ -1254,7 +1261,7 @@ session_start();
 
                                 if ($palautus == 1) {
                                     if (!$haetyotope2 = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute_tallennettu as tall, ryhmat2.palaute as palaute, linkki, lisayspvm, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
                                     if ($haetyotope2->num_rows != 0) {
@@ -1265,7 +1272,7 @@ session_start();
                                         $nyt = date("Y-m-d H:i");
                                         if ($haetyotope2->num_rows != 0) {
                                             echo '<table class="cm8-table3" >';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                             while ($rowt22 = $haetyotope2->fetch_assoc()) {
                                                 $omatkommentit = $rowt22[omatkommentit];
@@ -1276,9 +1283,9 @@ session_start();
                                                 }
                                                 $lukittu = $rowt22[lukittu];
                                                 if ($lukittu == 1) {
-                                                    $lukitus = '🔒<b>&nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                    $lukitus = '🔒<b style="color: #e608b8">&nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                 } else {
-                                                    $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                    $lukitus = '🔓<b style="color: #e608b8"> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                 }
 
                                                 $tallnimi2 = $rowt22[omatallennusnimi];
@@ -1302,13 +1309,13 @@ session_start();
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
                                                 } else {
                                                     if ($linkki == 1) {
@@ -1318,7 +1325,7 @@ session_start();
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -1327,7 +1334,7 @@ session_start();
                                                         }
 
                                                         //loppu alle
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     }
                                                 }
                                                 echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -1342,20 +1349,20 @@ session_start();
                                 // tähän open tiedostot
 
                                 if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $ryhmaid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
 
                                 echo'<div class="cm8-margin-left"><br>';
                                 if ($haetyot->num_rows != 0) {
-                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
+                                    echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
 
                                     if ($haetyot->num_rows != 0) {
 
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $tallnimi = $rowt[omatallennusnimi];
@@ -1392,20 +1399,20 @@ session_start();
                                 echo'<div class="cm8-margin-top"><br></div>';
                             } else {
 
-                                echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; color: #2b6777" >';
-                                echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
+                                                     echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                                 echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
 
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
 
                                 $ryhmaid = $row[id];
 
                                 if (!$result2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from ryhmat, kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "' AND kayttajat.rooli <> 'admin' ORDER BY sukunimi, etunimi")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 //jos liittyneitä opiskelijoita
                                 if ($result2->num_rows != 0) {
@@ -1427,7 +1434,7 @@ session_start();
 
 
                                     if (!$haetyotope2 = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute_tallennettu as tall, ryhmat2.palaute as palaute, linkki, lisayspvm, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $ryhmaid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     if ($haetyotope2->num_rows != 0) {
                                         echo'<div class="cm8-margin-left"><br>';
@@ -1436,7 +1443,7 @@ session_start();
                                         $nyt = date("Y-m-d H:i");
                                         if ($haetyotope2->num_rows != 0) {
                                             echo '<table class="cm8-table3" >';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Lukitse/Avaa lukitus</th><th>Opettajan kommentti</th><th>Poista</th></tr>';
 
                                             while ($rowt22 = $haetyotope2->fetch_assoc()) {
                                                 $omatkommentit = $rowt22[omatkommentit];
@@ -1447,9 +1454,9 @@ session_start();
                                                 }
                                                 $lukittu = $rowt22[lukittu];
                                                 if ($lukittu == 1) {
-                                                    $lukitus = '🔒<b> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                    $lukitus = '🔒<b style="color: #e608b8"> &nbsp Tiedosto on lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="avaa" value="Avaa lukitus" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                 } else {
-                                                    $lukitus = '🔓<b> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
+                                                    $lukitus = '🔓<b style="color: #e608b8"> &nbsp Tiedostoa ei ole lukittu</b><br><form action="lukitus.php" method="post"><input type="hidden" name="pid" value="' . $pid . '"><input type="hidden" name="id" value="' . $rowt22[tyoid] . '"><input type="submit" name="sulje" value="Lukitse" class="myButton8" role="button" style="padding:2px 4px; margin-top: 10px"></form>';
                                                 }
 
                                                 $tallnimi2 = $rowt22[omatallennusnimi];
@@ -1473,13 +1480,13 @@ session_start();
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
 
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
                                                         if ($sulkeutuu != '' && $sulkeutuu < $palautettu) {
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="muokkaapalaute.php" method="post" >' . $rowt22[palaute] . '<input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="&#9998" class="myButton8" role="button" style="padding:2px 4px; margin-left: 10px"></form></td>';
                                                     }
                                                 } else {
                                                     if ($linkki == 1) {
@@ -1489,7 +1496,7 @@ session_start();
                                                             echo'<br><em style="color: #e608b8; font-weight: bold"> Palautettu myöhässä!</em>';
                                                         }
                                                         //loppu alle
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     } else {
                                                         echo '<tr id="' . $rowt22[tyoid] . '"><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt22[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt22[tyoid] . ' target="_blank">' . $tallnimi2 . '</a></td><td>' . $rowt22[lisayspvm];
 
@@ -1498,7 +1505,7 @@ session_start();
                                                         }
 
                                                         //loppu alle
-                                                        echo '</td><td>' . $omatkommentit . '</td><td>' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
+                                                        echo '</td><td>' . $omatkommentit . '</td><td style="word-break: break-word;">' . $lukitus . '</td><td><form action="tallennapalaute.php" method="post" ><textarea name="palaute" rows="2" style="display: inline-block">' . $rowt22[palaute] . '</textarea><input type="hidden" name="tyoid" value=' . $rowt22[tyoid] . '><input type="hidden" name="pid" value=' . $pid . '><input type="submit" value="Tallenna" class="myButton8" role="button" style="padding:2px 4px; margin-top: 5px"></form></td>';
                                                     }
                                                 }
                                                 echo'<td><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $ryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt22[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
@@ -1516,20 +1523,20 @@ session_start();
                                 // tähän open tiedostot
 
                                 if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $ryhmaid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
 
                                 echo'<div class="cm8-margin-left"><br>';
                                 if ($haetyot->num_rows != 0) {
-                                    echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
+                                    echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmälle erikseen lisätyt tiedostot:</h2>';
 
                                     if ($haetyot->num_rows != 0) {
 
 
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $tallnimi = $rowt[omatallennusnimi];
@@ -1569,12 +1576,12 @@ session_start();
                         }
 
                         if (!$lopulliset = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         if ($lopulliset->num_rows > 0) {
 
                             if (!$maara = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             if ($maara->num_rows < $ryhmienmaksimi && $rlopullinen == 0)
@@ -1582,7 +1589,7 @@ session_start();
 
 
                             if (!$resultvailla = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli='opiskelija' AND opiskelijankurssit.projekti_id='" . $pid . "' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id=0 AND kayttajat.rooli='opiskelija' ORDER BY sukunimi, etunimi")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
                             echo "<br>";
 
@@ -1611,7 +1618,7 @@ session_start();
                             } else {
 
                                 if (!$opiskelijattaas = $db->query("select distinct * from kayttajat, opiskelijankurssit where opiskelijankurssit.projekti_id='" . $pid . "' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND kayttajat.rooli='opiskelija' ORDER BY sukunimi, etunimi")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 if ($opiskelijattaas->num_rows != 0) {
@@ -1623,7 +1630,7 @@ session_start();
                                 $onko = false;
                                 if (!$resulthae = $db->query("select distinct opiskelija_id as oid from opiskelijankurssit, kayttajat where opiskelijankurssit.projekti_id='" . $pid . "' AND opiskelijankurssit.opiskelija_id=kayttajat.id AND kayttajat.rooli='opiskelija'")) {
 
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 while ($rowhae = $resulthae->fetch_assoc()) {
@@ -1632,7 +1639,7 @@ session_start();
 
                                     if (!$resulttyot = $db->query("select distinct id from opiskelijan_kurssityot where kayttaja_id='" . $oid . "' AND projekti_id='" . $pid . "'")) {
 
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     //ei ole palauttanut
 
@@ -1651,21 +1658,21 @@ session_start();
 
                                     if (!$resulthae = $db->query("select distinct opiskelija_id as oid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND projekti_id='" . $pid . "' order by sukunimi, etunimi")) {
 
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     while ($rowhae = $resulthae->fetch_assoc()) {
 
                                         $oid = $rowhae[oid];
                                         if (!$resulttyot = $db->query("select distinct id from opiskelijan_kurssityot where kayttaja_id='" . $oid . "' AND projekti_id='" . $pid . "'")) {
 
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         //ei ole palauttanut
 
                                         if ($resulttyot->num_rows == 0) {
                                             if (!$resultei = $db->query("select distinct sukunimi, etunimi, id as kid from kayttajat where id = '" . $oid . "' AND rooli='opiskelija'")) {
 
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
 
                                             while ($rowhae2 = $resultei->fetch_assoc()) {
@@ -1695,7 +1702,7 @@ session_start();
                         echo "</div>";
                     }
                      if (!$lopulliset = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
                     if($lopulliset->num_rows==0){
                         echo'<br><br><br>';
@@ -1703,7 +1710,7 @@ session_start();
                     if ($lopulliset->num_rows >= 0) {
 
                         if (!$maara = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         if($lopulliset->num_rows ==0){
                             if ($maara->num_rows < $ryhmienmaksimi && $rlopullinen == 0)
@@ -1733,7 +1740,7 @@ session_start();
 
         if (!isset($_GET[r]) || empty($_GET[r])) {
             if (!$onkoprojekti = $db->query("select * from projektit where kurssi_id='" . $_SESSION["KurssiId"] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
 
             if ($onkoprojekti->num_rows == 0) {
@@ -1745,7 +1752,7 @@ session_start();
             }
         } else {
             if (!$onkoprojekti = $db->query("select * from projektit where id='" . $_GET[r] . "'")) {
-                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
             }
 
             while ($rowP = $onkoprojekti->fetch_assoc()) {
@@ -1765,7 +1772,7 @@ session_start();
                 
                 echo'<h6tiedosto id="peite3" style="padding: 6px 100px 6px 20px;">&#9997 &nbsp&nbsp&nbsp' . $kuvaus . '</h6tiedosto>';
                 if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -1775,7 +1782,7 @@ session_start();
 
 
                 if (!$haeinfo = $db->query("select * from projektit where id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowv = $haeinfo->fetch_assoc()) {
@@ -1797,7 +1804,7 @@ session_start();
                 echo'<div class="cm8-responsive ohjeboxi" style="padding-top: 20px; padding-bottom: 0px">';
 
                 if (!$ryhmatiedot = $db->query("select distinct lopullinen from ryhmat where projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowRT = $ryhmatiedot->fetch_assoc()) {
@@ -1815,7 +1822,7 @@ session_start();
                 echo'</div>';
 
                 if (!$onkoprojekti = $db->query("select * from projektit where id='" . $_GET[r] . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
                 while ($rowP = $onkoprojekti->fetch_assoc()) {
                     $avautuu = $rowP[palautus_avautuu];
@@ -1881,11 +1888,11 @@ session_start();
                 }
 
                 if (!$opiskelijantiedot = $db->query("select distinct * from opiskelijankurssit where opiskelija_id='" . $_SESSION["Id"] . "' AND projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 if (!$opiskelijanryhma = $db->query("select distinct ryhma_id as rid from opiskelijankurssit where opiskelija_id='" . $_SESSION["Id"] . "' AND projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowORY = $opiskelijanryhma->fetch_assoc()) {
@@ -1899,12 +1906,12 @@ session_start();
                     if ($opmaksimi == 1) {
                         $tyhjatryhmat = array();
                         if (!$haeryhmat = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($hae = $haeryhmat->fetch_assoc()) {
                             $rid = $hae[id];
                             if (!$haeoppilaat = $db->query("select distinct * from ryhmat, opiskelijankurssit where ryhmat.id='" . $rid . "' AND ryhmat.id=opiskelijankurssit.ryhma_id")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
                             //tyhjät ryhmät talteen
                             if ($haeoppilaat->num_rows == 0) {
@@ -1914,7 +1921,7 @@ session_start();
 
                         $ryhmatkaikki = array();
                         if (!$kaikkiryhmat2 = $db->query("select distinct ryhmat.nimi as nimi, suljettu, ryhmat.id as id, lopullinen from ryhmat, opiskelijankurssit, kayttajat where ryhmat.id=opiskelijankurssit.ryhma_id AND opiskelijankurssit.opiskelija_id=kayttajat.id AND ryhmat.projekti_id='" . $pid . "' ORDER BY sukunimi, etunimi")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($haek = $kaikkiryhmat2->fetch_assoc()) {
                             array_push($ryhmatkaikki, $haek[id]);
@@ -1941,18 +1948,19 @@ session_start();
 
 
                                 if (!$kaikkiryhmat = $db->query("select distinct * from ryhmat where id='" . $onid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
-                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                    echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
+                            
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
 
                                     if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
 
@@ -1971,7 +1979,7 @@ session_start();
 
 
                                     if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli <> 'admin' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
                                     while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
@@ -1990,23 +1998,23 @@ session_start();
 
                                     if ($opryhmaid == $rowKR[id]) {
                                         if (!$haetyot = $db->query("select distinct * from ryhmat2 where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
                                         if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         if ($haemuut->num_rows != 0)
                                             echo'<br>';
 
                                         if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                             if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
   $onkopalautettu = $haetyot -> num_rows;
 
                                             if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
 
                                             while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2020,7 +2028,7 @@ session_start();
 
                                             if ($haetyot->num_rows != 0) {
                                                 echo '<table class="cm8-table3">';
-                                                echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                                echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                                 while ($rowt = $haetyot->fetch_assoc()) {
                                                     $omatkommentit = $rowt[omatkommentit];
@@ -2055,7 +2063,7 @@ session_start();
                                                         if ($lukittu == 0) {
                                                             echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                         } else {
-                                                            echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                            echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                                         }
                                                     } else {
                                                         echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
@@ -2079,7 +2087,7 @@ session_start();
 
                                             if ($palautus == 1) {
                                                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                                 }
                                                 $nyt = date("Y-m-d H:i");
                                                 while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2096,7 +2104,7 @@ session_start();
                                                 }
                                                 $ryhma = false;
                                                 if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
-                                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                                 }
                                                 if ($haeryhma->num_rows > 0) {
                                                     $ryhma = true;
@@ -2134,10 +2142,10 @@ session_start();
                                         // tähän open tiedostot
 
                                         if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $opryhmaid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
-                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
 
  
@@ -2147,7 +2155,7 @@ session_start();
                                             echo '<h2 style="color: #2b6777;font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
                                             while ($rowtaut = $haetyotaut->fetch_assoc()) {
                                                  $nimiaut = $rowtaut[kuvaus];
                                                  $linkkiaut = $rowtaut[linkki];
@@ -2213,7 +2221,7 @@ session_start();
                         echo'<div class="cm8-margin-top"></div>';
 
                         if (!$kaikkiryhmat = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         //haetaan kaikki projektin ryhmät
 
@@ -2221,13 +2229,13 @@ session_start();
 
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
-                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485; margin-bottom: 30px; padding-bottom: 0px; color: #2b6777" >';
-                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-
-                            echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                         echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
+                            
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
                             if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
 
@@ -2246,7 +2254,7 @@ session_start();
 
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.rooli <> 'admin' AND kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
@@ -2266,21 +2274,21 @@ session_start();
 
                             if ($opryhmaid == $rowKR[id]) {
                                 if (!$haetyot = $db->query("select distinct * from ryhmat2 where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 if ($haemuut->num_rows != 0)
                                     echo'<br>';
                                 if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                     if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
   $onkopalautettu = $haetyot -> num_rows;
                                     if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
                                     while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2294,7 +2302,7 @@ session_start();
                                     if ($haetyot->num_rows != 0) {
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                        echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                         while ($rowt = $haetyot->fetch_assoc()) {
                                             $omatkommentit = $rowt[omatkommentit];
@@ -2327,7 +2335,7 @@ session_start();
                                                 if ($lukittu == 0) {
                                                     echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                 } else {
-                                                    echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                    echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                                 }
                                             } else {
                                                 echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
@@ -2342,7 +2350,7 @@ session_start();
                                                 if ($lukittu == 0) {
                                                     echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                 } else {
-                                                    echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                    echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                                 }
                                             }
                                         }
@@ -2351,7 +2359,7 @@ session_start();
 
                                     if ($palautus == 1) {
                                         if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         $nyt = date("Y-m-d H:i");
                                         while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2368,7 +2376,7 @@ session_start();
                                         }
                                         $ryhma = false;
                                         if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         if ($haeryhma->num_rows > 0) {
                                             $ryhma = true;
@@ -2410,12 +2418,12 @@ session_start();
                                     // tähän open tiedostot
 
                                     if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $opryhmaid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
 
      if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
-                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
 
  
@@ -2425,7 +2433,7 @@ session_start();
                                         echo '<h2 style="color:#f7f9f7; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                         echo '<table class="cm8-table3">';
-                                        echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                        echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
       while ($rowtaut = $haetyotaut->fetch_assoc()) {
                                                  $nimiaut = $rowtaut[kuvaus];
                                                  $linkkiaut = $rowtaut[linkki];
@@ -2485,10 +2493,10 @@ session_start();
                     }
 
                     if (!$maara2 = $db->query("select * from ryhmat where projekti_id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
                     if (!$ryhmamaksimi2 = $db->query("select distinct ryhmienmaksimi from projektit where id='" . $pid . "'")) {
-                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                     }
 
                     while ($ryhmienmaksimi2 = $ryhmamaksimi2->fetch_assoc()) {
@@ -2512,12 +2520,12 @@ session_start();
 
                         $tyhjatryhmat = array();
                         if (!$haeryhmat = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($hae = $haeryhmat->fetch_assoc()) {
                             $rid = $hae[id];
                             if (!$haeoppilaat = $db->query("select distinct * from ryhmat, opiskelijankurssit where ryhmat.id='" . $rid . "' AND ryhmat.id=opiskelijankurssit.ryhma_id")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
                             //tyhjät ryhmät talteen
                             if ($haeoppilaat->num_rows == 0) {
@@ -2527,7 +2535,7 @@ session_start();
 
                         $ryhmatkaikki = array();
                         if (!$kaikkiryhmat2 = $db->query("select distinct ryhmat.nimi as nimi, suljettu, ryhmat.id as id, lopullinen from ryhmat, opiskelijankurssit, kayttajat where ryhmat.id=opiskelijankurssit.ryhma_id AND opiskelijankurssit.opiskelija_id=kayttajat.id AND ryhmat.projekti_id='" . $pid . "' ORDER BY sukunimi, etunimi")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($haek = $kaikkiryhmat2->fetch_assoc()) {
                             array_push($ryhmatkaikki, $haek[id]);
@@ -2547,17 +2555,17 @@ session_start();
 
 
                                 if (!$kaikkiryhmat = $db->query("select distinct * from ryhmat where id='" . $onid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
                                     if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
 
-                                    echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
-                                    echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-
-                                    echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th><th></th><th></th></tr>';
+                                 echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
+                            
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th><th></th><th></th></tr>';
 
 
 
@@ -2580,11 +2588,11 @@ session_start();
 
                                     if ($opryhmaid == $rowKR[id]) {
                                         if (!$haetyot = $db->query("select distinct * from ryhmat2 where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
                                         if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                         if ($haemuut->num_rows != 0)
                                             echo'<br>';
@@ -2592,11 +2600,11 @@ session_start();
 
                                     if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                         if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
                                           $onkopalautettu = $haetyot -> num_rows;
                                         if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
                                         while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2608,7 +2616,7 @@ session_start();
                                         echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                         if ($haetyot->num_rows != 0) {
                                             echo '<table class="cm8-table3" style="font-size: 0.9em">';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                             while ($rowt = $haetyot->fetch_assoc()) {
                                                 $omatkommentit = $rowt[omatkommentit];
@@ -2640,7 +2648,7 @@ session_start();
                                                     if ($lukittu == 0) {
                                                         echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                     } else {
-                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                        echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                                     }
                                                 } else {
                                                     echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
@@ -2655,7 +2663,7 @@ session_start();
                                                     if ($lukittu == 0) {
                                                         echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                                     } else {
-                                                        echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                        echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                                     }
                                                 }
                                             }
@@ -2664,7 +2672,7 @@ session_start();
 
                                         if ($palautus == 1) {
                                             if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
                                             $nyt = date("Y-m-d H:i");
                                             while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2681,7 +2689,7 @@ session_start();
                                             }
                                             $ryhma = false;
                                             if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
-                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                             }
                                             if ($haeryhma->num_rows > 0) {
                                                 $ryhma = true;
@@ -2718,12 +2726,12 @@ session_start();
                                         // tähän open tiedostot
 
                                         if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $opryhmaid . "'")) {
-                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                         }
 
 
      if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
-                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
 
  
@@ -2733,7 +2741,7 @@ session_start();
                                             echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                             echo '<table class="cm8-table3">';
-                                            echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
+                                            echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Lisätty</th></tr>';
       while ($rowtaut = $haetyotaut->fetch_assoc()) {
                                                  $nimiaut = $rowtaut[kuvaus];
                                                  $linkkiaut = $rowtaut[linkki];
@@ -2793,19 +2801,18 @@ session_start();
                     } else {
 
                         if (!$kaikkiryhmat = $db->query("select distinct * from ryhmat where projekti_id='" . $pid . "'")) {
-                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                         }
                         while ($rowKR = $kaikkiryhmat->fetch_assoc()) {
 
-
-                            echo'<div class="cm8-responsive" style="width: 90%; border: 3px solid #857485;  margin-bottom: 30px; padding-bottom: 0px;  color: #2b6777" >';
-                            echo '<table class="cm8-tabler" style="table-layout:fixed; width: 99.9%; overflow-y: hidden; overflow-x:auto;">';
-
-                            echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                        echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
+                                        echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
+                            
+                                        echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
 
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {
-                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                             }
 
                             while ($rowRO = $ryhmanopiskelijat2->fetch_assoc()) {
@@ -2826,11 +2833,11 @@ session_start();
 
                             if ($opryhmaid == $rowKR[id]) {
                                 if (!$haetyot = $db->query("select distinct * from ryhmat2 where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 if (!$haemuut = $db->query("select distinct * from opiskelijankurssit where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "' AND opiskelija_id<>'" . $_SESSION["Id"] . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 if ($haemuut->num_rows != 0)
                                     echo'<br>';
@@ -2838,12 +2845,12 @@ session_start();
 
                             if ($palautus == 1 && $opryhmaid == $rowKR[id]) {
                                 if (!$haetyot = $db->query("select distinct lukittu, omatkommentit, omatkommentit_tallennettu, ryhmat2.palaute as palaute, palaute_tallennettu, linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2, opiskelijankurssit, opiskelijan_kurssityot where opiskelijan_kurssityot.projekti_id='" . $pid . "' AND opiskelijan_kurssityot.kayttaja_id=opiskelijankurssit.opiskelija_id AND opiskelijan_kurssityot.ryhmat2_id = ryhmat2.id  AND opiskelijankurssit.ryhma_id='" . $opryhmaid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
                                 
                                 $onkopalautettu = $haetyot -> num_rows;
                                 if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu from projektit where id='" . $pid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
                                 while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2855,7 +2862,7 @@ session_start();
                                 echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 10px">Ryhmän palautukset:</h2>';
                                 if ($haetyot->num_rows != 0) {
                                     echo '<table class="cm8-table3" style="font-size: 0.9em">';
-                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
+                                    echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th >Tiedosto</th><th>Palautettu</th><th>Ryhmän kommentit</th><th>Opettajan kommentti</th><th>Muokkaa / Poista</th></tr>';
 
                                     while ($rowt = $haetyot->fetch_assoc()) {
                                         $omatkommentit = $rowt[omatkommentit];
@@ -2888,7 +2895,7 @@ session_start();
 
                                                 echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             } else {
-                                                echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                             }
                                         } else {
                                             echo '<tr><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . '><b style="font-size: 0.8em"><i class="fa fa-file"></i>  &nbsp</b>' . $rowt[tyonimi] . '</a></td><td><a href=avaatiedosto.php?pid=' . $pid . '&id=' . $rowt[tyoid] . ' target="_blank">' . $tallnimi . '</a></td><td>' . $rowt[lisayspvm];
@@ -2903,7 +2910,7 @@ session_start();
                                             if ($lukittu == 0) {
                                                 echo'<td><form action="muokkaa_tiedosto_opiskelija.php" method="get" style="display: inline-block; margin-right: 10px"><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="ryid" value=' . $opryhmaid . '><input type="hidden" name="id" value=' . $tyoid . '><input type="submit" value="&#9998" title="Muokkaa tiedostoa" class="pienikyna" style="padding: 2px 4px; font-size: 1em"></form><form action="poistovarmistus.php" method="post" style="display: inline-block; margin-left: 10px"><input type="hidden" name="ryid" value=' . $opryhmaid . ' ><input type="hidden" name="pid" value=' . $pid . '><input type="hidden" name="id" value=' . $rowt[tyoid] . '><button class="pieniroskis" style="padding: 4px 6px; font-size: 1em" title="Poista tiedosto"><i class="fa fa-trash-o" ></i></button></form></td></tr>';
                                             } else {
-                                                echo'<td><b>🔒 &nbspTiedosto on lukittu</b></td></tr>';
+                                                echo'<td><b>🔒 &nbsp Tiedosto on lukittu</b></td></tr>';
                                             }
                                         }
                                     }
@@ -2912,7 +2919,7 @@ session_start();
 
                                 if ($palautus == 1) {
                                     if (!$RTsuljettu = $db->query("select distinct palautus_suljettu, palautus_sulkeutuu, palautus_avautuu from projektit where id='" . $pid . "'")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     $nyt = date("Y-m-d H:i");
                                     while ($RTs = $RTsuljettu->fetch_assoc()) {
@@ -2929,7 +2936,7 @@ session_start();
                                     }
                                     $ryhma = false;
                                     if (!$haeryhma = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND opiskelija_id='" . $_SESSION["Id"] . "' AND ryhma_id<>0")) {
-                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                        die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                     }
                                     if ($haeryhma->num_rows > 0) {
                                         $ryhma = true;
@@ -2966,12 +2973,12 @@ session_start();
                                 // tähän open tiedostot
 
                                 if (!$haetyot = $db->query("select distinct * from ryhmatope where ryhma_id='" . $opryhmaid . "'")) {
-                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                 }
 
 
                                  if (!$haetyotaut = $db->query("select distinct * from open_palautustiedosto where projekti_id='" . $pid . "'")) {
-                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                                              die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                                           }
 
  
@@ -2981,7 +2988,7 @@ session_start();
                                     echo '<h2 style="color: #2b6777; font-size: 1em; padding-top: 0px; padding-bottom: 20px">Opettajan lisäämät tiedostot:</h2>';
 
                                     echo '<table class="cm8-table3">';
-                                    echo '<tr style="background-color: #ec008d"><th>Nimi</th><th>Tiedosto</th><th>Lisätty></th></tr>';
+                                    echo '<tr style="background-color: #04f9c5"><th>Nimi</th><th>Tiedosto</th><th>Lisätty></th></tr>';
       while ($rowtaut = $haetyotaut->fetch_assoc()) {
                                                  $nimiaut = $rowtaut[kuvaus];
                                                  $linkkiaut = $rowtaut[linkki];
@@ -3045,11 +3052,11 @@ session_start();
 
 
                 if (!$haetyot = $db->query("select distinct linkki, omatallennusnimi, tallennettunimi, tyonimi, ryhmat2.id as tyoid, lisayspvm from ryhmat2 where ryhma_id='" . $opryhmaid . "' AND projekti_id='" . $pid . "'")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 if (!$haeryhma = $db->query("select distinct ryhmat.nimi as rynimi, ryhmat.id as ryid from opiskelijankurssit, ryhmat where opiskelijankurssit.opiskelija_id='" . $_SESSION["Id"] . "' AND opiskelijankurssit.ryhma_id=ryhmat.id AND opiskelijankurssit.projekti_id='" . $pid . "' AND opiskelijankurssit.projekti_id=ryhmat.projekti_id")) {
-                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="bugi.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
+                    die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
                 }
 
                 while ($rowry = $haeryhma->fetch_assoc()) {

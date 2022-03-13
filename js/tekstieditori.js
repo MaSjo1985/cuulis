@@ -690,6 +690,18 @@
             if ($form.attr("data-editor") === editorID) {
                 // only for the currently selected editor
                 var url = $form.find('input#videoURL').val();
+                     let position = url.search("https://");
+                if(position != 0){
+                    
+                    let position2 = url.search("http://");
+                    
+                    if(position2 != 0){
+                        
+                        url = 'https://'+url;
+                    }
+                 
+                    
+                }
                 var size = $form.find('select#size').val();
 
                 if (!url) {
@@ -815,6 +827,19 @@
             if ($form.attr("data-editor") === editorID) {
                 // only for currently selected editor
                 var url = $form.find('input#url').val();
+                let position = url.search("https://");
+                if(position != 0){
+                    
+                    let position2 = url.search("http://");
+                    
+                    if(position2 != 0){
+                        
+                        url = 'https://'+url;
+                    }
+                 
+                    
+                }
+                
                 var text = $form.find('input#urlText').val();
                 var target = $form.find('#openIn').val();
 
@@ -872,6 +897,18 @@
             if ($form.attr("data-editor") === editorID) {
                 // only for currently selected editor
                 var url = $form.find('#imageURL').val();
+                     let position = url.search("https://");
+                if(position != 0){
+                    
+                    let position2 = url.search("http://");
+                    
+                    if(position2 != 0){
+                        
+                        url = 'https://'+url;
+                    }
+                 
+                    
+                }
                 var align = $form.find('select#align').val();
 
                 // set default values
@@ -938,6 +975,18 @@
             if ($form.attr("data-editor") === editorID) {
                 // only for currently selected editor
                 var url = $form.find('#fileURL').val();
+                     let position = url.search("https://");
+                if(position != 0){
+                    
+                    let position2 = url.search("http://");
+                    
+                    if(position2 != 0){
+                        
+                        url = 'https://'+url;
+                    }
+                 
+                    
+                }
                 var text = $form.find('#fileText').val();
 
                 // set default values
@@ -955,7 +1004,7 @@
                     }, 5000);
                 } else {
                     // write html in editor
-                    var html = '';
+                    var html = 'sd';
                     if (settings.useSingleQuotes === true) {
                         html = "<a href='" + url + "' target='_blank'>" + text + "</a>";
                     } else {

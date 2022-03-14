@@ -1,5 +1,22 @@
+TEHTÄVÄLISTA:  
 
-VOIT OTTAA YHTEYTTÄ YLLÄPITÄJÄÄN:  pistä color: #e608b8;
+* kommenttien tallennus ei toimi kunnolla
+* jos klikkaa check niin kommentin pitää tallentua (jos se ensin kirjoitettu9
+* testaa xss injectio laittamalla <script>alert('pöö');</script>  kommenttiin
+-> poistuuko jos on htmlspecialchars();
+
+****************************************************************************
+
+
+KIRJAA ULOS ESIM ryhmatyot.php!!!
+header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
+
+VAI PITÄÄKÖ LAITTAA ALKUUN !isset
+
+
+*************************************************************************''''''
+
 
 VIRHETAPAUKSET:  ks. mallia poistapalautukset.php
 
@@ -7,7 +24,6 @@ VIRHETAPAUKSET:  ks. mallia poistapalautukset.php
 TAULUKOT: Älä katkaise sanaa: css on word-break: break-word;
 
 
-XSS injektio -> javascriptillä pystyy muokkaamaan
 
 
 ********************************************************************************

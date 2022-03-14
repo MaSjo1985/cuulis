@@ -1,5 +1,4 @@
-<?php
-session_start(); 
+<?php session_start(); 
 
 
 ob_start();
@@ -511,6 +510,7 @@ session_start();
     $url = strtok($url, '?');
 
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 

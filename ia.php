@@ -830,6 +830,7 @@ session_start();
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 

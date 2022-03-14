@@ -76,6 +76,7 @@ $uniqid = $paivays.uniqid('', true);
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 ?>
 </body>

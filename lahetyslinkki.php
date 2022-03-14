@@ -66,6 +66,7 @@ if (isset($_SESSION["Kayttajatunnus"]) && $_SESSION["Rooli"] == "opiskelija") {
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 

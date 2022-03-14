@@ -654,6 +654,7 @@ function myFunction2(y) {
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 ?>
 <script type="text/javascript">

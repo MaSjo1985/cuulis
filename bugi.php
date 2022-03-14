@@ -201,6 +201,7 @@ session_start();
     $url = strtok($url, '?');
 
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 include("footer.php");

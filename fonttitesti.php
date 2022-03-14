@@ -663,6 +663,7 @@ function myFunction(y) {
     $url = strtok($url, '?');
 
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 

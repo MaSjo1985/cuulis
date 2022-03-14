@@ -224,6 +224,7 @@ color: #2b6777;
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 echo "</div>";

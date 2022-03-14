@@ -1,10 +1,6 @@
-<?php
-session_start();
+<?php session_start();
 
 ob_start();
-
-
-
 
 echo'<!DOCTYPE html><html> 
 <head>
@@ -3077,6 +3073,7 @@ session_start();
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 echo"</div>";
 

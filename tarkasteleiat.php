@@ -263,6 +263,7 @@ echo'<input type="hidden" name="smaara" id="smaara" value="'.$smaara.'">';
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 echo'</div>';

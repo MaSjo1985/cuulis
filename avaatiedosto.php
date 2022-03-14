@@ -128,6 +128,7 @@ echo'<div class="cm8-half" style="text-align: center; padding-top: 20px; margin-
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 
 

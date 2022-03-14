@@ -205,6 +205,7 @@ echo'<br><p style="font-weight: bold; color: #e608b8">Huom! Laita viestiin sähk
     $url = substr($url, 1);
     $url = strtok($url, '?');
     header("location: kirjautuminenuusi.php?url=" . $url);
+exit();
 }
 ?>
 </body>

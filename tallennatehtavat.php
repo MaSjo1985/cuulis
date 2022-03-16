@@ -38,7 +38,9 @@ if (isset($_SESSION["Kayttajatunnus"])) {
             $maara = 0;
             foreach ($tehtid as $tehtid) {
                 $maara++;
-                echo'tehtävä id: :'.$tehtid;
+                echo'<br>tehtävä id: '.$tehtid;
+                echo'<br>määrä on: '.$määrä;
+           
             }
             echo'<br><br>SITTEN KOMMENTIT LÄPI<br>';
             $tehtid = $_POST["id"];
@@ -52,10 +54,11 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                 $kommentti2 = $kommentti;
 
                  $id4 = $tehtid[$i];
-                                    
+                 
+                           
                 if ($kommentti != '') {
-                    echo'<br>Kommentti: ' . $kommentti;
-                    echo'<br>TEhtid: ' . $id4;
+                echo'<br>TEhtid: ' . $id4;   
+                              echo'<br>Kommentti: ' . $kommentti;
                 }
 
 
@@ -79,6 +82,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
                     }
                 }
             }
+          
             $stmt->close();
         }
     } else if ($_POST["painikek"] == "&#9998") {

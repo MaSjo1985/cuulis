@@ -1,7 +1,7 @@
-TEHTÄVÄLISTA:  
+TEHTÄVÄLISTA!!
 
-* kommenttien tallennus ei toimi kunnolla
-* jos klikkaa check niin kommentin pitää tallentua (jos se ensin kirjoitettu9
+* testaa vielä kommenttien tallennus
+* jos klikkaa check tai check2  niin kommentin pitää tallentua (jos se ensin kirjoitettu9
 * testaa xss injectio laittamalla <script>alert('pöö');</script>  kommenttiin
 -> poistuuko jos on htmlspecialchars();
 

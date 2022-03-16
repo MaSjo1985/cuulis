@@ -1540,6 +1540,8 @@ function myFunction(y) {
 
                                                 echo '<tr id="' . $rowt[jarjestys] . '" "><td style=" font-size: 1em; text-align: left;  padding-left: 10px; border: 1px solid grey" id[]=' . $rowt[id] . '>' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">' . $rowt[paino] . '<input type="hidden"  id="paino' . $rowt[id] . '" value="' . $rowt[paino] . '"></td><td style="text-align: center; border: 1px solid grey">' . $rowkp[opiskelijan_pisteet] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td><a  onclick="korjaa(this, ' . $rowt[id] . ')" title="Korjaa"   role="button"   style="padding:2px 4px; margin: 0px;">Korjaa</a></td></tr>';
                                             }
+                                              echo'<input type="hidden"  name="id[]" id="id" value=' . $rowt[id] . '>';
+                                              echo'<input type="hidden"  name="kommentti[]"  value=' . $rowkp[kommentti] . '>';
                                         } else if ($rowkp[tallennettu] == 1 && ($rowt[aihekiinni] == 1 || ($rowt[aihekiinni] == 0 && $estaosio))) {
 
                                             if ($rowkp[tehty] == 1 && $rowkp[osattu] == 1 && $rowkp[toive] == 0) {
@@ -1693,6 +1695,9 @@ function myFunction(y) {
                                             } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 0 && $rowkp[toive] == 0) {
 
                                                 echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color:  #00bfff"><td style="  padding-left: 10px; border: 1px solid grey" id[]=' . $rowt[id] . '>' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">' . $rowt[paino] . '<input type="hidden"  id="paino' . $rowt[id] . '" value="' . $rowt[paino] . '"></td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td><a  onclick="korjaa(this, ' . $rowt[id] . ')" title="Korjaa"   role="button"   style="padding:2px 4px; margin: 0px;">Korjaa</a></td></tr>';
+                                            
+                                        
+                                                
                                             } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 1 && $rowkp[toive] == 1) {
                                                 echo '<tr id="' . $rowt[jarjestys] . '" style=" font-size: 1em; background-color: #7FD858"><td style="  padding-left: 10px; border: 1px solid grey" id[]=' . $rowt[id] . '>' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">' . $rowt[paino] . '<input type="hidden"  id="paino' . $rowt[id] . '" value="' . $rowt[paino] . '"></td><td style="text-align: center; border: 1px solid grey">&#10004</td><td style="text-align: center; border: 1px solid grey"></td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td><a  onclick="korjaa(this, ' . $rowt[id] . ')" title="Korjaa"   role="button"   style="padding:2px 4px; margin: 0px;">Korjaa</a></td></tr>';
                                             } elseif ($rowkp[tehty] == 1 && $rowkp[osattu] == 0 && $rowkp[toive] == 1) {
@@ -1705,6 +1710,8 @@ function myFunction(y) {
 
                                                 echo '<tr id="' . $rowt[jarjestys] . '" "><td style=" font-size: 1em; text-align: left;  padding-left: 10px; border: 1px solid grey" id[]=' . $rowt[id] . '>' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey">' . $rowt[paino] . '<input type="hidden"  id="paino' . $rowt[id] . '" value="' . $rowt[paino] . '"></td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td><a  onclick="korjaa(this, ' . $rowt[id] . ')" title="Korjaa"   role="button"   style="padding:2px 4px; margin: 0px;">Korjaa</a></td></tr>';
                                             }
+                                                echo'<input type="hidden"  name="id[]" id="id" value=' . $rowt[id] . '>';
+                                              echo'<input type="hidden"  name="kommentti[]"  value=' . $rowkp[kommentti] . '>';
                                         } else if ($rowkp[tallennettu] == 1 && ($rowt[aihekiinni] == 1 || ($rowt[aihekiinni] == 0 && $estaosio))) {
 
                                             if ($rowkp[tehty] == 1 && $rowkp[osattu] == 1 && $rowkp[toive] == 0) {
@@ -1831,6 +1838,8 @@ function myFunction(y) {
 
                                                 echo '<tr id="' . $rowt[jarjestys] . '" "><td style=" font-size: 1em; text-align: left; padding-left: 10px; border: 1px solid grey" id[]=' . $rowt[id] . '>' . $rowt[sisalto] . '</td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; background-color: 	yellow">!</td><td style="text-align: center; border: 1px solid grey; font-size: 1.5em">&#9757</td><td style="border: 1px solid grey; background-color: white">' . $rowkp[kommentti] . '</td><td><a  onclick="korjaa(this, ' . $rowt[id] . ')" title="Korjaa"   role="button"   style="padding:2px 4px; margin: 0px;">Korjaa</a></td></tr>';
                                             }
+                                              echo'<input type="hidden"  name="id[]" id="id" value=' . $rowt[id] . '>';
+                                              echo'<input type="hidden"  name="kommentti[]"  value=' . $rowkp[kommentti] . '>';
                                         } else if ($rowkp[tallennettu] == 1 && ($rowt[aihekiinni] == 1 || ($rowt[aihekiinni] == 0 && $estaosio))) {
                                             //ESTO
 

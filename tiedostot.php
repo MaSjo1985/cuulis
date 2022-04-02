@@ -323,7 +323,7 @@ function myFunction(y) {
                 $nimi = $rowK[nimi];
                 echo'<div id="' . $kid . '"  class="cm8-margin-bottom" style="margin-top: 20px">';
                 echo'<div> ';
-                echo'<h6tiedosto style="margin-right: 40px; padding: 6px 10px 6px 20px; "><p style="display: inline-block; padding:0px; margin: 0px">&#128194 &nbsp ' . $nimi . '</p>';
+                echo'<h6tiedosto style="margin-right: 40px; padding: 6px 10px 6px 20px; ">&#128194 &nbsp ' . $nimi;
 
                 echo'<form action="muokkaakansio.php" method="post" style="margin-left: 60px;display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><input type="submit" name="painike" value="&#9998" title="Muokkaa kansion nimeä" class="muokkausN"  role="button" style="font-size: 0.9em;" ></form>';
                 echo'<form action="varmistuskansio.php" method="post" style="display: inline-block; "><input type="hidden" name="id" value=' . $kid . '><button class="roskis" title="Poista kansio" style="font-size: 1em"><i class="fa fa-trash-o" ></i></button></form>';

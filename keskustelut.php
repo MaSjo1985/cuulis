@@ -274,7 +274,7 @@ function myFunction(y) {
             }
             $otsikko = htmlspecialchars_decode($otsikko);
 
-            echo'<h6tiedosto style="padding: 6px 10px 6px 20px; "><p style="display: inline-block; padding:0px; margin: 0px">' . $otsikko . '</p>';
+            echo'<h6tiedosto style="padding: 10px 40px 10px 20px ">' . $otsikko;
 
 
 
@@ -382,7 +382,7 @@ echo'<div class="cm8-responsive cm8-keskustelu" style="padding: 10px 10px 10px 1
             }
             $otsikko = htmlspecialchars_decode($otsikko);
 
-            echo'<h6tiedosto style="padding: 6px 10px 6px 20px; "><p style="display: inline-block; padding:0px; margin: 0px">' . $otsikko . '</p>';
+            echo'<h6tiedosto style="padding: 20px 40px 10px 20px">' . $otsikko;
             echo'<form action="aktivoikeskustelu.php" method="post" style="display: inline-block; margin: 0px 10px 0px 60px"><input type="hidden" name="id" value=' . $_GET[r] . '><input type="submit" name="painikemo" value="&#9998 Muokkaa" title="Muokkaa otsikkoa" class="muokkausN"  role="button" ></form>';
 
             echo'<form action="aktivoikeskustelu.php" method="post" style="display: inline-block; margin:0px"><input type="hidden" name="id" value=' . $_GET[r] . '><button class="roskis" title="Poista keskustelu" name="painikepoista" ><i class="fa fa-trash-o"><b class="poisto">&nbsp&nbsp Poista</b></i></button>'
@@ -524,7 +524,7 @@ include("footer.php");
                 'darkGreen': 'Tummanvihreä',
                 'green': 'Vihreä',
                 'purple': 'Purppura',
-                'darkTurquois': 'Tummanturkoosi',
+                'darkTurquois': 'Tekstin oletusväri',
                 'turquois': 'Turkoosi',
              'darkOrange': 'Tummanoranssi',
                             'orange': 'Oranssi',

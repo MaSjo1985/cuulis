@@ -1,9 +1,17 @@
+TEHTÄVIEN LATAUS EI ONNISTU!
+
+********************************************************************************************
+
 TEHTÄVÄLISTA!!
 
 * testaa vielä kommenttien tallennus
 * jos klikkaa check tai check2  niin kommentin pitää tallentua (jos se ensin kirjoitettu9
 * testaa xss injectio laittamalla <script>alert('pöö');</script>  kommenttiin
 -> poistuuko jos on htmlspecialchars();
+
+
+
+
 
 ****************************************************************************
 
@@ -24,7 +32,9 @@ VIRHETAPAUKSET:  ks. mallia poistapalautukset.php
 TAULUKOT: Älä katkaise sanaa: css on word-break: break-word;
 
 
-
+taulukoiden th:
+background-color:  #73b9cc
+color: #2b6777
 
 ********************************************************************************
 
@@ -59,7 +69,8 @@ INDEKSIT?!
 
 
 -  TIEDOSTOJEN POISTO!
-
+'darkTurquois': 'Tekstin oletusväri',
+'darkTurquois': 'Tekstin oletusväri',
 *******************************************************************************************
 
 UUS VÄRIMAAILMA:   https://99designs.com/blog/tips/website-color-schemes/
@@ -78,7 +89,7 @@ NAVIEN TAUSTA:   background-color: #2b6777
 
 TEKSTIEN VÄRIT:   color: #2b6777
 
-TAULUKOIDEN TAUSTAVÄRI:  background-color: #52ab98  
+TAULUKOIDEN TAUSTAVÄRI:  background-color: #73b9cc  
 
 LOMAKKEIDEN OTSIKOIDEN TAUSTAVÄRI:  background-color: #04f9c5;
 

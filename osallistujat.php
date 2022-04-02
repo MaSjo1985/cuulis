@@ -252,7 +252,7 @@ function myFunction(y) {
         if ($result->num_rows == 0)
             echo"<br><br>Ei opiskelijoita.<br>";
         else {
-         echo'<form action="poistakurssiltavarmistus.php" method="post">';
+         echo'<br><form action="poistakurssiltavarmistus.php" method="post">';
 
                 echo'<div class="cm8-responsive" id="piilota">';
                 echo'<div id="scrollbar"><div id="spacer"></div></div>';

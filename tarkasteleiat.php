@@ -109,9 +109,9 @@ echo'<input type="hidden" name="smaara" id="smaara" value="'.$smaara.'">';
            
             echo'<div class="cm8-responsive" style="vertical-align: top;margin-top: 20px; padding:0px;">';
            
-            echo '<table id="mytable'.$smaara.'" class="cm8-uusitable10uusi cm8-striped" style="width: 100%; overflow-x: auto"><thead>';
+            echo '<table id="mytable'.$smaara.'" class="cm8-uusitable10uusi" style="width: 100%; overflow-x: auto"><thead>';
              $smaara--;
-            echo'<p style="margin: 0px; font-weight: bold; background-color: #52ab98; padding: 8px;font-size: 0.8em; border: none">Sarake ' . $rows[jarjestys] . '</p>';
+            echo'<p style="color: #2b6777; margin: 0px; font-weight: bold; background-color: #04f9c5; padding: 8px;font-size: 1em; border: none">Sarake ' . $rows[jarjestys] . '</p>';
             echo '<tr style="background-color: #48E5DA"><th>Opiskelija</th>';
             if (!$haesisalto = $db->query("select distinct * from ia WHERE kurssi_id='" . $_SESSION["KurssiId"] . "' AND ia_sarakkeet_jarjestys ='" . $rows[jarjestys] . "' ORDER BY jarjestys")) {
                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');

@@ -228,18 +228,17 @@ function myFunction(y) {
         }
 
 
-        if ($minimion) {
-            echo'<p style="color:#080708; margin-bottom:0px; padding-bottom: 0px"><b style="background-color: #e608b8;  padding: 6px; font-size: 0.8em">Keltaisella värillä on merkitty ne opiskelijat, jotka eivät ole tehneet tehtäviä yli minimi%-rajan.</b></p><br>';
-        }
-
-
-
+     
         if ($pisteet && !$pisteetvaikuttaa) {
-            echo'<p class="info" style="color: #e608b8; font-size: 1em">Tehtävien pisteet ei nyt vaikuta prosenttimääriin.</p>';
+            echo'<p class="info" style="color: #e608b8; font-size: 1em">Tehtävien pisteet ei vaikuta prosenttimääriin.</p>';
         } else if ($pisteet && $pisteetvaikuttaa) {
-            echo'<p class="info" style="color: #e608b8; font-size: 1em">Prosenttimäärissä painotetaan nyt tehtävien pisteitä.</p>';
+            echo'<p class="info" style="color: #e608b8; font-size: 1em">Prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
+        }
+               if ($minimi!=0) {
+            echo'<br><p style="color:#080708; margin-bottom:0px; padding-bottom: 0px"><b style="background-color: yellow;  padding: 6px; font-size: 1em">Keltaisella värillä on merkitty ne opiskelijat, jotka eivät ole tehneet tehtäviä yli minimi%-rajan.</b></p><br>';
         }
         echo'<br><p id="ohje" style="font-weight: bold">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p><br>';
+ 
         echo'<div id="scrollbar"><div id="spacer"></div></div>';
         echo'<div class="cm8-responsive" id="container2" >';
         echo '<table id="mytable" class="cm8-uusitable10uusi" style="background-color: white; max-width: 100%">   <thead>';
@@ -437,9 +436,9 @@ function myFunction(y) {
                     }
                 } else {
                     if ($onkorivi3->num_rows != 0) {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdytkpl . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdytkpl . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
                     } else {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a><td style="text-align: center">' . $tehdytkpl . '</td></td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a><td style="text-align: center">' . $tehdytkpl . '</td></td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
                     }
                 }
                     }
@@ -455,9 +454,9 @@ function myFunction(y) {
                     }
                 } else {
                     if ($onkorivi3->num_rows != 0) {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
                     } else {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
                     }
                 }
                     }
@@ -477,9 +476,9 @@ function myFunction(y) {
                     }
                 } else {
                     if ($onkorivi3->num_rows != 0) {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuus . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td><td style="text-align: center">' . $lpisteet . '</td></tr>';
                     } else {
-                        echo '<tr style="background-color: #e608b8"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuu . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
+                        echo '<tr style="background-color: yellow"><td><a href="tarkasteleopiskelija.php?kaid=' . $row[kaid] . '&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '">' . $row[sukunimi] . " " . $row[etunimi] . '</a></td><td style="text-align: center">' . $tehdyt . '</td><td style="text-align: center">' . $osuu . '</td><td style="text-align: center">' . $osatutosuus . '</td><td style="text-align: center">' . $eiosatutosuus . '</td></tr>';
                     }
                 }
             }

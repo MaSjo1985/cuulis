@@ -27,7 +27,7 @@
             // fonts
             fonts: true,
             fontList: ["Arial",
-                "Arial #080708",
+                "Arial Black",
                 "Comic Sans MS",
                 "Courier New",
                 "Geneva",
@@ -1710,7 +1710,7 @@
         function loadColors(command) {
             var colors = [];
             var result = '';
-
+  colors["#2b6777"] = settings.translations.darkTurquois;
             colors["#FFFFFF"] = settings.translations.white;
             colors["black"] = settings.translations.black;
             colors["#7F6000"] = settings.translations.brown;
@@ -1719,11 +1719,12 @@
             colors["blue"] = settings.translations.blue;
             colors["#4F81BD"] = settings.translations.lightBlue;
             colors["#953734"] = settings.translations.darkRed;
+            
             colors["red"] = settings.translations.red;
             colors["#4F6128"] = settings.translations.darkGreen;
             colors["green"] = settings.translations.green;
             colors["#3F3151"] = settings.translations.purple;
-            colors["#31859B"] = settings.translations.darkTurquois;
+          
             colors["#4BACC6"] = settings.translations.turquois;
             colors["#E36C09"] = settings.translations.darkOrange;
             colors["#F79646"] = settings.translations.orange;

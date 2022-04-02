@@ -433,7 +433,7 @@ function myFunction(y) {
         echo'<div class="cm8-responsive" id="container2" >';
         echo '<table id="mytable2" class="cm8-uusitable2" style="table-layout:fixed;  max-width: 100%">  ';
         echo'<thead>';
-        echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em" id="palaatanne">';
+        echo '<tr style="border: 2px solid #080708; background-color: #73b9cc;  font-size: 1em" id="palaatanne">';
 
 
         if ($pisteet) {

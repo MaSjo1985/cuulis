@@ -146,10 +146,11 @@ if ($result23->num_rows != 0 && $result24->num_rows != 0) {
     header('Content-disposition: attachment; filename=' . $zipname);
     header('Content-type: application/zip');
 
+    ob_end_clean();
     readfile($zipname);
-    
+//     exit();
     unlink($zipname);
-    exit();
+   
 }
 
 

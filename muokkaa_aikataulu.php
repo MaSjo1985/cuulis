@@ -336,10 +336,10 @@ function myFunction(y) {
             if ($onko != 0) {
 
 
-                echo '<tr style="border: 1px solid grey; background-color: #52ab98;"><th style="border-right: 1px solid grey;"><button class="roskis" style="font-size: 1em" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 5px"></i>Poista</button><br><br><a href="muokkaa_aikataulu.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px"><br><br>Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää rivi yläpuolelle" class="myButton8"  role="button"  ></th></tr></thead><tbody>';
+                echo '<tr style="border: 1px solid grey; background-color: #73b9cc;"><th style="border-right: 1px solid grey;"><button class="roskis" style="font-size: 1em" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 5px"></i>Poista</button><br><br><a href="muokkaa_aikataulu.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px"><br><br>Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää rivi yläpuolelle" class="myButton8"  role="button"  ></th></tr></thead><tbody>';
             } else {
 
-                echo '<tr style="border: 1px solid grey; background-color: #52ab98"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center">Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th></th></tr></thead><tbody>';
+                echo '<tr style="border: 1px solid grey; background-color: #73b9cc"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center">Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th></th></tr></thead><tbody>';
             }
 
             $maara = 0;
@@ -368,10 +368,10 @@ function myFunction(y) {
 
 
             if ($onko != 0) {
-                echo '<tr style="border: 1px solid grey; background-color: #52ab98;"><th style="border-right: 1px solid grey;"><button style="font-size: 1em" class="roskis" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 5px"></i>Poista</button><br><br><a href="muokkaa_aikataulu.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px"><br><br>Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää rivi yläpuolelle" class="myButton8"  role="button"  ></th></tr></thead><tbody>';
+                echo '<tr style="border: 1px solid grey; background-color: #73b9cc;"><th style="border-right: 1px solid grey;"><button style="font-size: 1em" class="roskis" title="Poista" name="painikep"><i class="fa fa-trash-o" style="margin-right: 5px"></i>Poista</button><br><br><a href="muokkaa_aikataulu.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" name="painiket" value="&#10003 Tallenna" class="myButton9"  role="button"  style="font-size: 1em;padding:4px 6px"><br><br>Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää rivi yläpuolelle" class="myButton8"  role="button"  ></th></tr></thead><tbody>';
             } else {
 
-                echo '<tr style="border: 1px solid grey; background-color: #52ab98"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center">Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th></th></tr><tbody>';
+                echo '<tr style="border: 1px solid grey; background-color: #73b9cc"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Ajankohta</th><th style="border-right: 1px solid grey; text-align: center">Aihe</th><th style="border-right: 1px solid grey; text-align: center">Lisätietoja</th><th></th></tr><tbody>';
             }
 
 
@@ -495,7 +495,7 @@ include("footer.php");
                             'darkGreen': 'Tummanvihreä',
                             'green': 'Vihreä',
                             'purple': 'Purppura',
-                            'darkTurquois': 'Tummanturkoosi',
+                            'darkTurquois': 'Tekstin oletusväri',
                             'turquois': 'Turkoosi',
                             'darkOrange': 'Tummanoranssi',
                             'orange': 'Oranssi',
@@ -563,7 +563,7 @@ include("footer.php");
                             'darkGreen': 'Tummanvihreä',
                             'green': 'Vihreä',
                             'purple': 'Purppura',
-                            'darkTurquois': 'Tummanturkoosi',
+                            'darkTurquois': 'Tekstin oletusväri',
                             'turquois': 'Turkoosi',
                             'darkOrange': 'Tummanoranssi',
                             'orange': 'Oranssi',

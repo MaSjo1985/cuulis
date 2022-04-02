@@ -556,9 +556,9 @@ session_start();
 
                 if ($onko != 0) {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #52ab98;"><th style="border-right: 1px solid grey;"><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th ><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #73b9cc;"><th style="border-right: 1px solid grey;"><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Tyhjennä valinnat<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th ><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th></tr></thead><tbody>';
                 } else {
-                    echo '<tr style="border: 1px solid grey; background-color: #52ab98"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="text-align: center; "></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #73b9cc"><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="text-align: center; "></th></tr></thead><tbody>';
                 }
 
 
@@ -620,10 +620,10 @@ session_start();
 
                 if ($onko != 0) {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #52ab98; "><th style="border-right: 1px solid grey; "><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 2px solid grey; text-align: center; ">Pisteet</th><th style="border-right: 1px solid grey"><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th><th><button class="pieniroskis" name="painikek">Kopioi</button><br><br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #73b9cc; "><th style="border-right: 1px solid grey; "><button class="pieniroskis" title="Poista" name="painikep" ><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button><br><br><a href="testaamuokkaus.php?kaikki=joo&id=' . $_GET[id] . '&monesko=' . $_GET[monesko] . '#cm"  style="font-size: 0.9em; ">Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th style="border-right: 1px solid grey; text-align: center; "><input type="submit" id="tanne" name="painiket" value="&#10003 Tallenna" class="myButton8"  role="button"  style="padding:4px 6px"><br><br>Sisältö</th><th style="border-right: 2px solid grey; text-align: center; ">Pisteet</th><th style="border-right: 1px solid grey"><input type="hidden" name="ipid" value=' . $ipid . '> <input type="submit" name="painikel" value="+ Lisää tehtävä yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px; "><br><br><input type="submit" name="painikelo" value="+ Lisää otsikko yläpuolelle" class="myButton8"  role="button"  style="padding:2px 4px"></th><th><button class="pieniroskis" name="painikek">Kopioi</button><br><br>&nbsp&#9661&nbsp</th></tr></thead><tbody>';
                 } else {
 
-                    echo '<tr style="border: 1px solid grey; background-color: #52ab98; "><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="padding-right: 0px; "></th></tr></thead><tbody>';
+                    echo '<tr style="border: 1px solid grey; background-color: #73b9cc; "><th style="border-right: 1px solid grey; "></th><th style="border-right: 1px solid grey; text-align: center; ">Sisältö</th><th style="border-right: 1px solid grey; text-align: center; ">Pisteet</th><th style="padding-right: 0px; "></th></tr></thead><tbody>';
                 }
 
 
@@ -771,7 +771,7 @@ include("footer.php");
                     'darkGreen': 'Tummanvihreä',
                     'green': 'Vihreä',
                     'purple': 'Purppura',
-                    'darkTurquois': 'Tummanturkoosi',
+                    'darkTurquois': 'Tekstin oletusväri',
                     'turquois': 'Turkoosi',
                      'darkOrange': 'Tummanoranssi',
                             'orange': 'Oranssi',

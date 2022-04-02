@@ -730,7 +730,7 @@ table.tehtavatauluope th{
 
 table.cm8-uusitablekurssi { border: 2px solid grey; vertical-align: top; background-color: white; table-layout: fixed }
 
-table.cm8-uusitablekurssi th{background-color: #52ab98; text-align: left; vertical-align: top; color: #00ffff }
+table.cm8-uusitablekurssi th{background-color: #73b9cc; text-align: left; vertical-align: top; color: #00ffff }
 table.cm8-uusitablekurssi td{ text-align: left;  vertical-align: top; padding: 20px; color: #2b6777; background-color: white;word-wrap: break-word;         
     overflow-wrap: break-word;     
  }
@@ -756,7 +756,7 @@ table.cm8-uusitable{
 table.cm8-uusitable a:hover{ cursor: pointer ; border-bottom: 1px solid transparent;}
 
 table.cm8-uusitable td{  padding: 6px 4px;  }
-table.cm8-uusitable th{ text-align: left; background-color: #52ab98; color: #00ffff }
+table.cm8-uusitable th{ text-align: left; background-color: #73b9cc; color: #00ffff }
 table.cm8-uusitable2 a{
     border: 1px solid #e5e5e5;
 
@@ -820,7 +820,7 @@ table.cm8-keskustelutable a{
 
 table.cm8-keskustelutable a:hover{font-weight: bold;  border-bottom: 1px solid transparent;}
 table.cm8-keskustelutable td{  padding: 6px 4px; border-bottom: 1px solid transparent; color: #2b6777}
-table.cm8-keskustelutable th{ border: 2px solid #e5e5e5; background-color: #52ab98; color: #00ffff ; text-align: left; border: 2px solid #e5e5e5; padding: 6px}
+table.cm8-keskustelutable th{ border: 2px solid #e5e5e5; background-color: #73b9cc; color: #00ffff ; text-align: left; border: 2px solid #e5e5e5; padding: 6px}
 
 table.cm8-keskustelutable tr{
     border-bottom: 1.3px solid #e5e5e5;
@@ -929,7 +929,7 @@ table.cm8-uusitableitse th:first-child{ text-align: center; padding: 10px; width
 table.cm8-uusitableitse th:last-child{ text-align: center; padding: 10px ;width: 10% }
 table.cm8-uusitableitse td:first-child{ text-align: center; padding: 10px; width: 10%}
 table.cm8-uusitableitse td:last-child{ text-align: center; padding: 10px; width: 10%  }
-table.cm8-uusitableitse th{ text-align: center; background-color: #52ab98; color: #00ffff }
+table.cm8-uusitableitse th{ text-align: center; background-color: #73b9cc; color: #00ffff }
 table.cm8-uusitableitse th:first-child{ text-align: center;  }
 table.cm8-uusitableitse th:last-child{ text-align: center;  }
 table.cm8-uusitableitse a{
@@ -1174,7 +1174,7 @@ table.cm8-uusitableitsea th:first-child{ width: 6%}
 table.cm8-uusitableitsea th:last-child{ width: 20% }
 table.cm8-uusitableitsea td:first-child{width: 6%}
 table.cm8-uusitableitsea td:last-child{ width: 20%}
-table.cm8-uusitableitsea th{ text-align: center; ; background-color: #52ab98; color: #00ffff; padding: 10px }
+table.cm8-uusitableitsea th{ text-align: center; ; background-color: #73b9cc; color: #00ffff; padding: 10px }
 
 table.cm8-uusitableitsea tr:last-child td{
 
@@ -1239,7 +1239,7 @@ table.cm8-uusitablekysely th:first-child{ width: 6%}
 table.cm8-uusitablekysely th:last-child{ width: 20% }
 table.cm8-uusitablekysely td:first-child{width: 6%}
 table.cm8-uusitablekysely td:last-child{ width: 20%}
-table.cm8-uusitablekysely th{ text-align: center; ; background-color: #52ab98; color: #00ffff; padding: 10px }
+table.cm8-uusitablekysely th{ text-align: center; ; background-color: #73b9cc; color: #00ffff; padding: 10px }
 
 table.cm8-uusitablekysely tr:last-child td{
 
@@ -1328,7 +1328,7 @@ table.cm8-uusitableitse tr:last-child td:first-child{padding: 0px; margin: 0px}
 table.cm8-uusitableitse tbody > tr:last-child > td{background-color: white; border: none}
 
 
-table.cm8-uusitable10 th{ border: 2px solid #e5e5e5; background-color: #52ab98; color: #00ffff ; text-align: left; border: 2px solid #e5e5e5; padding: 6px}
+table.cm8-uusitable10 th{ border: 2px solid #e5e5e5; background-color: #73b9cc; color: #00ffff ; text-align: left; border: 2px solid #e5e5e5; padding: 6px}
 table.cm8-uusitable10 tr{ border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;  }
 table.cm8-uusitable10 td{ border: 1px solid grey; color: #2b6777; text-align: left; padding: 6px }
 
@@ -1363,7 +1363,7 @@ table.cm8-uusitable10uusi{
     font-weight: normal;
     font-size: 0.7em;
 }
-table.cm8-uusitable10uusi th{font-size: 1em; border: 1px solid grey; background-color: #52ab98; color: #00ffff ; text-align: left;padding: 8px}
+table.cm8-uusitable10uusi th{font-size: 1em; border: 1px solid grey; background-color: #73b9cc; color: #00ffff ; text-align: left;padding: 8px}
 table.cm8-uusitable10uusi tr{ border: 1px solid grey}
 table.cm8-uusitable10uusi td{border: 1px solid grey; color: #2b6777; text-align: left; padding: 6px; font-size: 0.9em }
 
@@ -1392,7 +1392,7 @@ table.cm8-uusitable10uusi  th:last-child {
 table.cm8-uusitable10uusi  th:last-child {
     width: 10%;
 }
-table.cm8-uusitablekayttajat th{ border: 2px solid #e5e5e5; background-color: #52ab98; color: #00ffff; text-align: left; padding-left: 6px }
+table.cm8-uusitablekayttajat th{ border: 2px solid #e5e5e5; background-color: #73b9cc; color: #00ffff; text-align: left; padding-left: 6px }
 table.cm8-uusitablekayttajat tr{ border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;  }
 table.cm8-uusitablekayttajat td{  padding: 6px; border: 1px solid grey; color: #2b6777}
 table.cm8-uusitablekayttajat th a{ color: #00ffff;}
@@ -1426,7 +1426,7 @@ table.cm8-uusitablekayttajat tr:last-child td{
 }
 
 
-table.cm8-uusitableosallistujat th{ border: 2px solid #e5e5e5; background-color: #52ab98; color: #00ffff; text-align: left; padding-left: 6px }
+table.cm8-uusitableosallistujat th{ border: 2px solid #e5e5e5; background-color: #73b9cc; color: #00ffff; text-align: left; padding-left: 6px }
 table.cm8-uusitableosallistujat tr{ border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;  }
 table.cm8-uusitableosallistujat td{  padding: 6px; border: 1px solid grey; color: #2b6777}
 table.cm8-uusitableosallistujat th a{ color: #00ffff;}
@@ -1467,7 +1467,7 @@ table.cm8-uusitable12 {
 
 
 table.cm8-uusitable12 a{ color: #2b6777}
-table.cm8-uusitable12 th{padding: 20px 10px; color: #00ffff; text-align: left; background-color: #52ab98; width: 1%;   word-wrap: break-word;         /* All browsers since IE 5.5+ */
+table.cm8-uusitable12 th{padding: 20px 10px; color: #00ffff; text-align: left; background-color: #73b9cc; width: 1%;   word-wrap: break-word;         /* All browsers since IE 5.5+ */
                          overflow-wrap: break-word; }
 table.cm8-uusitable12 th a{color: #00ffff }
 table.cm8-uusitable12 td{ padding: 6px; color: #2b6777}
@@ -1513,7 +1513,7 @@ table.cm8-uusitable12 tr:last-child td{
     font-size: 1.4em;
 }
 #title2:hover{  font-size: 1.6em;}
-table.cm8-uusitable18 th{ text-align: left; border: 2px solid #e5e5e5; background-color: #52ab98; color: #00ffff; padding: 10px 10px 8px 10px;}
+table.cm8-uusitable18 th{ text-align: left; border: 2px solid #e5e5e5; background-color: #73b9cc; color: #00ffff; padding: 10px 10px 8px 10px;}
 table.cm8-uusitable18 tr{ border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;  }
 table.cm8-uusitable18 td{ text-align: left; padding: 8px 10px 8px 10px; border: 1px solid grey; color: #2b6777}
 table.cm8-uusitable18 th{ border: 2px solid #e5e5e5}
@@ -1691,7 +1691,7 @@ table.cm8-tableyks2 {
 }
 table.cm8-tableyks2 a{color: #2b6777}
 table.cm8-tableyks2 a:hover{font-weight: bold; border-bottom: 1px solid transparent}
-table.cm8-tableyks2 th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #52ab98; color: #00ffff;}
+table.cm8-tableyks2 th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #73b9cc; color: #00ffff;}
 table.cm8-tableyks2 td{padding:6px 8px; text-align:left; color: #2b6777; }
 
 table.cm8-tableyks2 td:last-child {
@@ -1707,7 +1707,7 @@ table.cm8-tableyks {
 }
 table.cm8-tableyks a{color: #2b6777}
 table.cm8-tableyks a:hover{font-weight: bold; border-bottom: 1px solid transparent}
-table.cm8-tableyks th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #52ab98; color: #00ffff;}
+table.cm8-tableyks th{padding:6px 8px; text-align:left; border: 1px solid grey; background-color: #73b9cc; color: #00ffff;}
 table.cm8-tableyks td{padding:6px 8px; text-align:left; color: #2b6777; font-size: 0.8em}
 
 table.cm8-tableyks td:last-child {
@@ -1722,7 +1722,7 @@ table.cm8-table {
 table.cm8-table a{
     color: #2b6777;
 }
-table.cm8-table th{padding:6px 8px;text-align:left; background-color: 	#52ab98; color: #00ffff}
+table.cm8-table th{padding:6px 8px;text-align:left; background-color: 	#73b9cc; color: #00ffff}
 table.cm8-table th a{text-align:left; color: #00ffff }
 table.cm8-table td,th{padding:6px 8px;display:table-cell;text-align:left;}
 table.cm8-table th:first-child,table.cm8-table td:first-child{padding-left:16px}
@@ -1747,7 +1747,7 @@ table.cm8-tableoppilaitos {
 table.cm8-tableoppilaitos a{
     color: #2b6777;
 }
-table.cm8-tableoppilaitos th{padding:6px 8px;text-align:left; background-color: 	#52ab98;color: #00ffff; font-weight: bold}
+table.cm8-tableoppilaitos th{padding:6px 8px;text-align:left; background-color: 	#73b9cc;color: #00ffff; font-weight: bold}
 table.cm8-tableoppilaitos td{padding:6px 8px;display:table-cell;text-align:left;}
 table.cm8-tableoppilaitos td {
     #f7f9f7-space: nowrap;
@@ -1778,7 +1778,7 @@ table.cm8-tabler td {
     color: #2b6777;
 
 }
-table.cm8-tabler th{padding:6px 8px;text-align:left; background-color: 	#52ab98; color: #00ffff}
+table.cm8-tabler th{padding:6px 8px;text-align:left; background-color: 	#73b9cc; color: #00ffff}
 table.cm8-tabler td{padding:6px 8px;display:table-cell;text-align:left;  color: #2b6777}
 
 table.cm8-table2 td,th{padding:20px 20px 20px 20px;display:table-cell;text-align:left;vertical-align:center}
@@ -5720,7 +5720,7 @@ td.sisaltoselitys {
 
 
 .cm8-uusitableia th{
-    background-color: #52ab98;
+    background-color: #73b9cc;
     color: #48E5DA;
 
 }
@@ -5766,7 +5766,7 @@ table.cm8-uusitableiauusi input[type="submit"]{
 
 
 .cm8-uusitableiauusi th{
-    background-color: #52ab98;
+    background-color: #73b9cc;
     color: #48E5DA;
 
 }
@@ -6111,11 +6111,11 @@ input[type="submit"]:focus
 }
 .ui-spinner-up {
     top: 0;
-    background-color: #52ab98;
+    background-color: #73b9cc;
 }
 .ui-spinner-down {
     bottom: 0;
-    background-color: #52ab98;
+    background-color: #73b9cc;
 }
 /*
 */

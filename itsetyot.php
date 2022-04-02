@@ -960,10 +960,10 @@ function myFunction(y) {
                 echo'<div class="cm8-responsive" id="container2" >';
                 echo '<table id="mytable" class="cm8-uusitable2ope" style=" table-layout:fixed; max-width: 90%; overflow:hidden">   <thead>';
                 if ($pisteet) {
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #73b9cc;  font-size: 1em" id="palaa"><th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th style="text-align: center; border: 1px solid #080708">Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody id="palaa2">';
                 } else {
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
+                    echo '<tr style="border: 2px solid #080708; background-color: #73b9cc;  font-size: 1em; " id="palaa"><th>Tehtävä</th><th>Tehdyt yht.</th><th>Tehty<br>ja osattu</th><th>Tehty,<br>mutta ei osattu<br>ilman apua</th><th>Toivottu yhdessä<br>läpikäytäväksi</th><th>Kommentoitu'
                     . '</th></tr>  </thead><tbody id="palaa2">';
                 }
 
@@ -1431,7 +1431,7 @@ function myFunction(y) {
                     echo'<div class="cm8-responsive" id="container2" style="padding-top: 10px">';
                     echo '<table id="mytable" class="cm8-uusitable2" style="table-layout:fixed;  max-width: 99%">  ';
                     echo'<thead>';
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em">';
+                    echo '<tr style="border: 2px solid #080708; background-color: #73b9cc;  font-size: 1em">';
 
                     if ($pisteet) {
                         if ($itsepisteytys) {
@@ -1976,7 +1976,7 @@ function myFunction(y) {
                     echo'<div class="cm8-responsive" id="container2" style="padding-top: 10px;">';
                     echo '<table id="mytable2" class="cm8-uusitable2" style="table-layout:fixed;  max-width: 99%; overflow: hidden">  ';
                     echo'<thead>';
-                    echo '<tr style="border: 2px solid #080708; background-color: #52ab98;  font-size: 1em">';
+                    echo '<tr style="border: 2px solid #080708; background-color: #73b9cc;  font-size: 1em">';
                     if ($pisteet) {
                         if ($itsepisteytys) {
                             echo'<th>Tehtävä</th><th>Tehtävän<br>pistemäärä</th><th>Oma pisteytys<br>tehtävästä</th><th>Osasin</th><th>Tein,<br>mutta en osannut<br>ilman apua</th><th>Haluan käydä<br>tunnilla läpi</th><th style="padding-top: 10px">Kommentti</th><th style="border: none"></th></tr></thead><tbody>';

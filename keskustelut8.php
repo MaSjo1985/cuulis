@@ -458,7 +458,7 @@ include("footer.php");
                 'darkGreen': 'Tummanvihreä',
                 'green': 'Vihreä',
                 'purple': 'Purppura',
-                'darkTurquois': 'Tummanturkoosi',
+                'darkTurquois': 'Tekstin oletusväri',
                 'turquois': 'Turkoosi',
                 'darkOrange': 'Tummanoranssi',
                             'orange': 'Oranssi',

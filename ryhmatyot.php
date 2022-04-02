@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 
 ob_start();
 
@@ -636,7 +637,7 @@ session_start();
 
                                         echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                        echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -838,7 +839,7 @@ session_start();
 
                                                            echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                        echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
+                                        echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th></tr>';
 
                                         if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                             die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1207,7 +1208,7 @@ session_start();
 
                                                       echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                echo '<tr id=' . $row[id] . ' ><th>' . $row[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th>';
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
                                     die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -1397,7 +1398,7 @@ session_start();
 
                                                      echo'<div class="cm8-responsive" style="text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
-                                echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th></tr>';
+                                echo '<tr id=' . $row[id] . ' ><th colspan="2">' . $row[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th></tr>';
 
 
                                 if (!$ryhmanopiskelijat2 = $db->query("select distinct * from opiskelijankurssit where kurssi_id='" . $_SESSION["KurssiId"] . "' AND ryhma_id='" . $row[id] . "'")) {
@@ -1952,7 +1953,7 @@ session_start();
                                     echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                             
-                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th>';
 
 
                                     if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
@@ -2228,7 +2229,7 @@ session_start();
                          echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                             
-                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th>';
 
                             if (!$ryhmanopiskelijat = $db->query("select distinct * from opiskelijankurssit where projekti_id='" . $pid . "' AND ryhma_id='" . $rowKR[id] . "'")) {
                                 die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');
@@ -2561,7 +2562,7 @@ session_start();
                                  echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                             
-                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th><th></th><th></th></tr>';
+                                        echo '<tr id=' . $rowKR[id] . ' ><th>' . $rowKR[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th><th></th><th></th></tr>';
 
 
 
@@ -2804,7 +2805,7 @@ session_start();
                         echo'<div class="cm8-responsive" style="margin-bottom: 30px;text-align: center;width: 90%; border: 3px solid #857485; color: #2b6777; overflow: hidden" >';
                                         echo '<table class="cm8-tabler" style="table-layout:fixed; width: 100%; overflow-y: hidden; overflow-x:auto;">';
                             
-                                        echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.7em; color: #00ffff; font-weight: normal">(Sukunimi Etunimi)</b></th>';
+                                        echo '<tr id=' . $rowKR[id] . ' ><th colspan="2">' . $rowKR[nimi] . '<br><b style="font-size: 0.9em; color: #2b6777; font-weight: boldl">(Sukunimi Etunimi)</b></th>';
 
 
                             if (!$ryhmanopiskelijat2 = $db->query("select distinct etunimi, sukunimi, kayttajat.id as kaid from kayttajat, opiskelijankurssit where kayttajat.id=opiskelijankurssit.opiskelija_id AND opiskelijankurssit.ryhma_id='" . $rowKR[id] . "' AND kayttajat.rooli <> 'admin'")) {

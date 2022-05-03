@@ -12,7 +12,7 @@
     color: #D1EDFF;
 }
 
-.cm-s-midnight.CodeMirror {border-top: 1px solid #080708; border-bottom: 1px solid #080708;}
+.cm-s-midnight.CodeMirror {border-top: 1px solid #2b6777; border-bottom: 1px solid #2b6777;}
 
 .cm-s-midnight div.CodeMirror-selected {background: #314D67 !important;}
 .cm-s-midnight.CodeMirror ::selection { background: rgba(49, 77, 103, .99); }

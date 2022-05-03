@@ -17,7 +17,7 @@
     display: inline-block;
 }
 .mq-editable-field .mq-cursor {
-    border-left: 1px solid #080708;
+    border-left: 1px solid #2b6777;
     margin-left: -1px;
     position: relative;
     z-index: 1;
@@ -113,7 +113,7 @@
     line-height: inherit;
     margin: 0;
     padding: 0;
-    border-color: #080708;
+    border-color: #2b6777;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
@@ -167,11 +167,11 @@
     font-family: monospace, Symbola, serif;
 }
 .mq-math-mode .mq-overline {
-    border-top: 1px solid #080708;
+    border-top: 1px solid #2b6777;
     margin-top: 1px;
 }
 .mq-math-mode .mq-underline {
-    border-bottom: 1px solid #080708;
+    border-bottom: 1px solid #2b6777;
     margin-bottom: 1px;
 }
 .mq-math-mode .mq-binary-operator {
@@ -333,7 +333,7 @@
     font-family: Symbola, "Times New Roman", serif;
 }
 .mq-math-mode .mq-overarrow {
-    border-top: 1px solid #080708;
+    border-top: 1px solid #2b6777;
     margin-top: 1px;
     padding-top: 0.2em;
 }
@@ -382,8 +382,8 @@
 .mq-math-mode .mq-selection.mq-blur .mq-matrixed,
 .mq-editable-field .mq-selection.mq-blur .mq-matrixed {
     background: #D4D4D4 !important;
-    color: #080708;
-    border-color: #080708;
+    color: #2b6777;
+    border-color: #2b6777;
 }
 .mq-math-mode .mq-selection.mq-blur .mq-matrixed-container,
 .mq-editable-field .mq-selection.mq-blur .mq-matrixed-container {

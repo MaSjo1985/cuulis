@@ -24,9 +24,9 @@ THE SOFTWARE.
 .cm-s-xq-light span.cm-atom {color: #6C8CD5;}
 .cm-s-xq-light span.cm-number {color: #164;}
 .cm-s-xq-light span.cm-def {text-decoration:underline;}
-.cm-s-xq-light span.cm-variable {color: #080708; }
-.cm-s-xq-light span.cm-variable-2 {color:#080708;}
-.cm-s-xq-light span.cm-variable-3 {color: #080708; }
+.cm-s-xq-light span.cm-variable {color: #2b6777; }
+.cm-s-xq-light span.cm-variable-2 {color:#2b6777;}
+.cm-s-xq-light span.cm-variable-3 {color: #2b6777; }
 .cm-s-xq-light span.cm-property {}
 .cm-s-xq-light span.cm-operator {}
 .cm-s-xq-light span.cm-comment {color: #0080FF; font-style: italic;}
@@ -40,4 +40,4 @@ THE SOFTWARE.
 .cm-s-xq-light span.cm-error {color: #f00;}
 
 .cm-s-xq-light .CodeMirror-activeline-background {background: #e8f2ff !important;}
-.cm-s-xq-light .CodeMirror-matchingbracket {outline:1px solid grey;color:#080708 !important;background:yellow;}
+.cm-s-xq-light .CodeMirror-matchingbracket {outline:1px solid grey;color:#2b6777 !important;background:yellow;}

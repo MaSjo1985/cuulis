@@ -384,7 +384,7 @@
 
 .editormd-mask {
     position: fixed;
-    background: #080708;
+    background: #2b6777;
     opacity: 0.2;
     /* W3C */
     filter: alpha(opacity=20);
@@ -642,7 +642,7 @@
     height: 32px;
     opacity: 0;
     cursor: pointer;
-    background: #080708;
+    background: #2b6777;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -3420,7 +3420,7 @@
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
     display: none;
-    color: #080708;
+    color: #2b6777;
     vertical-align: middle;
 }
 
@@ -3910,7 +3910,7 @@
 /*! Pretty printing styles. Used with prettify.js. */
 /* SPAN elements with the classes below are added by prettyprint. */
 .pln {
-    color: #080708;
+    color: #2b6777;
 }
 
 /* plain text */

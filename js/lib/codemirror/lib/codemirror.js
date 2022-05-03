@@ -37,7 +37,7 @@
 
   var ios = /AppleWebKit/.test(navigator.userAgent) && /Mobile\/\w+/.test(navigator.userAgent);
   // This is woefully incomplete. Suggestions for alternative methods welcome.
-  var mobile = ios || /Android|webOS|#080708Berry|Opera Mini|Opera Mobi|IEMobile/i.test(navigator.userAgent);
+  var mobile = ios || /Android|webOS|#2b6777Berry|Opera Mini|Opera Mobi|IEMobile/i.test(navigator.userAgent);
   var mac = ios || /Mac/.test(navigator.platform);
   var windows = /win/i.test(navigator.platform);
 
@@ -1176,7 +1176,7 @@
     if (webkit) te.style.width = "1000px";
     else te.setAttribute("wrap", "off");
     // If border: 0; -- iOS fails to open keyboard (issue #1287)
-    if (ios) te.style.border = "1px solid #080708";
+    if (ios) te.style.border = "1px solid #2b6777";
     disableBrowserMagic(te);
     return div;
   }

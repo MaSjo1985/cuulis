@@ -186,12 +186,12 @@ function myFunction(y) {
                 echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #e608b8;">Aseta avautumissajankohta kyselylomakkeelle: </p>';
                 echo'<b style="margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.9em; color: #080708" class="kdate"  name="paivaA">';
+            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.9em; color: #2b6777" class="kdate"  name="paivaA">';
 
 
                 echo'<b style="margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kelloA" style="width: 20%; color: #080708" class="kello">
+               <input type="text"  name="kelloA" style="width: 20%; color: #2b6777" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
@@ -219,12 +219,12 @@ function myFunction(y) {
                 echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; color: #e608b8;">Aseta sulkeutumisajankohta kyselylomakkeelle: </p>';
                 echo'<b style="margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%;color: #080708" class="kdate"  name="paivaS">';
+            <input type="text" style="margin-right: 10px; width: 20%;color: #2b6777" class="kdate"  name="paivaS">';
 
 
                 echo'<b style="margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kelloS" style="width: 20%; color: #080708" class="kello">
+               <input type="text"  name="kelloS" style="width: 20%; color: #2b6777" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       

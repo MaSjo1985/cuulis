@@ -13,7 +13,7 @@
 .cm-s-paraiso-light.CodeMirror ::selection { background: #b9b6b0; }
 .cm-s-paraiso-light.CodeMirror ::-moz-selection { background: #b9b6b0; }
 .cm-s-paraiso-light .CodeMirror-gutters {background: #e7e9db; border-right: 0px;}
-.cm-s-paraiso-light .CodeMirror-guttermarker { color: #080708; }
+.cm-s-paraiso-light .CodeMirror-guttermarker { color: #2b6777; }
 .cm-s-paraiso-light .CodeMirror-guttermarker-subtle { color: #8d8687; }
 .cm-s-paraiso-light .CodeMirror-linenumber {color: #8d8687;}
 .cm-s-paraiso-light .CodeMirror-cursor {border-left: 1px solid #776e71 !important;}

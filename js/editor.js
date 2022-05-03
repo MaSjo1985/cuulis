@@ -358,7 +358,7 @@
             }
             var fonts = {"Sans serif": "arial,helvetica,sans-serif",
                 "Serif": "times new roman,serif",
-                "Wide": "arial #080708,sans-serif",
+                "Wide": "arial #2b6777,sans-serif",
                 "Narrow": "arial narrow,sans-serif",
                 "Comic Sans MS": "comic sans ms,sans-serif",
                 "Courier New": "courier new,monospace",
@@ -382,10 +382,10 @@
                 "Large": "5",
                 "Huge": "6"};
 
-            var colors = [{name: '#080708', hex: '#080708000'},
-                {name: 'Medium#080708', hex: '#444444'},
-                {name: 'Light#080708', hex: '#666666'},
-                {name: 'Dim#080708', hex: '#999999'},
+            var colors = [{name: '#2b6777', hex: '#2b6777000'},
+                {name: 'Medium#2b6777', hex: '#444444'},
+                {name: 'Light#2b6777', hex: '#666666'},
+                {name: 'Dim#2b6777', hex: '#999999'},
                 {name: 'Gray', hex: '#CCCCCC'},
                 {name: 'DimGray', hex: '#EEEEEE'},
                 {name: 'LightGray', hex: '#F3F3F3'},
@@ -398,7 +398,7 @@
                 {name: 'Yellow', hex: '#FFFF00'},
                 {name: 'Lime', hex: '#7FD858'},
                 {name: 'Cyan', hex: '#00FFFF'},
-                {name: 'Blue', hex: '#0807080FF'},
+                {name: 'Blue', hex: '#2b67770FF'},
                 {name: 'BlueViolet', hex: '#8A2BE2'},
                 {name: 'Magenta', hex: '#FF00FF'},
 

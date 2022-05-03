@@ -146,7 +146,7 @@ function myFunction(y) {
     echo '<br><h2 id="tanne" style="color: #2b6777">Muokkaa tavoitettasi</h2>';
     echo '<br><a href="itsetyot.php?i=' . $_POST[ipid] . '"><p style="font-size: 1em; display: inline-block; padding:0; margin: 0px 20px 0px 0px">&#8630</p> Palaa takaisin</a><br>';
 
-    echo'<p style="display: inline-block; font-size:1.1em"><b style="margin-right: 20px">Tavoitteesi &nbsp&nbsp&nbsp(%-osuus tehtävistä):</b><input type="text" id="spinner" style="width: 50px" name="prostavoite" value=' . $prostavoite . '> <b style="color: #080708">%</b></p>';
+    echo'<p style="display: inline-block; font-size:1.1em"><b style="margin-right: 20px">Tavoitteesi &nbsp&nbsp&nbsp(%-osuus tehtävistä):</b><input type="text" id="spinner" style="width: 50px" name="prostavoite" value=' . $prostavoite . '> <b style="color: #2b6777">%</b></p>';
     echo'<button class="pieniroskis" title="Poista tavoite" name="painikep" style="margin-left: 20px; margin-bottom: 20px"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button>';
 
     echo'<input type="hidden" name="ipid" value=' . $_POST[ipid] . '>';

@@ -1,4 +1,4 @@
-.cm-s-the-matrix.CodeMirror { background: #080708000; color: #00FF00; }
+.cm-s-the-matrix.CodeMirror { background: #2b6777000; color: #00FF00; }
 .cm-s-the-matrix div.CodeMirror-selected { background: #2D2D2D !important; }
 .cm-s-the-matrix.CodeMirror ::selection { background: rgba(45, 45, 45, 0.99); }
 .cm-s-the-matrix.CodeMirror ::-moz-selection { background: rgba(45, 45, 45, 0.99); }

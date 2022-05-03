@@ -281,12 +281,12 @@ function myFunction(y) {
                 echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #e608b8;">Aseta ajankohta, jolloin osio näkyy opiskelijoille: </p>';
                 echo'<p><b style="margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; color: #080708" class="kdate"  name="paivaN">';
+            <input type="text" style="margin-right: 10px; width: 20%; color: #2b6777" class="kdate"  name="paivaN">';
 
 
                 echo'<b style="margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text" id="kelloN" name="kelloN" style="width: 20%; color: #080708" class="kello">
+               <input type="text" id="kelloN" name="kelloN" style="width: 20%; color: #2b6777" class="kello">
                                    	
 
 	<input type="submit" style="margin-left:10px; padding: 4px 6px; " value="Tallenna" class="myButton8" name="tallennaN"  title="Tallenna" id="buttonN"></p>';
@@ -392,12 +392,12 @@ function myFunction(y) {
                         echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold;color: #e608b8;">Aseta avautumissajankohta palautuksille: </p>';
                         echo'<b style="margin-right: 5px; font-size: 0.8em;  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; color: #080708;font-size: 0.8em;" class="kdate"  name="paivaA">';
+            <input type="text" style="margin-right: 10px; width: 20%; color: #2b6777;font-size: 0.8em;" class="kdate"  name="paivaA">';
 
 
                         echo'<b style="margin-right: 5px; font-size: 0.8em; ">Klo:</b>
     
-               <input type="text"  name="kelloA" style="width: 20%; color: #080708;font-size: 0.8em;" id="kelloA" class="kello">
+               <input type="text"  name="kelloA" style="width: 20%; color: #2b6777;font-size: 0.8em;" id="kelloA" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
@@ -424,12 +424,12 @@ function myFunction(y) {
      
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" class="kdate" style="margin-right: 10px; width: 20%; font-size: 0.8em; color: #080708"  name="paivaS">';
+            <input type="text" class="kdate" style="margin-right: 10px; width: 20%; font-size: 0.8em; color: #2b6777"  name="paivaS">';
 
 
                         echo'<b style="font-size: 0.8em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text" class="kello"  name="kelloS" id="kelloS" style="width: 20%; font-size: 0.8em; color: #080708" >';
+               <input type="text" class="kello"  name="kelloS" id="kelloS" style="width: 20%; font-size: 0.8em; color: #2b6777" >';
 
 
                         echo'<input type="submit" style=" margin-left:10px; padding: 2px;" value="Tallenna" class="myButton8" name="tallennaS" id="buttonS"  title="Tallenna sulkeutumisaika">';

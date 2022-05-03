@@ -39,7 +39,7 @@ if (isset($_SESSION["Kayttajatunnus"])) {
 //                echo'<p style="display: inline-block; margin: 0px; padding: 0px; font-size: 0.7em"><b><em>Huom! Jos istuntosi on vanhentunut, kirjaudu kustantajan sivulle ja PÄIVITÄ SIVU.</em>';
 //
 //                if ($rowt[kirjautuminen] != '') {
-//                    echo'<br> <a href="' . $rowt[kirjautuminen] . '" target="_blank" style="color: #080708"> Kirjaudu tästä >> </a></b></p>';
+//                    echo'<br> <a href="' . $rowt[kirjautuminen] . '" target="_blank" style="color: #2b6777"> Kirjaudu tästä >> </a></b></p>';
 //                } else {
 //                    echo'</b></p>';
 //                }
@@ -482,7 +482,7 @@ function myFunction(y) {
 
                             document.getElementById('omapainotusok').disabled = false;
                             document.getElementById('omapainotusei').disabled = false;
-                            document.getElementById('annaomat').style.color = "#080708";
+                            document.getElementById('annaomat').style.color = "#2b6777";
 
                         }
                     };
@@ -499,7 +499,7 @@ function myFunction(y) {
 
                     document.getElementById('omapainotusok').disabled = false;
                     document.getElementById('omapainotusei').disabled = false;
-                    document.getElementById('annaomat').style.color = "#080708";
+                    document.getElementById('annaomat').style.color = "#2b6777";
 
 
                 }

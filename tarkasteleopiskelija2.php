@@ -182,9 +182,9 @@ session_start();
 
             echo'<form action="tallennaopearvioinnit2.php" method="post">';
             if (empty($pisteet)) {
-                echo'<b style="margin-right: 10px; color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet">';
+                echo'<b style="margin-right: 10px; color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #2b6777" name="pisteet">';
             } else {
-                echo'<b style="margin-right: 10px;color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #080708" name="pisteet" >';
+                echo'<b style="margin-right: 10px;color: #e608b8">Pisteet opiskelijalle lomakkeesta:</b> <input type="number" style="width: 50px; color: #2b6777" name="pisteet" >';
             }
 
 

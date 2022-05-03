@@ -550,7 +550,7 @@
 
     var colorKeywords_ = [
         "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige",
-        "bisque", "#080708", "blanchedalmond", "blue", "blueviolet", "brown",
+        "bisque", "#2b6777", "blanchedalmond", "blue", "blueviolet", "brown",
         "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue",
         "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod",
         "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen",

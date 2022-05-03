@@ -235,7 +235,7 @@ function myFunction(y) {
             echo'<p class="info" style="color: #e608b8; font-size: 1em">Prosenttimäärissä painotetaan tehtävien pisteitä.</p>';
         }
                if ($minimi!=0) {
-            echo'<br><p style="color:#080708; margin-bottom:0px; padding-bottom: 0px"><b style="background-color: yellow;  padding: 6px; font-size: 1em">Keltaisella värillä on merkitty ne opiskelijat, jotka eivät ole tehneet tehtäviä yli minimi%-rajan.</b></p><br>';
+            echo'<br><p style="color:#2b6777; margin-bottom:0px; padding-bottom: 0px"><b style="background-color: yellow;  padding: 6px; font-size: 1em">Keltaisella värillä on merkitty ne opiskelijat, jotka eivät ole tehneet tehtäviä yli minimi%-rajan.</b></p><br>';
         }
         echo'<br><p id="ohje" style="font-weight: bold">Klikkaamalla opiskelijan nimeä pääset tarkastelemaan tarkemmin opiskelijan tehtäviä.</em></p><br>';
  

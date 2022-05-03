@@ -31,7 +31,7 @@ div.cm-s-mdn-like .CodeMirror-cursor { border-left: 2px solid #222; }
 .cm-s-mdn-like .cm-comment { color:#777; font-weight:normal; }
 .cm-s-mdn-like .cm-string { color:#07a; font-style:italic; }
 .cm-s-mdn-like .cm-string-2 { color:#bd6b18; } /*?*/
-.cm-s-mdn-like .cm-meta { color: #080708; } /*?*/
+.cm-s-mdn-like .cm-meta { color: #2b6777; } /*?*/
 .cm-s-mdn-like .cm-builtin { color: #9B7536; } /*?*/
 .cm-s-mdn-like .cm-tag { color: #997643; }
 .cm-s-mdn-like .cm-attribute { color: #d6bb6d; } /*?*/

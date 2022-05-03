@@ -411,7 +411,7 @@ function myFunction(y) {
 
         echo'<input type="hidden" name="monesko" value=' . $_GET[monesko] . '>';
         echo'<div style="text-align: center">';
-        echo'<b style="margin-right: 40px; color:  #e608b8">Voit myös valita, kuinka monta riviä haluat lisätä loppuun </b> <input type="number" name="tehtmaara" style="color: #080708; width: 60px" min="0">';
+        echo'<b style="margin-right: 40px; color:  #e608b8">Voit myös valita, kuinka monta riviä haluat lisätä loppuun </b> <input type="number" name="tehtmaara" style="color: #2b6777; width: 60px" min="0">';
 
         echo'<input type="submit" value="+ Lisää" class="myButton9" name="lisaa" role="button" style="margin-left: 10px; font-size: 0.8em; padding: 2px 4px">';
         echo'<input type="hidden" name="kurssi" value=' . $_SESSION[KurssiId] . '>';

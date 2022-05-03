@@ -65,7 +65,7 @@ h1 {
     font-size: 2em;
 }
 mark {
-    color: #080708;
+    color: #2b6777;
     background: #ff0;
 }
 small {
@@ -193,7 +193,7 @@ th {
     *,
     *:before,
     *:after {
-        color: #080708 !important;
+        color: #2b6777 !important;
         text-shadow: none !important;
         background: transparent !important;
         -webkit-box-shadow: none !important;
@@ -247,10 +247,10 @@ th {
     }
     .btn > .caret,
     .dropup > .btn > .caret {
-        border-top-color: #080708 !important;
+        border-top-color: #2b6777 !important;
     }
     .label {
-        border: 1px solid #080708;
+        border: 1px solid #2b6777;
     }
     .table {
         border-collapse: collapse !important;
@@ -928,7 +928,7 @@ th {
 .glyphicon-tent:before {
     content: "\26fa";
 }
-.glyphicon-#080708board:before {
+.glyphicon-#2b6777board:before {
     content: "\e218";
 }
 .glyphicon-bed:before {
@@ -5678,14 +5678,14 @@ a.list-group-item-danger.active:focus {
     font-size: 21px;
     font-weight: bold;
     line-height: 1;
-    color: #080708;
+    color: #2b6777;
     text-shadow: 0 1px 0 #fff;
     filter: alpha(opacity=20);
     opacity: .2;
 }
 .close:hover,
 .close:focus {
-    color: #080708;
+    color: #2b6777;
     text-decoration: none;
     cursor: pointer;
     filter: alpha(opacity=50);
@@ -5873,56 +5873,56 @@ button.close {
     left: 50%;
     margin-left: -5px;
     border-width: 5px 5px 0;
-    border-top-color: #080708;
+    border-top-color: #2b6777;
 }
 .tooltip.top-left .tooltip-arrow {
     right: 5px;
     bottom: 0;
     margin-bottom: -5px;
     border-width: 5px 5px 0;
-    border-top-color: #080708;
+    border-top-color: #2b6777;
 }
 .tooltip.top-right .tooltip-arrow {
     bottom: 0;
     left: 5px;
     margin-bottom: -5px;
     border-width: 5px 5px 0;
-    border-top-color: #080708;
+    border-top-color: #2b6777;
 }
 .tooltip.right .tooltip-arrow {
     top: 50%;
     left: 0;
     margin-top: -5px;
     border-width: 5px 5px 5px 0;
-    border-right-color: #080708;
+    border-right-color: #2b6777;
 }
 .tooltip.left .tooltip-arrow {
     top: 50%;
     right: 0;
     margin-top: -5px;
     border-width: 5px 0 5px 5px;
-    border-left-color: #080708;
+    border-left-color: #2b6777;
 }
 .tooltip.bottom .tooltip-arrow {
     top: 0;
     left: 50%;
     margin-left: -5px;
     border-width: 0 5px 5px;
-    border-bottom-color: #080708;
+    border-bottom-color: #2b6777;
 }
 .tooltip.bottom-left .tooltip-arrow {
     top: 0;
     right: 5px;
     margin-top: -5px;
     border-width: 0 5px 5px;
-    border-bottom-color: #080708;
+    border-bottom-color: #2b6777;
 }
 .tooltip.bottom-right .tooltip-arrow {
     top: 0;
     left: 5px;
     margin-top: -5px;
     border-width: 0 5px 5px;
-    border-bottom-color: #080708;
+    border-bottom-color: #2b6777;
 }
 .popover {
     position: absolute;
@@ -6144,7 +6144,7 @@ button.close {
     background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
     background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#08070800000', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#2b677700000', GradientType=1);
     background-repeat: repeat-x;
 }
 .carousel-control.right {
@@ -6154,7 +6154,7 @@ button.close {
     background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
     background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08070800000', endColorstr='#80000000', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2b677700000', endColorstr='#80000000', GradientType=1);
     background-repeat: repeat-x;
 }
 .carousel-control:hover,

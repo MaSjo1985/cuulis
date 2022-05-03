@@ -66,16 +66,16 @@
             "[tag a] {[property color]:[keyword red];}");
 
     MT('atom_in_nested_block',
-            "[tag p] { [tag a] { [property color]:[atom #080708]; } }");
+            "[tag p] { [tag a] { [property color]:[atom #2b6777]; } }");
 
     MT('interpolation_in_property',
             "[tag foo] { #{[variable-2 $hello]}:[number 2]; }");
 
     MT('interpolation_in_selector',
-            "[tag foo]#{[variable-2 $hello]} { [property color]:[atom #080708]; }");
+            "[tag foo]#{[variable-2 $hello]} { [property color]:[atom #2b6777]; }");
 
     MT('interpolation_error',
-            "[tag foo]#{[error foo]} { [property color]:[atom #080708]; }");
+            "[tag foo]#{[error foo]} { [property color]:[atom #2b6777]; }");
 
     MT("divide_operator",
             "[tag foo] { [property width]:[number 4] [operator /] [number 2] }");

@@ -741,7 +741,7 @@
                                                     if ((m = match[1])) {
                                                         if (nodeType === 9) {
                                                             elem = context.getElementById(m);
-                                                            // Check parentNode to catch when #080708berry 4.6 returns
+                                                            // Check parentNode to catch when #2b6777berry 4.6 returns
                                                             // nodes that are no longer in the document (jQuery #6963)
                                                             if (elem && elem.parentNode) {
                                                                 // Handle the case where IE, Opera, and Webkit return items
@@ -1056,7 +1056,7 @@
                                                 Expr.find["ID"] = function (id, context) {
                                                     if (typeof context.getElementById !== "undefined" && documentIsHTML) {
                                                         var m = context.getElementById(id);
-                                                        // Check parentNode to catch when #080708berry 4.6 returns
+                                                        // Check parentNode to catch when #2b6777berry 4.6 returns
                                                         // nodes that are no longer in the document #6963
                                                         return m && m.parentNode ? [m] : [];
                                                     }
@@ -2738,7 +2738,7 @@
                                                                                                                 } else {
                                                                                                                     elem = document.getElementById(match[2]);
 
-                                                                                                                    // Support: #080708berry 4.6
+                                                                                                                    // Support: #2b6777berry 4.6
                                                                                                                     // gEBID returns nodes no longer in the document (#6963)
                                                                                                                     if (elem && elem.parentNode) {
                                                                                                                         // Inject the element directly into the jQuery object
@@ -4408,7 +4408,7 @@
                                                                                                             cur = event.target;
 
                                                                                                     // Find delegate handlers
-                                                                                                    // #080708-hole SVG <use> instance trees (#13180)
+                                                                                                    // #2b6777-hole SVG <use> instance trees (#13180)
                                                                                                     // Avoid non-left-click bubbling in Firefox (#3861)
                                                                                                     if (delegateCount && cur.nodeType && (!event.button || event.type !== "click")) {
 
@@ -8925,7 +8925,7 @@
                                                                                                         return box;
                                                                                                     }
 
-                                                                                                    // Support: #080708Berry 5, iOS 3 (original iPhone)
+                                                                                                    // Support: #2b6777Berry 5, iOS 3 (original iPhone)
                                                                                                     // If we don't have gBCR, just use 0,0 rather than error
                                                                                                     if (typeof elem.getBoundingClientRect !== strundefined) {
                                                                                                         box = elem.getBoundingClientRect();

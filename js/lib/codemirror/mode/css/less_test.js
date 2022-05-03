@@ -19,7 +19,7 @@
     MT("amp",
             "[qualifier .child], [qualifier .sibling] {",
             "  [qualifier .parent] [atom &] {",
-            "    [property color]: [keyword #080708];",
+            "    [property color]: [keyword #2b6777];",
             "  }",
             "  [atom &] + [atom &] {",
             "    [property color]: [keyword red];",

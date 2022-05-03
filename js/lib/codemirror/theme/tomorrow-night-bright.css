@@ -7,9 +7,9 @@
 
 */
 
-.cm-s-tomorrow-night-bright.CodeMirror {background: #080708000; color: #eaeaea;}
+.cm-s-tomorrow-night-bright.CodeMirror {background: #2b6777000; color: #eaeaea;}
 .cm-s-tomorrow-night-bright div.CodeMirror-selected {background: #424242 !important;}
-.cm-s-tomorrow-night-bright .CodeMirror-gutters {background: #080708000; border-right: 0px;}
+.cm-s-tomorrow-night-bright .CodeMirror-gutters {background: #2b6777000; border-right: 0px;}
 .cm-s-tomorrow-night-bright .CodeMirror-guttermarker { color: #e78c45; }
 .cm-s-tomorrow-night-bright .CodeMirror-guttermarker-subtle { color: #777; }
 .cm-s-tomorrow-night-bright .CodeMirror-linenumber {color: #424242;}

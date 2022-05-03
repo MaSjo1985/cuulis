@@ -356,7 +356,7 @@ include("footer.php");
             translations: {
                 'title': 'Otsikko',
                 '#f7f9f7': 'Valkoinen',
-                '#080708': 'Musta',
+                '#2b6777': 'Musta',
                 'brown': 'Ruskea',
                 'beige': 'Beige',
                 'darkBlue': 'Tummansininen',

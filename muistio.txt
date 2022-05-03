@@ -1,4 +1,8 @@
-TEHTÄVIEN LATAUS EI ONNISTU!
+Tehtävälistan tallennuksessa tsekkaa päivä!
+
+Nyt voi javascriptiä muuttamalla merkitä tehtävä vaikka umpeutunu
+
+TEHTÄVIEN LATAUS EI ONNIS14TU!
 
 ********************************************************************************************
 
@@ -8,8 +12,6 @@ TEHTÄVÄLISTA!!
 * jos klikkaa check tai check2  niin kommentin pitää tallentua (jos se ensin kirjoitettu9
 * testaa xss injectio laittamalla <script>alert('pöö');</script>  kommenttiin
 -> poistuuko jos on htmlspecialchars();
-
-
 
 
 
@@ -87,7 +89,7 @@ VÄLIVAIHTO:  background-color: white
 
 NAVIEN TAUSTA:   background-color: #2b6777
 
-TEKSTIEN VÄRIT:   color: #2b6777
+TEKSTIEN VÄRIT:   color: #2b6777 #2b6777
 
 TAULUKOIDEN TAUSTAVÄRI:  background-color: #73b9cc  
 
@@ -273,7 +275,7 @@ KATO ETTÄ TEKSTIN VÄRI EI OO   #2b6777
 
 PITÄÄ OLLA:
 
-  color: #080708;
+  color: #2b6777;
 
 
 *******************
@@ -379,7 +381,7 @@ https://stackoverflow.com/questions/14379788/font-family-not-loading
 
 ***********************************************************************
 
-TAUSTA:     #080708 -> #080708
+TAUSTA:     #2b6777 -> #2b6777
 
 NAVIPALKIT:    #48E5DA -> #127475
 
@@ -389,14 +391,14 @@ TAULUKOT:   #0D3E3F -> #0D3E3F
 
 VAIHDOT:
 
-black -> #080708
+black -> #2b6777
 
-#000 -> #080708
+#000 -> #2b6777
 
 #fff -> #f7f9f7
 
 white -> #f7f9f7
-   echo'<p style="padding: 10px 40px 10px 8px ; background-color:  #f7f9f7; color: #080708; font-weight: bold; font-size: 1.1em;display: inline-block; margin-right: 20px"  ><a class="plinkki" style=" color: #080708;" href="kayttaja.php?url=osallistujat.php&ka=' . $id. '"> ' . $etunimi . ' ' . $sukunimi . '</a></p>';
+   echo'<p style="padding: 10px 40px 10px 8px ; background-color:  #f7f9f7; color: #2b6777; font-weight: bold; font-size: 1.1em;display: inline-block; margin-right: 20px"  ><a class="plinkki" style=" color: #2b6777;" href="kayttaja.php?url=osallistujat.php&ka=' . $id. '"> ' . $etunimi . ' ' . $sukunimi . '</a></p>';
 
 
 ***********************
@@ -426,7 +428,7 @@ tarpeen vaatiessa toinen korostusvihreä: c7ef00
 Toimisikohan, jos nykyinen turkoosi olisi vihreä 2, nykyinen sininen(kurssilistan otsikko) vihreä 1. 
 Kurssit/Opintojaksot olisi väreillä vaalea ja vaalea harmaa.
 
-Taustaväri: #080708 -> #080708
+Taustaväri: #2b6777 -> #2b6777
 
 Muut:  #48E5DA -> #0D3E3F   
 ja  #0D3E3F -> #48E5DA
@@ -735,14 +737,14 @@ UUDET VÄRIT:
 
 KORVAA KAIKKIALTA:
 
-#f9f8fb ->  #080708  (tausta)
+#f9f8fb ->  #2b6777  (tausta)
 
 #15565f -> #48E5DA  (sininen)
 
 #53a5af -> #48E5DA
 
 
-muiden buttonien tekstit: color: #080708;
+muiden buttonien tekstit: color: #2b6777;
 
 taulukoiden otsikot: #0D3E3F
 _____________

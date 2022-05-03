@@ -434,7 +434,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708;"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777;"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -530,7 +530,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -620,7 +620,7 @@ function myFunction(y) {
                     }
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px"><button class="pieniroskis" title="Poista"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poista</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
             echo'<div class="cm8-margin-top"></div>';
@@ -833,7 +833,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
 
 
             echo "</tbody></table>";
@@ -895,7 +895,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777; background-color: #e5e5e5"><td style="background-color: #e5e5e5"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }
@@ -951,7 +951,7 @@ function myFunction(y) {
                     echo '<tr><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[nimi] . ' &nbsp&nbsp&nbsp</a></td><td><a href="kurssivali.php?id=' . $row[kid] . '">' . $row[koodi] . '</a></td><td><a href="kayttaja.php?url=' . $url . '&ka=' . $row[kaid] . '">' . $row[etunimi] . ' ' . $row[sukunimi] . '</a></td><td>' . $row[Nimi] . '</td><td>' . $row[lukuvuosi] . '</td><td>' . $row[alkupvm] . '</td><td>' . $row[loppupvm] . '</td><td style="padding-left: 10px"><input type="checkbox" name="lista[]" value=' . $row[kid] . ' ></td></tr>';
                 }
             }
-            echo'<tr style="border-bottom: 3px solid #080708; background-color: #e5e5e5"><td style="background-color: #e5e5e5"></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
+            echo'<tr style="border-bottom: 3px solid #2b6777; background-color: #e5e5e5"><td style="background-color: #e5e5e5"></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding-top: 15px; "><button class="pieniroskis" title="Poistu"><i class="fa fa-trash-o" style="margin-right: 10px;"></i>Poistu</button></td></tr>';
             echo "</tbody></table>";
             echo'</form></div>';
         }

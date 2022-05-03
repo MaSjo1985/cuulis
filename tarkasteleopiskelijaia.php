@@ -478,12 +478,12 @@ function myFunction(y) {
                 if ($tallennettu == 0) {
                     $kommentti = str_replace('<br />', "", $kommentti);
                     echo'<p style="font-weight: bold; color:  #48E5DA; font-size: 0.8em; margin-bottom: 5px">Kommentoi tätä saraketta: </p>';
-                    echo'<textarea style="width: 80%;padding: 6px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708;" rows="10"  name="kommentti">' . $kommentti . '</textarea><br>';
+                    echo'<textarea style="width: 80%;padding: 6px; border: 2px solid  #48E5DA; border-radius: 10px; color: #2b6777;" rows="10"  name="kommentti">' . $kommentti . '</textarea><br>';
                     echo'<input type="submit" name="painiket" class="myButton8" value="&#10003 Tallenna" title="Tallenna" id="tuutanne" style="font-size: 0.7em; padding: 2px 4px">';
                 } else {
                     echo'<p style="font-weight: bold; color:  #48E5DA; font-size: 0.8em; margin-bottom: 5px">Kommenttisi tästä sarakkeesta: </p>';
                     echo'<div style="text-align: left;  margin-bottom: 5px;padding: 0px; display: inline-block; width: 80%" >';
-                    echo'<p style="margin: 0px;padding: 0px; font-weight: bold; font-size: 0.7em; padding: 10px; border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: white">' . $kommentti . '</p>';
+                    echo'<p style="margin: 0px;padding: 0px; font-weight: bold; font-size: 0.7em; padding: 10px; border: 2px solid  #48E5DA; border-radius: 10px; color: #2b6777; background-color: white">' . $kommentti . '</p>';
                     echo'</div>';
                     echo'<br><input type="submit" name="painikem" class="myButton8" value="&#9998 Muokkaa" title="Muokkaa" id="tuutanne" style="font-size: 0.7em; padding: 2px 4px; background-color: #00FF00;">';
                 }

@@ -619,7 +619,7 @@ button.ui-button::-moz-focus-inner {
 .ui-selectable-helper {
     position: absolute;
     z-index: 100;
-    border: 1px dotted #080708;
+    border: 1px dotted #2b6777;
 }
 .ui-slider {
     position: relative;
@@ -1184,7 +1184,7 @@ body .ui-tooltip {
 .ui-widget-shadow {
     margin: -5px 0 0 -5px;
     padding: 5px;
-    background: #080708000 url(images/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x;
+    background: #2b6777000 url(images/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x;
     opacity: .2;
     filter: Alpha(Opacity=20);
     border-radius: 5px;

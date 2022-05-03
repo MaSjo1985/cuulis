@@ -108,9 +108,9 @@ http://ethanschoonover.com/solarized/img/solarized-palette.png
 
 /* Little shadow on the view-port of the buffer view */
 .cm-s-solarized.CodeMirror {
-    -moz-box-shadow: inset 7px 0 12px -6px #080708;
-    -webkit-box-shadow: inset 7px 0 12px -6px #080708;
-    box-shadow: inset 7px 0 12px -6px #080708;
+    -moz-box-shadow: inset 7px 0 12px -6px #2b6777;
+    -webkit-box-shadow: inset 7px 0 12px -6px #2b6777;
+    box-shadow: inset 7px 0 12px -6px #2b6777;
 }
 
 /* Gutter border and some shadow from it  */

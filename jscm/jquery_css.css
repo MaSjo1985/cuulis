@@ -677,7 +677,7 @@ button.ui-button::-moz-focus-inner {
 .ui-selectable-helper {
     position: absolute;
     z-index: 100;
-    border: 1px dotted #080708;
+    border: 1px dotted #2b6777;
 }
 .ui-selectmenu-menu {
     padding: 0;
@@ -901,7 +901,7 @@ body .ui-tooltip {
 }
 .ui-widget-content {
     border: 1px solid #666666;
-    background: #080708000 url("images/ui-bg_inset-soft_25_000000_1x100.png") 50% bottom repeat-x;
+    background: #2b6777000 url("images/ui-bg_inset-soft_25_000000_1x100.png") 50% bottom repeat-x;
     color: #ffffff;
 }
 .ui-widget-content a {

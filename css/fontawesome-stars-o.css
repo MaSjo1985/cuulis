@@ -44,15 +44,15 @@
 @media print {
     .br-theme-fontawesome-stars-o .br-widget a:after {
         content: '\f006';
-        color: #080708;
+        color: #2b6777;
     }
     .br-theme-fontawesome-stars-o .br-widget a.br-active:after,
     .br-theme-fontawesome-stars-o .br-widget a.br-selected:after {
         content: '\f005';
-        color: #080708;
+        color: #2b6777;
     }
     .br-theme-fontawesome-stars-o .br-widget a.br-fractional:after {
         content: '\f123';
-        color: #080708;
+        color: #2b6777;
     }
 }

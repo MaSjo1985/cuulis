@@ -266,7 +266,7 @@ function myFunction(y) {
 
                     while ($row = $result->fetch_assoc()) {
                     
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' checked></td><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
                        
                         echo'</tr>';
                     }
@@ -280,7 +280,7 @@ function myFunction(y) {
                     echo '<tr><th><a href="osallistujat.php?kaikki2=joo"> Valitse kaikki<br>&nbsp&#9661&nbsp</a></th><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
 
                     while ($row = $result->fetch_assoc()) {
-                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
+                        echo '<tr><td><input type="checkbox" name="lista[]" value=' . $row[kaid] . ' ></td><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
 
                         echo'</tr>';
                     }
@@ -332,7 +332,7 @@ function myFunction(y) {
                echo '<tr><th>Sukunimi</th><th>Etunimi</th></tr></thead></tbody>';
              
                 while ($row = $result->fetch_assoc()) {
-                    echo '<tr><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #080708; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
+                    echo '<tr><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #2b6777; " href="kayttaja.php?url=osallistujat.php&ka=' . $row[kaid]. '">' . $row[etunimi] . '</a></td>';
 
                     echo'</tr>';
                 }

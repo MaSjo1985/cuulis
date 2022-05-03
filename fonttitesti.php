@@ -586,12 +586,12 @@ function myFunction(y) {
 
 
 //    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin")
-//        echo '<tr style="margin-bottom: 0px"><td style="border:1px solid #080708;  border-bottom:0px solid #080708;  border-right:0px solid #080708;"></td><td style="text-align: right;  width:1%; #f7f9f7-space:nowrap; border:1px solid #080708;  border-bottom:0px solid #080708;  border-left:0px solid #080708; "><form action="ilmoitus.php" method="post" style="width: 100%; float: right; padding-bottom: 0px"><input type="submit" name= "painikek" value="&#9998 Muokkaa" title="Muokkaa ilmoitustaulua" class="myButton9"  role="button"  style="font-size: 0.8em; float: right; margin-bottom: 0px; padding: 0px"></form></td><td></td></tr>';
+//        echo '<tr style="margin-bottom: 0px"><td style="border:1px solid #2b6777;  border-bottom:0px solid #2b6777;  border-right:0px solid #2b6777;"></td><td style="text-align: right;  width:1%; #f7f9f7-space:nowrap; border:1px solid #2b6777;  border-bottom:0px solid #2b6777;  border-left:0px solid #2b6777; "><form action="ilmoitus.php" method="post" style="width: 100%; float: right; padding-bottom: 0px"><input type="submit" name= "painikek" value="&#9998 Muokkaa" title="Muokkaa ilmoitustaulua" class="myButton9"  role="button"  style="font-size: 0.8em; float: right; margin-bottom: 0px; padding: 0px"></form></td><td></td></tr>';
 //
 //    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin")
-//        echo'<tr><td style="text-align: left; padding-top: 0px; border:1px solid #080708;  border-right:0px solid #080708; border-top:0px solid #080708; padding-bottom: 20px; width:1%; #f7f9f7-space:nowrap">';
+//        echo'<tr><td style="text-align: left; padding-top: 0px; border:1px solid #2b6777;  border-right:0px solid #2b6777; border-top:0px solid #2b6777; padding-bottom: 20px; width:1%; #f7f9f7-space:nowrap">';
 //    else
-//        echo'<tr><td style="text-align: left; padding-top: 20px;  border:1px solid #080708; padding-bottom: 20px; width:1%;box-shadow: 2px 2px 2px #888888;   overflow-wrap: break-word; margin: 0 auto;
+//        echo'<tr><td style="text-align: left; padding-top: 20px;  border:1px solid #2b6777; padding-bottom: 20px; width:1%;box-shadow: 2px 2px 2px #888888;   overflow-wrap: break-word; margin: 0 auto;
 //  max-width: 300px;
 //  border: solid 2px #ccc;
 //  padding: 12px;">';
@@ -603,7 +603,7 @@ function myFunction(y) {
 //    echo '</td>';
 //
 //    if ($_SESSION["Rooli"] == "opettaja" || $_SESSION["Rooli"] == "admin" || $_SESSION["Rooli"] == "admink" || $_SESSION["Rooli"] == "opeadmin") {
-//        echo '<td style="border:1px solid #080708; border-left:0px solid #080708; border-top:0px solid #080708  ; box-shadow: 2px 2px 2px #888888"></td>';
+//        echo '<td style="border:1px solid #2b6777; border-left:0px solid #2b6777; border-top:0px solid #2b6777  ; box-shadow: 2px 2px 2px #888888"></td>';
 //    }
 
 

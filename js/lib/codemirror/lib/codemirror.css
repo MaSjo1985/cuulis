@@ -15,7 +15,7 @@
     /* Set height, width, borders, and global font properties here */
     font-family: monospace;
     height: 300px;
-    color: #080708;
+    color: #2b6777;
 }
 
 /* PADDING */
@@ -48,13 +48,13 @@
     box-sizing: content-box;
 }
 
-.CodeMirror-guttermarker { color: #080708; }
+.CodeMirror-guttermarker { color: #2b6777; }
 .CodeMirror-guttermarker-subtle { color: #999; }
 
 /* CURSOR */
 
 .CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid #080708;
+    border-left: 1px solid #2b6777;
 }
 /* Shown when moving in bi-directional text */
 .CodeMirror div.CodeMirror-secondarycursor {

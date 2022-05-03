@@ -3,11 +3,11 @@
 .cm-s-eclipse span.cm-atom {color: #219;}
 .cm-s-eclipse span.cm-number {color: #164;}
 .cm-s-eclipse span.cm-def {color: #00f;}
-.cm-s-eclipse span.cm-variable {color: #080708;}
-.cm-s-eclipse span.cm-variable-2 {color: #0807080C0;}
-.cm-s-eclipse span.cm-variable-3 {color: #0807080C0;}
-.cm-s-eclipse span.cm-property {color: #080708;}
-.cm-s-eclipse span.cm-operator {color: #080708;}
+.cm-s-eclipse span.cm-variable {color: #2b6777;}
+.cm-s-eclipse span.cm-variable-2 {color: #2b67770C0;}
+.cm-s-eclipse span.cm-variable-3 {color: #2b67770C0;}
+.cm-s-eclipse span.cm-property {color: #2b6777;}
+.cm-s-eclipse span.cm-operator {color: #2b6777;}
 .cm-s-eclipse span.cm-comment {color: #3F7F5F;}
 .cm-s-eclipse span.cm-string {color: #2A00FF;}
 .cm-s-eclipse span.cm-string-2 {color: #f50;}
@@ -20,4 +20,4 @@
 .cm-s-eclipse span.cm-error {color: #f00;}
 
 .cm-s-eclipse .CodeMirror-activeline-background {background: #e8f2ff !important;}
-.cm-s-eclipse .CodeMirror-matchingbracket {outline:1px solid grey; color:#080708 !important;}
+.cm-s-eclipse .CodeMirror-matchingbracket {outline:1px solid grey; color:#2b6777 !important;}

@@ -262,12 +262,12 @@ function myFunction(y) {
                         echo'<p style="margin: 0px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #e608b8;">Aseta avautumissajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaA">';
+            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #2b6777" class="kdate"  name="paivaA">';
 
 
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kelloA" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
+               <input type="text"  name="kelloA" style="width: 20%; font-size: 0.7em; color: #2b6777" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
@@ -294,12 +294,12 @@ function myFunction(y) {
                         echo'<p style="margin: 2px 0px 2px 0px; font-weight: bold; font-size: 0.7em;color: #e608b8;">Aseta sulkeutumisajankohta tälle osiolle: </p>';
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color:  ">Pvm:</b>
      
-            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #080708" class="kdate"  name="paivaK">';
+            <input type="text" style="margin-right: 10px; width: 20%; font-size: 0.7em; color: #2b6777" class="kdate"  name="paivaK">';
 
 
                         echo'<b style="font-size: 0.6em; margin-right: 5px; color: ">Klo:</b>
     
-               <input type="text"  name="kelloK" style="width: 20%; font-size: 0.7em; color: #080708" class="kello">
+               <input type="text"  name="kelloK" style="width: 20%; font-size: 0.7em; color: #2b6777" class="kello">
                                    	
       <input type="hidden" name="jarjestys" value=' . $sid . '>
       
@@ -545,14 +545,14 @@ echo'</div>';
                             echo'<div style="padding: 0px; margin: 0px; text-align: center">';
                             echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #48E5DA;">Opettajan kommentit tästä sarakkeesta: </p>';
 
-                            echo'<div style="text-align: left;width: 80%;padding: 10px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.8em;border: 2px solid  #48E5DA; border-radius: 10px; color: #080708; background-color: white">' . $kommentti . '</div><br><br>';
+                            echo'<div style="text-align: left;width: 80%;padding: 10px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.8em;border: 2px solid  #48E5DA; border-radius: 10px; color: #2b6777; background-color: white">' . $kommentti . '</div><br><br>';
                             echo'</div>';
                             } else {
                             
-                            echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #080708;">Opettajan kommentit tästä sarakkeesta: </p>';
+                            echo'<p style="margin-bottom: 5px;font-size: 0.9em; font-weight: bold; color:  #2b6777;">Opettajan kommentit tästä sarakkeesta: </p>';
 
                           
-                            echo'<div style="width: 100%;padding: 6px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #080708; border-radius: 10px; color: #080708; background-color: #e5e5e5">' . $kommentti . '</div><br><br>';
+                            echo'<div style="width: 100%;padding: 6px; height: 100px; overflow: auto; margin: 0px; font-weight:bold; display: inline-block;font-size: 0.7em;border: 2px solid  #2b6777; border-radius: 10px; color: #2b6777; background-color: #e5e5e5">' . $kommentti . '</div><br><br>';
                      
                             
                             }

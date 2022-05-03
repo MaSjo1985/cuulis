@@ -210,14 +210,14 @@
             '[variable-3 ## bar]');
 
     MT('definitionList',
-            '[number - coffee := Hot ][number&em _and_][number  #080708]',
+            '[number - coffee := Hot ][number&em _and_][number  #2b6777]',
             '',
             'Normal text.');
 
     MT('definitionListSpan',
             '[number - coffee :=]',
             '',
-            '[number Hot ][number&em _and_][number  #080708 =:]',
+            '[number Hot ][number&em _and_][number  #2b6777 =:]',
             '',
             'Normal text.');
 

@@ -43,7 +43,7 @@
 
     MT("tagColorKeyword",
             "[tag foo] {",
-            "  [property color]: [keyword #080708];",
+            "  [property color]: [keyword #2b6777];",
             "  [property color]: [keyword navy];",
             "  [property color]: [keyword yellow];",
             "}");
@@ -127,11 +127,11 @@
 
     MT("parens",
             "[qualifier .foo] {",
-            "  [property background-image]: [variable fade]([atom #080708], [number 20%]);",
+            "  [property background-image]: [variable fade]([atom #2b6777], [number 20%]);",
             "  [property border-image]: [atom linear-gradient](",
             "    [atom to] [atom bottom],",
-            "    [variable fade]([atom #080708], [number 20%]) [number 0%],",
-            "    [variable fade]([atom #080708], [number 20%]) [number 100%]",
+            "    [variable fade]([atom #2b6777], [number 20%]) [number 0%],",
+            "    [variable fade]([atom #2b6777], [number 20%]) [number 100%]",
             "  );",
             "}");
 

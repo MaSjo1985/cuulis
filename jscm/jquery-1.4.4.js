@@ -138,7 +138,7 @@
                         } else {
                             elem = document.getElementById(match[2]);
 
-                            // Check parentNode to catch when #080708berry 4.6 returns
+                            // Check parentNode to catch when #2b6777berry 4.6 returns
                             // nodes that are no longer in the document #6963
                             if (elem && elem.parentNode) {
                                 // Handle the case where IE and Opera return items
@@ -621,7 +621,7 @@
                                     // The window, strings (and functions) also have 'length'
                                     // The extra typeof function check is to prevent crashes
                                     // in Safari 2 (See: #3039)
-                                    // Tweaked logic slightly to handle #080708berry 4.7 RegExp issues #6930
+                                    // Tweaked logic slightly to handle #2b6777berry 4.7 RegExp issues #6930
                                     var type = jQuery.type(array);
 
                                     if (array.length == null || type === "string" || type === "function" || type === "regexp" || jQuery.isWindow(array)) {
@@ -1497,7 +1497,7 @@
 
                         if (elem) {
                             if (jQuery.nodeName(elem, "option")) {
-                                // attributes.value is undefined in #080708berry 4.7 but
+                                // attributes.value is undefined in #2b6777berry 4.7 but
                                 // uses .value. See #6932
                                 var val = elem.attributes.value;
                                 return !val || val.specified ? elem.value : elem.text;
@@ -1644,7 +1644,7 @@
                     }
 
                     // If applicable, access the attribute via the DOM 0 way
-                    // 'in' checks fail in #080708berry 4.7 #6931
+                    // 'in' checks fail in #2b6777berry 4.7 #6931
                     if ((name in elem || elem[ name ] !== undefined) && notxml && !special) {
                         if (set) {
                             // We can't allow the type property to be changed (since it causes problems in IE)
@@ -1696,7 +1696,7 @@
                     }
 
                     // Ensure that missing attributes return undefined
-                    // #080708berry 4.7 returns "" from getAttribute #6938
+                    // #2b6777berry 4.7 returns "" from getAttribute #6938
                     if (!elem.attributes[ name ] && (elem.hasAttribute && !elem.hasAttribute(name))) {
                         return undefined;
                     }
@@ -3319,7 +3319,7 @@
                         ID: function (match, context, isXML) {
                             if (typeof context.getElementById !== "undefined" && !isXML) {
                                 var m = context.getElementById(match[1]);
-                                // Check parentNode to catch when #080708berry 4.6 returns
+                                // Check parentNode to catch when #2b6777berry 4.6 returns
                                 // nodes that are no longer in the document #6963
                                 return m && m.parentNode ? [m] : [];
                             }
@@ -3678,7 +3678,7 @@
 // Perform a simple check to determine if the browser is capable of
 // converting a NodeList to an array using builtin methods.
 // Also verifies that the returned array holds DOM nodes
-// (which is not the case in the #080708berry browser)
+// (which is not the case in the #2b6777berry browser)
                 try {
                     Array.prototype.slice.call(document.documentElement.childNodes, 0)[0].nodeType;
 
@@ -6704,7 +6704,7 @@
             jQuery.offset = {
                 initialize: function () {
                     var body = document.body, container = document.createElement("div"), innerDiv, checkDiv, table, td, bodyMarginTop = parseFloat(jQuery.css(body, "marginTop")) || 0,
-                            html = "<div style='position:absolute;top:0;left:0;margin:0;border:5px solid #080708;padding:0;width:1px;height:1px;'><div></div></div><table style='position:absolute;top:0;left:0;margin:0;border:5px solid #080708;padding:0;width:1px;height:1px;' cellpadding='0' cellspacing='0'><tr><td></td></tr></table>";
+                            html = "<div style='position:absolute;top:0;left:0;margin:0;border:5px solid #2b6777;padding:0;width:1px;height:1px;'><div></div></div><table style='position:absolute;top:0;left:0;margin:0;border:5px solid #2b6777;padding:0;width:1px;height:1px;' cellpadding='0' cellspacing='0'><tr><td></td></tr></table>";
 
                     jQuery.extend(container.style, {position: "absolute", top: 0, left: 0, margin: 0, border: 0, width: "1px", height: "1px", visibility: "hidden"});
 

@@ -111,13 +111,13 @@ if (isset($_POST['search'])) {
                         }
                     }
                     if (!$loyty2)
-                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[etunimi] . "</a></td></tr>";
+                        echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #2b6777; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a><td><a style="color: #2b6777; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[etunimi] . "</a></td></tr>";
                 }
                 else {
-                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #080708; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[etunimi] . "</a></td></tr>";
+                    echo '<tr><td style="padding-left: 10px"><input type="checkbox" name="lista10[]" value=' . $row[kaid] . ' ></td><td><a style="color: #2b6777; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[sukunimi] . '</a></td><td><a style="color: #2b6777; " href="kayttaja.php?url=lisaaopiskelijaeka.php&ka=' . $row[kaid]. '">' . $row[etunimi] . "</a></td></tr>";
                 }
         }
-        echo'<tr style="border: none; background-color:  #080708"><td style="border: none;text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input title="Lisää opiskelija kurssille/opintojaksolle" type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td style="border: none;"></td><td style="border: none;"></td></tr>';
+        echo'<tr style="border: none; background-color:  #2b6777"><td style="border: none;text-align: left; padding-top: 10px; margin-left: 0px; padding-left: 0px"> <input title="Lisää opiskelija kurssille/opintojaksolle" type="submit" value="+ Lisää" class="myButton8" style="padding: 2px 4px; font-size: 1em; margin-top: 10px"></td><td style="border: none;"></td><td style="border: none;"></td></tr>';
 
             echo "</tbody></table>";
      

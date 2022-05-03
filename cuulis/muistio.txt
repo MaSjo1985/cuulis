@@ -52,7 +52,7 @@ UUDET VÄRIT:
 
 KORVAA KAIKKIALTA:
 
-#f9f8fb ->  #080708  (tausta)
+#f9f8fb ->  #2b6777  (tausta)
 
 #15565f -> #48E5DA  (sininen)
 
@@ -63,7 +63,7 @@ formit niinku on form-style-3
 
 formien buttonit ja a:t poista class
 
-muiden buttonien tekstit: color: #080708;
+muiden buttonien tekstit: color: #2b6777;
 
 taulukoiden otsikot: #0D3E3F
 _____________

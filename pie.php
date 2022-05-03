@@ -120,21 +120,21 @@ function tuoDiagrammi2($kayttaja_id, $ipid) {
 
     if ($kayttaja_id != 0) {
         if ($itsepisteytys) {
-            echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
+            echo'<p style="color: #2b6777; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
 
             echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">(Oma pisteytys tehtävistä vaikuttaa pylvääseen.)</p>';
         } else {
-            echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
+            echo'<p style="color: #2b6777; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
 
             echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">(Vain osatut tehtävät vaikuttavat pylvääseen.)</p>';
         }
     } else {
         if ($itsepisteytys) {
-            echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
+            echo'<p style="color: #2b6777; font-weight: bold; font-size: 0.8em">' . $itseannetutyht . 'p / ' . $pisteetyht . 'p</p>';
 
             echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">Opiskelijoiden itselleen antamat pisteet vaikuttavat edistymispylvääseen</p>';
         } else {
-            echo'<p style="color: #080708; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
+            echo'<p style="color: #2b6777; font-weight: bold; font-size: 0.8em">' . $omatpisteetyht . 'p / ' . $pisteetyht . 'p</p>';
 
             echo'<p style="color: #e608b8; font-weight: bold; font-size: 0.8em">Vain osattujen tehtävien pisteet vaikuttavat edistymispylvääseen</p>';
         }
@@ -164,7 +164,7 @@ function tuoDiagrammi2($kayttaja_id, $ipid) {
     echo'</div>';
 
     if ($kayttaja_id != 0) {
-//        echo'<table  style="border: 1px solid #080708; display: inline-block; margin-top: 20px; margin-bottom: 40px; margin-right: 40px; padding: 0px 10px 10px 10px">';
+//        echo'<table  style="border: 1px solid #2b6777; display: inline-block; margin-top: 20px; margin-bottom: 40px; margin-right: 40px; padding: 0px 10px 10px 10px">';
 //        echo'<th style="text-align: center; padding-bottom: 10px; font-size: 0.7em" colspan="2"><b>Tavoitetasot: </b></th>';
 //        if (!$onkorivi2 = $db->query("select distinct * from itseprojektit_tasot where itseprojekti_id='" . $ipid . "' ORDER BY osuus DESC")) {
 //            die('<br><br><b style="font-size: 1em; color: #FF0000">Tietokantayhteydessä ongelmia!<br><br> Ota yhteyttä oppimisympäristön ylläpitäjään <a href="yhteydenotto.php" style="text-decoration: underline"><u>tästä.</b></u><br><br></div></div></div></div><footer class="cm8-containerFooter" style="padding: 20px 0px 20px 0px"><b>Copyright &copy;  <br><a href="admininfo.php">Marianne Sjöberg</b></a></footer>');

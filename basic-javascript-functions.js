@@ -3750,10 +3750,12 @@ function validateFormItse()
 
 
     }
-
+    
     if (onko == 1) {
+       
         return false;
     } else {
+        
         document.getElementById("myForm").submit();
     }
 
